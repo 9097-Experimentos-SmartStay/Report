@@ -28,8 +28,8 @@ Entre sus principales características destacan:
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td><img src="../assets/chapter-1/members/samuel.png" alt="Bonifacio Jaramillo Samuel Jesus"></td>
+    <td align="center" valign="middle">
+       <img src="../assets/chapter-1/members/samuel.png" alt="Bonifacio Jaramillo Samuel Jesus" width="300" height="150" style="object-fit: cover;">
       <td>Bonifacio Jaramillo Samuel Jesus</td>
       <td>u202317269</td>
       <td>Ingeniería de Software</td>
@@ -57,11 +57,12 @@ Entre sus principales características destacan:
       <td>[Completar]</td>
     </tr>
     <tr>
-      <td></td>
+      <td align="center" valign="middle">
+       <img src="../assets/chapter-1/members/AlejandroGalindo.jpg" alt="Galindo Montero Alejandro Manuel" width="300" height="150" style="object-fit: cover;">
       <td>Galindo Manuel, Alejandro</td>
-      <td>[Código]</td>
+      <td>u202321264</td>
       <td>Ingeniería de Software</td>
-      <td>[Completar]</td>
+      <td>Mi nombre es Alejandro Manuel Galindo Montero, tengo 22 años y curso la carrera de Ingeniería de Software. Me considero una persona creativa y responsable, y en mis tiempos libres me gusta aprender cosas nuevas. Cuento con conocimientos en desarrollo web y móvil, además de experiencia en desarrollo full stack con C#, Java, TypeScript y Flutter. En este proyecto apoyaré con todos los conocimientos que he adquirido en los últimos años. </td>
     </tr>
   </tbody>
 </table>
