@@ -29,7 +29,7 @@ Entre sus principales características destacan:
   </thead>
   <tbody>
     <td align="center" valign="middle">
-       <img src="../assets/chapter-1/members/samuel.png" alt="Bonifacio Jaramillo Samuel Jesus" width="300" height="150" style="object-fit: cover;">
+       <img src="../assets/chapter-1/members/samuel.png" alt="Bonifacio Jaramillo Samuel Jesus" width="300">
       <td>Bonifacio Jaramillo Samuel Jesus</td>
       <td>u202317269</td>
       <td>Ingeniería de Software</td>
@@ -58,7 +58,7 @@ Entre sus principales características destacan:
     </tr>
     <tr>
       <td align="center" valign="middle">
-       <img src="../assets/chapter-1/members/AlejandroGalindo.jpg" alt="Galindo Montero Alejandro Manuel" width="300" height="150" style="object-fit: cover;">
+       <img src="../assets/chapter-1/members/AlejandroGalindo.jpg" alt="Galindo Montero Alejandro Manuel" width="300">
       <td>Galindo Manuel, Alejandro</td>
       <td>u202321264</td>
       <td>Ingeniería de Software</td>
