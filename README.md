@@ -30,7 +30,7 @@
 | u202320684 | Ponce Perales, Alberto Alejandro |
 | — | Verona Flores, Ítalo Sebastián |
 | — | Sulca, Piero |
-| — | Galindo Manuel, Alejandro |
+| u202321264 | Galindo Manuel, Alejandro Manuel |
 
 **Setiembre, 2026**
 
