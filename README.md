@@ -28,7 +28,7 @@
 | :----: | :------------------ |
 | u202317269 | Bonifacio Jaramillo, Samuel Jesus |
 | u202320684 | Ponce Perales, Alberto Alejandro |
-| — | Verona Flores, Ítalo Sebastián |
+| u20221e617 | Verona Flores, Ítalo Sebastián |
 | — | Sulca, Piero |
 | — | Galindo Manuel, Alejandro |
 
