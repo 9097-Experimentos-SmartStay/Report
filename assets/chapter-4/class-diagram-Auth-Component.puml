@@ -1,0 +1,47 @@
+﻿@startuml AuthComponentClassDiagram
+' Estilo
+skinparam classAttributeIconSize 0
+skinparam roundcorner 10
+
+package "Auth Component" {
+
+    ' --- Servicio Principal y Repositorio ---
+    class AuthService {
+        - userRepository: IUserRepository
+        + register(name, email, password, role): User
+        + login(email, password): string JWT
+        + validateToken(token: string): UserPrincipal
+        + checkPermissions(userId: string, requiredRole: Role): boolean
+    }
+
+    interface IUserRepository {
+        + findByEmail(email: string): User
+        + findById(id: string): User
+        + save(user: User): User
+    }
+
+    ' --- Clases de Dominio y Roles ---
+    abstract class User {
+        # id: string
+        # name: string
+        # email: string
+        # passwordHash: string
+        # role: Role
+    }
+
+    class Guest extends User {}
+    class Host extends User {}
+    class HotelStaff extends User {}
+
+    enum Role {
+        GUEST
+        HOST
+        HOTEL_STAFF
+        VISITOR
+    }
+
+    ' --- Relaciones ---
+    AuthService "1" -> "1" IUserRepository : uses
+    IUserRepository "1" --|> "1..*" User : manages
+}
+@enduml

@@ -1,0 +1,41 @@
+﻿@startuml IotGatewayComponentClassDiagram
+' Estilo
+skinparam classAttributeIconSize 0
+skinparam roundcorner 10
+
+package "IoT Gateway Component" {
+
+    class MessageListener {
+        - rulesEngine: RulesEngine
+        + onMessageReceived(message: byte[]): void
+    }
+
+    class RulesEngine {
+        - deviceControllers: Map<DeviceType, IDeviceController>
+        + processCommand(command: IoTCommand): void
+    }
+
+    interface IDeviceController {
+        + execute(command: IoTCommand): void
+    }
+
+    class SmartLockController implements IDeviceController {
+        - apiClient: ICloudApiClient
+        + execute(command: IoTCommand): void
+    }
+
+    class SmartLightController implements IDeviceController {
+        - apiClient: ICloudApiClient
+        + execute(command: IoTCommand): void
+    }
+
+    interface ICloudApiClient {
+        + sendRequest(request: ApiRequest): ApiResponse
+    }
+
+    ' --- Relaciones ---
+    MessageListener "1" -> "1" RulesEngine : forwards to
+    RulesEngine "1" o-- "*" IDeviceController : delegates to
+    IDeviceController "1" -> "1" ICloudApiClient : uses
+}
+@enduml

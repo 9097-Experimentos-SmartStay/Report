@@ -57,19 +57,212 @@ El testing automatizado sirve dos propósitos en el contexto del curso de Experi
 
 **Pendiente:** registrar las entrevistas de validación en las que usuarios de los segmentos objetivo interactúan con la Landing Page y las aplicaciones, aplicando el formato de evaluación heurística del Anexo D del enunciado (usabilidad, arquitectura de información e inclusive design).
 
-<!-- Evidencia candidata en repo remoto (assets/Chapter-IIII/): entrevista-1-admin.png, entrevista-1-cliente.png, entrevista-2-admin.png, android-studio-emulator.jpg; assets/ raíz: appexecution1-3. -->
+<!-- Evidencia: entrevista-1-admin.png, entrevista-1-cliente.png, entrevista-2-admin.png, android-studio-emulator.jpg; appexecution1-3. -->
 
 ### 6.3.1. Diseño de Entrevistas
 
-**Pendiente:** por segmento objetivo, elementos a incluir en la sesión (Landing Page + aplicaciones) y los user flows que formarán parte de la validación.
+**Objetivo:** Validar utilidad, control y claridad de los flujos clave de SmartStay (check-in/check-out digital, housekeeping, notifications y service requests).
+
+**Preguntas clave - Staff Operativo**
+
+1. ¿En qué pasos del flujo de check-in/check-out necesitas más control desde la app y por qué?
+2. ¿Qué información mínima requiere una service request para que puedas actuar sin llamadas o WhatsApp?
+3. ¿Qué tipos de notifications consideras críticas y cuáles deberían ser silenciosas?
+4. ¿Qué latencia toleras para ver cambios de room status en tiempo real antes de tomar decisiones operativas?
+5. ¿Qué indicadores en el dashboard te ayudan a priorizar tareas de housekeeping y mantenimiento?
+
+**Preguntas clave - Huéspedes**
+
+1. ¿Qué parte del check-in digital te genera más incertidumbre (identidad, pago, asignación de habitación) y por qué?
+2. ¿Qué funciones de control de la habitación usarías desde la app y con qué frecuencia?
+3. ¿Qué información necesitas ver para confiar en los cargos y la reserva (fees, timestamps, policy)?
+4. ¿En qué situaciones preferirías contactar al staff en lugar de usar la app?
+5. ¿Cómo evaluarías la claridad de la navegación en tu primera sesión sin ayuda del staff?
 
 ### 6.3.2. Registro de Entrevistas
 
-**Pendiente:** 3 a 5 entrevistas por segmento; por entrevista: nombres, apellidos, edad, distrito, screenshot de un cuadro de video y URL del video en Microsoft Stream con timing (inicio y duración), más resumen descriptivo de las apreciaciones del entrevistado.
+### Entrevista – Segmento 1: Administradores de Hoteles Boutique y Pequeños
+
+#### Entrevista 1
+
+Datos del entrevistado:
+
+**Nombre completo:** Alessandro Daniel Bravo Castillo
+
+**Edad:** 27
+
+**Ciudad:** Lima
+
+**Duración:**  5:24 minutos
+
+**Evidencia:** ![entrevista-1-admin.png](../assets/chapter-6/entrevista-1-admin.png)
+
+**URL del video:**
+https://tinyurl.com/y85aj7s4
+
+**Resumen de la entrevista**
+
+Alessandro Bravo calificó la herramienta como bastante eficiente, destacando su interfaz sencilla e intuitiva, con diseño claro y acciones bien ubicadas; valoró especialmente la gestión de staff por ofrecer mayor control sobre los empleados, la gestión de habitaciones por su claridad en disponibilidad y servicios, y la mejora de procesos clave como reservas y reportes al reemplazar métodos engorrosos como Excel; sugirió añadir un dashboard específico para habitaciones en promoción; afirmó que la app encajaría muy bien en su hotel, ayudaría a prevenir errores como la sobre-reserva, y que el equipo podría adaptarse fácilmente con buena capacitación, mostrando confianza en su implementación por considerarla confiable y fácil de usar
+
+---
+
+#### Entrevista 2
+
+Datos del entrevistado:
+
+**Nombre completo:** Jorge Linares
+
+**Edad:** 29
+
+**Ciudad:** Lima
+
+**Duración:**  8:39 minutos
+
+**Evidencia:** ![entrevista-2-admin.png](../assets/chapter-6/entrevista-2-admin.png)
+
+**URL del video:**
+https://tinyurl.com/4k3kr4mv
+
+**Resumen de la entrevista**
+
+Jorge Linares tuvo una impresión muy positiva de la aplicación de gestión hotelera, destacando su interfaz intuitiva y ordenada con nombres descriptivos que facilitan el uso; valoró especialmente la agilidad, automatización y el módulo de reservas por su vista detallada, además de la capacidad del sistema para prevenir errores como la sobre-reserva y centralizar información dispersa; sugirió mejoras como un módulo de pagos, exportación de reportes en PDF y funciones para coordinar al personal, además de asegurar la escalabilidad para hoteles grandes; consideró que su equipo podría adaptarse fácilmente con una breve capacitación y estaría dispuesto a pagar una suscripción mensual si el precio es razonable y la herramienta se mantiene estable.
+
+---
+
+### Entrevista – Segmento 2: Huéspedes de Hoteles Boutique
+
+#### Entrevista 1
+
+Datos del entrevistado:
+
+**Nombre completo:** Nicole Yamile Avila Ayquipa
+
+**Edad:** 25 años
+
+**Distrito:** Lima, centro de Lima
+
+**Duración:** 03:51 minutos
+
+**Evidencia:** ![entrevista-1-cliente.png](../assets/chapter-6/entrevista-1-cliente.png)
+
+**URL del video:** https://tinyurl.com/bdd2t8cu
+
+**Resumen de la entrevista**
+
+Nicole Ávila tuvo una buena impresión de la aplicación, destacando su practicidad al centralizar información de varios hoteles y su interfaz intuitiva con ventanas rotativas que facilitan la exploración; valoró especialmente la agenda de reservas por su orden y claridad, así como la posibilidad de tomar decisiones más informadas gracias a las reseñas de otros huéspedes, sin encontrar funciones innecesarias; aunque considera el sistema confiable, sugirió incorporar una ventana de asistencia virtual para mantener interacción humana; afirmó que preferiría hoteles con esta experiencia digital y estaría dispuesta a pagar más por la seguridad que le brinda al elegir con mayor información.
 
 ### 6.3.3. Evaluaciones según heurísticas
 
-**Pendiente:** evaluación de las sesiones de validación según el formato del Anexo D (UX Heuristics & Principles Evaluation — Usability / Inclusive Design / Information Architecture): escala de severidad 1–4, tabla resumen (Problema, Severidad, Heurística violada) y descripción de problemas con capturas y recomendaciones.
+**CARRERA:** Ingeniería de Software  
+**CURSO:** 1ACC0238 Aplicaciones para Dispositivos Móviles  
+**SECCIÓN:** 3821  
+**PROFESORES:** Jorge Luis Mayta Guillermo  
+**AUDITOR:** MovilDev Team  
+**CLIENTE(S):** Staff operativo de Hoteles Boutique / Huéspedes
+**SITE/APP EVALUADA:** Smart Stay
+
+---
+
+### Tareas a Evaluar
+
+**Tareas incluidas:**
+1. Registro de usuario y flujo de check-in/check-out  
+2. Uso de llave digital / acceso a habitación  
+3. Control IoT: ajuste de temperatura e iluminación  
+4. Reporte y confirmación de limpieza (housekeeping)  
+5. Solicitud de servicio (room service / mantenimiento)
+
+**Tareas NO incluidas en esta evaluación:**
+1. Pago de reserva y procesamiento de facturación  
+2. Gestión de puntos / programa de fidelización  
+3. Chat en vivo con atención (soporte en tiempo real)
+
+---
+
+### Tabla Resumen
+
+| # | Problema | Escala de severidad | Heurística/Principio violada(o) |
+|---|---|---:|---|
+| 1 | Ausencia de botón "Atrás" o "Cancelar" en el flujo de check-in | 3 | Usability: Control y libertad del usuario |
+| 2 | Iconos de estado de habitación poco intuitivos y sin etiquetas | 3 | Usability: Reconocimiento antes que recuerdo |
+| 3 | Controles de IoT sin texto alternativo ni etiquetas accesibles | 3 | Inclusive Design: Proporciona experiencias comparables |
+| 4 | Menú de "Solicitudes de Servicio" desordenado y sin jerarquía | 2 | Usability: Cumplimiento de estándares y convenciones |
+| 5 | Falta de confirmación visual al enviar una solicitud de servicio | 3 | Usability: Visibilidad del estado del sistema |
+
+---
+
+### Fichas Detalladas (Problemas de severidad 3)
+
+#### PROBLEMA #1: Ausencia de Control y Libertad en el Flujo de Check-in
+
+**Severidad:** 3
+
+**Heurística violada:** Usability - Control y libertad del usuario
+
+**Problema:**
+Durante el proceso de check-in digital, no hay opción para retroceder o cancelar sin perder todo el progreso. Si el huésped necesita corregir datos (fecha, número de documento, selección de habitación) debe cerrar la aplicación y reiniciar el flujo, aumentando la frustración y el riesgo de abandono. Para el Staff Operativo, la imposibilidad de cancelar o devolver un paso en procesos administrativos también provoca errores en la asignación de tareas.
+
+**Captura de pantalla:** 
+
+**Recomendación:**
+- Agregar un botón "Atrás" en la esquina superior izquierda y un botón "Cancelar" en pasos críticos, siguiendo convenciones de Material Design.  
+- Implementar guardado en sesión local (persistencia temporal) para que los datos no se pierdan si el usuario sale y vuelve al flujo.  
+- Mostrar diálogo de confirmación al intentar salir mid-flow con opciones: "Continuar registro", "Guardar y salir" y "Cancelar registro".
+
+---
+
+#### PROBLEMA #2: Iconografía Inconsistente y Poco Intuitiva en Indicadores de Estado
+
+**Severidad:** 3
+
+**Heurística violada:** Usability - Reconocimiento antes que recuerdo
+
+**Problema:**
+Los estados de habitación se representan con símbolos no estándares y sin etiquetas textuales (ej: círculo con patrón, punto, triángulo). El Staff Operativo debe memorizar su significado, aumentando errores en la asignación de tareas y tiempos de respuesta. Durante las pruebas, varios usuarios confundieron iconos y asignaron housekeeping a habitaciones ocupadas.
+
+**Captura de pantalla:** 
+
+**Recomendación:**
+- Rediseñar iconos usando convenciones universales: `check` verde para "Limpia", `candado` rojo para "Ocupada", `herramientas` amarillo para "Mantenimiento".  
+- Añadir etiqueta de texto bajo el icono en la vista compacta (ej: "Limpia") y permitir vista compacta sin texto como preferencia de usuario.  
+- Acompañar con colores accesibles y patrones para soportar daltonismo (ej: icon + color + patrón).  
+- Actualizar la biblioteca de componentes accesibles con patrones y ejemplos.
+
+---
+
+#### PROBLEMA #3: Falta de Texto Alternativo y Etiquetas de Accesibilidad en Controles IoT
+
+**Severidad:** 3
+
+**Heurística violada:** Inclusive Design - Proporciona experiencias comparables
+
+**Problema:**
+Los controles de iluminación y temperatura no incluyen descripciones accesibles (aria-label / accessibilityLabel) ni equivalentes textuales. Usuarios que dependen de lectores de pantalla (TalkBack, VoiceOver) no pueden identificar ni operar estos controles, lo que excluye a personas con discapacidad visual y viola recomendaciones WCAG.
+
+**Captura de pantalla:** 
+
+**Recomendación:**
+- Para web/Angular: agregar `aria-label` y `aria-describedby` en todos los controles interactivos; ejemplo: `<mat-slider aria-label="Ajuste de temperatura en °C" aria-describedby="temp-help"></mat-slider>`.  
+- Para Flutter: envolver controles con `Semantics(label: 'Ajuste de temperatura en grados Celsius', value: '22')` y usar `excludeSemantics` donde aplique.  
+- Incluir descripciones sonoras opcionales y probar con lectores de pantalla reales durante QA (probar con TalkBack/VoiceOver).  
+- Actualizar la biblioteca de componentes accesibles con patrones y ejemplos.
+
+---
+
+### Observaciones adicionales (Problemas menores)
+
+- PROBLEMA #4 (Sev.2): Reorganizar el menú de "Solicitudes de Servicio" por frecuencia o categoría y añadir un buscador rápido.  
+- PROBLEMA #5 (Sev.3): Implementar pantalla/modal de confirmación tras envío de solicitud con número de ticket, hora y tiempo estimado; en caso de fallo, explicar la causa y ofrecer reintento automático.
+
+---
+
+### Validación y Seguimiento
+
+- Registrar cada corrección como un requisito en el backlog (EPIC/US) e incluir criterios de aceptación claros para QA.  
+- Priorizar las fichas de severidad 3 para el próximo sprint de refinamiento.  
+- Incluir pruebas de accesibilidad y pruebas en dispositivos reales distribuidos vía Firebase App Distribution como parte del plan de validación.
+
+---
 
 ## 6.4. Auditoría de Experiencias de Usuario
 
