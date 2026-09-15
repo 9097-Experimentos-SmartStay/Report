@@ -28,8 +28,10 @@ Entre sus principales características destacan:
     </tr>
   </thead>
   <tbody>
-    <td align="center" valign="middle">
+    <tr>
+      <td align="center" valign="middle">
        <img src="../assets/chapter-1/members/samuel.png" alt="Bonifacio Jaramillo Samuel Jesus" width="300">
+      </td>
       <td>Bonifacio Jaramillo Samuel Jesus</td>
       <td>u202317269</td>
       <td>Ingeniería de Software</td>
@@ -45,7 +47,7 @@ Entre sus principales características destacan:
     <tr>
       <td></td>
       <td>Verona Flores, Ítalo Sebastián</td>
-      <td>[Código]</td>
+      <td>u20221e617</td>
       <td>Ingeniería de Software</td>
       <td>[Completar]</td>
     </tr>
@@ -59,6 +61,7 @@ Entre sus principales características destacan:
     <tr>
       <td align="center" valign="middle">
        <img src="../assets/chapter-1/members/AlejandroGalindo.jpg" alt="Galindo Montero Alejandro Manuel" width="300">
+      </td>
       <td>Galindo Manuel, Alejandro</td>
       <td>u202321264</td>
       <td>Ingeniería de Software</td>

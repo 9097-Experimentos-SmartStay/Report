@@ -14,19 +14,19 @@ Frente a este problema, la startup Movildev plantea el producto SmartStay, que i
 
 ## Video App Validation
 
-![App Validation](../assets/anexes/app-validation.png)
+**Pendiente:** incorporar la evidencia de App Validation.
 
 Link: -
 
 ## Video About The Product
 
-![About The Product](../assets/anexes/about-the-product.png)
+**Pendiente:** incorporar la evidencia de About The Product.
 
 Link: -
 
 ## Video About The Team
 
-![About The Team](../assets/anexes/about-the-team.png)
+**Pendiente:** incorporar la evidencia de About The Team.
 
 Link: -
 
