@@ -29,10 +29,10 @@
 | Código | Apellidos y Nombres |
 | :----: | :------------------ |
 | u202317269 | Bonifacio Jaramillo, Samuel Jesus |
-| u202320684 | Ponce Perales, Alberto Alejandro |
-| u20221e617 | Verona Flores, Ítalo Sebastián |
-| — | Sulca, Piero |
 | u202321264 | Galindo Manuel, Alejandro Manuel |
+| u202320684 | Ponce Perales, Alberto Alejandro |
+| u202423711 | Sulca Sanchez, Piero Angel |
+| u20221e617 | Verona Flores, Ítalo Sebastián |
 
 **Setiembre, 2026**
 
