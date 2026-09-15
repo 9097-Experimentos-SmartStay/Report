@@ -164,164 +164,45 @@ El objetivo de esta sección es resumir las modificaciones relevantes que se rea
 > Criterio: La capacidad de reconocer responsabilidades éticas y profesionales en situaciones de ingeniería y hacer juicios informados, que deben considerar el impacto de las soluciones de ingeniería en contextos globales, económicos, ambientales y sociales.
 >
 > En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET – EAC - Student Outcome 4.
->
-> *Párrafo introductorio transcrito de forma idéntica al Anexo A del enunciado del Final Project Statement.*
 
-<table border="1">
-<thead>
-<tr>
-<th width="25%"><b>Criterio Específico</b></th>
-<th><b>Acciones Realizadas</b></th>
-<th><b>Conclusiones</b></th>
-</tr>
-</thead>
+*(Párrafo introductorio transcrito de forma idéntica al Anexo A del enunciado del Final Project Statement.)*
 
-<tbody>
-
-<tr>
-<td width="25%">
-<b>4.c.1</b> Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software
-</td>
-
-<td>
-
-<b>AV1</b><br><br>
-
-<b>Bonifacio Jaramillo, Samuel Jesus:</b><br>
-A través de la entrevistas, Implementé un Product Backlog construido sobre las US del proyecto y las entrevistas realizadas al público objetivo. Este proceso me permitió identificar el panorama ideal de hacia dónde debemos enfocar la solución digital que estamos desarrollando. <br><br>
-
-Ponce Perales, Alberto Alejandro — <em>pendiente de redacción</em> <br><br>
-
-<b>Verona Flores, Ítalo Sebastián:</b><br>
-A través del análisis de las necesidades identificadas en las entrevistas, participé en la definición de los requerimientos del proyecto, considerando la responsabilidad de plantear una solución que responda de manera adecuada a las necesidades del público objetivo y evitando incorporar funcionalidades que no aporten valor. <br><br>
-
-Sulca, Piero — <em>pendiente</em> <br><br>
-
-Galindo Manuel, Alejandro — <em>pendiente</em>
-
-</td>
-
-<td>
-<em>Pendiente (grupal, acumulable por entrega)</em>
-</td>
-
-</tr>
-
-<tr>
-
-<td width="25%">
-<b>4.c.2</b> Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales
-</td>
-
-<td>
-
-<b>AV1</b><br><br>
-
-<b>Bonifacio Jaramillo, Samuel Jesus:</b><br>
-Aprendí a recolectar el feedback y las necesidades de un público objetivo. Identificar y convertir cada necesidad en un driver/requerimiento para el software a construir. <br><br>
-
-Ponce Perales, Alberto Alejandro — <em>pendiente de redacción</em> <br><br>
-
-<b>Verona Flores, Ítalo Sebastián:</b><br>
-Participé en el análisis y priorización de los requerimientos identificados, evaluando su utilidad y el impacto que podrían generar en los usuarios. Esto permitió tomar decisiones orientadas a desarrollar una solución viable y alineada con las necesidades reales del contexto estudiado. <br><br>
-
-Sulca, Piero — <em>pendiente</em> <br><br>
-
-Galindo Manuel, Alejandro — <em>pendiente</em>
-
-</td>
-
-<td>
-<em>Pendiente (grupal, acumulable por entrega)</em>
-</td>
-
-</tr>
-
-</tbody>
+<table border>
+  <thead>
+    <tr>
+      <th width="25%"><b>Criterio Específico</b></th>
+      <th><b>Acciones Realizadas</b></th>
+      <th><b>Conclusiones</b></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td width="25%"><b>4.c.1</b> Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software</td>
+      <td>
+        <b>AV1<br>
+        Bonifacio Jaramillo, Samuel Jesus:</b> <br>A través de la entrevistas, Implementé un Product Backlog construido sobre las US del proyecto y las entrevistas realizadas al público objetivo. Este proceso me permitió identificar el panorama ideal de hacia dónde debemos enfocar la solución digital que estamos desarrollando.
+<br>
+        Ponce Perales, Alberto Alejandro — <em>pendiente de redacción</em><br>
+        Verona Flores, Ítalo Sebastián — <em>pendiente</em><br>
+        Sulca, Piero — <em>pendiente</em><br>
+        Galindo Manuel, Alejandro — <em>pendiente</em>
+      </td>
+      <td><em>Pendiente (grupal, acumulable por entrega)</em></td>
+    </tr>
+    <tr>
+      <td width="25%"><b>4.c.2</b> Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales</td>
+      <td>
+        <b>AV1<br>
+        Bonifacio Jaramillo, Samuel Jesus:</b> <br> Aprendí a recolectar el feedback y las necesidades de un público objetivo. Identificar y convertir cada necesidad en un driver/requerimiento para el software a construir.<br>
+        Ponce Perales, Alberto Alejandro — <em>pendiente de redacción</em><br>
+        Verona Flores, Ítalo Sebastián — <em>pendiente</em><br>
+        Sulca, Piero — <em>pendiente</em><br>
+        Galindo Manuel, Alejandro — <em>pendiente</em>
+      </td>
+      <td><em>Pendiente (grupal, acumulable por entrega)</em></td>
+    </tr>
+  </tbody>
 </table>
-
-
-> El curso contribuye al cumplimiento del Student Outcome ABET:
->
-> ABET – EAC - Student Outcome 4
-> Criterio: La capacidad de reconocer responsabilidades éticas y profesionales en situaciones de ingeniería y hacer juicios informados, que deben considerar el impacto de las soluciones de ingeniería en contextos globales, económicos, ambientales y sociales.
->
-> En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET – EAC - Student Outcome 4.
-
-<table border="1">
-<thead>
-<tr>
-<th width="25%"><b>Criterio Específico</b></th>
-<th><b>Acciones Realizadas</b></th>
-<th><b>Conclusiones</b></th>
-</tr>
-</thead>
-
-<tbody>
-
-<tr>
-
-<td width="25%">
-<b>4.c.1</b> Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software
-</td>
-
-<td>
-
-<b>AV1</b><br><br>
-
-<b>Bonifacio Jaramillo, Samuel Jesus:</b><br>
-A través de la entrevistas, Implementé un Product Backlog construido sobre las US del proyecto y las entrevistas realizadas al público objetivo. Este proceso me permitió identificar el panorama ideal de hacia dónde debemos enfocar la solución digital que estamos desarrollando. <br><br>
-
-Ponce Perales, Alberto Alejandro — <em>pendiente de redacción</em> <br><br>
-
-<b>Verona Flores, Ítalo Sebastián:</b><br>
-Participé en la identificación y definición de los requerimientos del proyecto a partir de las necesidades obtenidas durante las entrevistas. Consideré la responsabilidad de proponer funcionalidades que respondan al contexto real de los usuarios y que aporten valor a la solución, evitando decisiones que pudieran afectar negativamente su experiencia. <br><br>
-
-Sulca, Piero — <em>pendiente</em> <br><br>
-
-Galindo Manuel, Alejandro — <em>pendiente</em>
-
-</td>
-
-<td>
-<em>Pendiente (grupal, acumulable por entrega)</em>
-</td>
-
-</tr>
-
-<tr>
-
-<td width="25%">
-<b>4.c.2</b> Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales
-</td>
-
-<td>
-
-<b>AV1</b><br><br>
-
-<b>Bonifacio Jaramillo, Samuel Jesus:</b><br>
-Aprendí a recolectar el feedback y las necesidades de un público objetivo. Identificar y convertir cada necesidad en un driver/requerimiento para el software a construir. <br><br>
-
-Ponce Perales, Alberto Alejandro — <em>pendiente de redacción</em> <br><br>
-
-<b>Verona Flores, Ítalo Sebastián:</b><br>
-Participé en la evaluación y priorización de los requerimientos identificados, considerando las necesidades de los usuarios y el contexto del proyecto. Esto me permitió emitir juicios informados para orientar las decisiones de desarrollo hacia una solución viable, útil y alineada con el impacto que tendrá en los usuarios y en el entorno donde será aplicada. <br><br>
-
-Sulca, Piero — <em>pendiente</em> <br><br>
-
-Galindo Manuel, Alejandro — <em>pendiente</em>
-
-</td>
-
-<td>
-<em>Pendiente (grupal, acumulable por entrega)</em>
-</td>
-
-</tr>
-
-</tbody>
-</table>
-
 
 ---
 
@@ -347,108 +228,58 @@ Entre sus principales características destacan:
 ### 1.1.2. Perfiles de integrantes del equipo
 
 <table border>
-<thead>
-<tr>
-
-  <th>Foto</th>
-
-  <th>Nombre completo</th>
-
-  <th>Código</th>
-
-  <th>Carrera</th>
-
-  <th>Habilidades técnicas</th>
-
-</tr>
-</thead>
-<tbody>
-<tr>
-
-  <td align="center" valign="middle">
-
-   <img src="assets/chapter-1/members/samuel-bonifacio-jaramillo.png" alt="Bonifacio Jaramillo Samuel Jesus" width="300">
-
-  </td>
-
-  <td>Bonifacio Jaramillo Samuel Jesus</td>
-
-  <td>u202317269</td>
-
-  <td>Ingeniería de Software</td>
-
-  <td>Soy Desarrollador full stack orientado a soluciones de IA. Amplia experiencia en pipelines automatizados y experimentos con LLMs. Actualmente desarrollando workflows inteligentes.</td>
-
-</tr>
-
-<tr>
-
-  <td></td>
-
-  <td>Ponce Perales, Alberto Alejandro</td>
-
-  <td>u202320684</td>
-
-  <td>Ingeniería de Software</td>
-
-  <td>Estudiante de la carrera de Ingeniería de Software en la UPC. Actualmente cuento con conocimientos en lenguajes de programación como C++ y manejo de Java. Considero que mis mayores virtudes son: la responsabilidad, capacidad de adaptarme, trabajar en equipo y la resiliencia.</td>
-
-</tr>
-
-<tr>
-
-  <td align="center" valign="middle">
-
-   <img src="assets/chapter-1/members/italo-verona.jpg" alt="Verona Flores, Ítalo Sebastián" width="300">
-
-  </td>
-
-  <td>Verona Flores, Ítalo Sebastián</td>
-
-  <td>u20221e617</td>
-
-  <td>Ingeniería de Software</td>
-
-  <td>Estudiante de Ingeniería de Software con enfoque en desarrollo backend y diseño de arquitecturas escalables. Cuento con experiencia en C#, .NET, Entity Framework Core y aplicación de Domain-Driven Design (DDD), además de integración con bases de datos y diseño UI/UX en Figma. En el equipo aporto habilidades en estructuración de dominios, buenas prácticas de desarrollo y trabajo colaborativo.</td>
-
-</tr>
-
-<tr>
-
-  <td align="center" valign="middle">
-
-   <img src="assets/chapter-1/members/piero-sulca.jpg" alt="Sulca Sanchez Piero Angel" width="300">
-
-  </td>
-
-  <td>Sulca Sanchez, Piero Angel</td>
-
-  <td>u202423711</td>
-
-  <td>Ingeniería de Software</td>
-
-  <td>Curso la carrera de Ingeniería de Software y tengo experiencia en desarrollo web trabajando con equipos pequeños. Me apasiona el Front End, sobre todo cuando hay espacio para el diseño creativo: interfaces 3D, animaciones, productos que se ven y se sienten distintos. En el equipo puedo aportar en levantamiento de requerimientos, diseño de interfaces, desarrollo web con React y TypeScript, diseño de bases de datos. En el equipo aporto organización y colaboración. </td>
-
-</tr>
-
-<tr>
-
-  <td align="center" valign="middle">
-
-   <img src="assets/chapter-1/members/alejandro-galindo.jpg" alt="Galindo Montero Alejandro Manuel" width="300">
-
-  </td>
-
-  <td>Galindo Manuel, Alejandro</td>
-
-  <td>u202321264</td>
-
-  <td>Ingeniería de Software</td>
-
-  <td>Mi nombre es Alejandro Manuel Galindo Montero, tengo 22 años y curso la carrera de Ingeniería de Software. Me considero una persona creativa y responsable, y en mis tiempos libres me gusta aprender cosas nuevas. Cuento con conocimientos en desarrollo web y móvil, además de experiencia en desarrollo full stack con C#, Java, TypeScript y Flutter. En este proyecto apoyaré con todos los conocimientos que he adquirido en los últimos años. </td>
-
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Foto</th>
+      <th>Nombre completo</th>
+      <th>Código</th>
+      <th>Carrera</th>
+      <th>Habilidades técnicas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center" valign="middle">
+       <img src="assets/chapter-1/members/samuel-bonifacio-jaramillo.png" alt="Bonifacio Jaramillo Samuel Jesus" width="300">
+      </td>
+      <td>Bonifacio Jaramillo Samuel Jesus</td>
+      <td>u202317269</td>
+      <td>Ingeniería de Software</td>
+      <td>Soy Desarrollador full stack orientado a soluciones de IA. Amplia experiencia en pipelines automatizados y experimentos con LLMs. Actualmente desarrollando workflows inteligentes.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Ponce Perales, Alberto Alejandro</td>
+      <td>u202320684</td>
+      <td>Ingeniería de Software</td>
+      <td>Estudiante de la carrera de Ingeniería de Software en la UPC. Actualmente cuento con conocimientos en lenguajes de programación como C++ y manejo de Java. Considero que mis mayores virtudes son: la responsabilidad, capacidad de adaptarme, trabajar en equipo y la resiliencia.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Verona Flores, Ítalo Sebastián</td>
+      <td>u20221e617</td>
+      <td>Ingeniería de Software</td>
+      <td>[Completar]</td>
+    </tr>
+    <tr>
+      <td align="center" valign="middle">
+       <img src="assets/chapter-1/members/piero-sulca.jpg" alt="Sulca Sanchez Piero Angel" width="300">
+      </td>
+      <td>Sulca Sanchez, Piero Angel</td>
+      <td>u202423711</td>
+      <td>Ingeniería de Software</td>
+      <td>Curso la carrera de Ingeniería de Software y tengo experiencia en desarrollo web trabajando con equipos pequeños. Me apasiona el Front End, sobre todo cuando hay espacio para el diseño creativo: interfaces 3D, animaciones, productos que se ven y se sienten distintos. En el equipo puedo aportar en levantamiento de requerimientos, diseño de interfaces, desarrollo web con React y TypeScript, diseño de bases de datos. En el equipo aporto organización y colaboración. </td>
+    </tr>
+    <tr>
+      <td align="center" valign="middle">
+       <img src="assets/chapter-1/members/alejandro-galindo.jpg" alt="Galindo Montero Alejandro Manuel" width="300">
+      </td>
+      <td>Galindo Manuel, Alejandro</td>
+      <td>u202321264</td>
+      <td>Ingeniería de Software</td>
+      <td>Mi nombre es Alejandro Manuel Galindo Montero, tengo 22 años y curso la carrera de Ingeniería de Software. Me considero una persona creativa y responsable, y en mis tiempos libres me gusta aprender cosas nuevas. Cuento con conocimientos en desarrollo web y móvil, además de experiencia en desarrollo full stack con C#, Java, TypeScript y Flutter. En este proyecto apoyaré con todos los conocimientos que he adquirido en los últimos años. </td>
+    </tr>
+  </tbody>
 </table>
 
 ---
