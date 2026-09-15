@@ -49,22 +49,34 @@ class ReportTests(unittest.TestCase):
             build_report.rewrite_links('![Foto](../assets/missing.png)', Path("docs/chapter.md"))
 
     def test_toc_uses_real_headings_and_unique_unicode_anchors(self):
-        manifest = {"cover": "docs/cover.md", "info": "docs/info.md", "sections": [{"file": "docs/chapter.md"}]}
+        manifest = {"cover": "docs/cover.md", "info": "docs/info.md", "student_outcome": "docs/outcome.md", "sections": [{"file": "docs/chapter.md"}]}
         (self.root / "docs/report.json").write_text(json.dumps(manifest))
-        (self.root / "docs/cover.md").write_text("## Equipo\n")
-        (self.root / "docs/info.md").write_text("## Student Outcome\n")
+        (self.root / "docs/cover.md").write_text("## 1.1. Equipo\n")
+        (self.root / "docs/info.md").write_text("## Registro de Versiones del Informe\n")
+        (self.root / "docs/outcome.md").write_text("## Student Outcome\n")
         chapter = self.root / "docs/chapter.md"
-        chapter.write_text("# Capítulo I: Introducción\n\n## Equipo\n\n## Equipo\n\n## A & B\n\n```md\n## Invisible\n```\n")
+        chapter.write_text("# Capítulo I: Introducción\n\n## 1.1. Equipo\n\n## 1.1. Equipo\n\n## 1.2. A & B\n\n### Descripción interna\n\n#### 5.2.1.1. Sprint 1\n\n```md\n## Invisible\n```\n")
         result = build_report.build()
         self.assertIn('- [Capítulo I: Introducción](#capítulo-i-introducción)', result)
-        self.assertIn('  - [Equipo](#equipo-1)', result)
-        self.assertIn('  - [Equipo](#equipo-2)', result)
-        self.assertIn('  - [A & B](#a--b)', result)
+        self.assertIn('  - [1.1. Equipo](#11-equipo-1)', result)
+        self.assertIn('  - [1.1. Equipo](#11-equipo-2)', result)
+        self.assertIn('  - [1.2. A & B](#12-a--b)', result)
         self.assertNotIn('[Invisible]', result)
+        self.assertNotIn('[Descripción interna]', result)
+        self.assertNotIn('[5.2.1.1. Sprint 1]', result)
+        # Use heading positions, rather than links in the generated contents.
+        self.assertLess(result.index('\n## Registro de Versiones del Informe'), result.index('\n## Contenido'))
+        self.assertLess(result.index('\n## Contenido'), result.index('\n## Student Outcome'))
+        self.assertLess(result.index('\n## Student Outcome'), result.index('\n# Capítulo I'))
         self.assertEqual(result, build_report.build())
         chapter.write_text("# Capítulo I\n<<<<<<< HEAD\nconflicto\n=======\notro\n>>>>>>> main\n")
         with self.assertRaisesRegex(ValueError, "conflicto de Git"):
             build_report.build()
+
+    def test_outline_includes_required_four_level_sections(self):
+        self.assertTrue(build_report.in_contents(4, '1.2.2.4. Lean UX Canvas.'))
+        self.assertTrue(build_report.in_contents(4, '4.1.3.2. Android Mobile Style Guidelines.'))
+        self.assertFalse(build_report.in_contents(5, '5.2.1.1.1. Sprint Planning'))
 
 
 if __name__ == "__main__":

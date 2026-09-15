@@ -464,11 +464,11 @@ El proyecto implementa un flujo automatizado de **Integración Continua y Despli
 
 ### 5.2.1. Sprint Backlogs
 
-#### 4.2.1. Sprint 1 
+#### 5.2.1.1. Sprint 1 
 
 A continuación, se presenta el Sprint Planning 1, en el que se incluyen las evidencias de la planificación y desarrollo del Landing Page. Asimismo, se documentan los avances del proyecto y los insights de colaboración del equipo registrados a través de GitHub.
 
-##### 4.2.1.1. Sprint Planning 1
+##### 5.2.1.1.1. Sprint Planning 1
 
 
 | **Sprint #**                           | Sprint 1                                                                                                                                                                                                                                                      |
@@ -488,7 +488,7 @@ A continuación, se presenta el Sprint Planning 1, en el que se incluyen las evi
 
 
 
-##### 4.2.1.2. Sprint Backlog 1 
+##### 5.2.1.1.2. Sprint Backlog 1 
 
 ###### Introduccion
 
@@ -510,7 +510,7 @@ Este Sprint está enfocado en establecer la presencia digital oficial del proyec
 | Sprint 1     | US-26 – Success stories and testimonials   | UT-09                    | Ajustar animaciones y transiciones  | Aplicar efectos de entrada y desplazamiento fluido en los testimonios.                                       | 4                        |             | In Process      |
  
 
-##### 4.2.1.3. Development Evidence for Sprint Review
+##### 5.2.1.1.3. Development Evidence for Sprint Review
 
 Durante el desarrollo del sprint, el equipo trabajó de manera distribuida en los distintos repositorios del ecosistema **SmartStay**, incluyendo el Project Report, Landing Page, Mobile Application, Backend y APK. Para evidenciar el avance realizado, se presenta el siguiente cuadro de commits obtenidos de los repositorios oficiales del proyecto en GitHub.
 
@@ -557,7 +557,7 @@ Durante el desarrollo del sprint, el equipo trabajó de manera distribuida en lo
 
 La evidencia demuestra que el equipo realizó avances en los principales componentes del proyecto. En el repositorio del informe se documentaron los avances del sprint; en la Landing Page se implementaron mejoras visuales, traducción y secciones informativas; en el repositorio APK se publicó una versión demo de la aplicación; en la Mobile Application se desarrollaron funcionalidades de autenticación, perfiles y navegación; y en el Backend se implementaron servicios relacionados con IAM, seguridad, base de datos y configuración de infraestructura.
 
-##### 4.2.1.4. Testing Suite Evidence for Sprint Review
+##### 5.2.1.1.4. Testing Suite Evidence for Sprint Review
 
 Durante el sprint, se realizaron pruebas sobre los distintos componentes del ecosistema **SmartStay** con el objetivo de validar el correcto funcionamiento de la Landing Page, la aplicación móvil, el backend y la APK demo. Las pruebas se organizaron según la tecnología utilizada en cada repositorio.
 
@@ -577,7 +577,7 @@ Durante el sprint, se realizaron pruebas sobre los distintos componentes del eco
 | APK | Prueba funcional | Android Emulator / Dispositivo físico | Inicio de aplicación | La aplicación inicia correctamente desde la APK demo. | Aprobado |
 
 
-##### 4.2.1.5. Execution Evidence for Sprint Review 
+##### 5.2.1.1.5. Execution Evidence for Sprint Review 
 
 Durante el Sprint 1, se logró ejecutar y validar la aplicación móvil en el entorno de desarrollo de Android Studio, utilizando tanto el emulador como dispositivos físicos para asegurar la correcta funcionalidad de las características implementadas. Así mismo, el despliegue del backend y landing page.
 
@@ -589,7 +589,7 @@ Durante el Sprint 1, se logró ejecutar y validar la aplicación móvil en el en
 ![App Execution 3](../assets/chapter-5/appexecution3.jpg)
 
 
-##### 4.2.1.6. Services Documentation Evidence for Sprint Review
+##### 5.2.1.1.6. Services Documentation Evidence for Sprint Review
 
 **Profiles**: Este bounded context maneja la información de los perfiles de los usuarios dentro de la plataforma. Proporciona funcionalidades para crear perfiles, consultar su información y obtener el detalle de un perfil específico. Es esencial para almacenar y gestionar los datos personales asociados a cada usuario del sistema.
 
@@ -631,7 +631,7 @@ Durante el Sprint 1, se logró ejecutar y validar la aplicación móvil en el en
 
 ![swagercuartostipos.png](../assets/chapter-5/swagercuartostipo.png)
 
-##### 4.2.1.7. Software Deployment Evidence for Sprint Review
+##### 5.2.1.1.7. Software Deployment Evidence for Sprint Review
 
 En este Sprint 1, los miembros del equipo lograron completar las tareas asociadas al desarrollo inicial de la aplicación móvil SmartStay.
 
@@ -642,7 +642,7 @@ La aplicación móvil cumple el rol de plataforma principal de interacción para
 Una aplicación móvil es fundamental en proyectos modernos orientados a la experiencia del usuario, ya que permite ofrecer accesibilidad, rapidez e interacción en tiempo real desde dispositivos Android. En el caso de SmartStay, la aplicación busca optimizar la experiencia hotelera mediante procesos digitales y una gestión más eficiente de los servicios.
 
 
-##### 4.2.1.8. Team Collaboration Insights during Sprint
+##### 5.2.1.1.8. Team Collaboration Insights during Sprint
 
 Las actividades de desarrollo de este Sprint 1 se realizaron de forma colaborativa, distribuyendo las tareas entre todos los miembros del equipo.
 Acciones de colaboración destacadas:
@@ -655,11 +655,11 @@ Se realizaron revisiones de código en equipo para garantizar la coherencia visu
 
 Gracias a este flujo de trabajo organizado, el equipo logró avanzar de manera paralela y eficiente, minimizando conflictos en el código y obteniendo un resultado coherente y de calidad.
 
-#### 4.2.2. Sprint 2
+#### 5.2.1.2. Sprint 2
 
 A continuación, se presenta el Sprint Planning 2, en el que se incluyen las evidencias de planificación y desarrollo de las funcionalidades implementadas durante esta iteración. Asimismo, se documentan los avances del proyecto, las evidencias de pruebas, despliegue y los insights de colaboración del equipo registrados a través de GitHub.
 
-##### 4.2.2.1. Sprint Planning 2
+##### 5.2.1.2.1. Sprint Planning 2
 
 | **Sprint #**                        | Sprint 2                                                                                                                                                                                                                                |
 |-------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -678,7 +678,7 @@ A continuación, se presenta el Sprint Planning 2, en el que se incluyen las evi
 
 ---
 
-##### 4.2.2.2. Sprint Backlog 2
+##### 5.2.1.2.2. Sprint Backlog 2
 
 ###### Introducción
 
@@ -711,7 +711,7 @@ Durante esta iteración se desarrollarán funcionalidades relacionadas con IAM (
 | Sprint 2     | US-07          | UT-19              | Centralized reservation management  | Corrección de errores en módulo booking                             | Identificar y resolver errores funcionales en el flujo de booking detectados durante pruebas de integración.          | 4                      |                               | Done       |
 | Sprint 2     | US-24          | UT-20              | Segmented landing page              | Actualizar logo e identidad visual                                  | Incorporar el logotipo actualizado de SmartStay en la aplicación móvil y ajustar el nombre del proyecto.              | 2                      |                               | Done       |
 
-##### 4.2.2.3. Development Evidence for Sprint Review
+##### 5.2.1.2.3. Development Evidence for Sprint Review
 
 
 | Commit    | Autor          | Fecha      | Rama/Referencia      | Mensaje                                                                                                  |
@@ -747,7 +747,7 @@ Durante esta iteración se desarrollarán funcionalidades relacionadas con IAM (
 | `2e94c47` |        | 20/06/2026 | `feature/payments`   | feat: connect payments with accommodations                                                               |
 | `f241581` |        | 20/06/2026 | `feature/payments`   | Merge remote-tracking branch 'origin/accomodations-rebase' into feature/payments                         |
 
-##### 4.2.2.4. Testing Suite Evidence for Sprint Review
+##### 5.2.1.2.4. Testing Suite Evidence for Sprint Review
 
 ###### Evidencia de la Suite de Pruebas para la Revisión del Sprint
 
@@ -762,7 +762,7 @@ Durante este sprint, el equipo realizó actividades de prueba para validar las f
 
 ---
 
-##### 4.2.2.5. Execution Evidence for Sprint Review
+##### 5.2.1.2.5. Execution Evidence for Sprint Review
 
 Durante el Sprint 2 se ejecutaron y validaron las funcionalidades desarrolladas dentro de la aplicación móvil SmartStay. Las pruebas se realizaron utilizando Android Studio, dispositivos físicos y servicios desplegados en la nube para verificar la correcta integración entre frontend y backend.
 
@@ -777,7 +777,7 @@ Durante el Sprint 2 se ejecutaron y validaron las funcionalidades desarrolladas 
 
 ---
 
-##### 4.2.2.6. Services Documentation Evidence for Sprint Review
+##### 5.2.1.2.6. Services Documentation Evidence for Sprint Review
 
 Durante este sprint se actualizó el bounded context de IAM/Authentication, incorporando mejoras relacionadas con la autenticación de usuarios y la gestión de roles dentro del sistema. La documentación de los servicios REST fue verificada mediante Swagger/OpenAPI, donde se evidencian los endpoints disponibles para el inicio de sesión y registro de usuarios.
 
@@ -786,7 +786,7 @@ Durante este sprint se actualizó el bounded context de IAM/Authentication, inco
 
 Asimismo, durante el sprint se trabajó con la lógica de roles para diferenciar el acceso de los distintos tipos de usuario del sistema, como Guest, Admin y ChainAdmin, permitiendo controlar qué secciones y acciones están disponibles para cada perfil dentro de la aplicación.
 
-##### 4.2.2.7. Software Deployment Evidence for Sprint Review
+##### 5.2.1.2.7. Software Deployment Evidence for Sprint Review
 
 A continuación, se presentan las evidencias del **despliegue de la Landing Page** de Smart Stay, desarrollada y publicada mediante **GitHub Pages**.
 
@@ -814,7 +814,7 @@ La evidencia visual demuestra que el backend fue desplegado correctamente y que 
 
 ---
 
-##### 4.2.2.8. Team Collaboration Insights during Sprint
+##### 5.2.1.2.8. Team Collaboration Insights during Sprint
 
 Las actividades de desarrollo correspondientes al Sprint 2 fueron ejecutadas de manera colaborativa por todos los integrantes del equipo.
 
@@ -835,7 +835,7 @@ Gracias a estas prácticas, el equipo mantuvo un flujo de trabajo organizado y l
 
 
 
-#### 4.2.3. Sprint 3
+#### 5.2.1.3. Sprint 3
 
 A continuación, se presenta el desarrollo del Sprint 3, correspondiente a la iteración final del proyecto SmartStay. A diferencia de los sprints anteriores, esta etapa no se enfocó únicamente en construir módulos aislados, sino en completar, integrar, estabilizar y validar la versión final de la aplicación móvil y los servicios asociados.
 
@@ -843,7 +843,7 @@ Durante este sprint se priorizó el cierre funcional del producto, la correcció
 
 ---
 
-##### 4.2.3.1. Sprint Planning 3
+##### 5.2.1.3.1. Sprint Planning 3
 
 | **Sprint #** | Sprint 3 |
 |---|---|
@@ -862,7 +862,7 @@ Durante este sprint se priorizó el cierre funcional del producto, la correcció
 
 ---
 
-##### 4.2.3.2. Sprint Backlog 3
+##### 5.2.1.3.2. Sprint Backlog 3
 
 ###### Introducción
 
@@ -895,7 +895,7 @@ Las tareas desarrolladas se centraron en completar el flujo del huésped, mejora
 
 ---
 
-##### 4.2.3.3. Development Evidence for Sprint Review
+##### 5.2.1.3.3. Development Evidence for Sprint Review
 
 Durante el Sprint 3 se registraron commits orientados al cierre final del producto. Estos commits evidencian la implementación de nuevas pantallas, mejoras en los flujos de reserva y pago, actualización del dashboard operativo, corrección de errores, ajustes visuales y validación final de la integración entre módulos.
 
@@ -922,7 +922,7 @@ Durante el Sprint 3 se registraron commits orientados al cierre final del produc
 
 ---
 
-##### 4.2.3.4. Testing Suite Evidence for Sprint Review
+##### 5.2.1.3.4. Testing Suite Evidence for Sprint Review
 
 ###### Evidencia de la Suite de Pruebas para la Revisión del Sprint
 
@@ -945,7 +945,7 @@ Durante el Sprint 3 se ejecutaron pruebas funcionales, pruebas de integración, 
 
 ---
 
-##### 4.2.3.5. Execution Evidence for Sprint Review
+##### 5.2.1.3.5. Execution Evidence for Sprint Review
 
 Durante el Sprint 3 se ejecutó la versión final de la aplicación móvil SmartStay, validando los principales flujos funcionales definidos para la presentación final. Las pruebas fueron realizadas en Android Studio y dispositivos móviles, utilizando servicios backend desplegados para comprobar la integración real del sistema.
 
@@ -972,7 +972,7 @@ Los flujos ejecutados fueron los siguientes:
 
 ---
 
-##### 4.2.3.6. Services Documentation Evidence for Sprint Review
+##### 5.2.1.3.6. Services Documentation Evidence for Sprint Review
 
 Durante el Sprint 3 se revisó y actualizó la documentación de los servicios necesarios para la versión final de SmartStay. Esta documentación permitió validar que los endpoints principales se encuentren disponibles y alineados con los flujos implementados en la aplicación móvil.
 
@@ -993,7 +993,7 @@ Además, se verificó que los servicios mantengan una estructura coherente en su
 
 ---
 
-##### 4.2.3.7. Software Deployment Evidence for Sprint Review
+##### 5.2.1.3.7. Software Deployment Evidence for Sprint Review
 
 Durante el Sprint 3 se realizó la validación final del despliegue de los componentes principales del proyecto SmartStay.
 
@@ -1019,7 +1019,7 @@ Con estas evidencias, se confirma que SmartStay cuenta con una landing page púb
 
 ---
 
-##### 4.2.3.8. Team Collaboration Insights during Sprint
+##### 5.2.1.3.8. Team Collaboration Insights during Sprint
 
 Durante el Sprint 3, el equipo SmartStay trabajó de manera coordinada para completar la versión final del producto. La colaboración se centró en integrar funcionalidades, resolver errores, validar flujos completos y preparar las evidencias necesarias para la revisión final.
 
@@ -1040,7 +1040,7 @@ El equipo logró mantener una comunicación constante durante el cierre del proy
 
 ---
 
-##### 4.2.3.9. Sprint 3 Final Review Summary
+##### 5.2.1.3.9. Sprint 3 Final Review Summary
 
 Al finalizar el Sprint 3, el equipo logró completar una versión final funcional de SmartStay. Esta versión integra los principales flujos de uso para huéspedes, staff y administradores, permitiendo demostrar el valor del producto como solución móvil para la gestión hotelera.
 

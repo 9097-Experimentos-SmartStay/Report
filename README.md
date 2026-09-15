@@ -40,12 +40,27 @@
 
 <div style="page-break-after: always;"></div>
 
-## Tabla de Contenido
+## Registro de Versiones del Informe
+
+El objetivo de esta sección es resumir las modificaciones relevantes que se realizan al informe durante el ciclo de vida del proyecto. Esta sección inicia en una página nueva e incluye un cuadro con la siguiente estructura:
+
+| Versión | Fecha | Autor | Descripción de los Cambios |
+| :-----: | :---: | :--- | :--- |
+| 1.0 | 05/09/2026 | Samuel Jesus Bonifacio Jaramillo | Inicialización de repositorios |
+| 1.1 | 07/09/2026 | Samuel Jesus Bonifacio Jaramillo | Creación de Capitulos I–V, corrección de la tabla de integrantes, correcciones de redacción y actualización de contenidos. |
+
+### Project Report Collaboration Insights
+
+> **Pendiente:** consignar la URL pública del repositorio del informe, la explicación de las actividades por entrega y las capturas de los analíticos de colaboración y commits de GitHub. Esta sección debe ampliarse en cada entrega y ser coherente con el Registro de Versiones del Informe.
+
+---
+
+<div style="page-break-after: always;"></div>
+
+## Contenido
 
 - [Registro de Versiones del Informe](#registro-de-versiones-del-informe)
-- [Project Report Collaboration Insights](#project-report-collaboration-insights)
 - [Student Outcome](#student-outcome)
-- [Part I: As-Is Software Project](#part-i-as-is-software-project)
 - [Capítulo I: Introducción](#capítulo-i-introducción)
   - [1.1. Startup Profile](#11-startup-profile)
     - [1.1.1. Descripción de la Startup](#111-descripción-de-la-startup)
@@ -58,44 +73,19 @@
       - [1.2.2.3. Lean UX Hypothesis Statements](#1223-lean-ux-hypothesis-statements)
       - [1.2.2.4. Lean UX Canvas](#1224-lean-ux-canvas)
   - [1.3. Segmentos objetivo](#13-segmentos-objetivo)
-    - [Segmento 1 — Staff Operativo de Hoteles](#segmento-1--staff-operativo-de-hoteles)
-    - [Segmento 2 — Huéspedes de Hoteles Boutique](#segmento-2--huéspedes-de-hoteles-boutique)
 - [Capítulo II: Requirements Elicitation & Analysis](#capítulo-ii-requirements-elicitation--analysis)
   - [2.1. Competidores](#21-competidores)
     - [2.1.1. Análisis competitivo](#211-análisis-competitivo)
     - [2.1.2. Estrategias y tácticas frente a competidores](#212-estrategias-y-tácticas-frente-a-competidores)
-      - [Estrategias](#estrategias)
-      - [Tácticas](#tácticas)
   - [2.2. Entrevistas](#22-entrevistas)
     - [2.2.1. Diseño de entrevistas](#221-diseño-de-entrevistas)
-    - [Entrevista – Segmento 1: Staff Operativo](#entrevista--segmento-1-staff-operativo)
-    - [Entrevista – Segmento 2: Huéspedes de Hoteles](#entrevista--segmento-2-huéspedes-de-hoteles)
     - [2.2.2. Registro de entrevistas](#222-registro-de-entrevistas)
-    - [Entrevista – Segmento 1: Administradores de Hoteles Boutique y Pequeños](#entrevista--segmento-1-administradores-de-hoteles-boutique-y-pequeños)
-      - [Entrevista 1](#entrevista-1)
-      - [Entrevista 2](#entrevista-2)
-      - [Entrevista 3](#entrevista-3)
-    - [Entrevista – Segmento 2: Huéspedes de Hoteles Boutique](#entrevista--segmento-2-huéspedes-de-hoteles-boutique)
-      - [Entrevista 1](#entrevista-1-1)
-      - [Entrevista 2](#entrevista-2-1)
-      - [Entrevista 3](#entrevista-3-1)
     - [2.2.3. Análisis de entrevistas](#223-análisis-de-entrevistas)
   - [2.3. Needfinding](#23-needfinding)
     - [2.3.1. User Personas](#231-user-personas)
     - [2.3.2. User Task Matrix](#232-user-task-matrix)
-    - [Matriz de Tareas](#matriz-de-tareas)
-    - [Análisis](#análisis)
-      - [Tareas de mayor frecuencia e importancia compartidas](#tareas-de-mayor-frecuencia-e-importancia-compartidas)
-      - [Tareas críticas para Administradores](#tareas-críticas-para-administradores)
-      - [Tareas críticas para Huéspedes](#tareas-críticas-para-huéspedes)
-      - [Diferencias clave](#diferencias-clave)
-      - [Coincidencias](#coincidencias)
     - [2.3.3. User Journey Mapping](#233-user-journey-mapping)
     - [2.3.4. Empathy Mapping](#234-empathy-mapping)
-        - [1. Segmento Objetivo 1: STAFF OPERATIVO](#1-segmento-objetivo-1-staff-operativo)
-        - [2. Segmento Objetivo 2: HUÉSPEDES](#2-segmento-objetivo-2-huéspedes)
-      - [1. Segmento Objetivo 1: STAFF OPERATIVO](#1-segmento-objetivo-1-staff-operativo-1)
-      - [2. Segmento Objetivo 2: HUÉSPEDES](#2-segmento-objetivo-2-huéspedes-1)
     - [2.3.5. As-is Scenario Mapping](#235-as-is-scenario-mapping)
   - [2.4. Ubiquitous Language](#24-ubiquitous-language)
 - [Capítulo III: Requirements Specification](#capítulo-iii-requirements-specification)
@@ -103,9 +93,6 @@
   - [3.2. User Stories](#32-user-stories)
   - [3.3. Product Backlog](#33-product-backlog)
   - [3.4. Impact Mapping](#34-impact-mapping)
-      - [Impact Mapping Segmento 1: Hotel Administrador](#impact-mapping-segmento-1-hotel-administrador)
-      - [Impact Mapping Segmento 2: Traveler](#impact-mapping-segmento-2-traveler)
-    - [Mapa de impacto integrado](#mapa-de-impacto-integrado)
 - [Capítulo IV: Product Design](#capítulo-iv-product-design)
   - [4.1. Style Guidelines](#41-style-guidelines)
     - [4.1.1. General Style Guidelines](#411-general-style-guidelines)
@@ -117,40 +104,18 @@
     - [4.2.1. Organization Systems](#421-organization-systems)
     - [4.2.2. Labeling Systems](#422-labeling-systems)
     - [4.2.3. SEO Tags and Meta Tags](#423-seo-tags-and-meta-tags)
-    - [Meta charset](#meta-charset)
-    - [Meta viewport](#meta-viewport)
-    - [Title](#title)
-    - [1. Meta Tags principales](#1-meta-tags-principales)
-    - [2. Meta Tags para Redes Sociales (Open Graph)](#2-meta-tags-para-redes-sociales-open-graph)
-    - [3. Otros elementos importantes](#3-otros-elementos-importantes)
     - [4.2.4. Searching Systems](#424-searching-systems)
     - [4.2.5. Navigation Systems](#425-navigation-systems)
-    - [Landing Page Navigation](#landing-page-navigation)
-    - [Mobile Application Navigation](#mobile-application-navigation)
   - [4.3. Landing Page UI Design](#43-landing-page-ui-design)
     - [4.3.1. Landing Page Wireframe](#431-landing-page-wireframe)
     - [4.3.2. Landing Page Mock-up](#432-landing-page-mock-up)
   - [4.4. Mobile Applications UX/UI Design](#44-mobile-applications-uxui-design)
     - [4.4.1. Mobile Applications Wireframes](#441-mobile-applications-wireframes)
-    - [Aplicación Móvil – Huésped](#aplicación-móvil--huésped)
-    - [Aplicación Móvil – Staff](#aplicación-móvil--staff)
-    - [Consideraciones de Diseño UX/UI](#consideraciones-de-diseño-uxui)
     - [4.4.2. Mobile Applications Wireflow Diagrams](#442-mobile-applications-wireflow-diagrams)
-    - [Aplicación Móvil – Huésped](#aplicación-móvil--huésped-1)
-    - [Aplicación Móvil – Staff](#aplicación-móvil--staff-1)
     - [4.4.3. Mobile Applications Mock-ups](#443-mobile-applications-mock-ups)
-    - [Aplicación Móvil – Huésped](#aplicación-móvil--huésped-2)
-    - [Aplicación Móvil – Staff](#aplicación-móvil--staff-2)
     - [4.4.4. Mobile Applications User Flow Diagrams](#444-mobile-applications-user-flow-diagrams)
-    - [Usuario: Huésped (Guest)](#usuario-huésped-guest)
-    - [Usuario: Staff](#usuario-staff)
-    - [Usuario: Administrador](#usuario-administrador)
   - [4.5. Mobile Applications Prototyping](#45-mobile-applications-prototyping)
     - [4.5.1. Android Mobile Applications Prototyping](#451-android-mobile-applications-prototyping)
-    - [Características del Prototipo](#características-del-prototipo)
-    - [Flujo del Prototipo](#flujo-del-prototipo)
-    - [Objetivos del Prototipo](#objetivos-del-prototipo)
-    - [Herramienta Utilizada](#herramienta-utilizada)
     - [4.5.2. iOS Mobile Applications Prototyping](#452-ios-mobile-applications-prototyping)
   - [4.6. Web Applications UX/UI Design](#46-web-applications-uxui-design)
     - [4.6.1. Web Applications Wireframes](#461-web-applications-wireframes)
@@ -167,76 +132,14 @@
     - [4.9.2. Class Dictionary](#492-class-dictionary)
   - [4.10. Database Design](#410-database-design)
     - [4.10.1. Relational/Non-Relational Database Diagram](#4101-relationalnon-relational-database-diagram)
-    - [4.8.1. Database Diagrams](#481-database-diagrams)
 - [Capítulo V: Product Implementation](#capítulo-v-product-implementation)
   - [5.1. Software Configuration Management](#51-software-configuration-management)
     - [5.1.1. Software Development Environment Configuration](#511-software-development-environment-configuration)
-    - [Project Management](#project-management)
-    - [Herramienta de soporte a Agile Development - Trello](#herramienta-de-soporte-a-agile-development---trello)
-    - [Requirement Management](#requirement-management)
-    - [Product UX/UI Design](#product-uxui-design)
-    - [Software Development](#software-development)
-    - [Software Documentation](#software-documentation)
-    - [Software Deployment](#software-deployment)
     - [5.1.2. Source Code Management](#512-source-code-management)
-    - [Repositorios del proyecto](#repositorios-del-proyecto)
-    - [Flujo de trabajo de GitFlow](#flujo-de-trabajo-de-gitflow)
-    - [Proceso de trabajo con GitFlow](#proceso-de-trabajo-con-gitflow)
-    - [Estructura de branches (Ramas)](#estructura-de-branches-ramas)
-    - [Evidencia de aplicación de GitFlow](#evidencia-de-aplicación-de-gitflow)
     - [5.1.3. Source Code Style Guide & Conventions](#513-source-code-style-guide--conventions)
-    - [HTML / CSS](#html--css)
-    - [Vue.js](#vuejs)
-    - [C# y ASP.NET Core](#c-y-aspnet-core)
-    - [Kotlin (Android Studio)](#kotlin-android-studio)
     - [5.1.4. Software Deployment Configuration](#514-software-deployment-configuration)
-    - [Landing Page Deployment](#landing-page-deployment)
-    - [Backend (Web Services)](#backend-web-services)
-    - [Frontend Web Application](#frontend-web-application)
-    - [Integración Continua / Despliegue Continuo (CI/CD)](#integración-continua--despliegue-continuo-cicd)
-    - [Github Pages:](#github-pages)
-    - [Mobile Application Deployment](#mobile-application-deployment)
-    - [Backend (Web Services)](#backend-web-services-1)
-    - [Integración Continua / Despliegue Continuo (CI/CD)](#integración-continua--despliegue-continuo-cicd-1)
-    - [Android Studio Emulator](#android-studio-emulator)
   - [5.2. Product Implementation & Deployment](#52-product-implementation--deployment)
     - [5.2.1. Sprint Backlogs](#521-sprint-backlogs)
-      - [4.2.1. Sprint 1](#421-sprint-1)
-        - [4.2.1.1. Sprint Planning 1](#4211-sprint-planning-1)
-        - [4.2.1.2. Sprint Backlog 1](#4212-sprint-backlog-1)
-          - [Introduccion](#introduccion)
-    - [Sprint #1 – Sprint Backlog](#sprint-1--sprint-backlog)
-        - [4.2.1.3. Development Evidence for Sprint Review](#4213-development-evidence-for-sprint-review)
-        - [4.2.1.4. Testing Suite Evidence for Sprint Review](#4214-testing-suite-evidence-for-sprint-review)
-        - [4.2.1.5. Execution Evidence for Sprint Review](#4215-execution-evidence-for-sprint-review)
-        - [4.2.1.6. Services Documentation Evidence for Sprint Review](#4216-services-documentation-evidence-for-sprint-review)
-        - [4.2.1.7. Software Deployment Evidence for Sprint Review](#4217-software-deployment-evidence-for-sprint-review)
-        - [4.2.1.8. Team Collaboration Insights during Sprint](#4218-team-collaboration-insights-during-sprint)
-      - [4.2.2. Sprint 2](#422-sprint-2)
-        - [4.2.2.1. Sprint Planning 2](#4221-sprint-planning-2)
-        - [4.2.2.2. Sprint Backlog 2](#4222-sprint-backlog-2)
-          - [Introducción](#introducción)
-    - [Sprint #2 – Sprint Backlog](#sprint-2--sprint-backlog)
-        - [4.2.2.3. Development Evidence for Sprint Review](#4223-development-evidence-for-sprint-review)
-        - [4.2.2.4. Testing Suite Evidence for Sprint Review](#4224-testing-suite-evidence-for-sprint-review)
-          - [Evidencia de la Suite de Pruebas para la Revisión del Sprint](#evidencia-de-la-suite-de-pruebas-para-la-revisión-del-sprint)
-        - [4.2.2.5. Execution Evidence for Sprint Review](#4225-execution-evidence-for-sprint-review)
-        - [4.2.2.6. Services Documentation Evidence for Sprint Review](#4226-services-documentation-evidence-for-sprint-review)
-        - [4.2.2.7. Software Deployment Evidence for Sprint Review](#4227-software-deployment-evidence-for-sprint-review)
-        - [4.2.2.8. Team Collaboration Insights during Sprint](#4228-team-collaboration-insights-during-sprint)
-      - [4.2.3. Sprint 3](#423-sprint-3)
-        - [4.2.3.1. Sprint Planning 3](#4231-sprint-planning-3)
-        - [4.2.3.2. Sprint Backlog 3](#4232-sprint-backlog-3)
-          - [Introducción](#introducción-1)
-    - [Sprint #3 – Sprint Backlog](#sprint-3--sprint-backlog)
-        - [4.2.3.3. Development Evidence for Sprint Review](#4233-development-evidence-for-sprint-review)
-        - [4.2.3.4. Testing Suite Evidence for Sprint Review](#4234-testing-suite-evidence-for-sprint-review)
-          - [Evidencia de la Suite de Pruebas para la Revisión del Sprint](#evidencia-de-la-suite-de-pruebas-para-la-revisión-del-sprint-1)
-        - [4.2.3.5. Execution Evidence for Sprint Review](#4235-execution-evidence-for-sprint-review)
-        - [4.2.3.6. Services Documentation Evidence for Sprint Review](#4236-services-documentation-evidence-for-sprint-review)
-        - [4.2.3.7. Software Deployment Evidence for Sprint Review](#4237-software-deployment-evidence-for-sprint-review)
-        - [4.2.3.8. Team Collaboration Insights during Sprint](#4238-team-collaboration-insights-during-sprint)
-        - [4.2.3.9. Sprint 3 Final Review Summary](#4239-sprint-3-final-review-summary)
     - [5.2.2. Implemented Landing Page Evidence](#522-implemented-landing-page-evidence)
     - [5.2.3. Implemented Frontend-Web Application Evidence](#523-implemented-frontend-web-application-evidence)
     - [5.2.4. Implemented Native-Mobile Application Evidence](#524-implemented-native-mobile-application-evidence)
@@ -244,91 +147,8 @@
     - [5.2.6. RESTful API documentation](#526-restful-api-documentation)
     - [5.2.7. Team Collaboration Insights](#527-team-collaboration-insights)
   - [5.3. Video About-the-Product](#53-video-about-the-product)
-- [Part II: Verification, Validation & Pipeline](#part-ii-verification-validation--pipeline)
-- [Capítulo VI: Product Verification & Validation](#capítulo-vi-product-verification--validation)
-  - [6.1. Testing Suites & Validation](#61-testing-suites--validation)
-    - [6.1.1. Core Entities Unit Tests](#611-core-entities-unit-tests)
-    - [6.1.2. Core Integration Tests](#612-core-integration-tests)
-    - [6.1.3. Core Behavior-Driven Development](#613-core-behavior-driven-development)
-    - [6.1.4. Core System Tests](#614-core-system-tests)
-    - [Criterios de aceptación por nivel](#criterios-de-aceptación-por-nivel)
-    - [Relación con los experimentos](#relación-con-los-experimentos)
-  - [6.2. Static testing & Verification](#62-static-testing--verification)
-    - [6.2.1. Static Code Analysis](#621-static-code-analysis)
-      - [6.2.1.1. Coding standard & Code conventions](#6211-coding-standard--code-conventions)
-      - [6.2.1.2. Code Quality & Code Security](#6212-code-quality--code-security)
-    - [6.2.2. Reviews](#622-reviews)
-  - [6.3. Validation Interviews](#63-validation-interviews)
-    - [6.3.1. Diseño de Entrevistas](#631-diseño-de-entrevistas)
-    - [6.3.2. Registro de Entrevistas](#632-registro-de-entrevistas)
-    - [Entrevista – Segmento 1: Administradores de Hoteles Boutique y Pequeños](#entrevista--segmento-1-administradores-de-hoteles-boutique-y-pequeños-1)
-      - [Entrevista 1](#entrevista-1-2)
-      - [Entrevista 2](#entrevista-2-2)
-    - [Entrevista – Segmento 2: Huéspedes de Hoteles Boutique](#entrevista--segmento-2-huéspedes-de-hoteles-boutique-1)
-      - [Entrevista 1](#entrevista-1-3)
-    - [6.3.3. Evaluaciones según heurísticas](#633-evaluaciones-según-heurísticas)
-    - [Tareas a Evaluar](#tareas-a-evaluar)
-    - [Tabla Resumen](#tabla-resumen)
-    - [Fichas Detalladas (Problemas de severidad 3)](#fichas-detalladas-problemas-de-severidad-3)
-      - [PROBLEMA #1: Ausencia de Control y Libertad en el Flujo de Check-in](#problema-1-ausencia-de-control-y-libertad-en-el-flujo-de-check-in)
-      - [PROBLEMA #2: Iconografía Inconsistente y Poco Intuitiva en Indicadores de Estado](#problema-2-iconografía-inconsistente-y-poco-intuitiva-en-indicadores-de-estado)
-      - [PROBLEMA #3: Falta de Texto Alternativo y Etiquetas de Accesibilidad en Controles IoT](#problema-3-falta-de-texto-alternativo-y-etiquetas-de-accesibilidad-en-controles-iot)
-    - [Observaciones adicionales (Problemas menores)](#observaciones-adicionales-problemas-menores)
-    - [Validación y Seguimiento](#validación-y-seguimiento)
-  - [6.4. Auditoría de Experiencias de Usuario](#64-auditoría-de-experiencias-de-usuario)
-    - [6.4.1. Auditoría realizada](#641-auditoría-realizada)
-      - [6.4.1.1. Información del grupo auditado](#6411-información-del-grupo-auditado)
-      - [6.4.1.2. Cronograma de auditoría realizada](#6412-cronograma-de-auditoría-realizada)
-      - [6.4.1.3. Contenido de auditoría realizada](#6413-contenido-de-auditoría-realizada)
-    - [6.4.2. Auditoría recibida](#642-auditoría-recibida)
-      - [6.4.2.1. Información del grupo auditor](#6421-información-del-grupo-auditor)
-      - [6.4.2.2. Cronograma de auditoría recibida](#6422-cronograma-de-auditoría-recibida)
-      - [6.4.2.3. Contenido de auditoría recibida](#6423-contenido-de-auditoría-recibida)
-      - [6.4.2.4. Resumen de modificaciones para subsanar hallazgos](#6424-resumen-de-modificaciones-para-subsanar-hallazgos)
-- [Capítulo VII: DevOps Practices](#capítulo-vii-devops-practices)
-  - [7.1. Continuous Integration](#71-continuous-integration)
-    - [7.1.1. Tools and Practices](#711-tools-and-practices)
-    - [7.1.2. Build & Test Suite Pipeline Components](#712-build--test-suite-pipeline-components)
-      - [Relación con los experimentos](#relación-con-los-experimentos-1)
-      - [Registro de builds y trazabilidad](#registro-de-builds-y-trazabilidad)
-  - [7.2. Continuous Delivery](#72-continuous-delivery)
-    - [7.2.1. Tools and Practices](#721-tools-and-practices)
-    - [7.2.2. Stages Deployment Pipeline Components](#722-stages-deployment-pipeline-components)
-  - [7.3. Continuous deployment](#73-continuous-deployment)
-    - [7.3.1. Tools and Practices](#731-tools-and-practices)
-    - [7.3.2. Production Deployment Pipeline Components](#732-production-deployment-pipeline-components)
-  - [7.4. Continuous Monitoring](#74-continuous-monitoring)
-    - [7.4.1. Tools and Practices](#741-tools-and-practices)
-    - [7.4.2. Monitoring Pipeline Components](#742-monitoring-pipeline-components)
-    - [7.4.3. Alerting Pipeline Components](#743-alerting-pipeline-components)
-    - [7.4.4. Notification Pipeline Components](#744-notification-pipeline-components)
-- [Part III: Experiment-Driven Lifecycle](#part-iii-experiment-driven-lifecycle)
-- [Capítulo VIII: Experiment-Driven Development](#capítulo-viii-experiment-driven-development)
-  - [Experimento 1 — Validación de la Experiencia de Check-in Digital](#experimento-1--validación-de-la-experiencia-de-check-in-digital)
-    - [Contexto y motivación](#contexto-y-motivación)
-    - [Experiment Card](#experiment-card)
-    - [Escenarios Gherkin](#escenarios-gherkin)
-    - [Diseño de la recolección de datos](#diseño-de-la-recolección-de-datos)
-    - [Plan de análisis](#plan-de-análisis)
-  - [Experimento 2 — Productividad del Personal Operativo con Información en Tiempo Real](#experimento-2--productividad-del-personal-operativo-con-información-en-tiempo-real)
-    - [Contexto y motivación](#contexto-y-motivación-1)
-    - [Experiment Card](#experiment-card-1)
-    - [Escenarios Gherkin](#escenarios-gherkin-1)
-    - [Diseño de la recolección de datos](#diseño-de-la-recolección-de-datos-1)
-    - [Plan de análisis](#plan-de-análisis-1)
-  - [Experimento 3 — Evaluación de Usabilidad y Experiencia de Usuario (UX) de la App del Huésped](#experimento-3--evaluación-de-usabilidad-y-experiencia-de-usuario-ux-de-la-app-del-huésped)
-    - [Contexto y motivación](#contexto-y-motivación-2)
-    - [Experiment Card](#experiment-card-2)
-    - [Escenarios Gherkin](#escenarios-gherkin-2)
-    - [Diseño de la recolección de datos](#diseño-de-la-recolección-de-datos-2)
-    - [Plan de análisis](#plan-de-análisis-2)
-  - [Matriz de métricas global de los experimentos](#matriz-de-métricas-global-de-los-experimentos)
-  - [Consideraciones éticas y logísticas](#consideraciones-éticas-y-logísticas)
-- [Conclusiones](#conclusiones)
-  - [Recomendaciones](#recomendaciones)
-  - [Video App Validation](#video-app-validation)
-  - [Video About The Product](#video-about-the-product)
-  - [Video About The Team](#video-about-the-team)
+- [Avance de Conclusiones, Bibliografía y Anexos](#avance-de-conclusiones-bibliografía-y-anexos)
+  - [Conclusiones](#conclusiones)
   - [Bibliografía](#bibliografía)
   - [Anexos](#anexos)
 
@@ -336,21 +156,7 @@
 
 <div style="page-break-after: always;"></div>
 
-## Registro de Versiones del Informe
-
-El objetivo de esta sección es resumir las modificaciones relevantes que se realizan al informe durante el ciclo de vida del proyecto. Esta sección inicia en una página nueva e incluye un cuadro con la siguiente estructura:
-
-| Versión | Fecha | Autor | Descripción de los Cambios |
-| :-----: | :---: | :--- | :--- |
-| 1.0 | 05/09/2026 | Samuel Jesus Bonifacio Jaramillo | Inicialización de repositorios |
-| 1.1 | 07/09/2026 | Samuel Jesus Bonifacio Jaramillo | Creación de Capitulos I–V, corrección de la tabla de integrantes, correcciones de redacción y actualización de contenidos. |
-
-## Project Report Collaboration Insights
-
-> **Pendiente:** consignar la URL pública del repositorio del informe, la explicación de las actividades por entrega y las capturas de los analíticos de colaboración y commits de GitHub. Esta sección debe ampliarse en cada entrega y ser coherente con el Registro de Versiones del Informe.
-
 ## Student Outcome
-
 
 > El curso contribuye al cumplimiento del Student Outcome ABET:
 >
@@ -397,12 +203,6 @@ El objetivo de esta sección es resumir las modificaciones relevantes que se rea
     </tr>
   </tbody>
 </table>
-
----
-
-<div style="page-break-after: always;"></div>
-
-# Part I: As-Is Software Project
 
 ---
 
@@ -563,10 +363,6 @@ SmartStay apunta a dos segmentos principales:
 - **Quiénes:** Viajeros nacionales e internacionales que reservan en hoteles boutique y pequeños.
 - **Necesidades:** Check-in sin colas, control de su habitación desde el celular, facilidad de comunicación con el hotel, personalización de servicios.
 - **Propuesta de valor:** Experiencia moderna, sin fricción, con control total de su estancia.
-
----
-
-<div style="page-break-after: always;"></div>
 
 ---
 
@@ -4084,7 +3880,7 @@ Tipos de Datos ENUM: Los diferentes estados (BookingStatus, RoomStatus, etc.) se
 
 Relaciones: Todas las asociaciones y composiciones en los diagramas de clases se implementan usando claves foráneas (FOREIGN KEY) con sus respectivas restricciones de multiplicidad (ej: UNIQUE para relaciones uno a uno).
 
-### 4.8.1. Database Diagrams
+#### Database Diagrams
 
 ![Edgerunners-Aplicaciones-Web_Physical_Export.png](assets/chapter-4/Edgerunners-Aplicaciones-Web_Physical_Export.png)
 
@@ -4558,11 +4354,11 @@ El proyecto implementa un flujo automatizado de **Integración Continua y Despli
 
 ### 5.2.1. Sprint Backlogs
 
-#### 4.2.1. Sprint 1 
+#### 5.2.1.1. Sprint 1 
 
 A continuación, se presenta el Sprint Planning 1, en el que se incluyen las evidencias de la planificación y desarrollo del Landing Page. Asimismo, se documentan los avances del proyecto y los insights de colaboración del equipo registrados a través de GitHub.
 
-##### 4.2.1.1. Sprint Planning 1
+##### 5.2.1.1.1. Sprint Planning 1
 
 
 | **Sprint #**                           | Sprint 1                                                                                                                                                                                                                                                      |
@@ -4582,7 +4378,7 @@ A continuación, se presenta el Sprint Planning 1, en el que se incluyen las evi
 
 
 
-##### 4.2.1.2. Sprint Backlog 1 
+##### 5.2.1.1.2. Sprint Backlog 1 
 
 ###### Introduccion
 
@@ -4604,7 +4400,7 @@ Este Sprint está enfocado en establecer la presencia digital oficial del proyec
 | Sprint 1     | US-26 – Success stories and testimonials   | UT-09                    | Ajustar animaciones y transiciones  | Aplicar efectos de entrada y desplazamiento fluido en los testimonios.                                       | 4                        |             | In Process      |
  
 
-##### 4.2.1.3. Development Evidence for Sprint Review
+##### 5.2.1.1.3. Development Evidence for Sprint Review
 
 Durante el desarrollo del sprint, el equipo trabajó de manera distribuida en los distintos repositorios del ecosistema **SmartStay**, incluyendo el Project Report, Landing Page, Mobile Application, Backend y APK. Para evidenciar el avance realizado, se presenta el siguiente cuadro de commits obtenidos de los repositorios oficiales del proyecto en GitHub.
 
@@ -4651,7 +4447,7 @@ Durante el desarrollo del sprint, el equipo trabajó de manera distribuida en lo
 
 La evidencia demuestra que el equipo realizó avances en los principales componentes del proyecto. En el repositorio del informe se documentaron los avances del sprint; en la Landing Page se implementaron mejoras visuales, traducción y secciones informativas; en el repositorio APK se publicó una versión demo de la aplicación; en la Mobile Application se desarrollaron funcionalidades de autenticación, perfiles y navegación; y en el Backend se implementaron servicios relacionados con IAM, seguridad, base de datos y configuración de infraestructura.
 
-##### 4.2.1.4. Testing Suite Evidence for Sprint Review
+##### 5.2.1.1.4. Testing Suite Evidence for Sprint Review
 
 Durante el sprint, se realizaron pruebas sobre los distintos componentes del ecosistema **SmartStay** con el objetivo de validar el correcto funcionamiento de la Landing Page, la aplicación móvil, el backend y la APK demo. Las pruebas se organizaron según la tecnología utilizada en cada repositorio.
 
@@ -4671,7 +4467,7 @@ Durante el sprint, se realizaron pruebas sobre los distintos componentes del eco
 | APK | Prueba funcional | Android Emulator / Dispositivo físico | Inicio de aplicación | La aplicación inicia correctamente desde la APK demo. | Aprobado |
 
 
-##### 4.2.1.5. Execution Evidence for Sprint Review 
+##### 5.2.1.1.5. Execution Evidence for Sprint Review 
 
 Durante el Sprint 1, se logró ejecutar y validar la aplicación móvil en el entorno de desarrollo de Android Studio, utilizando tanto el emulador como dispositivos físicos para asegurar la correcta funcionalidad de las características implementadas. Así mismo, el despliegue del backend y landing page.
 
@@ -4683,7 +4479,7 @@ Durante el Sprint 1, se logró ejecutar y validar la aplicación móvil en el en
 ![App Execution 3](assets/chapter-5/appexecution3.jpg)
 
 
-##### 4.2.1.6. Services Documentation Evidence for Sprint Review
+##### 5.2.1.1.6. Services Documentation Evidence for Sprint Review
 
 **Profiles**: Este bounded context maneja la información de los perfiles de los usuarios dentro de la plataforma. Proporciona funcionalidades para crear perfiles, consultar su información y obtener el detalle de un perfil específico. Es esencial para almacenar y gestionar los datos personales asociados a cada usuario del sistema.
 
@@ -4725,7 +4521,7 @@ Durante el Sprint 1, se logró ejecutar y validar la aplicación móvil en el en
 
 ![swagercuartostipos.png](assets/chapter-5/swagercuartostipo.png)
 
-##### 4.2.1.7. Software Deployment Evidence for Sprint Review
+##### 5.2.1.1.7. Software Deployment Evidence for Sprint Review
 
 En este Sprint 1, los miembros del equipo lograron completar las tareas asociadas al desarrollo inicial de la aplicación móvil SmartStay.
 
@@ -4736,7 +4532,7 @@ La aplicación móvil cumple el rol de plataforma principal de interacción para
 Una aplicación móvil es fundamental en proyectos modernos orientados a la experiencia del usuario, ya que permite ofrecer accesibilidad, rapidez e interacción en tiempo real desde dispositivos Android. En el caso de SmartStay, la aplicación busca optimizar la experiencia hotelera mediante procesos digitales y una gestión más eficiente de los servicios.
 
 
-##### 4.2.1.8. Team Collaboration Insights during Sprint
+##### 5.2.1.1.8. Team Collaboration Insights during Sprint
 
 Las actividades de desarrollo de este Sprint 1 se realizaron de forma colaborativa, distribuyendo las tareas entre todos los miembros del equipo.
 Acciones de colaboración destacadas:
@@ -4749,11 +4545,11 @@ Se realizaron revisiones de código en equipo para garantizar la coherencia visu
 
 Gracias a este flujo de trabajo organizado, el equipo logró avanzar de manera paralela y eficiente, minimizando conflictos en el código y obteniendo un resultado coherente y de calidad.
 
-#### 4.2.2. Sprint 2
+#### 5.2.1.2. Sprint 2
 
 A continuación, se presenta el Sprint Planning 2, en el que se incluyen las evidencias de planificación y desarrollo de las funcionalidades implementadas durante esta iteración. Asimismo, se documentan los avances del proyecto, las evidencias de pruebas, despliegue y los insights de colaboración del equipo registrados a través de GitHub.
 
-##### 4.2.2.1. Sprint Planning 2
+##### 5.2.1.2.1. Sprint Planning 2
 
 | **Sprint #**                        | Sprint 2                                                                                                                                                                                                                                |
 |-------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -4772,7 +4568,7 @@ A continuación, se presenta el Sprint Planning 2, en el que se incluyen las evi
 
 ---
 
-##### 4.2.2.2. Sprint Backlog 2
+##### 5.2.1.2.2. Sprint Backlog 2
 
 ###### Introducción
 
@@ -4805,7 +4601,7 @@ Durante esta iteración se desarrollarán funcionalidades relacionadas con IAM (
 | Sprint 2     | US-07          | UT-19              | Centralized reservation management  | Corrección de errores en módulo booking                             | Identificar y resolver errores funcionales en el flujo de booking detectados durante pruebas de integración.          | 4                      |                               | Done       |
 | Sprint 2     | US-24          | UT-20              | Segmented landing page              | Actualizar logo e identidad visual                                  | Incorporar el logotipo actualizado de SmartStay en la aplicación móvil y ajustar el nombre del proyecto.              | 2                      |                               | Done       |
 
-##### 4.2.2.3. Development Evidence for Sprint Review
+##### 5.2.1.2.3. Development Evidence for Sprint Review
 
 
 | Commit    | Autor          | Fecha      | Rama/Referencia      | Mensaje                                                                                                  |
@@ -4841,7 +4637,7 @@ Durante esta iteración se desarrollarán funcionalidades relacionadas con IAM (
 | `2e94c47` |        | 20/06/2026 | `feature/payments`   | feat: connect payments with accommodations                                                               |
 | `f241581` |        | 20/06/2026 | `feature/payments`   | Merge remote-tracking branch 'origin/accomodations-rebase' into feature/payments                         |
 
-##### 4.2.2.4. Testing Suite Evidence for Sprint Review
+##### 5.2.1.2.4. Testing Suite Evidence for Sprint Review
 
 ###### Evidencia de la Suite de Pruebas para la Revisión del Sprint
 
@@ -4856,7 +4652,7 @@ Durante este sprint, el equipo realizó actividades de prueba para validar las f
 
 ---
 
-##### 4.2.2.5. Execution Evidence for Sprint Review
+##### 5.2.1.2.5. Execution Evidence for Sprint Review
 
 Durante el Sprint 2 se ejecutaron y validaron las funcionalidades desarrolladas dentro de la aplicación móvil SmartStay. Las pruebas se realizaron utilizando Android Studio, dispositivos físicos y servicios desplegados en la nube para verificar la correcta integración entre frontend y backend.
 
@@ -4871,7 +4667,7 @@ Durante el Sprint 2 se ejecutaron y validaron las funcionalidades desarrolladas 
 
 ---
 
-##### 4.2.2.6. Services Documentation Evidence for Sprint Review
+##### 5.2.1.2.6. Services Documentation Evidence for Sprint Review
 
 Durante este sprint se actualizó el bounded context de IAM/Authentication, incorporando mejoras relacionadas con la autenticación de usuarios y la gestión de roles dentro del sistema. La documentación de los servicios REST fue verificada mediante Swagger/OpenAPI, donde se evidencian los endpoints disponibles para el inicio de sesión y registro de usuarios.
 
@@ -4880,7 +4676,7 @@ Durante este sprint se actualizó el bounded context de IAM/Authentication, inco
 
 Asimismo, durante el sprint se trabajó con la lógica de roles para diferenciar el acceso de los distintos tipos de usuario del sistema, como Guest, Admin y ChainAdmin, permitiendo controlar qué secciones y acciones están disponibles para cada perfil dentro de la aplicación.
 
-##### 4.2.2.7. Software Deployment Evidence for Sprint Review
+##### 5.2.1.2.7. Software Deployment Evidence for Sprint Review
 
 A continuación, se presentan las evidencias del **despliegue de la Landing Page** de Smart Stay, desarrollada y publicada mediante **GitHub Pages**.
 
@@ -4908,7 +4704,7 @@ La evidencia visual demuestra que el backend fue desplegado correctamente y que 
 
 ---
 
-##### 4.2.2.8. Team Collaboration Insights during Sprint
+##### 5.2.1.2.8. Team Collaboration Insights during Sprint
 
 Las actividades de desarrollo correspondientes al Sprint 2 fueron ejecutadas de manera colaborativa por todos los integrantes del equipo.
 
@@ -4929,7 +4725,7 @@ Gracias a estas prácticas, el equipo mantuvo un flujo de trabajo organizado y l
 
 
 
-#### 4.2.3. Sprint 3
+#### 5.2.1.3. Sprint 3
 
 A continuación, se presenta el desarrollo del Sprint 3, correspondiente a la iteración final del proyecto SmartStay. A diferencia de los sprints anteriores, esta etapa no se enfocó únicamente en construir módulos aislados, sino en completar, integrar, estabilizar y validar la versión final de la aplicación móvil y los servicios asociados.
 
@@ -4937,7 +4733,7 @@ Durante este sprint se priorizó el cierre funcional del producto, la correcció
 
 ---
 
-##### 4.2.3.1. Sprint Planning 3
+##### 5.2.1.3.1. Sprint Planning 3
 
 | **Sprint #** | Sprint 3 |
 |---|---|
@@ -4956,7 +4752,7 @@ Durante este sprint se priorizó el cierre funcional del producto, la correcció
 
 ---
 
-##### 4.2.3.2. Sprint Backlog 3
+##### 5.2.1.3.2. Sprint Backlog 3
 
 ###### Introducción
 
@@ -4989,7 +4785,7 @@ Las tareas desarrolladas se centraron en completar el flujo del huésped, mejora
 
 ---
 
-##### 4.2.3.3. Development Evidence for Sprint Review
+##### 5.2.1.3.3. Development Evidence for Sprint Review
 
 Durante el Sprint 3 se registraron commits orientados al cierre final del producto. Estos commits evidencian la implementación de nuevas pantallas, mejoras en los flujos de reserva y pago, actualización del dashboard operativo, corrección de errores, ajustes visuales y validación final de la integración entre módulos.
 
@@ -5016,7 +4812,7 @@ Durante el Sprint 3 se registraron commits orientados al cierre final del produc
 
 ---
 
-##### 4.2.3.4. Testing Suite Evidence for Sprint Review
+##### 5.2.1.3.4. Testing Suite Evidence for Sprint Review
 
 ###### Evidencia de la Suite de Pruebas para la Revisión del Sprint
 
@@ -5039,7 +4835,7 @@ Durante el Sprint 3 se ejecutaron pruebas funcionales, pruebas de integración, 
 
 ---
 
-##### 4.2.3.5. Execution Evidence for Sprint Review
+##### 5.2.1.3.5. Execution Evidence for Sprint Review
 
 Durante el Sprint 3 se ejecutó la versión final de la aplicación móvil SmartStay, validando los principales flujos funcionales definidos para la presentación final. Las pruebas fueron realizadas en Android Studio y dispositivos móviles, utilizando servicios backend desplegados para comprobar la integración real del sistema.
 
@@ -5066,7 +4862,7 @@ Los flujos ejecutados fueron los siguientes:
 
 ---
 
-##### 4.2.3.6. Services Documentation Evidence for Sprint Review
+##### 5.2.1.3.6. Services Documentation Evidence for Sprint Review
 
 Durante el Sprint 3 se revisó y actualizó la documentación de los servicios necesarios para la versión final de SmartStay. Esta documentación permitió validar que los endpoints principales se encuentren disponibles y alineados con los flujos implementados en la aplicación móvil.
 
@@ -5087,7 +4883,7 @@ Además, se verificó que los servicios mantengan una estructura coherente en su
 
 ---
 
-##### 4.2.3.7. Software Deployment Evidence for Sprint Review
+##### 5.2.1.3.7. Software Deployment Evidence for Sprint Review
 
 Durante el Sprint 3 se realizó la validación final del despliegue de los componentes principales del proyecto SmartStay.
 
@@ -5113,7 +4909,7 @@ Con estas evidencias, se confirma que SmartStay cuenta con una landing page púb
 
 ---
 
-##### 4.2.3.8. Team Collaboration Insights during Sprint
+##### 5.2.1.3.8. Team Collaboration Insights during Sprint
 
 Durante el Sprint 3, el equipo SmartStay trabajó de manera coordinada para completar la versión final del producto. La colaboración se centró en integrar funcionalidades, resolver errores, validar flujos completos y preparar las evidencias necesarias para la revisión final.
 
@@ -5134,7 +4930,7 @@ El equipo logró mantener una comunicación constante durante el cierre del proy
 
 ---
 
-##### 4.2.3.9. Sprint 3 Final Review Summary
+##### 5.2.1.3.9. Sprint 3 Final Review Summary
 
 Al finalizar el Sprint 3, el equipo logró completar una versión final funcional de SmartStay. Esta versión integra los principales flujos de uso para huéspedes, staff y administradores, permitiendo demostrar el valor del producto como solución móvil para la gestión hotelera.
 
@@ -5314,715 +5110,13 @@ El equipo logró mantener una comunicación constante durante el cierre del proy
 
 <div style="page-break-after: always;"></div>
 
-# Part II: Verification, Validation & Pipeline
+# Avance de Conclusiones, Bibliografía y Anexos
 
----
-
-<div style="page-break-after: always;"></div>
-
-# Capítulo VI: Product Verification & Validation
-
-## 6.1. Testing Suites & Validation
-
-Este capítulo documenta la estrategia de pruebas automatizadas que sustenta la validación del producto SmartStay. La estrategia se organiza según los siguientes niveles, cada uno asociado a las secciones del enunciado:
-
-### 6.1.1. Core Entities Unit Tests
-
-Pruebas unitarias sobre las **entidades principales** del dominio: validan cada componente de forma aislada (lógica de dominio, repositorios simulados, validaciones de negocio). Ejemplos en SmartStay: casos de uso de reserva, validación de check-in, cálculo de estados de habitación, reglas de RBAC.
-
-### 6.1.2. Core Integration Tests
-
-Pruebas de integración entre capas y servicios: backend + base de datos, backend + IoT Gateway (simulado), autenticación + tokens; validan la comunicación frontend-backend y la interacción entre servicios/APIs. Ejemplos en SmartStay: flujo de login JWT, creación de reserva, asignación de habitación, endpoint de control de puerta.
-
-### 6.1.3. Core Behavior-Driven Development
-
-Pruebas E2E / de aceptación que validan flujos completos desde la perspectiva del usuario (check-in digital completo, control de habitación, solicitud de servicio, asignación de tarea por staff). El BDD se aplica definiendo el comportamiento esperado con archivos `.feature` en **Gherkin** y steps en lenguaje de programación (Cucumber, SpecFlow o similares), ligados a las User Stories del sprint correspondiente.
-
-**Pendiente:** redactar los escenarios `.feature` y sus steps cuando existan los repositorios y builds de testing.
-
-### 6.1.4. Core System Tests
-
-**Pendiente:** pruebas de sistema de la aplicación completa en entorno **web y móvil**: navegación, interacción con APIs y respuesta del sistema en distintos escenarios.
-
-### Criterios de aceptación por nivel
-
-| Nivel | Criterio |
-| :--- | :--- |
-| Unit | Cobertura global ≥ umbral definido; pruebas críticas del dominio cubren casos felices y edge cases. |
-| Integración | Cada flujo de negocio clave tiene al menos una prueba de integración que valida el contrato y el estado resultante. |
-| E2E | Los flujos críticos identificados en el Capítulo VIII (check-in, control de habitación, room service) tienen pruebas automatizadas que validan el path feliz y los fallbacks más comunes. |
-
-### Relación con los experimentos
-
-El testing automatizado sirve dos propósitos en el contexto del curso de Experimentos:
-
-1. **Garantía de calidad de la herramienta experimental:** la app usada en los experimentos es una versión que pasó pruebas automatizadas, reduciendo el riesgo de que los resultados del experimento se vean contaminados por fallas técnicas evitables.
-2. **Métrica de proceso:** la tasa de pruebas pasadas, cobertura y tiempo de ejecución del pipeline son métricas de proceso que pueden incluirse en el análisis del experimento si es relevante (ej: estabilidad del build entre sesiones).
-
-## 6.2. Static testing & Verification
-
-### 6.2.1. Static Code Analysis
-
-#### 6.2.1.1. Coding standard & Code conventions
-
-**Pendiente:** verificar el cumplimiento de estándares del lenguaje/framework usados (p. ej. PEP8 para Python, ESLint para JavaScript): código legible, consistente y con buenas prácticas (nombres de variables, indentación, comentarios).
-
-#### 6.2.1.2. Code Quality & Code Security
-
-**Pendiente:** evaluar calidad por complejidad, duplicación y mantenibilidad con métricas/herramientas (p. ej. SonarQube, ESLint o Checkmarx) e identificar vulnerabilidades: inyecciones SQL, Cross-Site Scripting (XSS) y manejo inseguro de datos sensibles.
-
-### 6.2.2. Reviews
-
-**Pendiente:** documentar las revisiones de código/artefactos realizadas por el equipo.
-
-## 6.3. Validation Interviews
-
-**Pendiente:** registrar las entrevistas de validación en las que usuarios de los segmentos objetivo interactúan con la Landing Page y las aplicaciones, aplicando el formato de evaluación heurística del Anexo D del enunciado (usabilidad, arquitectura de información e inclusive design).
-
-<!-- Evidencia: entrevista-1-admin.png, entrevista-1-cliente.png, entrevista-2-admin.png, android-studio-emulator.jpg; appexecution1-3. -->
-
-### 6.3.1. Diseño de Entrevistas
-
-**Objetivo:** Validar utilidad, control y claridad de los flujos clave de SmartStay (check-in/check-out digital, housekeeping, notifications y service requests).
-
-**Preguntas clave - Staff Operativo**
-
-1. ¿En qué pasos del flujo de check-in/check-out necesitas más control desde la app y por qué?
-2. ¿Qué información mínima requiere una service request para que puedas actuar sin llamadas o WhatsApp?
-3. ¿Qué tipos de notifications consideras críticas y cuáles deberían ser silenciosas?
-4. ¿Qué latencia toleras para ver cambios de room status en tiempo real antes de tomar decisiones operativas?
-5. ¿Qué indicadores en el dashboard te ayudan a priorizar tareas de housekeeping y mantenimiento?
-
-**Preguntas clave - Huéspedes**
-
-1. ¿Qué parte del check-in digital te genera más incertidumbre (identidad, pago, asignación de habitación) y por qué?
-2. ¿Qué funciones de control de la habitación usarías desde la app y con qué frecuencia?
-3. ¿Qué información necesitas ver para confiar en los cargos y la reserva (fees, timestamps, policy)?
-4. ¿En qué situaciones preferirías contactar al staff en lugar de usar la app?
-5. ¿Cómo evaluarías la claridad de la navegación en tu primera sesión sin ayuda del staff?
-
-### 6.3.2. Registro de Entrevistas
-
-### Entrevista – Segmento 1: Administradores de Hoteles Boutique y Pequeños
-
-#### Entrevista 1
-
-Datos del entrevistado:
-
-**Nombre completo:** Alessandro Daniel Bravo Castillo
-
-**Edad:** 27
-
-**Ciudad:** Lima
-
-**Duración:**  5:24 minutos
-
-**Evidencia:** ![entrevista-1-admin.png](assets/chapter-6/entrevista-1-admin.png)
-
-**URL del video:**
-https://tinyurl.com/y85aj7s4
-
-**Resumen de la entrevista**
-
-Alessandro Bravo calificó la herramienta como bastante eficiente, destacando su interfaz sencilla e intuitiva, con diseño claro y acciones bien ubicadas; valoró especialmente la gestión de staff por ofrecer mayor control sobre los empleados, la gestión de habitaciones por su claridad en disponibilidad y servicios, y la mejora de procesos clave como reservas y reportes al reemplazar métodos engorrosos como Excel; sugirió añadir un dashboard específico para habitaciones en promoción; afirmó que la app encajaría muy bien en su hotel, ayudaría a prevenir errores como la sobre-reserva, y que el equipo podría adaptarse fácilmente con buena capacitación, mostrando confianza en su implementación por considerarla confiable y fácil de usar
-
----
-
-#### Entrevista 2
-
-Datos del entrevistado:
-
-**Nombre completo:** Jorge Linares
-
-**Edad:** 29
-
-**Ciudad:** Lima
-
-**Duración:**  8:39 minutos
-
-**Evidencia:** ![entrevista-2-admin.png](assets/chapter-6/entrevista-2-admin.png)
-
-**URL del video:**
-https://tinyurl.com/4k3kr4mv
-
-**Resumen de la entrevista**
-
-Jorge Linares tuvo una impresión muy positiva de la aplicación de gestión hotelera, destacando su interfaz intuitiva y ordenada con nombres descriptivos que facilitan el uso; valoró especialmente la agilidad, automatización y el módulo de reservas por su vista detallada, además de la capacidad del sistema para prevenir errores como la sobre-reserva y centralizar información dispersa; sugirió mejoras como un módulo de pagos, exportación de reportes en PDF y funciones para coordinar al personal, además de asegurar la escalabilidad para hoteles grandes; consideró que su equipo podría adaptarse fácilmente con una breve capacitación y estaría dispuesto a pagar una suscripción mensual si el precio es razonable y la herramienta se mantiene estable.
-
----
-
-### Entrevista – Segmento 2: Huéspedes de Hoteles Boutique
-
-#### Entrevista 1
-
-Datos del entrevistado:
-
-**Nombre completo:** Nicole Yamile Avila Ayquipa
-
-**Edad:** 25 años
-
-**Distrito:** Lima, centro de Lima
-
-**Duración:** 03:51 minutos
-
-**Evidencia:** ![entrevista-1-cliente.png](assets/chapter-6/entrevista-1-cliente.png)
-
-**URL del video:** https://tinyurl.com/bdd2t8cu
-
-**Resumen de la entrevista**
-
-Nicole Ávila tuvo una buena impresión de la aplicación, destacando su practicidad al centralizar información de varios hoteles y su interfaz intuitiva con ventanas rotativas que facilitan la exploración; valoró especialmente la agenda de reservas por su orden y claridad, así como la posibilidad de tomar decisiones más informadas gracias a las reseñas de otros huéspedes, sin encontrar funciones innecesarias; aunque considera el sistema confiable, sugirió incorporar una ventana de asistencia virtual para mantener interacción humana; afirmó que preferiría hoteles con esta experiencia digital y estaría dispuesta a pagar más por la seguridad que le brinda al elegir con mayor información.
-
-### 6.3.3. Evaluaciones según heurísticas
-
-**CARRERA:** Ingeniería de Software  
-**CURSO:** 1ACC0238 Aplicaciones para Dispositivos Móviles  
-**SECCIÓN:** 3821  
-**PROFESORES:** Jorge Luis Mayta Guillermo  
-**AUDITOR:** MovilDev Team  
-**CLIENTE(S):** Staff operativo de Hoteles Boutique / Huéspedes
-**SITE/APP EVALUADA:** Smart Stay
-
----
-
-### Tareas a Evaluar
-
-**Tareas incluidas:**
-1. Registro de usuario y flujo de check-in/check-out  
-2. Uso de llave digital / acceso a habitación  
-3. Control IoT: ajuste de temperatura e iluminación  
-4. Reporte y confirmación de limpieza (housekeeping)  
-5. Solicitud de servicio (room service / mantenimiento)
-
-**Tareas NO incluidas en esta evaluación:**
-1. Pago de reserva y procesamiento de facturación  
-2. Gestión de puntos / programa de fidelización  
-3. Chat en vivo con atención (soporte en tiempo real)
-
----
-
-### Tabla Resumen
-
-| # | Problema | Escala de severidad | Heurística/Principio violada(o) |
-|---|---|---:|---|
-| 1 | Ausencia de botón "Atrás" o "Cancelar" en el flujo de check-in | 3 | Usability: Control y libertad del usuario |
-| 2 | Iconos de estado de habitación poco intuitivos y sin etiquetas | 3 | Usability: Reconocimiento antes que recuerdo |
-| 3 | Controles de IoT sin texto alternativo ni etiquetas accesibles | 3 | Inclusive Design: Proporciona experiencias comparables |
-| 4 | Menú de "Solicitudes de Servicio" desordenado y sin jerarquía | 2 | Usability: Cumplimiento de estándares y convenciones |
-| 5 | Falta de confirmación visual al enviar una solicitud de servicio | 3 | Usability: Visibilidad del estado del sistema |
-
----
-
-### Fichas Detalladas (Problemas de severidad 3)
-
-#### PROBLEMA #1: Ausencia de Control y Libertad en el Flujo de Check-in
-
-**Severidad:** 3
-
-**Heurística violada:** Usability - Control y libertad del usuario
-
-**Problema:**
-Durante el proceso de check-in digital, no hay opción para retroceder o cancelar sin perder todo el progreso. Si el huésped necesita corregir datos (fecha, número de documento, selección de habitación) debe cerrar la aplicación y reiniciar el flujo, aumentando la frustración y el riesgo de abandono. Para el Staff Operativo, la imposibilidad de cancelar o devolver un paso en procesos administrativos también provoca errores en la asignación de tareas.
-
-**Captura de pantalla:** 
-
-**Recomendación:**
-- Agregar un botón "Atrás" en la esquina superior izquierda y un botón "Cancelar" en pasos críticos, siguiendo convenciones de Material Design.  
-- Implementar guardado en sesión local (persistencia temporal) para que los datos no se pierdan si el usuario sale y vuelve al flujo.  
-- Mostrar diálogo de confirmación al intentar salir mid-flow con opciones: "Continuar registro", "Guardar y salir" y "Cancelar registro".
-
----
-
-#### PROBLEMA #2: Iconografía Inconsistente y Poco Intuitiva en Indicadores de Estado
-
-**Severidad:** 3
-
-**Heurística violada:** Usability - Reconocimiento antes que recuerdo
-
-**Problema:**
-Los estados de habitación se representan con símbolos no estándares y sin etiquetas textuales (ej: círculo con patrón, punto, triángulo). El Staff Operativo debe memorizar su significado, aumentando errores en la asignación de tareas y tiempos de respuesta. Durante las pruebas, varios usuarios confundieron iconos y asignaron housekeeping a habitaciones ocupadas.
-
-**Captura de pantalla:** 
-
-**Recomendación:**
-- Rediseñar iconos usando convenciones universales: `check` verde para "Limpia", `candado` rojo para "Ocupada", `herramientas` amarillo para "Mantenimiento".  
-- Añadir etiqueta de texto bajo el icono en la vista compacta (ej: "Limpia") y permitir vista compacta sin texto como preferencia de usuario.  
-- Acompañar con colores accesibles y patrones para soportar daltonismo (ej: icon + color + patrón).  
-- Actualizar la biblioteca de componentes accesibles con patrones y ejemplos.
-
----
-
-#### PROBLEMA #3: Falta de Texto Alternativo y Etiquetas de Accesibilidad en Controles IoT
-
-**Severidad:** 3
-
-**Heurística violada:** Inclusive Design - Proporciona experiencias comparables
-
-**Problema:**
-Los controles de iluminación y temperatura no incluyen descripciones accesibles (aria-label / accessibilityLabel) ni equivalentes textuales. Usuarios que dependen de lectores de pantalla (TalkBack, VoiceOver) no pueden identificar ni operar estos controles, lo que excluye a personas con discapacidad visual y viola recomendaciones WCAG.
-
-**Captura de pantalla:** 
-
-**Recomendación:**
-- Para web/Angular: agregar `aria-label` y `aria-describedby` en todos los controles interactivos; ejemplo: `<mat-slider aria-label="Ajuste de temperatura en °C" aria-describedby="temp-help"></mat-slider>`.  
-- Para Flutter: envolver controles con `Semantics(label: 'Ajuste de temperatura en grados Celsius', value: '22')` y usar `excludeSemantics` donde aplique.  
-- Incluir descripciones sonoras opcionales y probar con lectores de pantalla reales durante QA (probar con TalkBack/VoiceOver).  
-- Actualizar la biblioteca de componentes accesibles con patrones y ejemplos.
-
----
-
-### Observaciones adicionales (Problemas menores)
-
-- PROBLEMA #4 (Sev.2): Reorganizar el menú de "Solicitudes de Servicio" por frecuencia o categoría y añadir un buscador rápido.  
-- PROBLEMA #5 (Sev.3): Implementar pantalla/modal de confirmación tras envío de solicitud con número de ticket, hora y tiempo estimado; en caso de fallo, explicar la causa y ofrecer reintento automático.
-
----
-
-### Validación y Seguimiento
-
-- Registrar cada corrección como un requisito en el backlog (EPIC/US) e incluir criterios de aceptación claros para QA.  
-- Priorizar las fichas de severidad 3 para el próximo sprint de refinamiento.  
-- Incluir pruebas de accesibilidad y pruebas en dispositivos reales distribuidos vía Firebase App Distribution como parte del plan de validación.
-
----
-
-## 6.4. Auditoría de Experiencias de Usuario
-
-**Pendiente:** auditoría UX entre grupos según el enunciado (se realiza en Avance 2).
-
-### 6.4.1. Auditoría realizada
-
-#### 6.4.1.1. Información del grupo auditado
-
-#### 6.4.1.2. Cronograma de auditoría realizada
-
-#### 6.4.1.3. Contenido de auditoría realizada
-
-### 6.4.2. Auditoría recibida
-
-#### 6.4.2.1. Información del grupo auditor
-
-#### 6.4.2.2. Cronograma de auditoría recibida
-
-#### 6.4.2.3. Contenido de auditoría recibida
-
-#### 6.4.2.4. Resumen de modificaciones para subsanar hallazgos
-
----
-
-<div style="page-break-after: always;"></div>
-
-# Capítulo VII: DevOps Practices
-
-## 7.1. Continuous Integration
-
-### 7.1.1. Tools and Practices
-
-El pipeline de integración y despliegue continuo tiene como propósito:
-
-- Automatizar la construcción de las aplicaciones móviles (Android / Flutter) y del backend.
-- Ejecutar la suite de pruebas en cada cambio.
-- Validar que las métricas de calidad (cobertura, lint, pruebas pasadas) cumplen umbral mínimo antes de integrar.
-- Desplegar versiones a entornos de prueba (alpha/beta) para soportar los experimentos del Capítulo VIII.
-- Proveer evidencia trazable de cada build asociada a un experimento.
-
-Prácticas habilitantes del enunciado: GIT + GitHub con **GitFlow**, **Conventional Commits** y **Semantic Versioning**.
-
-**Pendiente:** detallar las herramientas concretas de CI seleccionadas por el equipo y su configuración.
-
-### 7.1.2. Build & Test Suite Pipeline Components
-
-> **Pendiente:** insertar diagrama del pipeline (no existe un candidato en el repo de assets; el equipo debe crear `assets/chapter-7/pipeline.png` o equivalente).
-
-Etapas propuestas del pipeline:
-
-| Etapa | Descripción |
-| :--- | :--- |
-| **1. Checkout / Trigger** | El pipeline se activa por push a ramas configuradas (main, develop, feature/*) o por PR. |
-| **2. Build** | Compilación de apps móviles y backend; resolución de dependencias; generación de artefactos. |
-| **3. Static Analysis / Lint** | Análisis estático de código, linting, revisión de estilo y reglas de negocio críticas. |
-| **4. Unit Tests** | Ejecución de pruebas unitarias (Android: JUnit; Flutter: widget/unit tests; backend .NET: xUnit o equivalente). |
-| **5. Integration Tests** | Pruebas de integración con servicios reales o simulados, incluyendo endpoints y lógica de dominio. |
-| **6. E2E / UI Tests (si aplica)** | Pruebas de extremo a extremo en emulador/dispositivo real o mediante herramientas automatizadas. |
-| **7. Quality Gates** | Evaluación de cobertura, tasa de fallos, y métricas definidas para aprobar o rechazar la integración. |
-| **8. Artifact Publish** | Publicación de artefactos (APK/AAB, backend, reports) a un registro o repositorio de builds. *(Corresponde a la entrega continua — 7.2.2.)* |
-| **9. Deploy (Alpha/Beta)** | Despliegue a un entorno controlado para ejecución de experimentos con usuarios reales o testers. *(Corresponde a la entrega continua — 7.2.2.)* |
-
-> Nota: la tabla consolidada cubre las etapas de build & test (1–7) y las de publicación/despliegue pre-producción (8–9); al formalizar cada sección del capítulo con evidencia real, las etapas se distribuyen en 7.1.2, 7.2.2 y 7.3.2 según corresponda.
-
-#### Relación con los experimentos
-
-Cada experimento del Capítulo VIII debe poder ejecutarse sobre una build específica y reproducible. El pipeline permite:
-
-- Etiquetar builds asociadas a un experimento (ej: `exp-01-checkin`, `exp-02-operativa`, `exp-03-usabilidad`).
-- Capturar las métricas de build y de pruebas automáticas como parte de la evidencia del experimento.
-- Garantizar que la versión evaluada con usuarios es la misma que pasó los gates de calidad.
-
-#### Registro de builds y trazabilidad
-
-Se propone mantener un registro mínimo por build (formato propuesto; **los valores del ejemplo son ilustrativos y deben reemplazarse por builds reales**, no constituyen evidencia):
-
-| Campo | Ejemplo |
-| :--- | :--- |
-| Build ID | `build-20260905-001` |
-| Commit SHA | `[sha real del commit]` |
-| Rama | `feature/exp-01-checkin` |
-| Experimento asociado | `EXP-01-checkin-digital` |
-| Estado de tests | *(por completar con resultados reales)* |
-| Cobertura | ≥ 80% (umbral de gate) |
-| Artefactos | APK debug firmado, logs, reporte de pruebas |
-
-## 7.2. Continuous Delivery
-
-### 7.2.1. Tools and Practices
-
-**Pendiente:** detallar las herramientas y prácticas de entrega continua (publicación de artefactos y despliegue a entornos pre-producción).
-
-### 7.2.2. Stages Deployment Pipeline Components
-
-**Pendiente:** documentar los componentes de despliegue por etapas (staging/alpha/beta) con evidencia. El diseño propuesto corresponde a las etapas 8 y 9 del pipeline consolidado en 7.1.2.
-
-## 7.3. Continuous deployment
-
-### 7.3.1. Tools and Practices
-
-**Pendiente:** herramientas y prácticas de despliegue continuo a producción.
-
-### 7.3.2. Production Deployment Pipeline Components
-
-**Pendiente:** componentes del pipeline de despliegue a producción (Landing Page, Web Apps y Web Services) con evidencia de las configuraciones (cuentas, recursos en cloud, automatización del deployment).
-
-<!-- Evidencia candidata en repo remoto (assets/ raíz y Chapter-IV/): render.png, insights.png, swager*.png, appAndroid*. -->
-
-## 7.4. Continuous Monitoring
-
-### 7.4.1. Tools and Practices
-
-**Pendiente:** herramientas y prácticas de monitoreo continuo del pipeline y del producto desplegado.
-
-### 7.4.2. Monitoring Pipeline Components
-
-Métricas de proceso propuestas para caracterizar cómo se construyó y mantuvo la solución durante el ciclo del proyecto:
-
-| Métrica | Descripción |
-| :--- | :--- |
-| **Tiempo de ejecución del pipeline** | Tiempo total desde trigger hasta artefacto desplegable. |
-| **Tasa de build exitosas** | Porcentaje de builds que pasan los quality gates sin regressions críticas. |
-| **Cobertura de pruebas** | Porcentaje de código o de lógica crítica cubierto por pruebas automatizadas. |
-| **Tiempo de feedback** | Tiempo que tarda un desarrollador en recibir feedback sobre un cambio (desde commit hasta resultado de pruebas). |
-| **Estabilización** | Número de builds o commits necesarios para estabilizar un feature antes de una release experimental. |
-
-Estas métricas son complementarias a las de los experimentos y sirven para evaluar la madurez del proceso de ingeniería que sostiene la experimentación.
-
-### 7.4.3. Alerting Pipeline Components
-
-**Pendiente:** componentes de alerta del monitoreo.
-
-### 7.4.4. Notification Pipeline Components
-
-**Pendiente:** componentes de notificación del monitoreo.
-
----
-
-<div style="page-break-after: always;"></div>
-
-# Part III: Experiment-Driven Lifecycle
-
----
-
-<div style="page-break-after: always;"></div>
-
-# Capítulo VIII: Experiment-Driven Development
-
-Este capítulo presenta el **diseño experimental** que sustenta la evaluación del producto SmartStay, en línea con la metodología de Experiment-Driven Development del curso. Se describen los experimentos planeados para validar las hipótesis identificadas en el Capítulo I, con su respectivo contexto, participantes, variables, métricas, instrumentos de recolección y análisis esperado.
-
-La estructura se organiza en **tres experimentos principales**, cada uno documentado mediante *Experiment Cards*, *Gherkin scenarios* y una matriz de métricas asociada:
-
-- **EXP-01 — Check-in digital** → valida la hipótesis **H3** del Capítulo I (reducción ≥ 40% del tiempo de check-in).
-- **EXP-02 — Productividad del staff** → valida la hipótesis **H2** del Capítulo I (mejora ≥ 15% de la productividad).
-- **EXP-03 — Usabilidad de la app del huésped** → hipótesis de usabilidad (SUS ≥ 68, completitud ≥ 90%), transversal y complementaria a la validación de H1 (satisfacción del huésped).
-
----
-
-## Experimento 1 — Validación de la Experiencia de Check-in Digital
-
-### Contexto y motivación
-
-Una de las principales promesas de SmartStay es el **check-in digital**: el huésped puede ocupar su habitación sin pasar por recepción, usando la aplicación móvil y el mecanismo de acceso digital (autenticación + control de apertura de puerta).
-
-La hipótesis de negocio asociada es (H3 del Capítulo I):
-
-> **H3.** Si ofrecemos check-in digital y control de acceso mediante app, entonces el tiempo promedio de check-in se reduce al menos un 40% respecto al flujo tradicional en recepción.
-
-Este experimento busca **validar o refutar H3** con datos reales o simulados, según la disponibilidad de hoteles piloto.
-
-### Experiment Card
-
-| Campo | Descripción |
-| :--- | :--- |
-| **Experiment ID** | EXP-01-checkin-digital |
-| **Título** | Validación del tiempo de check-in con flujo digital vs. recepción tradicional |
-| **Pregunta de investigación** | ¿En qué medida el check-in digital reduce el tiempo total de ingreso/registro del huésped? |
-| **Por qué (why)** | El tiempo de espera en recepción es un factor documentado de frustración del huésped; reducirlo impacta satisfacción y operación. |
-| **Qué (what)** | Comparación del tiempo total desde la llegada hasta que la habitación está lista para uso, entre el flujo físico (recepción → llave física) y el flujo digital (app → autenticación → apertura). |
-| **Hipótesis (H3)** | El tiempo total con flujo digital será al menos 40% menor que con flujo tradicional en recepción. |
-| **Tipo de experimento** | Cuasiexperimental con grupos comparables (o simulación controlada si no hay hotel piloto). |
-| **Variable independiente** | Tipo de flujo: tradicional vs. digital. |
-| **Variable dependiente** | Tiempo total de check-in (segundos), medida cronometrada. |
-| **Variables de control** | Horario de llegada, tipo de huésped (nuevo vs. recurrente), número de huéspedes, estado del hotel (ocupación). |
-| **Participantes objetivo** | Huéspedes que llegan a un hotel piloto implementando SmartStay (o simulación con usuarios reales en entorno controlado). |
-| **Métrica principal** | Tiempo total de check-in (mean, median, p95). |
-| **Métricas secundarias** | Satisfacción percibida (Likert 1–5), tasa de completitud sin intervención de staff, número de errores/rollback. |
-| **Criterio de éxito** | Reducción ≥ 40% del tiempo total con significancia estadística (p < 0.05) y satisfacción ≥ 4/5. |
-| **Riesgos / limitaciones** | Ausencia de hotel piloto, sesgo de selección, condiciones operativas no representativas. |
-
-### Escenarios Gherkin
-
-```gherkin
-Feature: Check-in Digital con Control de Acceso
-
-  Scenario: Huésped nuevo completa check-in digital sin intervención de recepción
-    Given que el huésped tiene una reserva confirmada en el sistema SmartStay
-    And el hotel está operativo y la habitación está lista
-    When el huésped inicia sesión en la aplicación móvil
-    And selecciona "Check-in Digital" para su reserva
-    And autentica su identidad mediante los canales configurados
-    Then el sistema valida la reserva y confirma la disponibilidad de la habitación
-    And emite un token de acceso digital para la puerta de la habitación
-    And el huésped puede abrir la puerta desde la aplicación
-    And el check-in se registra automáticamente en el sistema con marca de tiempo
-```
-
-```gherkin
-  Scenario: Fallback cuando el acceso digital falla
-    Given que el huésped tiene una reserva confirmada
-    And el mecanismo de apertura digital reporta falla de comunicación
-    When el huésped intenta abrir la puerta desde la app
-    And el intento falla por timeout de IoT Gateway
-    Then el sistema notifica al huésped sobre el fallo
-    And ofrece la opción de contactar a recepción o usar llave física de respaldo
-    And registra el incidente para análisis posterior del experimento
-```
-
-### Diseño de la recolección de datos
-
-| Aspecto | Detalle |
-| :--- | :--- |
-| **Instrumento** | Registro automático de timestamps en backend (eventos: checkin_iniciado, habitacion_lista, apertura_exitosa) + encuesta post-check-in (NPS / Likert). |
-| **Muestreo** | Todos los check-ins del periodo experimental que cumplan criterios de inclusión (reserva confirmada, habitación lista). |
-| **Frecuencia** | Por evento, continuo durante la ventana del experimento. |
-| **Análisis** | Estadística descriptiva, prueba t de Student o Mann-Whitney U según distribución, intervalo de confianza del 95% para la diferencia de medias. |
-
-### Plan de análisis
-
-- Calcular tiempo total = `t_apertura - t_llego` para cada caso.
-- Comparar distribución entre grupo tradicional y grupo digital.
-- Evaluar satisfacción como variable complementaria.
-- Documentar los casos anómalos y respaldarlos en el reporte final con carpetas de evidencia.
-
----
-
-## Experimento 2 — Productividad del Personal Operativo con Información en Tiempo Real
-
-### Contexto y motivación
-
-El **staff operativo** (housekeeping, mantenimiento, recepción) trabaja con información fragmentada en muchos hoteles pequeños: ¿qué habitaciones están ocupadas, en limpieza, listas o en mantenimiento? Esta situación genera movimiento innecesario, retrasos y duplicidad de tareas.
-
-La hipótesis asociada es (H2 del Capítulo I):
-
-> **H2.** Si el personal operativo usa una aplicación móvil con visibilidad en tiempo real de las habitaciones, entonces la productividad en la asignación y ejecución de tareas mejora al menos un 15%.
-
-### Experiment Card
-
-| Campo | Descripción |
-| :--- | :--- |
-| **Experiment ID** | EXP-02-operativa-en-tiempo-real |
-| **Título** | Validación de la productividad del staff con dashboard móvil en tiempo real |
-| **Pregunta de investigación** | ¿Cuánto mejora la productividad operativa cuando el staff cuenta con información en tiempo real en su dispositivo móvil? |
-| **Por qué (why)** | La falta de visibilidad en tiempo real genera asignación ineficiente de tareas, retrasos en check-out y habitaciones que quedan "ocupadas" más tiempo del necesario. |
-| **Qué (what)** | Comparación del tiempo de ciclo de tareas de housekeeping y recepción con y sin la app de visibilidad en tiempo real. |
-| **Hipótesis (H2)** | La productividad mejora ≥ 15% con la app de visibilidad en tiempo real. |
-| **Tipo de experimento** | Comparación antes/después (pre/post) en misma operación, o grupos paralelos si hay más de un hotel. |
-| **Variable independiente** | Disponibilidad de la app SmartStay para staff (con visibilidad VS sin ella / sistema anterior). |
-| **Variable dependiente** | Productividad operativa medida como tareas completadas por unidad de tiempo, tiempo promedio por tarea, y tasa de retrabajo. |
-| **Variables de control** | Tamaño del hotel, número de personal, régimen de ocupación, definición de tareas, entrenamiento previo. |
-| **Participantes objetivo** | Personal de housekeeping, mantenimiento y recepción de hotel piloto. |
-| **Métrica principal** | Tareas completadas por hora (o por turno) — baseline vs. experimental. |
-| **Métricas secundarias** | Tiempo promedio por tarea (limpieza, asignación, check-out), tasa de tareas reabiertas, percepción de utilidad (encuesta interna). |
-| **Criterio de éxito** | Mejora ≥ 15% en la métrica principal con significancia estadística y percepción interna ≥ 4/5. |
-| **Riesgos / limitaciones** | Curva de aprendizaje del personal, resistencia al cambio, efecto Hawthorne. |
-
-### Escenarios Gherkin
-
-```gherkin
-Feature: Visibilidad Operativa del Staff
-
-  Scenario: Housekeeping recibe tarea asignada desde la app
-    Given que el sistema marca una habitación como "check-out completado"
-    And la habitación requiere limpieza antes del próximo check-in
-    When el jefe de housekeeping ve el panel de tareas pendientes
-    Then el sistema le asigna la habitación al personal disponible
-    And el asignado recibe notificación push con detalles de la habitación
-    And el asignado acepta la tarea en la app
-    And la habitación pasa a estado "en limpieza" en el panel de todos
-```
-
-```gherkin
-  Scenario: Recepción consulta estado en tiempo real para resolver consulta de huésped
-    Given que un huésped pregunta en recepción por el estado de su solicitud de room service
-    When el recepcionista consulta el estado en la app SmartStay
-    Then el sistema muestra el estado actual y el tiempo estimado
-    And el recepcionista puede comunicar información precisa al huésped
-    And el registro de la consulta queda para métricas de servicio
-```
-
-### Diseño de la recolección de datos
-
-| Aspecto | Detalle |
-| :--- | :--- |
-| **Instrumento** | Registros del sistema (eventos de tarea: asignada, aceptada, iniciada, completada), cronómetro de ciclo por tarea, encuesta de percepción al personal. |
-| **Muestreo** | Turnos completos durante el periodo experimental. |
-| **Frecuencia** | Por tarea, continuo. |
-| **Análisis** | Comparación antes/después con prueba para medias pareadas o equivalente; análisis de variabilidad y calidad (tasa de retrabajo). |
-
-### Plan de análisis
-
-- Definir claramente el **baseline** (sistema actual o medición previa).
-- Calcular métrica principal por turno y por tipo de tarea.
-- Considerar el efecto de aprendizaje incluyendo una fase de aclimatación antes de medir.
-- Reportar según rúbrica del curso: hipótesis, resultados, conclusión, limitaciones.
-
----
-
-## Experimento 3 — Evaluación de Usabilidad y Experiencia de Usuario (UX) de la App del Huésped
-
-### Contexto y motivación
-
-Independientemente de la funcionalidad, la **calidad de la experiencia de usuario** determina la adopción real del producto. El Experimento 3 se enfoca en validar que la aplicación móvil del huésped cumple con estándares de usabilidad y que los usuarios pueden completar sus tareas críticas sin fricción significativa. Su hipótesis es transversal a los experimentos EXP-01 y EXP-02 (una app usable es prerequisito para medir sus métricas sin contaminación por errores de interacción) y complementa la validación de la hipótesis H1 del Capítulo I (satisfacción del huésped).
-
-### Experiment Card
-
-| Campo | Descripción |
-| :--- | :--- |
-| **Experiment ID** | EXP-03-usabilidad-app-huesped |
-| **Título** | Evaluación de usabilidad y experiencia de usuario de la app móvil del huésped |
-| **Pregunta de investigación** | ¿La aplicación móvil del huésped permite completar las tareas críticas (check-in, control de habitación, solicitud de servicios) con una experiencia usable y satisfactoria? |
-| **Por qué (why)** | Una funcionalidad potente pero confusa no se adopta; la usabilidad es un factor determinante de valor percibido. |
-| **Qué (what)** | Evaluación heurística + pruebas de usabilidad con usuarios reales o representativos, midiendo completitud, tiempo, errores y satisfacción. |
-| **Hipótesis (EXP-03)** | Los usuarios pueden completar las tareas críticas con ≤ 1 error importante y una puntuación SUS ≥ 68. |
-| **Tipo de experimento** | Evaluación de usabilidad con tareas definidas, con pruebas de usabilidad moderadas o no moderadas según recursos. |
-| **Variable independiente** | Versión de la app evaluada (y task flow específico). |
-| **Variable dependiente** | Completitud de tareas, tiempo por tarea, número de errores, puntuación SUS (System Usability Scale). |
-| **Variables de control** | Perfil del usuario (familiaridad con apps de viaje/hotel), dispositivo, condiciones del entorno. |
-| **Participantes objetivo** | Huéspedes potenciales o reales, representativos del segmento objetivo. |
-| **Métrica principal** | Puntuación SUS global y tasa de completitud de tareas críticas. |
-| **Métricas secundarias** | Tiempo por tarea, errores críticos, comentarios cualitativos, NPS percibido. |
-| **Criterio de éxito** | SUS ≥ 68 (umbral aceptable) y completitud ≥ 90% en tareas críticas con ≤ 1 error crítico por sesión. |
-| **Riesgos / limitaciones** | Sesgo de voluntarios, pequeña muestra, ambiente no representativo. |
-
-### Escenarios Gherkin
-
-```gherkin
-Feature: Tareas Críticas del Huésped
-
-  Scenario: El huésped controla la iluminación y temperatura de su habitación
-    Given que el huésped ya realizó check-in y está dentro de la habitación
-    And el sistema IoT Gateway está conectado y operativo
-    When el huésped abre la sección de "Control de Habitación" en la app
-    Then puede ver el estado actual de iluminación y temperatura
-    And puede ajustar la temperatura a un valor deseado
-    And puede encender/apagar luces individualmente o por grupos
-    And los cambios se reflejan físicamente en la habitación
-```
-
-```gherkin
-  Scenario: El huésped solicita room service y recibe seguimiento
-    Given que el huésped está en la app y tiene una reserva activa
-    When selecciona "Solicitar Servicio" y elige tipo de servicio
-    And confirma los detalles y el horario
-    Then el sistema registra la solicitud y la asigna al canal correspondiente
-    And el huésped puede ver el estado de la solicitud en tiempo real
-    And recibe notificación cuando el servicio se completa
-```
-
-### Diseño de la recolección de datos
-
-| Aspecto | Detalle |
-| :--- | :--- |
-| **Instrumento** | Rúbrica de tareas (completada / no completada / con ayuda), cronómetro, registro de errores, cuestionario SUS, notas del moderador. |
-| **Muestreo** | Sesiones individuales o grupales pequeñas, según recursos del equipo. |
-| **Frecuencia** | Una sesión por participante, con entre 3 y 5 tareas críticas por sesión. |
-| **Análisis** | Estadística descriptiva de completitud y tiempo; distribución de puntuaciones SUS; análisis cualitativo de patrones de error. |
-
-### Plan de análisis
-
-- Calcular el SUS por participante y el promedio global.
-- Reportar por tarea: % completada sin ayuda, % con ayuda, % no completada.
-- Identificar patrones de error recurrentes y proponer mejoras priorizadas.
-- Relacionar los hallazgos con las hipótesis de Lean UX del Capítulo I.
-
----
-
-## Matriz de métricas global de los experimentos
-
-La siguiente tabla resume las métricas clave de los tres experimentos (sustenta la sección 8.2.2 Domain Business Metrics del enunciado; al formalizar, cada métrica debe definirse con fórmula de cálculo, técnica de recolección y meta deseada).
-
-| Experimento | Hipótesis | Métrica principal | Métrica secundaria | Criterio de éxito |
-| :--- | :--- | :--- | :--- | :--- |
-| EXP-01 — Check-in digital | H3: reducción ≥ 40% del tiempo | Tiempo total de check-in (mean, median, p95) | Satisfacción (Likert), tasa de completitud sin staff, errores | ≥ 40% reducción + satisfacción ≥ 4/5 + significancia estadística |
-| EXP-02 — Operativa en tiempo real | H2: productividad ≥ 15% | Tareas completadas por unidad de tiempo | Tiempo por tarea, tasa de retrabajo, percepción interna | ≥ 15% mejora + significancia estadística + percepción ≥ 4/5 |
-| EXP-03 — Usabilidad app | Hipótesis de usabilidad (SUS ≥ 68, ≤ 1 error crítico) | Puntuación SUS, tasa de completitud | Tiempo por tarea, errores críticos, comentarios cualitativos | SUS ≥ 68, completitud ≥ 90%, ≤ 1 error crítico por sesión |
-
----
-
-## Consideraciones éticas y logísticas
-
-**Insumo para la Matriz de Evaluación Ética y de Impacto** que el enunciado exige en la fase de experimentación (Anexo F: dimensiones de salud pública y seguridad, inclusión y accesibilidad, impacto social/cultural, económico, ambiental antrópico, enfoque global, y revelación de peligros y responsabilidad).
-
-- **Consentimiento informado:** todos los participantes (huéspedes y personal) deben consentir la recolección de datos y ser informados sobre el propósito del experimento.
-- **Privacidad:** los datos operativos y de uso no deben exponer información personal identificable sin consentimiento explícito.
-- **Seguridad:** los experimentos que involucren acceso a habitaciones deben garantizar que los mecanismos de respaldo (llave física, recepción) funcionen en todo momento.
-- **Viabilidad:** ante la ausencia de hotel piloto, los experimentos pueden ejecutarse como simulaciones controladas o pruebas con usuarios representativos, documentando la limitación en el reporte final.
-
----
-
-<div style="page-break-after: always;"></div>
-
----
-
-<div style="page-break-after: always;"></div>
-
-# Conclusiones
+## Conclusiones
 
 Durante el desarrollo del proyecto se identificó que la operación hotelera de establecimientos medianos y boutique enfrenta una gestión fragmentada y manual: procesos de check-in/check-out con colas en recepción, habitaciones sin monitoreo ni control remoto, y personal operativo sin visibilidad en tiempo real del estado de las habitaciones. Esta situación, descrita en el Capítulo I mediante la técnica 5W+2H, se traduce en una pérdida estimada del 15% al 20% de la productividad operativa y en una experiencia del huésped desconectada de los servicios del hotel.
 
 Frente a este problema, la startup Movildev plantea el producto SmartStay, que integra en una sola solución el check-in digital con control de acceso, el control del entorno de la habitación mediante IoT y aplicaciones móviles diferenciadas para el staff operativo (Android/Kotlin) y para el huésped (Flutter), soportadas por un backend RESTful y un gateway IoT. La propuesta busca reducir los tiempos de espera, optimizar la asignación de tareas del personal y ofrecer al huésped autonomía sobre su estancia.
-
-## Recomendaciones
-
-- Gestionar la participación de al menos un hotel piloto (o simulación controlada con usuarios representativos) para ejecutar los experimentos con datos reales.
-- Definir el tamaño de muestra con poder estadístico y nivel de significancia adecuados (80%–95% y 5%, respectivamente) antes de la ejecución de cada experimento.
-- Completar el registro y análisis estadístico de las entrevistas por segmento objetivo, y los datos demográficos y estadísticos de sustento de la sección 1.3.
-- Formalizar la implementación y el despliegue de los productos (Landing Page, Frontend Web y RESTful API) en los repositorios de la organización, con evidencia trazable por sprint.
-- Redactar las acciones y conclusiones del Student Outcome 4.c.1 y 4.c.2 con evidencia por miembro y por entrega.
-
-## Video App Validation
-
-**Pendiente:** incorporar la evidencia de App Validation.
-
-Link: -
-
-## Video About The Product
-
-**Pendiente:** incorporar la evidencia de About The Product.
-
-Link: -
-
-## Video About The Team
-
-**Pendiente:** incorporar la evidencia de About The Team.
-
-Link: -
 
 ## Bibliografía
 
@@ -6099,6 +5193,25 @@ Vernon, V. (2016). _Domain-Driven Design Distilled_. Addison-Wesley Professional
 Vernon, V. (s.f.). _Domain-Driven Design Reference_. Recuperado de https://domainlanguage.com/ddd/reference/
 
 ## Anexos
+
+### Video App Validation
+
+**Pendiente:** incorporar la evidencia de App Validation.
+
+Link: -
+
+### Video About The Product
+
+**Pendiente:** incorporar la evidencia de About The Product.
+
+Link: -
+
+### Video About The Team
+
+**Pendiente:** incorporar la evidencia de About The Team.
+
+Link: -
+
 
 <h3>Repositorios de la Organización</h3>
 

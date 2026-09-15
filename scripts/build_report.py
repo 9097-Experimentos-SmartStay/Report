@@ -95,6 +95,20 @@ def slug(title):
     ).replace(" ", "-")
 
 
+def in_contents(level, title):
+    """Show the delivery outline, leaving descriptive subsections in the body."""
+    if level == 1 or title in {
+        "Registro de Versiones del Informe", "Student Outcome",
+        "Conclusiones", "Bibliografía", "Anexos",
+    }:
+        return True
+    match = re.match(r"^([1-5](?:\.\d+)+)\.?(?:\s|$)", title)
+    if not match:
+        return False
+    number = match[1]
+    return len(number.split(".")) <= 3 or number.startswith(("1.2.2.", "4.1.3."))
+
+
 def build():
     manifest = json.loads((ROOT / "docs/report.json").read_text(encoding="utf-8"))
 
@@ -103,15 +117,15 @@ def build():
         text = (ROOT / source).read_text(encoding="utf-8")
         if re.search(r"(?m)^(<<<<<<< |=======\s*$|>>>>>>> )", text):
             raise ValueError(f"{filename}: conflicto de Git pendiente")
-        return rewrite_links(text, source).strip()
+        return rewrite_links(text, source).strip().removesuffix(BREAK.strip()).rstrip()
 
     cover = read(manifest["cover"])
     info = read(manifest["info"])
+    outcome = read(manifest["student_outcome"])
     sections = [
         "# " + entry["heading"] if "heading" in entry else read(entry["file"])
         for entry in manifest["sections"]
     ]
-    body = BREAK.join([info, *sections])
     used = set()
 
     def anchor(title):
@@ -126,15 +140,22 @@ def build():
 
     for _, title in headings(cover):
         anchor(title)
-    anchor("Tabla de Contenido")
     toc = []
-    for section, base_level in [(info, 2), *((section, 1) for section in sections)]:
+    for level, title in headings(info):
+        link = anchor(title)
+        if in_contents(level, title):
+            toc.append(f"- [{title}](#{link})")
+    anchor("Contenido")
+    for section, base_level in [(outcome, 2), *((section, 1) for section in sections)]:
         for level, title in headings(section):
             link = anchor(title)
+            if not in_contents(level, title):
+                continue
             depth = max(0, level - base_level)
             label = title.replace("[", "\\[").replace("]", "\\]")
             toc.append("  " * depth + f"- [{label}](#{link})")
-    return NOTICE + "\n\n" + cover + "\n\n## Tabla de Contenido\n\n" + "\n".join(toc) + BREAK + body + "\n"
+    contents = "## Contenido\n\n" + "\n".join(toc)
+    return NOTICE + "\n\n" + BREAK.join([cover, info, contents, outcome, *sections]) + "\n"
 
 
 def main():

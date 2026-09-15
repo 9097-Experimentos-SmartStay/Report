@@ -2,17 +2,24 @@
   "cover": "docs/cover.md",
   "info": "docs/report-info.md",
   "sections": [
-    {"heading": "Part I: As-Is Software Project"},
-    {"file": "docs/chapter1.md"},
-    {"file": "docs/chapter2.md"},
-    {"file": "docs/chapter3.md"},
-    {"file": "docs/chapter4.md"},
-    {"file": "docs/chapter5.md"},
-    {"heading": "Part II: Verification, Validation & Pipeline"},
-    {"file": "docs/chapter6.md"},
-    {"file": "docs/chapter7.md"},
-    {"heading": "Part III: Experiment-Driven Lifecycle"},
-    {"file": "docs/chapter8.md"},
-    {"file": "docs/anexes.md"}
-  ]
+    {
+      "file": "docs/chapter1.md"
+    },
+    {
+      "file": "docs/chapter2.md"
+    },
+    {
+      "file": "docs/chapter3.md"
+    },
+    {
+      "file": "docs/chapter4.md"
+    },
+    {
+      "file": "docs/chapter5.md"
+    },
+    {
+      "file": "docs/anexes.md"
+    }
+  ],
+  "student_outcome": "docs/student-outcome.md"
 }

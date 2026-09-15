@@ -1,34 +1,10 @@
-# Conclusiones
+# Avance de Conclusiones, Bibliografía y Anexos
+
+## Conclusiones
 
 Durante el desarrollo del proyecto se identificó que la operación hotelera de establecimientos medianos y boutique enfrenta una gestión fragmentada y manual: procesos de check-in/check-out con colas en recepción, habitaciones sin monitoreo ni control remoto, y personal operativo sin visibilidad en tiempo real del estado de las habitaciones. Esta situación, descrita en el Capítulo I mediante la técnica 5W+2H, se traduce en una pérdida estimada del 15% al 20% de la productividad operativa y en una experiencia del huésped desconectada de los servicios del hotel.
 
 Frente a este problema, la startup Movildev plantea el producto SmartStay, que integra en una sola solución el check-in digital con control de acceso, el control del entorno de la habitación mediante IoT y aplicaciones móviles diferenciadas para el staff operativo (Android/Kotlin) y para el huésped (Flutter), soportadas por un backend RESTful y un gateway IoT. La propuesta busca reducir los tiempos de espera, optimizar la asignación de tareas del personal y ofrecer al huésped autonomía sobre su estancia.
-
-## Recomendaciones
-
-- Gestionar la participación de al menos un hotel piloto (o simulación controlada con usuarios representativos) para ejecutar los experimentos con datos reales.
-- Definir el tamaño de muestra con poder estadístico y nivel de significancia adecuados (80%–95% y 5%, respectivamente) antes de la ejecución de cada experimento.
-- Completar el registro y análisis estadístico de las entrevistas por segmento objetivo, y los datos demográficos y estadísticos de sustento de la sección 1.3.
-- Formalizar la implementación y el despliegue de los productos (Landing Page, Frontend Web y RESTful API) en los repositorios de la organización, con evidencia trazable por sprint.
-- Redactar las acciones y conclusiones del Student Outcome 4.c.1 y 4.c.2 con evidencia por miembro y por entrega.
-
-## Video App Validation
-
-**Pendiente:** incorporar la evidencia de App Validation.
-
-Link: -
-
-## Video About The Product
-
-**Pendiente:** incorporar la evidencia de About The Product.
-
-Link: -
-
-## Video About The Team
-
-**Pendiente:** incorporar la evidencia de About The Team.
-
-Link: -
 
 ## Bibliografía
 
@@ -106,6 +82,25 @@ Vernon, V. (s.f.). _Domain-Driven Design Reference_. Recuperado de https://domai
 
 ## Anexos
 
+### Video App Validation
+
+**Pendiente:** incorporar la evidencia de App Validation.
+
+Link: -
+
+### Video About The Product
+
+**Pendiente:** incorporar la evidencia de About The Product.
+
+Link: -
+
+### Video About The Team
+
+**Pendiente:** incorporar la evidencia de About The Team.
+
+Link: -
+
+
 <h3>Repositorios de la Organización</h3>
 
 **Organización:** [9097-Experimentos-SmartStay](https://github.com/9097-Experimentos-SmartStay)
@@ -124,4 +119,3 @@ Vernon, V. (s.f.). _Domain-Driven Design Reference_. Recuperado de https://domai
     </tr>
   </tbody>
 </table>
-
