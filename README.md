@@ -262,11 +262,13 @@ Entre sus principales características destacan:
       <td>[Completar]</td>
     </tr>
     <tr>
-      <td></td>
-      <td>Sulca, Piero</td>
-      <td>[Código]</td>
+      <td align="center" valign="middle">
+       <img src="assets/chapter-1/members/piero-sulca.jpg" alt="Sulca Sanchez Piero Angel" width="300">
+      </td>
+      <td>Sulca Sanchez, Piero Angel</td>
+      <td>u202423711</td>
       <td>Ingeniería de Software</td>
-      <td>[Completar]</td>
+      <td>Curso la carrera de Ingeniería de Software y tengo experiencia en desarrollo web trabajando con equipos pequeños. Me apasiona el Front End, sobre todo cuando hay espacio para el diseño creativo: interfaces 3D, animaciones, productos que se ven y se sienten distintos. En el equipo puedo aportar en levantamiento de requerimientos, diseño de interfaces, desarrollo web con React y TypeScript, diseño de bases de datos. En el equipo aporto organización y colaboración. </td>
     </tr>
     <tr>
       <td align="center" valign="middle">
