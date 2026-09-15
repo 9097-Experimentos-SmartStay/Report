@@ -1,7 +1,7 @@
 <!-- Generado con python3 scripts/build_report.py. Editar los archivos de docs/, no este README. -->
 
 <div align="center">
-<img src="assets/introduction/logo.png" width="120"><br><br>
+<img src="assets/cover/smartstay-logo.png" width="120"><br><br>
 
 <h3>Universidad Peruana de Ciencias Aplicadas</h3>
 
@@ -240,7 +240,7 @@ Entre sus principales características destacan:
   <tbody>
     <tr>
       <td align="center" valign="middle">
-       <img src="assets/chapter-1/members/samuel.png" alt="Bonifacio Jaramillo Samuel Jesus" width="300">
+       <img src="assets/chapter-1/members/samuel-bonifacio-jaramillo.png" alt="Bonifacio Jaramillo Samuel Jesus" width="300">
       </td>
       <td>Bonifacio Jaramillo Samuel Jesus</td>
       <td>u202317269</td>
@@ -272,7 +272,7 @@ Entre sus principales características destacan:
     </tr>
     <tr>
       <td align="center" valign="middle">
-       <img src="assets/chapter-1/members/AlejandroGalindo.jpg" alt="Galindo Montero Alejandro Manuel" width="300">
+       <img src="assets/chapter-1/members/alejandro-galindo.jpg" alt="Galindo Montero Alejandro Manuel" width="300">
       </td>
       <td>Galindo Manuel, Alejandro</td>
       <td>u202321264</td>
@@ -346,7 +346,7 @@ Para cada suposición planteamos una hipótesis comprobable:
 
 #### 1.2.2.4. Lean UX Canvas
 
-![Lean UX Canvas](assets/chapter-1/lean-ux-canvas.png)
+![Lean UX Canvas](assets/chapter-1/lean-ux/lean-ux-canvas.png)
 
 ---
 
@@ -386,10 +386,10 @@ El mercado de soluciones para gestión hotelera presenta diversos actores. Sin e
     </tr>
     <tr style="text-align: center;">
       <th style="border: 1px solid #000;">Categoría / Aspecto</th>
-      <th style="border: 1px solid #000;"><strong>Smart Stay</strong><br><img src="assets/chapter-2/logo.png" alt="Smart Stay" width="100"></th>
-      <th style="border: 1px solid #000;"><strong>Oracle Hospitality</strong><br><img src="assets/chapter-2/oracle-hospitality.png" alt="Oracle" width="100"></th>
-      <th style="border: 1px solid #000;"><strong>Room Raccoon</strong><br><img src="assets/chapter-2/logo-roomraccoon.jpeg" alt="Room Raccoon" width="100"></th>
-      <th style="border: 1px solid #000;"><strong>Sistemas Manuales</strong><br><img src="assets/chapter-2/Sistemas-Manuales.jpg" alt="Sistemas Manuales" width="100"></th>
+      <th style="border: 1px solid #000;"><strong>Smart Stay</strong><br><img src="assets/chapter-2/competitors/smartstay-logo.png" alt="Smart Stay" width="100"></th>
+      <th style="border: 1px solid #000;"><strong>Oracle Hospitality</strong><br><img src="assets/chapter-2/competitors/oracle-hospitality-logo.png" alt="Oracle" width="100"></th>
+      <th style="border: 1px solid #000;"><strong>Room Raccoon</strong><br><img src="assets/chapter-2/competitors/room-raccoon-logo.jpeg" alt="Room Raccoon" width="100"></th>
+      <th style="border: 1px solid #000;"><strong>Sistemas Manuales</strong><br><img src="assets/chapter-2/competitors/manual-systems.jpg" alt="Sistemas Manuales" width="100"></th>
     </tr>
   </thead>
   <tbody>
@@ -559,7 +559,7 @@ Datos del entrevistado:
 
 **Duración:** 8:07 minutos
 
-**Evidencia:** ![adrian entrevistado](assets/chapter-2/adrian_entrevistado.jpg)
+**Evidencia:** ![adrian entrevistado](assets/chapter-2/interviews/staff-01-adrian-saavedra.jpg)
 
 **Resumen de la entrevista**
 
@@ -582,7 +582,7 @@ Datos del entrevistado:
 
 **Duración:** 5:53 minutos
 
-**Evidencia:** ![monica entrevistada](assets/chapter-2/monica_entrevistada.jpg)
+**Evidencia:** ![monica entrevistada](assets/chapter-2/interviews/staff-02-monica-hernandez.jpg)
 
 **URL del video:** <https://tinyurl.com/59zmmrjb>
 **Resumen de la entrevista**
@@ -603,7 +603,7 @@ Datos del entrevistado:
 
 **Duración:** 4:11 minutos
 
-**Evidencia:** ![entrevista alejandra](assets/chapter-2/alejandra_entrevistada.jpg)
+**Evidencia:** ![entrevista alejandra](assets/chapter-2/interviews/staff-03-alejandra-beltran.jpg)
 
 **URL del video:** <https://tinyurl.com/2p9n2kmb>
 
@@ -628,7 +628,7 @@ Datos del entrevistado:
 
 **Duración:** 5:34 minutos
 
-**Evidencia:** ![entrevista_alexander](assets/chapter-2/entrevista_alexander.png)
+**Evidencia:** ![entrevista_alexander](assets/chapter-2/interviews/guest-01-diego-segura.png)
 
 **URL del video:** <https://tinyurl.com/me55rvnx>
 
@@ -657,7 +657,7 @@ Datos del entrevistado:
 **Edad:** 44 años  
 **Distrito:** San Borja
 
-**Evidencia:** ![Screenshot](assets/chapter-2/JuanSalcedo.png)
+**Evidencia:** ![Screenshot](assets/chapter-2/interviews/guest-02-juan-salcedo.png)
 
 **URL del video:** <https://tinyurl.com/3mv3ytt5>
 
@@ -679,7 +679,7 @@ Datos del entrevistado:
 
 **Duración:** 7:21 minutos
 
-**Evidencia:** ![Screenshot](assets/chapter-2/EntrevistaTadeoLoja.png)
+**Evidencia:** ![Screenshot](assets/chapter-2/interviews/guest-03-tadeo-loja.png)
 
 **URL del video:** <https://tinyurl.com/3ztyph92>
 
@@ -703,13 +703,13 @@ En esta sección se presenta un análisis detallado por cada segmento objetivo, 
 
 **Perfil de Edad y Ubicación**
 Los administradores entrevistados presentan una edad promedio de **30.0 años**, con un rango que va desde los 23 hasta los 34 años.
-![Perfil de edad de administradores — boxplot](assets/chapter-2/S1_01_perfil_edad_boxplot.png)
+![Perfil de edad de administradores — boxplot](assets/chapter-2/analysis/staff-01-perfil-edad-boxplot.png)
 El **100%** de los entrevistados se ubican en Tarapoto, lo que indica una concentración geográfica específica en esta región turística del Perú. Este hallazgo se alinea con las tendencias nacionales, ya que según _Statista Market Forecast (2025)_, Peru ha experimentado un crecimiento significativo en el mercado hotelero, posicionándose como un actor clave en la industria hotelera latinoamericana.
-![Concentración geográfica: 100% en Tarapoto](assets/chapter-2/S1_02_concentracion_tarapoto.png)
+![Concentración geográfica: 100% en Tarapoto](assets/chapter-2/analysis/staff-02-concentracion-tarapoto.png)
 
 **Características del Negocio**
 Los hoteles administrados por este segmento tienen un tamaño promedio de **14.3 habitaciones**, con un rango que va desde 12 hasta 19 habitaciones, confirmando que se trata efectivamente de establecimientos boutique y pequeños. El equipo de trabajo promedio es de **5.0 personas**, variando entre 4 y 6 empleados, lo que refleja operaciones de escala reducida pero con estructura organizacional definida. Estas características coinciden con las tendencias identificadas por _Statista_, donde los viajeros en Perú buscan cada vez más experiencias únicas y auténticas, impulsando la demanda de hoteles boutique.
-![Tamaño de hoteles (habitaciones) y equipo (empleados)](assets/chapter-2/S1_03_tamano_hoteles_equipo_boxplots.png)
+![Tamaño de hoteles (habitaciones) y equipo (empleados)](assets/chapter-2/analysis/staff-03-tamano-hoteles-equipo-boxplots.png)
 
 **Herramientas Tecnológicas Actuales**
 
@@ -719,7 +719,7 @@ El análisis revela una heterogeneidad en los sistemas utilizados:
 - **66.7%** (2 de 3 administradores) utilizan sistemas propios desarrollados para sus hoteles.
 - **33.3%** (1 de 3 administradores) depende de herramientas básicas como Excel y WhatsApp.
 
-![Nivel de digitalización de herramientas actuales](assets/chapter-2/S1_04_nivel_digitalizacion.png)
+![Nivel de digitalización de herramientas actuales](assets/chapter-2/analysis/staff-04-nivel-digitalizacion.png)
 
 Esta distribución indica que, aunque la mayoría cuenta con algún nivel de digitalización, existe una brecha significativa en la sofisticación de las herramientas empleadas. Este panorama refleja los hallazgos de un estudio académico sobre barreras de adopción tecnológica en hoteles pequeños y medianos, donde se identificó que la falta de recursos financieros, conocimiento de TI y resistencia al cambio son las principales limitaciones.
 
@@ -732,7 +732,7 @@ Cada administrador enfrenta diferentes tipos de desafíos, con una distribución
 - **Dificultades operativas:** Mónica tiene complicaciones con el uso de su sistema actual.
 - **Pérdida de información:** Alejandra sufre pérdidas de reservas por las limitaciones de sus herramientas básicas.
 
-![Distribución de problemas](assets/chapter-2/S1_05_distribucion_problemas.png)
+![Distribución de problemas](assets/chapter-2/analysis/staff-05-distribucion-problemas.png)
 
 Estas problemáticas están documentadas en la literatura académica, donde se ha identificado que las organizaciones hoteleras pequeñas y medianas son más reluctantes a adoptar nuevas tecnologías de información que las más grandes, debido a la falta de entrenamiento, recursos financieros limitados y percepción de costos elevados.
 
@@ -746,7 +746,7 @@ Los resultados muestran una receptividad completa hacia soluciones tecnológicas
 
 Esta disposición positiva contrasta con estudios previos pero se alinea con las tendencias post-pandemia. Según _Oracle Hospitality & Skift (2022)_, el **89%** de los ejecutivos hoteleros latinoamericanos afirmaron que la pandemia aceleró su adopción de tecnología hotelera, comparado con el 76% globalmente.
 
-![Actitud hacia nueva tecnología](assets/chapter-2/S1_06_actitud_nuevas_tecnologias.png)
+![Actitud hacia nueva tecnología](assets/chapter-2/analysis/staff-06-actitud-nuevas-tecnologias.png)
 
 ---
 
@@ -756,7 +756,7 @@ Esta disposición positiva contrasta con estudios previos pero se alinea con las
 
 **Perfil Generacional**
 Los huéspedes entrevistados tienen una edad promedio de **28.0 años**, con un rango de 21 a 44 años. El **75%** pertenece a la generación Millennial/Gen Z (menores de 26 años), lo que sugiere un segmento predominantemente joven y digitalmente nativo. Esta composición demográfica es especialmente relevante, ya que según _Hotel Tech Report (2025)_, los millennials son **57% más propensos** a ser influenciados por la tecnología hotelera.
-![Composición generacional de huéspedes](assets/chapter-2/S2_07a_boxplot_edades_huespedes.png)
+![Composición generacional de huéspedes](assets/chapter-2/analysis/guest-07-boxplot-edades.png)
 
 **Patrones de Viaje y Preferencias Tecnológicas**
 
@@ -767,7 +767,7 @@ El análisis de los patrones de viaje revela:
 - **25%** viaja por trabajo (Juan).
 - **100%** mantiene una frecuencia regular de viaje (anual o cada 1-2 meses).
 
-![Propósito de viaje](assets/chapter-2/S2_08a_proposito_viaje.png)
+![Propósito de viaje](assets/chapter-2/analysis/guest-08-proposito-viaje.png)
 
 Las preferencias de esta generación están bien documentadas en la investigación de _Mews (2025)_, que indica que las estimaciones sugieren que los millennials representarán el **50%** de los huéspedes hoteleros en los próximos años, convirtiéndolos en críticos para los ingresos y el crecimiento de marca de los hoteles.
 
@@ -779,7 +779,7 @@ Los problemas identificados muestran patrones claros:
 - **75%** experimenta esperas prolongadas en recepción como principal frustración.
 - **25%** señala problemas con horarios estrictos de check-in/check-out.
 
-![Puntos de dolor](assets/chapter-2/S2_09_puntos_dolor.png)
+![Puntos de dolor](assets/chapter-2/analysis/guest-09-puntos-dolor.png)
 
 Estos hallazgos se correlacionan directamente con estudios globales de la industria. Según _Oracle Hospitality & Skift (2022)_, el **65%** de los huéspedes desean que los hoteles ofrezcan tecnologías que minimicen el contacto con el personal y otros huéspedes. Además, el **43%** de los huéspedes de lujo esperan no hacer filas, según _Hotel Tech Report (2025)_.
 
@@ -792,7 +792,7 @@ Los resultados demuestran una fuerte inclinación hacia soluciones digitales:
 - **75%** está dispuesto a pagar un sobrecosto por experiencias digitales mejoradas.
 - **100%** considera las reseñas digitales como factor influyente en sus decisiones.
 
-![S2_10_receptividad_digitalizacion.png](assets/chapter-2/S2_10_receptividad_digitalizacion.png)
+![S2_10_receptividad_digitalizacion.png](assets/chapter-2/analysis/guest-10-receptividad-digitalizacion.png)
 
 - Estos datos se alinean con investigaciones globales que indican que el **74%** de los huéspedes esperan poder hacer en línea cualquier cosa que ya pueden hacer en persona o por teléfono. Además, el **48%** de los huéspedes considera las reseñas en línea como el factor principal para elegir un hotel.
 
@@ -802,7 +802,7 @@ Los resultados demuestran una fuerte inclinación hacia soluciones digitales:
 - **50%** pagaría entre 5-10% adicional.
 - **25%** no pagaría sobrecosto adicional.
 
-![S2_11_disposicion_pagar.png](assets/chapter-2/S2_11_disposicion_pagar.png)
+![S2_11_disposicion_pagar.png](assets/chapter-2/analysis/guest-11-disposicion-pagar.png)
 
 La disposición a pagar por tecnología varía según la generación. Mientras que el **35%** de la Gen Z considera que la velocidad del Wi-Fi es más importante que la comodidad de la cama, los usuarios de mayor edad muestran menos disposición a pagar extra por funciones digitales avanzadas.
 
@@ -811,7 +811,7 @@ La disposición a pagar por tecnología varía según la generación. Mientras q
 - **50%** reporta alta influencia de reseñas (70% o más en su decisión).
 - **100%** considera las reseñas como factor relevante en su proceso de selección.
 
-![S2_12_influencia_resenas.png](assets/chapter-2/S2_12_influencia_resenas.png)
+![S2_12_influencia_resenas.png](assets/chapter-2/analysis/guest-12-influencia-resenas.png)
 
 Esta tendencia refleja datos globales donde las reseñas en línea han reemplazado el boca a boca tradicional, con los millennials consultando plataformas como TripAdvisor, Google y redes sociales antes de reservar.
 
@@ -821,11 +821,11 @@ Esta tendencia refleja datos globales donde las reseñas en línea han reemplaza
 
 **Segmento 1 – Administradores de Hoteles Boutique y Pequeños en Lima**
 
-![user-person1.jpg](assets/chapter-2/UserPerson1.png)
+![user-person1.jpg](assets/chapter-2/needfinding/persona-staff.png)
 
 **Segmento 2 – Huéspedes de Hoteles**
 
-![user-person2.jpg](assets/chapter-2/UserPerson2.png)
+![user-person2.jpg](assets/chapter-2/needfinding/persona-guest.png)
 
 ### 2.3.2. User Task Matrix
 
@@ -925,10 +925,10 @@ El **User Journey Mapping** permite visualizar las etapas que recorren los usuar
 En el caso de **Smart Stay**, se elaboraron dos mapas diferenciados según los segmentos objetivos:
 
 - **Segmento 1:** enfocado en la gestión operativa y la centralización de reservas.
-![User Journey Map - Staff](assets/chapter-2/user-journey-staff.png)
+![User Journey Map - Staff](assets/chapter-2/needfinding/journey-staff.png)
 
 - **Segmento 2:** centrado en la experiencia de estadía y la digitalización de servicios.
-![User Journey Map - Huéspedes](assets/chapter-2/user-journey-guest.png)
+![User Journey Map - Huéspedes](assets/chapter-2/needfinding/journey-guest.png)
 
 Estos recorridos permiten detectar fricciones, validar expectativas y proponer mejoras orientadas a optimizar tanto la gestión hotelera como la satisfacción de los huéspedes.
 
@@ -946,13 +946,13 @@ Estos mapas permiten visualizar cómo cada tipo de usuario piensa, siente y act�
 
 #### 1. Segmento Objetivo 1: STAFF OPERATIVO
 
-![Empathy Map - Staff Operativo](assets/chapter-2/empathy-staff.png)
+![Empathy Map - Staff Operativo](assets/chapter-2/needfinding/empathy-staff.png)
 
 ---
 
 #### 2. Segmento Objetivo 2: HUÉSPEDES
 
-![Empathy Map - Huéspedes](assets/chapter-2/empathy-guest.png)
+![Empathy Map - Huéspedes](assets/chapter-2/needfinding/empathy-guest.png)
 
 ### 2.3.5. As-is Scenario Mapping
 
@@ -984,13 +984,13 @@ Estos mapas permiten visualizar cómo cada tipo de usuario piensa, siente y act�
 Segmento 1: Staff Operativo de Hoteles
 
 <div align="center">
-<img src="assets/chapter-3/to-be-segmento1.png" alt="To-be segmento 1" style="max-width: 90%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+<img src="assets/chapter-3/scenario-mapping/to-be-staff.png" alt="To-be segmento 1" style="max-width: 90%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
 </div>
 
 Segmento 2: Huéspedes de Hoteles Boutique
 
 <div align="center">
-<img src="assets/chapter-3/to-be-segmento2.png" alt="To-be segmento 2" style="max-width: 90%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+<img src="assets/chapter-3/scenario-mapping/to-be-guest.png" alt="To-be segmento 2" style="max-width: 90%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
 </div>
 
 ## 3.2. User Stories
@@ -2285,16 +2285,16 @@ Segmento 2: Huéspedes de Hoteles Boutique
 
 #### Impact Mapping Segmento 1: Hotel Administrador
 
-![impactmaphotel.png](assets/chapter-3/impactmaphotel.png)
+![impactmaphotel.png](assets/chapter-3/impact-mapping/impact-map-hotel.png)
 
 #### Impact Mapping Segmento 2: Traveler
 
-![impactmaptraveler.png](assets/chapter-3/impactmaptraveler.png)
+![impactmaptraveler.png](assets/chapter-3/impact-mapping/impact-map-traveler.png)
 
 ### Mapa de impacto integrado
 
 <div align="center">
-<img src="assets/chapter-3/impact-mapping.png" alt="impact mapping" style="max-width: 90%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+<img src="assets/chapter-3/impact-mapping/impact-mapping-overview.png" alt="impact mapping" style="max-width: 90%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
 </div>
 
 ---
@@ -2318,24 +2318,24 @@ Objetivo:
 
 - Logo Smart Stay: El logo principal de la startup con el que se muestra ante el público.
 
-![logo.png](assets/chapter-4/logo.png)
+![logo.png](assets/chapter-4/style-guidelines/branding/smartstay-logo.png)
 
 - Logo Modo Oscuro: Este logo es creado para contrastar en fondos oscuros, lo cual permite la protección de la vista del usuario y favorece el rendimiento de la batería de su dispositivo.
 
-![logo-modo-oscuro.png](assets/chapter-4/logo-modo-oscuro.png)
+![logo-modo-oscuro.png](assets/chapter-4/style-guidelines/branding/smartstay-logo-dark.png)
 
 - Logo Plus: Es una versión del logo con un color que resalta más elegancia, el cual se usa para los usuarios que opten por usar la suscripción plus del servicio.
 
-![logo-plus.png](assets/chapter-4/logo-plus.png)
+![logo-plus.png](assets/chapter-4/style-guidelines/branding/smartstay-logo-plus.png)
 
 - Logo Plus Modo Oscuro: Tiene la misma función que el logo modo oscuro con la diferencia de que sirve para la suscripción plus.
 
-![logo-plus-modo-oscuro.png](assets/chapter-4/logo-plus-modo-oscuro.png)
+![logo-plus-modo-oscuro.png](assets/chapter-4/style-guidelines/branding/smartstay-logo-plus-dark.png)
 
 - Logos Monocromáticos: Logos con paleta de colores blanco y negro, cuyo uso es exclusivo para impresiones y documentos.
 
-![logo-monocromatico-1.png](assets/chapter-4/logo-monocromatico-1.png)
-![logo-monocromatico-2.png](assets/chapter-4/logo-monocromatico-2.png)
+![logo-monocromatico-1.png](assets/chapter-4/style-guidelines/branding/smartstay-logo-monochrome-1.png)
+![logo-monocromatico-2.png](assets/chapter-4/style-guidelines/branding/smartstay-logo-monochrome-2.png)
 
 **Tipografía**
 
@@ -2374,7 +2374,7 @@ Open Sans Regular – 14px
 Botones primarios:
 Open Sans SemiBold – 16px (MAYÚSCULAS)
 
-![fuentes-imagen.png](assets/chapter-4/fuentes-imagen.png)
+![fuentes-imagen.png](assets/chapter-4/style-guidelines/typography/font-sources.png)
 
 **Paleta de colores**
 Espaciado de líneas: 1.5x en párrafos para mayor legibilidad.
@@ -2384,7 +2384,7 @@ Uso de color:
 - Neutros: Beige (#F5F5DC), Gris medio (#BDC3C7), Blanco (#FFFFFF).
 - Apoyos: Verde agua (#1ABC9C) → frescura, sostenibilidad.
 
-![color-image.png](assets/chapter-4/color-image.png)
+![color-image.png](assets/chapter-4/style-guidelines/colors/color-palette.png)
 
 **Dimensiones**
 - Cercano y humano: Hablar como si fueras un amigo confiable, sin tecnicismos innecesarios.
@@ -2400,14 +2400,14 @@ Uso de color:
 - Productos: módulos claros (cards azules) con descripciones cortas.
 - Soluciones: bloques con imágenes + botones de acción (descargar brochure).
 - Precios:  tabla comparativa clara (Plan Normal vs Plan Plus).
-  ![paginas_principales.png](assets/chapter-4/paginas_principales.png)
+  ![paginas_principales.png](assets/chapter-4/landing-page/mockups/landing-page-overview.png)
 
 **Encabezados Hero (Landing)**
 
 - Imagen grande en 16:9 con overlay oscuro: refuerza contraste con texto.
 - Texto principal: H1 32px, Cocomat Pro Bold en blanco.
 - Botón destacado (CTA): Naranja Suave (#E67E22) en mayúsculas.
-  ![encabezado_hero.png](assets/chapter-4/encabezado_hero.png)
+  ![encabezado_hero.png](assets/chapter-4/landing-page/mockups/hero-header.png)
 
 **Cards y Bloques de Contenido**
 
@@ -2416,7 +2416,7 @@ Uso de color:
 - Bordes redondeados 12px + sombra suave.
 - Espaciado interno: 24px padding.
 - Uso de grillas para mantener equilibrio visual.
-  ![bloques.png](assets/chapter-4/bloques.png)
+  ![bloques.png](assets/chapter-4/landing-page/mockups/benefits-blocks.png)
 
 **Tablas Comparativas (Precios)**
 
@@ -2425,7 +2425,7 @@ Uso de color:
 - Marca de “incluido” en check.
 - Elementos no incluidos  sin check.
 - Botón “Mejorar plan” en naranja como llamada a la acción final.
-  ![plan.png](assets/chapter-4/plan.png)
+  ![plan.png](assets/chapter-4/landing-page/mockups/pricing-plan.png)
 
 **Footer**
 
@@ -2433,7 +2433,7 @@ Uso de color:
 - Texto en blanco y gris claro.
 - Columnas organizadas con links en Open Sans 14px.
 - Inclusión de iconos sociales en fila inferior.
-  ![footer.png](assets/chapter-4/footer.png)
+  ![footer.png](assets/chapter-4/landing-page/mockups/footer.png)
 
 **Uso de Color en Web**
 
@@ -2448,7 +2448,7 @@ Uso de color:
 - Hover Botones → transición 0.3s de azul → naranja.
 - Scroll suave en anclas de página.
 - Menú sticky superior para navegación rápida.
-  ![final.png](assets/chapter-4/final.png)
+  ![final.png](assets/chapter-4/landing-page/mockups/landing-page-final.png)
 
 ### 4.1.3. Mobile Style Guidelines
 
@@ -2472,7 +2472,7 @@ En la Landing Page, el contenido se organiza en bloques priorizados que siguen u
 
 Esta organización permite que los usuarios comprendan rápidamente qué ofrece Smart Stay y cómo interactuar con la plataforma, aplicando principios de jerarquía visual, progressive disclosure y adaptabilidad a dispositivos móviles.
 
-![alt text](assets/chapter-4/organizationsystems.png)
+![alt text](assets/chapter-4/information-architecture/organization-systems.png)
 
 En la Aplicación Móvil, la organización del contenido está orientada a tareas y roles. El acceso inicial se realiza mediante autenticación (login), donde el usuario es redirigido automáticamente según su perfil (Staff o Huésped).
 
@@ -2497,7 +2497,7 @@ Adicionalmente, se aplica una organización contextual, donde la información ca
 
 Asimismo, algunos procesos siguen una organización secuencial, como el check-in digital o la solicitud de servicios, guiando al usuario paso a paso para evitar errores.
 
-![alt text](assets/chapter-4/organizationsystems2.png)
+![alt text](assets/chapter-4/information-architecture/organization-systems-detail.png)
 
 ### 4.2.2. Labeling Systems
 
@@ -2696,7 +2696,7 @@ A continuación, se presenta un resumen de cada una de las secciones.
     - Sección "¿Quiénes somos?" con breve descripción.
     - Bloques de beneficios y características principales.
     - Footer con enlaces de contacto, políticas y redes sociales.
-      ![whome.png](assets/chapter-4/whome.png)
+      ![whome.png](assets/chapter-4/landing-page/wireframes/landing-page-home-wireframe.png)
 
 **2. Products**
 - **Propósito:** Mostrar los productos y módulos de la plataforma.
@@ -2704,7 +2704,7 @@ A continuación, se presenta un resumen de cada una de las secciones.
     - Lista de funcionalidades divididas en áreas: gestión hotelera, experiencia del huésped, reportes, seguridad.
     - Descripción breve de cada módulo.
     - Botón de descarga de brochure.
-      ![wproductos.png](assets/chapter-4/wproductos.png)
+      ![wproductos.png](assets/chapter-4/landing-page/wireframes/landing-page-products-wireframe.png)
 
 **3. Solutions**
 - **Propósito:** Explicar cómo Smart Stay se adapta a diferentes tipos de hoteles.
@@ -2713,7 +2713,7 @@ A continuación, se presenta un resumen de cada una de las secciones.
     - Sección para alojamientos alternativos.
     - Sección para cadenas hoteleras.
     - Botón para descargar información detallada.
-      ![wsoluciones.png](assets/chapter-4/wsoluciones.png)
+      ![wsoluciones.png](assets/chapter-4/landing-page/wireframes/landing-page-solutions-wireframe.png)
 
 
 **4. Prices**
@@ -2721,28 +2721,28 @@ A continuación, se presenta un resumen de cada una de las secciones.
 - **Elementos clave:**
     - Tabla comparativa de funcionalidades entre Plan Normal y Plan Plus.
     - Categorías claras: gestión hotelera, experiencia huésped, seguridad, soporte.
-      ![wsprecios.png](assets/chapter-4/wsprecios.png)
+      ![wsprecios.png](assets/chapter-4/landing-page/wireframes/landing-page-pricing-wireframe.png)
 
 **5. Success Stories**
 - **Propósito:** Mostrar testimonios y ejemplos de hoteles que ya usan Smart Stay.
 - **Elementos clave:**
     - Bloques con testimonios de clientes.
     - Descripción breve de resultados obtenidos (ahorro de tiempo, mejora de experiencia, reducción de costos).
-      ![wreseñas.png](assets/chapter-4/wreseñas.png)
+      ![wreseñas.png](assets/chapter-4/landing-page/wireframes/landing-page-success-stories-wireframe.png)
 
 **6. Resources**
 - **Propósito:** Repositorio de materiales de apoyo y aprendizaje.
 - **Elementos clave:**
     - Documentos descargables (guías, whitepapers, brochures).
     - Links de blogs.  
-      ![wrecurso.png](assets/chapter-4/wrecurso.png)
+      ![wrecurso.png](assets/chapter-4/landing-page/wireframes/landing-page-resources-wireframe.png)
 
 **7. Register**
 - **Propósito:** Permitir que un nuevo usuario cree su cuenta.
 - **Elementos clave:**
     - Formulario de registro con campos básicos (nombre, correo, contraseña, tipo de empresa).
     - Botón de registro.  
-      ![wregister.png](assets/chapter-4/wregister.png)
+      ![wregister.png](assets/chapter-4/landing-page/wireframes/landing-page-register-wireframe.png)
 
 **8. Login**
 - **Propósito:** Acceso de usuarios ya registrados.
@@ -2750,7 +2750,7 @@ A continuación, se presenta un resumen de cada una de las secciones.
     - Formulario de inicio de sesión con correo y contraseña.
     - Botón de acceso.
     - Enlace a recuperación de contraseña y a registro.  
-      ![wlogin.png](assets/chapter-4/wlogin.png)
+      ![wlogin.png](assets/chapter-4/landing-page/wireframes/landing-page-login-wireframe.png)
 
 Los wireframes definen la base de navegación de Smart Stay, asegurando que cada sección tenga un propósito claro:
 - **Home:** captar atención y presentar la plataforma.
@@ -2775,52 +2775,52 @@ Su propósito es:
     - Paleta de colores aplicada (azul corporativo + tonos complementarios).
     - Imagen de fondo en el Hero con llamada a la acción resaltada (“Probar demo”).
     - Iconografía personalizada para los beneficios.  
-      ![home.png](assets/chapter-4/home.png)
+      ![home.png](assets/chapter-4/landing-page/mockups/landing-page-home.png)
 
 **2. Product**
 -**Cambios respecto al wireframe:**
 - Uso de íconos y colores diferenciados por módulo (gestión, experiencia huésped, seguridad, reportes).
 - Inclusión de imágenes ilustrativas.
 - Botón de descarga estilizado con colores de la marca.  
-  ![producto.png](assets/chapter-4/producto.png)
+  ![producto.png](assets/chapter-4/landing-page/mockups/landing-page-products.png)
 
 **3. Solutions**
 - **Cambios respecto al wireframe:**
     - Bloques visuales para cada tipo de cliente (hoteles boutique, alojamientos alternativos, cadenas).
     - Uso de fotografías representativas de hoteles.
     - CTA destacado.
-      ![soluciones.png](assets/chapter-4/soluciones.png)
+      ![soluciones.png](assets/chapter-4/landing-page/mockups/landing-page-solutions.png)
 
 **4. Prices**
 - **Cambios respecto al wireframe:**
     - Tabla de precios con colores diferenciadores por plan.
     - Plan recomendado resaltado con un fondo destacado.  
-      ![precio.png](assets/chapter-4/precio.png)
+      ![precio.png](assets/chapter-4/landing-page/mockups/landing-page-pricing.png)
 
 **5. Success Stories**
 - **Cambios respecto al wireframe:**
     - Testimonios acompañados de logos reales de hoteles.  
-      ![reseña.png](assets/chapter-4/reseña.png)
+      ![reseña.png](assets/chapter-4/landing-page/mockups/landing-page-success-stories.png)
 
 **6. Resources**
 - **Cambios respecto al wireframe:**
     - Secciones de miniaturas de documentos descargables.
     - Secciones de blog con botón de visitar página externa.
-      ![recursos.png](assets/chapter-4/recursos.png)
+      ![recursos.png](assets/chapter-4/landing-page/mockups/landing-page-resources.png)
 
 **7. Register**
 - **Cambios respecto al wireframe:**
     - Formulario minimalista con campos estilizados.
     - Botón de “Enviar y registrar” resaltado en color primario.
     - Fondo con imagen ligera para dar contexto al servicio.
-      ![register.png](assets/chapter-4/register.png)
+      ![register.png](assets/chapter-4/landing-page/mockups/landing-page-register.png)
 
 **8. Login**
 - **Cambios respecto al wireframe:**
     - Formulario ubicado a lateral izquierdo en pantalla con diseño limpio.
     - Logo al lado derecho de la pantalla.
     - Enlaces secundarios estilizados para “¿Olvidaste tu contraseña?”.  
-      ![login.png](assets/chapter-4/login.png)
+      ![login.png](assets/chapter-4/landing-page/mockups/landing-page-login.png)
 
 Los mockups consolidan el diseño visual final de Smart Stay, transformando la estructura básica de los wireframes en interfaces listas para evaluación estética y funcional.
 
@@ -2876,6 +2876,8 @@ Las pantallas principales de la aplicación para huéspedes incluyen:
 - **Notificaciones:**
   - Alertas y mensajes importantes durante la estadía.
 
+![Wireframe de habitación para huéspedes](assets/chapter-4/mobile/wireframes/guest/guest-rooms.png)
+![Wireframe de notificaciones para huéspedes](assets/chapter-4/mobile/wireframes/guest/guest-notifications.png)
 
 ---
 
@@ -2911,8 +2913,8 @@ Las pantallas principales de la aplicación para el personal incluyen:
 - **Notificaciones:**
   - Alertas sobre cambios, incidencias o nuevas tareas.
 
-![alt text](assets/chapter-4/wapphuesped1.png)
-![alt text](assets/chapter-4/wapphuesped2.png)
+![Wireframe de tareas para staff](assets/chapter-4/mobile/wireframes/staff/staff-tasks.png)
+![Wireframe de notificaciones para staff](assets/chapter-4/mobile/wireframes/staff/staff-notifications.png)
 
 ---
 
@@ -2953,7 +2955,7 @@ Este flujo permite una navegación clara y directa, utilizando una barra de nave
 
 ---
 
-![alt text](assets/chapter-4/webwireflowhuesped.png)
+![alt text](assets/chapter-4/web/wireflows/guest/guest-wireflow.png)
 
 ---
 
@@ -2973,7 +2975,7 @@ Este flujo está diseñado para optimizar la eficiencia operativa del personal, 
 
 ---
 
-![alt text](assets/chapter-4/webwireflowstaff.png)
+![alt text](assets/chapter-4/web/wireflows/staff/staff-wireflow.png)
 
 ---
 
@@ -3022,11 +3024,11 @@ Los mock-ups del módulo de huésped muestran una interfaz moderna, intuitiva y 
 
 ---
 
-![alt text](assets/chapter-4/mockuphuesped1.png)
+![alt text](assets/chapter-4/mobile/mockups/guest/guest-01.png)
 
 ---
 
-![alt text](assets/chapter-4/mockuphuesped2.png)
+![alt text](assets/chapter-4/mobile/mockups/guest/guest-02.png)
 
 ---
 
@@ -3069,11 +3071,11 @@ Los mock-ups del módulo de staff están diseñados para optimizar la gestión o
 
 ---
 
-![alt text](assets/chapter-4/mockupstaff1.png)
+![alt text](assets/chapter-4/mobile/mockups/staff/staff-01.png)
 
 ---
 
-![alt text](assets/chapter-4/mockupstaff2.png)
+![alt text](assets/chapter-4/mobile/mockups/staff/staff-02.png)
 
 ---
 
@@ -3101,7 +3103,7 @@ El flujo ideal del huésped inicia al abrir la aplicación, seguido del login o 
 
 ---
 
-![alt text](assets/chapter-4/happypathhuesped.png)
+![Flujo feliz del huésped](assets/chapter-4/mobile/user-flows/guest/guest-happy-path.png)
 
 ---
 
@@ -3115,7 +3117,7 @@ Incluye escenarios donde:
 
 ---
 
-![alt text](assets/chapter-4/happypathstaff.png)
+![Flujo infeliz del huésped](assets/chapter-4/mobile/user-flows/guest/guest-unhappy-path.png)
 
 ---
 
@@ -3132,7 +3134,7 @@ El flujo del personal inicia con login, seguido del acceso al panel principal do
 
 ---
 
-![alt text](assets/chapter-4/happypathadmi.png)
+![Flujo feliz del staff](assets/chapter-4/mobile/user-flows/staff/staff-happy-path.png)
 
 ---
 
@@ -3145,7 +3147,7 @@ Se contemplan situaciones como:
 
 ---
 
-![alt text](assets/chapter-4/unhappypathhuesped.png)
+![Flujo infeliz del staff](assets/chapter-4/mobile/user-flows/staff/staff-unhappy-path.png)
 
 ---
 
@@ -3162,7 +3164,7 @@ El flujo del administrador incluye:
 
 ---
 
-![alt text](assets/chapter-4/unhappypathstaff.png)
+![Flujo feliz del administrador](assets/chapter-4/mobile/user-flows/admin/admin-happy-path.png)
 
 ---
 
@@ -3175,7 +3177,7 @@ Incluye casos como:
 
 ---
 
-![alt text](assets/chapter-4/unhappypathadmi.png)
+![Flujo infeliz del administrador](assets/chapter-4/mobile/user-flows/admin/admin-unhappy-path.png)
 
 ---
 
@@ -3280,7 +3282,7 @@ A continuación, se presenta un resumen de cada una de las secciones principales
 - Botón para agregar, editar o eliminar usuarios.
 - Tabla con información básica (nombre, correo, rol, estado).
 
-![wdashboard_huespedes.png](assets/chapter-4/wdashboard_huespedes.png)
+![Wireframe del dashboard administrativo](assets/chapter-4/web/wireframes/admin/admin-dashboard.png)
 
 **3. Staff**
 
@@ -3297,7 +3299,7 @@ A continuación, se presenta un resumen de cada una de las secciones principales
 - Campo para ingresar número de habitación y botón *Ver detalle*.
 - Vista de detalle de habitación con estado, tipo, huésped actual, check-in/out y acciones rápidas.
 
-![wstaff_hoteles.png](assets/chapter-4/wstaff_hoteles.png)
+![Wireframe administrativo de hoteles y habitaciones](assets/chapter-4/web/wireframes/admin/admin-hotels-and-rooms.png)
 
 **5. Booking**
 
@@ -3319,7 +3321,7 @@ A continuación, se presenta un resumen de cada una de las secciones principales
 - Reportes de gastos, ingresos y ganancias.
 - Gráficos comparativos y dashboard financiero.
 
-![wreservas_gastos.png](assets/chapter-4/wreservas_gastos.png)
+![Wireframe administrativo de reservas y pagos](assets/chapter-4/web/wireframes/admin/admin-bookings-and-payments.png)
 
 **7. Sevices and Products**
 
@@ -3339,7 +3341,7 @@ A continuación, se presenta un resumen de cada una de las secciones principales
 - Vista de detalle con respuesta del staff.
 - Estadísticas de satisfacción y gráficos de tendencias.
 - Panel de tickets: abiertos, en proceso, cerrados.  
-  ![wservicio_producto_reseña.png](assets/chapter-4/wservicio_producto_reseña.png)
+  ![Wireframe administrativo de servicios, productos y reseñas](assets/chapter-4/web/wireframes/admin/admin-services-products-reviews.png)
 
 **9. Support**
 
@@ -3350,7 +3352,7 @@ A continuación, se presenta un resumen de cada una de las secciones principales
 - Filtros por hotel, tipo de problema y fecha.
 - Vista de detalle del ticket con historial de comunicación.
 - Historial de ticket.
-  ![wsoporte.png](assets/chapter-4/wsoporte.png)
+  ![Wireframe administrativo de soporte](assets/chapter-4/web/wireframes/admin/admin-support.png)
 
 **Wireframes – Modo Huésped**
 
@@ -3376,7 +3378,7 @@ Se han elaborado en formato blanco y negro, sin imágenes ni estilos gráficos, 
 - Controles de ambiente: temperatura, luces, cortinas, TV, música.
 - Servicios rápidos: limpieza inmediata o programada, amenities, minibar digital.
 - Botón de asistencia y emergencia.  
-  ![wapphuesped1.png](assets/chapter-4/wapphuesped1.png)
+  ![wapphuesped1.png](assets/chapter-4/mobile/wireframes/guest/guest-rooms.png)
 
 **4. Services**
 **Propósito:** Acceder a servicios adicionales ofrecidos por el hotel.  
@@ -3401,7 +3403,7 @@ Se han elaborado en formato blanco y negro, sin imágenes ni estilos gráficos, 
 **Elementos clave:**
 - Lista de notificaciones recientes (confirmaciones de reserva, promociones, mensajes del hotel).
 - Botón para marcar como leídas o eliminar notificaciones.  
-  ![wapphuesped2.png](assets/chapter-4/wapphuesped2.png)
+  ![wapphuesped2.png](assets/chapter-4/mobile/wireframes/guest/guest-notifications.png)
 
 **Wireframes – Modo Staff**
 
@@ -3433,7 +3435,7 @@ Se han elaborado en formato blanco y negro, sin imágenes ni estilos gráficos, 
 **Elementos clave:**
 - Lista completa de tareas diarias con habitación, tipo de tarea, piso.
 - Estado de tarea con emoticonos: ✅ Completado / ❌ Pendiente.     
-  ![wappstaff1.png](assets/chapter-4/wappstaff1.png)
+  ![wappstaff1.png](assets/chapter-4/mobile/wireframes/staff/staff-tasks.png)
 
 **5. Services / Products**
 **Propósito:** Registrar entrega de servicios y productos a habitaciones.  
@@ -3460,7 +3462,7 @@ Se han elaborado en formato blanco y negro, sin imágenes ni estilos gráficos, 
 **Elementos clave:**
 - Lista de notificaciones recientes (cambios de turno, emergencias, avisos de tareas).
 - Botón para marcar como leído o eliminar notificaciones.  
-  ![wappstaff2.png](assets/chapter-4/wappstaff2.png).
+  ![wappstaff2.png](assets/chapter-4/mobile/wireframes/staff/staff-notifications.png).
 
 ### 4.6.2. Web Applications Wireflow Diagrams
 
@@ -3468,7 +3470,7 @@ Se han elaborado en formato blanco y negro, sin imágenes ni estilos gráficos, 
 
 **Propósito:**  
 Mostrar cómo cada sección del administrador se conecta a través del menú principal.
-![webwireflowadmi.png](assets/chapter-4/webwireflowadmi.png)
+![webwireflowadmi.png](assets/chapter-4/web/wireflows/admin/admin-wireflow.png)
 
 **Menú Principal (Administrador)**
 
@@ -3498,7 +3500,7 @@ Desde cualquier sección, el menú permite acceder a:
 **Propósito:**  
 Mostrar cómo cada sección de la app para huéspedes se conecta a través del menú principal y elementos persistentes (como el icono de notificaciones).
 
-![webwireflowhuesped.png](assets/chapter-4/webwireflowhuesped.png)
+![webwireflowhuesped.png](assets/chapter-4/web/wireflows/guest/guest-wireflow.png)
 
 **Secciones Principales**
 
@@ -3520,7 +3522,7 @@ Mostrar cómo cada sección de la app para huéspedes se conecta a través del m
 
 **Propósito:**  
 Mostrar cómo cada sección de la app para staff se conecta a través del menú principal y elementos persistentes (como el icono de notificaciones).
-![webwireflowstaff.png](assets/chapter-4/webwireflowstaff.png)
+![webwireflowstaff.png](assets/chapter-4/web/wireflows/staff/staff-wireflow.png)
 
 **Secciones Principales**
 
@@ -3598,9 +3600,9 @@ Los mockups muestran la interfaz final del administrador de SmartStay, incluyend
 - Iconografía consistente para acciones, estados y navegación.
 - Feedback visual en botones e interacciones (hover, clic, activo).
 
-![mockupadmin1.png](assets/chapter-4/mockupadmin1.png)
-![mockupadmin2.png](assets/chapter-4/mockupadmin2.png)
-![mockupadmin3.png](assets/chapter-4/mockupadmin3.png)
+![mockupadmin1.png](assets/chapter-4/web/mockups/admin/admin-01.png)
+![mockupadmin2.png](assets/chapter-4/web/mockups/admin/admin-02.png)
+![mockupadmin3.png](assets/chapter-4/web/mockups/admin/admin-03.png)
 
 **Mockups – Modo Huésped**
 
@@ -3649,8 +3651,8 @@ Los mockups muestran la interfaz final del usuario huésped en SmartStay, incluy
 - Iconografía consistente para acciones, estados y navegación.
 - Feedback visual en botones e interacciones (hover, clic, activo).
 
-![mockuphuesped1.png](assets/chapter-4/mockuphuesped1.png)
-![mockuphuesped2.png](assets/chapter-4/mockuphuesped2.png)
+![mockuphuesped1.png](assets/chapter-4/mobile/mockups/guest/guest-01.png)
+![mockuphuesped2.png](assets/chapter-4/mobile/mockups/guest/guest-02.png)
 
 **Mockups – Modo Staff**
 
@@ -3703,8 +3705,8 @@ Los mockups muestran la interfaz final del personal de SmartStay, incluyendo **c
 - Iconografía consistente para acciones, estados y navegación.
 - Feedback visual en botones e interacciones (hover, clic, activo).
 
-![mockupstaff1.png](assets/chapter-4/mockupstaff1.png)
-![mockupstaff2.png](assets/chapter-4/mockupstaff2.png)
+![mockupstaff1.png](assets/chapter-4/mobile/mockups/staff/staff-01.png)
+![mockupstaff2.png](assets/chapter-4/mobile/mockups/staff/staff-02.png)
 
 ### 4.6.4. Web Applications User Flow Diagrams
 
@@ -3715,11 +3717,11 @@ Los mockups muestran la interfaz final del personal de SmartStay, incluyendo **c
 **Cómo ayuda el diagrama:** Permite identificar los pasos necesarios para realizar tareas frecuentes y optimizar la navegación para máxima eficiencia.
 
 **Happy Paths:**
-![happypathadmi.png](assets/chapter-4/happypathadmi.png)
+![happypathadmi.png](assets/chapter-4/mobile/user-flows/admin/admin-happy-path.png)
 **Link para visualizar mejor:** [https://shorturl.at/7UPcY](https://lucid.app/lucidchart/dc345c68-b9ba-4b68-ba59-d33a107cd547/edit?viewport_loc=-2020%2C-505%2C6554%2C2712%2C0_0&invitationId=inv_f306e465-ed6b-4d99-9d15-d416cfe5ca03)
 
 **Unhappy Paths:**
-![unhappypathadmi.png](assets/chapter-4/unhappypathadmi.png)
+![unhappypathadmi.png](assets/chapter-4/mobile/user-flows/admin/admin-unhappy-path.png)
 **Link para visualizar mejor:** [https://shorturl.at/7UPcY](https://lucid.app/lucidchart/5b49d2f9-1e2c-495a-bb48-a86af3f68d15/edit?viewport_loc=-805%2C345%2C3936%2C1628%2C0_0&invitationId=inv_3de7ece2-dc86-4690-95d5-4ab9db028e9a)
 
 **Rol 2:** Huésped del hotel
@@ -3728,11 +3730,11 @@ Los mockups muestran la interfaz final del personal de SmartStay, incluyendo **c
 **Cómo ayuda el diagrama:** Visualiza los pasos más rápidos e intuitivos para que el huésped acceda a la información que necesita y realice solicitudes con facilidad.
 
 **Happy Paths:**
-![happypathhuesped.png](assets/chapter-4/happypathhuesped.png)
+![happypathhuesped.png](assets/chapter-4/mobile/user-flows/guest/guest-happy-path.png)
 **Link para visualizar mejor:** [https://shorturl.at/7UPcY](https://lucid.app/lucidchart/7b89dd53-b257-4f78-97e3-1b599d6b85e5/edit?viewport_loc=-1918%2C-477%2C5700%2C2358%2C0_0&invitationId=inv_9502d876-be63-41c8-acb4-1d8e2ca1de0d)
 
 **Unhappy Paths:**
-![unhappypathhuesped.png](assets/chapter-4/unhappypathhuesped.png)
+![unhappypathhuesped.png](assets/chapter-4/mobile/user-flows/guest/guest-unhappy-path.png)
 **Link para visualizar mejor:** [https://shorturl.at/7UPcY](https://lucid.app/lucidchart/18fbfec8-9c89-4794-8f4b-a9242e4db649/edit?viewport_loc=-930%2C-4%2C3511%2C1453%2C0_0&invitationId=inv_bbc495e4-6bb4-418f-a0ac-65c431096cd6)
 
 
@@ -3742,11 +3744,11 @@ Los mockups muestran la interfaz final del personal de SmartStay, incluyendo **c
 **Cómo ayuda el diagrama:** Identifica pasos clave para que el personal cumpla sus responsabilidades sin confusión y con mínima navegación.
 
 **Happy Paths:**
-![happypathstaff.png](assets/chapter-4/happypathstaff.png)
+![happypathstaff.png](assets/chapter-4/mobile/user-flows/staff/staff-happy-path.png)
 **Link para visualizar mejor:** [https://shorturl.at/7UPcY](https://lucid.app/lucidchart/9f2ebd7e-4046-4322-967e-5ebba51fb97c/edit?viewport_loc=-1647%2C-458%2C3981%2C1647%2C0_0&invitationId=inv_fdadb516-80a9-47ea-bb85-0561af5c0704)
 
 **Unhappy Paths:**
-![unhappypathstaff.png](assets/chapter-4/unhappypathstaff.png)
+![unhappypathstaff.png](assets/chapter-4/mobile/user-flows/staff/staff-unhappy-path.png)
 **Link para visualizar mejor:** [https://shorturl.at/7UPcY](https://lucid.app/lucidchart/543c4cad-5bce-40bc-bc29-8a1f2a604a63/edit?viewport_loc=-2062%2C-511%2C5080%2C2102%2C0_0&invitationId=inv_8e3a4604-fe5c-4655-addc-5f16e8fb91d4)
 
 ## 4.7. Web Applications Prototyping
@@ -3762,103 +3764,103 @@ En este caso presentaremos el prototipo del app principal que es del modo admini
 **Design-Level EventStorming**
 
 
-![terminology.jpg](assets/chapter-4/terminology.png)
+![terminology.jpg](assets/chapter-4/mobile/prototyping/terminology.png)
 
 **Step 1: Unstructured Exploration:**
 
-![step1.jpg](assets/chapter-4/step1.png)
+![step1.jpg](assets/chapter-4/mobile/prototyping/steps/step-01.png)
 
 **Step 2: Timelines:**
 
-![step2.jpg](assets/chapter-4/step2.png)
+![step2.jpg](assets/chapter-4/mobile/prototyping/steps/step-02.png)
 
 **Step 3: Paint Points:**
 
-![step3.jpg](assets/chapter-4/step3.png)
+![step3.jpg](assets/chapter-4/mobile/prototyping/steps/step-03.png)
 
 **Step 4: Pivotal Points:**
 
-![step4.jpg](assets/chapter-4/step4.png)
+![step4.jpg](assets/chapter-4/mobile/prototyping/steps/step-04.png)
 
 **Step 5: Commands:**
 
-![step5.jpg](assets/chapter-4/step5.png)
+![step5.jpg](assets/chapter-4/mobile/prototyping/steps/step-05.png)
 
 **Step 6: Policies:**
 
-![step6.jpg](assets/chapter-4/step6.png)
+![step6.jpg](assets/chapter-4/mobile/prototyping/steps/step-06.png)
 
 **Step 7: Read models:**
 
-![step7.jpg](assets/chapter-4/step7.png)
+![step7.jpg](assets/chapter-4/mobile/prototyping/steps/step-07.png)
 
 **Step 8: External Systems:**
 
-![step8.jpg](assets/chapter-4/step8.png)
+![step8.jpg](assets/chapter-4/mobile/prototyping/steps/step-08.png)
 
 **Step 9: Aggregates:**
 
-![step9.jpg](assets/chapter-4/step9.png)
+![step9.jpg](assets/chapter-4/mobile/prototyping/steps/step-09.png)
 
 **Step 10: Bounded Contexts:**
 
-![step10.jpg](assets/chapter-4/step10.png)
+![step10.jpg](assets/chapter-4/mobile/prototyping/steps/step-10.png)
 
 **Link para visualizar mejor:** [https://shorturl.at/7UPcY](https://miro.com/app/board/uXjVJ9iB8iU=/?share_link_id=650007847940)
 
 ### 4.8.1. Software Architecture Context Diagram
 
-![SystemContext.png](assets/chapter-4/SystemContext.png)
+![SystemContext.png](assets/chapter-4/architecture/context/system-context.png)
 
 ### 4.8.2. Software Architecture Container Diagrams
 
-![Containers.png](assets/chapter-4/Containers.png)
+![Containers.png](assets/chapter-4/architecture/containers/containers.png)
 
 ### 4.8.3. Software Architecture Components Diagrams
 
 **Api Components**
-![Apicomponents.png](assets/chapter-4/Apicomponents.png)
+![Apicomponents.png](assets/chapter-4/architecture/components/api-components.png)
 
 
 **IoT Gateway Components**
-![IotGatewayComponets.png](assets/chapter-4/IotGatewayComponets.png)
+![IotGatewayComponets.png](assets/chapter-4/architecture/components/iot-gateway-components.png)
 
 ## 4.9. Software Object-Oriented Design
 
 ### 4.9.1. Class Diagrams
 
 
-![AuthComponentClassDiagram.png](assets/chapter-4/AuthComponentClassDiagram.png)
+![AuthComponentClassDiagram.png](assets/chapter-4/object-oriented-design/class-diagrams/Auth-component-class-diagram.png)
 
 Este diagrama detalla las clases responsables de la gestión de la identidad y el acceso en el sistema. Incluye la jerarquía de User con sus roles especializados (Guest, Host, HotelStaff), el AuthService que contiene la lógica de negocio para el registro y la autenticación, y la interfaz IUserRepository para la persistencia de datos de usuario.
 
 Diagrama de Clases: Componente de Gestión de Propiedades y Operaciones
 
-![PropertyComponentClassDiagram.png](assets/chapter-4/PropertyComponentClassDiagram.png)
+![PropertyComponentClassDiagram.png](assets/chapter-4/object-oriented-design/class-diagrams/Property-component-class-diagram.png)
 
 Este diagrama muestra el diseño de clases para la gestión del inventario y las operaciones del hotel. Incluye las entidades Property y Room, que representan los activos físicos, y el PropertyService que maneja su estado y disponibilidad. Es importante destacar que este componente también actúa como el origen de los comandos de IoT, utilizando la interfaz IIoTCommandPublisher para iniciar acciones en el mundo físico.
 
 Diagrama de Clases: Componente de Gestión de Reservas
 
-![BookingComponentClassDiagram.png](assets/chapter-4/BookingComponentClassDiagram.png)
+![BookingComponentClassDiagram.png](assets/chapter-4/object-oriented-design/class-diagrams/Booking-component-class-diagram.png)
 
 Este diagrama presenta el diseño de clases para el componente central de reservas. Muestra las entidades de dominio Booking y Review, y el BookingService que actúa como orquestador. Este servicio interactúa con otros componentes a través de adaptadores (IPropertyServiceAdapter, IBillingServiceAdapter) para verificar disponibilidad y procesar pagos, gestionando así el flujo completo de una reserva.
 
 Diagrama de Clases: Componente de Facturación
 
-![BillingComponentClassDiagram.png](assets/chapter-4/BillingComponentClassDiagram.png)
+![BillingComponentClassDiagram.png](assets/chapter-4/object-oriented-design/class-diagrams/Billing-component-class-diagram.png)
 
 Este diagrama ilustra la estructura interna del componente de facturación. Se definen las entidades Payment e Invoice, el servicio BillingService que orquesta el proceso de pago, y los adaptadores (IPaymentGatewayAdapter, IAuthServiceAdapter) que se comunican con sistemas externos y otros componentes internos para garantizar transacciones seguras y autorizadas.
 
 Diagrama de Clases: Componente Gateway IoT
 
-![IotGatewayComponentClassDiagram.png](assets/chapter-4/IotGatewayComponentClassDiagram.png)
+![IotGatewayComponentClassDiagram.png](assets/chapter-4/object-oriented-design/class-diagrams/IotGateway-component-class-diagram.png)
 
 Este diagrama detalla la arquitectura interna del componente técnico Gateway IoT. Su diseño se basa en un flujo de procesamiento de mensajes para desacoplar la lógica de negocio del hardware: un MessageListener recibe órdenes, un RulesEngine las interpreta, IDeviceController las especializa, y un ICloudApiClient se comunica con la plataforma externa del fabricante. Este patrón abstrae la complejidad de la integración con dispositivos físicos.
 
 **Diagrama de clases — export físico (aplicación móvil):**
 
-![MovilDev-Aplicaciones-moviles-Physical_Export.png](assets/chapter-4/MovilDev-Aplicaciones-moviles-Physical_Export.png)
+![MovilDev-Aplicaciones-moviles-Physical_Export.png](assets/chapter-4/architecture/deployment/mobile-physical-export.png)
 
 ### 4.9.2. Class Dictionary
 
@@ -3884,7 +3886,7 @@ Relaciones: Todas las asociaciones y composiciones en los diagramas de clases se
 
 #### Database Diagrams
 
-![Edgerunners-Aplicaciones-Web_Physical_Export.png](assets/chapter-4/Edgerunners-Aplicaciones-Web_Physical_Export.png)
+![Edgerunners-Aplicaciones-Web_Physical_Export.png](assets/chapter-4/architecture/deployment/web-physical-export.png)
 
 ---
 
@@ -3975,10 +3977,10 @@ Para la gestión del proyecto se emplearon diversas herramientas de comunicació
 - **Task completion rate:** Porcentaje de tasks completadas vs planificadas
 
 **Evidencia de uso:**
-![sprint_trello](assets/chapter-5/trello.jpg)
+![Tablero de Trello del sprint](assets/chapter-5/project-management/trello-board.jpg)
 *Tablero Trello del Sprint 1 mostrando la organización de tareas*
 
-![sprint_trello](assets/chapter-5/trello2.jpg)
+![Detalle del tablero de Trello](assets/chapter-5/project-management/trello-board-detail.jpg)
 *Tablero Trello del Sprint 2 con Engineering Tasks en progreso*
 
 
@@ -4291,7 +4293,7 @@ El proyecto implementa un flujo automatizado de **Integración Continua y Despli
 - Este proceso garantiza una actualización constante de los servicios y minimiza la intervención manual en las publicaciones.
 
 ### Github Pages:
-![Github Pages](assets/chapter-5/githubpages.jpg)
+![Github Pages](assets/chapter-5/deployment/github-pages.jpg)
 
 **La URL que nos entrega Github Pages para acceder a la landing page es la siguiente:**  
 [https://edgerunners-aplicaciones-web.github.io/landing-page/](https://edgerunners-aplicaciones-web.github.io/landing-page/)
@@ -4346,7 +4348,7 @@ El proyecto implementa un flujo automatizado de **Integración Continua y Despli
 
 ### Android Studio Emulator
 
-![Android Studio Emulator](assets/chapter-5/android-studio-emulator.jpg)
+![Android Studio Emulator](assets/chapter-5/deployment/android-studio-emulator.jpg)
 
 **El emulador de Android Studio permite validar el funcionamiento de la aplicación móvil en distintos dispositivos y versiones de Android antes de su despliegue final.**
 
@@ -4474,54 +4476,54 @@ Durante el sprint, se realizaron pruebas sobre los distintos componentes del eco
 Durante el Sprint 1, se logró ejecutar y validar la aplicación móvil en el entorno de desarrollo de Android Studio, utilizando tanto el emulador como dispositivos físicos para asegurar la correcta funcionalidad de las características implementadas. Así mismo, el despliegue del backend y landing page.
 
 
-![App Execution 1](assets/chapter-5/appexecution1.jpeg)
+![App Execution 1](assets/chapter-5/sprints/sprint-1/app-execution-01.jpeg)
 
-![App Execution 2](assets/chapter-5/appexecution2.jpg)
+![App Execution 2](assets/chapter-5/sprints/sprint-1/app-execution-02.jpg)
 
-![App Execution 3](assets/chapter-5/appexecution3.jpg)
+![App Execution 3](assets/chapter-5/sprints/sprint-1/app-execution-03.jpg)
 
 
 ##### 5.2.1.1.6. Services Documentation Evidence for Sprint Review
 
 **Profiles**: Este bounded context maneja la información de los perfiles de los usuarios dentro de la plataforma. Proporciona funcionalidades para crear perfiles, consultar su información y obtener el detalle de un perfil específico. Es esencial para almacenar y gestionar los datos personales asociados a cada usuario del sistema.
 
-![swagerperfiles.png](assets/chapter-5/swagerperfiles.png)
+![swagerperfiles.png](assets/chapter-5/api/swagger/swagger-perfiles.png)
 
 **Payments**: Este bounded context administra el procesamiento y la consulta de pagos dentro de la plataforma. Proporciona funcionalidades para registrar nuevos pagos y consultar los pagos asociados a una reserva específica. Es fundamental para garantizar la gestión financiera de las transacciones realizadas por los huéspedes.
 
-![swagerpagos.png](assets/chapter-5/swagerpagos.png)
+![swagerpagos.png](assets/chapter-5/api/swagger/swagger-pagos.png)
 
 **Authentication**: Este bounded context se encarga de la autenticación y el acceso de los usuarios al sistema. Proporciona funcionalidades para el registro de nuevos usuarios y el inicio de sesión seguro. Es esencial para validar credenciales, controlar el acceso a la plataforma y proteger la información de los distintos actores del sistema.
 
-![swagerautenticacion.png](assets/chapter-5/swagerautenticacion.png)
+![swagerautenticacion.png](assets/chapter-5/api/swagger/swagger-autenticacion.png)
 
 **Users**: Este bounded context maneja la información general de los usuarios registrados en la plataforma. Proporciona funcionalidades para consultar todos los usuarios y obtener la información de un usuario específico por su identificador. Es importante para la administración y supervisión de las cuentas existentes en el sistema.
 
-![swagerusuarios.png](assets/chapter-5/swagerusuarios.png)
+![swagerusuarios.png](assets/chapter-5/api/swagger/swagger-usuarios.png)
 
 **Bookings**: Este bounded context gestiona todo el ciclo de vida de las reservas. Proporciona funcionalidades para crear reservas, consultar reservas por identificador, listar todas las reservas, obtener reservas por habitación y ejecutar acciones como confirmar o cancelar una reserva. Es uno de los núcleos funcionales de la plataforma, ya que articula la relación entre huéspedes, habitaciones y disponibilidad.
 
-![swagerbooking.png](assets/chapter-5/swagerbooking.png)
+![swagerbooking.png](assets/chapter-5/api/swagger/swagger-booking.png)
 
 **Analytics**: Este bounded context administra la generación y consulta de métricas analíticas del sistema. Proporciona funcionalidades para obtener indicadores de desempeño, como métricas mensuales de reservas. Es clave para apoyar la toma de decisiones mediante el análisis del rendimiento operativo de la plataforma.
 
-![swageranaliticas.png](assets/chapter-5/swageranaliticas.png)
+![swageranaliticas.png](assets/chapter-5/api/swagger/swagger-analiticas.png)
 
 **AccommodationOptions**: Este bounded context maneja las opciones complementarias relacionadas con los alojamientos. Proporciona funcionalidades para consultar y registrar categorías de hoteles, así como consultar y crear amenidades. Es importante para estructurar la información maestra del sistema y enriquecer la oferta disponible para hoteles y habitaciones.
 
-![swageracopmodation.png](assets/chapter-5/swageracomodation.png)
+![swageracopmodation.png](assets/chapter-5/api/swagger/swagger-acomodation.png)
 
 **Hotels**: Este bounded context administra la información de los hoteles registrados en la plataforma. Proporciona funcionalidades para crear nuevos hoteles, listar todos los hoteles, consultar un hotel por identificador, actualizar su información y eliminarlo. Es esencial para gestionar las propiedades que forman parte del ecosistema SmartStay.
 
-![swagerhoteles.png](assets/chapter-5/swagerhoteles.png)
+![swagerhoteles.png](assets/chapter-5/api/swagger/swagger-hoteles.png)
 
 **Rooms**: Este bounded context maneja la información de las habitaciones asociadas a los hoteles. Proporciona funcionalidades para crear habitaciones, listar todas las habitaciones, consultar una habitación por identificador, actualizarlas, eliminarlas y filtrarlas por tipo. Es fundamental para la operación del sistema, ya que conecta directamente la capacidad de alojamiento con las reservas.
 
-![swagercuarto.png](assets/chapter-5/swagercuartos.png)
+![swagercuarto.png](assets/chapter-5/api/swagger/swagger-cuartos.png)
 
 **RoomTypes**: Este bounded context administra los tipos de habitación disponibles en la plataforma. Proporciona funcionalidades para crear tipos de habitación, listarlos y consultar un tipo específico por identificador. Es importante para clasificar la oferta de habitaciones y mantener consistencia en la estructura del catálogo.
 
-![swagercuartostipos.png](assets/chapter-5/swagercuartostipo.png)
+![swagercuartostipos.png](assets/chapter-5/api/swagger/swagger-cuartostipo.png)
 
 ##### 5.2.1.1.7. Software Deployment Evidence for Sprint Review
 
@@ -4658,14 +4660,14 @@ Durante este sprint, el equipo realizó actividades de prueba para validar las f
 
 Durante el Sprint 2 se ejecutaron y validaron las funcionalidades desarrolladas dentro de la aplicación móvil SmartStay. Las pruebas se realizaron utilizando Android Studio, dispositivos físicos y servicios desplegados en la nube para verificar la correcta integración entre frontend y backend.
 
-![App Android 1](assets/chapter-5/appAndroid1.jpeg)
-![App Android 2](assets/chapter-5/appAndroid2.jpeg)
-![App Android 3](assets/chapter-5/appAndroid3.jpeg)
-![App Android 4](assets/chapter-5/appAndroid4.jpeg)
-![App Android 5](assets/chapter-5/appAndroid5.jpeg)
-![App Android 6](assets/chapter-5/appAndroid6.jpeg)
-![App Android 7](assets/chapter-5/appAndroid7.jpeg)
-![App Android 8](assets/chapter-5/appAndroid8.jpeg)
+![App Android 1](assets/chapter-5/implementation/mobile/sprint-2/android-app-01.jpeg)
+![App Android 2](assets/chapter-5/implementation/mobile/sprint-2/android-app-02.jpeg)
+![App Android 3](assets/chapter-5/implementation/mobile/sprint-2/android-app-03.jpeg)
+![App Android 4](assets/chapter-5/implementation/mobile/sprint-2/android-app-04.jpeg)
+![App Android 5](assets/chapter-5/implementation/mobile/sprint-2/android-app-05.jpeg)
+![App Android 6](assets/chapter-5/implementation/mobile/sprint-2/android-app-06.jpeg)
+![App Android 7](assets/chapter-5/implementation/mobile/sprint-2/android-app-07.jpeg)
+![App Android 8](assets/chapter-5/implementation/mobile/sprint-2/android-app-08.jpeg)
 
 ---
 
@@ -4688,7 +4690,7 @@ Gracias a esta configuración, la página quedó disponible públicamente, confi
 
 **URL de la Landing Page: https://movil-dev-aplicaciones-moviles.github.io/landing-page/# **
 
-![LANDING.png](assets/chapter-5/LANDING.png)
+![LANDING.png](assets/chapter-5/deployment/landing-page-final.png)
 
 Como evidencia complementaria, se presenta una captura de la landing page desplegada y accesible desde su URL pública.
 
@@ -4700,7 +4702,7 @@ Como evidencia del despliegue, se presenta la **URL pública del servicio** junt
 
 **URL del Back End / Swagger: https://application-mobile-backend.onrender.com/swagger/index.html **
 
-![render.png](assets/chapter-5/render.png)
+![Evidencia del despliegue en Render](assets/chapter-5/deployment/render-backend.png)
 
 La evidencia visual demuestra que el backend fue desplegado correctamente y que sus endpoints pueden consultarse desde la interfaz de Swagger.
 
@@ -4856,10 +4858,10 @@ Los flujos ejecutados fueron los siguientes:
 - Validación de errores de conexión y datos inválidos.
 - Navegación final entre módulos principales de la aplicación.
 
-![Sprint 3 App 1](assets/chapter-5/sprint3-app-1.png)
-![Sprint 3 App 2](assets/chapter-5/sprint3-app-2.png)
-![Sprint 3 App 3](assets/chapter-5/sprint3-app-3.png)
-![Sprint 3 App 4](assets/chapter-5/sprint3-app-4.png)
+![Sprint 3 App 1](assets/chapter-5/implementation/mobile/sprint-3/sprint3-app-1.png)
+![Sprint 3 App 2](assets/chapter-5/implementation/mobile/sprint-3/sprint3-app-2.png)
+![Sprint 3 App 3](assets/chapter-5/implementation/mobile/sprint-3/sprint3-app-3.png)
+![Sprint 3 App 4](assets/chapter-5/implementation/mobile/sprint-3/sprint3-app-4.png)
 
 
 ---
@@ -4958,7 +4960,7 @@ En conclusión, el Sprint 3 permitió cerrar el ciclo de desarrollo de SmartStay
 
 ### 5.2.2. Implemented Landing Page Evidence
 
-![Github Pages](assets/chapter-5/githubpages.jpg)
+![Github Pages](assets/chapter-5/deployment/github-pages.jpg)
 
 **La URL que nos entrega Github Pages para acceder a la landing page es la siguiente:**  
 [https://edgerunners-aplicaciones-web.github.io/landing-page/](https://edgerunners-aplicaciones-web.github.io/landing-page/)
@@ -4967,22 +4969,22 @@ landing Page
 
 Esta es la sección inicial, donde está el header.
 
-![Landing1](assets/chapter-5/landing1.jpeg)
+![Landing1](assets/chapter-5/implementation/landing-page/landing-page-01.jpeg)
 
 Aquí se puede observar la sección donde se presenta a los productos que ofrecemos.
 
-![Landing2](assets/chapter-5/landing2.jpeg)
+![Landing2](assets/chapter-5/implementation/landing-page/landing-page-02.jpeg)
 
 Esta sección describe las soluciones de acorde al tipo de propiedad.
-![Landing3](assets/chapter-5/landing3.jpeg)
+![Landing3](assets/chapter-5/implementation/landing-page/landing-page-03.jpeg)
 
 Tenemos en esta sección acerca de precios por el servicio.
 
-![Landing4](assets/chapter-5/landing4.jpeg)
+![Landing4](assets/chapter-5/implementation/landing-page/landing-page-04.jpeg)
 
 Aquí se puede observar la sección de reseñas.
 
-![Landing5](assets/chapter-5/landing5.jpeg)
+![Landing5](assets/chapter-5/implementation/landing-page/landing-page-05.jpeg)
 
 ### 5.2.3. Implemented Frontend-Web Application Evidence
 
@@ -4990,33 +4992,33 @@ Frontend
 
 En esta sección se puede ver las habitaciones disponibles.
 
-![Front1](assets/chapter-5/front1.jpeg)
+![Front1](assets/chapter-5/implementation/frontend-web/frontend-01.jpeg)
 
 
 En esta sección se puede ver las habitaciones disponibles desde el punto de vista de un administrador.
 
-![Front2](assets/chapter-5/front2.jpeg)
+![Front2](assets/chapter-5/implementation/frontend-web/frontend-02.jpeg)
 
 En esta sección se puede ver el panel del administrador.
 
-![Front3](assets/chapter-5/front3.jpeg)
+![Front3](assets/chapter-5/implementation/frontend-web/frontend-03.jpeg)
 
 En esta sección se puede ver el panel del administrador se puede ver un dashboard con las habitaciones.
 
-![Front4](assets/chapter-5/fron4.jpeg)
+![Front4](assets/chapter-5/implementation/frontend-web/frontend-04.jpeg)
 
 ### 5.2.4. Implemented Native-Mobile Application Evidence
 
 Durante el Sprint 2 se ejecutaron y validaron las funcionalidades desarrolladas dentro de la aplicación móvil SmartStay. Las pruebas se realizaron utilizando Android Studio, dispositivos físicos y servicios desplegados en la nube para verificar la correcta integración entre frontend y backend.
 
-![App Android 1](assets/chapter-5/appAndroid1.jpeg)
-![App Android 2](assets/chapter-5/appAndroid2.jpeg)
-![App Android 3](assets/chapter-5/appAndroid3.jpeg)
-![App Android 4](assets/chapter-5/appAndroid4.jpeg)
-![App Android 5](assets/chapter-5/appAndroid5.jpeg)
-![App Android 6](assets/chapter-5/appAndroid6.jpeg)
-![App Android 7](assets/chapter-5/appAndroid7.jpeg)
-![App Android 8](assets/chapter-5/appAndroid8.jpeg)
+![App Android 1](assets/chapter-5/implementation/mobile/sprint-2/android-app-01.jpeg)
+![App Android 2](assets/chapter-5/implementation/mobile/sprint-2/android-app-02.jpeg)
+![App Android 3](assets/chapter-5/implementation/mobile/sprint-2/android-app-03.jpeg)
+![App Android 4](assets/chapter-5/implementation/mobile/sprint-2/android-app-04.jpeg)
+![App Android 5](assets/chapter-5/implementation/mobile/sprint-2/android-app-05.jpeg)
+![App Android 6](assets/chapter-5/implementation/mobile/sprint-2/android-app-06.jpeg)
+![App Android 7](assets/chapter-5/implementation/mobile/sprint-2/android-app-07.jpeg)
+![App Android 8](assets/chapter-5/implementation/mobile/sprint-2/android-app-08.jpeg)
 
 Durante el Sprint 3 se ejecutó la versión final de la aplicación móvil SmartStay, validando los principales flujos funcionales definidos para la presentación final. Las pruebas fueron realizadas en Android Studio y dispositivos móviles, utilizando servicios backend desplegados para comprobar la integración real del sistema.
 
@@ -5035,10 +5037,10 @@ Los flujos ejecutados fueron los siguientes:
 - Validación de errores de conexión y datos inválidos.
 - Navegación final entre módulos principales de la aplicación.
 
-![Sprint 3 App 1](assets/chapter-5/sprint3-app-1.png)
-![Sprint 3 App 2](assets/chapter-5/sprint3-app-2.png)
-![Sprint 3 App 3](assets/chapter-5/sprint3-app-3.png)
-![Sprint 3 App 4](assets/chapter-5/sprint3-app-4.png)
+![Sprint 3 App 1](assets/chapter-5/implementation/mobile/sprint-3/sprint3-app-1.png)
+![Sprint 3 App 2](assets/chapter-5/implementation/mobile/sprint-3/sprint3-app-2.png)
+![Sprint 3 App 3](assets/chapter-5/implementation/mobile/sprint-3/sprint3-app-3.png)
+![Sprint 3 App 4](assets/chapter-5/implementation/mobile/sprint-3/sprint3-app-4.png)
 
 ### 5.2.5. Implemented RESTful API and/or Serverless Backend Evidence
 
@@ -5053,43 +5055,43 @@ Asimismo, durante el sprint se trabajó con la lógica de roles para diferenciar
 
 **Profiles**: Este bounded context maneja la información de los perfiles de los usuarios dentro de la plataforma. Proporciona funcionalidades para crear perfiles, consultar su información y obtener el detalle de un perfil específico. Es esencial para almacenar y gestionar los datos personales asociados a cada usuario del sistema.
 
-![swagerperfiles.png](assets/chapter-5/swagerperfiles.png)
+![swagerperfiles.png](assets/chapter-5/api/swagger/swagger-perfiles.png)
 
 **Payments**: Este bounded context administra el procesamiento y la consulta de pagos dentro de la plataforma. Proporciona funcionalidades para registrar nuevos pagos y consultar los pagos asociados a una reserva específica. Es fundamental para garantizar la gestión financiera de las transacciones realizadas por los huéspedes.
 
-![swagerpagos.png](assets/chapter-5/swagerpagos.png)
+![swagerpagos.png](assets/chapter-5/api/swagger/swagger-pagos.png)
 
 **Authentication**: Este bounded context se encarga de la autenticación y el acceso de los usuarios al sistema. Proporciona funcionalidades para el registro de nuevos usuarios y el inicio de sesión seguro. Es esencial para validar credenciales, controlar el acceso a la plataforma y proteger la información de los distintos actores del sistema.
 
-![swagerautenticacion.png](assets/chapter-5/swagerautenticacion.png)
+![swagerautenticacion.png](assets/chapter-5/api/swagger/swagger-autenticacion.png)
 
 **Users**: Este bounded context maneja la información general de los usuarios registrados en la plataforma. Proporciona funcionalidades para consultar todos los usuarios y obtener la información de un usuario específico por su identificador. Es importante para la administración y supervisión de las cuentas existentes en el sistema.
 
-![swagerusuarios.png](assets/chapter-5/swagerusuarios.png)
+![swagerusuarios.png](assets/chapter-5/api/swagger/swagger-usuarios.png)
 
 **Bookings**: Este bounded context gestiona todo el ciclo de vida de las reservas. Proporciona funcionalidades para crear reservas, consultar reservas por identificador, listar todas las reservas, obtener reservas por habitación y ejecutar acciones como confirmar o cancelar una reserva. Es uno de los núcleos funcionales de la plataforma, ya que articula la relación entre huéspedes, habitaciones y disponibilidad.
 
-![swagerbooking.png](assets/chapter-5/swagerbooking.png)
+![swagerbooking.png](assets/chapter-5/api/swagger/swagger-booking.png)
 
 **Analytics**: Este bounded context administra la generación y consulta de métricas analíticas del sistema. Proporciona funcionalidades para obtener indicadores de desempeño, como métricas mensuales de reservas. Es clave para apoyar la toma de decisiones mediante el análisis del rendimiento operativo de la plataforma.
 
-![swageranaliticas.png](assets/chapter-5/swageranaliticas.png)
+![swageranaliticas.png](assets/chapter-5/api/swagger/swagger-analiticas.png)
 
 **AccommodationOptions**: Este bounded context maneja las opciones complementarias relacionadas con los alojamientos. Proporciona funcionalidades para consultar y registrar categorías de hoteles, así como consultar y crear amenidades. Es importante para estructurar la información maestra del sistema y enriquecer la oferta disponible para hoteles y habitaciones.
 
-![swageracopmodation.png](assets/chapter-5/swageracomodation.png)
+![swageracopmodation.png](assets/chapter-5/api/swagger/swagger-acomodation.png)
 
 **Hotels**: Este bounded context administra la información de los hoteles registrados en la plataforma. Proporciona funcionalidades para crear nuevos hoteles, listar todos los hoteles, consultar un hotel por identificador, actualizar su información y eliminarlo. Es esencial para gestionar las propiedades que forman parte del ecosistema SmartStay.
 
-![swagerhoteles.png](assets/chapter-5/swagerhoteles.png)
+![swagerhoteles.png](assets/chapter-5/api/swagger/swagger-hoteles.png)
 
 **Rooms**: Este bounded context maneja la información de las habitaciones asociadas a los hoteles. Proporciona funcionalidades para crear habitaciones, listar todas las habitaciones, consultar una habitación por identificador, actualizarlas, eliminarlas y filtrarlas por tipo. Es fundamental para la operación del sistema, ya que conecta directamente la capacidad de alojamiento con las reservas.
 
-![swagercuarto.png](assets/chapter-5/swagercuartos.png)
+![swagercuarto.png](assets/chapter-5/api/swagger/swagger-cuartos.png)
 
 **RoomTypes**: Este bounded context administra los tipos de habitación disponibles en la plataforma. Proporciona funcionalidades para crear tipos de habitación, listarlos y consultar un tipo específico por identificador. Es importante para clasificar la oferta de habitaciones y mantener consistencia en la estructura del catálogo.
 
-![swagercuartostipos.png](assets/chapter-5/swagercuartostipo.png)
+![swagercuartostipos.png](assets/chapter-5/api/swagger/swagger-cuartostipo.png)
 
 ### 5.2.7. Team Collaboration Insights
 

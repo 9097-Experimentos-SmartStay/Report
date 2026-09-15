@@ -14,10 +14,10 @@ El mercado de soluciones para gestión hotelera presenta diversos actores. Sin e
     </tr>
     <tr style="text-align: center;">
       <th style="border: 1px solid #000;">Categoría / Aspecto</th>
-      <th style="border: 1px solid #000;"><strong>Smart Stay</strong><br><img src="../assets/chapter-2/logo.png" alt="Smart Stay" width="100"></th>
-      <th style="border: 1px solid #000;"><strong>Oracle Hospitality</strong><br><img src="../assets/chapter-2/oracle-hospitality.png" alt="Oracle" width="100"></th>
-      <th style="border: 1px solid #000;"><strong>Room Raccoon</strong><br><img src="../assets/chapter-2/logo-roomraccoon.jpeg" alt="Room Raccoon" width="100"></th>
-      <th style="border: 1px solid #000;"><strong>Sistemas Manuales</strong><br><img src="../assets/chapter-2/Sistemas-Manuales.jpg" alt="Sistemas Manuales" width="100"></th>
+      <th style="border: 1px solid #000;"><strong>Smart Stay</strong><br><img src="../assets/chapter-2/competitors/smartstay-logo.png" alt="Smart Stay" width="100"></th>
+      <th style="border: 1px solid #000;"><strong>Oracle Hospitality</strong><br><img src="../assets/chapter-2/competitors/oracle-hospitality-logo.png" alt="Oracle" width="100"></th>
+      <th style="border: 1px solid #000;"><strong>Room Raccoon</strong><br><img src="../assets/chapter-2/competitors/room-raccoon-logo.jpeg" alt="Room Raccoon" width="100"></th>
+      <th style="border: 1px solid #000;"><strong>Sistemas Manuales</strong><br><img src="../assets/chapter-2/competitors/manual-systems.jpg" alt="Sistemas Manuales" width="100"></th>
     </tr>
   </thead>
   <tbody>
@@ -187,7 +187,7 @@ Datos del entrevistado:
 
 **Duración:** 8:07 minutos
 
-**Evidencia:** ![adrian entrevistado](../assets/chapter-2/adrian_entrevistado.jpg)
+**Evidencia:** ![adrian entrevistado](../assets/chapter-2/interviews/staff-01-adrian-saavedra.jpg)
 
 **Resumen de la entrevista**
 
@@ -210,7 +210,7 @@ Datos del entrevistado:
 
 **Duración:** 5:53 minutos
 
-**Evidencia:** ![monica entrevistada](../assets/chapter-2/monica_entrevistada.jpg)
+**Evidencia:** ![monica entrevistada](../assets/chapter-2/interviews/staff-02-monica-hernandez.jpg)
 
 **URL del video:** <https://tinyurl.com/59zmmrjb>
 **Resumen de la entrevista**
@@ -231,7 +231,7 @@ Datos del entrevistado:
 
 **Duración:** 4:11 minutos
 
-**Evidencia:** ![entrevista alejandra](../assets/chapter-2/alejandra_entrevistada.jpg)
+**Evidencia:** ![entrevista alejandra](../assets/chapter-2/interviews/staff-03-alejandra-beltran.jpg)
 
 **URL del video:** <https://tinyurl.com/2p9n2kmb>
 
@@ -256,7 +256,7 @@ Datos del entrevistado:
 
 **Duración:** 5:34 minutos
 
-**Evidencia:** ![entrevista_alexander](../assets/chapter-2/entrevista_alexander.png)
+**Evidencia:** ![entrevista_alexander](../assets/chapter-2/interviews/guest-01-diego-segura.png)
 
 **URL del video:** <https://tinyurl.com/me55rvnx>
 
@@ -285,7 +285,7 @@ Datos del entrevistado:
 **Edad:** 44 años  
 **Distrito:** San Borja
 
-**Evidencia:** ![Screenshot](../assets/chapter-2/JuanSalcedo.png)
+**Evidencia:** ![Screenshot](../assets/chapter-2/interviews/guest-02-juan-salcedo.png)
 
 **URL del video:** <https://tinyurl.com/3mv3ytt5>
 
@@ -307,7 +307,7 @@ Datos del entrevistado:
 
 **Duración:** 7:21 minutos
 
-**Evidencia:** ![Screenshot](../assets/chapter-2/EntrevistaTadeoLoja.png)
+**Evidencia:** ![Screenshot](../assets/chapter-2/interviews/guest-03-tadeo-loja.png)
 
 **URL del video:** <https://tinyurl.com/3ztyph92>
 
@@ -331,13 +331,13 @@ En esta sección se presenta un análisis detallado por cada segmento objetivo, 
 
 **Perfil de Edad y Ubicación**
 Los administradores entrevistados presentan una edad promedio de **30.0 años**, con un rango que va desde los 23 hasta los 34 años.
-![Perfil de edad de administradores — boxplot](../assets/chapter-2/S1_01_perfil_edad_boxplot.png)
+![Perfil de edad de administradores — boxplot](../assets/chapter-2/analysis/staff-01-perfil-edad-boxplot.png)
 El **100%** de los entrevistados se ubican en Tarapoto, lo que indica una concentración geográfica específica en esta región turística del Perú. Este hallazgo se alinea con las tendencias nacionales, ya que según _Statista Market Forecast (2025)_, Peru ha experimentado un crecimiento significativo en el mercado hotelero, posicionándose como un actor clave en la industria hotelera latinoamericana.
-![Concentración geográfica: 100% en Tarapoto](../assets/chapter-2/S1_02_concentracion_tarapoto.png)
+![Concentración geográfica: 100% en Tarapoto](../assets/chapter-2/analysis/staff-02-concentracion-tarapoto.png)
 
 **Características del Negocio**
 Los hoteles administrados por este segmento tienen un tamaño promedio de **14.3 habitaciones**, con un rango que va desde 12 hasta 19 habitaciones, confirmando que se trata efectivamente de establecimientos boutique y pequeños. El equipo de trabajo promedio es de **5.0 personas**, variando entre 4 y 6 empleados, lo que refleja operaciones de escala reducida pero con estructura organizacional definida. Estas características coinciden con las tendencias identificadas por _Statista_, donde los viajeros en Perú buscan cada vez más experiencias únicas y auténticas, impulsando la demanda de hoteles boutique.
-![Tamaño de hoteles (habitaciones) y equipo (empleados)](../assets/chapter-2/S1_03_tamano_hoteles_equipo_boxplots.png)
+![Tamaño de hoteles (habitaciones) y equipo (empleados)](../assets/chapter-2/analysis/staff-03-tamano-hoteles-equipo-boxplots.png)
 
 **Herramientas Tecnológicas Actuales**
 
@@ -347,7 +347,7 @@ El análisis revela una heterogeneidad en los sistemas utilizados:
 - **66.7%** (2 de 3 administradores) utilizan sistemas propios desarrollados para sus hoteles.
 - **33.3%** (1 de 3 administradores) depende de herramientas básicas como Excel y WhatsApp.
 
-![Nivel de digitalización de herramientas actuales](../assets/chapter-2/S1_04_nivel_digitalizacion.png)
+![Nivel de digitalización de herramientas actuales](../assets/chapter-2/analysis/staff-04-nivel-digitalizacion.png)
 
 Esta distribución indica que, aunque la mayoría cuenta con algún nivel de digitalización, existe una brecha significativa en la sofisticación de las herramientas empleadas. Este panorama refleja los hallazgos de un estudio académico sobre barreras de adopción tecnológica en hoteles pequeños y medianos, donde se identificó que la falta de recursos financieros, conocimiento de TI y resistencia al cambio son las principales limitaciones.
 
@@ -360,7 +360,7 @@ Cada administrador enfrenta diferentes tipos de desafíos, con una distribución
 - **Dificultades operativas:** Mónica tiene complicaciones con el uso de su sistema actual.
 - **Pérdida de información:** Alejandra sufre pérdidas de reservas por las limitaciones de sus herramientas básicas.
 
-![Distribución de problemas](../assets/chapter-2/S1_05_distribucion_problemas.png)
+![Distribución de problemas](../assets/chapter-2/analysis/staff-05-distribucion-problemas.png)
 
 Estas problemáticas están documentadas en la literatura académica, donde se ha identificado que las organizaciones hoteleras pequeñas y medianas son más reluctantes a adoptar nuevas tecnologías de información que las más grandes, debido a la falta de entrenamiento, recursos financieros limitados y percepción de costos elevados.
 
@@ -374,7 +374,7 @@ Los resultados muestran una receptividad completa hacia soluciones tecnológicas
 
 Esta disposición positiva contrasta con estudios previos pero se alinea con las tendencias post-pandemia. Según _Oracle Hospitality & Skift (2022)_, el **89%** de los ejecutivos hoteleros latinoamericanos afirmaron que la pandemia aceleró su adopción de tecnología hotelera, comparado con el 76% globalmente.
 
-![Actitud hacia nueva tecnología](../assets/chapter-2/S1_06_actitud_nuevas_tecnologias.png)
+![Actitud hacia nueva tecnología](../assets/chapter-2/analysis/staff-06-actitud-nuevas-tecnologias.png)
 
 ---
 
@@ -384,7 +384,7 @@ Esta disposición positiva contrasta con estudios previos pero se alinea con las
 
 **Perfil Generacional**
 Los huéspedes entrevistados tienen una edad promedio de **28.0 años**, con un rango de 21 a 44 años. El **75%** pertenece a la generación Millennial/Gen Z (menores de 26 años), lo que sugiere un segmento predominantemente joven y digitalmente nativo. Esta composición demográfica es especialmente relevante, ya que según _Hotel Tech Report (2025)_, los millennials son **57% más propensos** a ser influenciados por la tecnología hotelera.
-![Composición generacional de huéspedes](../assets/chapter-2/S2_07a_boxplot_edades_huespedes.png)
+![Composición generacional de huéspedes](../assets/chapter-2/analysis/guest-07-boxplot-edades.png)
 
 **Patrones de Viaje y Preferencias Tecnológicas**
 
@@ -395,7 +395,7 @@ El análisis de los patrones de viaje revela:
 - **25%** viaja por trabajo (Juan).
 - **100%** mantiene una frecuencia regular de viaje (anual o cada 1-2 meses).
 
-![Propósito de viaje](../assets/chapter-2/S2_08a_proposito_viaje.png)
+![Propósito de viaje](../assets/chapter-2/analysis/guest-08-proposito-viaje.png)
 
 Las preferencias de esta generación están bien documentadas en la investigación de _Mews (2025)_, que indica que las estimaciones sugieren que los millennials representarán el **50%** de los huéspedes hoteleros en los próximos años, convirtiéndolos en críticos para los ingresos y el crecimiento de marca de los hoteles.
 
@@ -407,7 +407,7 @@ Los problemas identificados muestran patrones claros:
 - **75%** experimenta esperas prolongadas en recepción como principal frustración.
 - **25%** señala problemas con horarios estrictos de check-in/check-out.
 
-![Puntos de dolor](../assets/chapter-2/S2_09_puntos_dolor.png)
+![Puntos de dolor](../assets/chapter-2/analysis/guest-09-puntos-dolor.png)
 
 Estos hallazgos se correlacionan directamente con estudios globales de la industria. Según _Oracle Hospitality & Skift (2022)_, el **65%** de los huéspedes desean que los hoteles ofrezcan tecnologías que minimicen el contacto con el personal y otros huéspedes. Además, el **43%** de los huéspedes de lujo esperan no hacer filas, según _Hotel Tech Report (2025)_.
 
@@ -420,7 +420,7 @@ Los resultados demuestran una fuerte inclinación hacia soluciones digitales:
 - **75%** está dispuesto a pagar un sobrecosto por experiencias digitales mejoradas.
 - **100%** considera las reseñas digitales como factor influyente en sus decisiones.
 
-![S2_10_receptividad_digitalizacion.png](../assets/chapter-2/S2_10_receptividad_digitalizacion.png)
+![S2_10_receptividad_digitalizacion.png](../assets/chapter-2/analysis/guest-10-receptividad-digitalizacion.png)
 
 - Estos datos se alinean con investigaciones globales que indican que el **74%** de los huéspedes esperan poder hacer en línea cualquier cosa que ya pueden hacer en persona o por teléfono. Además, el **48%** de los huéspedes considera las reseñas en línea como el factor principal para elegir un hotel.
 
@@ -430,7 +430,7 @@ Los resultados demuestran una fuerte inclinación hacia soluciones digitales:
 - **50%** pagaría entre 5-10% adicional.
 - **25%** no pagaría sobrecosto adicional.
 
-![S2_11_disposicion_pagar.png](../assets/chapter-2/S2_11_disposicion_pagar.png)
+![S2_11_disposicion_pagar.png](../assets/chapter-2/analysis/guest-11-disposicion-pagar.png)
 
 La disposición a pagar por tecnología varía según la generación. Mientras que el **35%** de la Gen Z considera que la velocidad del Wi-Fi es más importante que la comodidad de la cama, los usuarios de mayor edad muestran menos disposición a pagar extra por funciones digitales avanzadas.
 
@@ -439,7 +439,7 @@ La disposición a pagar por tecnología varía según la generación. Mientras q
 - **50%** reporta alta influencia de reseñas (70% o más en su decisión).
 - **100%** considera las reseñas como factor relevante en su proceso de selección.
 
-![S2_12_influencia_resenas.png](../assets/chapter-2/S2_12_influencia_resenas.png)
+![S2_12_influencia_resenas.png](../assets/chapter-2/analysis/guest-12-influencia-resenas.png)
 
 Esta tendencia refleja datos globales donde las reseñas en línea han reemplazado el boca a boca tradicional, con los millennials consultando plataformas como TripAdvisor, Google y redes sociales antes de reservar.
 
@@ -449,11 +449,11 @@ Esta tendencia refleja datos globales donde las reseñas en línea han reemplaza
 
 **Segmento 1 – Administradores de Hoteles Boutique y Pequeños en Lima**
 
-![user-person1.jpg](../assets/chapter-2/UserPerson1.png)
+![user-person1.jpg](../assets/chapter-2/needfinding/persona-staff.png)
 
 **Segmento 2 – Huéspedes de Hoteles**
 
-![user-person2.jpg](../assets/chapter-2/UserPerson2.png)
+![user-person2.jpg](../assets/chapter-2/needfinding/persona-guest.png)
 
 ### 2.3.2. User Task Matrix
 
@@ -553,10 +553,10 @@ El **User Journey Mapping** permite visualizar las etapas que recorren los usuar
 En el caso de **Smart Stay**, se elaboraron dos mapas diferenciados según los segmentos objetivos:
 
 - **Segmento 1:** enfocado en la gestión operativa y la centralización de reservas.
-![User Journey Map - Staff](../assets/chapter-2/user-journey-staff.png)
+![User Journey Map - Staff](../assets/chapter-2/needfinding/journey-staff.png)
 
 - **Segmento 2:** centrado en la experiencia de estadía y la digitalización de servicios.
-![User Journey Map - Huéspedes](../assets/chapter-2/user-journey-guest.png)
+![User Journey Map - Huéspedes](../assets/chapter-2/needfinding/journey-guest.png)
 
 Estos recorridos permiten detectar fricciones, validar expectativas y proponer mejoras orientadas a optimizar tanto la gestión hotelera como la satisfacción de los huéspedes.
 
@@ -574,13 +574,13 @@ Estos mapas permiten visualizar cómo cada tipo de usuario piensa, siente y act�
 
 #### 1. Segmento Objetivo 1: STAFF OPERATIVO
 
-![Empathy Map - Staff Operativo](../assets/chapter-2/empathy-staff.png)
+![Empathy Map - Staff Operativo](../assets/chapter-2/needfinding/empathy-staff.png)
 
 ---
 
 #### 2. Segmento Objetivo 2: HUÉSPEDES
 
-![Empathy Map - Huéspedes](../assets/chapter-2/empathy-guest.png)
+![Empathy Map - Huéspedes](../assets/chapter-2/needfinding/empathy-guest.png)
 
 ### 2.3.5. As-is Scenario Mapping
 

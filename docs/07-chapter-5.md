@@ -83,10 +83,10 @@ Para la gestión del proyecto se emplearon diversas herramientas de comunicació
 - **Task completion rate:** Porcentaje de tasks completadas vs planificadas
 
 **Evidencia de uso:**
-![sprint_trello](../assets/chapter-5/trello.jpg)
+![Tablero de Trello del sprint](../assets/chapter-5/project-management/trello-board.jpg)
 *Tablero Trello del Sprint 1 mostrando la organización de tareas*
 
-![sprint_trello](../assets/chapter-5/trello2.jpg)
+![Detalle del tablero de Trello](../assets/chapter-5/project-management/trello-board-detail.jpg)
 *Tablero Trello del Sprint 2 con Engineering Tasks en progreso*
 
 
@@ -399,7 +399,7 @@ El proyecto implementa un flujo automatizado de **Integración Continua y Despli
 - Este proceso garantiza una actualización constante de los servicios y minimiza la intervención manual en las publicaciones.
 
 ### Github Pages:
-![Github Pages](../assets/chapter-5/githubpages.jpg)
+![Github Pages](../assets/chapter-5/deployment/github-pages.jpg)
 
 **La URL que nos entrega Github Pages para acceder a la landing page es la siguiente:**  
 [https://edgerunners-aplicaciones-web.github.io/landing-page/](https://edgerunners-aplicaciones-web.github.io/landing-page/)
@@ -454,7 +454,7 @@ El proyecto implementa un flujo automatizado de **Integración Continua y Despli
 
 ### Android Studio Emulator
 
-![Android Studio Emulator](../assets/chapter-5//android-studio-emulator.jpg)
+![Android Studio Emulator](../assets/chapter-5/deployment/android-studio-emulator.jpg)
 
 **El emulador de Android Studio permite validar el funcionamiento de la aplicación móvil en distintos dispositivos y versiones de Android antes de su despliegue final.**
 
@@ -582,54 +582,54 @@ Durante el sprint, se realizaron pruebas sobre los distintos componentes del eco
 Durante el Sprint 1, se logró ejecutar y validar la aplicación móvil en el entorno de desarrollo de Android Studio, utilizando tanto el emulador como dispositivos físicos para asegurar la correcta funcionalidad de las características implementadas. Así mismo, el despliegue del backend y landing page.
 
 
-![App Execution 1](../assets/chapter-5/appexecution1.jpeg)
+![App Execution 1](../assets/chapter-5/sprints/sprint-1/app-execution-01.jpeg)
 
-![App Execution 2](../assets/chapter-5/appexecution2.jpg)
+![App Execution 2](../assets/chapter-5/sprints/sprint-1/app-execution-02.jpg)
 
-![App Execution 3](../assets/chapter-5/appexecution3.jpg)
+![App Execution 3](../assets/chapter-5/sprints/sprint-1/app-execution-03.jpg)
 
 
 ##### 5.2.1.1.6. Services Documentation Evidence for Sprint Review
 
 **Profiles**: Este bounded context maneja la información de los perfiles de los usuarios dentro de la plataforma. Proporciona funcionalidades para crear perfiles, consultar su información y obtener el detalle de un perfil específico. Es esencial para almacenar y gestionar los datos personales asociados a cada usuario del sistema.
 
-![swagerperfiles.png](../assets/chapter-5/swagerperfiles.png)
+![swagerperfiles.png](../assets/chapter-5/api/swagger/swagger-perfiles.png)
 
 **Payments**: Este bounded context administra el procesamiento y la consulta de pagos dentro de la plataforma. Proporciona funcionalidades para registrar nuevos pagos y consultar los pagos asociados a una reserva específica. Es fundamental para garantizar la gestión financiera de las transacciones realizadas por los huéspedes.
 
-![swagerpagos.png](../assets/chapter-5/swagerpagos.png)
+![swagerpagos.png](../assets/chapter-5/api/swagger/swagger-pagos.png)
 
 **Authentication**: Este bounded context se encarga de la autenticación y el acceso de los usuarios al sistema. Proporciona funcionalidades para el registro de nuevos usuarios y el inicio de sesión seguro. Es esencial para validar credenciales, controlar el acceso a la plataforma y proteger la información de los distintos actores del sistema.
 
-![swagerautenticacion.png](../assets/chapter-5/swagerautenticacion.png)
+![swagerautenticacion.png](../assets/chapter-5/api/swagger/swagger-autenticacion.png)
 
 **Users**: Este bounded context maneja la información general de los usuarios registrados en la plataforma. Proporciona funcionalidades para consultar todos los usuarios y obtener la información de un usuario específico por su identificador. Es importante para la administración y supervisión de las cuentas existentes en el sistema.
 
-![swagerusuarios.png](../assets/chapter-5/swagerusuarios.png)
+![swagerusuarios.png](../assets/chapter-5/api/swagger/swagger-usuarios.png)
 
 **Bookings**: Este bounded context gestiona todo el ciclo de vida de las reservas. Proporciona funcionalidades para crear reservas, consultar reservas por identificador, listar todas las reservas, obtener reservas por habitación y ejecutar acciones como confirmar o cancelar una reserva. Es uno de los núcleos funcionales de la plataforma, ya que articula la relación entre huéspedes, habitaciones y disponibilidad.
 
-![swagerbooking.png](../assets/chapter-5/swagerbooking.png)
+![swagerbooking.png](../assets/chapter-5/api/swagger/swagger-booking.png)
 
 **Analytics**: Este bounded context administra la generación y consulta de métricas analíticas del sistema. Proporciona funcionalidades para obtener indicadores de desempeño, como métricas mensuales de reservas. Es clave para apoyar la toma de decisiones mediante el análisis del rendimiento operativo de la plataforma.
 
-![swageranaliticas.png](../assets/chapter-5/swageranaliticas.png)
+![swageranaliticas.png](../assets/chapter-5/api/swagger/swagger-analiticas.png)
 
 **AccommodationOptions**: Este bounded context maneja las opciones complementarias relacionadas con los alojamientos. Proporciona funcionalidades para consultar y registrar categorías de hoteles, así como consultar y crear amenidades. Es importante para estructurar la información maestra del sistema y enriquecer la oferta disponible para hoteles y habitaciones.
 
-![swageracopmodation.png](../assets/chapter-5/swageracomodation.png)
+![swageracopmodation.png](../assets/chapter-5/api/swagger/swagger-acomodation.png)
 
 **Hotels**: Este bounded context administra la información de los hoteles registrados en la plataforma. Proporciona funcionalidades para crear nuevos hoteles, listar todos los hoteles, consultar un hotel por identificador, actualizar su información y eliminarlo. Es esencial para gestionar las propiedades que forman parte del ecosistema SmartStay.
 
-![swagerhoteles.png](../assets/chapter-5/swagerhoteles.png)
+![swagerhoteles.png](../assets/chapter-5/api/swagger/swagger-hoteles.png)
 
 **Rooms**: Este bounded context maneja la información de las habitaciones asociadas a los hoteles. Proporciona funcionalidades para crear habitaciones, listar todas las habitaciones, consultar una habitación por identificador, actualizarlas, eliminarlas y filtrarlas por tipo. Es fundamental para la operación del sistema, ya que conecta directamente la capacidad de alojamiento con las reservas.
 
-![swagercuarto.png](../assets/chapter-5/swagercuartos.png)
+![swagercuarto.png](../assets/chapter-5/api/swagger/swagger-cuartos.png)
 
 **RoomTypes**: Este bounded context administra los tipos de habitación disponibles en la plataforma. Proporciona funcionalidades para crear tipos de habitación, listarlos y consultar un tipo específico por identificador. Es importante para clasificar la oferta de habitaciones y mantener consistencia en la estructura del catálogo.
 
-![swagercuartostipos.png](../assets/chapter-5/swagercuartostipo.png)
+![swagercuartostipos.png](../assets/chapter-5/api/swagger/swagger-cuartostipo.png)
 
 ##### 5.2.1.1.7. Software Deployment Evidence for Sprint Review
 
@@ -766,14 +766,14 @@ Durante este sprint, el equipo realizó actividades de prueba para validar las f
 
 Durante el Sprint 2 se ejecutaron y validaron las funcionalidades desarrolladas dentro de la aplicación móvil SmartStay. Las pruebas se realizaron utilizando Android Studio, dispositivos físicos y servicios desplegados en la nube para verificar la correcta integración entre frontend y backend.
 
-![App Android 1](../assets/chapter-5/appAndroid1.jpeg)
-![App Android 2](../assets/chapter-5/appAndroid2.jpeg)
-![App Android 3](../assets/chapter-5/appAndroid3.jpeg)
-![App Android 4](../assets/chapter-5/appAndroid4.jpeg)
-![App Android 5](../assets/chapter-5/appAndroid5.jpeg)
-![App Android 6](../assets/chapter-5/appAndroid6.jpeg)
-![App Android 7](../assets/chapter-5/appAndroid7.jpeg)
-![App Android 8](../assets/chapter-5/appAndroid8.jpeg)
+![App Android 1](../assets/chapter-5/implementation/mobile/sprint-2/android-app-01.jpeg)
+![App Android 2](../assets/chapter-5/implementation/mobile/sprint-2/android-app-02.jpeg)
+![App Android 3](../assets/chapter-5/implementation/mobile/sprint-2/android-app-03.jpeg)
+![App Android 4](../assets/chapter-5/implementation/mobile/sprint-2/android-app-04.jpeg)
+![App Android 5](../assets/chapter-5/implementation/mobile/sprint-2/android-app-05.jpeg)
+![App Android 6](../assets/chapter-5/implementation/mobile/sprint-2/android-app-06.jpeg)
+![App Android 7](../assets/chapter-5/implementation/mobile/sprint-2/android-app-07.jpeg)
+![App Android 8](../assets/chapter-5/implementation/mobile/sprint-2/android-app-08.jpeg)
 
 ---
 
@@ -796,7 +796,7 @@ Gracias a esta configuración, la página quedó disponible públicamente, confi
 
 **URL de la Landing Page: https://movil-dev-aplicaciones-moviles.github.io/landing-page/# **
 
-![LANDING.png](../assets/chapter-5/LANDING.png)
+![LANDING.png](../assets/chapter-5/deployment/landing-page-final.png)
 
 Como evidencia complementaria, se presenta una captura de la landing page desplegada y accesible desde su URL pública.
 
@@ -808,7 +808,7 @@ Como evidencia del despliegue, se presenta la **URL pública del servicio** junt
 
 **URL del Back End / Swagger: https://application-mobile-backend.onrender.com/swagger/index.html **
 
-![render.png](../assets/chapter-5/render.png)
+![Evidencia del despliegue en Render](../assets/chapter-5/deployment/render-backend.png)
 
 La evidencia visual demuestra que el backend fue desplegado correctamente y que sus endpoints pueden consultarse desde la interfaz de Swagger.
 
@@ -964,10 +964,10 @@ Los flujos ejecutados fueron los siguientes:
 - Validación de errores de conexión y datos inválidos.
 - Navegación final entre módulos principales de la aplicación.
 
-![Sprint 3 App 1](../assets/chapter-5/sprint3-app-1.png)
-![Sprint 3 App 2](../assets/chapter-5/sprint3-app-2.png)
-![Sprint 3 App 3](../assets/chapter-5/sprint3-app-3.png)
-![Sprint 3 App 4](../assets/chapter-5/sprint3-app-4.png)
+![Sprint 3 App 1](../assets/chapter-5/implementation/mobile/sprint-3/sprint3-app-1.png)
+![Sprint 3 App 2](../assets/chapter-5/implementation/mobile/sprint-3/sprint3-app-2.png)
+![Sprint 3 App 3](../assets/chapter-5/implementation/mobile/sprint-3/sprint3-app-3.png)
+![Sprint 3 App 4](../assets/chapter-5/implementation/mobile/sprint-3/sprint3-app-4.png)
 
 
 ---
@@ -1066,7 +1066,7 @@ En conclusión, el Sprint 3 permitió cerrar el ciclo de desarrollo de SmartStay
 
 ### 5.2.2. Implemented Landing Page Evidence
 
-![Github Pages](../assets/chapter-5/githubpages.jpg)
+![Github Pages](../assets/chapter-5/deployment/github-pages.jpg)
 
 **La URL que nos entrega Github Pages para acceder a la landing page es la siguiente:**  
 [https://edgerunners-aplicaciones-web.github.io/landing-page/](https://edgerunners-aplicaciones-web.github.io/landing-page/)
@@ -1075,22 +1075,22 @@ landing Page
 
 Esta es la sección inicial, donde está el header.
 
-![Landing1](../assets/chapter-5/landing1.jpeg)
+![Landing1](../assets/chapter-5/implementation/landing-page/landing-page-01.jpeg)
 
 Aquí se puede observar la sección donde se presenta a los productos que ofrecemos.
 
-![Landing2](../assets/chapter-5/landing2.jpeg)
+![Landing2](../assets/chapter-5/implementation/landing-page/landing-page-02.jpeg)
 
 Esta sección describe las soluciones de acorde al tipo de propiedad.
-![Landing3](../assets/chapter-5/landing3.jpeg)
+![Landing3](../assets/chapter-5/implementation/landing-page/landing-page-03.jpeg)
 
 Tenemos en esta sección acerca de precios por el servicio.
 
-![Landing4](../assets/chapter-5/landing4.jpeg)
+![Landing4](../assets/chapter-5/implementation/landing-page/landing-page-04.jpeg)
 
 Aquí se puede observar la sección de reseñas.
 
-![Landing5](../assets/chapter-5/landing5.jpeg)
+![Landing5](../assets/chapter-5/implementation/landing-page/landing-page-05.jpeg)
 
 ### 5.2.3. Implemented Frontend-Web Application Evidence
 
@@ -1098,33 +1098,33 @@ Frontend
 
 En esta sección se puede ver las habitaciones disponibles.
 
-![Front1](../assets/chapter-5/front1.jpeg)
+![Front1](../assets/chapter-5/implementation/frontend-web/frontend-01.jpeg)
 
 
 En esta sección se puede ver las habitaciones disponibles desde el punto de vista de un administrador.
 
-![Front2](../assets/chapter-5/front2.jpeg)
+![Front2](../assets/chapter-5/implementation/frontend-web/frontend-02.jpeg)
 
 En esta sección se puede ver el panel del administrador.
 
-![Front3](../assets/chapter-5/front3.jpeg)
+![Front3](../assets/chapter-5/implementation/frontend-web/frontend-03.jpeg)
 
 En esta sección se puede ver el panel del administrador se puede ver un dashboard con las habitaciones.
 
-![Front4](../assets/chapter-5/fron4.jpeg)
+![Front4](../assets/chapter-5/implementation/frontend-web/frontend-04.jpeg)
 
 ### 5.2.4. Implemented Native-Mobile Application Evidence
 
 Durante el Sprint 2 se ejecutaron y validaron las funcionalidades desarrolladas dentro de la aplicación móvil SmartStay. Las pruebas se realizaron utilizando Android Studio, dispositivos físicos y servicios desplegados en la nube para verificar la correcta integración entre frontend y backend.
 
-![App Android 1](../assets/chapter-5/appAndroid1.jpeg)
-![App Android 2](../assets/chapter-5/appAndroid2.jpeg)
-![App Android 3](../assets/chapter-5/appAndroid3.jpeg)
-![App Android 4](../assets/chapter-5/appAndroid4.jpeg)
-![App Android 5](../assets/chapter-5/appAndroid5.jpeg)
-![App Android 6](../assets/chapter-5/appAndroid6.jpeg)
-![App Android 7](../assets/chapter-5/appAndroid7.jpeg)
-![App Android 8](../assets/chapter-5/appAndroid8.jpeg)
+![App Android 1](../assets/chapter-5/implementation/mobile/sprint-2/android-app-01.jpeg)
+![App Android 2](../assets/chapter-5/implementation/mobile/sprint-2/android-app-02.jpeg)
+![App Android 3](../assets/chapter-5/implementation/mobile/sprint-2/android-app-03.jpeg)
+![App Android 4](../assets/chapter-5/implementation/mobile/sprint-2/android-app-04.jpeg)
+![App Android 5](../assets/chapter-5/implementation/mobile/sprint-2/android-app-05.jpeg)
+![App Android 6](../assets/chapter-5/implementation/mobile/sprint-2/android-app-06.jpeg)
+![App Android 7](../assets/chapter-5/implementation/mobile/sprint-2/android-app-07.jpeg)
+![App Android 8](../assets/chapter-5/implementation/mobile/sprint-2/android-app-08.jpeg)
 
 Durante el Sprint 3 se ejecutó la versión final de la aplicación móvil SmartStay, validando los principales flujos funcionales definidos para la presentación final. Las pruebas fueron realizadas en Android Studio y dispositivos móviles, utilizando servicios backend desplegados para comprobar la integración real del sistema.
 
@@ -1143,10 +1143,10 @@ Los flujos ejecutados fueron los siguientes:
 - Validación de errores de conexión y datos inválidos.
 - Navegación final entre módulos principales de la aplicación.
 
-![Sprint 3 App 1](../assets/chapter-5/sprint3-app-1.png)
-![Sprint 3 App 2](../assets/chapter-5/sprint3-app-2.png)
-![Sprint 3 App 3](../assets/chapter-5/sprint3-app-3.png)
-![Sprint 3 App 4](../assets/chapter-5/sprint3-app-4.png)
+![Sprint 3 App 1](../assets/chapter-5/implementation/mobile/sprint-3/sprint3-app-1.png)
+![Sprint 3 App 2](../assets/chapter-5/implementation/mobile/sprint-3/sprint3-app-2.png)
+![Sprint 3 App 3](../assets/chapter-5/implementation/mobile/sprint-3/sprint3-app-3.png)
+![Sprint 3 App 4](../assets/chapter-5/implementation/mobile/sprint-3/sprint3-app-4.png)
 
 ### 5.2.5. Implemented RESTful API and/or Serverless Backend Evidence
 
@@ -1161,43 +1161,43 @@ Asimismo, durante el sprint se trabajó con la lógica de roles para diferenciar
 
 **Profiles**: Este bounded context maneja la información de los perfiles de los usuarios dentro de la plataforma. Proporciona funcionalidades para crear perfiles, consultar su información y obtener el detalle de un perfil específico. Es esencial para almacenar y gestionar los datos personales asociados a cada usuario del sistema.
 
-![swagerperfiles.png](../assets/chapter-5/swagerperfiles.png)
+![swagerperfiles.png](../assets/chapter-5/api/swagger/swagger-perfiles.png)
 
 **Payments**: Este bounded context administra el procesamiento y la consulta de pagos dentro de la plataforma. Proporciona funcionalidades para registrar nuevos pagos y consultar los pagos asociados a una reserva específica. Es fundamental para garantizar la gestión financiera de las transacciones realizadas por los huéspedes.
 
-![swagerpagos.png](../assets/chapter-5/swagerpagos.png)
+![swagerpagos.png](../assets/chapter-5/api/swagger/swagger-pagos.png)
 
 **Authentication**: Este bounded context se encarga de la autenticación y el acceso de los usuarios al sistema. Proporciona funcionalidades para el registro de nuevos usuarios y el inicio de sesión seguro. Es esencial para validar credenciales, controlar el acceso a la plataforma y proteger la información de los distintos actores del sistema.
 
-![swagerautenticacion.png](../assets/chapter-5/swagerautenticacion.png)
+![swagerautenticacion.png](../assets/chapter-5/api/swagger/swagger-autenticacion.png)
 
 **Users**: Este bounded context maneja la información general de los usuarios registrados en la plataforma. Proporciona funcionalidades para consultar todos los usuarios y obtener la información de un usuario específico por su identificador. Es importante para la administración y supervisión de las cuentas existentes en el sistema.
 
-![swagerusuarios.png](../assets/chapter-5/swagerusuarios.png)
+![swagerusuarios.png](../assets/chapter-5/api/swagger/swagger-usuarios.png)
 
 **Bookings**: Este bounded context gestiona todo el ciclo de vida de las reservas. Proporciona funcionalidades para crear reservas, consultar reservas por identificador, listar todas las reservas, obtener reservas por habitación y ejecutar acciones como confirmar o cancelar una reserva. Es uno de los núcleos funcionales de la plataforma, ya que articula la relación entre huéspedes, habitaciones y disponibilidad.
 
-![swagerbooking.png](../assets/chapter-5/swagerbooking.png)
+![swagerbooking.png](../assets/chapter-5/api/swagger/swagger-booking.png)
 
 **Analytics**: Este bounded context administra la generación y consulta de métricas analíticas del sistema. Proporciona funcionalidades para obtener indicadores de desempeño, como métricas mensuales de reservas. Es clave para apoyar la toma de decisiones mediante el análisis del rendimiento operativo de la plataforma.
 
-![swageranaliticas.png](../assets/chapter-5/swageranaliticas.png)
+![swageranaliticas.png](../assets/chapter-5/api/swagger/swagger-analiticas.png)
 
 **AccommodationOptions**: Este bounded context maneja las opciones complementarias relacionadas con los alojamientos. Proporciona funcionalidades para consultar y registrar categorías de hoteles, así como consultar y crear amenidades. Es importante para estructurar la información maestra del sistema y enriquecer la oferta disponible para hoteles y habitaciones.
 
-![swageracopmodation.png](../assets/chapter-5/swageracomodation.png)
+![swageracopmodation.png](../assets/chapter-5/api/swagger/swagger-acomodation.png)
 
 **Hotels**: Este bounded context administra la información de los hoteles registrados en la plataforma. Proporciona funcionalidades para crear nuevos hoteles, listar todos los hoteles, consultar un hotel por identificador, actualizar su información y eliminarlo. Es esencial para gestionar las propiedades que forman parte del ecosistema SmartStay.
 
-![swagerhoteles.png](../assets/chapter-5/swagerhoteles.png)
+![swagerhoteles.png](../assets/chapter-5/api/swagger/swagger-hoteles.png)
 
 **Rooms**: Este bounded context maneja la información de las habitaciones asociadas a los hoteles. Proporciona funcionalidades para crear habitaciones, listar todas las habitaciones, consultar una habitación por identificador, actualizarlas, eliminarlas y filtrarlas por tipo. Es fundamental para la operación del sistema, ya que conecta directamente la capacidad de alojamiento con las reservas.
 
-![swagercuarto.png](../assets/chapter-5/swagercuartos.png)
+![swagercuarto.png](../assets/chapter-5/api/swagger/swagger-cuartos.png)
 
 **RoomTypes**: Este bounded context administra los tipos de habitación disponibles en la plataforma. Proporciona funcionalidades para crear tipos de habitación, listarlos y consultar un tipo específico por identificador. Es importante para clasificar la oferta de habitaciones y mantener consistencia en la estructura del catálogo.
 
-![swagercuartostipos.png](../assets/chapter-5/swagercuartostipo.png)
+![swagercuartostipos.png](../assets/chapter-5/api/swagger/swagger-cuartostipo.png)
 
 ### 5.2.7. Team Collaboration Insights
 

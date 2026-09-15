@@ -5,13 +5,13 @@
 Segmento 1: Staff Operativo de Hoteles
 
 <div align="center">
-<img src="../assets/chapter-3/to-be-segmento1.png" alt="To-be segmento 1" style="max-width: 90%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+<img src="../assets/chapter-3/scenario-mapping/to-be-staff.png" alt="To-be segmento 1" style="max-width: 90%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
 </div>
 
 Segmento 2: Huéspedes de Hoteles Boutique
 
 <div align="center">
-<img src="../assets/chapter-3/to-be-segmento2.png" alt="To-be segmento 2" style="max-width: 90%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+<img src="../assets/chapter-3/scenario-mapping/to-be-guest.png" alt="To-be segmento 2" style="max-width: 90%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
 </div>
 
 ## 3.2. User Stories
@@ -1306,14 +1306,14 @@ Segmento 2: Huéspedes de Hoteles Boutique
 
 #### Impact Mapping Segmento 1: Hotel Administrador
 
-![impactmaphotel.png](../assets/chapter-3/impactmaphotel.png)
+![impactmaphotel.png](../assets/chapter-3/impact-mapping/impact-map-hotel.png)
 
 #### Impact Mapping Segmento 2: Traveler
 
-![impactmaptraveler.png](../assets/chapter-3/impactmaptraveler.png)
+![impactmaptraveler.png](../assets/chapter-3/impact-mapping/impact-map-traveler.png)
 
 ### Mapa de impacto integrado
 
 <div align="center">
-<img src="../assets/chapter-3/impact-mapping.png" alt="impact mapping" style="max-width: 90%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+<img src="../assets/chapter-3/impact-mapping/impact-mapping-overview.png" alt="impact mapping" style="max-width: 90%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
 </div>

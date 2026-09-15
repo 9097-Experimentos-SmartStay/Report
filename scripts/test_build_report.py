@@ -32,7 +32,7 @@ class ReportTests(unittest.TestCase):
 # Encabezado de ejemplo
 ```
 '''
-        (self.root / "docs/chapter.md").write_text("# Intro\n")
+        (self.root / "docs/chapter.md").write_text("# Intro\n", encoding="utf-8")
         result = build_report.rewrite_links(text, Path("docs/chapter.md"))
         self.assertIn('![Foto](assets/photo.png)', result)
         self.assertIn('<img src="assets/photo.png">', result)
@@ -45,17 +45,17 @@ class ReportTests(unittest.TestCase):
         self.assertEqual(list(build_report.headings(result)), [])
 
     def test_missing_local_asset_fails_with_source_name(self):
-        with self.assertRaisesRegex(ValueError, r"docs/chapter.md.*missing.png"):
+        with self.assertRaisesRegex(ValueError, r"docs[\\\\/]chapter.md.*missing.png"):
             build_report.rewrite_links('![Foto](../assets/missing.png)', Path("docs/chapter.md"))
 
     def test_toc_uses_real_headings_and_unique_unicode_anchors(self):
         manifest = {"cover": "docs/cover.md", "info": "docs/info.md", "student_outcome": "docs/outcome.md", "sections": [{"file": "docs/chapter.md"}]}
-        (self.root / "docs/report.json").write_text(json.dumps(manifest))
-        (self.root / "docs/cover.md").write_text("## 1.1. Equipo\n")
-        (self.root / "docs/info.md").write_text("## Registro de Versiones del Informe\n")
-        (self.root / "docs/outcome.md").write_text("## Student Outcome\n")
+        (self.root / "docs/report.json").write_text(json.dumps(manifest), encoding="utf-8")
+        (self.root / "docs/cover.md").write_text("## 1.1. Equipo\n", encoding="utf-8")
+        (self.root / "docs/info.md").write_text("## Registro de Versiones del Informe\n", encoding="utf-8")
+        (self.root / "docs/outcome.md").write_text("## Student Outcome\n", encoding="utf-8")
         chapter = self.root / "docs/chapter.md"
-        chapter.write_text("# Capítulo I: Introducción\n\n## 1.1. Equipo\n\n## 1.1. Equipo\n\n## 1.2. A & B\n\n### Descripción interna\n\n#### 5.2.1.1. Sprint 1\n\n```md\n## Invisible\n```\n")
+        chapter.write_text("# Capítulo I: Introducción\n\n## 1.1. Equipo\n\n## 1.1. Equipo\n\n## 1.2. A & B\n\n### Descripción interna\n\n#### 5.2.1.1. Sprint 1\n\n```md\n## Invisible\n```\n", encoding="utf-8")
         result = build_report.build()
         self.assertIn('- [Capítulo I: Introducción](#capítulo-i-introducción)', result)
         self.assertIn('  - [1.1. Equipo](#11-equipo-1)', result)
@@ -69,7 +69,7 @@ class ReportTests(unittest.TestCase):
         self.assertLess(result.index('\n## Contenido'), result.index('\n## Student Outcome'))
         self.assertLess(result.index('\n## Student Outcome'), result.index('\n# Capítulo I'))
         self.assertEqual(result, build_report.build())
-        chapter.write_text("# Capítulo I\n<<<<<<< HEAD\nconflicto\n=======\notro\n>>>>>>> main\n")
+        chapter.write_text("# Capítulo I\n<<<<<<< HEAD\nconflicto\n=======\notro\n>>>>>>> main\n", encoding="utf-8")
         with self.assertRaisesRegex(ValueError, "conflicto de Git"):
             build_report.build()
 

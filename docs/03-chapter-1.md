@@ -30,7 +30,7 @@ Entre sus principales características destacan:
   <tbody>
     <tr>
       <td align="center" valign="middle">
-       <img src="../assets/chapter-1/members/samuel.png" alt="Bonifacio Jaramillo Samuel Jesus" width="300">
+       <img src="../assets/chapter-1/members/samuel-bonifacio-jaramillo.png" alt="Bonifacio Jaramillo Samuel Jesus" width="300">
       </td>
       <td>Bonifacio Jaramillo Samuel Jesus</td>
       <td>u202317269</td>
@@ -62,7 +62,7 @@ Entre sus principales características destacan:
     </tr>
     <tr>
       <td align="center" valign="middle">
-       <img src="../assets/chapter-1/members/AlejandroGalindo.jpg" alt="Galindo Montero Alejandro Manuel" width="300">
+       <img src="../assets/chapter-1/members/alejandro-galindo.jpg" alt="Galindo Montero Alejandro Manuel" width="300">
       </td>
       <td>Galindo Manuel, Alejandro</td>
       <td>u202321264</td>
@@ -136,7 +136,7 @@ Para cada suposición planteamos una hipótesis comprobable:
 
 #### 1.2.2.4. Lean UX Canvas
 
-![Lean UX Canvas](../assets/chapter-1/lean-ux-canvas.png)
+![Lean UX Canvas](../assets/chapter-1/lean-ux/lean-ux-canvas.png)
 
 ---
 

@@ -1,5 +1,5 @@
 <div align="center">
-<img src="../assets/introduction/logo.png" width="120"><br><br>
+<img src="../assets/cover/smartstay-logo.png" width="120"><br><br>
 
 <h3>Universidad Peruana de Ciencias Aplicadas</h3>
 

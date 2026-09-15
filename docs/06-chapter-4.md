@@ -15,24 +15,24 @@ Objetivo:
 
 - Logo Smart Stay: El logo principal de la startup con el que se muestra ante el público.
 
-![logo.png](../assets/chapter-4/logo.png)
+![logo.png](../assets/chapter-4/style-guidelines/branding/smartstay-logo.png)
 
 - Logo Modo Oscuro: Este logo es creado para contrastar en fondos oscuros, lo cual permite la protección de la vista del usuario y favorece el rendimiento de la batería de su dispositivo.
 
-![logo-modo-oscuro.png](../assets/chapter-4/logo-modo-oscuro.png)
+![logo-modo-oscuro.png](../assets/chapter-4/style-guidelines/branding/smartstay-logo-dark.png)
 
 - Logo Plus: Es una versión del logo con un color que resalta más elegancia, el cual se usa para los usuarios que opten por usar la suscripción plus del servicio.
 
-![logo-plus.png](../assets/chapter-4/logo-plus.png)
+![logo-plus.png](../assets/chapter-4/style-guidelines/branding/smartstay-logo-plus.png)
 
 - Logo Plus Modo Oscuro: Tiene la misma función que el logo modo oscuro con la diferencia de que sirve para la suscripción plus.
 
-![logo-plus-modo-oscuro.png](../assets/chapter-4/logo-plus-modo-oscuro.png)
+![logo-plus-modo-oscuro.png](../assets/chapter-4/style-guidelines/branding/smartstay-logo-plus-dark.png)
 
 - Logos Monocromáticos: Logos con paleta de colores blanco y negro, cuyo uso es exclusivo para impresiones y documentos.
 
-![logo-monocromatico-1.png](../assets/chapter-4/logo-monocromatico-1.png)
-![logo-monocromatico-2.png](../assets/chapter-4/logo-monocromatico-2.png)
+![logo-monocromatico-1.png](../assets/chapter-4/style-guidelines/branding/smartstay-logo-monochrome-1.png)
+![logo-monocromatico-2.png](../assets/chapter-4/style-guidelines/branding/smartstay-logo-monochrome-2.png)
 
 **Tipografía**
 
@@ -71,7 +71,7 @@ Open Sans Regular – 14px
 Botones primarios:
 Open Sans SemiBold – 16px (MAYÚSCULAS)
 
-![fuentes-imagen.png](../assets/chapter-4/fuentes-imagen.png)
+![fuentes-imagen.png](../assets/chapter-4/style-guidelines/typography/font-sources.png)
 
 **Paleta de colores**
 Espaciado de líneas: 1.5x en párrafos para mayor legibilidad.
@@ -81,7 +81,7 @@ Uso de color:
 - Neutros: Beige (#F5F5DC), Gris medio (#BDC3C7), Blanco (#FFFFFF).
 - Apoyos: Verde agua (#1ABC9C) → frescura, sostenibilidad.
 
-![color-image.png](../assets/chapter-4/color-image.png)
+![color-image.png](../assets/chapter-4/style-guidelines/colors/color-palette.png)
 
 **Dimensiones**
 - Cercano y humano: Hablar como si fueras un amigo confiable, sin tecnicismos innecesarios.
@@ -97,14 +97,14 @@ Uso de color:
 - Productos: módulos claros (cards azules) con descripciones cortas.
 - Soluciones: bloques con imágenes + botones de acción (descargar brochure).
 - Precios:  tabla comparativa clara (Plan Normal vs Plan Plus).
-  ![paginas_principales.png](../assets/chapter-4/paginas_principales.png)
+  ![paginas_principales.png](../assets/chapter-4/landing-page/mockups/landing-page-overview.png)
 
 **Encabezados Hero (Landing)**
 
 - Imagen grande en 16:9 con overlay oscuro: refuerza contraste con texto.
 - Texto principal: H1 32px, Cocomat Pro Bold en blanco.
 - Botón destacado (CTA): Naranja Suave (#E67E22) en mayúsculas.
-  ![encabezado_hero.png](../assets/chapter-4/encabezado_hero.png)
+  ![encabezado_hero.png](../assets/chapter-4/landing-page/mockups/hero-header.png)
 
 **Cards y Bloques de Contenido**
 
@@ -113,7 +113,7 @@ Uso de color:
 - Bordes redondeados 12px + sombra suave.
 - Espaciado interno: 24px padding.
 - Uso de grillas para mantener equilibrio visual.
-  ![bloques.png](../assets/chapter-4/bloques.png)
+  ![bloques.png](../assets/chapter-4/landing-page/mockups/benefits-blocks.png)
 
 **Tablas Comparativas (Precios)**
 
@@ -122,7 +122,7 @@ Uso de color:
 - Marca de “incluido” en check.
 - Elementos no incluidos  sin check.
 - Botón “Mejorar plan” en naranja como llamada a la acción final.
-  ![plan.png](../assets/chapter-4/plan.png)
+  ![plan.png](../assets/chapter-4/landing-page/mockups/pricing-plan.png)
 
 **Footer**
 
@@ -130,7 +130,7 @@ Uso de color:
 - Texto en blanco y gris claro.
 - Columnas organizadas con links en Open Sans 14px.
 - Inclusión de iconos sociales en fila inferior.
-  ![footer.png](../assets/chapter-4/footer.png)
+  ![footer.png](../assets/chapter-4/landing-page/mockups/footer.png)
 
 **Uso de Color en Web**
 
@@ -145,7 +145,7 @@ Uso de color:
 - Hover Botones → transición 0.3s de azul → naranja.
 - Scroll suave en anclas de página.
 - Menú sticky superior para navegación rápida.
-  ![final.png](../assets/chapter-4/final.png)
+  ![final.png](../assets/chapter-4/landing-page/mockups/landing-page-final.png)
 
 ### 4.1.3. Mobile Style Guidelines
 
@@ -169,7 +169,7 @@ En la Landing Page, el contenido se organiza en bloques priorizados que siguen u
 
 Esta organización permite que los usuarios comprendan rápidamente qué ofrece Smart Stay y cómo interactuar con la plataforma, aplicando principios de jerarquía visual, progressive disclosure y adaptabilidad a dispositivos móviles.
 
-![alt text](../assets/chapter-4/organizationsystems.png)
+![alt text](../assets/chapter-4/information-architecture/organization-systems.png)
 
 En la Aplicación Móvil, la organización del contenido está orientada a tareas y roles. El acceso inicial se realiza mediante autenticación (login), donde el usuario es redirigido automáticamente según su perfil (Staff o Huésped).
 
@@ -194,7 +194,7 @@ Adicionalmente, se aplica una organización contextual, donde la información ca
 
 Asimismo, algunos procesos siguen una organización secuencial, como el check-in digital o la solicitud de servicios, guiando al usuario paso a paso para evitar errores.
 
-![alt text](../assets/chapter-4/organizationsystems2.png)
+![alt text](../assets/chapter-4/information-architecture/organization-systems-detail.png)
 
 ### 4.2.2. Labeling Systems
 
@@ -393,7 +393,7 @@ A continuación, se presenta un resumen de cada una de las secciones.
     - Sección "¿Quiénes somos?" con breve descripción.
     - Bloques de beneficios y características principales.
     - Footer con enlaces de contacto, políticas y redes sociales.
-      ![whome.png](../assets/chapter-4/whome.png)
+      ![whome.png](../assets/chapter-4/landing-page/wireframes/landing-page-home-wireframe.png)
 
 **2. Products**
 - **Propósito:** Mostrar los productos y módulos de la plataforma.
@@ -401,7 +401,7 @@ A continuación, se presenta un resumen de cada una de las secciones.
     - Lista de funcionalidades divididas en áreas: gestión hotelera, experiencia del huésped, reportes, seguridad.
     - Descripción breve de cada módulo.
     - Botón de descarga de brochure.
-      ![wproductos.png](../assets/chapter-4/wproductos.png)
+      ![wproductos.png](../assets/chapter-4/landing-page/wireframes/landing-page-products-wireframe.png)
 
 **3. Solutions**
 - **Propósito:** Explicar cómo Smart Stay se adapta a diferentes tipos de hoteles.
@@ -410,7 +410,7 @@ A continuación, se presenta un resumen de cada una de las secciones.
     - Sección para alojamientos alternativos.
     - Sección para cadenas hoteleras.
     - Botón para descargar información detallada.
-      ![wsoluciones.png](../assets/chapter-4/wsoluciones.png)
+      ![wsoluciones.png](../assets/chapter-4/landing-page/wireframes/landing-page-solutions-wireframe.png)
 
 
 **4. Prices**
@@ -418,28 +418,28 @@ A continuación, se presenta un resumen de cada una de las secciones.
 - **Elementos clave:**
     - Tabla comparativa de funcionalidades entre Plan Normal y Plan Plus.
     - Categorías claras: gestión hotelera, experiencia huésped, seguridad, soporte.
-      ![wsprecios.png](../assets/chapter-4/wsprecios.png)
+      ![wsprecios.png](../assets/chapter-4/landing-page/wireframes/landing-page-pricing-wireframe.png)
 
 **5. Success Stories**
 - **Propósito:** Mostrar testimonios y ejemplos de hoteles que ya usan Smart Stay.
 - **Elementos clave:**
     - Bloques con testimonios de clientes.
     - Descripción breve de resultados obtenidos (ahorro de tiempo, mejora de experiencia, reducción de costos).
-      ![wreseñas.png](../assets/chapter-4/wreseñas.png)
+      ![wreseñas.png](../assets/chapter-4/landing-page/wireframes/landing-page-success-stories-wireframe.png)
 
 **6. Resources**
 - **Propósito:** Repositorio de materiales de apoyo y aprendizaje.
 - **Elementos clave:**
     - Documentos descargables (guías, whitepapers, brochures).
     - Links de blogs.  
-      ![wrecurso.png](../assets/chapter-4/wrecurso.png)
+      ![wrecurso.png](../assets/chapter-4/landing-page/wireframes/landing-page-resources-wireframe.png)
 
 **7. Register**
 - **Propósito:** Permitir que un nuevo usuario cree su cuenta.
 - **Elementos clave:**
     - Formulario de registro con campos básicos (nombre, correo, contraseña, tipo de empresa).
     - Botón de registro.  
-      ![wregister.png](../assets/chapter-4/wregister.png)
+      ![wregister.png](../assets/chapter-4/landing-page/wireframes/landing-page-register-wireframe.png)
 
 **8. Login**
 - **Propósito:** Acceso de usuarios ya registrados.
@@ -447,7 +447,7 @@ A continuación, se presenta un resumen de cada una de las secciones.
     - Formulario de inicio de sesión con correo y contraseña.
     - Botón de acceso.
     - Enlace a recuperación de contraseña y a registro.  
-      ![wlogin.png](../assets/chapter-4/wlogin.png)
+      ![wlogin.png](../assets/chapter-4/landing-page/wireframes/landing-page-login-wireframe.png)
 
 Los wireframes definen la base de navegación de Smart Stay, asegurando que cada sección tenga un propósito claro:
 - **Home:** captar atención y presentar la plataforma.
@@ -472,52 +472,52 @@ Su propósito es:
     - Paleta de colores aplicada (azul corporativo + tonos complementarios).
     - Imagen de fondo en el Hero con llamada a la acción resaltada (“Probar demo”).
     - Iconografía personalizada para los beneficios.  
-      ![home.png](../assets/chapter-4/home.png)
+      ![home.png](../assets/chapter-4/landing-page/mockups/landing-page-home.png)
 
 **2. Product**
 -**Cambios respecto al wireframe:**
 - Uso de íconos y colores diferenciados por módulo (gestión, experiencia huésped, seguridad, reportes).
 - Inclusión de imágenes ilustrativas.
 - Botón de descarga estilizado con colores de la marca.  
-  ![producto.png](../assets/chapter-4/producto.png)
+  ![producto.png](../assets/chapter-4/landing-page/mockups/landing-page-products.png)
 
 **3. Solutions**
 - **Cambios respecto al wireframe:**
     - Bloques visuales para cada tipo de cliente (hoteles boutique, alojamientos alternativos, cadenas).
     - Uso de fotografías representativas de hoteles.
     - CTA destacado.
-      ![soluciones.png](../assets/chapter-4/soluciones.png)
+      ![soluciones.png](../assets/chapter-4/landing-page/mockups/landing-page-solutions.png)
 
 **4. Prices**
 - **Cambios respecto al wireframe:**
     - Tabla de precios con colores diferenciadores por plan.
     - Plan recomendado resaltado con un fondo destacado.  
-      ![precio.png](../assets/chapter-4/precio.png)
+      ![precio.png](../assets/chapter-4/landing-page/mockups/landing-page-pricing.png)
 
 **5. Success Stories**
 - **Cambios respecto al wireframe:**
     - Testimonios acompañados de logos reales de hoteles.  
-      ![reseña.png](../assets/chapter-4/reseña.png)
+      ![reseña.png](../assets/chapter-4/landing-page/mockups/landing-page-success-stories.png)
 
 **6. Resources**
 - **Cambios respecto al wireframe:**
     - Secciones de miniaturas de documentos descargables.
     - Secciones de blog con botón de visitar página externa.
-      ![recursos.png](../assets/chapter-4/recursos.png)
+      ![recursos.png](../assets/chapter-4/landing-page/mockups/landing-page-resources.png)
 
 **7. Register**
 - **Cambios respecto al wireframe:**
     - Formulario minimalista con campos estilizados.
     - Botón de “Enviar y registrar” resaltado en color primario.
     - Fondo con imagen ligera para dar contexto al servicio.
-      ![register.png](../assets/chapter-4/register.png)
+      ![register.png](../assets/chapter-4/landing-page/mockups/landing-page-register.png)
 
 **8. Login**
 - **Cambios respecto al wireframe:**
     - Formulario ubicado a lateral izquierdo en pantalla con diseño limpio.
     - Logo al lado derecho de la pantalla.
     - Enlaces secundarios estilizados para “¿Olvidaste tu contraseña?”.  
-      ![login.png](../assets/chapter-4/login.png)
+      ![login.png](../assets/chapter-4/landing-page/mockups/landing-page-login.png)
 
 Los mockups consolidan el diseño visual final de Smart Stay, transformando la estructura básica de los wireframes en interfaces listas para evaluación estética y funcional.
 
@@ -573,6 +573,8 @@ Las pantallas principales de la aplicación para huéspedes incluyen:
 - **Notificaciones:**
   - Alertas y mensajes importantes durante la estadía.
 
+![Wireframe de habitación para huéspedes](../assets/chapter-4/mobile/wireframes/guest/guest-rooms.png)
+![Wireframe de notificaciones para huéspedes](../assets/chapter-4/mobile/wireframes/guest/guest-notifications.png)
 
 ---
 
@@ -608,8 +610,8 @@ Las pantallas principales de la aplicación para el personal incluyen:
 - **Notificaciones:**
   - Alertas sobre cambios, incidencias o nuevas tareas.
 
-![alt text](../assets/chapter-4/wapphuesped1.png)
-![alt text](../assets/chapter-4/wapphuesped2.png)
+![Wireframe de tareas para staff](../assets/chapter-4/mobile/wireframes/staff/staff-tasks.png)
+![Wireframe de notificaciones para staff](../assets/chapter-4/mobile/wireframes/staff/staff-notifications.png)
 
 ---
 
@@ -650,7 +652,7 @@ Este flujo permite una navegación clara y directa, utilizando una barra de nave
 
 ---
 
-![alt text](../assets/chapter-4/webwireflowhuesped.png)
+![alt text](../assets/chapter-4/web/wireflows/guest/guest-wireflow.png)
 
 ---
 
@@ -670,7 +672,7 @@ Este flujo está diseñado para optimizar la eficiencia operativa del personal, 
 
 ---
 
-![alt text](../assets/chapter-4/webwireflowstaff.png)
+![alt text](../assets/chapter-4/web/wireflows/staff/staff-wireflow.png)
 
 ---
 
@@ -719,11 +721,11 @@ Los mock-ups del módulo de huésped muestran una interfaz moderna, intuitiva y 
 
 ---
 
-![alt text](../assets/chapter-4/mockuphuesped1.png)
+![alt text](../assets/chapter-4/mobile/mockups/guest/guest-01.png)
 
 ---
 
-![alt text](../assets/chapter-4/mockuphuesped2.png)
+![alt text](../assets/chapter-4/mobile/mockups/guest/guest-02.png)
 
 ---
 
@@ -766,11 +768,11 @@ Los mock-ups del módulo de staff están diseñados para optimizar la gestión o
 
 ---
 
-![alt text](../assets/chapter-4/mockupstaff1.png)
+![alt text](../assets/chapter-4/mobile/mockups/staff/staff-01.png)
 
 ---
 
-![alt text](../assets/chapter-4/mockupstaff2.png)
+![alt text](../assets/chapter-4/mobile/mockups/staff/staff-02.png)
 
 ---
 
@@ -798,7 +800,7 @@ El flujo ideal del huésped inicia al abrir la aplicación, seguido del login o 
 
 ---
 
-![alt text](../assets/chapter-4/happypathhuesped.png)
+![Flujo feliz del huésped](../assets/chapter-4/mobile/user-flows/guest/guest-happy-path.png)
 
 ---
 
@@ -812,7 +814,7 @@ Incluye escenarios donde:
 
 ---
 
-![alt text](../assets/chapter-4/happypathstaff.png)
+![Flujo infeliz del huésped](../assets/chapter-4/mobile/user-flows/guest/guest-unhappy-path.png)
 
 ---
 
@@ -829,7 +831,7 @@ El flujo del personal inicia con login, seguido del acceso al panel principal do
 
 ---
 
-![alt text](../assets/chapter-4/happypathadmi.png)
+![Flujo feliz del staff](../assets/chapter-4/mobile/user-flows/staff/staff-happy-path.png)
 
 ---
 
@@ -842,7 +844,7 @@ Se contemplan situaciones como:
 
 ---
 
-![alt text](../assets/chapter-4/unhappypathhuesped.png)
+![Flujo infeliz del staff](../assets/chapter-4/mobile/user-flows/staff/staff-unhappy-path.png)
 
 ---
 
@@ -859,7 +861,7 @@ El flujo del administrador incluye:
 
 ---
 
-![alt text](../assets/chapter-4/unhappypathstaff.png)
+![Flujo feliz del administrador](../assets/chapter-4/mobile/user-flows/admin/admin-happy-path.png)
 
 ---
 
@@ -872,7 +874,7 @@ Incluye casos como:
 
 ---
 
-![alt text](../assets/chapter-4/unhappypathadmi.png)
+![Flujo infeliz del administrador](../assets/chapter-4/mobile/user-flows/admin/admin-unhappy-path.png)
 
 ---
 
@@ -977,7 +979,7 @@ A continuación, se presenta un resumen de cada una de las secciones principales
 - Botón para agregar, editar o eliminar usuarios.
 - Tabla con información básica (nombre, correo, rol, estado).
 
-![wdashboard_huespedes.png](../assets/chapter-4/wdashboard_huespedes.png)
+![Wireframe del dashboard administrativo](../assets/chapter-4/web/wireframes/admin/admin-dashboard.png)
 
 **3. Staff**
 
@@ -994,7 +996,7 @@ A continuación, se presenta un resumen de cada una de las secciones principales
 - Campo para ingresar número de habitación y botón *Ver detalle*.
 - Vista de detalle de habitación con estado, tipo, huésped actual, check-in/out y acciones rápidas.
 
-![wstaff_hoteles.png](../assets/chapter-4/wstaff_hoteles.png)
+![Wireframe administrativo de hoteles y habitaciones](../assets/chapter-4/web/wireframes/admin/admin-hotels-and-rooms.png)
 
 **5. Booking**
 
@@ -1016,7 +1018,7 @@ A continuación, se presenta un resumen de cada una de las secciones principales
 - Reportes de gastos, ingresos y ganancias.
 - Gráficos comparativos y dashboard financiero.
 
-![wreservas_gastos.png](../assets/chapter-4/wreservas_gastos.png)
+![Wireframe administrativo de reservas y pagos](../assets/chapter-4/web/wireframes/admin/admin-bookings-and-payments.png)
 
 **7. Sevices and Products**
 
@@ -1036,7 +1038,7 @@ A continuación, se presenta un resumen de cada una de las secciones principales
 - Vista de detalle con respuesta del staff.
 - Estadísticas de satisfacción y gráficos de tendencias.
 - Panel de tickets: abiertos, en proceso, cerrados.  
-  ![wservicio_producto_reseña.png](../assets/chapter-4/wservicio_producto_reseña.png)
+  ![Wireframe administrativo de servicios, productos y reseñas](../assets/chapter-4/web/wireframes/admin/admin-services-products-reviews.png)
 
 **9. Support**
 
@@ -1047,7 +1049,7 @@ A continuación, se presenta un resumen de cada una de las secciones principales
 - Filtros por hotel, tipo de problema y fecha.
 - Vista de detalle del ticket con historial de comunicación.
 - Historial de ticket.
-  ![wsoporte.png](../assets/chapter-4/wsoporte.png)
+  ![Wireframe administrativo de soporte](../assets/chapter-4/web/wireframes/admin/admin-support.png)
 
 **Wireframes – Modo Huésped**
 
@@ -1073,7 +1075,7 @@ Se han elaborado en formato blanco y negro, sin imágenes ni estilos gráficos, 
 - Controles de ambiente: temperatura, luces, cortinas, TV, música.
 - Servicios rápidos: limpieza inmediata o programada, amenities, minibar digital.
 - Botón de asistencia y emergencia.  
-  ![wapphuesped1.png](../assets/chapter-4/wapphuesped1.png)
+  ![wapphuesped1.png](../assets/chapter-4/mobile/wireframes/guest/guest-rooms.png)
 
 **4. Services**
 **Propósito:** Acceder a servicios adicionales ofrecidos por el hotel.  
@@ -1098,7 +1100,7 @@ Se han elaborado en formato blanco y negro, sin imágenes ni estilos gráficos, 
 **Elementos clave:**
 - Lista de notificaciones recientes (confirmaciones de reserva, promociones, mensajes del hotel).
 - Botón para marcar como leídas o eliminar notificaciones.  
-  ![wapphuesped2.png](../assets/chapter-4/wapphuesped2.png)
+  ![wapphuesped2.png](../assets/chapter-4/mobile/wireframes/guest/guest-notifications.png)
 
 **Wireframes – Modo Staff**
 
@@ -1130,7 +1132,7 @@ Se han elaborado en formato blanco y negro, sin imágenes ni estilos gráficos, 
 **Elementos clave:**
 - Lista completa de tareas diarias con habitación, tipo de tarea, piso.
 - Estado de tarea con emoticonos: ✅ Completado / ❌ Pendiente.     
-  ![wappstaff1.png](../assets/chapter-4/wappstaff1.png)
+  ![wappstaff1.png](../assets/chapter-4/mobile/wireframes/staff/staff-tasks.png)
 
 **5. Services / Products**
 **Propósito:** Registrar entrega de servicios y productos a habitaciones.  
@@ -1157,7 +1159,7 @@ Se han elaborado en formato blanco y negro, sin imágenes ni estilos gráficos, 
 **Elementos clave:**
 - Lista de notificaciones recientes (cambios de turno, emergencias, avisos de tareas).
 - Botón para marcar como leído o eliminar notificaciones.  
-  ![wappstaff2.png](../assets/chapter-4/wappstaff2.png).
+  ![wappstaff2.png](../assets/chapter-4/mobile/wireframes/staff/staff-notifications.png).
 
 ### 4.6.2. Web Applications Wireflow Diagrams
 
@@ -1165,7 +1167,7 @@ Se han elaborado en formato blanco y negro, sin imágenes ni estilos gráficos, 
 
 **Propósito:**  
 Mostrar cómo cada sección del administrador se conecta a través del menú principal.
-![webwireflowadmi.png](../assets/chapter-4/webwireflowadmi.png)
+![webwireflowadmi.png](../assets/chapter-4/web/wireflows/admin/admin-wireflow.png)
 
 **Menú Principal (Administrador)**
 
@@ -1195,7 +1197,7 @@ Desde cualquier sección, el menú permite acceder a:
 **Propósito:**  
 Mostrar cómo cada sección de la app para huéspedes se conecta a través del menú principal y elementos persistentes (como el icono de notificaciones).
 
-![webwireflowhuesped.png](../assets/chapter-4/webwireflowhuesped.png)
+![webwireflowhuesped.png](../assets/chapter-4/web/wireflows/guest/guest-wireflow.png)
 
 **Secciones Principales**
 
@@ -1217,7 +1219,7 @@ Mostrar cómo cada sección de la app para huéspedes se conecta a través del m
 
 **Propósito:**  
 Mostrar cómo cada sección de la app para staff se conecta a través del menú principal y elementos persistentes (como el icono de notificaciones).
-![webwireflowstaff.png](../assets/chapter-4/webwireflowstaff.png)
+![webwireflowstaff.png](../assets/chapter-4/web/wireflows/staff/staff-wireflow.png)
 
 **Secciones Principales**
 
@@ -1295,9 +1297,9 @@ Los mockups muestran la interfaz final del administrador de SmartStay, incluyend
 - Iconografía consistente para acciones, estados y navegación.
 - Feedback visual en botones e interacciones (hover, clic, activo).
 
-![mockupadmin1.png](../assets/chapter-4/mockupadmin1.png)
-![mockupadmin2.png](../assets/chapter-4/mockupadmin2.png)
-![mockupadmin3.png](../assets/chapter-4/mockupadmin3.png)
+![mockupadmin1.png](../assets/chapter-4/web/mockups/admin/admin-01.png)
+![mockupadmin2.png](../assets/chapter-4/web/mockups/admin/admin-02.png)
+![mockupadmin3.png](../assets/chapter-4/web/mockups/admin/admin-03.png)
 
 **Mockups – Modo Huésped**
 
@@ -1346,8 +1348,8 @@ Los mockups muestran la interfaz final del usuario huésped en SmartStay, incluy
 - Iconografía consistente para acciones, estados y navegación.
 - Feedback visual en botones e interacciones (hover, clic, activo).
 
-![mockuphuesped1.png](../assets/chapter-4/mockuphuesped1.png)
-![mockuphuesped2.png](../assets/chapter-4/mockuphuesped2.png)
+![mockuphuesped1.png](../assets/chapter-4/mobile/mockups/guest/guest-01.png)
+![mockuphuesped2.png](../assets/chapter-4/mobile/mockups/guest/guest-02.png)
 
 **Mockups – Modo Staff**
 
@@ -1400,8 +1402,8 @@ Los mockups muestran la interfaz final del personal de SmartStay, incluyendo **c
 - Iconografía consistente para acciones, estados y navegación.
 - Feedback visual en botones e interacciones (hover, clic, activo).
 
-![mockupstaff1.png](../assets/chapter-4/mockupstaff1.png)
-![mockupstaff2.png](../assets/chapter-4/mockupstaff2.png)
+![mockupstaff1.png](../assets/chapter-4/mobile/mockups/staff/staff-01.png)
+![mockupstaff2.png](../assets/chapter-4/mobile/mockups/staff/staff-02.png)
 
 ### 4.6.4. Web Applications User Flow Diagrams
 
@@ -1412,11 +1414,11 @@ Los mockups muestran la interfaz final del personal de SmartStay, incluyendo **c
 **Cómo ayuda el diagrama:** Permite identificar los pasos necesarios para realizar tareas frecuentes y optimizar la navegación para máxima eficiencia.
 
 **Happy Paths:**
-![happypathadmi.png](../assets/chapter-4/happypathadmi.png)
+![happypathadmi.png](../assets/chapter-4/mobile/user-flows/admin/admin-happy-path.png)
 **Link para visualizar mejor:** [https://shorturl.at/7UPcY](https://lucid.app/lucidchart/dc345c68-b9ba-4b68-ba59-d33a107cd547/edit?viewport_loc=-2020%2C-505%2C6554%2C2712%2C0_0&invitationId=inv_f306e465-ed6b-4d99-9d15-d416cfe5ca03)
 
 **Unhappy Paths:**
-![unhappypathadmi.png](../assets/chapter-4/unhappypathadmi.png)
+![unhappypathadmi.png](../assets/chapter-4/mobile/user-flows/admin/admin-unhappy-path.png)
 **Link para visualizar mejor:** [https://shorturl.at/7UPcY](https://lucid.app/lucidchart/5b49d2f9-1e2c-495a-bb48-a86af3f68d15/edit?viewport_loc=-805%2C345%2C3936%2C1628%2C0_0&invitationId=inv_3de7ece2-dc86-4690-95d5-4ab9db028e9a)
 
 **Rol 2:** Huésped del hotel
@@ -1425,11 +1427,11 @@ Los mockups muestran la interfaz final del personal de SmartStay, incluyendo **c
 **Cómo ayuda el diagrama:** Visualiza los pasos más rápidos e intuitivos para que el huésped acceda a la información que necesita y realice solicitudes con facilidad.
 
 **Happy Paths:**
-![happypathhuesped.png](../assets/chapter-4/happypathhuesped.png)
+![happypathhuesped.png](../assets/chapter-4/mobile/user-flows/guest/guest-happy-path.png)
 **Link para visualizar mejor:** [https://shorturl.at/7UPcY](https://lucid.app/lucidchart/7b89dd53-b257-4f78-97e3-1b599d6b85e5/edit?viewport_loc=-1918%2C-477%2C5700%2C2358%2C0_0&invitationId=inv_9502d876-be63-41c8-acb4-1d8e2ca1de0d)
 
 **Unhappy Paths:**
-![unhappypathhuesped.png](../assets/chapter-4/unhappypathhuesped.png)
+![unhappypathhuesped.png](../assets/chapter-4/mobile/user-flows/guest/guest-unhappy-path.png)
 **Link para visualizar mejor:** [https://shorturl.at/7UPcY](https://lucid.app/lucidchart/18fbfec8-9c89-4794-8f4b-a9242e4db649/edit?viewport_loc=-930%2C-4%2C3511%2C1453%2C0_0&invitationId=inv_bbc495e4-6bb4-418f-a0ac-65c431096cd6)
 
 
@@ -1439,11 +1441,11 @@ Los mockups muestran la interfaz final del personal de SmartStay, incluyendo **c
 **Cómo ayuda el diagrama:** Identifica pasos clave para que el personal cumpla sus responsabilidades sin confusión y con mínima navegación.
 
 **Happy Paths:**
-![happypathstaff.png](../assets/chapter-4/happypathstaff.png)
+![happypathstaff.png](../assets/chapter-4/mobile/user-flows/staff/staff-happy-path.png)
 **Link para visualizar mejor:** [https://shorturl.at/7UPcY](https://lucid.app/lucidchart/9f2ebd7e-4046-4322-967e-5ebba51fb97c/edit?viewport_loc=-1647%2C-458%2C3981%2C1647%2C0_0&invitationId=inv_fdadb516-80a9-47ea-bb85-0561af5c0704)
 
 **Unhappy Paths:**
-![unhappypathstaff.png](../assets/chapter-4/unhappypathstaff.png)
+![unhappypathstaff.png](../assets/chapter-4/mobile/user-flows/staff/staff-unhappy-path.png)
 **Link para visualizar mejor:** [https://shorturl.at/7UPcY](https://lucid.app/lucidchart/543c4cad-5bce-40bc-bc29-8a1f2a604a63/edit?viewport_loc=-2062%2C-511%2C5080%2C2102%2C0_0&invitationId=inv_8e3a4604-fe5c-4655-addc-5f16e8fb91d4)
 
 ## 4.7. Web Applications Prototyping
@@ -1459,103 +1461,103 @@ En este caso presentaremos el prototipo del app principal que es del modo admini
 **Design-Level EventStorming**
 
 
-![terminology.jpg](../assets/chapter-4/terminology.png)
+![terminology.jpg](../assets/chapter-4/mobile/prototyping/terminology.png)
 
 **Step 1: Unstructured Exploration:**
 
-![step1.jpg](../assets/chapter-4/step1.png)
+![step1.jpg](../assets/chapter-4/mobile/prototyping/steps/step-01.png)
 
 **Step 2: Timelines:**
 
-![step2.jpg](../assets/chapter-4/step2.png)
+![step2.jpg](../assets/chapter-4/mobile/prototyping/steps/step-02.png)
 
 **Step 3: Paint Points:**
 
-![step3.jpg](../assets/chapter-4/step3.png)
+![step3.jpg](../assets/chapter-4/mobile/prototyping/steps/step-03.png)
 
 **Step 4: Pivotal Points:**
 
-![step4.jpg](../assets/chapter-4/step4.png)
+![step4.jpg](../assets/chapter-4/mobile/prototyping/steps/step-04.png)
 
 **Step 5: Commands:**
 
-![step5.jpg](../assets/chapter-4/step5.png)
+![step5.jpg](../assets/chapter-4/mobile/prototyping/steps/step-05.png)
 
 **Step 6: Policies:**
 
-![step6.jpg](../assets/chapter-4/step6.png)
+![step6.jpg](../assets/chapter-4/mobile/prototyping/steps/step-06.png)
 
 **Step 7: Read models:**
 
-![step7.jpg](../assets/chapter-4/step7.png)
+![step7.jpg](../assets/chapter-4/mobile/prototyping/steps/step-07.png)
 
 **Step 8: External Systems:**
 
-![step8.jpg](../assets/chapter-4/step8.png)
+![step8.jpg](../assets/chapter-4/mobile/prototyping/steps/step-08.png)
 
 **Step 9: Aggregates:**
 
-![step9.jpg](../assets/chapter-4/step9.png)
+![step9.jpg](../assets/chapter-4/mobile/prototyping/steps/step-09.png)
 
 **Step 10: Bounded Contexts:**
 
-![step10.jpg](../assets/chapter-4/step10.png)
+![step10.jpg](../assets/chapter-4/mobile/prototyping/steps/step-10.png)
 
 **Link para visualizar mejor:** [https://shorturl.at/7UPcY](https://miro.com/app/board/uXjVJ9iB8iU=/?share_link_id=650007847940)
 
 ### 4.8.1. Software Architecture Context Diagram
 
-![SystemContext.png](../assets/chapter-4/SystemContext.png)
+![SystemContext.png](../assets/chapter-4/architecture/context/system-context.png)
 
 ### 4.8.2. Software Architecture Container Diagrams
 
-![Containers.png](../assets/chapter-4/Containers.png)
+![Containers.png](../assets/chapter-4/architecture/containers/containers.png)
 
 ### 4.8.3. Software Architecture Components Diagrams
 
 **Api Components**
-![Apicomponents.png](../assets/chapter-4/Apicomponents.png)
+![Apicomponents.png](../assets/chapter-4/architecture/components/api-components.png)
 
 
 **IoT Gateway Components**
-![IotGatewayComponets.png](../assets/chapter-4/IotGatewayComponets.png)
+![IotGatewayComponets.png](../assets/chapter-4/architecture/components/iot-gateway-components.png)
 
 ## 4.9. Software Object-Oriented Design
 
 ### 4.9.1. Class Diagrams
 
 
-![AuthComponentClassDiagram.png](../assets/chapter-4/AuthComponentClassDiagram.png)
+![AuthComponentClassDiagram.png](../assets/chapter-4/object-oriented-design/class-diagrams/Auth-component-class-diagram.png)
 
 Este diagrama detalla las clases responsables de la gestión de la identidad y el acceso en el sistema. Incluye la jerarquía de User con sus roles especializados (Guest, Host, HotelStaff), el AuthService que contiene la lógica de negocio para el registro y la autenticación, y la interfaz IUserRepository para la persistencia de datos de usuario.
 
 Diagrama de Clases: Componente de Gestión de Propiedades y Operaciones
 
-![PropertyComponentClassDiagram.png](../assets/chapter-4/PropertyComponentClassDiagram.png)
+![PropertyComponentClassDiagram.png](../assets/chapter-4/object-oriented-design/class-diagrams/Property-component-class-diagram.png)
 
 Este diagrama muestra el diseño de clases para la gestión del inventario y las operaciones del hotel. Incluye las entidades Property y Room, que representan los activos físicos, y el PropertyService que maneja su estado y disponibilidad. Es importante destacar que este componente también actúa como el origen de los comandos de IoT, utilizando la interfaz IIoTCommandPublisher para iniciar acciones en el mundo físico.
 
 Diagrama de Clases: Componente de Gestión de Reservas
 
-![BookingComponentClassDiagram.png](../assets/chapter-4/BookingComponentClassDiagram.png)
+![BookingComponentClassDiagram.png](../assets/chapter-4/object-oriented-design/class-diagrams/Booking-component-class-diagram.png)
 
 Este diagrama presenta el diseño de clases para el componente central de reservas. Muestra las entidades de dominio Booking y Review, y el BookingService que actúa como orquestador. Este servicio interactúa con otros componentes a través de adaptadores (IPropertyServiceAdapter, IBillingServiceAdapter) para verificar disponibilidad y procesar pagos, gestionando así el flujo completo de una reserva.
 
 Diagrama de Clases: Componente de Facturación
 
-![BillingComponentClassDiagram.png](../assets/chapter-4/BillingComponentClassDiagram.png)
+![BillingComponentClassDiagram.png](../assets/chapter-4/object-oriented-design/class-diagrams/Billing-component-class-diagram.png)
 
 Este diagrama ilustra la estructura interna del componente de facturación. Se definen las entidades Payment e Invoice, el servicio BillingService que orquesta el proceso de pago, y los adaptadores (IPaymentGatewayAdapter, IAuthServiceAdapter) que se comunican con sistemas externos y otros componentes internos para garantizar transacciones seguras y autorizadas.
 
 Diagrama de Clases: Componente Gateway IoT
 
-![IotGatewayComponentClassDiagram.png](../assets/chapter-4/IotGatewayComponentClassDiagram.png)
+![IotGatewayComponentClassDiagram.png](../assets/chapter-4/object-oriented-design/class-diagrams/IotGateway-component-class-diagram.png)
 
 Este diagrama detalla la arquitectura interna del componente técnico Gateway IoT. Su diseño se basa en un flujo de procesamiento de mensajes para desacoplar la lógica de negocio del hardware: un MessageListener recibe órdenes, un RulesEngine las interpreta, IDeviceController las especializa, y un ICloudApiClient se comunica con la plataforma externa del fabricante. Este patrón abstrae la complejidad de la integración con dispositivos físicos.
 
 **Diagrama de clases — export físico (aplicación móvil):**
 
-![MovilDev-Aplicaciones-moviles-Physical_Export.png](../assets/chapter-4/MovilDev-Aplicaciones-moviles-Physical_Export.png)
+![MovilDev-Aplicaciones-moviles-Physical_Export.png](../assets/chapter-4/architecture/deployment/mobile-physical-export.png)
 
 ### 4.9.2. Class Dictionary
 
@@ -1581,4 +1583,4 @@ Relaciones: Todas las asociaciones y composiciones en los diagramas de clases se
 
 #### Database Diagrams
 
-![Edgerunners-Aplicaciones-Web_Physical_Export.png](../assets/chapter-4/Edgerunners-Aplicaciones-Web_Physical_Export.png)
+![Edgerunners-Aplicaciones-Web_Physical_Export.png](../assets/chapter-4/architecture/deployment/web-physical-export.png)
