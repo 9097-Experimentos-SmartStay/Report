@@ -45,11 +45,13 @@ Entre sus principales características destacan:
       <td>Estudiante de la carrera de Ingeniería de Software en la UPC. Actualmente cuento con conocimientos en lenguajes de programación como C++ y manejo de Java. Considero que mis mayores virtudes son: la responsabilidad, capacidad de adaptarme, trabajar en equipo y la resiliencia.</td>
     </tr>
     <tr>
-      <td></td>
+      <td align="center" valign="middle">
+       <img src="assets/chapter-1/members/italo-verona.jpg" alt="Sulca Sanchez Piero Angel" width="300">
+      </td>
       <td>Verona Flores, Ítalo Sebastián</td>
       <td>u20221e617</td>
       <td>Ingeniería de Software</td>
-      <td>[Completar]</td>
+      <td> Estudiante de Ingeniería de Software en la UPC, con conocimientos en desarrollo Full Stack, programación, bases de datos y diseño de aplicaciones. Cuento con experiencia en proyectos académicos utilizando tecnologías como C#, Java, JavaScript, TypeScript, Angular, Vue.js, Flutter y Kotlin. Me interesa especialmente el desarrollo de soluciones de software, la arquitectura de sistemas y el trabajo colaborativo. </td>
     </tr>
     <tr>
       <td align="center" valign="middle">
