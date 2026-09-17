@@ -584,7 +584,61 @@ Estos mapas permiten visualizar cómo cada tipo de usuario piensa, siente y act�
 
 ### 2.3.5. As-is Scenario Mapping
 
-**Pendiente:** versión As-Is del scenario mapping con filas Phases / Doing / Thinking / Feeling. No existe una fuente equivalente en los reportes de referencia (Movil-dev documenta Big Picture EventStorming, no As-Is Scenario Mapping).
+El mapeo de escenarios *As-Is* permite modelar el estado actual de los procesos operativos y vivenciales antes de la introducción de una solución tecnológica centralizada. A través de este análisis se identifican los puntos de fricción, ineficiencias y la carga cognitiva/emocional que experimentan los actores principales durante su flujo habitual, estructurado en cuatro fases clave bajo las dimensiones de acciones (*Doing*), pensamientos (*Thinking*) y sentimientos (*Feeling*).
+
+#### Segmento objetivo 1: Administradores de Hoteles Boutique Pequeños
+
+Este segmento representa al personal administrativo y de recepción encargado de coordinar manualmente la operación diaria, el flujo de huéspedes y la disponibilidad de habitaciones.
+
+![As-Is Scenario Mapping - Segmento 1](assets/chapter-2/as-is/As-is.svg)
+
+* **Fase 1: Shift Start & Planning**
+  * **Doing:** Al iniciar el turno, el administrador revisa canales dispersos (WhatsApp, correos electrónicos) y transcribe manualmente las reservas hacia una hoja de cálculo en Excel o un cuaderno físico.
+  * **Thinking:** Surgen constantes dudas respecto a la sincronización de la información (*"¿Habré omitido reservas hechas en la madrugada?", "¿Estará actualizado el archivo Excel?"*).
+  * **Feeling:** Incertidumbre y ansiedad ante el riesgo de pérdida u omisión de datos críticos.
+
+* **Fase 2: Peak Check-in/out**
+  * **Doing:** En horas pico, procesa cobros y diligencia fichas de registro en papel de forma simultánea a la atención de llamadas telefónicas.
+  * **Thinking:** Preocupación por la operatividad de los terminales de pago y la acumulación imprevista de clientes (*"Espero que funcione el POS", "¿Por qué llegan todos al mismo tiempo?"*).
+  * **Feeling:** Sobrecarga mental, estrés y agobio ante la saturación de tareas simultáneas.
+
+* **Fase 3: Room Status Tracking**
+  * **Doing:** Para verificar la disponibilidad de habitaciones, el personal debe desplazarse físicamente por los pisos o consultar al equipo de limpieza vía radio comunicador.
+  * **Thinking:** Frustración por los canales lentos (*"¿Por qué no responden la radio?", "¿Estará lista ya la habitación 302?"*).
+  * **Feeling:** Impaciencia e incomodidad generadas por la lentitud y falta de visibilidad en la comunicación interna.
+
+* **Fase 4: Closing & Reporting**
+  * **Doing:** Al cierre de la jornada, concilia manualmente los pagos recibidos contra las reservas y actualiza la disponibilidad de inventario para el día siguiente.
+  * **Thinking:** Temor a inconsistencias operativas (*"Espero que mañana no haya sobreventas/duplicidades", "Estoy agotado/a"*).
+  * **Feeling:** Agotamiento físico/mental y preocupación latente por errores humanos involuntarios.
+
+---
+
+#### Segmento objetivo 2: Huéspedes de Hoteles
+
+Este segmento comprende a los clientes durante su ciclo de estadía, quienes interactúan directamente con los procesos manuales del establecimiento.
+
+![As-Is Scenario Mapping - Segmento 2](assets/chapter-2/as-is/as-is-2.jpeg)
+
+* **Fase 1: Booking & Pre-arrival**
+  * **Doing:** Realiza una reserva por canales web/digitales y queda a la espera de un correo o mensaje manual que ratifique la confirmación.
+  * **Thinking:** Dudas sobre la validez de la reserva (*"Ojalá realmente tengan lista mi reserva cuando llegue"*).
+  * **Feeling:** Incertidumbre matizada con optimismo.
+
+* **Fase 2: Arrival & Check-in**
+  * **Doing:** Debe hacer fila en la recepción para rellenar a mano formularios y fichas de ingreso físico con información previamente enviada.
+  * **Thinking:** Incomodidad por la redundancia de datos (*"¿Por qué tengo que escribir todo de nuevo?", "Solo quiero ir a descansar"*).
+  * **Feeling:** Tedio, aburrimiento e impaciencia generados por la fricción administrativa.
+
+* **Fase 3: In-stay Requests**
+  * **Doing:** Para solicitar servicios o toallas/amenities adicionales, se ve obligado a llamar al anexo de recepción o bajar físicamente hasta el lobby.
+  * **Thinking:** Cuestionamiento sobre la modernidad de los canales de atención (*"¿No tendrán un WhatsApp?", "¿Por qué demora tanto que traigan una toalla?"*).
+  * **Feeling:** Molestia y frustración provocada por la carencia de herramientas de autoservicio digital.
+
+* **Fase 4: Check-out & Departure**
+  * **Doing:** Espera en recepción a que impriman la cuenta detallada y a que el personal verifique el estado físico de la habitación antes de autorizar su salida.
+  * **Thinking:** Prisa y necesidad de agilidad (*"Llegaré tarde a mi tour", "¿No puedo pagar directamente desde una app?"*).
+  * **Feeling:** Desazón y frustración por demoras de último minuto antes de partir.
 
 ## 2.4. Ubiquitous Language
 
