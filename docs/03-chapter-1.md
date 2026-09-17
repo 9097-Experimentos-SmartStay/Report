@@ -46,7 +46,7 @@ Entre sus principales características destacan:
     </tr>
     <tr>
       <td align="center" valign="middle">
-       <img src="assets/chapter-1/members/italo-verona.jpg" alt="Sulca Sanchez Piero Angel" width="300">
+       <img src="../assets/chapter-1/members/italo-verona.jpg" alt="Sulca Sanchez Piero Angel" width="300">
       </td>
       <td>Verona Flores, Ítalo Sebastián</td>
       <td>u20221e617</td>
