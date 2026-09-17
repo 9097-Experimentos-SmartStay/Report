@@ -590,7 +590,7 @@ El mapeo de escenarios *As-Is* permite modelar el estado actual de los procesos 
 
 Este segmento representa al personal administrativo y de recepción encargado de coordinar manualmente la operación diaria, el flujo de huéspedes y la disponibilidad de habitaciones.
 
-![As-Is Scenario Mapping - Segmento 1](assets/chapter-2/as-is/As-is.svg)
+![As-Is Scenario Mapping - Segmento 1](../assets/chapter-2/as-is/As-is.svg)
 
 * **Fase 1: Shift Start & Planning**
   * **Doing:** Al iniciar el turno, el administrador revisa canales dispersos (WhatsApp, correos electrónicos) y transcribe manualmente las reservas hacia una hoja de cálculo en Excel o un cuaderno físico.
@@ -618,7 +618,7 @@ Este segmento representa al personal administrativo y de recepción encargado de
 
 Este segmento comprende a los clientes durante su ciclo de estadía, quienes interactúan directamente con los procesos manuales del establecimiento.
 
-![As-Is Scenario Mapping - Segmento 2](assets/chapter-2/as-is/as-is-2.jpeg)
+![As-Is Scenario Mapping - Segmento 2](../assets/chapter-2/as-is/as-is-2.jpeg)
 
 * **Fase 1: Booking & Pre-arrival**
   * **Doing:** Realiza una reserva por canales web/digitales y queda a la espera de un correo o mensaje manual que ratifique la confirmación.
