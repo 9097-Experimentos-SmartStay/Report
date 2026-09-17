@@ -165,9 +165,7 @@ El objetivo de esta sección es resumir las modificaciones relevantes que se rea
 >
 > En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET – EAC - Student Outcome 4.
 
-*(Párrafo introductorio transcrito de forma idéntica al Anexo A del enunciado del Final Project Statement.)*
-
-<table border>
+<table border="1">
   <thead>
     <tr>
       <th width="25%"><b>Criterio Específico</b></th>
@@ -179,34 +177,45 @@ El objetivo de esta sección es resumir las modificaciones relevantes que se rea
     <tr>
       <td width="25%"><b>4.c.1</b> Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software</td>
       <td>
-        <b>AV1<br>
-        Bonifacio Jaramillo, Samuel Jesus:</b> <br>A través de la entrevistas, Implementé un Product Backlog construido sobre las US del proyecto y las entrevistas realizadas al público objetivo. Este proceso me permitió identificar el panorama ideal de hacia dónde debemos enfocar la solución digital que estamos desarrollando.
-<br>
-        Ponce Perales, Alberto Alejandro — <em>pendiente de redacción</em><br>
-        Verona Flores, Ítalo Sebastián — <em>pendiente</em><br>
-        Sulca, Piero — <em>pendiente</em><br>
-        Galindo Manuel, Alejandro — <em>pendiente</em>
+        <b>AV1</b><br><br>
+        <b>Bonifacio Jaramillo, Samuel Jesus:</b><br>
+        A través de las entrevistas, implementé un Product Backlog construido sobre las User Stories del proyecto y los hallazgos levantados con el público objetivo. Este proceso me permitió estructurar un alcance ordenado y transparente, asegurando que la solución digital respete los compromisos adquiridos y priorice el valor real entregado al usuario.<br><br>
+        <b>Galindo Manuel, Alejandro:</b><br>
+        Participé en el análisis competitivo y en la estructuración de la arquitectura de la solución, asegurando la atribución adecuada de fuentes, herramientas y librerías externas. Asumí la responsabilidad profesional de garantizar que los estándares de diseño técnico y la modelación de datos resguarden la confidencialidad de la información manejada por los usuarios.<br><br>
+        <b>Ponce Perales, Alberto Alejandro:</b><br>
+        Colaboré en la conducción y transcripción ética de las entrevistas con los segmentos objetivo, informando con claridad los fines del estudio y obteniendo su consentimiento previo. Asimismo, velé por una representación veraz y no sesgada de los testimonios en los artefactos de Needfinding y en los User Journey Maps.<br><br>
+        <b>Sulca, Piero:</b><br>
+        Participé en el diseño de los prototipos de baja y alta fidelidad para las interfaces web y móvil, verificando el cumplimiento de lineamientos de accesibilidad, legibilidad y usabilidad. Mi enfoque estuvo orientado a evitar patrones de diseño engañosos (dark patterns) y a brindar una experiencia clara, predecible y respetuosa con los usuarios.<br><br>
+        <b>Verona Flores, Ítalo Sebastián:</b><br>
+        Participé en la identificación y definición de los requerimientos del proyecto a partir de las necesidades obtenidas durante las entrevistas. Consideré la responsabilidad de proponer funcionalidades que respondan al contexto real de los usuarios y que aporten valor a la solución, evitando decisiones que pudieran afectar negativamente su experiencia.
       </td>
-      <td><em>Pendiente (grupal, acumulable por entrega)</em></td>
+      <td>
+        <b>AV1:</b><br>
+        Como equipo, reconocemos que el ejercicio de la ingeniería de software exige integridad en la recolección, interpretación y modelado de datos de usuarios reales. Durante esta primera entrega, asumimos la responsabilidad ética de construir artefactos transparentes y justificados, descartando funcionalidades innecesarias o engañosas y garantizando el respeto a la propiedad intelectual de terceros mediante referencias y buenas prácticas en la estructuración del backlog y prototipos del sistema.
+      </td>
     </tr>
     <tr>
       <td width="25%"><b>4.c.2</b> Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales</td>
       <td>
-        <b>AV1<br>
-        Bonifacio Jaramillo, Samuel Jesus:</b> <br> Aprendí a recolectar el feedback y las necesidades de un público objetivo. Identificar y convertir cada necesidad en un driver/requerimiento para el software a construir.<br>
-        Ponce Perales, Alberto Alejandro — <em>pendiente de redacción</em><br>
-        Verona Flores, Ítalo Sebastián — <em>pendiente</em><br>
-        Sulca, Piero — <em>pendiente</em><br>
-        Galindo Manuel, Alejandro — <em>pendiente</em>
+        <b>AV1</b><br><br>
+        <b>Bonifacio Jaramillo, Samuel Jesus:</b><br>
+        Aprendí a recolectar el feedback y las necesidades de un público objetivo, analizando cómo transformar cada necesidad en un driver de software viable y sostenible. Evalué el impacto operativo y económico que cada funcionalidad acarrearía en la carga de trabajo diaria de los actores involucrados.<br><br>
+        <b>Galindo Manuel, Alejandro:</b><br>
+        Analicé la viabilidad técnica y los costos de infraestructura computacional vinculados al despliegue web y backend, considerando el uso eficiente de recursos y consumo de nube para minimizar gastos operativos innecesarios y reducir la huella ambiental digital derivada del procesamiento y almacenamiento de datos.<br><br>
+        <b>Ponce Perales, Alberto Alejandro:</b><br>
+        Evalué los impactos socioeconómicos derivados de los problemas identificados en el segmento objetivo, contrastando las alternativas del mercado local e internacional. Esto permitió justificar de manera crítica la propuesta de valor del producto como una alternativa accesible y sostenible para mejorar los procesos operativos del negocio.<br><br>
+        <b>Sulca, Piero:</b><br>
+        Analicé el impacto en inclusión digital durante el diseño interactivo de las plataformas responsive y mobile, validando que la solución reduzca la curva de aprendizaje en trabajadores de diversos niveles de familiaridad tecnológica, reduciendo barreras de entrada sociales y optimizando la productividad en el entorno laboral.<br><br>
+        <b>Verona Flores, Ítalo Sebastián:</b><br>
+        Participé en la evaluación y priorización de los requerimientos identificados, considerando las necesidades de los usuarios y el contexto del proyecto. Esto me permitió emitir juicios informados para orientar las decisiones de desarrollo hacia una solución viable, útil y alineada con el impacto que tendrá en los usuarios y en el entorno donde será aplicada.
       </td>
-      <td><em>Pendiente (grupal, acumulable por entrega)</em></td>
+      <td>
+        <b>AV1:</b><br>
+        Determinamos de forma colegiada que las decisiones técnicas de diseño y alcance deben sustentarse en un balance balanceado entre factibilidad técnica, impacto social y viabilidad económica. El análisis del segmento objetivo nos permitió descartar suposiciones arbitrarias y fundamentar la arquitectura inicial en la mitigación de costos operativos, la inclusión de usuarios operativos y la sostenibilidad a largo plazo de la plataforma dentro de su entorno productivo.
+      </td>
     </tr>
   </tbody>
 </table>
-
----
-
-<div style="page-break-after: always;"></div>
 
 # Capítulo I: Introducción
 
@@ -255,11 +264,13 @@ Entre sus principales características destacan:
       <td>Estudiante de la carrera de Ingeniería de Software en la UPC. Actualmente cuento con conocimientos en lenguajes de programación como C++ y manejo de Java. Considero que mis mayores virtudes son: la responsabilidad, capacidad de adaptarme, trabajar en equipo y la resiliencia.</td>
     </tr>
     <tr>
-      <td></td>
+      <td align="center" valign="middle">
+       <img src="assets/chapter-1/members/italo-verona.jpg" alt="Sulca Sanchez Piero Angel" width="300">
+      </td>
       <td>Verona Flores, Ítalo Sebastián</td>
       <td>u20221e617</td>
       <td>Ingeniería de Software</td>
-      <td>[Completar]</td>
+      <td> Estudiante de Ingeniería de Software en la UPC, con conocimientos en desarrollo Full Stack, programación, bases de datos y diseño de aplicaciones. Cuento con experiencia en proyectos académicos utilizando tecnologías como C#, Java, JavaScript, TypeScript, Angular, Vue.js, Flutter y Kotlin. Me interesa especialmente el desarrollo de soluciones de software, la arquitectura de sistemas y el trabajo colaborativo. </td>
     </tr>
     <tr>
       <td align="center" valign="middle">
@@ -956,7 +967,62 @@ Estos mapas permiten visualizar cómo cada tipo de usuario piensa, siente y act�
 
 ### 2.3.5. As-is Scenario Mapping
 
-**Pendiente:** versión As-Is del scenario mapping con filas Phases / Doing / Thinking / Feeling. No existe una fuente equivalente en los reportes de referencia (Movil-dev documenta Big Picture EventStorming, no As-Is Scenario Mapping).
+
+El mapeo de escenarios *As-Is* permite modelar el estado actual de los procesos operativos y vivenciales antes de la introducción de una solución tecnológica centralizada. A través de este análisis se identifican los puntos de fricción, ineficiencias y la carga cognitiva/emocional que experimentan los actores principales durante su flujo habitual, estructurado en cuatro fases clave bajo las dimensiones de acciones (*Doing*), pensamientos (*Thinking*) y sentimientos (*Feeling*).
+
+#### Segmento objetivo 1: Administradores de Hoteles Boutique Pequeños
+
+Este segmento representa al personal administrativo y de recepción encargado de coordinar manualmente la operación diaria, el flujo de huéspedes y la disponibilidad de habitaciones.
+
+![As-Is Scenario Mapping - Segmento 1](assets/chapter-2/as-is/As-is.svg)
+
+* **Fase 1: Shift Start & Planning**
+  * **Doing:** Al iniciar el turno, el administrador revisa canales dispersos (WhatsApp, correos electrónicos) y transcribe manualmente las reservas hacia una hoja de cálculo en Excel o un cuaderno físico.
+  * **Thinking:** Surgen constantes dudas respecto a la sincronización de la información (*"¿Habré omitido reservas hechas en la madrugada?", "¿Estará actualizado el archivo Excel?"*).
+  * **Feeling:** Incertidumbre y ansiedad ante el riesgo de pérdida u omisión de datos críticos.
+
+* **Fase 2: Peak Check-in/out**
+  * **Doing:** En horas pico, procesa cobros y diligencia fichas de registro en papel de forma simultánea a la atención de llamadas telefónicas.
+  * **Thinking:** Preocupación por la operatividad de los terminales de pago y la acumulación imprevista de clientes (*"Espero que funcione el POS", "¿Por qué llegan todos al mismo tiempo?"*).
+  * **Feeling:** Sobrecarga mental, estrés y agobio ante la saturación de tareas simultáneas.
+
+* **Fase 3: Room Status Tracking**
+  * **Doing:** Para verificar la disponibilidad de habitaciones, el personal debe desplazarse físicamente por los pisos o consultar al equipo de limpieza vía radio comunicador.
+  * **Thinking:** Frustración por los canales lentos (*"¿Por qué no responden la radio?", "¿Estará lista ya la habitación 302?"*).
+  * **Feeling:** Impaciencia e incomodidad generadas por la lentitud y falta de visibilidad en la comunicación interna.
+
+* **Fase 4: Closing & Reporting**
+  * **Doing:** Al cierre de la jornada, concilia manualmente los pagos recibidos contra las reservas y actualiza la disponibilidad de inventario para el día siguiente.
+  * **Thinking:** Temor a inconsistencias operativas (*"Espero que mañana no haya sobreventas/duplicidades", "Estoy agotado/a"*).
+  * **Feeling:** Agotamiento físico/mental y preocupación latente por errores humanos involuntarios.
+
+---
+
+#### Segmento objetivo 2: Huéspedes de Hoteles
+
+Este segmento comprende a los clientes durante su ciclo de estadía, quienes interactúan directamente con los procesos manuales del establecimiento.
+
+![As-Is Scenario Mapping - Segmento 2](assets/chapter-2/as-is/as-is-2.jpeg)
+
+* **Fase 1: Booking & Pre-arrival**
+  * **Doing:** Realiza una reserva por canales web/digitales y queda a la espera de un correo o mensaje manual que ratifique la confirmación.
+  * **Thinking:** Dudas sobre la validez de la reserva (*"Ojalá realmente tengan lista mi reserva cuando llegue"*).
+  * **Feeling:** Incertidumbre matizada con optimismo.
+
+* **Fase 2: Arrival & Check-in**
+  * **Doing:** Debe hacer fila en la recepción para rellenar a mano formularios y fichas de ingreso físico con información previamente enviada.
+  * **Thinking:** Incomodidad por la redundancia de datos (*"¿Por qué tengo que escribir todo de nuevo?", "Solo quiero ir a descansar"*).
+  * **Feeling:** Tedio, aburrimiento e impaciencia generados por la fricción administrativa.
+
+* **Fase 3: In-stay Requests**
+  * **Doing:** Para solicitar servicios o toallas/amenities adicionales, se ve obligado a llamar al anexo de recepción o bajar físicamente hasta el lobby.
+  * **Thinking:** Cuestionamiento sobre la modernidad de los canales de atención (*"¿No tendrán un WhatsApp?", "¿Por qué demora tanto que traigan una toalla?"*).
+  * **Feeling:** Molestia y frustración provocada por la carencia de herramientas de autoservicio digital.
+
+* **Fase 4: Check-out & Departure**
+  * **Doing:** Espera en recepción a que impriman la cuenta detallada y a que el personal verifique el estado físico de la habitación antes de autorizar su salida.
+  * **Thinking:** Prisa y necesidad de agilidad (*"Llegaré tarde a mi tour", "¿No puedo pagar directamente desde una app?"*).
+  * **Feeling:** Desazón y frustración por demoras de último minuto antes de partir.
 
 ## 2.4. Ubiquitous Language
 
