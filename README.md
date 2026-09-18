@@ -1992,13 +1992,6 @@ Segmento 2: Huéspedes de Hoteles Boutique
       <td>5</td>
     </tr>
     <tr>
-      <td>2</td>
-      <td>US-25</td>
-      <td>ROI simulator for hotels</td>
-      <td><strong>As</strong> a visiting hotel administrator, <strong>I want</strong> to use a simulator to estimate the return on investment I would get with Smart Stay <strong>to</strong> make informed decisions.</td>
-      <td>8</td>
-    </tr>
-    <tr>
       <td>3</td>
       <td>US-27</td>
       <td>Demo request and commercial contact</td>
@@ -2020,48 +2013,6 @@ Segmento 2: Huéspedes de Hoteles Boutique
       <td>2</td>
     </tr>
     <tr>
-      <td>6</td>
-      <td>US-05</td>
-      <td>Administrator dashboard</td>
-      <td><strong>As</strong> an administrator, <strong>I want</strong> a centralized panel with key information <strong>to</strong> manage my hotel efficiently.</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td>7</td>
-      <td>US-07</td>
-      <td>Centralized reservation management</td>
-      <td><strong>As</strong> an administrator, <strong>I want</strong> to manage all reservations in one place <strong>to</strong> avoid overbooking and optimize occupancy.</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td>8</td>
-      <td>US-08</td>
-      <td>Automated digital check-in</td>
-      <td><strong>As</strong> an administrator and guest, <strong>I want</strong> check-in to be performed digitally in less than 3 minutes <strong>to</strong> improve experience.</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td>9</td>
-      <td>US-09</td>
-      <td>Digital check-out and billing</td>
-      <td><strong>As</strong> a guest, <strong>I want</strong> to perform digital check-out and receive my invoice automatically <strong>to</strong> expedite my departure.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td>10</td>
-      <td>US-06</td>
-      <td>Room and status management</td>
-      <td><strong>As</strong> an administrator, <strong>I want</strong> to manage all room statuses <strong>to</strong> optimize daily operations.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td>11</td>
-      <td>US-20</td>
-      <td>OTA and booking channel integration</td>
-      <td><strong>As</strong> an administrator, <strong>I want</strong> to integrate my inventory with Booking.com, Expedia and other OTAs <strong>to</strong> maximize occupancy and avoid overbooking.</td>
-      <td>8</td>
-    </tr>
-    <tr>
       <td>12</td>
       <td>US-01</td>
       <td>User registration with validation</td>
@@ -2074,111 +2025,6 @@ Segmento 2: Huéspedes de Hoteles Boutique
       <td>Secure login</td>
       <td><strong>As</strong> a registered user, <strong>I want</strong> to login securely <strong>to</strong> access my personalized dashboard according to my role.</td>
       <td>3</td>
-    </tr>
-    <tr>
-      <td>14</td>
-      <td>US-11</td>
-      <td>IoT environmental control from mobile app</td>
-      <td><strong>As</strong> a guest, <strong>I want</strong> to control temperature, lighting and other environmental aspects from my smartphone <strong>to</strong> personalize my experience.</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td>15</td>
-      <td>US-12</td>
-      <td>Service requests from app</td>
-      <td><strong>As</strong> a guest, <strong>I want</strong> to request room service, additional cleaning and other services from my smartphone <strong>to</strong> access services conveniently.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td>16</td>
-      <td>US-23</td>
-      <td>Digital payment processing</td>
-      <td><strong>As</strong> an administrator and guest, <strong>I want</strong> to process payments securely and efficiently through multiple payment methods <strong>to</strong> ensure smooth transactions.</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td>17</td>
-      <td>US-10</td>
-      <td>Staff task assignment and tracking</td>
-      <td><strong>As</strong> an administrator, <strong>I want</strong> to assign tasks to staff and track their progress <strong>to</strong> optimize operations.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td>18</td>
-      <td>US-16</td>
-      <td>Analytics dashboard and operational KPIs</td>
-      <td><strong>As</strong> an administrator, <strong>I want</strong> to visualize key metrics and KPIs <strong>to</strong> make informed decisions about hotel operations.</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td>19</td>
-      <td>US-34</td>
-      <td>Mobile push notification system</td>
-      <td><strong>As</strong> a guest, <strong>I want</strong> to receive push notifications on my smartphone about my request and service status <strong>to</strong> stay informed.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td>20</td>
-      <td>US-35</td>
-      <td>Automatic staff notifications</td>
-      <td><strong>As</strong> hotel staff, <strong>I want</strong> to receive automatic notifications about assigned tasks and important operational changes <strong>to</strong> respond promptly.</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>21</td>
-      <td>US-21</td>
-      <td>WhatsApp Business integration</td>
-      <td><strong>As</strong> an administrator, <strong>I want</strong> to use WhatsApp Business for direct guest communication and pre/post-stay query management <strong>to</strong> improve customer service.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td>22</td>
-      <td>US-13</td>
-      <td>Digital guest-staff communication</td>
-      <td><strong>As</strong> a guest, <strong>I want</strong> to communicate with hotel staff digitally <strong>to</strong> resolve questions and requests quickly.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td>23</td>
-      <td>US-22</td>
-      <td>Digital reputation management</td>
-      <td><strong>As</strong> an administrator, <strong>I want</strong> to manage Google, TripAdvisor and OTA reviews from one place <strong>to</strong> maintain good online reputation.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td>24</td>
-      <td>US-17</td>
-      <td>Financial and occupancy reports</td>
-      <td><strong>As</strong> an administrator, <strong>I want</strong> to generate financial and occupancy reports <strong>to</strong> support management analysis and decision making.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td>25</td>
-      <td>US-19</td>
-      <td>IoT energy consumption monitoring</td>
-      <td><strong>As</strong> an administrator, <strong>I want</strong> to monitor energy consumption of rooms and common areas <strong>to</strong> optimize operational costs.</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td>26</td>
-      <td>US-14</td>
-      <td>Experience personalization based on preferences</td>
-      <td><strong>As</strong> a guest, <strong>I want</strong> the system to learn my preferences <strong>to</strong> offer personalized experiences and services.</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td>27</td>
-      <td>US-15</td>
-      <td>Post-stay evaluation and feedback</td>
-      <td><strong>As</strong> a guest, <strong>I want</strong> to evaluate my experience and leave feedback <strong>to</strong> help the hotel improve its services.</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>28</td>
-      <td>US-18</td>
-      <td>Guest satisfaction analysis</td>
-      <td><strong>As</strong> an administrator, <strong>I want</strong> to analyze guest satisfaction <strong>to</strong> identify improvement areas and maintain service quality.</td>
-      <td>5</td>
     </tr>
     <tr>
       <td>29</td>
@@ -2209,13 +2055,6 @@ Segmento 2: Huéspedes de Hoteles Boutique
       <td>3</td>
     </tr>
     <tr>
-      <td>33</td>
-      <td>US-33</td>
-      <td>Webhooks for real-time events</td>
-      <td><strong>As</strong> a developer, <strong>I want</strong> to configure webhooks <strong>to</strong> receive automatic notifications when important Smart Stay events occur.</td>
-      <td>5</td>
-    </tr>
-    <tr>
       <td>34</td>
       <td>US-03</td>
       <td>Profile and role management</td>
@@ -2230,110 +2069,6 @@ Segmento 2: Huéspedes de Hoteles Boutique
       <td>2</td>
     </tr>
     <tr>
-      <td>36</td>
-      <td>US-36</td>
-      <td>Automated email marketing</td>
-      <td><strong>As</strong> an administrator, <strong>I want</strong> to send automated personalized emails to guests at different stages <strong>to</strong> enhance customer experience.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td>37</td>
-      <td>US-37</td>
-      <td>Intelligent alerts and escalation</td>
-      <td><strong>As</strong> an administrator, <strong>I want</strong> to receive intelligent alerts about operational problems with automatic escalation <strong>to</strong> ensure quick resolution.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td>38</td>
-      <td>US-38</td>
-      <td>Unified communication panel</td>
-      <td><strong>As</strong> an administrator, <strong>I want</strong> a centralized panel to manage all communications <strong>to</strong> streamline guest interaction management.</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td>39</td>
-      <td>US-39</td>
-      <td>Native mobile app for staff</td>
-      <td><strong>As</strong> hotel staff, <strong>I want</strong> a dedicated mobile app to manage my tasks and communication <strong>to</strong> work efficiently while on the move.</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td>40</td>
-      <td>US-42</td>
-      <td>Multi-hotel configuration for chains</td>
-      <td><strong>As</strong> a hotel chain administrator, <strong>I want</strong> to manage multiple properties from a master account <strong>to</strong> centralize operations with independent configurations.</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td>41</td>
-      <td>US-43</td>
-      <td>Integration with existing PMS systems</td>
-      <td><strong>As</strong> an administrator, <strong>I want</strong> to integrate Smart Stay with my current PMS system <strong>to</strong> migrate gradually without interrupting operations.</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td>42</td>
-      <td>US-44</td>
-      <td>Brand customization per hotel</td>
-      <td><strong>As</strong> an administrator, <strong>I want</strong> to customize interface and communications with my hotel's brand <strong>to</strong> maintain visual consistency.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td>43</td>
-      <td>US-45</td>
-      <td>Integrated loyalty program</td>
-      <td><strong>As</strong> an administrator, <strong>I want</strong> to manage a loyalty program for recurring guests <strong>to</strong> provide automatic benefits and increase retention.</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td>44</td>
-      <td>US-46</td>
-      <td>Event and conference management</td>
-      <td><strong>As</strong> an administrator, <strong>I want</strong> to manage special events and conferences <strong>to</strong> provide specific group functionalities.</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td>45</td>
-      <td>US-47</td>
-      <td>IoT predictive maintenance</td>
-      <td><strong>As</strong> an administrator, <strong>I want</strong> the IoT system to predict maintenance needs <strong>to</strong> optimize equipment performance and reduce downtime.</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td>46</td>
-      <td>US-48</td>
-      <td>Competition analysis and dynamic pricing</td>
-      <td><strong>As</strong> an administrator, <strong>I want</strong> to analyze competitor prices and adjust my rates automatically <strong>to</strong> optimize revenue.</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td>47</td>
-      <td>US-49</td>
-      <td>Automated compliance and auditing</td>
-      <td><strong>As</strong> an administrator, <strong>I want</strong> the system to generate automatic compliance reports <strong>to</strong> facilitate regulatory audits.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td>48</td>
-      <td>US-50</td>
-      <td>Security system integration</td>
-      <td><strong>As</strong> an administrator, <strong>I want</strong> to integrate Smart Stay with hotel security systems <strong>to</strong> provide automated access management.</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td>49</td>
-      <td>US-40</td>
-      <td>Data backup and recovery</td>
-      <td><strong>As</strong> a technical administrator, <strong>I want</strong> the system to have automatic backup and disaster recovery <strong>to</strong> guarantee operational continuity.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td>50</td>
-      <td>US-41</td>
-      <td>System monitoring and logs</td>
-      <td><strong>As</strong> a technical administrator, <strong>I want</strong> to monitor system performance and access detailed logs <strong>to</strong> support troubleshooting activities.</td>
-      <td>3</td>
-    </tr>
   </tbody>
 </table>
 
