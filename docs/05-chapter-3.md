@@ -964,13 +964,6 @@ Segmento 2: Huéspedes de Hoteles Boutique
       <td>3</td>
     </tr>
     <tr>
-      <td>4</td>
-      <td>US-26</td>
-      <td>Success stories and testimonials</td>
-      <td><strong>As</strong> an interested visitor, <strong>I want</strong> to see real success stories from hotels using Smart Stay <strong>to</strong> validate solution effectiveness.</td>
-      <td>5</td>
-    </tr>
-    <tr>
       <td>5</td>
       <td>US-28</td>
       <td>Corporate information and values</td>
@@ -996,13 +989,6 @@ Segmento 2: Huéspedes de Hoteles Boutique
       <td>US-29</td>
       <td>RESTful API for room management</td>
       <td><strong>As</strong> a developer, <strong>I want</strong> to access RESTful endpoints <strong>to</strong> integrate Smart Stay with external hotel management systems.</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td>30</td>
-      <td>US-30</td>
-      <td>API for IoT device control</td>
-      <td><strong>As</strong> a developer, <strong>I want</strong> endpoints to control room IoT devices <strong>to</strong> enable integration with external applications.</td>
       <td>8</td>
     </tr>
     <tr>
@@ -1033,7 +1019,6 @@ Segmento 2: Huéspedes de Hoteles Boutique
       <td><strong>As</strong> a user, <strong>I want</strong> to recover my password via email <strong>to</strong> regain access to my account.</td>
       <td>2</td>
     </tr>
-    <tr>
   </tbody>
 </table>
 
