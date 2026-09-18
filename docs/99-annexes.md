@@ -117,5 +117,46 @@ Link: -
       <td>Report</td>
       <td>https://github.com/9097-Experimentos-SmartStay/Report</td>
     </tr>
+    <tr>
+      <td>backend</td>
+      <td>https://github.com/9097-Experimentos-SmartStay/backend</td>
+    </tr>
+    <tr>
+      <td>frontend</td>
+      <td>https://github.com/9097-Experimentos-SmartStay/frontend</td>
+    </tr>
+    <tr>
+      <td>mobile</td>
+      <td>https://github.com/9097-Experimentos-SmartStay/mobile</td>
+    </tr>
+    <tr>
+      <td>landing-page</td>
+      <td>https://github.com/9097-Experimentos-SmartStay/landing-page</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Links de Despliegue</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Componente</th>
+      <th>URL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Backend (API)</td>
+      <td>https://smartstay-movildev-api.onrender.com/scalar/</td>
+    </tr>
+    <tr>
+      <td>Frontend Web</td>
+      <td>https://smartstay-movildev-web.vercel.app</td>
+    </tr>
+    <tr>
+      <td>Landing Page</td>
+      <td>https://smartstay-movildev-landing.vercel.app/</td>
+    </tr>
   </tbody>
 </table>

@@ -161,20 +161,25 @@ El proyecto está organizado dentro de una **organización en GitHub**, donde ca
 - **Aplicación Móvil:**  
   - **Tecnología:** Kotlin (Android Native)
   - **IDE:** Android Studio
-  - **URL del repositorio:** https://github.com/Movil-dev-Aplicaciones-Moviles/smartstay-application-mobile
+  - **URL del repositorio:** https://github.com/9097-Experimentos-SmartStay/mobile
   - **Plataforma de despliegue:** Android Studio Emulator / APK Testing
 
 - **Web Services (Backend):**  
   - **Tecnología:** ASP.NET Core (C#)
-  - **URL del repositorio:** https://github.com/Movil-dev-Aplicaciones-Moviles/application-mobile-backend
+  - **URL del repositorio:** https://github.com/9097-Experimentos-SmartStay/backend
   - **Arquitectura:** RESTful API
   - **Plataforma de despliegue:** Render
 
+- **Frontend Web:**
+  - **Tecnología:** Vue.js
+  - **URL del repositorio:** https://github.com/9097-Experimentos-SmartStay/frontend
+  - **Plataforma de despliegue:** Vercel
+
 - **Landing Page**
   - **Tecnología:** HTML, CSS, JavaScript
-  - **URL del repositorio:** https://github.com/Movil-dev-Aplicaciones-Moviles/landing-page
+  - **URL del repositorio:** https://github.com/9097-Experimentos-SmartStay/landing-page
   - **IDE:** WebStorm
-  - **Plataforma de despliegue:** GitHub Actions
+  - **Plataforma de despliegue:** Vercel
 
 Todos los repositorios implementan el modelo **GitFlow** como flujo de trabajo de colaboración y branching, garantizando un desarrollo ordenado y trazable.
 
@@ -402,7 +407,7 @@ El proyecto implementa un flujo automatizado de **Integración Continua y Despli
 ![Github Pages](../assets/chapter-5/deployment/github-pages.jpg)
 
 **La URL que nos entrega Github Pages para acceder a la landing page es la siguiente:**  
-[https://edgerunners-aplicaciones-web.github.io/landing-page/](https://edgerunners-aplicaciones-web.github.io/landing-page/)
+[https://smartstay-movildev-landing.vercel.app/](https://smartstay-movildev-landing.vercel.app/)
 
 ---
 
@@ -794,7 +799,7 @@ La landing page fue vinculada directamente con el repositorio del proyecto, perm
 
 Gracias a esta configuración, la página quedó disponible públicamente, confirmando el correcto funcionamiento del flujo de despliegue y la integración entre el repositorio y **GitHub Pages**.
 
-**URL de la Landing Page: https://movil-dev-aplicaciones-moviles.github.io/landing-page/# **
+**URL de la Landing Page: https://smartstay-movildev-landing.vercel.app/ **
 
 ![LANDING.png](../assets/chapter-5/deployment/landing-page-final.png)
 
@@ -806,7 +811,7 @@ El servicio backend fue enlazado con el repositorio principal del proyecto, perm
 
 Como evidencia del despliegue, se presenta la **URL pública del servicio** junto con una captura de la documentación **Swagger/OpenAPI** ejecutándose correctamente desde el entorno desplegado. Esto confirma que la API se encuentra activa, accesible y lista para ser consumida por los demás componentes del sistema.
 
-**URL del Back End / Swagger: https://application-mobile-backend.onrender.com/swagger/index.html **
+**URL del Back End / Swagger: https://smartstay-movildev-api.onrender.com/scalar/ **
 
 ![Evidencia del despliegue en Render](../assets/chapter-5/deployment/render-backend.png)
 
@@ -1000,13 +1005,13 @@ Durante el Sprint 3 se realizó la validación final del despliegue de los compo
 En primer lugar, se verificó que la Landing Page se encuentre publicada correctamente mediante GitHub Pages. Esta página representa la presencia pública del producto y permite presentar la propuesta de valor de SmartStay a los usuarios interesados.
 
 **URL de la Landing Page:**  
-https://movil-dev-aplicaciones-moviles.github.io/landing-page/#
+https://smartstay-movildev-landing.vercel.app/
 
 
 Asimismo, se validó el despliegue del backend en Render, confirmando que los servicios principales se encuentren activos y accesibles desde la documentación Swagger/OpenAPI.
 
 **URL del Back End / Swagger:**  
-https://application-mobile-backend.onrender.com/swagger/index.html
+https://smartstay-movildev-api.onrender.com/scalar/
 
 
 Finalmente, se generó una versión final de la aplicación móvil en formato APK para su ejecución y validación. Esta versión contiene los módulos integrados y fue utilizada para la demostración final del producto.
@@ -1069,7 +1074,7 @@ En conclusión, el Sprint 3 permitió cerrar el ciclo de desarrollo de SmartStay
 ![Github Pages](../assets/chapter-5/deployment/github-pages.jpg)
 
 **La URL que nos entrega Github Pages para acceder a la landing page es la siguiente:**  
-[https://edgerunners-aplicaciones-web.github.io/landing-page/](https://edgerunners-aplicaciones-web.github.io/landing-page/)
+[https://smartstay-movildev-landing.vercel.app/](https://smartstay-movildev-landing.vercel.app/)
 
 landing Page
 
