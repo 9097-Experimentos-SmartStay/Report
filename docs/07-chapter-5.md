@@ -360,7 +360,7 @@ Se crean desde `main` para corregir problemas críticos en producción.
 ### 5.1.4. Software Deployment Configuration
 
 ### Landing Page Deployment
-La **Landing Page** fue desarrollada utilizando **HTML**, **CSS** y **JavaScript**, y se encuentra desplegada públicamente a través de **GitHub Pages**.  
+La **Landing Page** fue desarrollada utilizando **HTML**, **CSS** y **JavaScript**, y se encuentra desplegada públicamente a través de **Vercel**.  
 Para su publicación, se cumplieron los siguientes pasos:
 
 1. **Preparación del entorno:**  
@@ -374,11 +374,11 @@ Para su publicación, se cumplieron los siguientes pasos:
     - `languages.js` → archivo para gestionar los textos en distintos idiomas (español e inglés).
     - Carpeta `assets/images/` → para las imágenes utilizadas en el sitio.
 
-3. **Configuración en GitHub Pages:**
-    - Se accedió a **Settings > Pages** dentro del repositorio.
+3. **Configuración en Vercel:**
+    - Se importó el repositorio de la Landing Page directamente desde GitHub a **Vercel**.
     - Se seleccionó la rama **main** como fuente de publicación.
-    - Se configuró la carpeta raíz (`/`) como directorio base.
-    - Una vez completado el proceso, GitHub generó automáticamente la URL pública de la Landing Page.
+    - Se configuró la carpeta raíz (`/`) como directorio base del proyecto.
+    - Una vez completado el proceso, Vercel generó automáticamente la URL pública de la Landing Page.
 
 Además, se implementó un archivo `languages.js` que contiene los textos en español e inglés.  
 Este archivo es consumido por el script `main.js`, permitiendo el cambio de idioma dinámico en la interfaz.
@@ -392,7 +392,7 @@ Esto permite mantener el servicio activo, escalable y sincronizado con el reposi
 
 ### Frontend Web Application
 La **aplicación web frontend** fue construida con **Vue.js** y **PrimeVue**, integrando una interfaz moderna e interactiva.  
-El despliegue se llevó a cabo en **Render**, aprovechando su integración con GitHub para habilitar un flujo de despliegue automático.  
+El despliegue se llevó a cabo en **Vercel**, aprovechando su integración con GitHub para habilitar un flujo de despliegue automático.  
 Cada actualización en la rama `main` desencadena una nueva versión publicada en producción.
 
 
@@ -400,13 +400,14 @@ Cada actualización en la rama `main` desencadena una nueva versión publicada e
 El proyecto implementa un flujo automatizado de **Integración Continua y Despliegue Continuo (CI/CD)**, con el objetivo de mantener la coherencia entre los entornos de desarrollo y producción.
 
 - Todos los repositorios están conectados directamente a **GitHub**.
-- **Render** ejecuta el despliegue automático al detectarse *merges* en la rama `main`.
+- **Render** ejecuta el despliegue automático del backend, y **Vercel** el del frontend web y la landing page, al detectarse *merges* en la rama `main`.
 - Este proceso garantiza una actualización constante de los servicios y minimiza la intervención manual en las publicaciones.
 
-### Github Pages:
-![Github Pages](../assets/chapter-5/deployment/github-pages.jpg)
+### Vercel (Landing Page):
+![Vercel Deployment](../assets/chapter-5/deployment/github-pages.jpg)
+> ⚠️ Imagen pendiente de reemplazo: la captura actual corresponde a la configuración antigua de GitHub Pages, no al dashboard de Vercel.
 
-**La URL que nos entrega Github Pages para acceder a la landing page es la siguiente:**  
+**La URL pública de la landing page es la siguiente:**  
 [https://smartstay-movildev-landing.vercel.app/](https://smartstay-movildev-landing.vercel.app/)
 
 ---
@@ -793,11 +794,11 @@ Asimismo, durante el sprint se trabajó con la lógica de roles para diferenciar
 
 ##### 5.2.1.2.7. Software Deployment Evidence for Sprint Review
 
-A continuación, se presentan las evidencias del **despliegue de la Landing Page** de Smart Stay, desarrollada y publicada mediante **GitHub Pages**.
+A continuación, se presentan las evidencias del **despliegue de la Landing Page** de Smart Stay, desarrollada y publicada mediante **Vercel**.
 
 La landing page fue vinculada directamente con el repositorio del proyecto, permitiendo que la publicación se realice a partir de la rama **main**. De este modo, cada cambio validado en el repositorio puede reflejarse en la versión pública del sitio, asegurando consistencia entre el desarrollo y el entorno desplegado.
 
-Gracias a esta configuración, la página quedó disponible públicamente, confirmando el correcto funcionamiento del flujo de despliegue y la integración entre el repositorio y **GitHub Pages**.
+Gracias a esta configuración, la página quedó disponible públicamente, confirmando el correcto funcionamiento del flujo de despliegue y la integración entre el repositorio y **Vercel**.
 
 **URL de la Landing Page: https://smartstay-movildev-landing.vercel.app/ **
 
@@ -1002,7 +1003,7 @@ Además, se verificó que los servicios mantengan una estructura coherente en su
 
 Durante el Sprint 3 se realizó la validación final del despliegue de los componentes principales del proyecto SmartStay.
 
-En primer lugar, se verificó que la Landing Page se encuentre publicada correctamente mediante GitHub Pages. Esta página representa la presencia pública del producto y permite presentar la propuesta de valor de SmartStay a los usuarios interesados.
+En primer lugar, se verificó que la Landing Page se encuentre publicada correctamente mediante Vercel. Esta página representa la presencia pública del producto y permite presentar la propuesta de valor de SmartStay a los usuarios interesados.
 
 **URL de la Landing Page:**  
 https://smartstay-movildev-landing.vercel.app/
