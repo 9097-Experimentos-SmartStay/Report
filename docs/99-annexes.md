@@ -90,9 +90,7 @@ Link: -
 
 ### Video About The Product
 
-**Pendiente:** incorporar la evidencia de About The Product.
-
-Link: -
+Link: [Video-About-The-Product](https://youtu.be/34tPgoDW-wY)
 
 ### Video About The Team
 

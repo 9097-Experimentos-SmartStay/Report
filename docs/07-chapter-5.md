@@ -1219,4 +1219,7 @@ El equipo logró mantener una comunicación constante durante el cierre del proy
 
 ## 5.3. Video About-the-Product
 
-**Pendiente:** video promocional según Anexo C del enunciado (nomenclatura `...-about-the-product-sprint-<n>`, `.mp4`, 1 a 3 minutos). No existe una fuente equivalente en los reportes de referencia.
+En el video se mostró una demo funcional de SmartStay, recorriendo sus principales funcionalidades: inicio de sesión, panel de administrador, y gestión de habitaciones y reservas, validando visualmente el cumplimiento de los criterios de aceptación definidos.
+
+Link: https://youtu.be/34tPgoDW-wY
+ 
