@@ -87,16 +87,20 @@ Segmento 2: Huéspedes de Hoteles Boutique
   <tr>
     <td>US-01</td>
     <td>User registration with validation</td>
-    <td class="user-story-desc"><strong>As a</strong> new user, <strong>I want</strong> to register in Smart Stay by validating my email from the mobile application <strong>so that</strong> I can access features according to my role.</td>
+    <td class="user-story-desc"><strong>As a</strong> new user, <strong>I want</strong> to register in Smart Stay by validating my email from the application <strong>so that</strong> I can access features according to my role.</td>
     <td class="acceptance-criteria">
       <strong>Scenario 1: Successful registration</strong><br>
-      <strong>Given that</strong> I am a new user with valid data, <strong>when</strong> I complete the registration form from the app, <strong>then</strong> my account is successfully created and I receive a confirmation email.<br>
+      <strong>Given that</strong> I am a new user with valid data, <strong>when</strong> I complete the registration form from the application, <strong>then</strong> my account is created and I receive a verification email to confirm my address.<br>
       <strong>Scenario 2: Email already registered</strong><br>
       <strong>Given that</strong> I try to register with an existing email, <strong>when</strong> I submit the form, <strong>then</strong> the system displays the message “Email already registered” and suggests recovering my password.<br>
       <strong>Scenario 3: Incomplete data</strong><br>
       <strong>Given that</strong> I leave required fields empty, <strong>when</strong> I try to continue, <strong>then</strong> the application highlights the missing fields and does not allow me to complete the registration.<br>
       <strong>Scenario 4: Email format validation</strong><br>
-      <strong>Given that</strong> I enter an email with an invalid format, <strong>when</strong> I submit the form, <strong>then</strong> the app displays a format error.
+      <strong>Given that</strong> I enter an email with an invalid format, <strong>when</strong> I submit the form, <strong>then</strong> the application displays a format error.<br>
+      <strong>Scenario 5: Email not verified</strong><br>
+      <strong>Given that</strong> I registered but have not confirmed my email, <strong>when</strong> I try to sign in, <strong>then</strong> the system asks me to confirm it and lets me resend the verification link.<br>
+      <strong>Scenario 6: Password policy</strong><br>
+      <strong>Given that</strong> I enter a password, <strong>when</strong> it is shorter than 15 characters (8 for staff accounts protected with two-factor authentication), longer than 128 characters, or appears in a list of common or leaked passwords, <strong>then</strong> the application rejects it and shows the requirement not met, with a live checklist of the requirements (per NIST SP 800-63B-4).
     </td>
     <td>EP-01</td>
   </tr>
@@ -104,16 +108,16 @@ Segmento 2: Huéspedes de Hoteles Boutique
   <tr>
     <td>US-02</td>
     <td>Secure login</td>
-    <td class="user-story-desc"><strong>As a</strong> registered user, <strong>I want</strong> to log in securely from the mobile application <strong>so that</strong> I can access my personalized dashboard according to my role.</td>
+    <td class="user-story-desc"><strong>As a</strong> registered user, <strong>I want</strong> to log in securely from the application <strong>so that</strong> I can access my personalized dashboard according to my role.</td>
     <td class="acceptance-criteria">
       <strong>Scenario 1: Successful login</strong><br>
-      <strong>Given that</strong> I have valid credentials, <strong>when</strong> I log in from the app, <strong>then</strong> I access the corresponding dashboard according to my role.<br>
+      <strong>Given that</strong> I have valid credentials, <strong>when</strong> I log in from the application, <strong>then</strong> I access the corresponding dashboard according to my role; staff accounts also complete the second authentication factor first (US-52).<br>
       <strong>Scenario 2: Incorrect credentials</strong><br>
       <strong>Given that</strong> I enter incorrect data, <strong>when</strong> I try to access, <strong>then</strong> I receive an error message without revealing whether the email or password was incorrect.<br>
       <strong>Scenario 3: Account locked</strong><br>
-      <strong>Given that</strong> I fail to log in 5 consecutive times, <strong>when</strong> I try again, <strong>then</strong> the account is temporarily locked and I receive a notification.<br>
+      <strong>Given that</strong> I fail to log in 5 consecutive times, <strong>when</strong> I try again, <strong>then</strong> the account is locked for 15 minutes and I receive an email notification.<br>
       <strong>Scenario 4: Persistent session</strong><br>
-      <strong>Given that</strong> I activate the “remember me” option, <strong>when</strong> I close and reopen the application, <strong>then</strong> I remain logged in until I log out manually.
+      <strong>Given that</strong> I activate the “remember me” option, <strong>when</strong> I close and reopen the application, <strong>then</strong> I remain logged in for up to 30 days of inactivity, until I sign out or change my password.
     </td>
     <td>EP-01</td>
   </tr>
@@ -121,16 +125,16 @@ Segmento 2: Huéspedes de Hoteles Boutique
   <tr>
     <td>US-03</td>
     <td>Profile and role management</td>
-    <td class="user-story-desc"><strong>As an</strong> administrator, <strong>I want</strong> to manage users and assign roles and permissions from the mobile application <strong>so that</strong> I can control access to the system’s different functionalities.</td>
+    <td class="user-story-desc"><strong>As an</strong> administrator, <strong>I want</strong> to manage users and assign them roles (reception, housekeeping or maintenance) from the application <strong>so that</strong> I can control access to the system’s different functionalities.</td>
     <td class="acceptance-criteria">
       <strong>Scenario 1: Create staff user</strong><br>
-      <strong>Given that</strong> I am an administrator, <strong>when</strong> I create a user from the mobile app, <strong>then</strong> I can assign specific permissions such as housekeeping, reception, or maintenance.<br>
-      <strong>Scenario 2: Modify permissions</strong><br>
-      <strong>Given that</strong> there is a registered user, <strong>when</strong> I update their permissions from my mobile device, <strong>then</strong> their access rights are modified immediately.<br>
+      <strong>Given that</strong> I am an administrator, <strong>when</strong> I create a staff user for my own hotel from the application, <strong>then</strong> I assign them a role: reception, housekeeping, or maintenance.<br>
+      <strong>Scenario 2: Change role</strong><br>
+      <strong>Given that</strong> there is a registered staff user, <strong>when</strong> I change their role from the application, <strong>then</strong> the change takes effect immediately on their next request.<br>
       <strong>Scenario 3: Deactivate user</strong><br>
-      <strong>Given that</strong> I need to deactivate a user, <strong>when</strong> I perform the action from the app, <strong>then</strong> the user loses access but their history is preserved.<br>
+      <strong>Given that</strong> I need to deactivate a user, <strong>when</strong> I perform the action from the application, <strong>then</strong> the user loses access but their history is preserved.<br>
       <strong>Scenario 4: Access audit</strong><br>
-      <strong>Given that</strong> I want to review activity, <strong>when</strong> I access the history from the app, <strong>then</strong> I can view the date, time, user, and action performed.
+      <strong>Given that</strong> I want to review activity, <strong>when</strong> I access the history from the application, <strong>then</strong> I can view the date, time, user, action performed, and IP address.
     </td>
     <td>EP-01</td>
   </tr>
@@ -138,7 +142,7 @@ Segmento 2: Huéspedes de Hoteles Boutique
   <tr>
     <td>US-04</td>
     <td>Password recovery</td>
-    <td class="user-story-desc"><strong>As a</strong> user, <strong>I want</strong> to recover my password from the mobile application through my email <strong>so that</strong> I can regain access to my account.</td>
+    <td class="user-story-desc"><strong>As a</strong> user, <strong>I want</strong> to recover my password from the application through my email <strong>so that</strong> I can regain access to my account.</td>
     <td class="acceptance-criteria">
       <strong>Scenario 1: Valid request</strong><br>
       <strong>Given that</strong> I request password recovery with a registered email, <strong>when</strong> I send the request, <strong>then</strong> I receive a reset link by email.<br>
@@ -172,16 +176,16 @@ Segmento 2: Huéspedes de Hoteles Boutique
   <tr>
     <td>US-06</td>
     <td>Room and status management</td>
-    <td class="user-story-desc"><strong>As an</strong> administrator, <strong>I want</strong> to manage room statuses from the mobile application <strong>so that</strong> I can optimize the hotel’s daily operations in real time.</td>
+    <td class="user-story-desc"><strong>As an</strong> administrator, <strong>I want</strong> to manage room statuses from the application <strong>so that</strong> I can keep the hotel’s daily operations up to date.</td>
     <td class="acceptance-criteria">
       <strong>Scenario 1: Change room status</strong><br>
-      <strong>Given that</strong> I select a room from the app, <strong>when</strong> I change its status to available, occupied, cleaning, or maintenance, <strong>then</strong> the system updates it immediately and notifies the corresponding staff.<br>
-      <strong>Scenario 2: Mobile room map view</strong><br>
-      <strong>Given that</strong> I access the room map from my phone, <strong>when</strong> the view loads, <strong>then</strong> I can see all statuses with color codes and make quick changes.<br>
+      <strong>Given that</strong> I select a room from the application, <strong>when</strong> I change its status to available, occupied, cleaning, or maintenance, <strong>then</strong> the system updates it immediately and notifies the corresponding staff of that hotel by email (cleaning to housekeeping, maintenance to maintenance).<br>
+      <strong>Scenario 2: Room map view</strong><br>
+      <strong>Given that</strong> I access the room map from the application, <strong>when</strong> the view loads, <strong>then</strong> I can see all statuses with color codes and make quick changes.<br>
       <strong>Scenario 3: Change history</strong><br>
-      <strong>Given that</strong> I need to review modifications, <strong>when</strong> I check the history from the app, <strong>then</strong> I see the date, time, and user responsible for each change.<br>
+      <strong>Given that</strong> I need to review modifications, <strong>when</strong> I check the history from the application, <strong>then</strong> I see the date, time, and user responsible for each change.<br>
       <strong>Scenario 4: Automatic alerts</strong><br>
-      <strong>Given that</strong> a room remains in maintenance for more than 24 hours, <strong>when</strong> that time is reached, <strong>then</strong> I receive an automatic alert on my mobile device.
+      <strong>Given that</strong> a room remains in maintenance for more than 24 hours, <strong>when</strong> that time is reached, <strong>then</strong> I receive an automatic email alert as administrator.
     </td>
     <td>EP-02</td>
   </tr>
@@ -189,16 +193,20 @@ Segmento 2: Huéspedes de Hoteles Boutique
   <tr>
     <td>US-07</td>
     <td>Centralized reservation management</td>
-    <td class="user-story-desc"><strong>As an</strong> administrator, <strong>I want</strong> to manage all reservations from the mobile application <strong>so that</strong> I can avoid overbooking and optimize hotel occupancy.</td>
+    <td class="user-story-desc"><strong>As an</strong> administrator, <strong>I want</strong> to manage all reservations from the application <strong>so that</strong> I can avoid overbooking and optimize hotel occupancy.</td>
     <td class="acceptance-criteria">
-      <strong>Scenario 1: Mobile calendar view</strong><br>
-      <strong>Given that</strong> I enter the reservations section from the app, <strong>when</strong> I select the calendar view, <strong>then</strong> I can see all reservations organized by date with key information.<br>
+      <strong>Scenario 1: Calendar view</strong><br>
+      <strong>Given that</strong> I enter the reservations section from the application, <strong>when</strong> I select the calendar view, <strong>then</strong> I can see all reservations organized by date with key information.<br>
       <strong>Scenario 2: Create manual reservation</strong><br>
-      <strong>Given that</strong> I receive a reservation by phone, <strong>when</strong> I enter it from the mobile app, <strong>then</strong> the system validates availability and confirms it.<br>
+      <strong>Given that</strong> the staff receives a reservation by phone or from a walk-in guest, <strong>when</strong> they register it from the application, <strong>then</strong> the system validates availability and creates it in “pending payment” status.<br>
       <strong>Scenario 3: Modify existing reservation</strong><br>
-      <strong>Given that</strong> I need to edit a reservation, <strong>when</strong> I make changes from my phone, <strong>then</strong> the system validates availability and notifies the guest.<br>
+      <strong>Given that</strong> I need to edit a reservation, <strong>when</strong> I make changes from the application, <strong>then</strong> the system validates availability and notifies the guest.<br>
       <strong>Scenario 4: Cancellation with policies</strong><br>
-      <strong>Given that</strong> a reservation is canceled, <strong>when</strong> I process the cancellation from the app, <strong>then</strong> the corresponding policies are applied and the room is released.
+      <strong>Given that</strong> a reservation is pending payment or confirmed and the check-in day has not arrived, <strong>when</strong> I process the cancellation from the application, <strong>then</strong> the room is released, the guest is notified, and a paid reservation is marked as refunded; reservations in any other status, or on or after the check-in day, cannot be cancelled.<br>
+      <strong>Scenario 5: Payment registration</strong><br>
+      <strong>Given that</strong> the guest paid by Yape, Plin, bank transfer, or cash or card at the front desk, <strong>when</strong> the staff registers the payment with the method and the operation number, <strong>then</strong> the reservation is confirmed and the guest receives a confirmation email (the amount is calculated by the system).<br>
+      <strong>Scenario 6: Unpaid booking expiration</strong><br>
+      <strong>Given that</strong> a reservation has been pending payment for more than 24 hours, <strong>when</strong> the deadline passes, <strong>then</strong> it is automatically cancelled, the room is released, and the guest is notified.
     </td>
     <td>EP-02</td>
   </tr>
@@ -206,16 +214,16 @@ Segmento 2: Huéspedes de Hoteles Boutique
   <tr>
     <td>US-08</td>
     <td>Automated digital check-in</td>
-    <td class="user-story-desc"><strong>As an</strong> administrator and guest, <strong>I want</strong> check-in to be completed digitally from the mobile application in less than 3 minutes <strong>so that</strong> the arrival experience is improved.</td>
+    <td class="user-story-desc"><strong>As a</strong> guest, <strong>I want</strong> to complete my check-in digitally from the application in less than 3 minutes <strong>so that</strong> my arrival experience is faster and simpler.</td>
     <td class="acceptance-criteria">
       <strong>Scenario 1: Successful guest check-in</strong><br>
-      <strong>Given that</strong> the guest starts check-in from the app, <strong>when</strong> they complete their data and confirm, <strong>then</strong> they receive digital access to their room and the corresponding code.<br>
+      <strong>Given that</strong> I have a confirmed booking and it is the check-in day, <strong>when</strong> I complete my data and confirm from the application, <strong>then</strong> I receive a unique room access code valid until check-out and the room is marked as occupied.<br>
       <strong>Scenario 2: Document validation</strong><br>
-      <strong>Given that</strong> the guest uploads their documents from their phone, <strong>when</strong> the system processes them, <strong>then</strong> it automatically validates them and approves the check-in.<br>
+      <strong>Given that</strong> I enter my document type (DNI, passport, or foreign resident card) and number and upload an image or PDF of it (jpg, png, or pdf up to 5 MB), <strong>when</strong> the system processes it, <strong>then</strong> it automatically validates the document number format and the file, and approves the check-in or shows me what must be corrected.<br>
       <strong>Scenario 3: Assisted check-in</strong><br>
-      <strong>Given that</strong> the guest has difficulties, <strong>when</strong> they request help from the application, <strong>then</strong> staff receive a notification to assist them.<br>
+      <strong>Given that</strong> I have difficulties, <strong>when</strong> I request help from the application, <strong>then</strong> reception receives a notification to assist me.<br>
       <strong>Scenario 4: Automatic notification</strong><br>
-      <strong>Given that</strong> check-in is completed, <strong>when</strong> it is confirmed, <strong>then</strong> housekeeping receives the notification and the administrator sees the updated status.
+      <strong>Given that</strong> my check-in is completed, <strong>when</strong> it is confirmed, <strong>then</strong> housekeeping receives an email notification and the administrator sees the booking as checked in and the room as occupied.
     </td>
     <td>EP-02</td>
   </tr>
@@ -529,16 +537,16 @@ Segmento 2: Huéspedes de Hoteles Boutique
   <tr>
     <td>US-27</td>
     <td>Demo request and commercial contact</td>
-    <td class="user-story-desc"><strong>As an</strong> interested visitor, <strong>I want</strong> to request a demo and contact the sales team from my mobile device in a simple and fast way <strong>so that</strong> I can explore Smart Stay.</td>
+    <td class="user-story-desc"><strong>As an</strong> interested visitor, <strong>I want</strong> to request a demo and contact the sales team from any device in a simple and fast way <strong>so that</strong> I can explore Smart Stay.</td>
     <td class="acceptance-criteria">
       <strong>Scenario 1: Demo form</strong><br>
-      <strong>Given that</strong> I want to see a demonstration, <strong>when</strong> I complete the form from mobile, <strong>then</strong> I receive immediate confirmation.<br>
+      <strong>Given that</strong> I want to see a demonstration, <strong>when</strong> I complete the form on the landing page from any device, <strong>then</strong> I receive immediate confirmation.<br>
       <strong>Scenario 2: Automatic scheduling</strong><br>
       <strong>Given that</strong> I submit the request, <strong>when</strong> the registration is completed, <strong>then</strong> I can schedule an appointment in the available calendar.<br>
       <strong>Scenario 3: Accessible contact information</strong><br>
-      <strong>Given that</strong> I prefer direct contact, <strong>when</strong> I review the commercial section from mobile, <strong>then</strong> I find the team’s phone number, email, and WhatsApp.<br>
+      <strong>Given that</strong> I prefer direct contact, <strong>when</strong> I review the commercial section from any device, <strong>then</strong> I find the team’s phone number, email, and WhatsApp.<br>
       <strong>Scenario 4: Automatic follow-up</strong><br>
-      <strong>Given that</strong> I requested information, <strong>when</strong> some time passes without a response, <strong>then</strong> I receive a reminder or automatic follow-up.
+      <strong>Given that</strong> I requested information, <strong>when</strong> 48 hours pass without the sales team contacting me, <strong>then</strong> I receive an automatic follow-up email.
     </td>
     <td>EP-06</td>
   </tr>
@@ -942,7 +950,7 @@ Segmento 2: Huéspedes de Hoteles Boutique
       <strong>Scenario 1: Search available rooms</strong><br>
       <strong>Given that</strong> I select a hotel and my check-in and check-out dates, <strong>when</strong> I search, <strong>then</strong> I see only the rooms available for the whole stay with their price per night and the total for the stay.<br>
       <strong>Scenario 2: Successful booking</strong><br>
-      <strong>Given that</strong> I choose an available room, <strong>when</strong> I confirm the booking, <strong>then</strong> the booking is created with a unique code and I receive a confirmation email.<br>
+      <strong>Given that</strong> I choose an available room, <strong>when</strong> I confirm the booking, <strong>then</strong> the booking is created in “pending payment” status with a unique code, and I receive an email with the total amount, the payment instructions (Yape, Plin, or bank transfer), and a 24-hour payment deadline.<br>
       <strong>Scenario 3: Room no longer available</strong><br>
       <strong>Given that</strong> another guest booked the same room for overlapping dates, <strong>when</strong> I try to confirm, <strong>then</strong> the system rejects the booking with a clear message and suggests searching again.<br>
       <strong>Scenario 4: Invalid dates</strong><br>
@@ -1007,7 +1015,7 @@ Segmento 2: Huéspedes de Hoteles Boutique
       <td>4</td>
       <td>US-03</td>
       <td>Profile and role management</td>
-      <td><strong>As</strong> an administrator, <strong>I want</strong> to manage users, assign roles and permissions <strong>to</strong> control access to different functionalities.</td>
+      <td><strong>As</strong> an administrator, <strong>I want</strong> to manage users and assign them roles (reception, housekeeping or maintenance) <strong>to</strong> control access to different functionalities.</td>
       <td>5</td>
     </tr>
     <tr>
@@ -1028,15 +1036,15 @@ Segmento 2: Huéspedes de Hoteles Boutique
       <td>7</td>
       <td>US-06</td>
       <td>Room and status management</td>
-      <td><strong>As</strong> an administrator, <strong>I want</strong> to manage room statuses <strong>to</strong> optimize the hotel's daily operations in real time.</td>
+      <td><strong>As</strong> an administrator, <strong>I want</strong> to manage room statuses <strong>to</strong> keep the hotel's daily operations up to date.</td>
       <td>5</td>
     </tr>
     <tr>
       <td>8</td>
       <td>US-08</td>
       <td>Automated digital check-in</td>
-      <td><strong>As</strong> an administrator and guest, <strong>I want</strong> check-in to be completed digitally in less than 3 minutes <strong>to</strong> improve the arrival experience.</td>
-      <td>5</td>
+      <td><strong>As</strong> a guest, <strong>I want</strong> to complete my check-in digitally in less than 3 minutes <strong>to</strong> make my arrival faster and simpler.</td>
+      <td>8</td>
     </tr>
     <tr>
       <td>9</td>
