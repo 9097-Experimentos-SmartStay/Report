@@ -1,0 +1,49 @@
+﻿@startuml BillingComponentClassDiagram
+' Estilo
+skinparam classAttributeIconSize 0
+skinparam roundcorner 10
+
+package "Billing Component" {
+
+    class BillingService {
+        - paymentRepository: IPaymentRepository
+        - paymentGateway: IPaymentGatewayAdapter
+        - authService: IAuthServiceAdapter
+        + processPayment(bookingId: string, paymentDetails: PaymentDetails): Payment
+        + issueInvoice(paymentId: string): Invoice
+    }
+
+    interface IPaymentRepository {
+        + save(payment: Payment): Payment
+    }
+
+    class Payment {
+        - id: string
+        - bookingId: string
+        - amount: float
+        - status: PaymentStatus
+    }
+    class Invoice {
+    - id: string;
+    - paymentId: string;
+    }
+    enum PaymentStatus {
+    PENDING, COMPLETED, FAILED, REFUNDED
+    }
+
+    ' --- Adaptadores para otros componentes/sistemas ---
+    interface IPaymentGatewayAdapter {
+    + executePayment(details): boolean
+    }
+    interface IAuthServiceAdapter {
+    + checkPermissions(...): boolean
+    }
+
+    ' --- Relaciones ---
+    BillingService "1" -> "1" IPaymentRepository : uses
+    BillingService "1" --> "1" IPaymentGatewayAdapter
+    BillingService "1" --> "1" IAuthServiceAdapter
+    Payment "1" -- "1" Invoice : generates
+    Payment -- PaymentStatus
+}
+@enduml

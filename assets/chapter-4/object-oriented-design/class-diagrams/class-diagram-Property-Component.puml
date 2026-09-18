@@ -1,0 +1,64 @@
+﻿@startuml PropertyComponentClassDiagram
+' Style
+skinparam classAttributeIconSize 0
+skinparam roundcorner 10
+
+package "Properties & Operations Component" {
+
+    class PropertyService {
+        - propertyRepository: IPropertyRepository
+        - iotCommandPublisher: IIoTCommandPublisher
+        + registerProperty(hostId: string, details: PropertyDetails): Property
+        + updateRoomStatus(roomId: string, newStatus: RoomStatus): void
+        + checkAvailability(propertyId: string, dates: DateRange): boolean
+        + sendIoTCommand(command: IoTCommand): void
+    }
+
+    interface IPropertyRepository {
+        + findById(id: string): Property
+        + findRoomsByProperty(propertyId: string): Room[]
+        + save(property: Property): Property
+        + updateRoom(room: Room): void
+    }
+
+    ' --- Domain Entities ---
+    class Property {
+        - id: string
+        - hostId: string
+        - name: string
+        - location: string
+        - rooms: Room[]
+    }
+
+    class Room {
+        - id: string
+        - roomNumber: string
+        - type: string
+        - status: RoomStatus
+    }
+
+    enum RoomStatus {
+        AVAILABLE
+        OCCUPIED
+        CLEANING
+        OUT_OF_SERVICE
+    }
+
+    ' --- Interface for communicating with the IoT Gateway ---
+    interface IIoTCommandPublisher {
+        + publish(command: IoTCommand): void
+    }
+
+    note right of IIoTCommandPublisher
+      Abstraction for sending a message
+      to a queue (e.g., AMQP/MQTT) that
+      the IoT Gateway will listen to.
+    end note
+
+    ' --- Relationships ---
+    PropertyService "1" -> "1" IPropertyRepository : uses
+    PropertyService "1" --> "1" IIoTCommandPublisher : uses
+    Property "1" *-- "1..*" Room : contains
+    Room -- RoomStatus
+}
+@enduml

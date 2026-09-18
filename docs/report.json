@@ -1,0 +1,25 @@
+{
+  "cover": "docs/00-cover.md",
+  "info": "docs/01-report-info.md",
+  "student_outcome": "docs/02-student-outcome.md",
+  "sections": [
+    {
+      "file": "docs/03-chapter-1.md"
+    },
+    {
+      "file": "docs/04-chapter-2.md"
+    },
+    {
+      "file": "docs/05-chapter-3.md"
+    },
+    {
+      "file": "docs/06-chapter-4.md"
+    },
+    {
+      "file": "docs/07-chapter-5.md"
+    },
+    {
+      "file": "docs/99-annexes.md"
+    }
+  ]
+}
