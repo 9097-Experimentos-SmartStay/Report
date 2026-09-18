@@ -495,7 +495,7 @@ Segmento 2: Huéspedes de Hoteles Boutique
       <strong>Scenario 3: Intuitive mobile navigation</strong><br>
       <strong>Given that</strong> I access the landing page, <strong>when</strong> it loads on my phone, <strong>then</strong> I identify my profile and reach relevant information in less than 3 clicks.<br>
       <strong>Scenario 4: Clear calls to action</strong><br>
-      <strong>Given that</strong> I am interested in continuing, <strong>when</strong> I review the page from mobile, <strong>then</strong> I find clear buttons to request a demo, contact sales, or download the app.
+      <strong>Given that</strong> I am interested in continuing, <strong>when</strong> I review the page from mobile, <strong>then</strong> I find clear buttons to request a demo, contact sales, or access the application.
     </td>
     <td>EP-06</td>
   </tr>
@@ -523,7 +523,7 @@ Segmento 2: Huéspedes de Hoteles Boutique
     <td class="user-story-desc"><strong>As an</strong> interested visitor, <strong>I want</strong> to see success stories and testimonials from the mobile application or mobile site <strong>so that</strong> I can validate the effectiveness of the solution.</td>
     <td class="acceptance-criteria">
       <strong>Scenario 1: Video testimonials</strong><br>
-      <strong>Given that</strong> I access the section from my phone, <strong>when</strong> I browse it, <strong>then</strong> I can watch videos of real administrators sharing their experience.<br>
+      <strong>Given that</strong> I access the section from my phone, <strong>when</strong> I browse it, <strong>then</strong> I can watch a video testimonial about the experience of using Smart Stay.<br>
       <strong>Scenario 2: Improvement metrics</strong><br>
       <strong>Given that</strong> I review a success story, <strong>when</strong> I open its details, <strong>then</strong> I see concrete data on cost reduction, satisfaction improvement, and time savings.<br>
       <strong>Scenario 3: Filter by hotel type</strong><br>
@@ -1071,10 +1071,31 @@ Segmento 2: Huéspedes de Hoteles Boutique
     </tr>
     <tr>
       <td>10</td>
+      <td>US-24</td>
+      <td>Segmented landing page</td>
+      <td><strong>As</strong> a visitor, <strong>I want</strong> to find specific information according to my profile (hotel administrator or guest) <strong>to</strong> understand Smart Stay's value.</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>US-26</td>
+      <td>Success stories and testimonials</td>
+      <td><strong>As</strong> an interested visitor, <strong>I want</strong> to see success stories and testimonials from hotels using Smart Stay <strong>to</strong> validate solution effectiveness.</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>12</td>
       <td>US-27</td>
       <td>Demo request and commercial contact</td>
       <td><strong>As</strong> an interested visitor, <strong>I want</strong> to request a demonstration and contact the sales team easily and quickly <strong>to</strong> explore Smart Stay solutions.</td>
       <td>3</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>US-28</td>
+      <td>Corporate information and values</td>
+      <td><strong>As</strong> a visitor, <strong>I want</strong> to know Smart Stay's mission, vision and values <strong>to</strong> understand the company's philosophy.</td>
+      <td>2</td>
     </tr>
   </tbody>
 </table>
