@@ -974,6 +974,22 @@ Segmento 2: Huéspedes de Hoteles Boutique
     </td>
     <td>EP-01</td>
   </tr>
+  <tr>
+    <td>US-53</td>
+    <td>Hotel and room setup</td>
+    <td class="user-story-desc"><strong>As an</strong> administrator, <strong>I want</strong> to register my hotel and set up its room types and rooms with their prices from the application <strong>so that</strong> guests can find and book them.</td>
+    <td class="acceptance-criteria">
+      <strong>Scenario 1: Register my hotel</strong><br>
+      <strong>Given that</strong> I am an administrator without a hotel, <strong>when</strong> I register my hotel with its name, address, city, country, type and description, <strong>then</strong> the hotel is created and assigned to me; <strong>and when</strong> I already manage a hotel, <strong>then</strong> the system rejects a second one with a clear message.<br>
+      <strong>Scenario 2: Create room types</strong><br>
+      <strong>Given that</strong> my hotel is registered, <strong>when</strong> I create a room type with its name and description, <strong>then</strong> it becomes available to classify my rooms.<br>
+      <strong>Scenario 3: Create rooms with price</strong><br>
+      <strong>Given that</strong> I have room types, <strong>when</strong> I create a room with a number that is unique in my hotel, its type and a price per night greater than zero, <strong>then</strong> the room is created with the "available" status; <strong>and when</strong> a required field is missing, the number is repeated or the price is not valid, <strong>then</strong> I see which field must be corrected and nothing is saved.<br>
+      <strong>Scenario 4: Edit or delete rooms</strong><br>
+      <strong>Given that</strong> a room exists, <strong>when</strong> I change its price or data, <strong>then</strong> new bookings use the new price while existing bookings keep the price they were created with; <strong>and when</strong> I try to delete a room with pending or confirmed bookings, <strong>then</strong> the system prevents it and explains why.
+    </td>
+    <td>EP-02</td>
+  </tr>
 </table>
 
 
@@ -1013,24 +1029,24 @@ Segmento 2: Huéspedes de Hoteles Boutique
     </tr>
     <tr>
       <td>4</td>
+      <td>US-52</td>
+      <td>Two-factor authentication for staff</td>
+      <td><strong>As</strong> a hotel staff member, <strong>I want</strong> to protect my account with a second authentication factor <strong>to</strong> prevent access to hotel operations with only my password.</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>5</td>
       <td>US-03</td>
       <td>Profile and role management</td>
       <td><strong>As</strong> an administrator, <strong>I want</strong> to manage users and assign them roles (reception, housekeeping or maintenance) <strong>to</strong> control access to different functionalities.</td>
       <td>5</td>
     </tr>
     <tr>
-      <td>5</td>
-      <td>US-51</td>
-      <td>Room booking by the guest</td>
-      <td><strong>As</strong> a guest, <strong>I want</strong> to search for available rooms by dates and book one <strong>to</strong> secure my stay without calling the hotel.</td>
-      <td>5</td>
-    </tr>
-    <tr>
       <td>6</td>
-      <td>US-07</td>
-      <td>Centralized reservation management</td>
-      <td><strong>As</strong> an administrator, <strong>I want</strong> to manage all reservations <strong>to</strong> avoid overbooking and optimize hotel occupancy.</td>
-      <td>8</td>
+      <td>US-53</td>
+      <td>Hotel and room setup</td>
+      <td><strong>As</strong> an administrator, <strong>I want</strong> to register my hotel and set up its room types and rooms with prices <strong>to</strong> let guests find and book them.</td>
+      <td>5</td>
     </tr>
     <tr>
       <td>7</td>
@@ -1041,17 +1057,17 @@ Segmento 2: Huéspedes de Hoteles Boutique
     </tr>
     <tr>
       <td>8</td>
-      <td>US-08</td>
-      <td>Automated digital check-in</td>
-      <td><strong>As</strong> a guest, <strong>I want</strong> to complete my check-in digitally in less than 3 minutes <strong>to</strong> make my arrival faster and simpler.</td>
-      <td>8</td>
+      <td>US-51</td>
+      <td>Room booking by the guest</td>
+      <td><strong>As</strong> a guest, <strong>I want</strong> to search for available rooms by dates and book one <strong>to</strong> secure my stay without calling the hotel.</td>
+      <td>5</td>
     </tr>
     <tr>
       <td>9</td>
-      <td>US-52</td>
-      <td>Two-factor authentication for staff</td>
-      <td><strong>As</strong> a hotel staff member, <strong>I want</strong> to protect my account with a second authentication factor <strong>to</strong> prevent access to hotel operations with only my password.</td>
-      <td>5</td>
+      <td>US-07</td>
+      <td>Centralized reservation management</td>
+      <td><strong>As</strong> an administrator, <strong>I want</strong> to manage all reservations <strong>to</strong> avoid overbooking and optimize hotel occupancy.</td>
+      <td>8</td>
     </tr>
     <tr>
       <td>10</td>
