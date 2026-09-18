@@ -2245,11 +2245,64 @@ Uso de color:
 
 #### 4.1.3.1. iOS Mobile Style Guidelines
 
-**Pendiente:** lineamientos de estilo específicos para iOS (Human Interface Guidelines). No existe una fuente equivalente en los reportes de referencia.
+Los lineamientos para una futura versión iOS de Smart Stay adaptan la identidad de marca definida en 4.1.1 a las **Human Interface Guidelines (HIG)** de Apple, priorizando consistencia con los patrones nativos de la plataforma.
+
+**Tipografía**
+- Fuente del sistema: **San Francisco (SF Pro)**, con soporte de **Dynamic Type** para accesibilidad.
+- Jerarquía mapeada a los estilos nativos de iOS: Large Title → títulos de sección, Headline → subtítulos, Body → texto de contenido, Caption → notas secundarias.
+
+**Espaciado y grilla**
+- Grilla base de **8pt**, con márgenes laterales de 16pt siguiendo el estándar de Safe Area.
+- Uso de `List`/`Form` nativos para pantallas de configuración y perfil.
+
+**Color**
+- Azul Marino (#2C3E91) como *tint color* primario (elementos interactivos, botones).
+- Naranja Suave (#E67E22) como color de acento para llamadas a la acción.
+- Soporte de **Modo Claro/Oscuro** mediante colores semánticos del sistema (`systemBackground`, `label`) en vez de valores fijos, para que la app respete el modo elegido por el usuario.
+
+**Navegación y componentes**
+- **Tab Bar** inferior con las secciones principales (Home, Reservas, Servicios, Perfil).
+- Navegación jerárquica con `UINavigationController` y gesto nativo de *swipe-back*.
+- Iconografía basada en **SF Symbols** para mantener consistencia con el resto del sistema operativo.
+- Alertas y confirmaciones mediante `UIAlertController` (Alerts / Action Sheets) nativos.
+
+**Accesibilidad**
+- Compatibilidad con **VoiceOver** y tamaños de fuente dinámicos.
+- Contraste mínimo AA en todos los textos sobre fondo de color.
+
+![ios-style-guidelines-mockup.png](assets/chapter-4/style-guidelines/mobile/ios-style-guidelines.png)
+
+*Aplicación de los lineamientos en tres pantallas clave: Home (resumen de ocupación y accesos rápidos), Login (branding centrado con opción "Continue with Apple") y Profile (lista agrupada nativa de iOS), todas con Tab Bar inferior y la paleta de marca Smart Stay.*
 
 #### 4.1.3.2. Android Mobile Style Guidelines
 
-**Pendiente:** lineamientos de estilo específicos para Android (Material Design). No existe una fuente equivalente en los reportes de referencia.
+Los lineamientos para Android adaptan la identidad de marca a **Material Design 3**, aprovechando los componentes y el sistema de theming de Material para Android.
+
+**Tipografía**
+- Fuente del sistema: **Roboto**, siguiendo la escala tipográfica de Material (Display, Headline, Title, Body, Label).
+- Jerarquía consistente con la definida en 4.1.1, reemplazando Cocomat Pro por Roboto Medium/Bold en encabezados nativos.
+
+**Espaciado y elevación**
+- Grilla base de **8dp**.
+- Uso de **elevation** (sombras Material) para diferenciar jerarquía entre Cards, Bottom Sheets y Dialogs.
+
+**Color**
+- Esquema de color basado en **Material color roles**: `primary` (#2C3E91), `secondary` (#E67E22), `surface` (#F5F5DC), con variantes automáticas para modo oscuro (**Material You / Dynamic Color**).
+- Uso de `ColorStateList` para estados (pressed, disabled, selected).
+
+**Navegación y componentes**
+- **Bottom Navigation Bar** para las secciones principales, consistente con el patrón usado en iOS para mantener paridad de experiencia multiplataforma.
+- **Floating Action Button (FAB)** en naranja para la acción principal de cada rol (ej. "Nueva reserva" en Huésped, "Nueva tarea" en Staff).
+- Componentes Material estándar: `MaterialButton`, `MaterialCardView` (bordes redondeados 12dp, consistente con Web), `Snackbar` para feedback, efecto **ripple** en toda superficie interactiva.
+- Iconografía basada en **Material Symbols**.
+
+**Accesibilidad**
+- Soporte de **TalkBack** y escalado de fuente del sistema.
+- Áreas táctiles mínimas de 48dp según las guías de accesibilidad de Android.
+
+![android-style-guidelines-mockup.png](assets/chapter-4/style-guidelines/mobile/android-style-guidelines.png)
+
+*Aplicación de los lineamientos en tres pantallas clave: Home (con Floating Action Button "New Booking" en naranja), Login (con ilustración de fondo y opción "Continue with Google") y Bookings (Cards Material con estados de reserva por color), todas con Bottom Navigation y componentes Material 3.*
 
 ## 4.2. Information Architecture
 
@@ -3043,7 +3096,18 @@ https://www.figma.com/make/lML4HR5vLsAGMUq3CoqvcS/Minimalist-Photo-Portfolio?t=7
 
 ### 4.5.2. iOS Mobile Applications Prototyping
 
-**Pendiente:** prototipo navegable de iOS y video de navegación (Anexo C, `...-navigation-sprint-<n>`). No existe una fuente equivalente en los reportes de referencia.
+El desarrollo nativo de Smart Stay se priorizó en **Android (Kotlin)** para esta entrega, por lo que aún no se cuenta con una compilación nativa para iOS. No obstante, se diseñó el flujo completo de pantallas en estilo iOS (Tab Bar, Navigation Bar, SF Symbols), siguiendo los lineamientos de la sección 4.1.3.1, para dejar validado el recorrido de huésped antes de una eventual implementación nativa:
+
+1. **Welcome** — pantalla de bienvenida con branding Smart Stay.
+2. **Login / Register** — inicio de sesión con opción "Continue with Apple".
+3. **Home** — resumen de la habitación activa, temperatura, Wi-Fi y accesos rápidos (pedir comida, housekeeping, room service, ayuda).
+4. **Room Control** — control IoT de la habitación: luces, temperatura, aire acondicionado, cortinas y cerradura de la puerta.
+5. **Services** — catálogo de servicios del hotel (restaurante, spa, piscina, parking, housekeeping, lavandería, room service, emergencias).
+6. **Profile** — datos de cuenta, reservas, métodos de pago, notificaciones y soporte.
+
+![ios-prototype-mockup.png](assets/chapter-4/mobile/prototyping/ios/ios-prototype-screens.png)
+
+**Pendiente:** convertir este flujo en un prototipo interactivo navegable en Figma (con transiciones clicables entre pantallas) y grabar el video de navegación correspondiente (Anexo C).
 
 ## 4.6. Web Applications UX/UI Design
 
@@ -3548,7 +3612,9 @@ El prototipo permite simular la navegación entre todas las secciones principale
 En este caso presentaremos el prototipo del app principal que es del modo administrador:
 [https://shorturl.at/7UPcY](https://www.figma.com/proto/RqI67mkRZ1AwuQNTcuGBvA/Sin-t%C3%ADtulo?node-id=48-3793&p=f&t=4u5X36WGvtb7jWe4-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1)
 
-**Pendiente:** video de navegación del prototipo web a Microsoft Stream según Anexo C.
+**Recorrido documentado del prototipo:** el administrador ingresa por el **Login**, aterriza en el **Dashboard** con el resumen de reservas y ocupación, navega hacia **Hoteles y Habitaciones** para gestionar el inventario, hacia **Reservas y Pagos** para revisar transacciones, hacia **Servicios/Productos y Reseñas** para administrar el catálogo y feedback de huéspedes, y hacia **Soporte** para atender incidencias del staff. Cada transición reutiliza los componentes definidos en los wireframes y mock-ups de la sección 4.6, manteniendo consistencia visual entre pantallas.
+
+**Pendiente:** grabar y publicar el video de navegación del prototipo web (Anexo C); el recorrido descrito arriba sirve de guion base para esa grabación.
 
 ## 4.8. Domain-Driven Software Architecture
 
@@ -3655,7 +3721,56 @@ Este diagrama detalla la arquitectura interna del componente técnico Gateway Io
 
 ### 4.9.2. Class Dictionary
 
-**Pendiente:** diccionario de clases del diseño OO.
+A continuación se documentan las clases principales de cada componente del diseño orientado a objetos (sección 4.9.1), detallando su tipo, atributos/operaciones clave y responsabilidad dentro del sistema.
+
+**Componente de Autenticación (Auth)**
+
+| Clase | Tipo | Atributos / Operaciones principales | Responsabilidad |
+| :--- | :--- | :--- | :--- |
+| `User` | Clase base (abstracta) | `id`, `name`, `email`, `passwordHash`, `role` | Representa la identidad común de cualquier usuario del sistema y expone el contrato de autenticación. |
+| `Guest` | Subclase de `User` | Hereda de `User` | Especializa al usuario huésped, habilitando reservas y reseñas. |
+| `Host` | Subclase de `User` | Hereda de `User` | Especializa al usuario propietario/anfitrión, habilitando la gestión de propiedades. |
+| `HotelStaff` | Subclase de `User` | Hereda de `User` | Especializa al usuario staff operativo, habilitando la gestión de tareas del hotel. |
+| `AuthService` | Servicio de dominio | `register()`, `login()`, `validateToken()` | Contiene la lógica de negocio para registro, autenticación y validación de sesión. |
+| `IUserRepository` | Interfaz | `findById()`, `findByEmail()`, `save()` | Abstrae la persistencia de usuarios, desacoplando `AuthService` del motor de base de datos. |
+
+**Componente de Propiedades y Operaciones (Property)**
+
+| Clase | Tipo | Atributos / Operaciones principales | Responsabilidad |
+| :--- | :--- | :--- | :--- |
+| `Property` | Entidad | `id`, `hostId`, `name`, `location` | Representa el hotel/propiedad registrado por un anfitrión. |
+| `Room` | Entidad | `id`, `propertyId`, `roomNumber`, `type`, `status` | Representa una habitación del inventario y su disponibilidad. |
+| `PropertyService` | Servicio de dominio | `updateAvailability()`, `assignRoom()` | Gestiona el estado e inventario de propiedades y habitaciones. |
+| `IIoTCommandPublisher` | Interfaz | `publishCommand()` | Permite que el componente de propiedades emita comandos hacia el Gateway IoT. |
+
+**Componente de Reservas (Booking)**
+
+| Clase | Tipo | Atributos / Operaciones principales | Responsabilidad |
+| :--- | :--- | :--- | :--- |
+| `Booking` | Entidad | `id`, `guestId`, `propertyId`, `checkInDate`, `checkOutDate`, `status` | Representa una reserva realizada por un huésped. |
+| `Review` | Entidad | `id`, `bookingId`, `rating`, `comment` | Representa la calificación y comentario dejados tras una estadía. |
+| `BookingService` | Orquestador | `createBooking()`, `cancelBooking()` | Coordina la creación/cancelación de reservas validando disponibilidad y pago. |
+| `IPropertyServiceAdapter` | Interfaz (adaptador) | `checkAvailability()` | Consulta disponibilidad de habitaciones en el componente Property. |
+| `IBillingServiceAdapter` | Interfaz (adaptador) | `requestPayment()` | Solicita el procesamiento de pago al componente Billing. |
+
+**Componente de Facturación (Billing)**
+
+| Clase | Tipo | Atributos / Operaciones principales | Responsabilidad |
+| :--- | :--- | :--- | :--- |
+| `Payment` | Entidad | `id`, `bookingId`, `amount`, `status` | Representa un cobro asociado a una reserva. |
+| `Invoice` | Entidad | `id`, `paymentId` | Representa el comprobante generado tras un pago exitoso. |
+| `BillingService` | Orquestador | `processPayment()`, `generateInvoice()` | Orquesta el ciclo de pago y emisión de comprobantes. |
+| `IPaymentGatewayAdapter` | Interfaz (adaptador) | `charge()` | Se comunica con la pasarela de pagos externa. |
+| `IAuthServiceAdapter` | Interfaz (adaptador) | `verifyUser()` | Valida la identidad del usuario antes de autorizar el cobro. |
+
+**Componente Gateway IoT**
+
+| Clase | Tipo | Atributos / Operaciones principales | Responsabilidad |
+| :--- | :--- | :--- | :--- |
+| `MessageListener` | Componente técnico | `onMessage()` | Recibe las órdenes/eventos entrantes desde los dispositivos o servicios. |
+| `RulesEngine` | Componente técnico | `evaluate()` | Interpreta las órdenes recibidas y determina la acción a ejecutar. |
+| `IDeviceController` | Interfaz | `execute()` | Especializa la ejecución de la orden según el tipo de dispositivo IoT. |
+| `ICloudApiClient` | Interfaz | `sendToCloud()` | Comunica el Gateway con la plataforma en la nube del fabricante del dispositivo. |
 
 ## 4.10. Database Design
 
@@ -3677,7 +3792,9 @@ Relaciones: Todas las asociaciones y composiciones en los diagramas de clases se
 
 #### Database Diagrams
 
-![Edgerunners-Aplicaciones-Web_Physical_Export.png](assets/chapter-4/architecture/deployment/web-physical-export.png)
+![database-diagram.png](assets/chapter-4/database/database-diagram.png)
+
+El diagrama muestra las 10 entidades resultantes del mapeo: `users` como tabla base de la jerarquía de roles (`hotel_staff`, `hosts`, `guests`), `properties` y `rooms` para el inventario del hotel, `bookings` como tabla central de reservas, `payments` e `invoices` para el ciclo de facturación, y `reviews` para las calificaciones de huéspedes. Las relaciones reflejan las multiplicidades definidas en los diagramas de clases del apartado 4.9.
 
 ---
 
@@ -4045,7 +4162,7 @@ Se crean desde `main` para corregir problemas críticos en producción.
 ### 5.1.4. Software Deployment Configuration
 
 ### Landing Page Deployment
-La **Landing Page** fue desarrollada utilizando **HTML**, **CSS** y **JavaScript**, y se encuentra desplegada públicamente a través de **GitHub Pages**.  
+La **Landing Page** fue desarrollada utilizando **HTML**, **CSS** y **JavaScript**, y se encuentra desplegada públicamente a través de **Vercel**.  
 Para su publicación, se cumplieron los siguientes pasos:
 
 1. **Preparación del entorno:**  
@@ -4059,11 +4176,11 @@ Para su publicación, se cumplieron los siguientes pasos:
     - `languages.js` → archivo para gestionar los textos en distintos idiomas (español e inglés).
     - Carpeta `assets/images/` → para las imágenes utilizadas en el sitio.
 
-3. **Configuración en GitHub Pages:**
-    - Se accedió a **Settings > Pages** dentro del repositorio.
+3. **Configuración en Vercel:**
+    - Se importó el repositorio de la Landing Page directamente desde GitHub a **Vercel**.
     - Se seleccionó la rama **main** como fuente de publicación.
-    - Se configuró la carpeta raíz (`/`) como directorio base.
-    - Una vez completado el proceso, GitHub generó automáticamente la URL pública de la Landing Page.
+    - Se configuró la carpeta raíz (`/`) como directorio base del proyecto.
+    - Una vez completado el proceso, Vercel generó automáticamente la URL pública de la Landing Page.
 
 Además, se implementó un archivo `languages.js` que contiene los textos en español e inglés.  
 Este archivo es consumido por el script `main.js`, permitiendo el cambio de idioma dinámico en la interfaz.
@@ -4077,7 +4194,7 @@ Esto permite mantener el servicio activo, escalable y sincronizado con el reposi
 
 ### Frontend Web Application
 La **aplicación web frontend** fue construida con **Vue.js** y **PrimeVue**, integrando una interfaz moderna e interactiva.  
-El despliegue se llevó a cabo en **Render**, aprovechando su integración con GitHub para habilitar un flujo de despliegue automático.  
+El despliegue se llevó a cabo en **Vercel**, aprovechando su integración con GitHub para habilitar un flujo de despliegue automático.  
 Cada actualización en la rama `main` desencadena una nueva versión publicada en producción.
 
 
@@ -4085,13 +4202,14 @@ Cada actualización en la rama `main` desencadena una nueva versión publicada e
 El proyecto implementa un flujo automatizado de **Integración Continua y Despliegue Continuo (CI/CD)**, con el objetivo de mantener la coherencia entre los entornos de desarrollo y producción.
 
 - Todos los repositorios están conectados directamente a **GitHub**.
-- **Render** ejecuta el despliegue automático al detectarse *merges* en la rama `main`.
+- **Render** ejecuta el despliegue automático del backend, y **Vercel** el del frontend web y la landing page, al detectarse *merges* en la rama `main`.
 - Este proceso garantiza una actualización constante de los servicios y minimiza la intervención manual en las publicaciones.
 
-### Github Pages:
-![Github Pages](assets/chapter-5/deployment/github-pages.jpg)
+### Vercel (Landing Page):
+![Vercel Deployment](assets/chapter-5/deployment/github-pages.jpg)
+> ⚠️ Imagen pendiente de reemplazo: la captura actual corresponde a la configuración antigua de GitHub Pages, no al dashboard de Vercel.
 
-**La URL que nos entrega Github Pages para acceder a la landing page es la siguiente:**  
+**La URL pública de la landing page es la siguiente:**  
 [https://smartstay-movildev-landing.vercel.app/](https://smartstay-movildev-landing.vercel.app/)
 
 ---
@@ -4478,11 +4596,11 @@ Asimismo, durante el sprint se trabajó con la lógica de roles para diferenciar
 
 ##### 5.2.1.2.7. Software Deployment Evidence for Sprint Review
 
-A continuación, se presentan las evidencias del **despliegue de la Landing Page** de Smart Stay, desarrollada y publicada mediante **GitHub Pages**.
+A continuación, se presentan las evidencias del **despliegue de la Landing Page** de Smart Stay, desarrollada y publicada mediante **Vercel**.
 
 La landing page fue vinculada directamente con el repositorio del proyecto, permitiendo que la publicación se realice a partir de la rama **main**. De este modo, cada cambio validado en el repositorio puede reflejarse en la versión pública del sitio, asegurando consistencia entre el desarrollo y el entorno desplegado.
 
-Gracias a esta configuración, la página quedó disponible públicamente, confirmando el correcto funcionamiento del flujo de despliegue y la integración entre el repositorio y **GitHub Pages**.
+Gracias a esta configuración, la página quedó disponible públicamente, confirmando el correcto funcionamiento del flujo de despliegue y la integración entre el repositorio y **Vercel**.
 
 **URL de la Landing Page: https://smartstay-movildev-landing.vercel.app/ **
 
@@ -4687,7 +4805,7 @@ Además, se verificó que los servicios mantengan una estructura coherente en su
 
 Durante el Sprint 3 se realizó la validación final del despliegue de los componentes principales del proyecto SmartStay.
 
-En primer lugar, se verificó que la Landing Page se encuentre publicada correctamente mediante GitHub Pages. Esta página representa la presencia pública del producto y permite presentar la propuesta de valor de SmartStay a los usuarios interesados.
+En primer lugar, se verificó que la Landing Page se encuentre publicada correctamente mediante Vercel. Esta página representa la presencia pública del producto y permite presentar la propuesta de valor de SmartStay a los usuarios interesados.
 
 **URL de la Landing Page:**  
 https://smartstay-movildev-landing.vercel.app/
