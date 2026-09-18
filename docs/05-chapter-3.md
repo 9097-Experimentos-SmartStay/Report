@@ -933,6 +933,23 @@ Segmento 2: Huéspedes de Hoteles Boutique
     </td>
     <td>EP-05</td>
   </tr>
+
+  <tr>
+    <td>US-51</td>
+    <td>Room booking by the guest</td>
+    <td class="user-story-desc"><strong>As a</strong> guest, <strong>I want</strong> to search for available rooms by dates and book one from the application <strong>so that</strong> I can secure my stay without calling the hotel.</td>
+    <td class="acceptance-criteria">
+      <strong>Scenario 1: Search available rooms</strong><br>
+      <strong>Given that</strong> I select a hotel and my check-in and check-out dates, <strong>when</strong> I search, <strong>then</strong> I see only the rooms available for the whole stay with their price per night and the total for the stay.<br>
+      <strong>Scenario 2: Successful booking</strong><br>
+      <strong>Given that</strong> I choose an available room, <strong>when</strong> I confirm the booking, <strong>then</strong> the booking is created with a unique code and I receive a confirmation email.<br>
+      <strong>Scenario 3: Room no longer available</strong><br>
+      <strong>Given that</strong> another guest booked the same room for overlapping dates, <strong>when</strong> I try to confirm, <strong>then</strong> the system rejects the booking with a clear message and suggests searching again.<br>
+      <strong>Scenario 4: Invalid dates</strong><br>
+      <strong>Given that</strong> I enter a check-out date that is not after the check-in date, or a check-in date in the past, <strong>when</strong> I try to search, <strong>then</strong> the application shows a validation error and does not allow me to continue.
+    </td>
+    <td>EP-03</td>
+  </tr>
 </table>
 
 
@@ -951,73 +968,73 @@ Segmento 2: Huéspedes de Hoteles Boutique
   <tbody>
     <tr>
       <td>1</td>
-      <td>US-24</td>
-      <td>Segmented landing page</td>
-      <td><strong>As</strong> a visitor, <strong>I want</strong> to find specific information according to my profile (hotel administrator or guest) <strong>to</strong> understand Smart Stay's value.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>US-27</td>
-      <td>Demo request and commercial contact</td>
-      <td><strong>As</strong> an interested visitor, <strong>I want</strong> to request a demonstration and contact the sales team easily and quickly <strong>to</strong> explore Smart Stay solutions.</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>US-28</td>
-      <td>Corporate information and values</td>
-      <td><strong>As</strong> a visitor, <strong>I want</strong> to know Smart Stay's mission, vision and values <strong>to</strong> understand the company's philosophy.</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>12</td>
       <td>US-01</td>
       <td>User registration with validation</td>
       <td><strong>As</strong> a new user, <strong>I want</strong> to register in Smart Stay by validating my email <strong>to</strong> access functionalities according to my role.</td>
       <td>3</td>
     </tr>
     <tr>
-      <td>13</td>
+      <td>2</td>
       <td>US-02</td>
       <td>Secure login</td>
       <td><strong>As</strong> a registered user, <strong>I want</strong> to login securely <strong>to</strong> access my personalized dashboard according to my role.</td>
       <td>3</td>
     </tr>
     <tr>
-      <td>29</td>
-      <td>US-29</td>
-      <td>RESTful API for room management</td>
-      <td><strong>As</strong> a developer, <strong>I want</strong> to access RESTful endpoints <strong>to</strong> integrate Smart Stay with external hotel management systems.</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td>31</td>
-      <td>US-31</td>
-      <td>API authentication and authorization</td>
-      <td><strong>As</strong> a developer, <strong>I want</strong> a secure authentication system <strong>to</strong> access Smart Stay API endpoints safely.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td>32</td>
-      <td>US-32</td>
-      <td>Interactive API documentation</td>
-      <td><strong>As</strong> a developer, <strong>I want</strong> to access complete and interactive documentation <strong>to</strong> easily integrate with Smart Stay API.</td>
       <td>3</td>
+      <td>US-04</td>
+      <td>Password recovery</td>
+      <td><strong>As</strong> a user, <strong>I want</strong> to recover my password via email <strong>to</strong> regain access to my account.</td>
+      <td>2</td>
     </tr>
     <tr>
-      <td>34</td>
+      <td>4</td>
       <td>US-03</td>
       <td>Profile and role management</td>
       <td><strong>As</strong> an administrator, <strong>I want</strong> to manage users, assign roles and permissions <strong>to</strong> control access to different functionalities.</td>
       <td>5</td>
     </tr>
     <tr>
-      <td>35</td>
-      <td>US-04</td>
-      <td>Password recovery</td>
-      <td><strong>As</strong> a user, <strong>I want</strong> to recover my password via email <strong>to</strong> regain access to my account.</td>
-      <td>2</td>
+      <td>5</td>
+      <td>US-51</td>
+      <td>Room booking by the guest</td>
+      <td><strong>As</strong> a guest, <strong>I want</strong> to search for available rooms by dates and book one <strong>to</strong> secure my stay without calling the hotel.</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>US-07</td>
+      <td>Centralized reservation management</td>
+      <td><strong>As</strong> an administrator, <strong>I want</strong> to manage all reservations <strong>to</strong> avoid overbooking and optimize hotel occupancy.</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>US-06</td>
+      <td>Room and status management</td>
+      <td><strong>As</strong> an administrator, <strong>I want</strong> to manage room statuses <strong>to</strong> optimize the hotel's daily operations in real time.</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>US-08</td>
+      <td>Automated digital check-in</td>
+      <td><strong>As</strong> an administrator and guest, <strong>I want</strong> check-in to be completed digitally in less than 3 minutes <strong>to</strong> improve the arrival experience.</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>US-10</td>
+      <td>Staff task assignment and tracking</td>
+      <td><strong>As</strong> an administrator, <strong>I want</strong> to assign tasks and monitor their progress <strong>to</strong> improve operational coordination.</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>US-27</td>
+      <td>Demo request and commercial contact</td>
+      <td><strong>As</strong> an interested visitor, <strong>I want</strong> to request a demonstration and contact the sales team easily and quickly <strong>to</strong> explore Smart Stay solutions.</td>
+      <td>3</td>
     </tr>
   </tbody>
 </table>
