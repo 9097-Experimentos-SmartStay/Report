@@ -117,7 +117,7 @@ El backend fue implementado con **ASP.NET Core (C#)** empleando el IDE **JetBrai
 
 Por otro lado, el desarrollo móvil se realizó utilizando **Android Studio**, **Kotlin** y **Flutter**, tecnologías empleadas para implementar las aplicaciones dirigidas al huésped y al staff operativo. Asimismo, se utilizó **Firebase** para servicios de autenticación y notificaciones móviles.  
 
-Adicionalmente, se empleó **MySQL** como sistema de gestión de base de datos y **Azure** para el despliegue y administración de los servicios backend.  
+Adicionalmente, se empleó **MySQL** como sistema de gestión de base de datos y **Render** para el despliegue y administración de los servicios backend, publicados en [https://smartstay-movildev-api.onrender.com](https://smartstay-movildev-api.onrender.com).  
 
 Finalmente, el proyecto se apoyó en herramientas de control de versiones como **Git y GitHub**, mientras que la instalación y mantenimiento de las IDEs se realizó mediante **JetBrains ToolBox**.
 
@@ -129,7 +129,7 @@ Finalmente, el proyecto se apoyó en herramientas de control de versiones como *
 - **Kotlin:** [Kotlin](https://kotlinlang.org/)  
 - **Firebase:** [Firebase](https://firebase.google.com/)  
 - **MySQL:** [MySQL](https://www.mysql.com/)  
-- **Azure:** [Azure](https://azure.microsoft.com/)  
+- **Render:** [Render](https://render.com/)  
 - **GitHub:** [GitHub](https://github.com/)
 
 
@@ -142,11 +142,11 @@ Toda la documentación se redactó en formato **Markdown (.md)**, debido a su le
 - **GitHub:** [GitHub](https://github.com/)
 
 ### Software Deployment
-El despliegue de los servicios backend se realizó mediante **Microsoft Azure**, permitiendo alojar las APIs REST y garantizar la comunicación entre las aplicaciones móviles, la base de datos y los servicios IoT del sistema Smart Stay.  
+El despliegue de los servicios backend se realizó mediante **Render**, disponible en [https://smartstay-movildev-api.onrender.com](https://smartstay-movildev-api.onrender.com), permitiendo alojar las APIs REST y garantizar la comunicación entre las aplicaciones móviles, la base de datos y los servicios IoT del sistema Smart Stay.  
 Asimismo, las aplicaciones móviles fueron ejecutadas y validadas utilizando **Android Studio Emulator** y dispositivos físicos Android para verificar el correcto funcionamiento de las funcionalidades desarrolladas.
 
 **Enlaces**  
-- **Azure:** [Azure](https://azure.microsoft.com/)  
+- **Render:** [Render](https://render.com/)  
 - **Android Studio:** [Android Studio](https://developer.android.com/studio)
 
 
@@ -169,17 +169,20 @@ El proyecto está organizado dentro de una **organización en GitHub**, donde ca
   - **URL del repositorio:** https://github.com/9097-Experimentos-SmartStay/backend
   - **Arquitectura:** RESTful API
   - **Plataforma de despliegue:** Render
+  - **URL de producción:** https://smartstay-movildev-api.onrender.com/scalar
 
 - **Frontend Web:**
   - **Tecnología:** Vue.js
   - **URL del repositorio:** https://github.com/9097-Experimentos-SmartStay/frontend
   - **Plataforma de despliegue:** Vercel
+  - **URL de producción:** https://smartstay-movildev-web.vercel.app
 
 - **Landing Page**
   - **Tecnología:** HTML, CSS, JavaScript
   - **URL del repositorio:** https://github.com/9097-Experimentos-SmartStay/landing-page
   - **IDE:** WebStorm
   - **Plataforma de despliegue:** Vercel
+  - **URL de producción:** https://smartstay-movildev-landing.vercel.app
 
 Todos los repositorios implementan el modelo **GitFlow** como flujo de trabajo de colaboración y branching, garantizando un desarrollo ordenado y trazable.
 
@@ -389,11 +392,16 @@ El **backend** fue desarrollado en **ASP.NET Core con C#**, siguiendo el estilo 
 Su despliegue se realizó en la plataforma **Render**, configurada como un servicio *cloud* para ejecutar la API de forma continua.  
 Esto permite mantener el servicio activo, escalable y sincronizado con el repositorio de GitHub.
 
+**URL de la API:** [https://smartstay-movildev-api.onrender.com](https://smartstay-movildev-api.onrender.com)  
+**Documentación (Scalar):** [https://smartstay-movildev-api.onrender.com/scalar](https://smartstay-movildev-api.onrender.com/scalar)
+
 
 ### Frontend Web Application
 La **aplicación web frontend** fue construida con **Vue.js** y **PrimeVue**, integrando una interfaz moderna e interactiva.  
 El despliegue se llevó a cabo en **Vercel**, aprovechando su integración con GitHub para habilitar un flujo de despliegue automático.  
 Cada actualización en la rama `main` desencadena una nueva versión publicada en producción.
+
+**URL de la aplicación web:** [https://smartstay-movildev-web.vercel.app](https://smartstay-movildev-web.vercel.app)
 
 
 ### Integración Continua / Despliegue Continuo (CI/CD)
@@ -448,6 +456,9 @@ El backend fue desarrollado en **ASP.NET Core con C#**, siguiendo el estilo arqu
 Su despliegue se realizó en la plataforma **Render**, configurada como un servicio cloud para ejecutar la API de forma continua.  
 
 Esto permite mantener el servicio activo, escalable y sincronizado con el repositorio de GitHub.
+
+**URL de la API:** [https://smartstay-movildev-api.onrender.com](https://smartstay-movildev-api.onrender.com)  
+**Documentación (Scalar):** [https://smartstay-movildev-api.onrender.com/scalar](https://smartstay-movildev-api.onrender.com/scalar)
 
 ### Integración Continua / Despliegue Continuo (CI/CD)
 
@@ -1017,8 +1028,10 @@ https://smartstay-movildev-api.onrender.com/scalar/
 
 Finalmente, se generó una versión final de la aplicación móvil en formato APK para su ejecución y validación. Esta versión contiene los módulos integrados y fue utilizada para la demostración final del producto.
 
-**Repositorio del APK:**  
-https://github.com/Movil-dev-Aplicaciones-Moviles/APK.git
+**Repositorio de la aplicación móvil:**  
+https://github.com/9097-Experimentos-SmartStay/mobile
+
+**URL del Frontend Web:** https://smartstay-movildev-web.vercel.app
 
 
 Con estas evidencias, se confirma que SmartStay cuenta con una landing page pública, servicios backend desplegados y una aplicación móvil lista para ser presentada como producto final del curso.
@@ -1072,9 +1085,10 @@ En conclusión, el Sprint 3 permitió cerrar el ciclo de desarrollo de SmartStay
 
 ### 5.2.2. Implemented Landing Page Evidence
 
-![Github Pages](../assets/chapter-5/deployment/github-pages.jpg)
+![Vercel Deployment](../assets/chapter-5/deployment/github-pages.jpg)
+> ⚠️ Imagen pendiente de reemplazo: la captura actual corresponde a la configuración antigua de GitHub Pages, no al dashboard de Vercel.
 
-**La URL que nos entrega Github Pages para acceder a la landing page es la siguiente:**  
+**La URL que nos entrega Vercel para acceder a la landing page es la siguiente:**  
 [https://smartstay-movildev-landing.vercel.app/](https://smartstay-movildev-landing.vercel.app/)
 
 landing Page
