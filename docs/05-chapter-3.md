@@ -950,6 +950,22 @@ Segmento 2: Huéspedes de Hoteles Boutique
     </td>
     <td>EP-03</td>
   </tr>
+  <tr>
+    <td>US-52</td>
+    <td>Two-factor authentication for staff</td>
+    <td class="user-story-desc"><strong>As a</strong> hotel staff member, <strong>I want</strong> to protect my account with a second authentication factor from an authenticator app <strong>so that</strong> nobody can access the hotel operations with only my password.</td>
+    <td class="acceptance-criteria">
+      <strong>Scenario 1: Mandatory enrollment</strong><br>
+      <strong>Given that</strong> I am a staff member without two-factor authentication, <strong>when</strong> I sign in with a correct password, <strong>then</strong> I must set up an authenticator app by scanning a QR code before accessing the system.<br>
+      <strong>Scenario 2: Sign in with a code</strong><br>
+      <strong>Given that</strong> I have two-factor authentication enabled, <strong>when</strong> I enter a valid 6-digit code, <strong>then</strong> I access my dashboard; <strong>and when</strong> the code is invalid, <strong>then</strong> I see an error and the failed attempt counts toward the account lockout.<br>
+      <strong>Scenario 3: Recovery codes</strong><br>
+      <strong>Given that</strong> I lost access to my authenticator app, <strong>when</strong> I enter one of my recovery codes, <strong>then</strong> I access the system and that code can no longer be used.<br>
+      <strong>Scenario 4: Reset by the administrator</strong><br>
+      <strong>Given that</strong> a staff member lost both their device and their recovery codes, <strong>when</strong> the administrator resets their two-factor authentication, <strong>then</strong> the staff member must enroll again at the next sign-in and the action is recorded in the audit log.
+    </td>
+    <td>EP-01</td>
+  </tr>
 </table>
 
 
@@ -1024,9 +1040,9 @@ Segmento 2: Huéspedes de Hoteles Boutique
     </tr>
     <tr>
       <td>9</td>
-      <td>US-10</td>
-      <td>Staff task assignment and tracking</td>
-      <td><strong>As</strong> an administrator, <strong>I want</strong> to assign tasks and monitor their progress <strong>to</strong> improve operational coordination.</td>
+      <td>US-52</td>
+      <td>Two-factor authentication for staff</td>
+      <td><strong>As</strong> a hotel staff member, <strong>I want</strong> to protect my account with a second authentication factor <strong>to</strong> prevent access to hotel operations with only my password.</td>
       <td>5</td>
     </tr>
     <tr>
