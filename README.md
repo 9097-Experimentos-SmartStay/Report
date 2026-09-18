@@ -182,24 +182,24 @@ El objetivo de esta sección es resumir las modificaciones relevantes que se rea
         <b>AV1<br>
         Bonifacio Jaramillo, Samuel Jesus:</b> <br>A través de la entrevistas, Implementé un Product Backlog construido sobre las US del proyecto y las entrevistas realizadas al público objetivo. Este proceso me permitió identificar el panorama ideal de hacia dónde debemos enfocar la solución digital que estamos desarrollando.
 <br>
-        Ponce Perales, Alberto Alejandro — <em>pendiente de redacción</em><br>
-        Verona Flores, Ítalo Sebastián — <em>pendiente</em><br>
-        Sulca, Piero — <em>pendiente</em><br>
-        Galindo Manuel, Alejandro — <em>pendiente</em>
+        <b>Ponce Perales, Alberto Alejandro:</b> Al desarrollar las entrevistas para los segmentos de Staff y Clientes y participar en la redacción de los Capítulos II y III, reconocí la responsabilidad de recoger y representar con honestidad las respuestas de los entrevistados, sin manipular ni omitir información que pudiera sesgar el análisis de necesidades del proyecto.<br>
+        <b>Verona Flores, Ítalo Sebastián:</b> Al desarrollar el As-Is Scenario Mapping del Capítulo II, reconocí la responsabilidad de representar fielmente las fases, acciones y emociones reales de huéspedes y personal del hotel, evitando sesgos que distorsionaran su experiencia actual y afectaran las decisiones de diseño posteriores.<br>
+        <b>Sulca, Piero:</b> Al estructurar y automatizar la generación del informe (numeración de capítulos y script de build), asumí la responsabilidad profesional de mantener la trazabilidad y coherencia del entregable grupal, evitando inconsistencias que afectaran la evaluación del proyecto.<br>
+        <b>Galindo Manuel, Alejandro:</b> Al construir el Impact Mapping y el To-Be Scenario Mapping del Capítulo III, reconocí la responsabilidad de traducir fielmente las necesidades identificadas en los segmentos de huéspedes y hoteles en acciones concretas del Product Backlog, sin distorsionar las prioridades reales del negocio.
       </td>
-      <td><em>Pendiente (grupal, acumulable por entrega)</em></td>
+      <td>Como equipo concluimos que reconocer nuestras responsabilidades éticas y profesionales exige contrastar cada decisión de diseño e ingeniería con evidencia real recogida del público objetivo (entrevistas, as-is mapping, backlog), evitando que supuestos personales o presiones de tiempo distorsionen la representación de las necesidades de huéspedes y personal hotelero.</td>
     </tr>
     <tr>
       <td width="25%"><b>4.c.2</b> Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales</td>
       <td>
         <b>AV1<br>
         Bonifacio Jaramillo, Samuel Jesus:</b> <br> Aprendí a recolectar el feedback y las necesidades de un público objetivo. Identificar y convertir cada necesidad en un driver/requerimiento para el software a construir.<br>
-        Ponce Perales, Alberto Alejandro — <em>pendiente de redacción</em><br>
-        Verona Flores, Ítalo Sebastián — <em>pendiente</em><br>
-        Sulca, Piero — <em>pendiente</em><br>
-        Galindo Manuel, Alejandro — <em>pendiente</em>
+        <b>Ponce Perales, Alberto Alejandro:</b> Las entrevistas realizadas a Staff y Clientes, junto con el análisis plasmado en los Capítulos II y III, me permitieron emitir juicios informados sobre cómo la falta de digitalización impacta económica y socialmente en la operación diaria de los hoteles pequeños y en la experiencia de sus huéspedes.<br>
+        <b>Verona Flores, Ítalo Sebastián:</b> Analizar el escenario As-Is me permitió emitir juicios informados sobre el impacto social y operativo que la falta de digitalización genera en el personal hotelero, identificando puntos de fricción que justifican la propuesta de solución.<br>
+        <b>Sulca, Piero:</b> Organizar la información del reporte conforme al esquema exigido me permitió valorar el impacto que una documentación clara y ordenada tiene en la comprensión del proyecto por parte de evaluadores y stakeholders.<br>
+        <b>Galindo Manuel, Alejandro:</b> Definir y priorizar historias del Product Backlog me permitió emitir juicios informados sobre el impacto económico y operativo que cada funcionalidad tendría en los hoteles pequeños del segmento objetivo.
       </td>
-      <td><em>Pendiente (grupal, acumulable por entrega)</em></td>
+      <td>Como equipo concluimos que las soluciones de ingeniería de software que proponemos para SmartStay tienen un impacto económico directo en la rentabilidad de hoteles pequeños y medianos, y un impacto social en la calidad de vida laboral del personal hotelero y en la experiencia de los huéspedes, por lo que cada priorización del backlog debe sustentarse en evidencia recogida del público objetivo y no en suposiciones internas del equipo.</td>
     </tr>
   </tbody>
 </table>
@@ -3846,20 +3846,25 @@ El proyecto está organizado dentro de una **organización en GitHub**, donde ca
 - **Aplicación Móvil:**  
   - **Tecnología:** Kotlin (Android Native)
   - **IDE:** Android Studio
-  - **URL del repositorio:** https://github.com/Movil-dev-Aplicaciones-Moviles/smartstay-application-mobile
+  - **URL del repositorio:** https://github.com/9097-Experimentos-SmartStay/mobile
   - **Plataforma de despliegue:** Android Studio Emulator / APK Testing
 
 - **Web Services (Backend):**  
   - **Tecnología:** ASP.NET Core (C#)
-  - **URL del repositorio:** https://github.com/Movil-dev-Aplicaciones-Moviles/application-mobile-backend
+  - **URL del repositorio:** https://github.com/9097-Experimentos-SmartStay/backend
   - **Arquitectura:** RESTful API
   - **Plataforma de despliegue:** Render
 
+- **Frontend Web:**
+  - **Tecnología:** Vue.js
+  - **URL del repositorio:** https://github.com/9097-Experimentos-SmartStay/frontend
+  - **Plataforma de despliegue:** Vercel
+
 - **Landing Page**
   - **Tecnología:** HTML, CSS, JavaScript
-  - **URL del repositorio:** https://github.com/Movil-dev-Aplicaciones-Moviles/landing-page
+  - **URL del repositorio:** https://github.com/9097-Experimentos-SmartStay/landing-page
   - **IDE:** WebStorm
-  - **Plataforma de despliegue:** GitHub Actions
+  - **Plataforma de despliegue:** Vercel
 
 Todos los repositorios implementan el modelo **GitFlow** como flujo de trabajo de colaboración y branching, garantizando un desarrollo ordenado y trazable.
 
@@ -4087,7 +4092,7 @@ El proyecto implementa un flujo automatizado de **Integración Continua y Despli
 ![Github Pages](assets/chapter-5/deployment/github-pages.jpg)
 
 **La URL que nos entrega Github Pages para acceder a la landing page es la siguiente:**  
-[https://edgerunners-aplicaciones-web.github.io/landing-page/](https://edgerunners-aplicaciones-web.github.io/landing-page/)
+[https://smartstay-movildev-landing.vercel.app/](https://smartstay-movildev-landing.vercel.app/)
 
 ---
 
@@ -4479,7 +4484,7 @@ La landing page fue vinculada directamente con el repositorio del proyecto, perm
 
 Gracias a esta configuración, la página quedó disponible públicamente, confirmando el correcto funcionamiento del flujo de despliegue y la integración entre el repositorio y **GitHub Pages**.
 
-**URL de la Landing Page: https://movil-dev-aplicaciones-moviles.github.io/landing-page/# **
+**URL de la Landing Page: https://smartstay-movildev-landing.vercel.app/ **
 
 ![LANDING.png](assets/chapter-5/deployment/landing-page-final.png)
 
@@ -4491,7 +4496,7 @@ El servicio backend fue enlazado con el repositorio principal del proyecto, perm
 
 Como evidencia del despliegue, se presenta la **URL pública del servicio** junto con una captura de la documentación **Swagger/OpenAPI** ejecutándose correctamente desde el entorno desplegado. Esto confirma que la API se encuentra activa, accesible y lista para ser consumida por los demás componentes del sistema.
 
-**URL del Back End / Swagger: https://application-mobile-backend.onrender.com/swagger/index.html **
+**URL del Back End / Swagger: https://smartstay-movildev-api.onrender.com/scalar/ **
 
 ![Evidencia del despliegue en Render](assets/chapter-5/deployment/render-backend.png)
 
@@ -4685,13 +4690,13 @@ Durante el Sprint 3 se realizó la validación final del despliegue de los compo
 En primer lugar, se verificó que la Landing Page se encuentre publicada correctamente mediante GitHub Pages. Esta página representa la presencia pública del producto y permite presentar la propuesta de valor de SmartStay a los usuarios interesados.
 
 **URL de la Landing Page:**  
-https://movil-dev-aplicaciones-moviles.github.io/landing-page/#
+https://smartstay-movildev-landing.vercel.app/
 
 
 Asimismo, se validó el despliegue del backend en Render, confirmando que los servicios principales se encuentren activos y accesibles desde la documentación Swagger/OpenAPI.
 
 **URL del Back End / Swagger:**  
-https://application-mobile-backend.onrender.com/swagger/index.html
+https://smartstay-movildev-api.onrender.com/scalar/
 
 
 Finalmente, se generó una versión final de la aplicación móvil en formato APK para su ejecución y validación. Esta versión contiene los módulos integrados y fue utilizada para la demostración final del producto.
@@ -4754,7 +4759,7 @@ En conclusión, el Sprint 3 permitió cerrar el ciclo de desarrollo de SmartStay
 ![Github Pages](assets/chapter-5/deployment/github-pages.jpg)
 
 **La URL que nos entrega Github Pages para acceder a la landing page es la siguiente:**  
-[https://edgerunners-aplicaciones-web.github.io/landing-page/](https://edgerunners-aplicaciones-web.github.io/landing-page/)
+[https://smartstay-movildev-landing.vercel.app/](https://smartstay-movildev-landing.vercel.app/)
 
 landing Page
 
@@ -5023,6 +5028,47 @@ Link: -
     <tr>
       <td>Report</td>
       <td>https://github.com/9097-Experimentos-SmartStay/Report</td>
+    </tr>
+    <tr>
+      <td>backend</td>
+      <td>https://github.com/9097-Experimentos-SmartStay/backend</td>
+    </tr>
+    <tr>
+      <td>frontend</td>
+      <td>https://github.com/9097-Experimentos-SmartStay/frontend</td>
+    </tr>
+    <tr>
+      <td>mobile</td>
+      <td>https://github.com/9097-Experimentos-SmartStay/mobile</td>
+    </tr>
+    <tr>
+      <td>landing-page</td>
+      <td>https://github.com/9097-Experimentos-SmartStay/landing-page</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Links de Despliegue</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Componente</th>
+      <th>URL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Backend (API)</td>
+      <td>https://smartstay-movildev-api.onrender.com/scalar/</td>
+    </tr>
+    <tr>
+      <td>Frontend Web</td>
+      <td>https://smartstay-movildev-web.vercel.app</td>
+    </tr>
+    <tr>
+      <td>Landing Page</td>
+      <td>https://smartstay-movildev-landing.vercel.app/</td>
     </tr>
   </tbody>
 </table>
