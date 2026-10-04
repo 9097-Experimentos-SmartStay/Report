@@ -1,5 +1,3 @@
-# Avance de Conclusiones, Bibliografía y Anexos
-
 ## Conclusiones
 
 Durante el desarrollo del proyecto se identificó que la operación hotelera de establecimientos medianos y boutique enfrenta una gestión fragmentada y manual: procesos de check-in/check-out con colas en recepción, habitaciones sin monitoreo ni control remoto, y personal operativo sin visibilidad en tiempo real del estado de las habitaciones. Esta situación, descrita en el Capítulo I mediante la técnica 5W+2H, se traduce en una pérdida estimada del 15% al 20% de la productividad operativa y en una experiencia del huésped desconectada de los servicios del hotel.
