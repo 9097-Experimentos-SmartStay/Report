@@ -2,6 +2,12 @@
 
 ## 6.1. Testing Suites & Validation
 
+La estrategia de validación de SmartStay cubre los tres servicios principales: **el backend, la aplicación web y la aplicación móvil.** 
+
+Los tres repositorios fueron sujetos a pruebas unitarias, pruebas de integración, entre otras.
+
+### 6.1.1. Core Entities Unit Tests.
+
 El backend de SmartStay cuenta con el proyecto `BackendAwSmartstay.API.Tests`, que organiza las pruebas en los módulos Accommodations, Bookings y Profiles. Su estructura separa las áreas de aplicación, dominio e infraestructura, y contempla pruebas de compatibilidad e interfaces en el módulo de perfiles.
 
 | Módulo | Áreas presentes en el proyecto de pruebas |
@@ -30,10 +36,30 @@ El alcance de esta prueba se limita al envío del formulario vacío. No verifica
 
 ![testing-frontend](../assets/chapter-6/testing-suites/testing-frontend.png)
 
-### 6.1.1. Core Entities Unit Tests.
-
 ### 6.1.2. Core Integration Tests.
+
+El backend incluye pruebas de persistencia con Entity Framework en memoria y pruebas de colaboración que utilizan repositorios y fachadas simulados. Estas pruebas permiten evaluar parte de la interacción entre componentes, aunque no reproducen todas las restricciones ni el comportamiento concurrente de MySQL.
 
 ### 6.1.3. Core Behavior-Driven Development
 
 ### 6.1.4. Core System Tests
+
+Se ejecutó una prueba funcional automatizada con Selenium sobre el formulario de inicio de sesión del frontend. Se utilizó Chrome visible y la instancia local del frontend en `http://localhost:5173/login`. El caso dejó vacíos el correo electrónico y la contraseña y trató de enviar el formulario.
+
+| Aplicación | Caso | Resultado esperado | Resultado observado | Estado |
+|---|---|---|---|---|
+| Frontend web | Enviar el inicio de sesión con ambos campos vacíos | Impedir el envío y mostrar una validación en cada campo obligatorio | La ruta se mantuvo en `/login` y aparecieron dos mensajes «Este campo es obligatorio.» | Aprobado |
+| Backend | Validar el comportamiento del controlador de staff con datos de prueba | Verificar que el controlador de staff maneja correctamente los datos de prueba | El controlador de staff maneja correctamente los datos de prueba | Aprobado |
+| Mobile | Validar el comportamiento del widget de staff con datos de prueba | Verificar que el widget de staff maneja correctamente los datos de prueba | El widget de staff maneja correctamente los datos de prueba | Aprobado |
+
+Esta ejecución solo confirma la validación de campos vacíos en ese formulario. No verifica autenticación con credenciales, permisos por rol, conexión con el backend, ni otros flujos de la aplicación web. No se guardó una captura ni un reporte de Selenium.
+
+Para el backend, se validó el comportamiento del controlador de staff con datos de prueba.
+
+Por ejemplo, la prueba `StaffControllerTest` verifica el comportamiento del controlador de staff con datos de prueba.
+
+![StaffControllerTest](../assets/chapter-6/core-system-tests/StaffControllerTest.png)
+
+En el frontend, se validó el login/registro con campos de prueba y los resultados fueron los esperados.
+
+![testing-frontend](../assets/chapter-6/testing-suites/testing-frontend.png)
