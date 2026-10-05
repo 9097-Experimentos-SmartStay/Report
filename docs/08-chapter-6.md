@@ -20,6 +20,8 @@ Esta organización permite ubicar las pruebas según el módulo y la responsabil
 
 ![testing-backend-project](../assets/chapter-6/testing-suites/testing-backend-project.png)
 
+![pass-test](../assets/chapter-6/testing-suites/pass-test.png)
+
 ### Validación funcional del inicio de sesión del frontend
 
 Se ejecutó una prueba funcional automatizada con Selenium sobre el formulario de inicio de sesión de SmartStay. La ejecución se realizó en Chrome, en modo visible, utilizando el frontend local en `http://localhost:5173/login`.
