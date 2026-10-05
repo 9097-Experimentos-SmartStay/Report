@@ -5111,6 +5111,13 @@ El backend de SmartStay cuenta con el proyecto `BackendAwSmartstay.API.Tests`, q
 | Accommodations | Application, con una sección ACL. |
 | Bookings | Application, Domain e Infrastructure. |
 | Profiles | Application, Compatibility, Domain, Infrastructure e Interfaces. |
+| Payments | Application, Domain e Infrastructure. |
+
+<br>
+*Test de persistencia de Payments*
+
+![payments-bc-test](assets/chapter-6/core-entities-tests/payments-bc-test.png)
+![payments-test-suceed](assets/chapter-6/core-entities-tests/payments-test-suceed.png)
 
 Esta organización permite ubicar las pruebas según el módulo y la responsabilidad del componente evaluado. Las áreas de dominio corresponden a las entidades y reglas de negocio; las de aplicación, a la coordinación de operaciones; y las de infraestructura, a mecanismos como la persistencia. Las secciones de compatibilidad, interfaces y ACL permiten organizar verificaciones relacionadas con la interacción entre componentes.
 
