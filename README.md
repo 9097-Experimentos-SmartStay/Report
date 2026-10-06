@@ -5346,23 +5346,8 @@ En el frontend, se validó el login/registro con campos de prueba y los resultad
 
 La Integración Continua (CI) en la plataforma SmartStay constituye el conjunto de prácticas, mecanismos de automatización y herramientas orientadas a validar, compilar y verificar la calidad de cada incremento de código desarrollado por el equipo. Dado que la arquitectura de la solución involucra múltiples componentes heterogéneos —Backend RESTful en ASP.NET Core, Frontend Web en Vue.js, Landing Page en HTML/CSS/JS y la Aplicación Móvil nativa en Android (Kotlin)—, el flujo de CI se diseñó para ejecutarse de forma distribuida y desatendida sobre los repositorios de GitHub bajo el flujo de trabajo GitFlow.
 
-```
-                        FLUJO DE INTEGRACIÓN CONTINUA (CI)
-                        
-  [Feature Branch] ─────> Pull Request ─────> [Develop Branch]
-         │                                          │
-         ▼                                          ▼
- ┌───────────────┐                          ┌───────────────┐
- │ GitHub Actions│                          │ GitHub Actions│
- ├───────────────┤                          ├───────────────┤
- │ 1. Checkout   │                          │ 1. Checkout   │
- │ 2. Linters    │                          │ 2. Restore    │
- │ 3. Unit Tests │                          │ 3. Build      │
- │ 4. CodeReview │                          │ 4. Full Suite │
- └───────┬───────┘                          └───────┬───────┘
-         │ (Aprobado)                               │ (Aprobado)
-         └───────────────────► Merge ◄──────────────┘
-```
+
+![ContinousIntegration1](assets/chapter-7/ContinuousIntegration/ContinuousIntegration1.jpeg)
 
 ---
 
@@ -5402,23 +5387,7 @@ Para garantizar que el código integrado sea funcional, seguro y conforme a los 
 
 El pipeline de construcción y verificación de pruebas automatizadas está estructurado en componentes y etapas secuenciales. Cada vez que se crea un *Pull Request* o se realiza un *push* sobre `develop`, el pipeline orquesta las siguientes fases:
 
-```
-┌────────────────────────────────────────────────────────────────────────┐
-│               COMPONENTES DEL PIPELINE DE BUILD & TESTS                │
-├───────────────────┬────────────────────────────────────────────────────┤
-│ 1. Checkout       │ Extracción del código del repositorio con Git.     │
-├───────────────────┼────────────────────────────────────────────────────┤
-│ 2. Environment    │ Configuración del SDK (.NET 8, Node.js, JDK/Gradle)│
-├───────────────────┼────────────────────────────────────────────────────┤
-│ 3. Dependencies   │ Restauración de paquetes (NuGet, npm, Gradle).     │
-├───────────────────┼────────────────────────────────────────────────────┤
-│ 4. Build          │ Compilación estricta en modo Release o Bundle.     │
-├───────────────────┼────────────────────────────────────────────────────┤
-│ 5. Test Suite     │ Ejecución de pruebas unitarias e integración (AAA).│
-├───────────────────┼────────────────────────────────────────────────────┤
-│ 6. Artifacts      │ Empaquetado y almacenamiento del binario/reporte.  │
-└───────────────────┴────────────────────────────────────────────────────┘
-```
+![PipelineComponents](assets/chapter-7/BuildTest/PipelineComponents.jpeg)
 
 #### 1. Componentes del Pipeline por Plataforma
 
