@@ -46,10 +46,45 @@ El frontend web (Vue 3 + Vite) no cuenta aún con una suite de pruebas unitarias
 
 ### 6.1.2. Core Integration Tests.
 
-El backend incluye pruebas de persistencia con Entity Framework en memoria y pruebas de colaboración que utilizan repositorios y fachadas simulados. Estas pruebas permiten evaluar parte de la interacción entre componentes, aunque no reproducen todas las restricciones ni el comportamiento concurrente de MySQL.
+Las pruebas de integración verifican que varios componentes funcionan correctamente **juntos**: servicios de aplicación con repositorios, repositorios con Entity Framework, y contextos delimitados que se comunican por sus fachadas ACL. En el backend son 35 pruebas del proyecto `BackendAwSmartstay.API.Tests`, ejecutadas con `dotnet test` el 9 de noviembre de 2026 (35 aprobadas, 0 fallidas).
+
+| Clase de pruebas | Contexto | Qué integra | Pruebas |
+|---|---|---|---:|
+| `BookingsPersistenceTests` | Bookings | Agregado `Booking` con EF Core: persistencia, estados y reserva con y sin perfil de huésped | 3 |
+| `BookingCommandServiceAclIntegrationTests` | Bookings ↔ Profiles | Servicio de comandos con la fachada de perfiles: resuelve el huésped por usuario o correo, o crea la reserva sin perfil si no existe | 6 |
+| `ProfilesPersistenceTests` | Profiles | Perfiles de huésped y de staff con EF Core: persistencia, consultas y generador de códigos de empleado | 5 |
+| `StaffProfileCommandServiceAclIntegrationTests` | Profiles ↔ Accommodations | Asignación de staff a hoteles validando el hotel por la fachada de alojamiento; rechaza hoteles inexistentes sin persistir | 3 |
+| `AccommodationsContextFacadeTests` | Accommodations | Fachada ACL: existencia de hotel, ids inválidos y contrato sin exponer entidades internas | 5 |
+| `CrossContextIdentityCompatibilityTests` | IAM ↔ Profiles ↔ Accommodations | Los ids enteros de usuario y de hotel son aceptados entre contextos | 4 |
+| `IamSeederTests` | IAM | Alta del administrador de cadena con política de contraseñas; rechaza contraseñas filtradas, cortas, repetitivas, con el correo o comunes | 7 |
+| `ProfilesDependencyInjectionTests` | Profiles | Registro de servicios del contexto en el contenedor de dependencias | 1 |
+| `ProfilesMySqlConcurrencyIntegrationTests` | Profiles | Generación concurrente de códigos de empleado sobre MySQL real | 1 |
+| **Total** | | | **35** |
+
+Las pruebas cubren tanto caminos felices como caminos de fallo: hotel inexistente, huésped sin perfil, contraseñas rechazadas por política o filtradas, e identificadores no válidos.
+
+*Código de una de las pruebas de integración (`BookingCommandServiceAclIntegrationTests`)*
 
 ![integration1](../assets/chapter-6/integration-tests/integration1.png)
 ![integration2](../assets/chapter-6/integration-tests/integration2.png)
+
+*Ejecución de las pruebas de integración, resumen por clase*
+
+![integration-run-by-class](../assets/chapter-6/integration-tests/integration-run-by-class.png)
+
+*Ejecución de las pruebas de integración, detalle de las 35 pruebas*
+
+![integration-run-detail](../assets/chapter-6/integration-tests/integration-run-detail.png)
+
+**Limitaciones.** La mayoría de estas pruebas usan Entity Framework en memoria y fachadas o repositorios simulados, por lo que no reproducen las restricciones ni el comportamiento concurrente de MySQL. La única prueba pensada para MySQL real (`ProfilesMySqlConcurrencyIntegrationTests`) solo se ejecuta si hay un MySQL accesible; cuando no lo hay, termina sin verificar nada y se reporta como aprobada, por lo que su resultado en este entorno no cuenta como evidencia de concurrencia sobre MySQL.
+
+#### Aplicación móvil
+
+`test/guest_booking_api_test.dart` prueba el cliente HTTP de reservas contra respuestas simuladas del backend: creación de reserva, error devuelto por el backend, pago con tarjeta rechazado y cancelación no aceptada. Verifica el contrato entre la aplicación móvil y la API, sin levantar el backend real.
+
+#### Aplicación web
+
+El frontend web no cuenta con pruebas de integración automatizadas.
 
 ### 6.1.3. Core Behavior-Driven Development
 
