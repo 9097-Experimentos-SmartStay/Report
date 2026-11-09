@@ -2,7 +2,7 @@
 
 ## 7.1. Continuous Integration
 
-La Integración Continua (CI) en la plataforma SmartStay constituye el conjunto de prácticas, mecanismos de automatización y herramientas orientadas a validar, compilar y verificar la calidad de cada incremento de código desarrollado por el equipo. Dado que la arquitectura de la solución involucra múltiples componentes heterogéneos —Backend RESTful en ASP.NET Core, Frontend Web en Vue.js, Landing Page en HTML/CSS/JS y la Aplicación Móvil nativa en Android (Kotlin)—, el flujo de CI se diseñó para ejecutarse de forma distribuida y desatendida sobre los repositorios de GitHub bajo el flujo de trabajo GitFlow.
+La Integración Continua (CI) en la plataforma SmartStay constituye el conjunto de prácticas, mecanismos de automatización y herramientas orientadas a validar, compilar y verificar la calidad de cada incremento de código desarrollado por el equipo. Dado que la arquitectura de la solución involucra múltiples componentes heterogéneos —Backend RESTful en ASP.NET Core, Frontend Web en Vue.js, Landing Page con Vite (JavaScript) y la Aplicación Móvil en Flutter—, el flujo de CI se diseñó para ejecutarse de forma distribuida y desatendida sobre los repositorios de GitHub bajo el flujo de trabajo GitFlow.
 
 
 ![ContinousIntegration1](../assets/chapter-7/ContinuousIntegration/ContinuousIntegration1.jpeg)
@@ -20,12 +20,12 @@ Para garantizar que el código integrado sea funcional, seguro y conforme a los 
 * **Entornos de Ejecución (.NET SDK, Node.js y JDK):**
   * Para el Backend: **.NET SDK 9.0** con la herramienta de configuración global `.config/dotnet-tools.json` para estandarizar el conjunto de herramientas de compilación y pruebas.
   * Para el Frontend Web y Landing Page: **Node.js (LTS)** con gestor de paquetes `npm`.
-  * Para la Aplicación Móvil: **OpenJDK 17** y **Gradle** en Android Studio para la compilación de módulos Kotlin.
+  * Para la Aplicación Móvil: **Flutter SDK** y **Dart** para la compilación y las pruebas de la aplicación.
 
 * **Herramientas de Análisis Estático y Linters:**
   * **ESLint y Prettier:** Verificación de formato, sintaxis limpia y cumplimiento de buenas prácticas de JavaScript y Vue.js.
   * **Roslyn Analyzers / C# Coding Conventions:** Validación del código en el backend siguiendo las convenciones de Microsoft ASP.NET Core (nombres en PascalCase, contratos explícitos e inyección de dependencias).
-  * **Android Lint / ktlint:** Comprobación de estándares de código limpio y optimización de recursos XML y Kotlin en la aplicación móvil.
+  * **flutter analyze:** Análisis estático de la aplicación móvil con las reglas definidas en `analysis_options.yaml`.
 
 #### 2. Prácticas de Ingeniería Aplicadas
 
@@ -62,8 +62,8 @@ El pipeline de construcción y verificación de pruebas automatizadas está estr
   * *Compilación y Bundle:* Ejecución de `npm ci` seguido de `npm run build` para generar los bundles estáticos minificados de producción en el directorio `dist/`.
   * *Suite de Pruebas de UI:* Ejecución de `npm test` mediante Jest para validar el renderizado del home, el correcto direccionamiento de los botones CTA y la operatividad de los diccionarios de internacionalización (`languages.js`).
 
-* **Móvil Android:**
-  * *Compilación y Pruebas Locales:* Se ejecuta `./gradlew testDebugUnitTest` para comprobar los modelos de datos, la gestión de sesiones en `TokenManager` y la lógica de presentación de los ViewModels.
+* **Aplicación móvil (Flutter):**
+  * *Compilación y Pruebas Locales:* Se ejecuta `flutter test` de forma local para comprobar los modelos de datos y la lógica de la aplicación.
 
 #### 2. Declaración del Workflow de Integración (Ejemplo de Configuración de CI)
 
@@ -145,7 +145,7 @@ Para asegurar que cada versión generada sea reproducible, trazable y desplegabl
   * Landing Page: hosting estático en Vercel, publicada desde el directorio `dist/`.
   * Aplicación móvil (Flutter): el APK se distribuye a los *testers* mediante GitHub Releases.
 
-* **Gradle (Android Release Build):** Genera APK/AAB firmados mediante `./gradlew assembleRelease` y `./gradlew bundleRelease`, con la configuración de firma inyectada desde los secretos del pipeline.
+* **Flutter (Release Build):** Genera el APK de producción mediante `flutter build apk --release`.
 
 #### 2. Prácticas de Ingeniería Aplicadas
 
@@ -211,7 +211,7 @@ Para desplegar en producción de forma segura, frecuente y reversible, se emplea
 
 * **Hosting Estático con Despliegue Atómico:** El Frontend Web y la Landing Page se publican de forma atómica. La nueva versión reemplaza a la anterior solo cuando la carga termina por completo, y se conserva el historial de despliegues para revertir con un clic.
 
-* **Google Play Console (Staged Rollout):** La Aplicación Android se publica primero en la pista de pruebas internas y luego en producción con un despliegue escalonado por porcentaje de usuarios (10% → 50% → 100%). La subida del AAB se automatiza desde GitHub Actions.
+* **GitHub Releases (APK):** La aplicación móvil se distribuye como un APK adjunto a un GitHub Release versionado con el *tag* de la entrega.
 
 * **Monitoreo y Observabilidad:**
   * **Health Checks de ASP.NET Core** (`/health`) para verificar la disponibilidad del API y la conectividad con MySQL.
