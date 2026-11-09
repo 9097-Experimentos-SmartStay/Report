@@ -115,7 +115,7 @@ Para el desarrollo de la aplicación se utilizaron distintas herramientas y ento
 
 El backend fue implementado con **ASP.NET Core 9 (C#)** empleando el IDE **JetBrains Rider**. Se trata de una única API REST con arquitectura de monolito modular: un solo servicio desplegable, organizado en contextos delimitados (IAM, Perfiles, Alojamiento, Reservas, Pagos, Analítica, Auditoría, Marketing y Media) que se comunican internamente mediante fachadas ACL y eventos de dominio, y que comparten una única base de datos MySQL.  
 
-Por otro lado, el desarrollo móvil se realizó utilizando **Android Studio**, **Kotlin** y **Flutter**, tecnologías empleadas para implementar las aplicaciones dirigidas al huésped y al staff operativo. Asimismo, se utilizó **Firebase** para servicios de autenticación y notificaciones móviles.  
+Por otro lado, el desarrollo móvil se realizó utilizando **Flutter** (lenguaje **Dart**), framework multiplataforma con el que se implementó la aplicación móvil de SmartStay. No se desarrolló código nativo en Kotlin: la carpeta `android/` del proyecto es el andamiaje que genera Flutter para compilar el APK.  
 
 Adicionalmente, se empleó **MySQL** como sistema de gestión de base de datos y **Render** para el despliegue del backend, con **Vercel** para el frontend web y la landing page. Inicialmente se planteó **Azure** como plataforma de despliegue, pero por falta de créditos se optó por Render.  
 
@@ -124,10 +124,8 @@ Finalmente, el proyecto se apoyó en herramientas de control de versiones como *
 **Enlaces**  
 - **JetBrains ToolBox:** [JetBrains ToolBox](https://www.jetbrains.com/toolbox-app/)  
 - **JetBrains Rider:** [JetBrains Rider](https://www.jetbrains.com/rider/)  
-- **Android Studio:** [Android Studio](https://developer.android.com/studio)  
 - **Flutter:** [Flutter](https://flutter.dev/)  
-- **Kotlin:** [Kotlin](https://kotlinlang.org/)  
-- **Firebase:** [Firebase](https://firebase.google.com/)  
+- **Dart:** [Dart](https://dart.dev/)  
 - **MySQL:** [MySQL](https://www.mysql.com/)  
 - **Render:** [Render](https://render.com/)  
 - **Vercel:** [Vercel](https://vercel.com/)  
@@ -160,10 +158,10 @@ El proyecto está organizado dentro de una **organización en GitHub**, donde ca
 **Repositorios individuales de control de versiones:**
 
 - **Aplicación Móvil:**  
-  - **Tecnología:** Kotlin (Android Native)
-  - **IDE:** Android Studio
+  - **Tecnología:** Flutter (Dart)
+  - **IDE:** Android Studio / VS Code
   - **URL del repositorio:** https://github.com/9097-Experimentos-SmartStay/mobile
-  - **Plataforma de despliegue:** Android Studio Emulator / APK Testing
+  - **Plataforma de despliegue:** APK (GitHub Releases) / emulador Android
 
 - **Web Services (Backend):**  
   - **Tecnología:** ASP.NET Core (C#)
@@ -333,28 +331,25 @@ Se crean desde `main` para corregir problemas críticos en producción.
 - Comentarios XML para documentación interna de métodos y controladores.
 - Pruebas unitarias y escenarios escritos siguiendo la convención **Gherkin (Given-When-Then)**.
 
-### Kotlin (Android Studio)
+### Flutter (Dart)
 
-- [Kotlin Coding Conventions](https://kotlinlang.org/docs/coding-conventions.html)
-- [Android Developers Guidelines](https://developer.android.com/kotlin/style-guide)
+- [Effective Dart](https://dart.dev/effective-dart)
+- [Flutter Style Guide](https://github.com/flutter/flutter/blob/main/docs/contributing/Style-guide-for-Flutter-repo.md)
 
 **Convenciones aplicadas:**
 
-- Uso de **PascalCase** para clases y actividades (`LoginActivity`, `RoomManagementActivity`).
-- Uso de **camelCase** para variables, funciones y parámetros (`guestName`, `validateLogin()`).
-- Organización modular del código por paquetes (`activities`, `services`, `models`, `adapters`).
-- Uso de nombres descriptivos y consistentes para layouts XML y recursos visuales.
-- Implementación de buenas prácticas de desarrollo Android para mejorar mantenibilidad y escalabilidad.
+- Uso de **UpperCamelCase** para clases, widgets y tipos (`LoginScreen`, `RoomListPage`).
+- Uso de **lowerCamelCase** para variables, funciones y parámetros (`guestName`, `validateLogin()`).
+- Uso de **snake_case** para nombres de archivos y paquetes.
+- Organización del código por capas y funcionalidades (`core`, `domain`, `features`, `shared`).
+- Análisis estático con `flutter analyze` y las reglas de `flutter_lints`.
 
 **Componentes utilizados en la aplicación móvil:**
 
-- `Activity`: Maneja las pantallas principales de la aplicación.
-- `Fragment`: Permite reutilizar componentes visuales dentro de distintas vistas.
-- `RecyclerView`: Muestra listas dinámicas de habitaciones, reservas o servicios.
-- `Intent`: Gestiona la navegación entre pantallas.
-- `ViewModel`: Administra el estado y la lógica de presentación.
-- `Firebase`: Gestiona autenticación y notificaciones móviles.
-- `XML Layouts`: Define la estructura visual de las interfaces móviles.
+- `Widget`: Unidad básica de la interfaz; las pantallas se componen de widgets reutilizables.
+- `Navigator`: Gestiona la navegación entre pantallas.
+- `http`: Paquete para consumir la API REST del backend.
+- `flutter_secure_storage`: Almacenamiento seguro del token de sesión.
 
 ---
 
