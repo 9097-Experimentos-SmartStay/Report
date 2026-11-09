@@ -412,25 +412,23 @@ El despliegue de la solución considera los siguientes aspectos generales, los c
 
 ### Mobile Application Deployment
 
-La aplicación móvil fue desarrollada utilizando **Kotlin** en **Android Studio**, siguiendo una arquitectura orientada al desarrollo de aplicaciones Android nativas.  
+La aplicación móvil fue desarrollada con **Flutter (Dart)**, como un único código base que se compila a APK para Android.
 
 Para la ejecución y validación de la aplicación, se utilizaron las siguientes herramientas y configuraciones:
 
 1. **Preparación del entorno:**  
-   Se configuró el entorno de desarrollo mediante **Android Studio**, incluyendo el SDK de Android, emuladores y dependencias necesarias para la compilación de la aplicación.
+   Se instaló el SDK de Flutter y el SDK de Android (necesario para compilar el APK), junto con emuladores y dispositivos físicos para las pruebas.
 
 2. **Estructura del proyecto:**  
-   El proyecto móvil se organiza siguiendo buenas prácticas de Android Development:
-   - `activities/` → pantallas principales de la aplicación.
-   - `adapters/` → manejo de listas dinámicas y RecyclerViews.
-   - `models/` → clases de entidades y estructuras de datos.
-   - `services/` → conexión con APIs REST y servicios externos.
-   - `res/layout/` → archivos XML de las interfaces visuales.
-   - `assets/` → recursos gráficos e imágenes utilizadas en la aplicación.
+   El código fuente se organiza en `lib/`:
+   - `core/` → configuración y utilidades transversales.
+   - `domain/` → entidades y contratos del dominio.
+   - `features/` → módulos funcionales (`auth`, `bookings`, `client`, `hotels`, `profile`, `rooms`, `staff`).
+   - `shared/` → widgets y recursos compartidos.
 
 3. **Compilación y ejecución:**
-   - La aplicación se ejecuta mediante **Android Emulator** y dispositivos físicos Android.
-   - Android Studio genera automáticamente los archivos APK necesarios para pruebas e instalación.
+   - La aplicación se ejecuta mediante emuladores y dispositivos físicos Android.
+   - El APK se genera con `flutter build apk --release`.
    - Las versiones de prueba son administradas mediante GitHub y control de versiones GitFlow.
 
 4. **Servicios integrados:**
@@ -451,13 +449,13 @@ El proyecto implementa un flujo automatizado de **Integración Continua y Despli
 - Todos los repositorios están conectados directamente a **GitHub**.
 - Render ejecuta el despliegue automático al detectarse merges en la rama `main`.
 - El control de versiones se realiza utilizando Git y GitFlow.
-- Las versiones móviles son compiladas y probadas desde Android Studio antes de cada entrega.
+- Las versiones móviles se compilan con Flutter y se prueban en emulador y dispositivos físicos antes de cada entrega.
 
-### Android Studio Emulator
+### Emulador Android
 
-![Android Studio Emulator](../assets/chapter-5/deployment/android-studio-emulator.jpg)
+![Emulador Android](../assets/chapter-5/deployment/android-studio-emulator.jpg)
 
-**El emulador de Android Studio permite validar el funcionamiento de la aplicación móvil en distintos dispositivos y versiones de Android antes de su despliegue final.**
+**El emulador de Android permite validar el funcionamiento de la aplicación móvil en distintos dispositivos y versiones de Android antes de su despliegue final.**
 
 ---
 
@@ -564,9 +562,9 @@ Durante el sprint, se realizaron pruebas sobre los distintos componentes del eco
 | Landing Page | Prueba unitaria | Jest / `npm test` | Botones CTA | Los botones principales se visualizan correctamente y redireccionan a las secciones correspondientes. | Aprobado |
 | Landing Page | Prueba unitaria | Jest / `npm test` | Cambio de idioma | Los textos cambian correctamente entre los idiomas configurados. | Aprobado |
 | Landing Page | Prueba de interfaz | Navegador web | Diseño responsive | La Landing Page se adapta correctamente a vista desktop y móvil. | Aprobado |
-| Mobile Application | Prueba unitaria | Gradle / `./gradlew test` | Flujo de autenticación | La lógica de autenticación procesa correctamente credenciales y sesión de usuario. | Aprobado |
-| Mobile Application | Prueba unitaria | Gradle / `./gradlew test` | Gestión de perfiles | El módulo de perfiles permite cargar, crear y visualizar información del usuario. | Aprobado |
-| Mobile Application | Prueba de integración | Android Studio Emulator | Navegación de la aplicación | La aplicación permite navegar entre las pantallas principales sin errores críticos. | Aprobado |
+| Mobile Application | Prueba unitaria | Flutter / `flutter test` | Flujo de autenticación | La lógica de autenticación procesa correctamente credenciales y sesión de usuario. | Aprobado |
+| Mobile Application | Prueba unitaria | Flutter / `flutter test` | Gestión de perfiles | El módulo de perfiles permite cargar, crear y visualizar información del usuario. | Aprobado |
+| Mobile Application | Prueba de integración | Emulador Android | Navegación de la aplicación | La aplicación permite navegar entre las pantallas principales sin errores críticos. | Aprobado |
 | Backend | Prueba unitaria | .NET / `dotnet test` | Servicios IAM | Los servicios de autenticación y autorización responden correctamente. | Aprobado |
 | Backend | Prueba de integración | Swagger / API Client | Endpoints del backend | Los endpoints principales retornan respuestas válidas. | Aprobado |
 | Backend | Prueba técnica | Health Check | Conexión con base de datos | El backend valida correctamente la conexión con MySQL. | Aprobado |
