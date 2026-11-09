@@ -574,7 +574,7 @@ Durante el sprint, se realizaron pruebas sobre los distintos componentes del eco
 
 ##### 5.2.1.1.5. Execution Evidence for Sprint Review 
 
-Durante el Sprint 1, se logró ejecutar y validar la aplicación móvil en el entorno de desarrollo de Android Studio, utilizando tanto el emulador como dispositivos físicos para asegurar la correcta funcionalidad de las características implementadas. Así mismo, el despliegue del backend y landing page.
+Durante el Sprint 1, se logró ejecutar y validar la aplicación móvil en el entorno de desarrollo de Flutter, utilizando tanto el emulador como dispositivos físicos para asegurar la correcta funcionalidad de las características implementadas. Así mismo, el despliegue del backend y landing page.
 
 
 ![App Execution 1](../assets/chapter-5/sprints/sprint-1/app-execution-01.jpeg)
@@ -630,7 +630,7 @@ Durante el Sprint 1, se logró ejecutar y validar la aplicación móvil en el en
 
 En este Sprint 1, los miembros del equipo lograron completar las tareas asociadas al desarrollo inicial de la aplicación móvil SmartStay.
 
-El trabajo incluyó la configuración del entorno de desarrollo en Android Studio, la implementación de las primeras interfaces móviles y la integración de componentes principales como la pantalla de inicio de sesión, navegación entre vistas y estructura base de la aplicación.
+El trabajo incluyó la configuración del entorno de desarrollo de Flutter, la implementación de las primeras interfaces móviles y la integración de componentes principales como la pantalla de inicio de sesión, navegación entre vistas y estructura base de la aplicación.
 
 La aplicación móvil cumple el rol de plataforma principal de interacción para huéspedes y personal operativo, permitiendo centralizar funcionalidades relacionadas con reservas, gestión hotelera y servicios digitales dentro del ecosistema SmartStay.
 
@@ -667,7 +667,7 @@ A continuación, se presenta el Sprint Planning 2, en el que se incluyen las evi
 | **Sprint 2 Review Summary**         | Durante el Sprint 1 se logró publicar la Landing Page institucional del proyecto, desplegar la primera versión funcional del backend y validar la ejecución inicial de la aplicación móvil.                                             |
 | **Sprint 2 Retrospective Summary**  | Se identificó la necesidad de mejorar la distribución de tareas, aumentar la frecuencia de revisión de código y fortalecer la comunicación para acelerar la integración de funcionalidades.                                             |
 | **Sprint Goal & User Stories**      | —                                                                                                                                                                                                                                       |
-| **Sprint 2 Goal**                   | Desarrollar una aplicación móvil funcional en Kotlin, incorporando módulos de autenticación y seguridad, gestión de perfiles y usuarios, administración de hoteles y habitaciones, así como procesamiento de pagos.                     |
+| **Sprint 2 Goal**                   | Desarrollar una aplicación móvil funcional en Flutter, incorporando módulos de autenticación y seguridad, gestión de perfiles y usuarios, administración de hoteles y habitaciones, así como procesamiento de pagos.                     |
 | **Sprint 2 Velocity**               | 2                                                                                                                                                                                                                                       |
 | **Sum of Story Points**             | 2                                                                                                                                                                                                                                       |
 
@@ -759,7 +759,7 @@ Durante este sprint, el equipo realizó actividades de prueba para validar las f
 
 ##### 5.2.1.2.5. Execution Evidence for Sprint Review
 
-Durante el Sprint 2 se ejecutaron y validaron las funcionalidades desarrolladas dentro de la aplicación móvil SmartStay. Las pruebas se realizaron utilizando Android Studio, dispositivos físicos y servicios desplegados en la nube para verificar la correcta integración entre frontend y backend.
+Durante el Sprint 2 se ejecutaron y validaron las funcionalidades desarrolladas dentro de la aplicación móvil SmartStay. Las pruebas se realizaron utilizando emuladores Android, dispositivos físicos y servicios desplegados en la nube para verificar la correcta integración entre frontend y backend.
 
 ![App Android 1](../assets/chapter-5/implementation/mobile/sprint-2/android-app-01.jpeg)
 ![App Android 2](../assets/chapter-5/implementation/mobile/sprint-2/android-app-02.jpeg)
@@ -942,7 +942,7 @@ Durante el Sprint 3 se ejecutaron pruebas funcionales, pruebas de integración, 
 
 ##### 5.2.1.3.5. Execution Evidence for Sprint Review
 
-Durante el Sprint 3 se ejecutó la versión final de la aplicación móvil SmartStay, validando los principales flujos funcionales definidos para la presentación final. Las pruebas fueron realizadas en Android Studio y dispositivos móviles, utilizando servicios backend desplegados para comprobar la integración real del sistema.
+Durante el Sprint 3 se ejecutó la versión final de la aplicación móvil SmartStay, validando los principales flujos funcionales definidos para la presentación final. Las pruebas fueron realizadas en emuladores Android y dispositivos móviles, utilizando servicios backend desplegados para comprobar la integración real del sistema.
 
 Los flujos ejecutados fueron los siguientes:
 
@@ -1108,7 +1108,7 @@ En esta sección se puede ver el panel del administrador se puede ver un dashboa
 
 ### 5.2.4. Implemented Native-Mobile Application Evidence
 
-Durante el Sprint 2 se ejecutaron y validaron las funcionalidades desarrolladas dentro de la aplicación móvil SmartStay. Las pruebas se realizaron utilizando Android Studio, dispositivos físicos y servicios desplegados en la nube para verificar la correcta integración entre frontend y backend.
+Durante el Sprint 2 se ejecutaron y validaron las funcionalidades desarrolladas dentro de la aplicación móvil SmartStay. Las pruebas se realizaron utilizando emuladores Android, dispositivos físicos y servicios desplegados en la nube para verificar la correcta integración entre frontend y backend.
 
 ![App Android 1](../assets/chapter-5/implementation/mobile/sprint-2/android-app-01.jpeg)
 ![App Android 2](../assets/chapter-5/implementation/mobile/sprint-2/android-app-02.jpeg)
@@ -1119,7 +1119,7 @@ Durante el Sprint 2 se ejecutaron y validaron las funcionalidades desarrolladas 
 ![App Android 7](../assets/chapter-5/implementation/mobile/sprint-2/android-app-07.jpeg)
 ![App Android 8](../assets/chapter-5/implementation/mobile/sprint-2/android-app-08.jpeg)
 
-Durante el Sprint 3 se ejecutó la versión final de la aplicación móvil SmartStay, validando los principales flujos funcionales definidos para la presentación final. Las pruebas fueron realizadas en Android Studio y dispositivos móviles, utilizando servicios backend desplegados para comprobar la integración real del sistema.
+Durante el Sprint 3 se ejecutó la versión final de la aplicación móvil SmartStay, validando los principales flujos funcionales definidos para la presentación final. Las pruebas fueron realizadas en emuladores Android y dispositivos móviles, utilizando servicios backend desplegados para comprobar la integración real del sistema.
 
 Los flujos ejecutados fueron los siguientes:
 
