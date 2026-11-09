@@ -18,7 +18,7 @@ Para garantizar que el código integrado sea funcional, seguro y conforme a los 
 * **GitHub Actions:** Orquestador principal de automatización. Gestiona los flujos de trabajo (*workflows*) declarados en archivos YAML dentro de `.github/workflows/` (tales como `docker-publish.yml` y flujos de integración continua específicos por componente).
 
 * **Entornos de Ejecución (.NET SDK, Node.js y JDK):**
-  * Para el Backend: **.NET SDK 8.0** con la herramienta de configuración global `.config/dotnet-tools.json` para estandarizar el conjunto de herramientas de compilación y pruebas.
+  * Para el Backend: **.NET SDK 9.0** con la herramienta de configuración global `.config/dotnet-tools.json` para estandarizar el conjunto de herramientas de compilación y pruebas.
   * Para el Frontend Web y Landing Page: **Node.js (LTS)** con gestor de paquetes `npm`.
   * Para la Aplicación Móvil: **OpenJDK 17** y **Gradle** en Android Studio para la compilación de módulos Kotlin.
 
@@ -130,26 +130,26 @@ Para asegurar que cada versión generada sea reproducible, trazable y desplegabl
 * **GitHub Actions (Environments):** Orquesta los flujos de entrega definidos en `.github/workflows/` (como `docker-publish.yml` y `cd-staging.yml`). Usa *GitHub Environments* (`staging` y `production`) para separar configuraciones, secretos y reglas de aprobación por entorno.
 
 * **Docker y Docker Compose:**
-  * El Backend en ASP.NET Core se empaqueta con un `Dockerfile` *multi-stage*. La etapa `build` usa la imagen `mcr.microsoft.com/dotnet/sdk:8.0` y la etapa `runtime` usa `mcr.microsoft.com/dotnet/aspnet:8.0`, lo que reduce el tamaño de la imagen final.
+  * El Backend en ASP.NET Core se empaqueta con un `Dockerfile` *multi-stage*. La etapa `build` usa la imagen `mcr.microsoft.com/dotnet/sdk:9.0` y la etapa `runtime` usa `mcr.microsoft.com/dotnet/aspnet:9.0`, lo que reduce el tamaño de la imagen final.
   * `docker-compose.yml` levanta localmente y en *staging* el backend junto a una instancia de **MySQL 8**, con lo que se asegura la paridad entre entornos.
 
 * **Registro de Contenedores (GitHub Container Registry - GHCR):** Almacena las imágenes versionadas del backend (`ghcr.io/<org>/backend-aw-smartstay:<versión>`). Cada imagen se etiqueta con la versión semántica y con el *hash* corto del commit.
 
-* **Gestión de Secretos (GitHub Secrets):** Centraliza las cadenas de conexión a MySQL, las claves de firma JWT, las credenciales del registro de contenedores y el *keystore* de firma de Android. Ningún dato sensible se versiona en el repositorio.
+* **Gestión de Secretos (GitHub Secrets):** Centraliza las cadenas de conexión a MySQL, las claves de firma JWT y las credenciales del registro de contenedores. Ningún dato sensible se versiona en el repositorio.
 
 * **Entity Framework Core Migrations:** Genera scripts SQL idempotentes (`dotnet ef migrations script --idempotent`) que se aplican de forma controlada sobre la base de datos de cada entorno.
 
 * **Hosting por componente:**
-  * Backend: servicio de contenedores en la nube (Azure App Service for Containers), con un *slot* de `staging`.
-  * Frontend Web (Vue.js): hosting estático con *preview deployments* por Pull Request (Netlify / Vercel).
-  * Landing Page: GitHub Pages, publicada desde el directorio `dist/`.
-  * Aplicación Android: **Firebase App Distribution** distribuye builds de prueba al equipo y a los *testers* internos.
+  * Backend: servicio web de contenedores Docker en Render, que se despliega automáticamente cuando los *checks* de CI terminan en verde.
+  * Frontend Web (Vue.js): hosting estático en Vercel.
+  * Landing Page: hosting estático en Vercel, publicada desde el directorio `dist/`.
+  * Aplicación móvil (Flutter): el APK se distribuye a los *testers* mediante GitHub Releases.
 
 * **Gradle (Android Release Build):** Genera APK/AAB firmados mediante `./gradlew assembleRelease` y `./gradlew bundleRelease`, con la configuración de firma inyectada desde los secretos del pipeline.
 
 #### 2. Prácticas de Ingeniería Aplicadas
 
-* **Build Once, Deploy Many:** El artefacto (imagen Docker, bundle `dist/` o AAB) se construye una sola vez y se promueve sin recompilar entre entornos. Solo cambian las variables de configuración inyectadas en tiempo de despliegue (`ASPNETCORE_ENVIRONMENT`, `VITE_API_BASE_URL`, etc.).
+* **Build Once, Deploy Many:** El artefacto (imagen Docker, bundle `dist/` o APK) se construye una sola vez y se promueve sin recompilar entre entornos. Solo cambian las variables de configuración inyectadas en tiempo de despliegue (`ASPNETCORE_ENVIRONMENT`, `VITE_API_BASE_URL`, etc.).
 
 * **Versionamiento Semántico y Release Branches (GitFlow):** Cada entrega se prepara en una rama `release/x.y.z` creada desde `develop`. Al cerrarla se genera un *tag* `vX.Y.Z` en `main`, junto con un *changelog* construido automáticamente a partir de los commits semánticos.
 
@@ -197,7 +197,7 @@ El pipeline de entrega continua de SmartStay organiza el recorrido de cada cambi
 
 ## 7.3. Continuous deployment
 
-El Despliegue Continuo en SmartStay automatiza el último paso del ciclo: llevar a producción, sin intervención manual, todo cambio que supere las etapas de integración y entrega. Este modelo se aplica por completo al Backend, al Frontend Web y a la Landing Page. La Aplicación Móvil sigue un esquema de despliegue progresivo, porque depende del proceso de revisión de Google Play.
+El Despliegue Continuo en SmartStay automatiza el último paso del ciclo: llevar a producción, sin intervención manual, todo cambio que supere las etapas de integración y entrega. Este modelo se aplica por completo al Backend, al Frontend Web y a la Landing Page. La Aplicación Móvil sigue un esquema de despliegue progresivo, porque se distribuye como APK mediante GitHub Releases.
 
 ### 7.3.1. Tools and Practices.
 
@@ -205,9 +205,9 @@ Para desplegar en producción de forma segura, frecuente y reversible, se emplea
 
 #### 1. Herramientas de Despliegue Continuo
 
-* **GitHub Actions (Production Workflow):** El workflow `cd-production.yml` se dispara automáticamente con cada merge o *tag* sobre `main`. Toma la imagen ya validada en *staging* y la despliega en el entorno productivo.
+* **Render Auto-Deploy (`autoDeployTrigger: checksPass`):** Render despliega automáticamente en producción cada cambio que llega a `main`, siempre que los *checks* de GitHub Actions estén en verde. El despliegue lo ejecuta Render a partir de `render.yaml`; no existe un workflow de despliegue propio en GitHub Actions.
 
-* **Azure App Service – Deployment Slots:** El backend se publica primero en un *slot* intermedio y luego se intercambia (*swap*) con el *slot* de producción. Esto permite despliegues sin tiempo de inactividad (*zero-downtime*) y una reversión inmediata.
+* **Render (Web Service con Docker):** El backend se despliega como un único servicio web definido en `render.yaml`. Render construye la imagen y reemplaza la versión anterior solo si el *health check* `/health` responde correctamente.
 
 * **Hosting Estático con Despliegue Atómico:** El Frontend Web y la Landing Page se publican de forma atómica. La nueva versión reemplaza a la anterior solo cuando la carga termina por completo, y se conserva el historial de despliegues para revertir con un clic.
 
@@ -215,10 +215,7 @@ Para desplegar en producción de forma segura, frecuente y reversible, se emplea
 
 * **Monitoreo y Observabilidad:**
   * **Health Checks de ASP.NET Core** (`/health`) para verificar la disponibilidad del API y la conectividad con MySQL.
-  * **Azure Application Insights** para registrar logs, trazas, tiempos de respuesta y excepciones en producción.
-  * **Firebase Crashlytics** para reportar fallos de la aplicación móvil en tiempo real.
-
-* **Notificaciones del Pipeline:** Integración de GitHub Actions con el canal de comunicación del equipo (Discord / Slack) para avisar sobre despliegues exitosos, fallidos o revertidos.
+  * **Logs de Render** para consultar el registro de ejecución y las excepciones del servicio en producción.
 
 #### 2. Prácticas de Ingeniería Aplicadas
 
