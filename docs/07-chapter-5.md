@@ -190,33 +190,8 @@ Este enfoque permite un control de versiones ordenado y un desarrollo paralelo s
 
 **Diagrama del flujo GitFlow implementado:**
 
-```text
-main (producción)
- |
- |---- release/v1.0.0
- |          |
-develop    |
- |         |
- |---- feature/user-authentication
- |         |
- |         (desarrollo)
- |         |
- |<-------- (merge)
- |
- |---- feature/room-management
- |         |
- |         (desarrollo)
- |         |
- |<-------- (merge)
- |
- |---- hotfix/critical-bug
- |         |
- |         (corrección)
- |         |
- |<-------- (merge a develop)
- |         |
-main <---- (merge a main)
-```
+![Diagrama del flujo GitFlow](../assets/chapter-5/source-control/gitflow-diagram.png)
+
 ---
 ### Proceso de trabajo con GitFlow
 
