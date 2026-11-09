@@ -113,11 +113,11 @@ Asimismo, se aplicaron principios de usabilidad y diseño centrado en el usuario
 ### Software Development
 Para el desarrollo de la aplicación se utilizaron distintas herramientas y entornos de programación enfocados en el desarrollo backend y móvil.  
 
-El backend fue implementado con **ASP.NET Core (C#)** empleando el IDE **JetBrains Rider**, permitiendo gestionar la lógica de negocio y los servicios del sistema mediante APIs REST.  
+El backend fue implementado con **ASP.NET Core 9 (C#)** empleando el IDE **JetBrains Rider**. Se trata de una única API REST con arquitectura de monolito modular: un solo servicio desplegable, organizado en contextos delimitados (IAM, Perfiles, Alojamiento, Reservas, Pagos, Analítica, Auditoría, Marketing y Media) que se comunican internamente mediante fachadas ACL y eventos de dominio, y que comparten una única base de datos MySQL.  
 
 Por otro lado, el desarrollo móvil se realizó utilizando **Android Studio**, **Kotlin** y **Flutter**, tecnologías empleadas para implementar las aplicaciones dirigidas al huésped y al staff operativo. Asimismo, se utilizó **Firebase** para servicios de autenticación y notificaciones móviles.  
 
-Adicionalmente, se empleó **MySQL** como sistema de gestión de base de datos y **Azure** para el despliegue y administración de los servicios backend.  
+Adicionalmente, se empleó **MySQL** como sistema de gestión de base de datos y **Render** para el despliegue del backend, con **Vercel** para el frontend web y la landing page. Inicialmente se planteó **Azure** como plataforma de despliegue, pero por falta de créditos se optó por Render.  
 
 Finalmente, el proyecto se apoyó en herramientas de control de versiones como **Git y GitHub**, mientras que la instalación y mantenimiento de las IDEs se realizó mediante **JetBrains ToolBox**.
 
@@ -129,7 +129,8 @@ Finalmente, el proyecto se apoyó en herramientas de control de versiones como *
 - **Kotlin:** [Kotlin](https://kotlinlang.org/)  
 - **Firebase:** [Firebase](https://firebase.google.com/)  
 - **MySQL:** [MySQL](https://www.mysql.com/)  
-- **Azure:** [Azure](https://azure.microsoft.com/)  
+- **Render:** [Render](https://render.com/)  
+- **Vercel:** [Vercel](https://vercel.com/)  
 - **GitHub:** [GitHub](https://github.com/)
 
 
@@ -142,12 +143,12 @@ Toda la documentación se redactó en formato **Markdown (.md)**, debido a su le
 - **GitHub:** [GitHub](https://github.com/)
 
 ### Software Deployment
-El despliegue de los servicios backend se realizó mediante **Microsoft Azure**, permitiendo alojar las APIs REST y garantizar la comunicación entre las aplicaciones móviles, la base de datos y los servicios IoT del sistema Smart Stay.  
-Asimismo, las aplicaciones móviles fueron ejecutadas y validadas utilizando **Android Studio Emulator** y dispositivos físicos Android para verificar el correcto funcionamiento de las funcionalidades desarrolladas.
+El backend se desplegó en **Render** como un único servicio web basado en contenedor Docker, que aloja la API REST y garantiza la comunicación entre las aplicaciones, la base de datos MySQL y los servicios del sistema Smart Stay. Azure se consideró inicialmente como plataforma de despliegue, pero no se utilizó por falta de créditos.  
+Asimismo, la aplicación móvil fue ejecutada y validada en emuladores y dispositivos físicos Android para verificar el correcto funcionamiento de las funcionalidades desarrolladas.
 
 **Enlaces**  
-- **Azure:** [Azure](https://azure.microsoft.com/)  
-- **Android Studio:** [Android Studio](https://developer.android.com/studio)
+- **Render:** [Render](https://render.com/)  
+- **Vercel:** [Vercel](https://vercel.com/)
 
 
 
@@ -438,9 +439,8 @@ Para la ejecución y validación de la aplicación, se utilizaron las siguientes
    - Las versiones de prueba son administradas mediante GitHub y control de versiones GitFlow.
 
 4. **Servicios integrados:**
-   - Integración con APIs RESTful desarrolladas en ASP.NET Core.
-   - Uso de Firebase para autenticación y notificaciones móviles.
-   - Comunicación con servicios backend para reservas, habitaciones y gestión operativa.
+   - Integración con la API REST desarrollada en ASP.NET Core mediante el paquete `http`.
+   - Comunicación con el backend para reservas, habitaciones y gestión operativa.
 
 ### Backend (Web Services)
 
