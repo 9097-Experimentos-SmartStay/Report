@@ -375,8 +375,13 @@ El proyecto implementa un flujo automatizado de **Integración Continua y Despli
 - Este proceso garantiza una actualización constante de los servicios y minimiza la intervención manual en las publicaciones.
 
 ### Vercel (Landing Page):
-![Vercel Deployment](../assets/chapter-5/deployment/github-pages.jpg)
-> ⚠️ Imagen pendiente de reemplazo: la captura actual corresponde a la configuración antigua de GitHub Pages, no al dashboard de Vercel.
+La respuesta HTTP de la landing page confirma que es servida por Vercel (`server: Vercel`):
+
+![Cabeceras HTTP de la landing en Vercel](../assets/chapter-5/deployment/vercel-landing-headers.png)
+
+Landing page publicada en Vercel:
+
+![Landing page desplegada en Vercel](../assets/chapter-5/deployment/vercel-landing-live.png)
 
 **La URL pública de la landing page es la siguiente:**  
 [https://smartstay-movildev-landing.vercel.app/](https://smartstay-movildev-landing.vercel.app/)
@@ -1034,9 +1039,9 @@ En conclusión, el Sprint 3 permitió cerrar el ciclo de desarrollo de SmartStay
 
 ### 5.2.2. Implemented Landing Page Evidence
 
-![Github Pages](../assets/chapter-5/deployment/github-pages.jpg)
+![Cabeceras HTTP de la landing en Vercel](../assets/chapter-5/deployment/vercel-landing-headers.png)
 
-**La URL que nos entrega Github Pages para acceder a la landing page es la siguiente:**  
+**La URL que nos entrega Vercel para acceder a la landing page es la siguiente:**  
 [https://smartstay-movildev-landing.vercel.app/](https://smartstay-movildev-landing.vercel.app/)
 
 landing Page
