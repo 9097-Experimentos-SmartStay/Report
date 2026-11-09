@@ -518,16 +518,14 @@ Este Sprint está enfocado en establecer la presencia digital oficial del proyec
 
 ##### 5.2.1.1.3. Development Evidence for Sprint Review
 
-Durante el desarrollo del sprint, el equipo trabajó de manera distribuida en los distintos repositorios del ecosistema **SmartStay**, incluyendo el Project Report, Landing Page, Mobile Application, Backend y APK. Para evidenciar el avance realizado, se presenta el siguiente cuadro de commits obtenidos de los repositorios oficiales del proyecto en GitHub.
+Durante el desarrollo del sprint, el equipo trabajó de manera distribuida en los distintos repositorios del ecosistema **SmartStay**, incluyendo el Project Report, Landing Page, Mobile Application y Backend. Para evidenciar el avance realizado, se presenta el siguiente cuadro de commits obtenidos de los repositorios oficiales del proyecto en GitHub.
 
 | Repositorio | Commit | Autor | Fecha | Rama/Referencia | Mensaje |
 |---|---|---|---|---|---|
 | Project Report | f42fb3c |  | 2026-05-15 | main | Docs: Update README with Sprint 1 execution details |
 | Project Report | aa4d72f | atomdragon1318 | 2026-05-14 | main | docs: add Lean UX Canvas image and update related section in README |
-| Project Report | 95ab6ee |  | 2026-05-13 | main | Update README with APK repository URL |
 | Project Report | 4dcbc6c | atomdragon1318 | 2026-05-13 | main | doc: Add new asset images for application UI |
 | Project Report | bae57ee |  | 2026-05-13 | main | docs: add Development Evidence for Sprint Review, evidencia de la Suite de Pruebas para la Revisión del Sprint and Services Documentation Evidence for Sprint Review |
-| Project Report | c62b7ed | atomdragon1318 | 2026-05-13 | main | Docs: Add Android Studio emulator image to Chapter IIII |
 | Project Report | 3a74b48 | atomdragon1318 | 2026-05-13 | main | Docs: Add Lean UX Canvas image to Chapter I |
 | Project Report | b7ac279 | atomdragon1318 | 2026-05-12 | main | doc(fix): name of the image |
 | Project Report | e9d3771 | atomdragon1318 | 2026-05-12 | main | Docs: Add interview images for hotel management application, conclusions, recommendations and glossary. |
@@ -542,8 +540,6 @@ Durante el desarrollo del sprint, el equipo trabajó de manera distribuida en lo
 | Landing Page | 1253f31 | atomdragon1318 | 2026-05-04 | main | fix: hide scrollbar in carousel track for cleaner appearance |
 | Landing Page | f29f340 | atomdragon1318 | 2026-05-04 | main | feat: add image to member, delete video about the team |
 | Landing Page | 32e2e01 | atomdragon1318 | 2026-05-04 | main | chore: add initial files and landing page |
-| APK | 73fa084 |  | 2026-05-13 | main | Add SmartStay demo APK |
-| APK | 5e82d86 |  | 2026-05-13 | main | Add README for SmartStay APK demo |
 | Mobile Application | f204803 | atomdragon1318 | 2026-05-24 | main | feat: implement authentication feature with session management and API integration |
 | Mobile Application | b47b9cb | atomdragon1318 | 2026-05-24 | main | feat: implement accommodation feature with API service, repository, and UI components |
 | Mobile Application | 0d05b15 | atomdragon1318 | 2026-05-24 | main | feat: add device manager configuration and update library versions |
@@ -1017,8 +1013,6 @@ https://smartstay-movildev-api.onrender.com/scalar/
 
 Finalmente, se generó una versión final de la aplicación móvil en formato APK para su ejecución y validación. Esta versión contiene los módulos integrados y fue utilizada para la demostración final del producto.
 
-**Repositorio del APK:**  
-https://github.com/Movil-dev-Aplicaciones-Moviles/APK.git
 
 
 Con estas evidencias, se confirma que SmartStay cuenta con una landing page pública, servicios backend desplegados y una aplicación móvil lista para ser presentada como producto final del curso.
