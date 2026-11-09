@@ -28,8 +28,6 @@ Evans, E. (2004). _Domain-Driven Design: Tackling Complexity in the Heart of Sof
 
 Fowler, M. (2006). _Ubiquitous Language_. Recuperado de https://martinfowler.com/bliki/UbiquitousLanguage.html
 
-Google. (2025). _Firebase documentation_. https://firebase.google.com/docs
-
 Google. (s.f.). _Google HTML/CSS Style Guide_. Recuperado de https://google.github.io/styleguide/htmlcssguide.html
 
 Google. (s.f.). _Google JavaScript Style Guide_. Recuperado de https://google.github.io/styleguide/jsguide.html
