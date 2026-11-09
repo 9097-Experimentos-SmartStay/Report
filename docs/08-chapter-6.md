@@ -8,42 +8,41 @@ Los tres repositorios fueron sujetos a pruebas unitarias, pruebas de integració
 
 ### 6.1.1. Core Entities Unit Tests.
 
-El backend de SmartStay cuenta con el proyecto `BackendAwSmartstay.API.Tests`, que organiza las pruebas en los módulos Accommodations, Bookings y Profiles. Su estructura separa las áreas de aplicación, dominio e infraestructura, y contempla pruebas de compatibilidad e interfaces en el módulo de perfiles.
+Las pruebas unitarias verifican las entidades, agregados, objetos de valor y servicios de aplicación de cada contexto delimitado de forma aislada, sin base de datos real. En el backend se organizan en dos proyectos NUnit, y en la aplicación móvil se escriben con `flutter_test`.
 
-| Módulo | Áreas presentes en el proyecto de pruebas |
-|---|---|
-| Accommodations | Application, con una sección ACL. |
-| Bookings | Application, Domain e Infrastructure. |
-| Profiles | Application, Compatibility, Domain, Infrastructure e Interfaces. |
-| Payments | Application, Domain e Infrastructure. |
+#### Backend (ASP.NET Core 9, NUnit)
 
-<br>
-*Test de persistencia de Payments*
+| Proyecto | Contextos y áreas cubiertas | Pruebas |
+|---|---|---:|
+| `BackendAwSmartstay.API.UnitTests` | **Bookings:** Domain (`BookingTests`). **Payments:** Application, Domain e Infrastructure (pasarelas manual y simulada de tarjeta, `CardDetails`, `Payment`). | 87 |
+| `BackendAwSmartstay.API.Tests` | **Accommodations:** Application (fachadas ACL). **Bookings:** Application, Domain e Infrastructure. **IAM:** Infrastructure. **Profiles:** Application, Compatibility, Domain (Aggregates, Entities, ValueObjects), Infrastructure/Persistence e Interfaces/REST. | 150 |
 
-![payments-bc-test](../assets/chapter-6/core-entities-tests/payments-bc-test.png)
-![payments-test-suceed](../assets/chapter-6/core-entities-tests/payments-test-suceed.png)
+Ambos proyectos se ejecutaron con `dotnet test` el 9 de noviembre de 2026 y todas las pruebas pasaron (0 fallidas, 0 omitidas). Esta organización permite ubicar cada prueba según el contexto y la responsabilidad del componente: las áreas de dominio corresponden a entidades y reglas de negocio; las de aplicación, a la coordinación de operaciones; y las de infraestructura, a mecanismos como la persistencia. Las secciones de compatibilidad e interfaces del contexto Profiles cubren la lectura de datos previos y los controladores REST.
 
-Esta organización permite ubicar las pruebas según el módulo y la responsabilidad del componente evaluado. Las áreas de dominio corresponden a las entidades y reglas de negocio; las de aplicación, a la coordinación de operaciones; y las de infraestructura, a mecanismos como la persistencia. Las secciones de compatibilidad, interfaces y ACL permiten organizar verificaciones relacionadas con la interacción entre componentes.
+*Estructura del proyecto de pruebas del backend y ejecución exitosa*
 
 ![testing-backend-project](../assets/chapter-6/testing-suites/testing-backend-project.png)
 
 ![pass-test](../assets/chapter-6/testing-suites/pass-test.png)
 
-### Validación funcional del inicio de sesión del frontend
+*Prueba de persistencia de Payments*
 
-Se ejecutó una prueba funcional automatizada con Selenium sobre el formulario de inicio de sesión de SmartStay. La ejecución se realizó en Chrome, en modo visible, utilizando el frontend local en `http://localhost:5173/login`.
+![payments-bc-test](../assets/chapter-6/core-entities-tests/payments-bc-test.png)
+![payments-test-suceed](../assets/chapter-6/core-entities-tests/payments-test-suceed.png)
 
-La prueba consistió en dejar vacíos el correo electrónico y la contraseña e intentar enviar el formulario. Se verificó que ambos campos permanecieran vacíos, que la aplicación conservara la ruta de inicio de sesión y que mostrara una validación comprensible.
+#### Aplicación móvil (Flutter, `flutter_test`)
 
-| Caso evaluado | Resultado esperado | Resultado observado | Estado |
-|---|---|---|---|
-| Enviar el formulario de inicio de sesión con correo y contraseña vacíos. | Impedir continuar y mostrar una validación para ambos campos obligatorios. | La aplicación permaneció en `/login` y mostró «Este campo es obligatorio.» debajo del correo y de la contraseña. | Aprobado |
+La aplicación móvil cuenta con 16 pruebas en tres archivos, ejecutadas con `flutter test` el 9 de noviembre de 2026 (16 aprobadas):
 
-El resultado confirma la validación de campos obligatorios en este escenario. No se utilizaron credenciales ni se crearon cuentas, reservas o pagos.
+| Archivo | Qué verifica | Pruebas |
+|---|---|---:|
+| `test/staff_models_test.dart` | Matriz de permisos por rol (recepción, housekeeping, huésped y roles desconocidos), lectura de `BookingResource`, expiración y cancelación de reservas, resolución de reservas por día del calendario, mapa de habitaciones por estado, pagos en efectivo sin número de operación y cálculo de fechas | 9 |
+| `test/guest_booking_api_test.dart` | Validación de tarjeta (`CardDetails.parse`), creación de reserva, error del backend al reservar, pago con tarjeta y cancelación rechazada | 6 |
+| `test/widget_test.dart` | La aplicación del huésped carga correctamente | 1 |
 
-El alcance de esta prueba se limita al envío del formulario vacío. No verifica la autenticación con credenciales, la autorización por roles ni los demás flujos del frontend.
+#### Aplicación web
 
-![testing-frontend](../assets/chapter-6/testing-suites/testing-frontend.png)
+El frontend web (Vue 3 + Vite) no cuenta aún con una suite de pruebas unitarias automatizadas. Su verificación funcional se documenta en la sección 6.1.4.
 
 ### 6.1.2. Core Integration Tests.
 
