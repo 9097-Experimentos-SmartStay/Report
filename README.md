@@ -48,10 +48,47 @@ El objetivo de esta sección es resumir las modificaciones relevantes que se rea
 | :-----: | :---: | :--- | :--- |
 | 1.0 | 05/09/2026 | Samuel Jesus Bonifacio Jaramillo | Inicialización de repositorios |
 | 1.1 | 07/09/2026 | Samuel Jesus Bonifacio Jaramillo | Creación de Capitulos I–V, corrección de la tabla de integrantes, correcciones de redacción y actualización de contenidos. |
+| 1.2 | 04/10/2026 | SmartStay Team | Creación del Capítulo VI (6.1 Testing Suites & Validation) y del Capítulo VII (7.1 a 7.3 DevOps Practices) con las primeras evidencias de pruebas. |
+| 1.3 | 08/10/2026 | SmartStay Team | Actualización del Capítulo VII (7.2 y 7.3) con los diagramas de los pipelines de entrega y despliegue. |
+| 1.4 | 09/11/2026 | SmartStay Team | Capítulo VI: 6.2 Static testing & Verification (ESLint, auditoría de dependencias, revisión de pull requests), 6.3 Validation Interviews (diseño) y 6.4 Auditoría de Experiencias de Usuario (estructura). |
+| 1.5 | 09/11/2026 | SmartStay Team | Capítulo VII: 7.4 Continuous Monitoring, con resultados de GitHub Actions, disponibilidad y mediciones de Lighthouse. |
+| 1.6 | 09/11/2026 | SmartStay Team | Capítulo VIII: 8.1 Experiment Planning, 8.2 Experiment Design, 8.3.1 To-Be User Stories y 8.3.2 To-Be Product Backlog. |
+| 1.7 | 09/11/2026 | SmartStay Team | Actualización de Student Outcome (AV2), Project Report Collaboration Insights y 5.2.8 con los reportes de commits por rama. |
+| 1.8 | 09/11/2026 | SmartStay Team | Corrección de 6.1 (resultados de pruebas y fragmentos Gherkin) y de 7.1 a 7.3 para que coincidan con los repositorios, workflows y plataformas de despliegue reales. |
+| 1.9 | 09/11/2026 | SmartStay Team | Inspección heurística del portal del huésped en 6.3.3, vistas del huésped en 5.2.3 y ajuste del experimento E-02 en el Capítulo VIII. |
+| 1.10 | 09/11/2026 | SmartStay Team | Nuevo 5.2.4 Acuerdo de Servicio - SaaS (los apartados siguientes de 5.2 pasan a 5.2.5 a 5.2.8), descripción de despliegue de la landing page en 5.1.4, Student Outcome AV2 completo y bibliografía actualizada. |
 
 ### Project Report Collaboration Insights
 
-> **Pendiente:** consignar la URL pública del repositorio del informe, la explicación de las actividades por entrega y las capturas de los analíticos de colaboración y commits de GitHub. Esta sección debe ampliarse en cada entrega y ser coherente con el Registro de Versiones del Informe.
+**Repositorio del informe:** [https://github.com/9097-Experimentos-SmartStay/Report](https://github.com/9097-Experimentos-SmartStay/Report)
+
+El informe se elabora de forma colaborativa en Markdown, con la rama `develop` como base de trabajo, ramas `feature/*` para cada bloque de contenido y *pull requests* hacia `main`. Cada cambio sigue Conventional Commits, y un workflow de GitHub Actions regenera el `README.md` a partir de los archivos de `docs/` en cada integración, de modo que el informe nunca se edita directamente en el archivo generado.
+
+#### Entrega AV1
+
+Se redactaron los Capítulos I a V y se aplicó la estructura exigida por el enunciado. Samuel Bonifacio configuró el repositorio, la estructura de `docs/` y el script `scripts/build_report.py`; Piero Sulca mantuvo el script y la numeración de capítulos; Ítalo Verona y Alejandro Galindo aportaron contenido de los Capítulos II y III. La mayor parte de estos commits se concentró en la semana del 07/09/2026 al 18/09/2026.
+
+#### Entrega AV2
+
+Se añadieron los Capítulos VI, VII y VIII, y se actualizaron el Registro de Versiones, el Student Outcome y esta sección. El Capítulo VI y los apartados 7.1 a 7.3 se redactaron entre el 04/10/2026 y el 08/10/2026 en `develop`; los apartados 6.2 a 6.4, 7.4 y el Capítulo VIII y las actualizaciones de esta entrega se preparan en la rama `feature/av2`.
+
+**Commits del informe por integrante en todas las ramas** (entre paréntesis, los commits desde el 19/09/2026, inicio de AV2):
+
+| Integrante | Commits en `Report` |
+| :--- | :---: |
+| Bonifacio Jaramillo, Samuel Jesus | 11 (3) |
+| Galindo Manuel, Alejandro Manuel | 6 (1) |
+| Ponce Perales, Alberto Alejandro | 0 (0) |
+| Sulca Sanchez, Piero Angel | 11 (0) |
+| Verona Flores, Ítalo Sebastián | 12 (4) |
+
+Los autores de Git se asignaron a cada integrante por su nombre de usuario o correo. Los commits del bot `github-actions[bot]` (15 en total) regeneran el `README.md` y no se atribuyen a ningún integrante. El conteo excluye los commits de fusión.
+
+![Contribuciones al repositorio Report](assets/chapter-5/collaboration-insights/report-contributors.jpg)
+
+*Gráfico de contribuciones de GitHub para `Report` entre el 01/09/2026 y el 08/11/2026. GitHub solo cuenta los commits de la rama `main` y excluye los de fusión.*
+
+**Interpretación.** La participación de Alejandro, Ítalo, Piero y Samuel quedó registrada en el repositorio, con picos de actividad en las semanas previas a cada entrega. En esta entrega no figuran commits de Alberto Ponce con su nombre ni su correo institucional en el repositorio del informe, por lo que su aporte debe revisarse y, de corresponder, registrarse mediante commits o un archivo `.mailmap` que unifique sus identidades de Git. La coherencia con el Registro de Versiones se mantiene: cada fila de la tabla de versiones corresponde a commits de las fechas indicadas.
 
 ---
 
@@ -142,13 +179,71 @@ El objetivo de esta sección es resumir las modificaciones relevantes que se rea
     - [5.2.1. Sprint Backlogs](#521-sprint-backlogs)
     - [5.2.2. Implemented Landing Page Evidence](#522-implemented-landing-page-evidence)
     - [5.2.3. Implemented Frontend-Web Application Evidence](#523-implemented-frontend-web-application-evidence)
-    - [5.2.4. Implemented Native-Mobile Application Evidence](#524-implemented-native-mobile-application-evidence)
-    - [5.2.5. Implemented RESTful API and/or Serverless Backend Evidence](#525-implemented-restful-api-andor-serverless-backend-evidence)
-    - [5.2.6. RESTful API documentation](#526-restful-api-documentation)
-    - [5.2.7. Team Collaboration Insights](#527-team-collaboration-insights)
+    - [5.2.4. Acuerdo de Servicio - SaaS](#524-acuerdo-de-servicio---saas)
+    - [5.2.5. Implemented Native-Mobile Application Evidence](#525-implemented-native-mobile-application-evidence)
+    - [5.2.6. Implemented RESTful API and/or Serverless Backend Evidence](#526-implemented-restful-api-andor-serverless-backend-evidence)
+    - [5.2.7. RESTful API documentation](#527-restful-api-documentation)
+    - [5.2.8. Team Collaboration Insights](#528-team-collaboration-insights)
   - [5.3. Video About-the-Product](#53-video-about-the-product)
 - [Capítulo VI: Product Verification & Validation](#capítulo-vi-product-verification--validation)
+  - [6.1. Testing Suites & Validation](#61-testing-suites--validation)
+    - [6.1.1. Core Entities Unit Tests.](#611-core-entities-unit-tests)
+    - [6.1.2. Core Integration Tests.](#612-core-integration-tests)
+    - [6.1.3. Core Behavior-Driven Development](#613-core-behavior-driven-development)
+    - [6.1.4. Core System Tests](#614-core-system-tests)
+  - [6.2. Static testing & Verification](#62-static-testing--verification)
+    - [6.2.1. Static Code Analysis](#621-static-code-analysis)
+      - [6.2.1.1. Coding standard & Code conventions](#6211-coding-standard--code-conventions)
+      - [6.2.1.2. Code Quality & Code Security](#6212-code-quality--code-security)
+    - [6.2.2. Reviews](#622-reviews)
+  - [6.3. Validation Interviews](#63-validation-interviews)
+    - [6.3.1. Diseño de Entrevistas](#631-diseño-de-entrevistas)
+    - [6.3.2. Registro de Entrevistas](#632-registro-de-entrevistas)
+    - [6.3.3. Evaluaciones según heurísticas](#633-evaluaciones-según-heurísticas)
+  - [6.4. Auditoría de Experiencias de Usuario](#64-auditoría-de-experiencias-de-usuario)
+    - [6.4.1. Auditoría realizada](#641-auditoría-realizada)
+      - [6.4.1.1. Información del grupo auditado](#6411-información-del-grupo-auditado)
+      - [6.4.1.2. Cronograma de auditoría realizada](#6412-cronograma-de-auditoría-realizada)
+      - [6.4.1.3. Contenido de auditoría realizada](#6413-contenido-de-auditoría-realizada)
+    - [6.4.2. Auditoría recibida](#642-auditoría-recibida)
+      - [6.4.2.1. Información del grupo auditor](#6421-información-del-grupo-auditor)
+      - [6.4.2.2. Cronograma de auditoría recibida](#6422-cronograma-de-auditoría-recibida)
+      - [6.4.2.3. Contenido de auditoría recibida](#6423-contenido-de-auditoría-recibida)
+      - [6.4.2.4. Resumen de modificaciones para subsanar hallazgos](#6424-resumen-de-modificaciones-para-subsanar-hallazgos)
 - [Capítulo VII: DevOps Practices](#capítulo-vii-devops-practices)
+  - [7.1. Continuous Integration](#71-continuous-integration)
+    - [7.1.1. Tools and Practices](#711-tools-and-practices)
+    - [7.1.2. Build & Test Suite Pipeline Components](#712-build--test-suite-pipeline-components)
+  - [7.2. Continuous Delivery](#72-continuous-delivery)
+    - [7.2.1. Tools and Practices.](#721-tools-and-practices)
+    - [7.2.2. Stages Deployment Pipeline Components.](#722-stages-deployment-pipeline-components)
+  - [7.3. Continuous deployment](#73-continuous-deployment)
+    - [7.3.1. Tools and Practices.](#731-tools-and-practices)
+    - [7.3.2. Production Deployment Pipeline Components.](#732-production-deployment-pipeline-components)
+  - [7.4. Continuous Monitoring](#74-continuous-monitoring)
+    - [7.4.1. Tools and Practices](#741-tools-and-practices)
+    - [7.4.2. Monitoring Pipeline Components](#742-monitoring-pipeline-components)
+    - [7.4.3. Alerting Pipeline Components](#743-alerting-pipeline-components)
+    - [7.4.4. Notification Pipeline Components](#744-notification-pipeline-components)
+- [Capítulo VIII: Experiment-Driven Development](#capítulo-viii-experiment-driven-development)
+  - [8.1. Experiment Planning](#81-experiment-planning)
+    - [8.1.1. As-Is Summary](#811-as-is-summary)
+    - [8.1.2. Raw Material: Assumptions, Knowledge Gaps, Ideas, Claims](#812-raw-material-assumptions-knowledge-gaps-ideas-claims)
+    - [8.1.3. Experiment-Ready Questions](#813-experiment-ready-questions)
+    - [8.1.4. Question Backlog](#814-question-backlog)
+    - [8.1.5. Experiment Cards](#815-experiment-cards)
+  - [8.2. Experiment Design](#82-experiment-design)
+    - [8.2.1. Hypotheses](#821-hypotheses)
+    - [8.2.2. Domain Business Metrics](#822-domain-business-metrics)
+    - [8.2.3. Measures](#823-measures)
+    - [8.2.4. Conditions](#824-conditions)
+    - [8.2.5. Scale Calculations and Decisions](#825-scale-calculations-and-decisions)
+    - [8.2.6. Methods Selection](#826-methods-selection)
+    - [8.2.7. Data Analytics: Goals, KPIs and Metrics Selection](#827-data-analytics-goals-kpis-and-metrics-selection)
+    - [8.2.8. Web and Mobile Tracking Plan](#828-web-and-mobile-tracking-plan)
+  - [8.3. Experimentation](#83-experimentation)
+    - [8.3.1. To-Be User Stories](#831-to-be-user-stories)
+    - [8.3.2. To-Be Product Backlog](#832-to-be-product-backlog)
   - [Conclusiones](#conclusiones)
   - [Bibliografía](#bibliografía)
   - [Anexos](#anexos)
@@ -186,9 +281,16 @@ El objetivo de esta sección es resumir las modificaciones relevantes que se rea
         <b>Ponce Perales, Alberto Alejandro:</b> Al desarrollar las entrevistas para los segmentos de Staff y Clientes y participar en la redacción de los Capítulos II y III, reconocí la responsabilidad de recoger y representar con honestidad las respuestas de los entrevistados, sin manipular ni omitir información que pudiera sesgar el análisis de necesidades del proyecto.<br>
         <b>Verona Flores, Ítalo Sebastián:</b> Al desarrollar el As-Is Scenario Mapping del Capítulo II, reconocí la responsabilidad de representar fielmente las fases, acciones y emociones reales de huéspedes y personal del hotel, evitando sesgos que distorsionaran su experiencia actual y afectaran las decisiones de diseño posteriores.<br>
         <b>Sulca, Piero:</b> Al estructurar y automatizar la generación del informe (numeración de capítulos y script de build), asumí la responsabilidad profesional de mantener la trazabilidad y coherencia del entregable grupal, evitando inconsistencias que afectaran la evaluación del proyecto.<br>
-        <b>Galindo Manuel, Alejandro:</b> Al construir el Impact Mapping y el To-Be Scenario Mapping del Capítulo III, reconocí la responsabilidad de traducir fielmente las necesidades identificadas en los segmentos de huéspedes y hoteles en acciones concretas del Product Backlog, sin distorsionar las prioridades reales del negocio.
+        <b>Galindo Manuel, Alejandro:</b> Al construir el Impact Mapping y el To-Be Scenario Mapping del Capítulo III, reconocí la responsabilidad de traducir fielmente las necesidades identificadas en los segmentos de huéspedes y hoteles en acciones concretas del Product Backlog, sin distorsionar las prioridades reales del negocio.<br><br>
+        <b>AV2<br>
+        Bonifacio Jaramillo, Samuel Jesus:</b> <br> Al escribir las pruebas de la entidad de pagos del backend (commit <code>92c2137</code>) y documentarlas en el Capítulo VI (commits <code>9d1c713</code>, <code>18b76ac</code> y <code>4883b18</code> del informe), asumí la responsabilidad de reportar solo resultados verificables: cada prueba descrita en el informe corresponde a código que otros pueden reproducir.<br>
+        <b>Ponce Perales, Alberto Alejandro:</b> Al diseñar las entrevistas de validación del Capítulo VI y la planificación y el diseño de los experimentos del Capítulo VIII, asumí la responsabilidad de no presentar como resultados lo que todavía son supuestos: las líneas base de conversión y de tiempo por tarea figuran como supuestos de partida hasta medirlas. También definí reglas para que ningún usuario participe en dos experimentos sobre el mismo tema, para que ninguna variante oculte información al usuario y para que las entrevistas se graben solo con su consentimiento expreso.<br>
+        <b>Verona Flores, Ítalo Sebastián:</b> Al completar los escenarios Gherkin de las pruebas BDD (commit <code>00f3c16</code>) y corregir las pruebas de integración (commit <code>8bdda14</code>), asumí la responsabilidad de que los criterios de aceptación escritos en lenguaje de negocio reflejen el comportamiento real del sistema y no una versión idealizada. También documenté las pruebas BDD y la integración continua en los Capítulos VI y VII (commits <code>c0ffcb2</code> y <code>a183580</code> del informe).<br>
+        <b>Sulca, Piero:</b> Al construir el pipeline de integración continua del backend (commit <code>28af02f</code>) y corregir los paquetes vulnerables que detectó (commit <code>f875916</code>), asumí la responsabilidad profesional de que ningún cambio llegue a producción sin pasar controles de formato, seguridad de dependencias y pruebas, condicionando el despliegue en Render a ese resultado (commit <code>2eb6464</code>).<br>
+        <b>Galindo Manuel, Alejandro:</b> Al escribir las pruebas unitarias de reservas (commit <code>ce59ee8</code>) y completar las historias de usuario restantes del backlog en el backend y el frontend (commits <code>d0def37</code> y <code>b742122</code>), asumí la responsabilidad de que las pruebas verifiquen las reglas de negocio de las reservas y no solo el caso exitoso. También aporté los diagramas de los pipelines de entrega y despliegue de los apartados 7.2 y 7.3 (commit <code>324a5d5</code> del informe).
       </td>
-      <td>Como equipo concluimos que reconocer nuestras responsabilidades éticas y profesionales exige contrastar cada decisión de diseño e ingeniería con evidencia real recogida del público objetivo (entrevistas, as-is mapping, backlog), evitando que supuestos personales o presiones de tiempo distorsionen la representación de las necesidades de huéspedes y personal hotelero.</td>
+      <td>Como equipo concluimos que reconocer nuestras responsabilidades éticas y profesionales exige contrastar cada decisión de diseño e ingeniería con evidencia real recogida del público objetivo (entrevistas, as-is mapping, backlog), evitando que supuestos personales o presiones de tiempo distorsionen la representación de las necesidades de huéspedes y personal hotelero.<br><br>
+        <b>AV2:</b> Concluimos que la responsabilidad profesional también se ejerce al documentar. Reportamos las brechas que encontramos (sin entrevistas de validación, sin analítica instalada, 25 errores de lint abiertos en el frontend y escasa revisión entre pares en GitHub) en lugar de ocultarlas, y condicionamos cada afirmación del informe a una evidencia verificable: ejecuciones de CI, mediciones de Lighthouse e historial de commits.</td>
     </tr>
     <tr>
       <td width="25%"><b>4.c.2</b> Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales</td>
@@ -198,9 +300,16 @@ El objetivo de esta sección es resumir las modificaciones relevantes que se rea
         <b>Ponce Perales, Alberto Alejandro:</b> Las entrevistas realizadas a Staff y Clientes, junto con el análisis plasmado en los Capítulos II y III, me permitieron emitir juicios informados sobre cómo la falta de digitalización impacta económica y socialmente en la operación diaria de los hoteles pequeños y en la experiencia de sus huéspedes.<br>
         <b>Verona Flores, Ítalo Sebastián:</b> Analizar el escenario As-Is me permitió emitir juicios informados sobre el impacto social y operativo que la falta de digitalización genera en el personal hotelero, identificando puntos de fricción que justifican la propuesta de solución.<br>
         <b>Sulca, Piero:</b> Organizar la información del reporte conforme al esquema exigido me permitió valorar el impacto que una documentación clara y ordenada tiene en la comprensión del proyecto por parte de evaluadores y stakeholders.<br>
-        <b>Galindo Manuel, Alejandro:</b> Definir y priorizar historias del Product Backlog me permitió emitir juicios informados sobre el impacto económico y operativo que cada funcionalidad tendría en los hoteles pequeños del segmento objetivo.
+        <b>Galindo Manuel, Alejandro:</b> Definir y priorizar historias del Product Backlog me permitió emitir juicios informados sobre el impacto económico y operativo que cada funcionalidad tendría en los hoteles pequeños del segmento objetivo.<br><br>
+        <b>AV2<br>
+        Bonifacio Jaramillo, Samuel Jesus:</b> <br> Al probar el módulo de pagos, incluido el reembolso al cancelarse una reserva, valoré el impacto económico que un cobro o un reembolso incorrecto tendría sobre el hotel y sobre el huésped, lo que justifica probar esas reglas con más detalle que las demás.<br>
+        <b>Ponce Perales, Alberto Alejandro:</b> Al calcular la escala de cada experimento (nivel de significancia, potencia estadística y efecto mínimo detectable) evalué el impacto de decidir con muestras insuficientes: un falso positivo llevaría a un hotel a adoptar un cambio que no mejora su operación, y un falso negativo haría que el equipo descartara una mejora útil. Por eso definí métricas de control que vigilan los daños colaterales de cada variante y limité el seguimiento a datos anónimos, en línea con la Ley N.º 29733 de Protección de Datos Personales.<br>
+        <b>Verona Flores, Ítalo Sebastián:</b> Los escenarios de seguridad de las pruebas BDD, como el bloqueo temporal de la cuenta tras cinco intentos fallidos de inicio de sesión (US-02), me permitieron valorar el impacto social de proteger los datos de huéspedes y personal frente a accesos indebidos.<br>
+        <b>Sulca, Piero:</b> La auditoría de dependencias que automatizamos detectó paquetes vulnerables en el backend. Corregirlos antes de producción me permitió valorar el impacto de la seguridad de la cadena de suministro sobre los datos de los hoteles y de sus huéspedes.<br>
+        <b>Galindo Manuel, Alejandro:</b> Al incorporar la autenticación de dos factores y la aplicación de recepción en la aplicación móvil (commit <code>cda9496</code>), emití juicios informados sobre el equilibrio entre seguridad y facilidad de uso para el personal de recepción, que atiende con poco tiempo por huésped.
       </td>
-      <td>Como equipo concluimos que las soluciones de ingeniería de software que proponemos para SmartStay tienen un impacto económico directo en la rentabilidad de hoteles pequeños y medianos, y un impacto social en la calidad de vida laboral del personal hotelero y en la experiencia de los huéspedes, por lo que cada priorización del backlog debe sustentarse en evidencia recogida del público objetivo y no en suposiciones internas del equipo.</td>
+      <td>Como equipo concluimos que las soluciones de ingeniería de software que proponemos para SmartStay tienen un impacto económico directo en la rentabilidad de hoteles pequeños y medianos, y un impacto social en la calidad de vida laboral del personal hotelero y en la experiencia de los huéspedes, por lo que cada priorización del backlog debe sustentarse en evidencia recogida del público objetivo y no en suposiciones internas del equipo.<br><br>
+        <b>AV2:</b> Diseñar los experimentos nos obligó a considerar el impacto de nuestras decisiones sobre las personas y sobre el negocio: ninguna variante oculta precios ni condiciones, los datos de seguimiento son mínimos y anónimos conforme a la Ley N.º 29733, la accesibilidad del login web (88 en Lighthouse) se trata como un asunto de inclusión y no solo de calidad, y operar sobre infraestructura gratuita ahorra costos al proyecto pero traslada esperas de arranque en frío a los primeros usuarios.</td>
     </tr>
   </tbody>
 </table>
@@ -4226,28 +4335,30 @@ Se crean desde `main` para corregir problemas críticos en producción.
 ### 5.1.4. Software Deployment Configuration
 
 ### Landing Page Deployment
-La **Landing Page** fue desarrollada utilizando **HTML**, **CSS** y **JavaScript**, y se encuentra desplegada públicamente a través de **Vercel**.  
+La **Landing Page** fue desarrollada con **JavaScript**, **Vite** y **Tailwind CSS**, y se encuentra desplegada públicamente a través de **Vercel**.  
 Para su publicación, se cumplieron los siguientes pasos:
 
 1. **Preparación del entorno:**  
    Se creó un repositorio dentro de la organización en **GitHub**, destinado a alojar los archivos de la Landing Page.
 
 2. **Estructura de archivos:**  
-   Los archivos principales se encuentran en la raíz del repositorio, siguiendo las convenciones de nombres:
+   El repositorio se organiza de la siguiente manera:
     - `index.html` → página principal.
-    - `styles.css` → hoja de estilos principal.
-    - `script.js` → scripts principales.
-    - `languages.js` → archivo para gestionar los textos en distintos idiomas (español e inglés).
-    - Carpeta `assets/images/` → para las imágenes utilizadas en el sitio.
+    - `src/main.js` → punto de entrada de los scripts.
+    - `src/features/` → funcionalidades de la página (formulario de demostración, contacto, testimonios y navegación por perfil).
+    - `src/i18n/` → textos en español e inglés (`locales/es.js` y `locales/en.js`) y la lógica del cambio de idioma.
+    - `src/styles/main.css` → hoja de estilos principal.
+    - `public/` → íconos y recursos estáticos.
+    - `vercel.json` → configuración del despliegue.
 
 3. **Configuración en Vercel:**
     - Se importó el repositorio de la Landing Page directamente desde GitHub a **Vercel**.
     - Se seleccionó la rama **main** como fuente de publicación.
-    - Se configuró la carpeta raíz (`/`) como directorio base del proyecto.
+    - `vercel.json` declara el *framework* Vite, la instalación con `npm ci`, el comando `npm run build` y el directorio de salida `dist`.
+    - El mismo archivo configura la caché inmutable de los recursos versionados y las cabeceras de seguridad `X-Content-Type-Options`, `Referrer-Policy`, `X-Frame-Options` y `Permissions-Policy`.
     - Una vez completado el proceso, Vercel generó automáticamente la URL pública de la Landing Page.
 
-Además, se implementó un archivo `languages.js` que contiene los textos en español e inglés.  
-Este archivo es consumido por el script `main.js`, permitiendo el cambio de idioma dinámico en la interfaz.
+El módulo `src/i18n/` contiene los textos en español e inglés y permite el cambio de idioma dinámico en la interfaz.
 
 
 ### Backend (Web Services)
@@ -4985,7 +5096,65 @@ En esta sección se puede ver el panel del administrador se puede ver un dashboa
 
 ![Front4](assets/chapter-5/implementation/frontend-web/frontend-04.jpeg)
 
-### 5.2.4. Implemented Native-Mobile Application Evidence
+#### Vistas del huésped (AV2)
+
+El 09/11/2026 se capturaron las vistas del portal del huésped en la aplicación web desplegada, con una cuenta de prueba. Los hallazgos de usabilidad se analizan en el apartado 6.3.3.
+
+En el panel de inicio el huésped ve un saludo, sus reservas y noches, un acceso a una nueva reserva y recomendaciones de habitaciones.
+
+![Panel de inicio del huésped](assets/chapter-6/heuristic-review/guest-dashboard.jpg)
+
+En «Hoteles» se listan los hoteles con su ubicación, comodidades y precio por noche, y se pueden buscar por ciudad o nombre.
+
+![Listado de hoteles](assets/chapter-6/heuristic-review/guest-hotels.jpg)
+
+En «Habitaciones» se listan las habitaciones con su tipo, descripción, comodidades y precio, y se pueden filtrar por tipo.
+
+![Listado de habitaciones](assets/chapter-6/heuristic-review/guest-rooms.jpg)
+
+El detalle de la habitación muestra el precio, la descripción, las comodidades y la política de cancelación, y ofrece el botón para buscar fechas y reservar.
+
+![Detalle de la habitación](assets/chapter-6/heuristic-review/guest-room-detail.jpg)
+
+El formulario de reserva pide el hotel y las fechas de llegada y salida antes de buscar habitaciones disponibles.
+
+![Búsqueda de fechas para reservar](assets/chapter-6/heuristic-review/guest-booking-search.jpg)
+
+«Mis reservas» y «Clima de mi habitación» muestran un mensaje y una acción cuando el huésped aún no tiene reservas ni una estadía activa.
+
+![Mis reservas](assets/chapter-6/heuristic-review/guest-bookings-empty.jpg)
+
+![Clima de mi habitación](assets/chapter-6/heuristic-review/guest-room-climate-empty.jpg)
+
+### 5.2.4. Acuerdo de Servicio - SaaS
+
+Este acuerdo establece los derechos, obligaciones y restricciones aplicables a quienes usan la plataforma SmartStay, para que el uso del servicio sea transparente. Se publica en la sección «Terms and Conditions» de la landing page y de las aplicaciones, con un enlace en el pie de cada una. Su redacción sigue los principios del código de ética de la ingeniería de software de ACM/IEEE y del Colegio de Ingenieros del Perú.
+
+> **Estado:** versión 1.0, redactada por el equipo para este avance. Debe revisarse y publicarse en el enlace de términos y condiciones antes de la entrega final.
+
+**1. Objeto y partes.** Movildev (el «Proveedor») ofrece a hoteles y a sus huéspedes (los «Usuarios») acceso a SmartStay como servicio en línea: gestión de hoteles, habitaciones y reservas, pagos registrados, perfiles y analítica operativa. El Usuario acepta este acuerdo al crear una cuenta o al usar el servicio.
+
+**2. Cuentas y roles.** Cada cuenta es personal. El servicio distingue los roles de administrador, personal (recepción, limpieza y mantenimiento) y huésped, y cada uno accede solo a las funciones de su rol. El personal usa un segundo factor de autenticación. El Usuario debe mantener sus credenciales en reserva y avisar de cualquier acceso no autorizado.
+
+**3. Uso aceptable.** El Usuario se obliga a no suplantar a otra persona, no intentar acceder a datos de otros hoteles o huéspedes, no interferir con el funcionamiento del servicio y no usarlo con fines ilícitos. El Proveedor puede suspender una cuenta que incumpla estas reglas, y avisará al Usuario del motivo.
+
+**4. Datos personales.** El Proveedor trata los datos personales conforme a la Ley N.º 29733, de Protección de Datos Personales. Solo recoge los datos necesarios para prestar el servicio (identificación, contacto, reservas y pagos) y no los vende a terceros. El Usuario puede solicitar acceso, rectificación, cancelación u oposición sobre sus datos. Si se miden eventos de uso para mejorar el producto, se hace con identificadores anónimos y sin datos personales, y esta medición se informa en este apartado.
+
+**5. Reservas, pagos y cancelaciones.** Las reservas se crean con los datos del huésped y del hotel. Las condiciones de cancelación se muestran en el detalle de la habitación antes de reservar: el huésped puede cancelar hasta el día anterior a su llegada y, si ya pagó, el hotel le devuelve el pago. Los pagos se registran en el servicio según el método que el hotel habilite. Las reservas sin pago pueden vencer automáticamente.
+
+**6. Disponibilidad del servicio.** El Proveedor procura mantener el servicio disponible de forma continua, pero no garantiza una disponibilidad ininterrumpida. El servicio puede tardar unos segundos en responder tras un periodo de inactividad, y puede interrumpirse por mantenimiento o por fallas de los proveedores de infraestructura. Las interrupciones se detectan con la monitorización descrita en el apartado 7.4.
+
+**7. Propiedad intelectual.** SmartStay, su código, su marca y su documentación pertenecen al Proveedor. El Usuario conserva la titularidad de la información que ingresa, y otorga al Proveedor el permiso para tratarla con el único fin de prestar el servicio.
+
+**8. Responsabilidad.** El Proveedor responde por el funcionamiento del servicio conforme a este acuerdo. No responde por la información incorrecta que ingrese el Usuario, ni por daños causados por el uso del servicio contra estas reglas o por hechos fuera de su control razonable.
+
+**9. Ética y transparencia.** El equipo se compromete a no ocultar información relevante al Usuario, a no experimentar con él de manera que pueda causarle daño, y a informar de los cambios de este acuerdo antes de que entren en vigor.
+
+**10. Modificaciones y vigencia.** El Proveedor puede modificar este acuerdo y avisará a los Usuarios por el servicio o por correo. El Usuario puede cerrar su cuenta en cualquier momento, y el acuerdo termina con el cierre.
+
+**11. Ley aplicable.** Este acuerdo se rige por las leyes de la República del Perú.
+
+### 5.2.5. Implemented Native-Mobile Application Evidence
 
 Durante el Sprint 2 se ejecutaron y validaron las funcionalidades desarrolladas dentro de la aplicación móvil SmartStay. Las pruebas se realizaron utilizando Android Studio, dispositivos físicos y servicios desplegados en la nube para verificar la correcta integración entre frontend y backend.
 
@@ -5020,7 +5189,7 @@ Los flujos ejecutados fueron los siguientes:
 ![Sprint 3 App 3](assets/chapter-5/implementation/mobile/sprint-3/sprint3-app-3.png)
 ![Sprint 3 App 4](assets/chapter-5/implementation/mobile/sprint-3/sprint3-app-4.png)
 
-### 5.2.5. Implemented RESTful API and/or Serverless Backend Evidence
+### 5.2.6. Implemented RESTful API and/or Serverless Backend Evidence
 
 Durante este sprint se actualizó el bounded context de IAM/Authentication, incorporando mejoras relacionadas con la autenticación de usuarios y la gestión de roles dentro del sistema. La documentación de los servicios REST fue verificada mediante Swagger/OpenAPI, donde se evidencian los endpoints disponibles para el inicio de sesión y registro de usuarios.
 
@@ -5029,7 +5198,7 @@ Durante este sprint se actualizó el bounded context de IAM/Authentication, inco
 
 Asimismo, durante el sprint se trabajó con la lógica de roles para diferenciar el acceso de los distintos tipos de usuario del sistema, como Guest, Admin y ChainAdmin, permitiendo controlar qué secciones y acciones están disponibles para cada perfil dentro de la aplicación.
 
-### 5.2.6. RESTful API documentation
+### 5.2.7. RESTful API documentation
 
 **Profiles**: Este bounded context maneja la información de los perfiles de los usuarios dentro de la plataforma. Proporciona funcionalidades para crear perfiles, consultar su información y obtener el detalle de un perfil específico. Es esencial para almacenar y gestionar los datos personales asociados a cada usuario del sistema.
 
@@ -5071,7 +5240,7 @@ Asimismo, durante el sprint se trabajó con la lógica de roles para diferenciar
 
 ![swagercuartostipos.png](assets/chapter-5/api/swagger/swagger-cuartostipo.png)
 
-### 5.2.7. Team Collaboration Insights
+### 5.2.8. Team Collaboration Insights
 
 **Acciones de colaboración destacadas:**
 - Se utilizó **GitHub** como herramienta central de coordinación y control de versiones.
@@ -5083,6 +5252,86 @@ Asimismo, durante el sprint se trabajó con la lógica de roles para diferenciar
 Gracias a este flujo de trabajo, el equipo pudo avanzar de forma paralela y ordenada, evitando conflictos en el código y asegurando un resultado consistente.
 
 El equipo logró mantener una comunicación constante durante el cierre del proyecto, priorizando las tareas críticas y asegurando que la aplicación pueda ser presentada de forma funcional. La colaboración entre los integrantes permitió completar los flujos principales de SmartStay y preparar una entrega final coherente con los objetivos del curso.
+
+#### Avance 2 (AV2)
+
+Para AV2 el equipo obtuvo los commits de los cuatro repositorios del producto con `git log` sobre **todas las ramas remotas**, excluyendo los commits de fusión, y los contrastó con los gráficos de contribuciones de GitHub, que solo consideran la rama `main`.
+
+**Commits por integrante y repositorio, en todas las ramas** (entre paréntesis, los commits desde el 19/09/2026, inicio de AV2):
+
+| Integrante | `backend` | `frontend` | `mobile` | `landing-page` | `Report` | Total |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| Bonifacio Jaramillo, Samuel Jesus | 1 (1) | 2 (0) | 0 (0) | 1 (0) | 11 (3) | 15 (4) |
+| Galindo Manuel, Alejandro Manuel | 3 (3) | 2 (2) | 2 (1) | 0 (0) | 6 (1) | 13 (7) |
+| Ponce Perales, Alberto Alejandro | 0 (0) | 0 (0) | 0 (0) | 0 (0) | 0 (0) | 0 (0) |
+| Sulca Sanchez, Piero Angel | 90 (5) | 168 (0) | 1 (0) | 13 (0) | 11 (0) | 283 (5) |
+| Verona Flores, Ítalo Sebastián | 9 (4) | 112 (0) | 0 (0) | 30 (0) | 12 (4) | 163 (8) |
+| Otros colaboradores (no figuran en la relación de integrantes) | 0 (0) | 42 (0) | 8 (0) | 5 (0) | 0 (0) | 55 (0) |
+
+Los autores de Git se asignaron a cada integrante por su nombre de usuario o correo. «Otros colaboradores» agrupa a autores que no figuran en la relación de integrantes del equipo actual (`shiloox`, `NatValverde15`, `Jareth341`, `Jaredt Montes` y `JulyP`) y cuyos commits se conservan en el historial del repositorio.
+
+**Commits de AV2 por repositorio y rama**
+
+**`backend`** — https://github.com/9097-Experimentos-SmartStay/backend
+
+| Branch | Commit Id | Commit Message | Autor | Committed on |
+| :--- | :---: | :--- | :--- | :---: |
+| `develop` | `2eb6464` | ci: deploy to render only after ci checks pass on main | Sulca Sanchez, Piero Angel | 06/10/2026 |
+| `develop` | `b646880` | fix(iam): apply the password policy to the seeded chain admin | Sulca Sanchez, Piero Angel | 06/10/2026 |
+| `develop` | `28af02f` | ci: add backend lint, dependency audit, build, test and package pipeline | Sulca Sanchez, Piero Angel | 06/10/2026 |
+| `develop` | `f875916` | fix(deps): patch vulnerable packages and drop unused sqlite provider | Sulca Sanchez, Piero Angel | 06/10/2026 |
+| `develop` | `09c2fae` | style: apply dotnet format whitespace rules | Sulca Sanchez, Piero Angel | 06/10/2026 |
+| `develop, main` | `8bdda14` | feat(integration): fix integration test | Verona Flores, Ítalo Sebastián | 06/10/2026 |
+| `develop, main` | `00f3c16` | feat(guerkin): Complete the guerkin-test | Verona Flores, Ítalo Sebastián | 05/10/2026 |
+| `develop, main` | `92c2137` | feat(test): add testing classes for payment BC | Bonifacio Jaramillo, Samuel Jesus | 05/10/2026 |
+| `develop, main` | `fad6cac` | feat: remove precaution and write correctly the summary | Verona Flores, Ítalo Sebastián | 05/10/2026 |
+| `develop, main` | `a15eadd` | Refactor(test): change the code o xunit to nunit | Verona Flores, Ítalo Sebastián | 05/10/2026 |
+| `develop, main` | `ce59ee8` | feat(bookings): add unit tests | Galindo Manuel, Alejandro Manuel | 05/10/2026 |
+| `develop, main` | `9dfd8c4` | fix: add missing files | Galindo Manuel, Alejandro Manuel | 03/10/2026 |
+| `develop, main` | `d0def37` | feat: add remaining user stories of the product backlog | Galindo Manuel, Alejandro Manuel | 03/10/2026 |
+
+**`frontend`** — https://github.com/9097-Experimentos-SmartStay/frontend
+
+| Branch | Commit Id | Commit Message | Autor | Committed on |
+| :--- | :---: | :--- | :--- | :---: |
+| `develop, main` | `1be61df` | fix: add missing files | Galindo Manuel, Alejandro Manuel | 03/10/2026 |
+| `develop, main` | `b742122` | feat: add new functions & product backlog US | Galindo Manuel, Alejandro Manuel | 03/10/2026 |
+
+**`mobile`** — https://github.com/9097-Experimentos-SmartStay/mobile
+
+| Branch | Commit Id | Commit Message | Autor | Committed on |
+| :--- | :---: | :--- | :--- | :---: |
+| `main` | `cda9496` | feat: add MFA sign-in, staff reception app and fix guest booking flow | Galindo Manuel, Alejandro Manuel | 06/10/2026 |
+
+**`Report`** — https://github.com/9097-Experimentos-SmartStay/Report
+
+| Branch | Commit Id | Commit Message | Autor | Committed on |
+| :--- | :---: | :--- | :--- | :---: |
+| `develop` | `324a5d5` | docs: add 7.2 & 7.3 assets | Galindo Manuel, Alejandro Manuel | 08/10/2026 |
+| `develop` | `a183580` | docs: enhance CI documentation with detailed practices and pipeline components | Verona Flores, Ítalo Sebastián | 06/10/2026 |
+| `develop` | `67f24cc` | docs: add integration test images to Chapter VI for enhanced validation context | Verona Flores, Ítalo Sebastián | 06/10/2026 |
+| `develop` | `4883b18` | docs: add new payment test images and update Chapter VI | Bonifacio Jaramillo, Samuel Jesus | 05/10/2026 |
+| `develop` | `c0ffcb2` | docs: add Gherkin test suite and scenarios for Behavior-Driven Development in Chapter VI | Verona Flores, Ítalo Sebastián | 05/10/2026 |
+| `develop` | `4a2f392` | docs: add pass-test image to Chapter VI for enhanced validation context | Verona Flores, Ítalo Sebastián | 05/10/2026 |
+| `develop` | `18b76ac` | docs: update Chapter VI with validation strategy details and add StaffControllerTest image | Bonifacio Jaramillo, Samuel Jesus | 04/10/2026 |
+| `develop` | `9d1c713` | docs: add Chapter VI on Product Verification & Validation and Chapter VII on DevOps Practices, including testing images | Bonifacio Jaramillo, Samuel Jesus | 04/10/2026 |
+
+**Gráficos de contribuciones de GitHub**
+
+![Contribuciones al repositorio backend](assets/chapter-5/collaboration-insights/backend-contributors.jpg)
+
+![Contribuciones al repositorio frontend](assets/chapter-5/collaboration-insights/frontend-contributors.jpg)
+
+![Contribuciones al repositorio mobile](assets/chapter-5/collaboration-insights/mobile-contributors.jpg)
+
+![Contribuciones al repositorio landing-page](assets/chapter-5/collaboration-insights/landing-page-contributors.jpg)
+
+**Interpretación.**
+
+1. **El trabajo de AV2 se concentró en el backend y en las pruebas.** De los 16 commits de código de AV2, 13 corresponden al backend: las pruebas unitarias, de integración y de comportamiento (Alejandro, Ítalo y Samuel) y el pipeline de CI con la auditoría de dependencias (Piero).
+2. **La landing page no tuvo commits en AV2**, porque quedó completa en la entrega anterior, y el frontend web tuvo 2, ambos del backlog de historias de usuario.
+3. **La participación está desigual.** Piero Sulca concentra 283 de los 529 commits de los cuatro repositorios y el informe, y Alberto Ponce no registra commits con su identidad. Esta distribución no implica que el resto del trabajo no exista, ya que parte de él ocurre fuera de Git (entrevistas, diagramas y reuniones), pero el requisito del enunciado es que todos los integrantes participen en la implementación de cada producto. Se propone repartir las tareas del próximo Sprint de modo que cada integrante tenga commits propios en al menos un repositorio de código.
+4. **Los gráficos de GitHub subestiman el trabajo en ramas.** El frontend muestra 86 commits de Piero en `main`, mientras que el historial completo registra 168, porque la mayoría se hizo en ramas de funcionalidad. Por eso la tabla anterior usa todas las ramas.
 
 ## 5.3. Video About-the-Product
 
@@ -5100,18 +5349,18 @@ Link: https://youtu.be/34tPgoDW-wY
 
 La estrategia de validación de SmartStay cubre los tres servicios principales: **el backend, la aplicación web y la aplicación móvil.** 
 
-Los tres repositorios fueron sujetos a pruebas unitarias, pruebas de integración, entre otras.
+El backend cuenta con pruebas unitarias, de integración y de comportamiento (BDD) automatizadas; la aplicación móvil, con pruebas de Flutter; y la aplicación web, con una prueba funcional manual de Selenium sobre el inicio de sesión. La landing page no tiene pruebas automatizadas.
 
 ### 6.1.1. Core Entities Unit Tests.
 
-El backend de SmartStay cuenta con el proyecto `BackendAwSmartstay.API.Tests`, que organiza las pruebas en los módulos Accommodations, Bookings y Profiles. Su estructura separa las áreas de aplicación, dominio e infraestructura, y contempla pruebas de compatibilidad e interfaces en el módulo de perfiles.
+El backend de SmartStay cuenta con dos proyectos de pruebas de entidades y reglas de negocio: `BackendAwSmartstay.API.UnitTests`, que cubre Bookings (dominio) y Payments, y `BackendAwSmartstay.API.Tests`, que organiza las pruebas de los módulos Accommodations, Bookings y Profiles. Su estructura separa las áreas de aplicación, dominio e infraestructura, y contempla pruebas de compatibilidad e interfaces en el módulo de perfiles.
 
-| Módulo | Áreas presentes en el proyecto de pruebas |
-|---|---|
-| Accommodations | Application, con una sección ACL. |
-| Bookings | Application, Domain e Infrastructure. |
-| Profiles | Application, Compatibility, Domain, Infrastructure e Interfaces. |
-| Payments | Application, Domain e Infrastructure. |
+| Módulo | Proyecto de pruebas | Áreas presentes |
+|---|---|---|
+| Accommodations | `API.Tests` | Application, con una sección ACL. |
+| Bookings | `API.UnitTests` y `API.Tests` | Domain en ambos; Application e Infrastructure en `API.Tests`. |
+| Profiles | `API.Tests` | Application, Compatibility, Domain, Infrastructure e Interfaces. |
+| Payments | `API.UnitTests` | Application, Domain e Infrastructure. |
 
 <br>
 *Test de persistencia de Payments*
@@ -5143,7 +5392,7 @@ El alcance de esta prueba se limita al envío del formulario vacío. No verifica
 
 ### 6.1.2. Core Integration Tests.
 
-El backend incluye pruebas de persistencia con Entity Framework en memoria y pruebas de colaboración que utilizan repositorios y fachadas simulados. Estas pruebas permiten evaluar parte de la interacción entre componentes, aunque no reproducen todas las restricciones ni el comportamiento concurrente de MySQL.
+El backend incluye pruebas de persistencia con Entity Framework en memoria y pruebas de colaboración que utilizan repositorios y fachadas simulados. Estas pruebas permiten evaluar parte de la interacción entre componentes, aunque no reproducen todas las restricciones ni el comportamiento concurrente de MySQL. Existe una prueba de concurrencia contra MySQL real (`ProfilesMySqlConcurrencyIntegrationTests`) que termina sin evaluar nada cuando no hay una base MySQL disponible, como ocurre en el pipeline de CI; por eso se cuenta como superada pero no aporta evidencia de concurrencia hasta que se ejecute con `TEST_MYSQL_CONNECTION` configurada.
 
 ![integration1](assets/chapter-6/integration-tests/integration1.png)
 ![integration2](assets/chapter-6/integration-tests/integration2.png)
@@ -5171,146 +5420,133 @@ Se implementaron y validaron **28 escenarios** en sintaxis Gherkin (en español)
 
 #### 2. Especificación de Escenarios Gherkin (`.feature`)
 
-Los archivos `.feature` capturan los criterios de aceptación en lenguaje ubicuo mediante la estructura estándar `Dado-Cuando-Entonces`.
+Los archivos `.feature` capturan los criterios de aceptación en lenguaje ubicuo mediante la estructura `Given-When-Then`. Las palabras clave de Gherkin están en inglés y los textos de cada paso, en español. Los siguientes fragmentos corresponden a los archivos del repositorio `backend`.
 
 ##### Archivo: `US51_ReservaHabitacionPorHuesped.feature` (Contexto Bookings)
 
 ```gherkin
-Característica: US-51 Reserva de habitación por huésped
-  Como huésped
-  Quiero buscar habitaciones disponibles por fechas y reservar una
-  Para asegurar mi estadía sin necesidad de llamar al hotel
+@US-51
+@Bookings
+Feature: Reserva de habitación por huésped
 
-  Escenario: Registrar reserva para habitación disponible
-    Dado que el hotel cuenta con una habitación "101" de tipo "Simple" disponible del "2026-11-10" al "2026-11-15"
-    Y el huésped cuenta con un perfil registrado con correo "guest@smartstay.pe"
-    Cuando el huésped solicita reservar la habitación "101" para el rango del "2026-11-10" al "2026-11-15"
-    Entonces el sistema registra la reserva con estado "PendingPayment"
-    Y se genera un código de reserva único con formato "SS-"
-    Y la habitación deja de estar disponible para ese mismo rango de fechas
+  Como huésped del hotel SmartStay
+  Quiero reservar una habitación disponible para mis fechas de estadía
+  Para asegurar mi alojamiento de forma confiable
 
-  Escenario: Rechazar reserva por solapamiento de fechas
-    Dado que la habitación "101" ya tiene una reserva confirmada del "2026-11-10" al "2026-11-15"
-    Cuando otro huésped intenta reservar la habitación "101" del "2026-11-12" al "2026-11-14"
-    Entonces el sistema rechaza la solicitud indicando conflicto de disponibilidad
+  @US-51
+  @happy-path
+  Scenario: Registrar una reserva para una habitación disponible
+    Given que existe un hotel registrado y operativo
+    And existe una habitación "101" de tipo "Double" disponible con precio por noche de 150.00 soles
+    And existe un huésped registrado con correo "juan.perez@smartstay.pe" y nombre "Juan Perez"
+    When el huésped solicita registrar una reserva desde "2026-11-01" hasta "2026-11-05"
+    Then la reserva debe crearse exitosamente
+    And el estado inicial de la reserva debe ser "Pending"
+    And la reserva debe contener un código de reserva generado
+    And la reserva debe estar asociada a la habitación "101"
+
+  @US-51
+  @negative
+  Scenario: Rechazar una reserva que se superpone con otra reserva existente
+    Given que existe un hotel registrado y operativo
+    And existe una habitación "102" de tipo "Single" disponible con precio por noche de 100.00 soles
+    And existe una reserva activa para la habitación "102" del "2026-11-10" al "2026-11-15"
+    When otro huésped intenta registrar una reserva para la habitación "102" del "2026-11-12" al "2026-11-14"
+    Then la solicitud de reserva debe ser rechazada indicando que la habitación no está disponible
 ```
 
 ##### Archivo: `US06_GestionHabitacionesYEstados.feature` (Contexto Accommodations)
 
 ```gherkin
-Característica: US-06 Gestión de habitaciones y estados
-  Como administrador
-  Quiero gestionar el estado de las habitaciones
-  Para mantener al día la operación diaria del hotel
+@US-06
+@Accommodations
+Feature: Gestión de habitaciones y estados
 
-  Escenario: Transición de estado disponible a mantenimiento
-    Dado que la habitación "201" se encuentra en estado "Available"
-    Cuando el administrador cambia el estado de la habitación a "Maintenance" indicando el motivo "Reparación de grifería"
-    Entonces el sistema actualiza el estado de la habitación a "Maintenance"
-    Y se registra el cambio en el historial de estados con fecha, usuario y motivo
+  Como personal del hotel (Staff / Housekeeping / Maintenance)
+  Quiero actualizar el estado operativo de una habitación
+  Para reflejar con precisión su disponibilidad y control en el sistema
 
-  Escenario: Rechazar transición inválida de ocupada a disponible
-    Dado que la habitación "201" se encuentra en estado "Occupied"
-    Cuando el personal intenta cambiar directamente el estado a "Available" sin pasar por limpieza
-    Entonces el sistema rechaza la transición indicando que el cambio no está permitido por política operativa
+  @US-06
+  @happy-path
+  Scenario: Cambiar el estado de una habitación de Disponible a Mantenimiento
+    Given que existe una habitación "301" en estado "Available"
+    When el personal solicita cambiar el estado de la habitación "301" a "Maintenance"
+    Then el estado de la habitación "301" debe actualizarse a "Maintenance"
+
+  @US-06
+  @negative
+  Scenario: Rechazar una transición de estado no permitida para la habitación
+    Given que existe una habitación "303" en estado "Occupied"
+    When el personal solicita cambiar el estado de la habitación "303" a "Available"
+    Then la solicitud de cambio de estado debe ser rechazada por transición no permitida
 ```
 
 #### 3. Implementación de Step Definitions en C# (.NET 9)
 
-La vinculación entre los pasos Gherkin y los servicios de dominio del backend se implementa mediante clases decoradas con el atributo `[Binding]` de Reqnroll:
+La vinculación entre los pasos Gherkin y los servicios del backend se implementa mediante clases decoradas con el atributo `[Binding]` de Reqnroll. Cada User Story tiene su clase de pasos, y los escenarios se ejecutan contra el servicio de aplicación real y una base de datos en memoria. El siguiente fragmento es de `US51_ReservaHabitacionStepDefinitions.cs`:
 
 ```csharp
 [Binding]
 public class US51_ReservaHabitacionStepDefinitions
 {
-    private readonly IBookingCommandService _bookingCommandService;
-    private readonly IRoomAvailabilityQueryService _availabilityService;
-    private DateRange _requestedRange;
-    private Booking _createdBooking;
-    private Exception _thrownException;
+    private readonly ScenarioContext _context;
+    private Booking? _createdBooking;
+    private Exception? _caughtException;
 
-    public US51_ReservaHabitacionStepDefinitions(
-        IBookingCommandService bookingCommandService,
-        IRoomAvailabilityQueryService availabilityService)
-    {
-        _bookingCommandService = bookingCommandService;
-        _availabilityService = availabilityService;
-    }
-
-    [Given(@"que el hotel cuenta con una habitación ""(.*)"" de tipo ""(.*)"" disponible del ""(.*)"" al ""(.*)""")]
-    public void DadoHabitacionDisponible(
-        string roomNumber,
-        string roomType,
-        string from,
-        string to)
-    {
-        _requestedRange = new DateRange(
-            DateTime.Parse(from),
-            DateTime.Parse(to)
-        );
-    }
-
-    [When(@"el huésped solicita reservar la habitación ""(.*)"" para el rango del ""(.*)"" al ""(.*)""")]
-    public async Task CuandoHuespedSolicitaReserva(
-        string roomNumber,
-        string from,
-        string to)
+    [When(@"el huésped solicita registrar una reserva desde ""(.*)"" hasta ""(.*)""")]
+    public async Task WhenElHuespedSolicitaRegistrarUnaReservaDesdeHasta(string checkIn, string checkOut)
     {
         try
         {
+            var service = CreateService();
             var command = new CreateBookingCommand(
-                1,
-                roomNumber,
-                _requestedRange,
-                "guest@smartstay.pe"
-            );
+                Requester: BookingRequester.Guest(_guestUserId, _guestEmail),
+                RoomId: _roomId,
+                GuestName: _guestName,
+                GuestEmail: _guestEmail,
+                CheckInDate: DateTime.Parse(checkIn),
+                CheckOutDate: DateTime.Parse(checkOut),
+                UserId: _guestUserId);
 
-            _createdBooking = await _bookingCommandService.Handle(command);
+            _createdBooking = await service.Handle(command);
         }
         catch (Exception ex)
         {
-            _thrownException = ex;
+            _caughtException = ex;
         }
     }
 
-    [Then(@"el sistema registra la reserva con estado ""(.*)""")]
-    public void EntoncesEstadoReserva(string expectedStatus)
+    [Then(@"la reserva debe crearse exitosamente")]
+    public void ThenLaReservaDebeCrearseExitosamente()
     {
+        _caughtException.Should().BeNull();
         _createdBooking.Should().NotBeNull();
-        _createdBooking.Status.ToString().Should().Be(expectedStatus);
     }
 
-    [Then(@"se genera un código de reserva único con formato ""(.*)""")]
-    public void EntoncesCodigoUnicoGenerado(string prefix)
+    [Then(@"el estado inicial de la reserva debe ser ""(.*)""")]
+    public void ThenElEstadoInicialDeLaReservaDebeSer(string status)
     {
-        _createdBooking.BookingCode.Value.Should().StartWith(prefix);
+        _createdBooking!.Status.ToString().Should().Be(status);
     }
 }
 ```
 
 #### 4. Resultados de Ejecución
 
-La ejecución de las pruebas mediante el CLI de .NET (`dotnet test`) consolida tanto las pruebas unitarias y de integración como la suite de BDD:
+Los resultados corresponden a la ejecución de `dotnet test` dentro del job *Build & test* del workflow `ci-backend.yml` sobre la rama `develop` (ejecución #7 del 07/10/2026, tras fusionar el pull request #13), que corre las tres suites en un mismo paso:
 
 ```text
-Serie de pruebas para BackendAwSmartstay.API.UnitTests.dll (net9.0)
-Correctas! - Con error: 0, Superado: 10, Omitido: 0, Total: 10
-
-Serie de pruebas para BackendAwSmartstay.API.Tests.dll (net9.0)
-Correctas! - Con error: 0, Superado: 143, Omitido: 0, Total: 143
-
-Serie de pruebas para BackendAwSmartstay.API.BddTests.dll (net9.0)
-Correctas! - Con error: 0, Superado: 28, Omitido: 0, Total: 28
-
-Total Global: 181 pruebas superadas, 0 errores, 0 omitidas. Duración: 2.4 s
+Passed!  - Failed: 0, Passed:  87, Skipped: 0, Total:  87, Duration: 397 ms - BackendAwSmartstay.API.UnitTests.dll (net9.0)
+Passed!  - Failed: 0, Passed: 150, Skipped: 0, Total: 150, Duration: 6 s    - BackendAwSmartstay.API.Tests.dll (net9.0)
+Passed!  - Failed: 0, Passed:  28, Skipped: 0, Total:  28, Duration: 12 s   - BackendAwSmartstay.API.BddTests.dll (net9.0)
 ```
 
 | Suite de Pruebas | Framework / Versión | Tipo de Prueba | Total | Aprobados | Fallidos |
 | --- | --- | --- | ---: | ---: | ---: |
-| `BackendAwSmartstay.API.UnitTests` | NUnit 4.2.2 / .NET 9 | Unitarias de Dominio | 10 | 10 | 0 |
-| `BackendAwSmartstay.API.Tests` | NUnit 4.2.2 / .NET 9 | Unitarias e Integración | 143 | 143 | 0 |
+| `BackendAwSmartstay.API.UnitTests` | NUnit 4.2.2 / .NET 9 | Unitarias de Bookings y Payments | 87 | 87 | 0 |
+| `BackendAwSmartstay.API.Tests` | NUnit 4.2.2 / .NET 9 | Unitarias e integración de Accommodations, Bookings y Profiles | 150 | 150 | 0 |
 | `BackendAwSmartstay.API.BddTests` | Reqnroll 2.3.0 + NUnit 4.2.2 | Comportamiento (BDD / Gherkin) | 28 | 28 | 0 |
-| **Total Consolidado** | **.NET 9 Test Platform** | **Verificación Completa** | **181** | **181** | **0** |
+| **Total consolidado** | **.NET 9 Test Platform** | **Verificación completa** | **265** | **265** | **0** |
 
 ![guerkin-test](assets/chapter-6/testing-suites/guerkin-test.png)
 
@@ -5321,8 +5557,8 @@ Se ejecutó una prueba funcional automatizada con Selenium sobre el formulario d
 | Aplicación | Caso | Resultado esperado | Resultado observado | Estado |
 |---|---|---|---|---|
 | Frontend web | Enviar el inicio de sesión con ambos campos vacíos | Impedir el envío y mostrar una validación en cada campo obligatorio | La ruta se mantuvo en `/login` y aparecieron dos mensajes «Este campo es obligatorio.» | Aprobado |
-| Backend | Validar el comportamiento del controlador de staff con datos de prueba | Verificar que el controlador de staff maneja correctamente los datos de prueba | El controlador de staff maneja correctamente los datos de prueba | Aprobado |
-| Mobile | Validar el comportamiento del widget de staff con datos de prueba | Verificar que el widget de staff maneja correctamente los datos de prueba | El widget de staff maneja correctamente los datos de prueba | Aprobado |
+| Backend | Pruebas del controlador de staff (`StaffControllerTests`, 14 pruebas en `BackendAwSmartstay.API.Tests`) | El controlador de staff responde correctamente a los casos de prueba | Superadas en la ejecución de CI del 07/10/2026 | Aprobado |
+| Mobile | Pruebas de Flutter de los modelos de staff, del cliente de reservas del huésped y de la plantilla de widget (`staff_models_test.dart`, `guest_booking_api_test.dart` y `widget_test.dart`, 16 casos) | Los modelos, los roles y las llamadas a la API de reservas se comportan según lo esperado | Sin ejecución registrada: el repositorio `mobile` no tiene pipeline de CI y las pruebas no se ejecutaron en este avance | Pendiente |
 
 Esta ejecución solo confirma la validación de campos vacíos en ese formulario. No verifica autenticación con credenciales, permisos por rol, conexión con el backend, ni otros flujos de la aplicación web. No se guardó una captura ni un reporte de Selenium.
 
@@ -5336,6 +5572,280 @@ En el frontend, se validó el login/registro con campos de prueba y los resultad
 
 ![testing-frontend](assets/chapter-6/testing-suites/testing-frontend.png)
 
+## 6.2. Static testing & Verification
+
+La verificación estática revisa el código sin ejecutarlo. En SmartStay se aplicó sobre los cuatro repositorios de la solución (`backend`, `frontend`, `mobile` y `landing-page`) en dos frentes: el cumplimiento de estándares de codificación y la calidad y seguridad del código y de sus dependencias. Las mediciones de esta sección se ejecutaron el **09/11/2026** sobre la rama `main` de los repositorios JavaScript y sobre `develop` en el backend, que es donde reside su pipeline de CI, y se indica de forma explícita cuando una verificación está definida en el pipeline pero no pudo ejecutarse en el equipo donde se redactó este informe.
+
+### 6.2.1. Static Code Analysis
+
+#### 6.2.1.1. Coding standard & Code conventions
+
+El equipo definió en el apartado 5.1.3 las convenciones de codificación por lenguaje. Para comprobar que el código las cumple se asignó una herramienta a cada repositorio:
+
+| Repositorio | Lenguaje | Herramienta de verificación | Configuración | Dónde se ejecuta |
+| :--- | :--- | :--- | :--- | :--- |
+| `backend` | C# (.NET 9) | `dotnet format --verify-no-changes` | Reglas de formato por defecto del SDK de .NET; `Nullable` habilitado en el proyecto | Job **Lint** de `ci-backend.yml` en cada *push* y *pull request* |
+| `frontend` | JavaScript y Vue 3 | ESLint 8.57 con `plugin:vue/vue3-essential` | `.eslintrc.cjs` y script `npm run lint:ci` | Workflow `ci.yml` propuesto en la rama `feature/av2-ci` (pendiente de fusión) y ejecución local |
+| `mobile` | Dart (Flutter) | `flutter analyze` con `flutter_lints` 6.0 | `analysis_options.yaml` | Workflow `ci.yml` propuesto en la rama `feature/av2-ci` (pendiente de fusión) |
+| `landing-page` | HTML, CSS y JavaScript | Ninguna | No aplica | No aplica |
+
+**Resultado en el frontend web.** El script `lint` que existía en `package.json` no podía ejecutarse, porque ESLint no figuraba entre las dependencias ni había un archivo de configuración. El equipo agregó ESLint 8.57.1, `eslint-plugin-vue` 9.33.0, el archivo `.eslintrc.cjs` y el script `lint:ci`, que verifica sin modificar los archivos (el script `lint` anterior usa `--fix`). La primera ejecución sobre el código del repositorio analizó **205 archivos** y reportó **25 errores y 0 advertencias**.
+
+```text
+$ npm run lint:ci
+205 archivos analizados · 25 errores · 0 advertencias
+```
+
+| Regla de ESLint | Errores | Archivos principales | Interpretación |
+| :--- | :---: | :--- | :--- |
+| `vue/no-mutating-props` | 15 | `HotelForm.vue` (9), `RoomForm.vue` (6) | Los formularios modifican directamente una *prop* recibida del componente padre. Rompe el flujo de datos de un solo sentido de Vue y debe resolverse con `v-model` sobre una copia local o con eventos `update:`. |
+| `no-unused-vars` | 9 | `problem-details.js` (5), `GuestHotels.vue`, `search-availability.query.js`, `booking.entity.js`, `mfa.assembler.js` | Variables o importaciones sin uso. No afectan el comportamiento, pero aumentan el ruido del código. |
+| `no-useless-escape` | 1 | `account-rules.js` | Escape innecesario dentro de una expresión regular de validación de contraseña. |
+
+Para este avance se prepararon, sin integrar todavía, las correcciones de 10 de los 25 errores: se retiraron cuatro importaciones usadas solo en comentarios de tipos, se eliminó un escape innecesario en la expresión regular de nombres, se configuró `ignoreRestSiblings` para el patrón que descarta miembros conocidos de la respuesta de error y se documentó el parámetro de la función de detalle de hotel que aún no se usa. Quedan 15 errores de `vue/no-mutating-props`, que requieren refactorizar los dos formularios. El paso de lint del workflow propuesto para el frontend está configurado con `continue-on-error`. Mientras estos 25 errores estén abiertos, el pipeline los muestra en cada ejecución sin bloquear la integración. Una vez corregidos, la opción se retira para que el lint sea obligatorio.
+
+**Resultado en el backend, el móvil y la landing page.**
+
+- En el **backend**, la verificación de formato forma parte del job *Lint* de `ci-backend.yml`, y el commit `09c2fae` (`style: apply dotnet format whitespace rules`) normalizó el código del repositorio para que el job pasara. Además, el job de compilación usa `--warnaserror`, de modo que cualquier advertencia del compilador detiene el pipeline.
+- En la aplicación **móvil**, `analysis_options.yaml` incluye el conjunto `flutter_lints` y solo desactiva la regla `prefer_const_constructors`.
+- En la **landing page** no existe ningún linter ni formateador configurado. Se registra como una brecha de verificación y se propone incorporar ESLint con la misma configuración base del frontend.
+
+> **Limitación de esta medición:** el equipo donde se redactó el informe no tiene instalados el SDK de .NET ni el de Flutter, por lo que `dotnet format` y `flutter analyze` no se ejecutaron localmente en esta ocasión. Su resultado queda en el historial de GitHub Actions de cada repositorio, y el de ESLint es el único presentado con números propios.
+
+#### 6.2.1.2. Code Quality & Code Security
+
+La calidad y la seguridad se revisaron en tres niveles: seguridad de las dependencias, higiene de los secretos y calidad estructural del código.
+
+**Seguridad de las dependencias.** Se ejecutó `npm audit` el 09/11/2026 sobre los dos repositorios JavaScript:
+
+| Repositorio | Dependencias analizadas | Vulnerabilidades altas | Vulnerabilidades moderadas | Vulnerabilidades críticas | Corrección disponible |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| `frontend` | 288 | 18 | 1 | 0 | Sí, para todas |
+| `landing-page` | 79 | 2 | 0 | 0 | Sí, para todas |
+
+En el frontend, los paquetes afectados incluyen `axios`, `follow-redirects`, `form-data`, `@vue/server-renderer` y la familia `@intlify`. En la landing page, `vite` y `source-map-js`. Ninguna es crítica y todas tienen versión corregida. Se ejecutó `npm audit fix` en ambos repositorios, sin integrar todavía: el resultado fue **0 vulnerabilidades** en el frontend y en la landing page, y `npm run build` sigue compilando en los dos.
+
+En el **backend** el control ya está automatizado: el job *Dependency audit* de `ci-backend.yml` ejecuta `dotnet list package --vulnerable --include-transitive` y falla si encuentra paquetes vulnerables. El commit `f875916` (`fix(deps): patch vulnerable packages and drop unused sqlite provider`) corrigió los paquetes que ese control detectó y eliminó un proveedor de SQLite sin uso.
+
+**Higiene de secretos.** Los repositorios publican únicamente archivos `.env.example` con nombres de variables y sin valores reales, `.env` figura en el `.gitignore` de `backend`, `frontend` y `landing-page` (el de `mobile` no lo ignoraba y se corrigió en el directorio de trabajo, pendiente de integrar), y el `render.yaml` del backend declara los secretos con `sync: false`, de modo que Render los solicita al crear el servicio y no se versionan.
+
+**Calidad estructural.** No se configuró SonarQube ni SonarCloud, porque requieren una cuenta de organización. En su lugar, el equipo se apoyó en controles que no dependen de un servicio externo: tipos anulables habilitados en C#, compilación sin advertencias en CI, análisis de `flutter_lints` y las suites de pruebas automatizadas del backend descritas en 6.1. La incorporación de SonarCloud, con medición de complejidad ciclomática, duplicación y cobertura, queda como mejora recomendada y no se presenta como realizada.
+
+### 6.2.2. Reviews
+
+Las revisiones del equipo se realizan mediante *pull requests* sobre `develop` y `main`, siguiendo GitFlow. La tabla resume el estado real de los *pull requests* de cada repositorio al 09/11/2026, consultado con la API de GitHub:
+
+| Repositorio | Pull requests | Fusionados | Cerrados sin fusionar | Abiertos | Con al menos una revisión registrada |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| `backend` | 13 | 12 | 1 | 0 | 1 |
+| `frontend` | 6 | 6 | 0 | 0 | 0 |
+| `mobile` | 1 | 0 | 0 | 1 | 0 |
+| `landing-page` | 4 | 4 | 0 | 0 | 0 |
+| `Report` | 2 | 1 | 0 | 1 | 0 |
+
+**Hallazgos de la revisión.**
+
+1. Los *pull requests* se usan de forma consistente para integrar `develop` en `main` (`chore(release): merge develop into main`), pero la revisión entre pares dentro de GitHub es escasa: solo uno de los 26 *pull requests* tiene una revisión registrada. Gran parte de la revisión ocurrió en las reuniones del equipo y no quedó como evidencia en la plataforma.
+2. Los controles automáticos sí quedaron como barrera: desde el *pull request* #13 del backend, `render.yaml` usa `autoDeployTrigger: checksPass`, de modo que Render solo despliega a producción después de que los *checks* de CI pasan en `main`.
+3. **Acción correctiva acordada:** activar la regla de revisión obligatoria de al menos un integrante en las ramas `develop` y `main` de los cuatro repositorios, para que la revisión entre pares quede registrada en GitHub.
+
+---
+
+<div style="page-break-after: always;"></div>
+
+## 6.3. Validation Interviews
+
+Las entrevistas de validación comprueban con usuarios de los segmentos objetivo si el Landing Page y las aplicaciones permiten completar sus tareas. A diferencia de las entrevistas del Capítulo II, que buscaban entender el problema, estas se realizan con el producto funcionando y miden si las soluciones construidas lo resuelven.
+
+### 6.3.1. Diseño de Entrevistas
+
+**Elementos incluidos en la sesión.** Cada sesión se realiza con el producto desplegado, no con prototipos, para que la evidencia corresponda a lo que el usuario realmente recibirá:
+
+| Elemento | URL |
+| :--- | :--- |
+| Landing Page | https://smartstay-movildev-landing.vercel.app/ |
+| Aplicación web (administrador y huésped) | https://smartstay-movildev-web.vercel.app |
+| Aplicación móvil (huésped y staff) | APK de la última versión publicada en el repositorio `mobile` |
+| Documentación de la API | https://smartstay-movildev-api.onrender.com/scalar/ |
+
+**Segmento 1: Staff operativo y administradores de hoteles.** Participan de 3 a 5 personas que administren o trabajen en un hotel boutique o pequeño. Los *user flows* a evaluar son:
+
+| # | Tarea | Producto | User Story relacionada |
+| :-: | :--- | :--- | :--- |
+| 1 | Iniciar sesión como staff con segundo factor de autenticación | Web y móvil | US-02, US-52 |
+| 2 | Registrar el hotel y configurar tipos de habitación, habitaciones y precios | Web | US-53 |
+| 3 | Cambiar el estado de una habitación a mantenimiento y volverla a disponible | Web | US-06 |
+| 4 | Revisar las reservas del día y cancelar una reserva sin pago | Web | US-07 |
+| 5 | Crear un usuario de recepción y asignarle su rol | Web | US-03 |
+| 6 | Solicitar una demostración desde la landing page | Landing | US-27 |
+
+**Segmento 2: Huéspedes de hoteles boutique.** Participan de 3 a 5 personas que hayan reservado un alojamiento en los últimos doce meses. Los *user flows* a evaluar son:
+
+| # | Tarea | Producto | User Story relacionada |
+| :-: | :--- | :--- | :--- |
+| 1 | Crear una cuenta y confirmar el correo | Web y móvil | US-01 |
+| 2 | Recuperar la contraseña por correo | Web y móvil | US-04 |
+| 3 | Buscar una habitación disponible por fechas y reservarla | Web y móvil | US-51 |
+| 4 | Pagar la reserva con tarjeta y consultar su estado | Móvil | US-51 |
+| 5 | Cancelar una reserva | Móvil | US-07 |
+| 6 | Encontrar información de la empresa y testimonios en la landing page | Landing | US-24, US-26, US-28 |
+
+**Guion de la sesión.** Cada sesión dura aproximadamente 30 minutos y se registra en video con el consentimiento expreso del entrevistado:
+
+1. **Apertura (3 min):** el entrevistador explica que se evalúa el producto y no a la persona, y solicita el consentimiento para grabar.
+2. **Perfil (3 min):** nombre, edad, distrito, frecuencia de viaje o rol en el hotel, y dispositivos que usa.
+3. **Tareas guiadas (15 min):** el entrevistado realiza las tareas de su segmento, pensando en voz alta. El entrevistador no ayuda salvo bloqueo total. En cada tarea se anota si la completó, cuánto tardó y los errores que cometió.
+4. **Preguntas de cierre (6 min):** ¿qué fue lo más difícil?, ¿qué esperabas que ocurriera y no ocurrió?, ¿qué cambiarías?, ¿lo usarías en tu día a día?
+5. **Cierre (3 min):** el entrevistado califica de 1 a 5 la facilidad de uso y puede añadir comentarios libres.
+
+**Métricas por tarea:** tasa de finalización sin ayuda, tiempo en completarla y número de errores. Los hallazgos se clasifican con la escala de severidad del formato de evaluación heurística de 6.3.3.
+
+### 6.3.2. Registro de Entrevistas
+
+> **Pendiente:** al momento de este avance el equipo no ha realizado las entrevistas de validación con usuarios de los segmentos objetivo, por lo que no se presentan registros. Para cada entrevista realizada se completará la siguiente ficha, con el video grabado, un cuadro del video y un resumen de las apreciaciones del entrevistado.
+
+| Campo | Contenido a registrar |
+| :--- | :--- |
+| Segmento | Staff operativo / Huésped |
+| Entrevistado | Apellidos y nombres, edad y distrito |
+| Video | URL del video en Microsoft Stream, minuto de inicio de la entrevista y duración |
+| Captura | Cuadro representativo del video |
+| Tareas realizadas | Tarea, ¿completada sin ayuda?, tiempo y errores |
+| Resumen | Apreciaciones principales del entrevistado sobre las tareas asignadas |
+
+### 6.3.3. Evaluaciones según heurísticas
+
+Como todavía no hay sesiones con usuarios (6.3.2), el equipo realizó una **inspección heurística de experto** de la aplicación web desplegada, con el formato **UX Heuristics & Principles Evaluation** del Anexo D del enunciado. Esta evaluación se hizo el 09/11/2026 con una cuenta de prueba de huésped, en un navegador de escritorio (1568 × 900) y en un ancho móvil de 390 px. No sustituye a las evaluaciones con usuarios de los segmentos objetivo, que se agregarán cuando se realicen las entrevistas.
+
+| | |
+| :--- | :--- |
+| **CARRERA** | Ingeniería de Software |
+| **CURSO** | Diseño de Experimentos de Ingeniería de Software |
+| **NRC** | 9097 |
+| **PROFESOR** | Julio Manuel Noriega Melendez |
+| **AUDITOR** | SmartStay Team (inspección de experto, sin participantes externos) |
+| **CLIENTE(S)** | No aplica: no hubo sesión con usuarios |
+| **SITE o APP A EVALUAR** | SmartStay Web (portal del huésped): https://smartstay-movildev-web.vercel.app |
+
+**Tareas evaluadas**
+
+1. Revisar el panel de inicio del huésped.
+2. Explorar los hoteles y buscar uno por ciudad o nombre.
+3. Explorar las habitaciones y filtrarlas por tipo.
+4. Abrir el detalle de una habitación.
+5. Iniciar la búsqueda de fechas para reservar (sin confirmar la reserva).
+6. Consultar «Mis reservas» y «Clima de mi habitación».
+
+**No incluidas en esta versión:** confirmar y pagar una reserva, cancelarla, el panel del administrador y del personal, y la aplicación móvil. No se confirmaron reservas para no crear datos en el entorno de producción.
+
+**Escala de severidad:** 1 = problema superficial; 2 = problema menor; 3 = problema mayor; 4 = problema muy grave.
+
+**Tabla resumen**
+
+| # | Problema | Severidad | Heurística / principio violado |
+| :-: | :--- | :-: | :--- |
+| 1 | Un hotel de prueba («Hostal Prueba Moyobamba», con precio S/ 0,00 y descripción «Hostal de prueba») aparece en el listado que ve el huésped | 3 | Usability: Correspondencia entre el sistema y el mundo real |
+| 2 | Las tarjetas de habitación no indican a qué hotel pertenecen | 3 | Usability: Reconocimiento en lugar de recuerdo |
+| 3 | Después de elegir una habitación, el formulario «Reserva una habitación» no muestra cuál fue elegida y vuelve a pedir el hotel | 3 | Usability: Visibilidad del estado del sistema |
+| 4 | El login web tiene contraste insuficiente entre texto y fondo, atributos `aria-*` que no coinciden con sus roles y no tiene un elemento `main` | 3 | Inclusive Design: Perceptible y operable con tecnologías de apoyo |
+| 5 | El filtro «Filtrar por tipo» muestra el campo vacío y su etiqueta queda debajo del control | 2 | Usability: Consistencia y estándares |
+| 6 | El buscador de hoteles solo tiene un *placeholder*; el icono de búsqueda queda separado y sobre el campo, sin etiqueta visible | 2 | Usability: Consistencia y estándares; Inclusive Design: Etiquetas claras |
+| 7 | Las habitaciones visibles no tienen foto y solo muestran un icono de imagen; una tarjeta de hotel muestra una captura de documento en lugar de una foto | 2 | Usability: Diseño estético y minimalista |
+| 8 | En móvil, el título «Nuestros hoteles» y su subtítulo quedan desplazados respecto del buscador y de las tarjetas | 1 | Usability: Consistencia y estándares |
+| 9 | La página de inicio de sesión no tiene `meta description` y su `robots.txt` devuelve la página principal | 2 | Information Architecture: Descubrimiento y rotulado |
+
+**Aspectos positivos observados:** las pantallas vacías («Sin viajes programados», «No tienes reservas activas», «Todavía no tienes una estadía activa») explican qué pasa y ofrecen una acción; el detalle de la habitación muestra la política de cancelación antes de reservar; la navegación superior es coherente entre pantallas y el sitio se adapta al ancho móvil sin desplazamiento horizontal.
+
+**Detalle de los problemas**
+
+**Problema 1 (severidad 3).** *Tarea 2.* El listado de hoteles incluye un registro creado para validar el alta de hoteles. El huésped ve un hotel con precio S/ 0,00 que no puede reservar con sentido. *Recomendación:* ocultar los hoteles de prueba al huésped, por ejemplo con un indicador de visibilidad en el hotel, y limpiar los datos de demostración del entorno de producción.
+
+![Listado de hoteles](assets/chapter-6/heuristic-review/guest-hotels.jpg)
+
+**Problema 2 (severidad 3).** *Tarea 3.* Cada tarjeta muestra tipo, número, descripción, comodidades y precio, pero no el hotel. Con varios hoteles, el huésped no sabe dónde está la habitación 101. *Recomendación:* incluir el nombre del hotel y la ciudad en cada tarjeta y permitir filtrar por hotel.
+
+![Listado de habitaciones](assets/chapter-6/heuristic-review/guest-rooms.jpg)
+
+**Problema 3 (severidad 3).** *Tareas 4 y 5.* Desde el detalle de la habitación 101, el botón «Buscar fechas y reservar» lleva a un formulario que pide hotel, llegada y salida, y no repite qué habitación se está reservando. La habitación elegida solo se conserva en la dirección de la página (parámetro `roomId`). *Recomendación:* mostrar un resumen de la habitación elegida (tipo, número, hotel, precio por noche) en la parte superior del formulario.
+
+![Detalle de la habitación](assets/chapter-6/heuristic-review/guest-room-detail.jpg)
+
+![Formulario de búsqueda de fechas](assets/chapter-6/heuristic-review/guest-booking-search.jpg)
+
+**Problema 4 (severidad 3).** *Acceso a la aplicación.* La medición con Lighthouse del 09/11/2026 (apartado 7.4.2) dio 88 en accesibilidad para el login: contraste insuficiente entre texto y fondo, atributos `aria-*` que no coinciden con sus roles y ausencia de un elemento de referencia `main`. *Recomendación:* ajustar los colores para alcanzar la relación de contraste 4.5:1, corregir los roles y envolver el contenido en `main`.
+
+**Problemas 5 y 6 (severidad 2).** *Tareas 2 y 3.* El filtro por tipo muestra un campo vacío y su etiqueta aparece debajo; el buscador de hoteles no tiene etiqueta visible. *Recomendación:* etiquetas sobre los controles, valor inicial «Todos los tipos» y el icono de búsqueda dentro del campo.
+
+**Problema 7 (severidad 2).** *Tareas 2 y 3.* Las habitaciones visibles no tienen foto y una de las tarjetas de hotel muestra una imagen que parece una captura de un documento. *Recomendación:* cargar fotos reales de hoteles y habitaciones y definir un formato mínimo de imagen en el alta.
+
+**Problema 8 (severidad 1).** *Tarea 2, en móvil.* El título de la lista de hoteles queda con un margen izquierdo mayor que el resto del contenido.
+
+![Hoteles en móvil](assets/chapter-6/heuristic-review/guest-hotels-mobile.jpg)
+
+**Problema 9 (severidad 2).** *Acceso a la aplicación.* Lighthouse reportó 83 en SEO para el login por falta de `meta description` y porque `/robots.txt` devuelve `index.html`, debido a la regla de reescritura de `vercel.json`. *Recomendación:* añadir la `meta description` y servir un `robots.txt` válido como archivo estático.
+
+**Pantallas evaluadas**
+
+![Panel de inicio del huésped](assets/chapter-6/heuristic-review/guest-dashboard.jpg)
+
+![Panel de inicio en móvil](assets/chapter-6/heuristic-review/guest-dashboard-mobile.jpg)
+
+![Mis reservas sin reservas](assets/chapter-6/heuristic-review/guest-bookings-empty.jpg)
+
+![Clima de mi habitación sin estadía activa](assets/chapter-6/heuristic-review/guest-room-climate-empty.jpg)
+
+> **Pendiente:** la misma evaluación con el panel de administrador y personal, la aplicación móvil y las sesiones con usuarios de 6.3.2.
+
+--- | :--- |
+| Encabezado | Carrera, curso, NRC, profesores, auditor (SmartStay Team) y clientes que participan en la sesión |
+| Site o app a evaluar | Landing Page, aplicación web y aplicación móvil de SmartStay |
+| Tareas a evaluar | Las tareas de 6.3.1; quedan fuera del alcance los flujos del Sprint 3 aún no desplegados |
+| Escala de severidad | 1 = problema superficial, 2 = problema menor, 3 = problema mayor, 4 = problema muy grave |
+| Tabla resumen | Problema encontrado, severidad y heurística o principio violado (usabilidad, diseño inclusivo o arquitectura de información) |
+| Detalle por problema | Tarea, descripción, evidencia en captura y recomendación |
+
+---
+
+<div style="page-break-after: always;"></div>
+
+## 6.4. Auditoría de Experiencias de Usuario
+
+La auditoría de experiencias de usuario es una evaluación cruzada entre grupos: SmartStay audita el producto de otro grupo y recibe la auditoría de un tercero sobre el suyo. Cada auditoría evalúa los productos desplegados con el formato de evaluación heurística del Anexo D del enunciado.
+
+> **Pendiente:** al momento de este avance el grupo no tiene asignado un grupo auditado ni ha recibido una auditoría. Las secciones siguientes se completan cuando se coordine el intercambio, y no se presentan datos de auditoría hasta contar con ellos.
+
+### 6.4.1. Auditoría realizada
+
+#### 6.4.1.1. Información del grupo auditado
+
+Se registrará el nombre de la startup auditada, el nombre de su producto, sus integrantes y las URL de los productos evaluados.
+
+#### 6.4.1.2. Cronograma de auditoría realizada
+
+Se registrará la fecha, la hora, la modalidad y los participantes de cada sesión de auditoría.
+
+#### 6.4.1.3. Contenido de auditoría realizada
+
+Se incluirá el formato de evaluación heurística completo con las tareas evaluadas, los problemas encontrados, su severidad y la heurística o principio violado.
+
+### 6.4.2. Auditoría recibida
+
+#### 6.4.2.1. Información del grupo auditor
+
+Se registrará el nombre del grupo que audita a SmartStay, sus integrantes y el contacto de coordinación.
+
+#### 6.4.2.2. Cronograma de auditoría recibida
+
+Se registrará la fecha, la hora, la modalidad y los participantes de cada sesión.
+
+#### 6.4.2.3. Contenido de auditoría recibida
+
+Se incluirá el formato de evaluación heurística recibido, con los problemas reportados sobre el Landing Page y las aplicaciones de SmartStay.
+
+#### 6.4.2.4. Resumen de modificaciones para subsanar hallazgos
+
+Se presentará una tabla que relacione cada hallazgo recibido con el cambio realizado en el producto, el commit que lo implementó y el estado de la corrección.
+
 ---
 
 <div style="page-break-after: always;"></div>
@@ -5344,10 +5854,11 @@ En el frontend, se validó el login/registro con campos de prueba y los resultad
 
 ## 7.1. Continuous Integration
 
-La Integración Continua (CI) en la plataforma SmartStay constituye el conjunto de prácticas, mecanismos de automatización y herramientas orientadas a validar, compilar y verificar la calidad de cada incremento de código desarrollado por el equipo. Dado que la arquitectura de la solución involucra múltiples componentes heterogéneos —Backend RESTful en ASP.NET Core, Frontend Web en Vue.js, Landing Page en HTML/CSS/JS y la Aplicación Móvil nativa en Android (Kotlin)—, el flujo de CI se diseñó para ejecutarse de forma distribuida y desatendida sobre los repositorios de GitHub bajo el flujo de trabajo GitFlow.
+La Integración Continua (CI) en la plataforma SmartStay reúne las prácticas y la automatización que validan, compilan y verifican cada incremento de código del equipo. La solución tiene cuatro componentes con tecnologías distintas: un backend RESTful en ASP.NET Core (.NET 9), una aplicación web en Vue 3 con Vite y PrimeVue, una landing page en JavaScript con Vite y Tailwind CSS, y una aplicación móvil en Flutter (Dart). Cada componente vive en su propio repositorio de GitHub y se integra bajo el flujo de trabajo GitFlow.
 
+**Estado actual.** El backend es el único repositorio con un pipeline de CI en `develop` y `main` (`ci-backend.yml`). Para el frontend web, la landing page y la aplicación móvil se definieron workflows equivalentes (`ci.yml`) en la rama `feature/av2-ci` de cada repositorio, pendientes de fusión. En este capítulo se distingue siempre entre lo que ya está en ejecución y lo que está propuesto.
 
-![ContinousIntegration1](assets/chapter-7/ContinuousIntegration/ContinuousIntegration1.jpeg)
+<!-- Diagrama del equipo (assets/chapter-7/ContinuousIntegration/ContinuousIntegration1.jpeg) retirado: muestra una app móvil Android/Kotlin y un paso de CodeReview automático que no existen. Reemplazar por un diagrama actualizado. -->
 
 ---
 
@@ -5357,261 +5868,987 @@ Para garantizar que el código integrado sea funcional, seguro y conforme a los 
 
 #### 1. Herramientas de Integración Continua
 
-* **GitHub Actions:** Orquestador principal de automatización. Gestiona los flujos de trabajo (*workflows*) declarados en archivos YAML dentro de `.github/workflows/` (tales como `docker-publish.yml` y flujos de integración continua específicos por componente).
+* **GitHub Actions:** orquestador de la automatización. Los flujos se declaran en archivos YAML dentro de `.github/workflows/`. En el backend existen `ci-backend.yml` (integración), `docker-publish.yml` (imagen Docker) y `scheduler.yml` (procesos periódicos).
 
-* **Entornos de Ejecución (.NET SDK, Node.js y JDK):**
-  * Para el Backend: **.NET SDK 8.0** con la herramienta de configuración global `.config/dotnet-tools.json` para estandarizar el conjunto de herramientas de compilación y pruebas.
-  * Para el Frontend Web y Landing Page: **Node.js (LTS)** con gestor de paquetes `npm`.
-  * Para la Aplicación Móvil: **OpenJDK 17** y **Gradle** en Android Studio para la compilación de módulos Kotlin.
+* **Entornos de ejecución:**
+  * Backend: **.NET SDK 9** (`actions/setup-dotnet`), con caché de paquetes NuGet entre ejecuciones.
+  * Frontend web y landing page: **Node.js 22** con `npm ci` (workflows propuestos).
+  * Aplicación móvil: **Flutter** en el canal estable, mediante `subosito/flutter-action` (workflow propuesto).
 
-* **Herramientas de Análisis Estático y Linters:**
-  * **ESLint y Prettier:** Verificación de formato, sintaxis limpia y cumplimiento de buenas prácticas de JavaScript y Vue.js.
-  * **Roslyn Analyzers / C# Coding Conventions:** Validación del código en el backend siguiendo las convenciones de Microsoft ASP.NET Core (nombres en PascalCase, contratos explícitos e inyección de dependencias).
-  * **Android Lint / ktlint:** Comprobación de estándares de código limpio y optimización de recursos XML y Kotlin en la aplicación móvil.
+* **Herramientas de análisis estático:**
+  * Backend: `dotnet format --verify-no-changes` para el formato del código y compilación con `--warnaserror` para tratar las advertencias como errores.
+  * Frontend web: **ESLint 8** con `plugin:vue/vue3-essential` (configuración y workflow propuestos).
+  * Aplicación móvil: `flutter analyze` con el conjunto `flutter_lints` (workflow propuesto).
+
+* **Auditoría de dependencias:** `dotnet list package --vulnerable --include-transitive` en el job *Dependency audit* del backend. En el frontend y la landing page, `npm audit` se ejecutó de forma manual (apartado 6.2.1.2).
 
 #### 2. Prácticas de Ingeniería Aplicadas
 
-* **Integración Diaria y Commits Semánticos:** Los desarrolladores integran ramas de funcionalidad (`feature/`) hacia la rama base de integración (`develop`) de forma frecuente mediante *Pull Requests*. Los mensajes de confirmación respetan las convenciones estándar (`feat:`, `fix:`, `docs:`, `chore:`, `refactor:`) para facilitar la trazabilidad y la generación de registros de cambios.
+* **Integración mediante *pull requests* y commits convencionales:** el trabajo se desarrolla en ramas `feature/*`, se integra en `develop` y se libera en `main`. Los mensajes de commit siguen Conventional Commits (`feat:`, `fix:`, `docs:`, `ci:`, `style:`).
 
-* **Protección de Ramas (Branch Protection Rules):** La rama principal de producción (`main`) y la rama de integración (`develop`) se encuentran protegidas. No se permiten *direct pushes*; toda fusión exige:
-  1. Aprobación obligatoria por revisión de código entre pares (*Peer Review*).
-  2. Ejecución satisfactoria y sin errores de los flujos de GitHub Actions correspondientes.
+* **Compilación sin advertencias:** el job de compilación del backend usa `--warnaserror`, de modo que cualquier advertencia del compilador detiene el pipeline.
 
-* **Compilación Limpia (Zero-Warning Build):** El proceso de compilación automática está configurado para fallar si se detectan errores de sintaxis, dependencias circulares o advertencias de compilación no resueltas.
+* **Verificación de formato y de dependencias vulnerables como trabajos independientes:** *Lint* y *Dependency audit* corren en paralelo con *Build & test*, y el empaquetado (*Package API*) solo se ejecuta en un *push* y únicamente si los tres anteriores pasan.
 
-* **Auditoría de Dependencias Vulnerables:** Se ejecutan comandos automatizados de escaneo de librerías (`dotnet list package --vulnerable` y `npm audit`) antes de autorizar la compilación de paquetes productivos.
+* **Cancelación de ejecuciones obsoletas:** cada workflow usa `concurrency` con `cancel-in-progress`, de modo que una ejecución nueva sobre la misma rama cancela la anterior.
+
+* **Resultados como artefactos:** los reportes de pruebas (`.trx`) y de cobertura se publican como artefactos de la ejecución, con una retención de 14 días.
+
+* **Protección de ramas:** a la fecha **no está habilitada** en ninguno de los cuatro repositorios (GitHub responde «Branch not protected» para `main` y `develop`), por lo que la revisión entre pares y los *checks* obligatorios no los exige la plataforma. Se recomienda activarla (apartado 6.2.2).
 
 ---
 
 ### 7.1.2. Build & Test Suite Pipeline Components
 
-El pipeline de construcción y verificación de pruebas automatizadas está estructurado en componentes y etapas secuenciales. Cada vez que se crea un *Pull Request* o se realiza un *push* sobre `develop`, el pipeline orquesta las siguientes fases:
+El pipeline de construcción y pruebas se estructura en trabajos independientes. En el backend se ejecuta en cada *push* y *pull request* hacia `develop` y `main`.
 
-![PipelineComponents](assets/chapter-7/BuildTest/PipelineComponents.jpeg)
+<!-- Diagrama del equipo (assets/chapter-7/BuildTest/PipelineComponents.jpeg) retirado: debe actualizarse para reflejar los trabajos reales de cada repositorio. -->
 
 #### 1. Componentes del Pipeline por Plataforma
 
-* **Backend (`backend-aw-smartstay`):**
-  * *Restauración y Compilación:* Se ejecutan `dotnet restore` sobre la solución `backend-aw-smartstay.sln` y posteriormente `dotnet build --configuration Release --no-restore`.
-  * *Ejecución de Pruebas Unitarias y de Dominio:* Mediante el ejecutable `dotnet test` se corren todas las clases del proyecto `BackendAwSmartstay.API.Tests`, aplicando el patrón **Arrange-Act-Assert (AAA)**:
-    * Pruebas de Dominio e Identidad: `GuestProfileTests.cs`, `StaffProfileTests.cs` y `StaffAssignmentTests.cs`.
-    * Pruebas de Reservas y Transacciones: `BookingTests.cs`, verificando transiciones de estado de reserva y cálculo de tarifas.
-    * Pruebas de Integración y Fachadas ACL: `BookingCommandServiceAclIntegrationTests.cs` y `AccommodationsContextFacadeTests.cs`.
-    * Pruebas de Persistencia y Concurrencia en MySQL: `ProfilesMySqlConcurrencyIntegrationTests.cs` y `BookingsPersistenceTests.cs`.
-    * Pruebas de Controladores REST: `GuestsControllerTests.cs` y `StaffControllerTests.cs`.
+* **Backend (`backend`), en ejecución:**
+  * *Lint:* `dotnet restore` y `dotnet format --verify-no-changes`.
+  * *Dependency audit:* falla si `dotnet list package --vulnerable --include-transitive` encuentra paquetes vulnerables.
+  * *Build & test:* `dotnet build --configuration Release --warnaserror` y `dotnet test` sobre la solución completa, que ejecuta las tres suites: `BackendAwSmartstay.API.UnitTests` (pruebas unitarias de Bookings y Payments), `BackendAwSmartstay.API.Tests` (pruebas de dominio, aplicación, infraestructura e interfaces de Accommodations, Bookings y Profiles) y `BackendAwSmartstay.API.BddTests` (28 escenarios Gherkin con Reqnroll). Publica los resultados y la cobertura como artefactos.
+  * *Package API:* `dotnet publish` del proyecto de la API, solo en un *push* y tras los tres trabajos anteriores.
 
-* **Landing Page y Frontend Web:**
-  * *Compilación y Bundle:* Ejecución de `npm ci` seguido de `npm run build` para generar los bundles estáticos minificados de producción en el directorio `dist/`.
-  * *Suite de Pruebas de UI:* Ejecución de `npm test` mediante Jest para validar el renderizado del home, el correcto direccionamiento de los botones CTA y la operatividad de los diccionarios de internacionalización (`languages.js`).
+* **Frontend web (`frontend`), propuesto:** `npm ci`, `npm run lint:ci` (ESLint, que hoy reporta 25 errores y por eso se configuró con `continue-on-error`) y `npm run build`. El repositorio no tiene pruebas automatizadas.
 
-* **Móvil Android:**
-  * *Compilación y Pruebas Locales:* Se ejecuta `./gradlew testDebugUnitTest` para comprobar los modelos de datos, la gestión de sesiones en `TokenManager` y la lógica de presentación de los ViewModels.
+* **Landing page (`landing-page`), propuesto:** `npm ci` y `npm run build`. El repositorio no tiene linter ni pruebas automatizadas.
 
-#### 2. Declaración del Workflow de Integración (Ejemplo de Configuración de CI)
+* **Aplicación móvil (`mobile`), propuesto:** `flutter pub get`, `flutter analyze`, `flutter test --coverage` (16 casos en tres archivos) y `flutter build apk --debug` para comprobar que la aplicación compila.
 
-A continuación, se documenta la estructura del pipeline de CI automatizado en GitHub Actions para el backend del sistema (`.github/workflows/ci-backend.yml`):
+#### 2. Declaración del Workflow de Integración
+
+A continuación, se documenta el workflow de CI del backend (`.github/workflows/ci-backend.yml`), tal como está en la rama `develop`:
 
 ```yaml
-name: SmartStay Backend CI Pipeline
+name: CI
 
 on:
-  push:
-    branches: [ develop, main ]
   pull_request:
-    branches: [ develop, main ]
+    branches: [develop, main]
+  push:
+    branches: [develop, main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  SOLUTION: backend-aw-smartstay.sln
+  API_PROJECT: BackendAwSmartstay.API/BackendAwSmartstay.API.csproj
+  DOTNET_VERSION: 9.0.x
+  DOTNET_NOLOGO: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
 
 jobs:
-  build-and-test:
-    name: Build, Static Analysis and Unit Testing
+  lint:
+    name: Lint
     runs-on: ubuntu-latest
-
+    timeout-minutes: 10
     steps:
-    - name: Checkout Source Code
-      uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-    - name: Setup .NET SDK
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: '8.0.x'
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
 
-    - name: Restore NuGet Dependencies
-      run: dotnet restore backend-aw-smartstay.sln
+      - uses: actions/cache@v6
+        with:
+          path: ~/.nuget/packages
+          key: nuget-${{ runner.os }}-${{ hashFiles('**/*.csproj') }}
+          restore-keys: nuget-${{ runner.os }}-
 
-    - name: Compile Backend Solution
-      run: dotnet build backend-aw-smartstay.sln --configuration Release --no-restore
+      - name: Restore
+        run: dotnet restore "$SOLUTION"
 
-    - name: Execute Test Suite (Domain, ACL & Persistence)
-      run: >
-        dotnet test backend-aw-smartstay.sln
-        --configuration Release
-        --no-build
-        --verbosity normal
-        --logger "trx;LogFileName=test_results.trx"
-        --collect:"XPlat Code Coverage"
+      - name: Verify code formatting
+        run: dotnet format "$SOLUTION" --verify-no-changes --no-restore
 
-    - name: Upload Test Results
-      if: always()
-      uses: actions/upload-artifact@v4
-      with:
-        name: test-results
-        path: "**/test_results.trx"
+  dependency-audit:
+    name: Dependency audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - uses: actions/cache@v6
+        with:
+          path: ~/.nuget/packages
+          key: nuget-${{ runner.os }}-${{ hashFiles('**/*.csproj') }}
+          restore-keys: nuget-${{ runner.os }}-
+
+      - name: Restore
+        run: dotnet restore "$SOLUTION"
+
+      - name: Fail on vulnerable packages
+        run: |
+          dotnet list "$SOLUTION" package --vulnerable --include-transitive | tee vulnerable-packages.txt
+          ! grep -q "has the following vulnerable packages" vulnerable-packages.txt
+
+  build-and-test:
+    name: Build & test
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - uses: actions/cache@v6
+        with:
+          path: ~/.nuget/packages
+          key: nuget-${{ runner.os }}-${{ hashFiles('**/*.csproj') }}
+          restore-keys: nuget-${{ runner.os }}-
+
+      - name: Restore
+        run: dotnet restore "$SOLUTION"
+
+      - name: Build
+        run: dotnet build "$SOLUTION" --configuration Release --no-restore --warnaserror
+
+      - name: Test
+        run: >
+          dotnet test "$SOLUTION"
+          --configuration Release
+          --no-build
+          --logger trx
+          --results-directory TestResults
+          --collect "XPlat Code Coverage"
+
+      - name: Upload test results
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: test-results
+          path: TestResults
+          retention-days: 14
+
+  package:
+    name: Package API
+    if: github.event_name == 'push'
+    needs: [lint, dependency-audit, build-and-test]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - uses: actions/cache@v6
+        with:
+          path: ~/.nuget/packages
+          key: nuget-${{ runner.os }}-${{ hashFiles('**/*.csproj') }}
+          restore-keys: nuget-${{ runner.os }}-
+
+      - name: Publish
+        run: dotnet publish "$API_PROJECT" --configuration Release --output publish
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: smartstay-api-${{ github.sha }}
+          path: publish
+          retention-days: 14
 ```
 
-El resultado de este pipeline garantiza que ningún incremento con pruebas fallidas o errores de compilación pueda ser fusionado al código base, garantizando la estabilidad operativa del sistema previo a las etapas de entrega y despliegue.
+**Resultado observado.** La ejecución #7 de este workflow sobre `develop` (07/10/2026, tras fusionar el pull request #13) pasó sus cuatro trabajos en 2 min 12 s, con 265 pruebas superadas y ninguna fallida (apartado 7.4.2).
 
 ## 7.2. Continuous Delivery
 
-La Entrega Continua (CD) en SmartStay extiende el flujo de Integración Continua para que cada incremento validado en `develop` quede empaquetado, versionado y listo para liberarse en cualquier momento. El objetivo es que el paso a producción sea una decisión de negocio y no un esfuerzo técnico. Para ello, cada componente se despliega automáticamente en un entorno de pruebas (*staging*) que replica las condiciones de producción.
+La Entrega Continua (CD) en SmartStay busca que cada incremento validado quede empaquetado y listo para liberarse. Hoy esto se cumple para el backend, cuyo artefacto es una imagen Docker; el frontend web y la landing page se construyen y publican en Vercel, y la aplicación móvil no tiene un proceso de entrega automatizado. SmartStay **no cuenta con un entorno de *staging* separado**: los *pull requests* de los repositorios web generan despliegues de vista previa (*Preview*) en Vercel, y la validación de integración se hace en la rama `develop`.
 
 ### 7.2.1. Tools and Practices.
 
-Para asegurar que cada versión generada sea reproducible, trazable y desplegable bajo demanda, se definieron las siguientes herramientas y prácticas:
+Para asegurar que cada versión generada sea reproducible y trazable, se emplean las siguientes herramientas y prácticas:
 
 #### 1. Herramientas de Entrega Continua
 
-* **GitHub Actions (Environments):** Orquesta los flujos de entrega definidos en `.github/workflows/` (como `docker-publish.yml` y `cd-staging.yml`). Usa *GitHub Environments* (`staging` y `production`) para separar configuraciones, secretos y reglas de aprobación por entorno.
+* **GitHub Actions:** el workflow `docker-publish.yml` del backend se ejecuta en cada *push* a `main`, en cada *tag* `v*.*.*`, en cada *pull request* hacia `main` y diariamente a las 03:27 UTC. Construye la imagen Docker y solo la publica cuando el evento no es un *pull request*.
 
 * **Docker y Docker Compose:**
-  * El Backend en ASP.NET Core se empaqueta con un `Dockerfile` *multi-stage*. La etapa `build` usa la imagen `mcr.microsoft.com/dotnet/sdk:8.0` y la etapa `runtime` usa `mcr.microsoft.com/dotnet/aspnet:8.0`, lo que reduce el tamaño de la imagen final.
-  * `docker-compose.yml` levanta localmente y en *staging* el backend junto a una instancia de **MySQL 8**, con lo que se asegura la paridad entre entornos.
+  * El backend se empaqueta con un `Dockerfile` de varias etapas: compila con la imagen `mcr.microsoft.com/dotnet/sdk:9.0` y se ejecuta con `mcr.microsoft.com/dotnet/aspnet:9.0`.
+  * `docker-compose.yml` levanta localmente el backend junto con una instancia de **MySQL 8.0**.
 
-* **Registro de Contenedores (GitHub Container Registry - GHCR):** Almacena las imágenes versionadas del backend (`ghcr.io/<org>/backend-aw-smartstay:<versión>`). Cada imagen se etiqueta con la versión semántica y con el *hash* corto del commit.
+* **GitHub Container Registry (GHCR):** almacena las imágenes del backend en `ghcr.io/9097-experimentos-smartstay/backend`, etiquetadas por el *action* `docker/metadata-action`.
 
-* **Gestión de Secretos (GitHub Secrets):** Centraliza las cadenas de conexión a MySQL, las claves de firma JWT, las credenciales del registro de contenedores y el *keystore* de firma de Android. Ningún dato sensible se versiona en el repositorio.
+* **Cosign (Sigstore):** el workflow firma el *digest* de la imagen publicada, para verificar su integridad y procedencia.
 
-* **Entity Framework Core Migrations:** Genera scripts SQL idempotentes (`dotnet ef migrations script --idempotent`) que se aplican de forma controlada sobre la base de datos de cada entorno.
+* **GitHub Secrets y variables de entorno:** las credenciales (por ejemplo, `CRON_API_KEY` del scheduler) se guardan como secretos de GitHub. En Render, los secretos de la API se declaran con `sync: false` en `render.yaml` y no se versionan.
 
-* **Hosting por componente:**
-  * Backend: servicio de contenedores en la nube (Azure App Service for Containers), con un *slot* de `staging`.
-  * Frontend Web (Vue.js): hosting estático con *preview deployments* por Pull Request (Netlify / Vercel).
-  * Landing Page: GitHub Pages, publicada desde el directorio `dist/`.
-  * Aplicación Android: **Firebase App Distribution** distribuye builds de prueba al equipo y a los *testers* internos.
+* **Entity Framework Core Migrations:** el backend aplica las migraciones pendientes y los datos semilla al arrancar (`MigrateAsync`, `SeedDatabaseAsync`).
 
-* **Gradle (Android Release Build):** Genera APK/AAB firmados mediante `./gradlew assembleRelease` y `./gradlew bundleRelease`, con la configuración de firma inyectada desde los secretos del pipeline.
+* **Vercel (*Preview deployments*):** el frontend web y la landing page tienen entornos `Preview` y `Production`; cada *pull request* publica una vista previa para revisarla antes de integrar.
 
 #### 2. Prácticas de Ingeniería Aplicadas
 
-* **Build Once, Deploy Many:** El artefacto (imagen Docker, bundle `dist/` o AAB) se construye una sola vez y se promueve sin recompilar entre entornos. Solo cambian las variables de configuración inyectadas en tiempo de despliegue (`ASPNETCORE_ENVIRONMENT`, `VITE_API_BASE_URL`, etc.).
+* **Build en CI:** la imagen y el paquete de la API se construyen en GitHub Actions; en un *pull request* la imagen se construye sin publicarse, para comprobar que es empaquetable.
 
-* **Versionamiento Semántico y Release Branches (GitFlow):** Cada entrega se prepara en una rama `release/x.y.z` creada desde `develop`. Al cerrarla se genera un *tag* `vX.Y.Z` en `main`, junto con un *changelog* construido automáticamente a partir de los commits semánticos.
+* **Versionamiento semántico:** el workflow reconoce *tags* `v*.*.*` para etiquetar las imágenes, aunque a la fecha los repositorios aún no tienen ningún *tag* ni *release* publicado.
 
-* **Despliegue Automático a Staging:** Todo merge a `develop` despliega automáticamente en el entorno `staging`. Ahí el equipo y el Product Owner validan las historias de usuario completadas antes de su liberación.
+* **Configuración externalizada:** la configuración por entorno se separa del código mediante variables de entorno, archivos `.env.example` y `appsettings.{Environment}.json`.
 
-* **Pruebas de Aceptación y Smoke Tests en Staging:** Tras cada despliegue se ejecutan verificaciones automáticas sobre los endpoints críticos (`/health`, autenticación, creación de reservas) y validaciones funcionales del Frontend Web, para confirmar que la versión es apta para producción.
+* **Imagen firmada:** cada imagen publicada lleva una firma de Cosign, con registro en el log de transparencia de Sigstore.
 
-* **Aprobación Manual para Producción:** El entorno `production` en GitHub Environments exige la aprobación explícita de un responsable (*required reviewers*). La liberación queda así controlada por el equipo aunque el artefacto ya esté listo.
-
-* **Configuración Externalizada:** Siguiendo los principios de *The Twelve-Factor App*, la configuración por entorno se separa del código fuente mediante variables de entorno y `appsettings.{Environment}.json`.
+* **Entrega móvil manual:** la aplicación móvil se compila con `flutter build apk`; el workflow propuesto solo comprueba que compila (`flutter build apk --debug`), y la distribución del APK sigue siendo manual.
 
 ### 7.2.2. Stages Deployment Pipeline Components.
 
-El pipeline de entrega continua de SmartStay organiza el recorrido de cada cambio en cinco etapas, alineadas con el flujo de ramas GitFlow: `feature/*` → Pull Request → `develop` → Pull Request → `main`. Cada etapa añade un nivel de verificación, de modo que solo los incrementos validados llegan a convertirse en artefactos de versión listos para producción.
+El recorrido de un cambio sigue el flujo de ramas GitFlow: `feature/*` → *pull request* → `develop` → *pull request* → `main`. Cada etapa añade un nivel de verificación.
 
-![StagesDeploymentPipeline](assets/chapter-7/ContinuousDelivery/StagesDeploymentPipeline.png)
+<!-- Diagrama del equipo (assets/chapter-7/ContinuousDelivery/StagesDeploymentPipeline.png) retirado: describía un entorno de staging, GitHub Releases para el APK y aprobaciones obligatorias que no existen. Reemplazar por un diagrama actualizado. -->
 
 #### 1. Etapas del Pipeline
 
-* **01 – Desarrollo local:** Cada desarrollador trabaja en una rama `feature/*` con un entorno local equivalente al de los demás entornos.
-  * El backend y la base de datos MySQL se levantan con `docker compose up`.
-  * El Frontend Web y la Landing Page se ejecutan con `npm run dev`.
+* **01 – Desarrollo local:** cada desarrollador trabaja en una rama `feature/*`.
+  * El backend y MySQL se levantan con `docker compose up`.
+  * El frontend web y la landing page se ejecutan con `npm run dev`.
   * La aplicación móvil se prueba con `flutter run`.
-  * Esto reduce las diferencias entre entornos ("en mi máquina funciona") antes de abrir el Pull Request.
 
-* **02 – Integración (`develop`):** Al abrir un Pull Request hacia `develop`, o al fusionarse en ella, se ejecuta el pipeline de integración completo:
-  * Linters y análisis estático.
-  * Auditoría de dependencias vulnerables.
-  * Compilación de todos los componentes.
-  * Pruebas unitarias, de integración, BDD y de sistema.
-  * Los resultados se publican como artefactos del workflow (reportes de pruebas y cobertura), lo que da trazabilidad.
+* **02 – Integración (`develop`):** al abrir un *pull request* hacia `develop`, o al fusionarse en ella, el backend ejecuta `ci-backend.yml` completo: formato, auditoría de dependencias, compilación sin advertencias y las 265 pruebas. Los resultados se publican como artefactos.
 
-* **03 – Candidato a versión (PR a `main`):** Esta etapa es el punto de control crítico del pipeline.
-  * Al crearse el Pull Request de `develop` hacia `main`, se ejecuta nuevamente el CI completo.
-  * Se construye la imagen Docker del backend sin publicarla, para comprobar que es empaquetable.
-  * La fusión exige una aprobación manual obligatoria por parte de un responsable del equipo.
-  * Así, la decisión de liberar una versión permanece bajo control humano.
+* **03 – Candidato a versión (*pull request* a `main`):** al abrir el *pull request* de `develop` hacia `main` se ejecutan de nuevo `ci-backend.yml` y la construcción de la imagen Docker sin publicarla. La aprobación de la fusión la decide el equipo por convención; GitHub no la exige, porque las ramas no están protegidas.
 
-* **04 – Artefacto de versión (`main` / tag `v*.*.*`):** Una vez aprobado y fusionado el cambio en `main`, junto con el *tag* de versión semántica correspondiente, se generan los artefactos definitivos:
-  * **Backend:** imagen Docker publicada en **GitHub Container Registry (GHCR)** y firmada digitalmente con **Cosign**, lo que garantiza su integridad y procedencia.
-  * **Aplicación móvil:** APK adjuntado a un **GitHub Release** asociado al mismo *tag*.
+* **04 – Artefacto de versión (`main`):** al fusionarse en `main`, `docker-publish.yml` publica la imagen del backend en GHCR y la firma con Cosign. El *package* de la API de `ci-backend.yml` queda además como artefacto de la ejecución.
 
-* **05 – Listo para producción:** Al finalizar el pipeline se dispone de artefactos versionados, inmutables y verificados. Pueden desplegarse en producción en cualquier momento, sin volver a compilar, lo que cumple el principio *build once, deploy many* de la entrega continua.
-
+* **05 – Despliegue:** Render y Vercel despliegan desde `main`, como se describe en el apartado 7.3.
 
 ## 7.3. Continuous deployment
 
-El Despliegue Continuo en SmartStay automatiza el último paso del ciclo: llevar a producción, sin intervención manual, todo cambio que supere las etapas de integración y entrega. Este modelo se aplica por completo al Backend, al Frontend Web y a la Landing Page. La Aplicación Móvil sigue un esquema de despliegue progresivo, porque depende del proceso de revisión de Google Play.
+El Despliegue Continuo en SmartStay lleva a producción, sin intervención manual, los cambios integrados en `main`. Se aplica al backend (Render) y al frontend web y la landing page (Vercel). La aplicación móvil no se despliega de forma automática.
 
 ### 7.3.1. Tools and Practices.
 
-Para desplegar en producción de forma segura, frecuente y reversible, se emplean las siguientes herramientas y prácticas:
+Para desplegar en producción de forma segura y reversible, se emplean las siguientes herramientas y prácticas:
 
 #### 1. Herramientas de Despliegue Continuo
 
-* **GitHub Actions (Production Workflow):** El workflow `cd-production.yml` se dispara automáticamente con cada merge o *tag* sobre `main`. Toma la imagen ya validada en *staging* y la despliega en el entorno productivo.
+* **Render (backend):** el archivo `render.yaml` define el servicio como un contenedor Docker en el plan gratuito, región Oregon, apuntando a la rama `main` del repositorio, con `healthCheckPath: /health` y `autoDeployTrigger: checksPass`, de modo que Render despliega solo cuando los *checks* de CI de GitHub pasan.
 
-* **Azure App Service – Deployment Slots:** El backend se publica primero en un *slot* intermedio y luego se intercambia (*swap*) con el *slot* de producción. Esto permite despliegues sin tiempo de inactividad (*zero-downtime*) y una reversión inmediata.
+* **Vercel (frontend web y landing page):** `vercel.json` declara el *framework* Vite, el comando `npm run build` y el directorio de salida `dist`. En el frontend web añade una regla de reescritura que dirige todas las rutas a `index.html` para que funcione la navegación de la aplicación de una sola página. En la landing page añade caché inmutable para los recursos versionados y las cabeceras de seguridad `X-Content-Type-Options`, `Referrer-Policy`, `X-Frame-Options` y `Permissions-Policy`. Cada *push* a `main` publica una nueva versión de producción, y el historial de despliegues permite volver a una anterior.
 
-* **Hosting Estático con Despliegue Atómico:** El Frontend Web y la Landing Page se publican de forma atómica. La nueva versión reemplaza a la anterior solo cuando la carga termina por completo, y se conserva el historial de despliegues para revertir con un clic.
+* **Monitoreo del servicio desplegado:**
+  * El *endpoint* `GET /health` de ASP.NET Core verifica la disponibilidad del API y la conectividad con MySQL (`AddMySql`).
+  * El workflow `scheduler.yml` y el workflow propuesto `uptime.yml` consultan el servicio de forma periódica (apartado 7.4).
 
-* **Google Play Console (Staged Rollout):** La Aplicación Android se publica primero en la pista de pruebas internas y luego en producción con un despliegue escalonado por porcentaje de usuarios (10% → 50% → 100%). La subida del AAB se automatiza desde GitHub Actions.
-
-* **Monitoreo y Observabilidad:**
-  * **Health Checks de ASP.NET Core** (`/health`) para verificar la disponibilidad del API y la conectividad con MySQL.
-  * **Azure Application Insights** para registrar logs, trazas, tiempos de respuesta y excepciones en producción.
-  * **Firebase Crashlytics** para reportar fallos de la aplicación móvil en tiempo real.
-
-* **Notificaciones del Pipeline:** Integración de GitHub Actions con el canal de comunicación del equipo (Discord / Slack) para avisar sobre despliegues exitosos, fallidos o revertidos.
+* **Notificaciones del pipeline:** GitHub notifica por correo y en su bandeja los workflows fallidos, según las preferencias de cada integrante (apartado 7.4.4).
 
 #### 2. Prácticas de Ingeniería Aplicadas
 
-* **Despliegue Automático tras Pipeline Verde:** Ningún cambio llega a producción sin haber superado la compilación, las pruebas unitarias y de integración, el análisis estático y la validación en *staging*. Si alguna etapa falla, el despliegue se detiene.
+* **Despliegue automático tras *checks* en verde:** desde el *pull request* #13 del backend, Render solo despliega a producción cuando los *checks* de CI pasan en `main`.
 
-* **Zero-Downtime Deployment:** El intercambio de *slots* (estrategia *blue-green*) garantiza que los huéspedes y el personal del hotel no sufran interrupciones durante la actualización.
+* **Verificación con *health check*:** Render consulta `/health` al arrancar una nueva versión; si la verificación no pasa, la versión nueva no recibe tráfico y sigue en servicio la anterior.
 
-* **Verificación Post-Despliegue (Smoke Tests en Producción):** Tras cada despliegue, el pipeline consulta los endpoints de salud y los flujos críticos. Si la verificación falla, se ejecuta automáticamente el *swap* inverso para restaurar la versión anterior.
+* **Migraciones al arrancar:** la aplicación aplica las migraciones pendientes y los datos semilla al iniciar, con la configuración de conexión y el certificado de la base de datos inyectados desde el entorno de Render.
 
-* **Estrategia de Rollback:** Toda versión productiva corresponde a un *tag* `vX.Y.Z` y a una imagen inmutable en GHCR. Revertir consiste en volver a desplegar la imagen previa, sin recompilar código.
+* **Reversión:** en Vercel se vuelve a una versión anterior desde el historial de despliegues; en Render se vuelve a desplegar una versión anterior desde su historial.
 
-* **Migraciones de Base de Datos Compatibles hacia Atrás:** Los cambios de esquema en MySQL se aplican de forma aditiva (*expand and contract*), para que la versión anterior del backend siga operando durante el despliegue y ante un eventual rollback.
+* **Hotfixes bajo GitFlow:** las correcciones urgentes siguen el flujo de ramas `hotfix/` descrito en el apartado 5.1.2.
 
-* **Feature Toggles:** Las funcionalidades incompletas o experimentales se integran desactivadas mediante banderas de configuración. Así el código se despliega continuamente sin exponer cambios no aprobados al usuario final.
+* **Lo que aún no existe:** pruebas de humo automáticas posteriores al despliegue, reversión automática, entorno de *staging* y banderas de funcionalidad. El apartado 7.4 documenta la primera aproximación de verificación continua con `uptime.yml`.
 
-* **Hotfixes bajo GitFlow:** Las correcciones urgentes se desarrollan en ramas `hotfix/` creadas desde `main`. Pasan por el mismo pipeline automatizado y se fusionan de vuelta a `develop` para mantener la consistencia del código.
-  
-  
 ### 7.3.2. Production Deployment Pipeline Components.
 
-El pipeline de despliegue continuo lleva automáticamente a producción cada versión aprobada en `main`. Se divide en tres flujos independientes, uno por plataforma de hosting. Los tres comparten el mismo disparador: un merge aprobado en `main` con todos los *checks* en verde.
+El despliegue a producción se divide en dos flujos automáticos y uno manual. Los dos automáticos comparten el mismo disparador: un cambio en `main`.
 
-![ProductionDeploymentPipeline](assets/chapter-7/ContinuousDeployment/ProductionDeploymentPipeline.png)
+<!-- Diagrama del equipo (assets/chapter-7/ContinuousDeployment/ProductionDeploymentPipeline.png) retirado: muestra un APK publicado en GitHub Releases, que no existe. Reemplazar por un diagrama actualizado. -->
 
 #### 1. Backend en Render
 
-* **Disparador:** Merge aprobado en `main` con todos los *checks* de GitHub Actions en verde.
-* **Construcción:** Se compila una imagen Docker multietapa.
-  * La etapa de build usa el **.NET SDK 9**.
-  * La etapa final usa el runtime de **ASP.NET 9**, que es más ligero y seguro.
-  * Los secretos de configuración y el certificado de autoridad (CA) para la conexión segura a MySQL se inyectan desde el entorno de Render, sin versionarse en el repositorio.
-* **Arranque:** Al iniciar el contenedor se aplican automáticamente las migraciones de **Entity Framework Core** y los datos semilla (*seed*). Si alguna migración falla, la aplicación no arranca. Esto evita que una versión opere sobre un esquema de base de datos inconsistente.
-* **Health check:** Render consulta el endpoint `GET /health`, que verifica tanto la disponibilidad del API como la conectividad con MySQL. Si la verificación falla, el despliegue se descarta y sigue en servicio la versión anterior. Esto da un rollback implícito y sin tiempo de inactividad.
-* **Producción (API):** Superado el health check, la nueva versión del API RESTful pasa a atender el tráfico productivo.
+* **Disparador:** cambio en `main` con los *checks* de GitHub Actions en verde (`autoDeployTrigger: checksPass`).
+* **Construcción:** Render construye la imagen a partir del `Dockerfile` del repositorio. La etapa de compilación usa el **.NET SDK 9** y la etapa final, el runtime de **ASP.NET 9**.
+* **Arranque:** al iniciar el contenedor se aplican las migraciones de Entity Framework Core y los datos semilla.
+* **Health check:** Render consulta `GET /health`, que verifica el API y la conexión con MySQL.
+* **Producción (API):** superada la verificación, la nueva versión atiende el tráfico en `https://smartstay-movildev-api.onrender.com`. Al ser un servicio del plan gratuito, se suspende tras un periodo de inactividad y tarda varios segundos en reactivarse con la siguiente petición (apartado 7.4).
 
 #### 2. Frontend Web y Landing Page en Vercel
 
-* **Disparador:** Merge aprobado en `main` con *checks* en verde.
-* **Construcción:** Se instalan las dependencias de forma reproducible con `npm ci` y se genera el bundle optimizado de producción con `npm run build` (Vite).
-* **Publicación en CDN:** Los archivos estáticos se distribuyen en la red de borde de Vercel con tres configuraciones:
-  * Reescritura de rutas para el correcto funcionamiento de la SPA en Vue.js.
-  * Cabeceras de seguridad HTTP.
-  * Caché inmutable para los recursos versionados por *hash*.
-* **Producción (Web y Landing):** El despliegue es atómico. La nueva versión reemplaza a la anterior solo cuando la publicación termina por completo, y el historial de despliegues permite revertir de inmediato.
+* **Disparador:** *push* a `main`; los *pull requests* generan una vista previa.
+* **Construcción:** Vercel instala las dependencias y ejecuta `npm run build` (Vite), según `vercel.json`.
+* **Publicación:** los archivos estáticos se distribuyen desde la red de borde de Vercel, con la regla de reescritura para la aplicación de una sola página en el frontend web y las cabeceras de seguridad y de caché en la landing page.
+* **Producción:** la aplicación web queda en `https://smartstay-movildev-web.vercel.app` y la landing page, en `https://smartstay-movildev-landing.vercel.app`. El despliegue reemplaza al anterior solo cuando termina, y el historial permite volver atrás.
 
-#### 3. Aplicación Móvil en GitHub Releases
+#### 3. Aplicación Móvil (manual)
 
-* **Disparador:** Merge aprobado en `main` con *checks* en verde.
-* **Construcción:** Se genera el APK de producción con `flutter build apk --release`.
-* **Publicación:** El APK, versionado según el *tag* semántico de la entrega, se adjunta automáticamente al **GitHub Release** correspondiente.
-* **Distribución (APK):** Los usuarios y *testers* descargan la última versión estable directamente desde la página de Releases del repositorio, con trazabilidad completa entre el binario y el código fuente que lo generó.
+* **Construcción:** se genera el APK con `flutter build apk` en el equipo de un integrante.
+* **Distribución:** el APK se comparte manualmente con quienes lo prueban. El repositorio `mobile` no tiene pipeline de despliegue; el workflow de CI propuesto solo verifica que la aplicación compila.
+
+---
+
+## 7.4. Continuous Monitoring
+
+El Monitoreo Continuo cierra el ciclo de DevOps de SmartStay: una vez que un cambio llega a producción, el equipo necesita saber si el servicio sigue disponible, qué tan rápido responde y si los procesos automáticos siguen ejecutándose. Como el backend corre en el plan gratuito de Render, el monitoreo tiene una condición particular: la plataforma suspende el servicio tras un periodo de inactividad y lo reactiva con la siguiente petición, lo que añade un arranque en frío de varios segundos.
+
+![Arranque en frío del backend en Render](assets/chapter-7/monitoring/render-cold-start.jpg)
+
+*Pantalla de Render al recibir la primera petición a `https://smartstay-movildev-api.onrender.com/scalar/` con el servicio suspendido (09/11/2026, 20:02). La secuencia de arranque tarda alrededor de 26 segundos.*
+
+### 7.4.1. Tools and Practices
+
+#### 1. Herramientas de Monitoreo Continuo
+
+* **Endpoint de salud `GET /health` del backend:** expuesto con `app.MapHealthChecks("/health")` de ASP.NET Core y accesible sin autenticación. Render lo consulta tras cada despliegue y los workflows de monitoreo lo usan como señal de vida. El 09/11/2026 respondió `Healthy` con código 200 en 0.54 s.
+* **GitHub Actions:** ejecuta los trabajos programados del repositorio `backend` y deja un historial público de cada ejecución, con su duración y su resultado.
+  * `scheduler.yml`: cada hora despierta la API con `/health` (con reintentos para absorber el arranque en frío) y dispara los procesos periódicos de negocio: expirar reservas sin pago (US-07), alertar habitaciones en mantenimiento por más de 24 horas (US-06), dar seguimiento a solicitudes de demostración (US-27) y entregar los correos pendientes del *outbox*.
+  * `uptime.yml`: comprobación de disponibilidad cada 30 minutos de la API, la landing page y la aplicación web, propuesta en la rama `feature/av2-ci` del repositorio `backend` y pendiente de fusión.
+* **Render (logs y métricas del servicio):** conserva el registro de arranque, de despliegues y de errores del contenedor del backend.
+* **Vercel (historial de despliegues):** registra cada versión publicada de la landing page y de la aplicación web, y permite volver a una versión anterior.
+* **Lighthouse mediante PageSpeed Insights:** mide rendimiento, accesibilidad, buenas prácticas y SEO de las páginas públicas desde la perspectiva de un visitante móvil y de escritorio.
+* **Scalar (OpenAPI 3.0):** `https://smartstay-movildev-api.onrender.com/scalar/` publica la referencia interactiva de la API y sirve como comprobación de que el contrato desplegado coincide con el código.
+
+#### 2. Prácticas de Ingeniería Aplicadas
+
+* **Monitoreo sintético:** en lugar de esperar a que un usuario reporte una caída, un trabajo programado simula una visita cada 30 minutos y falla si cualquiera de los tres productos no responde con un código 2xx.
+* **Reintentos antes de alertar:** las comprobaciones usan `--retry` con espera entre intentos, de modo que el arranque en frío de Render no se interprete como una caída.
+* **Medición por release:** después de cada liberación a `main` se ejecuta Lighthouse sobre la landing page y la pantalla de inicio de sesión, y los resultados se comparan con los de la medición anterior. En este avance se realizó la primera medición, que sirve como línea base.
+* **Umbrales explícitos:** se propone considerar como regresión un rendimiento menor a 80, una accesibilidad menor a 90 o un SEO menor a 90 en cualquiera de las páginas medidas.
+* **Historial como evidencia:** los resultados de los workflows se conservan en GitHub Actions, de modo que cualquier integrante puede revisar si un trabajo falló y cuándo se recuperó.
+
+### 7.4.2. Monitoring Pipeline Components
+
+El pipeline de monitoreo combina señales automáticas continuas con mediciones puntuales por release:
+
+| Componente | Qué mide | Frecuencia | Origen de los datos |
+| :--- | :--- | :--- | :--- |
+| Render health check | Que el contenedor arranca y responde en `/health` | En cada despliegue | Render |
+| `scheduler.yml` | Que la API despierta y que los cuatro procesos periódicos terminan sin error | Cada hora | GitHub Actions |
+| `uptime.yml` | Disponibilidad de la API, la landing page y la aplicación web | Cada 30 minutos | GitHub Actions |
+| `ci-backend.yml` | Formato, dependencias vulnerables, compilación sin advertencias y pruebas | En cada *push* y *pull request* | GitHub Actions |
+| `docker-publish.yml` | Que la imagen del backend se construye y se publica en GHCR | En cada *push* a `main` y diariamente a las 03:27 UTC | GitHub Actions |
+| Lighthouse | Rendimiento, accesibilidad, buenas prácticas y SEO | Por release | PageSpeed Insights |
+
+**Resultados observados al 09/11/2026.**
+
+*Ejecuciones de `scheduler.yml`.* El flujo acumula 255 ejecuciones. En las últimas 100, del 18/10/2026 al 09/11/2026, las 100 terminaron con éxito y cada una tardó alrededor de 42 segundos.
+
+![Ejecuciones del workflow scheduler](assets/chapter-7/monitoring/backend-scheduler-runs.jpg)
+
+*Ejecuciones de `docker-publish.yml`.* De las 86 ejecuciones del flujo, 82 terminaron con éxito y 4 fallaron. La última falla fue el 08/11/2026 a las 10:37 y la ejecución siguiente, el 09/11/2026, volvió a terminar con éxito.
+
+*Ejecución de `ci-backend.yml`.* La última ejecución sobre `develop`, del 07/10/2026 (tras fusionar el pull request #13), pasó sus cuatro trabajos (*Lint*, *Dependency audit*, *Build & test* y *Package API*) en 2 min 12 s. El trabajo *Build & test* ejecutó las tres suites de pruebas sin fallos:
+
+| Suite | Pruebas superadas | Fallidas |
+| :--- | :---: | :---: |
+| `BackendAwSmartstay.API.UnitTests` | 87 | 0 |
+| `BackendAwSmartstay.API.Tests` | 150 | 0 |
+| `BackendAwSmartstay.API.BddTests` | 28 | 0 |
+| **Total** | **265** | **0** |
+
+![Ejecución de CI del backend](assets/chapter-7/ci-runs/backend-ci-run.jpg)
+
+*Disponibilidad.* El 09/11/2026 a las 20:09 se consultaron los tres productos con el mismo tipo de petición que usa `uptime.yml`:
+
+| Producto | URL | Código HTTP | Tiempo de respuesta |
+| :--- | :--- | :---: | :---: |
+| API (`/health`) | https://smartstay-movildev-api.onrender.com/health | 200 | 0.54 s |
+| Landing page | https://smartstay-movildev-landing.vercel.app | 200 | 0.45 s |
+| Aplicación web | https://smartstay-movildev-web.vercel.app | 200 | 0.80 s |
+
+*Referencia de la API.* Scalar muestra el contrato OpenAPI 3.0.4 «SmartStay Platform API» con sus grupos de operaciones.
+
+![Scalar API reference](assets/chapter-7/monitoring/scalar-api-reference.jpg)
+
+*Lighthouse.* Se midió el 09/11/2026 con PageSpeed Insights la landing page y la pantalla de inicio de sesión de la aplicación web:
+
+| Página | Dispositivo | Rendimiento | Accesibilidad | Buenas prácticas | SEO | FCP | LCP | TBT | CLS |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Landing page | Móvil | 81 | 97 | 100 | 100 | 1.7 s | 4.7 s | 0 ms | 0 |
+| Landing page | Escritorio | 99 | 97 | 96 | 100 | 0.5 s | 1.0 s | 40 ms | 0.005 |
+| Aplicación web (`/login`) | Móvil | 80 | 88 | 100 | 83 | 1.5 s | 4.4 s | 190 ms | 0.018 |
+| Aplicación web (`/login`) | Escritorio | 98 | 88 | 100 | 83 | 0.4 s | 1.0 s | 80 ms | 0.035 |
+
+![Lighthouse de la landing page en móvil](assets/chapter-6/lighthouse/landing-mobile.jpg)
+
+![Lighthouse de la landing page en escritorio](assets/chapter-6/lighthouse/landing-desktop.jpg)
+
+![Lighthouse del login web en móvil](assets/chapter-6/lighthouse/web-login-mobile.jpg)
+
+![Lighthouse del login web en escritorio](assets/chapter-6/lighthouse/web-login-desktop.jpg)
+
+**Lectura de los resultados y acciones derivadas.**
+
+1. **Rendimiento en móvil.** En ambas páginas el LCP móvil supera los 4 s, mientras que en escritorio no pasa de 1 s. Lighthouse señala recursos que bloquean el renderizado, imágenes sin dimensiones explícitas y JavaScript y CSS sin uso. La landing page queda en 81 y el login web en 80, apenas sobre el umbral de 80 propuesto.
+2. **Accesibilidad del login web (88).** Lighthouse reporta atributos `aria-*` que no coinciden con sus roles, contraste insuficiente entre texto y fondo y ausencia de un elemento de referencia `main`. Son hallazgos concretos para el requisito de accesibilidad del proyecto y quedan registrados como correcciones pendientes.
+3. **SEO del login web (83).** La página no tiene `meta description` y `robots.txt` no es válido: la regla de reescritura de `vercel.json` devuelve `index.html` para cualquier ruta, incluido `/robots.txt`.
+4. **La landing page** cumple los umbrales en las cuatro categorías y en los dos dispositivos.
+
+### 7.4.3. Alerting Pipeline Components
+
+Las alertas del proyecto se apoyan en el estado de los workflows de GitHub Actions: un trabajo que termina en error genera el evento que dispara la notificación. Las condiciones de alerta que se definen son:
+
+| Condición | Se detecta con | Severidad | Respuesta esperada |
+| :--- | :--- | :---: | :--- |
+| La API, la landing page o la aplicación web no responde con 2xx después de los reintentos | `uptime.yml` | Alta | Revisar los logs de Render o el despliegue en Vercel y recuperar la versión anterior si fue un despliegue |
+| Falla la integración en `main` | `ci-backend.yml` | Alta | Corregir antes de fusionar; Render no despliega mientras los checks no pasen (`autoDeployTrigger: checksPass`) |
+| Falla el scheduler | `scheduler.yml` | Media | Revisar el endpoint que falló; los procesos periódicos se ejecutan en la siguiente hora |
+| Falla la publicación de la imagen Docker | `docker-publish.yml` | Media | Reejecutar el workflow; el caso de la falla del 08/11/2026 se resolvió en la ejecución siguiente |
+| Lighthouse bajo el umbral acordado | Medición por release | Baja | Registrar la regresión como tarea en el siguiente Sprint |
+
+### 7.4.4. Notification Pipeline Components
+
+El camino de una alerta es el siguiente:
+
+1. Un trabajo de GitHub Actions termina en error.
+2. GitHub registra el resultado en la pestaña *Actions* del repositorio.
+3. GitHub envía la notificación de «workflow fallido» a la persona que originó la ejecución y a quienes siguen el repositorio, por correo y por la bandeja de notificaciones web, según las preferencias de cada integrante.
+4. El integrante revisa los logs de la ejecución, corrige o reejecuta el workflow y, si es un problema de producción, coordina la respuesta en el grupo de trabajo del equipo.
+
+> **Mejora recomendada:** hoy la notificación depende de las preferencias individuales de GitHub. Para que llegue a todo el equipo al mismo tiempo se recomienda añadir a `uptime.yml` un último paso `if: failure()` que envíe un mensaje a un canal compartido mediante un *webhook* (por ejemplo, el servidor de Discord que el equipo usa para sus reuniones). Este paso no está implementado.
+
+---
+
+<div style="page-break-after: always;"></div>
+
+# Capítulo VIII: Experiment-Driven Development
+
+Este capítulo aplica al producto SmartStay el enfoque de desarrollo guiado por experimentos. En lugar de decidir qué construir a partir de opiniones, el equipo formula preguntas sobre sus propias creencias, diseña experimentos acotados que puedan responderlas con datos y usa el pipeline descrito en el Capítulo VII para llevarlos a producción. La lógica del capítulo es: **primero se pregunta, después se diseña, luego se experimenta y al final se aprende**.
+
+En este avance se presentan la planificación (8.1), el diseño (8.2) y las historias de usuario y el backlog To-Be que se derivan del diseño (8.3.1 y 8.3.2). La ejecución de los experimentos, el análisis de sus resultados y el aprendizaje continuo corresponden a las siguientes entregas.
+
+## 8.1. Experiment Planning
+
+### 8.1.1. As-Is Summary
+
+El punto de partida es el estado actual del proyecto, descrito solo con lo que el equipo ha comprobado hasta el 09/11/2026.
+
+**Qué existe.** SmartStay está desplegado en tres productos: una landing page (`https://smartstay-movildev-landing.vercel.app`), una aplicación web para staff y huéspedes (`https://smartstay-movildev-web.vercel.app`) y una API RESTful en Render. La aplicación móvil Flutter consume la misma API. El backend cubre inicio de sesión con doble factor para staff, configuración de hoteles y habitaciones, estados de habitación, reservas, pagos y solicitudes de demostración. El check-in digital quedó fuera del backlog actual, y el control del entorno de la habitación por IoT solo existe como un emulador (`IoTEmulator`) en la API.
+
+**Qué sabemos de los usuarios (Capítulo II).**
+
+| Segmento | Muestra | Hallazgo relevante para los experimentos |
+| :--- | :---: | :--- |
+| Administradores de hoteles boutique y pequeños | 3 | Hoteles de 12 a 19 habitaciones y equipos de 4 a 6 personas; el 66.7 % usa un sistema propio y el 33.3 % Excel y WhatsApp; el 100 % se muestra motivado a adoptar una herramienta y a pagar una suscripción si el costo se justifica. |
+| Huéspedes de hoteles boutique | 4 | Edad promedio de 28 años; el 75 % señala las esperas largas en recepción como principal frustración. |
+
+La muestra es pequeña: sirve para formular preguntas, no para afirmar lo que ocurre en toda la población.
+
+**Qué mediciones técnicas existen hoy (Capítulos VI y VII).**
+
+- Lighthouse del 09/11/2026: la landing page obtiene 81 en rendimiento móvil y 99 en escritorio; el login web, 80 y 98. La accesibilidad del login es 88 y su SEO, 83.
+- 265 pruebas automatizadas del backend superadas en la última ejecución de CI sobre `develop`.
+- Disponibilidad: 100 de las últimas 100 ejecuciones del scheduler terminaron con éxito.
+
+**Qué no existe.** El equipo no tiene todavía analítica de uso en la landing page ni en la aplicación web, ni líneas base de conversión o de tiempo por tarea, ni entrevistas de validación con el producto desplegado (6.3). Esta carencia es precisamente la que el plan de este capítulo busca cerrar.
+
+### 8.1.2. Raw Material: Assumptions, Knowledge Gaps, Ideas, Claims
+
+El material bruto reúne lo que el equipo cree, ignora, propone o ha escuchado. El criterio es no probar la idea en sí, sino la premisa que la sostiene.
+
+| Id | Tipo | Enunciado | Fuente |
+| :-: | :--- | :--- | :--- |
+| R-01 | Assumption | Una solicitud de demostración con menos campos obligatorios aumenta la cantidad de administradores que la completan. | El formulario actual de la landing exige ocho campos obligatorios (`firstName`, `lastName`, `hotelName`, `jobTitle`, `email`, `accommodationType`, `roomsRange`, `referralSource`) |
+| R-02 | Assumption | Un huésped completa la reserva sin ayuda de recepción si ve claramente las noches y el total antes de confirmar. | Lean UX Assumption 3 (el acceso digital reduce las esperas) y entrevistas a huéspedes |
+| R-03 | Assumption | El personal opera más rápido si ve el estado de todas las habitaciones y puede filtrarlas. | Lean UX Assumption 2 e Hypothesis H2 (mejora de 15 % en productividad) |
+| R-04 | Assumption | Al huésped le importa más controlar el entorno de la habitación que otras funciones. | Lean UX Assumption 1 e Hypothesis H1 |
+| R-05 | Assumption | El check-in digital reduce al menos 40 % el tiempo de check-in. | Lean UX Assumption 3 e Hypothesis H3 |
+| R-06 | Claim | «Las esperas en recepción son la principal frustración del huésped.» | El 75 % de los huéspedes entrevistados |
+| R-07 | Claim | «Pagaría una suscripción mensual si justifica la mejora operativa.» | El 100 % de los administradores entrevistados |
+| R-08 | Idea | Mostrar el formulario de demostración dentro del hero, justo después de elegir el perfil «Administro un hotel». | Equipo, a partir de la landing segmentada (US-24) |
+| R-09 | Idea | Añadir filtros por estado y cambio rápido de estado sobre el mapa de habitaciones. | Equipo, a partir del mapa de habitaciones del staff (US-06) |
+| R-10 | Idea | Reducir el peso de imágenes y recursos que bloquean el render para bajar el LCP móvil. | Lighthouse del 09/11/2026 |
+| R-11 | Knowledge Gap | No sabemos qué porcentaje de los visitantes de la landing page llega a enviar el formulario de demostración. | No hay analítica instalada |
+| R-12 | Knowledge Gap | No sabemos cuánto tarda un huésped en completar una reserva ni cuántos la abandonan antes de confirmarla. | No hay analítica instalada |
+| R-13 | Knowledge Gap | No sabemos cuánto tarda el staff en ubicar una habitación y cambiar su estado. | Sin mediciones; las entrevistas fueron cualitativas |
+| R-14 | Knowledge Gap | No sabemos si un LCP móvil superior a 4 s hace que los visitantes abandonen la landing page. | Lighthouse mide el LCP, pero no el abandono |
+
+Las suposiciones R-04 y R-05 no se pueden probar con el producto actual: el check-in digital está fuera del backlog y el control del entorno solo existe como emulador en la API. Se registran como pendientes para un ciclo posterior y no entran al backlog de preguntas de este avance.
+
+### 8.1.3. Experiment-Ready Questions
+
+Una pregunta lista para experimentar puede basarse en una creencia (*belief-led*) o ser exploratoria cuando todavía no hay creencia previa.
+
+**Preguntas impulsadas por creencias.**
+
+| Id | Pregunta | Creencia que prueba | Tipo |
+| :-: | :--- | :--- | :--- |
+| Q-01 | ¿Reducir los campos obligatorios del formulario de demostración aumenta la proporción de visitantes que lo envían? | R-01, R-08 | Belief-led |
+| Q-02 | ¿Mostrar un resumen con las noches y el total antes de confirmar aumenta la proporción de reservas que el huésped completa? | R-02 | Belief-led |
+| Q-03 | ¿Filtrar el mapa de habitaciones por estado y cambiarlo desde el propio mapa reduce el tiempo que tarda el staff en actualizar una habitación? | R-03, R-09 | Belief-led |
+| Q-04 | ¿Reducir el LCP móvil de la landing page por debajo de 2.5 s aumenta la proporción de visitantes que navegan más allá del hero? | R-10, R-14 | Belief-led |
+
+**Preguntas exploratorias.**
+
+| Id | Pregunta | Brecha que atiende |
+| :-: | :--- | :--- |
+| Q-05 | ¿Qué porcentaje de los visitantes de la landing page envía el formulario de demostración hoy? | R-11 |
+| Q-06 | ¿En qué paso del flujo de reserva abandonan los huéspedes? | R-12 |
+| Q-07 | ¿Cuánto tardan el administrador y el personal de recepción en ubicar una habitación y cambiar su estado con la interfaz actual? | R-13 |
+
+**Las cinco W y una H.** Para descubrir premisas ocultas detrás de Q-01 se aplicó la técnica con la pregunta «¿por qué abandona el formulario de demostración?».
+
+| Pregunta | Resultado |
+| :--- | :--- |
+| ¿Quién? | Un administrador o gerente de un hotel boutique que llega desde la landing page |
+| ¿Qué hace? | Abre el formulario, lo lee y decide si lo completa |
+| ¿Dónde? | En la sección `#demo` de la landing page, desde celular o computadora |
+| ¿Cuándo? | Después de elegir el perfil «Administro un hotel» y de revisar los beneficios |
+| ¿Por qué? | Premisa oculta: el visitante todavía no está seguro de querer una demostración y los ocho campos obligatorios le piden demasiado esfuerzo para una decisión temprana |
+| ¿Cómo? | Se mide con la proporción de formularios enviados frente a los formularios vistos |
+
+La técnica generó una pregunta exploratoria adicional, ya incluida como Q-05, porque la premisa oculta no puede evaluarse mientras se ignore la tasa actual de envío.
+
+### 8.1.4. Question Backlog
+
+El Question Backlog ordena las preguntas por el valor de la respuesta, no por el costo de una solución. Cada pregunta lleva su **por qué**, que justifica el esfuerzo del experimento, y cuatro puntajes de 1 a 5:
+
+- **Confianza (C):** cuánto cree el equipo que ya conoce la respuesta. Un valor alto resta prioridad.
+- **Riesgo (R):** qué tan grave es equivocarse si la creencia es falsa.
+- **Impacto (I):** cuánto cambia el negocio o el producto con la respuesta.
+- **Interés (N):** cuánto le importa al equipo conocerla.
+
+**Prioridad = (6 − C) + R + I + N.** En caso de empate prevalece la pregunta con mayor riesgo.
+
+| Orden | Id | Por qué | C | R | I | N | Prioridad |
+| :-: | :-: | :--- | :-: | :-: | :-: | :-: | :-: |
+| 1 | Q-05 | Sin esta línea base no se puede interpretar ningún experimento sobre la landing page | 1 | 4 | 5 | 4 | 18 |
+| 2 | Q-01 | El formulario de demostración es el único canal de captación comercial de la landing page | 3 | 4 | 5 | 5 | 17 |
+| 3 | Q-06 | La reserva es la función central del huésped y no sabemos dónde se pierde | 2 | 4 | 5 | 4 | 17 |
+| 4 | Q-02 | Un resumen claro es un cambio barato con posible efecto directo en la reserva | 3 | 3 | 5 | 4 | 15 |
+| 5 | Q-03 | La productividad del staff es la promesa central frente a los hoteles | 3 | 3 | 4 | 5 | 15 |
+| 6 | Q-07 | Sin tiempos actuales no se puede afirmar una mejora | 2 | 3 | 4 | 3 | 14 |
+| 7 | Q-04 | El LCP móvil es alto, pero no se sabe si afecta a los visitantes | 3 | 2 | 3 | 4 | 12 |
+
+Los empates en 17 y en 15 no se pudieron resolver por riesgo, porque los pares tienen el mismo riesgo. Q-01 quedó antes que Q-06 por su mayor interés, y Q-02 antes que Q-03 por su menor costo de implementación.
+
+**Backlog amplio y profundo.** El backlog *broad* contiene las siete preguntas, para ver el panorama. El backlog *deep* se limita a las tres preguntas con una variable manipulable y una métrica del dominio ya definida (8.2.2): Q-01, Q-02 y Q-03. Las demás se resuelven con medición, sin cambiar el producto: Q-05, Q-06 y Q-07 son líneas base que se obtienen con el mismo seguimiento que habilita los experimentos, y Q-04 se pospone hasta contar con esa medición.
+
+### 8.1.5. Experiment Cards
+
+Cada tarjeta resume el experimento antes de ejecutarlo. El **frente** contiene la pregunta, el por qué, la hipótesis y el Simplest Useful Thing. El **reverso** contiene las medidas, las condiciones y la escala, que se justifican en 8.2.
+
+#### Experiment Card E-01: Formulario de demostración corto
+
+| **Frente** | |
+| :--- | :--- |
+| Pregunta | Q-01: ¿reducir los campos obligatorios del formulario de demostración aumenta la proporción de visitantes que lo envían? |
+| Por qué | El formulario es el único canal de captación comercial. Ocho campos obligatorios pueden frenar una decisión que todavía es temprana. |
+| Hipótesis | Si el formulario solo exige nombre, apellido, correo y nombre del hotel, y el resto de los campos pasa a ser opcional, entonces la tasa de envío aumenta. |
+| Qué (Simplest Useful Thing) | Una variante del formulario que marca como opcionales `jobTitle`, `accommodationType`, `roomsRange` y `referralSource`, sin cambiar el diseño visual. |
+
+| **Reverso** | |
+| :--- | :--- |
+| Medidas | M-01 Tasa de envío del formulario de demostración (principal); M-02 tasa de visitantes que llegan a la sección `#demo` (secundaria); M-07 porcentaje de solicitudes con todos los campos completos (de control) |
+| Condiciones | Control: formulario actual. Experimental: formulario corto. Asignación aleatoria 50/50 por visitante |
+| Escala | 199 visitantes por grupo (398 en total), nivel de significancia 5 %, potencia 80 %, MDE de 10 puntos porcentuales sobre una línea base supuesta de 10 % |
+
+#### Experiment Card E-02: Resumen de reserva antes de confirmar
+
+| **Frente** | |
+| :--- | :--- |
+| Pregunta | Q-02: ¿mostrar un resumen con las noches y el total antes de confirmar aumenta la proporción de reservas que el huésped completa? |
+| Por qué | La reserva es la función central del huésped. Un huésped que duda del total abandona sin pedir ayuda. La política de cancelación ya se muestra en el detalle de la habitación (revisión del 09/11/2026), por lo que el resumen se concentra en las fechas, las noches y el total. |
+| Hipótesis | Si el huésped ve un resumen con fechas, noches, precio por noche y total antes de confirmar, entonces la tasa de reservas completadas aumenta. |
+| Qué (Simplest Useful Thing) | Un paso de resumen entre la selección de habitación y el botón de confirmar, con datos que la API ya entrega. |
+
+| **Reverso** | |
+| :--- | :--- |
+| Medidas | M-03 Tasa de finalización de la reserva (principal); M-04 tiempo hasta completar la reserva (secundaria); M-08 tasa de cancelación de reservas sin pago (de control) |
+| Condiciones | Control: flujo actual. Experimental: flujo con paso de resumen. Asignación aleatoria 50/50 por huésped autenticado |
+| Escala | 152 huéspedes por grupo (304 en total), nivel de significancia 5 %, potencia 80 %, MDE de 15 puntos porcentuales sobre una línea base supuesta de 60 % |
+
+#### Experiment Card E-03: Filtros y cambio rápido de estado en el mapa de habitaciones
+
+| **Frente** | |
+| :--- | :--- |
+| Pregunta | Q-03: ¿filtrar el mapa de habitaciones por estado y cambiarlo desde el propio mapa reduce el tiempo que tarda el staff en actualizar una habitación? |
+| Por qué | La promesa central frente a los hoteles es la visibilidad en tiempo real y la productividad del personal (Hypothesis H2). |
+| Hipótesis | Si el staff puede filtrar por estado y cambiarlo desde el mapa, entonces el tiempo para localizar y actualizar una habitación disminuye. |
+| Qué (Simplest Useful Thing) | Un filtro por estado y un menú de cambio de estado sobre cada habitación del mapa existente. |
+
+| **Reverso** | |
+| :--- | :--- |
+| Medidas | M-05 Tiempo para localizar y actualizar el estado de una habitación (principal); M-06 errores de transición de estado rechazados por el sistema (de control) |
+| Condiciones | Control: mapa actual y cambio de estado desde la pantalla de la habitación. Experimental: mapa con filtros y cambio rápido. Diseño cruzado: cada participante usa ambas versiones en orden alterno |
+| Escala | 63 tareas por condición, nivel de significancia 5 %, potencia 80 %, MDE de 15 segundos sobre una desviación estándar supuesta de 30 segundos |
+
+---
+
+<div style="page-break-after: always;"></div>
+
+## 8.2. Experiment Design
+
+### 8.2.1. Hypotheses
+
+Cada hipótesis de trabajo (H1) se empareja con su hipótesis nula (H0), que afirma que el cambio no produce diferencia o que cualquier diferencia se debe al azar. Las hipótesis son falsificables, comprobables y especifican su medida. El objetivo es **probarlas**, y no demostrar que son verdaderas.
+
+| Experimento | Hipótesis nula (H0) | Hipótesis de trabajo (H1) |
+| :--- | :--- | :--- |
+| E-01 | La tasa de envío del formulario corto es igual a la del formulario actual: p<sub>B</sub> = p<sub>A</sub>. | La tasa de envío del formulario corto es mayor que la del formulario actual: p<sub>B</sub> − p<sub>A</sub> ≥ 10 puntos porcentuales. |
+| E-02 | La tasa de reservas completadas con el paso de resumen es igual a la del flujo actual: p<sub>B</sub> = p<sub>A</sub>. | La tasa de reservas completadas con el paso de resumen es mayor: p<sub>B</sub> − p<sub>A</sub> ≥ 15 puntos porcentuales. |
+| E-03 | El tiempo medio para actualizar una habitación con filtros y cambio rápido es igual al del mapa actual: μ<sub>B</sub> = μ<sub>A</sub>. | El tiempo medio con filtros y cambio rápido es menor: μ<sub>A</sub> − μ<sub>B</sub> ≥ 15 segundos. |
+
+Las pruebas se plantean a dos colas con α = 0.05. Para E-01 y E-02 se usa la comparación de dos proporciones y para E-03, la comparación de medias pareadas.
+
+### 8.2.2. Domain Business Metrics
+
+Todas las Experiment Cards solo pueden citar las métricas de esta sección. Cada una tiene su fórmula, su técnica de recolección y su meta.
+
+| Id | Métrica | Fórmula | Técnica de recolección | Meta |
+| :-: | :--- | :--- | :--- | :--- |
+| M-01 | Tasa de envío del formulario de demostración | Solicitudes de demostración creadas ÷ visitantes únicos que vieron el formulario | Evento `demo_form_viewed` en la landing page y registros de `POST /api/v1/demo-requests` en el backend | ≥ 20 % |
+| M-02 | Alcance de la sección de demostración | Visitantes únicos que llegan a `#demo` ÷ visitantes únicos de la landing page | Eventos `landing_viewed` y `demo_section_reached` | ≥ 40 % |
+| M-03 | Tasa de finalización de la reserva | Reservas creadas ÷ flujos de reserva iniciados | Evento `booking_flow_started` y registros de la tabla de reservas | ≥ 75 % |
+| M-04 | Tiempo hasta completar la reserva | Mediana de (instante de creación de la reserva − instante de `booking_flow_started`) | Marcas de tiempo de los eventos y de la reserva | ≤ 120 s |
+| M-05 | Tiempo para actualizar una habitación | Mediana de (cambio de estado confirmado − inicio de la tarea) | Cronometraje en la sesión de prueba y evento `room_status_changed` | ≤ 15 s |
+| M-06 | Transiciones de estado rechazadas | Cambios de estado rechazados ÷ cambios de estado intentados | Respuestas de error de la API al cambiar el estado | ≤ 5 % |
+| M-07 | Solicitudes de demostración completas | Solicitudes con los ocho campos informados ÷ solicitudes creadas | Registros de solicitudes de demostración en el backend | Solo seguimiento |
+| M-08 | Cancelación de reservas sin pago | Reservas expiradas o canceladas sin pago ÷ reservas creadas | Estados de la reserva en el backend y proceso de expiración de `scheduler.yml` | ≤ 30 % |
+
+Las metas son valores de trabajo que el equipo ajustará cuando se obtengan las líneas base de Q-05, Q-06 y Q-07. No son resultados observados.
+
+### 8.2.3. Measures
+
+Las medidas son la evidencia que responde la pregunta principal y detecta efectos secundarios. Se eligen solo las necesarias, durante el tiempo justo, para reducir costo y riesgo.
+
+| Experimento | Medida principal | Medidas secundarias | Medida de control (*guardrail*) |
+| :--- | :--- | :--- | :--- |
+| E-01 | M-01 Tasa de envío | M-02 Alcance de la sección de demostración | M-07 Solicitudes completas: se vigila que el formulario corto no entregue solicitudes demasiado pobres para el equipo comercial |
+| E-02 | M-03 Tasa de finalización | M-04 Tiempo hasta completar | M-08 Cancelación sin pago: se vigila que el resumen no atraiga reservas que luego no se pagan |
+| E-03 | M-05 Tiempo para actualizar | Número de clics por tarea | M-06 Transiciones rechazadas: se vigila que el cambio rápido no provoque errores operativos |
+
+### 8.2.4. Conditions
+
+| Experimento | Condición de control (H0 es cierta) | Condición experimental (evidencia a favor de H1) | Asignación |
+| :--- | :--- | :--- | :--- |
+| E-01 | Formulario con ocho campos obligatorios | Formulario con cuatro campos obligatorios (nombre, apellido, correo y nombre del hotel) | Aleatoria 50/50 por visitante; el grupo se guarda en el navegador para que el mismo visitante vea siempre la misma versión |
+| E-02 | Flujo de reserva actual | Flujo con paso de resumen antes de confirmar | Aleatoria 50/50 por huésped autenticado, a partir del identificador de usuario |
+| E-03 | Mapa de habitaciones actual | Mapa con filtros por estado y cambio rápido | Diseño cruzado: cada participante realiza las mismas tareas con las dos versiones, alternando el orden |
+
+**Población.** E-01 se aplica a los visitantes de la landing page que eligen el perfil «Administro un hotel». E-02, a los huéspedes con cuenta que inician una reserva en la aplicación web. E-03, al personal con rol de administrador o recepción, en sesiones de prueba moderadas.
+
+### 8.2.5. Scale Calculations and Decisions
+
+La escala responde a dos preguntas: con qué certeza se quiere decidir y qué tan pequeño es el cambio que vale la pena detectar.
+
+**Parámetros comunes.**
+
+- **Nivel de significancia (α):** 5 %, prueba a dos colas, lo que da z<sub>α/2</sub> = 1.96. Controla el error Tipo I.
+- **Potencia estadística (1 − β):** 80 %, lo que da z<sub>β</sub> = 0.84. Controla el error Tipo II. Se eligió el extremo inferior del rango habitual de 80 % a 95 % por el tamaño del tráfico que puede esperar un producto en etapa temprana.
+- **Efecto mínimo detectable (MDE):** el cambio mínimo que justificaría el costo de mantener la variante.
+
+**Fórmulas.**
+
+Para comparar dos proporciones con tamaños iguales:
+
+n = [ z<sub>α/2</sub> · √(2 p̄ (1 − p̄)) + z<sub>β</sub> · √(p<sub>1</sub>(1 − p<sub>1</sub>) + p<sub>2</sub>(1 − p<sub>2</sub>)) ]² ÷ (p<sub>2</sub> − p<sub>1</sub>)², con p̄ = (p<sub>1</sub> + p<sub>2</sub>) ÷ 2
+
+Para comparar medias:
+
+n = 2 (z<sub>α/2</sub> + z<sub>β</sub>)² σ² ÷ δ²
+
+**Resultados.**
+
+| Experimento | Línea base supuesta | MDE | Tamaño de muestra por grupo | Total |
+| :--- | :--- | :--- | :---: | :---: |
+| E-01 | p<sub>1</sub> = 10 % de envío | +10 puntos porcentuales (p<sub>2</sub> = 20 %) | 199 | 398 visitantes |
+| E-02 | p<sub>1</sub> = 60 % de finalización | +15 puntos porcentuales (p<sub>2</sub> = 75 %) | 152 | 304 huéspedes |
+| E-03 | σ = 30 s de desviación estándar | δ = 15 s | 63 | 126 tareas |
+
+**Sensibilidad.** Si el equipo quisiera detectar un efecto menor, la muestra crece rápidamente, por lo que el MDE es la decisión de escala más costosa:
+
+| Experimento | MDE alternativo | Muestra por grupo con 80 % de potencia | Con 90 % de potencia (MDE original) |
+| :--- | :--- | :---: | :---: |
+| E-01 | +5 puntos porcentuales | 686 | 266 |
+| E-02 | +10 puntos porcentuales | 356 | 203 |
+| E-03 | δ = 10 s | 142 | 85 |
+
+**Decisiones de escala.**
+
+1. Las líneas base (10 %, 60 % y σ = 30 s) son **supuestos de partida**, no mediciones. Se reemplazarán por los valores observados en las líneas base de Q-05, Q-06 y Q-07, y se recalculará la muestra antes de iniciar cada experimento.
+2. El experimento se ejecuta hasta alcanzar la muestra calculada. No se detiene al ver un resultado favorable en el camino, porque mirar los datos antes de tiempo aumenta el error Tipo I.
+3. Si el tráfico de la landing page no alcanza los 398 visitantes en un plazo razonable, el equipo prefiere mantener el MDE de 10 puntos y extender el plazo, y no aceptar un MDE mayor que haría el resultado poco útil.
+4. Los datos de E-01 y E-02 provienen de usuarios reales del producto desplegado. Los de E-03 provienen de participantes de los segmentos objetivo en sesiones moderadas, no de integrantes del equipo.
+
+### 8.2.6. Methods Selection
+
+El método es la técnica; la pregunta es el objeto de investigación. El criterio es elegir **la cosa más simple y útil** que alcance la escala y las condiciones necesarias.
+
+| Experimento | Método elegido | Por qué es suficiente | Alternativa descartada |
+| :--- | :--- | :--- | :--- |
+| E-01 | Prueba A/B en la landing page, con asignación por navegador | Mide el comportamiento real de visitantes y no requiere cuentas | Entrevistas: no entregan una tasa y la muestra es muy pequeña |
+| E-02 | Prueba A/B en la aplicación web, con asignación por usuario | El identificador de usuario ya existe y permite una asignación estable | Prueba de usabilidad moderada: cuesta más por participante y no alcanza 304 huéspedes |
+| E-03 | Prueba de usabilidad moderada con diseño cruzado | La muestra es pequeña (63 tareas por condición, es decir, unas 10 a 15 personas con varias tareas cada una) y el tiempo por tarea se mide con precisión | A/B en producción: los hoteles son pocos y las tareas, poco frecuentes |
+
+**Reglas éticas y de integridad.**
+
+- **Un solo experimento por persona y por tema.** E-01 (landing), E-02 (reserva del huésped) y E-03 (mapa de habitaciones del staff) actúan sobre pantallas y poblaciones distintas. Un mismo visitante no es expuesto a dos experimentos sobre el mismo tema.
+- **No causar daño.** Ninguna variante oculta un precio, una condición o una advertencia. En E-02, la variante agrega información y nunca la quita. En E-03, el cambio rápido no omite las reglas de transición de estado del backend.
+- **Datos mínimos.** Solo se registran los eventos necesarios para las métricas de 8.2.2, con un identificador anónimo y sin datos personales en los eventos de la landing page, en línea con la Ley N.º 29733, de Protección de Datos Personales.
+- **Transparencia.** La landing page y la aplicación incluirán un aviso de qué se mide y con qué fin en los términos y condiciones.
+
+### 8.2.7. Data Analytics: Goals, KPIs and Metrics Selection
+
+La selección analítica busca economía de rastreo: se mide lo imprescindible para detectar el cambio buscado, y nada más.
+
+| Meta del negocio | KPI | Métrica de 8.2.2 | Experimento | Decisión que habilita |
+| :--- | :--- | :--- | :---: | :--- |
+| Captar más hoteles interesados | Conversión de visitante a solicitud de demostración | M-01, M-02 | E-01 | Adoptar o descartar el formulario corto |
+| Facilitar que el huésped reserve sin ayuda | Reservas completadas por flujo iniciado | M-03, M-04, M-08 | E-02 | Adoptar o descartar el paso de resumen |
+| Mejorar la productividad del staff | Tiempo por tarea de gestión de habitaciones | M-05, M-06 | E-03 | Adoptar o descartar los filtros y el cambio rápido |
+
+**Métricas que se decidió no medir.** Páginas vistas totales, tiempo en la página y clics sin relación con las tres decisiones anteriores: son métricas de vanidad que no cambian ninguna decisión del producto.
+
+### 8.2.8. Web and Mobile Tracking Plan
+
+El plan de seguimiento define qué eventos se registran, dónde y con qué propiedades. **Estado:** el backend ya conserva las solicitudes de demostración y las reservas con sus estados; los eventos de cliente aún no están implementados y corresponden a las historias de usuario de 8.3.1.
+
+| Evento | Producto | Se dispara cuando | Propiedades | Métrica | Estado |
+| :--- | :--- | :--- | :--- | :-: | :--- |
+| `landing_viewed` | Landing page | Se carga la página | `variant`, `profile`, `locale`, `device` | M-02 | Por implementar |
+| `demo_section_reached` | Landing page | La sección `#demo` entra en pantalla | `variant`, `profile` | M-02 | Por implementar |
+| `demo_form_viewed` | Landing page | El formulario es visible por primera vez | `variant` | M-01 | Por implementar |
+| `demo_request_submitted` | Landing page | El backend responde 201 a `POST /api/v1/demo-requests` | `variant`, `fields_completed` | M-01, M-07 | El registro en el backend existe; falta el evento con `variant` |
+| `booking_flow_started` | Web y móvil | El huésped abre el detalle de una habitación y pulsa reservar | `variant`, `room_id`, `nights` | M-03, M-04 | Por implementar |
+| `booking_summary_viewed` | Web | Se muestra el paso de resumen | `variant`, `total` | M-03 | Por implementar |
+| `booking_created` | Web y móvil | La API crea la reserva | `variant`, `booking_id` | M-03, M-04 | La reserva existe en el backend; falta el evento con `variant` |
+| `booking_cancelled_unpaid` | Backend | Una reserva expira o se cancela sin pago | `booking_id` | M-08 | Dato existente en el backend |
+| `room_status_filter_used` | Web | El staff aplica un filtro de estado | `variant`, `status` | M-05 | Por implementar |
+| `room_status_changed` | Web | El backend confirma un cambio de estado | `variant`, `from`, `to`, `duration_ms` | M-05, M-06 | Por implementar |
+| `room_status_change_rejected` | Web | El backend rechaza una transición | `from`, `to`, `error_code` | M-06 | Por implementar |
+
+**Principios del plan.**
+
+- **Identificador anónimo.** La landing page usa un identificador aleatorio guardado en el navegador. La aplicación usa el identificador de usuario existente, sin enviarlo a terceros.
+- **Una fuente de verdad.** Los eventos que ya existen como datos del backend (reservas, solicitudes de demostración) se leen del backend y no se duplican en el cliente.
+- **Variante en todos los eventos.** Toda medida de un experimento incluye `variant` (`A` o `B`), para que el análisis separe los grupos.
+- **Retención limitada.** Los eventos se conservan solo durante el experimento y su análisis.
+
+---
+
+<div style="page-break-after: always;"></div>
+
+## 8.3. Experimentation
+
+### 8.3.1. To-Be User Stories
+
+Las historias To-Be se derivan del diseño de 8.2: cada una habilita una variante, un evento del plan de seguimiento o la lectura de resultados. Siguen el formato del Capítulo III y su numeración continúa desde US-60, para no coincidir con las historias existentes (US-01 a US-53).
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Acceptance Criteria</th>
+    <th>Related to (Epic ID)</th>
+  </tr>
+
+  <tr>
+    <td>US-60</td>
+    <td>Short demo request form variant</td>
+    <td class="user-story-desc"><strong>As an</strong> interested visitor, <strong>I want</strong> to request a demo by filling only my name, email and hotel name <strong>so that</strong> I can start the conversation without a long form.</td>
+    <td class="acceptance-criteria">
+      <strong>Scenario 1: Required fields</strong><br>
+      <strong>Given that</strong> I am assigned to variant B, <strong>when</strong> I open the demo form, <strong>then</strong> only first name, last name, email and hotel name are required and the remaining fields are marked optional.<br>
+      <strong>Scenario 2: Successful submission</strong><br>
+      <strong>Given that</strong> I filled the required fields, <strong>when</strong> I submit the form, <strong>then</strong> the request is registered with the same validations as variant A and I receive the immediate confirmation.<br>
+      <strong>Scenario 3: Same variant for the same visitor</strong><br>
+      <strong>Given that</strong> I was assigned to a variant, <strong>when</strong> I return to the landing page from the same browser, <strong>then</strong> I see the same form.
+    </td>
+    <td>EP-06</td>
+  </tr>
+
+  <tr>
+    <td>US-61</td>
+    <td>Landing page event tracking</td>
+    <td class="user-story-desc"><strong>As a</strong> product owner, <strong>I want</strong> the landing page to record anonymous view and form events with their variant <strong>so that</strong> I can calculate the demo conversion.</td>
+    <td class="acceptance-criteria">
+      <strong>Scenario 1: Events recorded</strong><br>
+      <strong>Given that</strong> a visitor loads the page, reaches the demo section and views the form, <strong>when</strong> each of these happens, <strong>then</strong> the events <code>landing_viewed</code>, <code>demo_section_reached</code> and <code>demo_form_viewed</code> are recorded once per visit with the variant.<br>
+      <strong>Scenario 2: No personal data</strong><br>
+      <strong>Given that</strong> an event is recorded, <strong>when</strong> I inspect its content, <strong>then</strong> it contains an anonymous identifier and no name, email or phone.<br>
+      <strong>Scenario 3: Failure does not affect the visitor</strong><br>
+      <strong>Given that</strong> the event service is unavailable, <strong>when</strong> the visitor uses the page, <strong>then</strong> the page keeps working and the form can still be submitted.
+    </td>
+    <td>EP-04</td>
+  </tr>
+
+  <tr>
+    <td>US-62</td>
+    <td>Variant assignment service</td>
+    <td class="user-story-desc"><strong>As a</strong> product owner, <strong>I want</strong> users to be assigned to a variant randomly and consistently <strong>so that</strong> the groups of each experiment are comparable.</td>
+    <td class="acceptance-criteria">
+      <strong>Scenario 1: Balanced assignment</strong><br>
+      <strong>Given that</strong> an experiment is active, <strong>when</strong> new users arrive, <strong>then</strong> they are assigned to variant A or B with a 50/50 split.<br>
+      <strong>Scenario 2: Stable assignment</strong><br>
+      <strong>Given that</strong> a user has a variant, <strong>when</strong> the user returns, <strong>then</strong> the same variant is shown.<br>
+      <strong>Scenario 3: Experiment switch</strong><br>
+      <strong>Given that</strong> an experiment is not active, <strong>when</strong> a user arrives, <strong>then</strong> the control version is shown and no variant is recorded.
+    </td>
+    <td>EP-04</td>
+  </tr>
+
+  <tr>
+    <td>US-63</td>
+    <td>Booking summary before confirmation</td>
+    <td class="user-story-desc"><strong>As a</strong> guest, <strong>I want</strong> to see the dates, nights, nightly price and total before I confirm <strong>so that</strong> I book with confidence.</td>
+    <td class="acceptance-criteria">
+      <strong>Scenario 1: Summary shown</strong><br>
+      <strong>Given that</strong> I selected a room and dates and I am in variant B, <strong>when</strong> I continue, <strong>then</strong> I see a summary with the dates, number of nights, price per night and total.<br>
+      <strong>Scenario 2: Total matches the booking</strong><br>
+      <strong>Given that</strong> I confirm from the summary, <strong>when</strong> the booking is created, <strong>then</strong> the booking total equals the total shown in the summary.<br>
+      <strong>Scenario 3: Back without losing data</strong><br>
+      <strong>Given that</strong> I am in the summary, <strong>when</strong> I go back to change the dates, <strong>then</strong> my previous selection is kept.
+    </td>
+    <td>EP-03</td>
+  </tr>
+
+  <tr>
+    <td>US-64</td>
+    <td>Booking flow event tracking</td>
+    <td class="user-story-desc"><strong>As a</strong> product owner, <strong>I want</strong> to record when a guest starts and completes a booking <strong>so that</strong> I can calculate the completion rate and the time to book.</td>
+    <td class="acceptance-criteria">
+      <strong>Scenario 1: Start and completion</strong><br>
+      <strong>Given that</strong> a guest starts a booking, <strong>when</strong> the booking is created, <strong>then</strong> <code>booking_flow_started</code> and <code>booking_created</code> are recorded with their timestamps and the variant.<br>
+      <strong>Scenario 2: Abandonment</strong><br>
+      <strong>Given that</strong> a guest starts a booking, <strong>when</strong> the guest leaves without confirming, <strong>then</strong> only <code>booking_flow_started</code> exists for that flow.<br>
+      <strong>Scenario 3: Mobile and web</strong><br>
+      <strong>Given that</strong> a guest books from the mobile app or from the web, <strong>when</strong> the flow finishes, <strong>then</strong> the same events are recorded with the product that originated them.
+    </td>
+    <td>EP-04</td>
+  </tr>
+
+  <tr>
+    <td>US-65</td>
+    <td>Room status filter and quick change</td>
+    <td class="user-story-desc"><strong>As a</strong> hotel staff member, <strong>I want</strong> to filter the room map by status and change a room's status from the map <strong>so that</strong> I update rooms faster.</td>
+    <td class="acceptance-criteria">
+      <strong>Scenario 1: Filter by status</strong><br>
+      <strong>Given that</strong> I am in the room map in variant B, <strong>when</strong> I select a status, <strong>then</strong> only the rooms with that status are shown and the counts per status stay visible.<br>
+      <strong>Scenario 2: Quick change</strong><br>
+      <strong>Given that</strong> I selected a room, <strong>when</strong> I choose a new status from the room menu, <strong>then</strong> the change is applied with the same transition rules as in the room screen.<br>
+      <strong>Scenario 3: Invalid transition</strong><br>
+      <strong>Given that</strong> a transition is not allowed, <strong>when</strong> I attempt it from the map, <strong>then</strong> the system rejects it and explains why.
+    </td>
+    <td>EP-02</td>
+  </tr>
+
+  <tr>
+    <td>US-66</td>
+    <td>Room task timing instrumentation</td>
+    <td class="user-story-desc"><strong>As a</strong> product owner, <strong>I want</strong> to record the duration and result of room status changes <strong>so that</strong> I can measure the time to update a room.</td>
+    <td class="acceptance-criteria">
+      <strong>Scenario 1: Duration recorded</strong><br>
+      <strong>Given that</strong> a staff member changes a room's status, <strong>when</strong> the backend confirms it, <strong>then</strong> <code>room_status_changed</code> is recorded with the origin and destination status, the duration and the variant.<br>
+      <strong>Scenario 2: Rejection recorded</strong><br>
+      <strong>Given that</strong> the backend rejects a transition, <strong>when</strong> the response is received, <strong>then</strong> <code>room_status_change_rejected</code> is recorded with the error code.
+    </td>
+    <td>EP-04</td>
+  </tr>
+
+  <tr>
+    <td>US-67</td>
+    <td>Experiment metrics report</td>
+    <td class="user-story-desc"><strong>As a</strong> product owner, <strong>I want</strong> a report of each domain metric split by variant <strong>so that</strong> I can analyze the result of an experiment.</td>
+    <td class="acceptance-criteria">
+      <strong>Scenario 1: Metrics by variant</strong><br>
+      <strong>Given that</strong> an experiment has recorded events, <strong>when</strong> I request its report, <strong>then</strong> I get the sample size, the main metric and the guardrail metrics for variant A and variant B.<br>
+      <strong>Scenario 2: Sample not reached</strong><br>
+      <strong>Given that</strong> the planned sample size was not reached, <strong>when</strong> I request the report, <strong>then</strong> the report states that the result is not conclusive yet.<br>
+      <strong>Scenario 3: Authorized access</strong><br>
+      <strong>Given that</strong> I am not an administrator, <strong>when</strong> I request the report, <strong>then</strong> access is denied.
+    </td>
+    <td>EP-04</td>
+  </tr>
+</table>
+
+### 8.3.2. To-Be Product Backlog
+
+El backlog To-Be ordena las historias de 8.3.1 según su dependencia con los experimentos: primero el seguimiento y la asignación, que habilitan todas las medidas, y después las variantes. Los puntos de historia siguen la escala 1 / 2 / 3 / 5 / 8 del Capítulo III.
+
+<table border="1" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Order</th>
+      <th>User Story Id</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Experiment</th>
+      <th>Story Points (1 / 2 / 3 / 5 / 8)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>US-62</td>
+      <td>Variant assignment service</td>
+      <td><strong>As a</strong> product owner, <strong>I want</strong> users to be assigned to a variant randomly and consistently <strong>to</strong> compare comparable groups.</td>
+      <td>E-01, E-02, E-03</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>US-61</td>
+      <td>Landing page event tracking</td>
+      <td><strong>As a</strong> product owner, <strong>I want</strong> the landing page to record anonymous view and form events <strong>to</strong> calculate the demo conversion.</td>
+      <td>E-01</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>US-64</td>
+      <td>Booking flow event tracking</td>
+      <td><strong>As a</strong> product owner, <strong>I want</strong> to record when a guest starts and completes a booking <strong>to</strong> calculate the completion rate.</td>
+      <td>E-02</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>US-66</td>
+      <td>Room task timing instrumentation</td>
+      <td><strong>As a</strong> product owner, <strong>I want</strong> to record the duration and result of room status changes <strong>to</strong> measure the time to update a room.</td>
+      <td>E-03</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>US-60</td>
+      <td>Short demo request form variant</td>
+      <td><strong>As an</strong> interested visitor, <strong>I want</strong> to request a demo by filling only my name, email and hotel name <strong>to</strong> start the conversation without a long form.</td>
+      <td>E-01</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>US-63</td>
+      <td>Booking summary before confirmation</td>
+      <td><strong>As a</strong> guest, <strong>I want</strong> to see the dates, nights, price and total before I confirm <strong>to</strong> book with confidence.</td>
+      <td>E-02</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>US-65</td>
+      <td>Room status filter and quick change</td>
+      <td><strong>As a</strong> hotel staff member, <strong>I want</strong> to filter the room map by status and change a room's status from the map <strong>to</strong> update rooms faster.</td>
+      <td>E-03</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>US-67</td>
+      <td>Experiment metrics report</td>
+      <td><strong>As a</strong> product owner, <strong>I want</strong> a report of each domain metric split by variant <strong>to</strong> analyze the result of an experiment.</td>
+      <td>E-01, E-02, E-03</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+
+**Total de puntos del backlog To-Be:** 26.
+
+**Criterio de orden.** Las historias 1 a 4 son prerrequisitos de medición: sin asignación de variantes ni eventos, ninguna variante produce evidencia utilizable. Las historias 5 a 7 son las variantes de los tres experimentos, y la historia 8 cierra el ciclo con el análisis.
 
 ---
 
@@ -5630,6 +6867,10 @@ Adzic, G. (s.f.). _Impact Mapping_. Recuperado de https://www.impactmapping.org/
 Beck, K., Beedle, M., van Bennekum, A., Cockburn, A., Cunningham, W., Fowler, M., Grenning, J., Highsmith, J., Hunt, A., Jeffries, R., Kern, J., Marick, B., Martin, R. C., Mellor, S., Schwaber, K., Sutherland, J., & Thomas, D. (2001). _Manifesto for agile software development_. Agile Alliance. https://agilemanifesto.org/
 
 CareerFoundry. (s.f.). _What are User Flows in User Experience (UX) Design?_. Recuperado de https://careerfoundry.com/en/blog/ux-design/what-are-user-flows/
+
+Cohen, J. (1988). _Statistical power analysis for the behavioral sciences_ (2nd ed.). Lawrence Erlbaum Associates.
+
+Congreso de la República del Perú. (2011). _Ley N.º 29733, Ley de Protección de Datos Personales_. Diario Oficial El Peruano.
 
 Cohn, M. (s.f.). _User Stories_. Mountain Goat Software. Recuperado de https://www.mountaingoatsoftware.com/agile/user-stories
 
@@ -5653,6 +6894,10 @@ Google. (s.f.). _Google HTML/CSS Style Guide_. Recuperado de https://google.gith
 
 Google. (s.f.). _Google JavaScript Style Guide_. Recuperado de https://google.github.io/styleguide/jsguide.html
 
+Google. (s.f.). _Lighthouse overview_. Chrome for Developers. Recuperado de https://developer.chrome.com/docs/lighthouse/overview
+
+Google. (s.f.). _PageSpeed Insights_. Recuperado de https://pagespeed.web.dev/
+
 Gothelf, J., & Seiden, J. (2021). _Lean UX: Designing Great Products with Agile Teams_ (3rd ed.). O'Reilly Media. Recuperado de https://www.oreilly.com/library/view/lean-ux-2nd/9781491953594/
 
 HubSpot. (s.f.). _Full List of Meta Tags, Why They Matter for SEO & How to Write Them_. Recuperado de https://blog.hubspot.com/marketing/meta-tags
@@ -5671,6 +6916,8 @@ Mendel, J. (s.f.). _Seriously, what's your (startup's) problem?_. Medium. Recupe
 
 Miro. (2025). _Miro: The visual workspace for innovation_. https://miro.com
 
+Nielsen, J. (1994). _Severity ratings for usability problems_. Nielsen Norman Group. Recuperado de https://www.nngroup.com/articles/how-to-rate-the-severity-of-usability-problems/
+
 Nielsen Norman Group. (1994). _10 Usability Heuristics for User Interface Design_. Recuperado de https://www.nngroup.com/articles/ten-usability-heuristics/
 
 Nielsen Norman Group. (2016). _The Four Dimensions of Tone of Voice_. Recuperado de https://www.nngroup.com/articles/tone-of-voice-dimensions/
@@ -5681,15 +6928,29 @@ Preston-Werner, T. (s.f.). _Semantic Versioning 2.0.0_. Recuperado de https://se
 
 Progressa Lean. (s.f.). _5W+2H - Técnica de análisis de problemas_. Recuperado de https://www.progressalean.com/5w2h-tecnica-de-analisis-de-problemas/
 
+Render. (s.f.). _Blueprint specification (render.yaml)_. Recuperado de https://render.com/docs/blueprint-spec
+
+Reqnroll. (s.f.). _Reqnroll documentation_. Recuperado de https://docs.reqnroll.net/
+
 Refactoring.Guru. (s.f.). _Design Patterns_. Recuperado de https://refactoring.guru/es/design-patterns
 
 Flutter Team. (s.f.). _Flutter documentation_. Recuperado de https://docs.flutter.dev
+
+ESLint. (s.f.). _ESLint documentation_. Recuperado de https://eslint.org/docs/latest/
+
+GitHub. (s.f.). _GitHub Actions documentation_. Recuperado de https://docs.github.com/actions
 
 Google. (s.f.). _Dart programming language_. Recuperado de https://dart.dev
 
 Google. (s.f.). _Developing with Flutter_. Recuperado de https://flutter.dev
 
+Scalar. (s.f.). _Scalar API reference_. Recuperado de https://scalar.com/
+
+Sigstore. (s.f.). _Cosign: signing and verifying container images_. Recuperado de https://docs.sigstore.dev/cosign/overview/
+
 Ries, E. (2011). _The lean startup: How today's entrepreneurs use continuous innovation to create radically successful businesses_. Crown Business.
+
+Vercel. (s.f.). _Project configuration (vercel.json)_. Recuperado de https://vercel.com/docs/project-configuration
 
 UXPressia. (s.f.). _User vs. Buyer Persona: Differences and free template_. Recuperado de https://uxpressia.com/blog/user-persona-vs-buyer-persona-difference
 
