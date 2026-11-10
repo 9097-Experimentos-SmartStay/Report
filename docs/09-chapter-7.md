@@ -285,7 +285,7 @@ Para desplegar en producción de forma segura y reversible, se emplean las sigui
 
 * **Render (backend):** el archivo `render.yaml` define el servicio como un contenedor Docker en el plan gratuito, región Oregon, apuntando a la rama `main` del repositorio, con `healthCheckPath: /health` y `autoDeployTrigger: checksPass`, de modo que Render despliega solo cuando los *checks* de CI de GitHub pasan.
 
-* **Vercel (frontend web y landing page):** `vercel.json` declara el *framework* Vite, el comando `npm run build`, el directorio de salida `dist` y una regla de reescritura que dirige todas las rutas a `index.html` para que funcione la navegación de la aplicación de una sola página. Cada *push* a `main` publica una nueva versión de producción, y el historial de despliegues permite volver a una anterior.
+* **Vercel (frontend web y landing page):** `vercel.json` declara el *framework* Vite, el comando `npm run build` y el directorio de salida `dist`. En el frontend web añade una regla de reescritura que dirige todas las rutas a `index.html` para que funcione la navegación de la aplicación de una sola página. En la landing page añade caché inmutable para los recursos versionados y las cabeceras de seguridad `X-Content-Type-Options`, `Referrer-Policy`, `X-Frame-Options` y `Permissions-Policy`. Cada *push* a `main` publica una nueva versión de producción, y el historial de despliegues permite volver a una anterior.
 
 * **Monitoreo del servicio desplegado:**
   * El *endpoint* `GET /health` de ASP.NET Core verifica la disponibilidad del API y la conectividad con MySQL (`AddMySql`).
@@ -311,7 +311,7 @@ Para desplegar en producción de forma segura y reversible, se emplean las sigui
 
 El despliegue a producción se divide en dos flujos automáticos y uno manual. Los dos automáticos comparten el mismo disparador: un cambio en `main`.
 
-<!-- Diagrama del equipo (assets/chapter-7/ContinuousDeployment/ProductionDeploymentPipeline.png) retirado: muestra un APK publicado en GitHub Releases y cabeceras de seguridad en Vercel, que no existen. Reemplazar por un diagrama actualizado. -->
+<!-- Diagrama del equipo (assets/chapter-7/ContinuousDeployment/ProductionDeploymentPipeline.png) retirado: muestra un APK publicado en GitHub Releases, que no existe. Reemplazar por un diagrama actualizado. -->
 
 #### 1. Backend en Render
 
@@ -325,7 +325,7 @@ El despliegue a producción se divide en dos flujos automáticos y uno manual. L
 
 * **Disparador:** *push* a `main`; los *pull requests* generan una vista previa.
 * **Construcción:** Vercel instala las dependencias y ejecuta `npm run build` (Vite), según `vercel.json`.
-* **Publicación:** los archivos estáticos se distribuyen desde la red de borde de Vercel, con la regla de reescritura para la aplicación de una sola página en el frontend web.
+* **Publicación:** los archivos estáticos se distribuyen desde la red de borde de Vercel, con la regla de reescritura para la aplicación de una sola página en el frontend web y las cabeceras de seguridad y de caché en la landing page.
 * **Producción:** la aplicación web queda en `https://smartstay-movildev-web.vercel.app` y la landing page, en `https://smartstay-movildev-landing.vercel.app`. El despliegue reemplaza al anterior solo cuando termina, y el historial permite volver atrás.
 
 #### 3. Aplicación Móvil (manual)
