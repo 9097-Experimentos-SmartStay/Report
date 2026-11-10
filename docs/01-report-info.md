@@ -11,8 +11,10 @@ El objetivo de esta sección es resumir las modificaciones relevantes que se rea
 | 1.4 | 09/11/2026 | SmartStay Team | Capítulo VI: 6.2 Static testing & Verification (ESLint, auditoría de dependencias, revisión de pull requests), 6.3 Validation Interviews (diseño) y 6.4 Auditoría de Experiencias de Usuario (estructura). |
 | 1.5 | 09/11/2026 | SmartStay Team | Capítulo VII: 7.4 Continuous Monitoring, con resultados de GitHub Actions, disponibilidad y mediciones de Lighthouse. |
 | 1.6 | 09/11/2026 | SmartStay Team | Capítulo VIII: 8.1 Experiment Planning, 8.2 Experiment Design, 8.3.1 To-Be User Stories y 8.3.2 To-Be Product Backlog. |
-| 1.7 | 09/11/2026 | SmartStay Team | Actualización de Student Outcome (AV2), Project Report Collaboration Insights y 5.2.7 con los reportes de commits por rama. |
+| 1.7 | 09/11/2026 | SmartStay Team | Actualización de Student Outcome (AV2), Project Report Collaboration Insights y 5.2.8 con los reportes de commits por rama. |
 | 1.8 | 09/11/2026 | SmartStay Team | Corrección de 6.1 (resultados de pruebas y fragmentos Gherkin) y de 7.1 a 7.3 para que coincidan con los repositorios, workflows y plataformas de despliegue reales. |
+| 1.9 | 09/11/2026 | SmartStay Team | Inspección heurística del portal del huésped en 6.3.3, vistas del huésped en 5.2.3 y ajuste del experimento E-02 en el Capítulo VIII. |
+| 1.10 | 09/11/2026 | SmartStay Team | Nuevo 5.2.4 Acuerdo de Servicio - SaaS (los apartados siguientes de 5.2 pasan a 5.2.5 a 5.2.8), descripción de despliegue de la landing page en 5.1.4, Student Outcome AV2 completo y bibliografía actualizada. |
 
 ### Project Report Collaboration Insights
 

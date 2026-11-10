@@ -53,8 +53,10 @@ El objetivo de esta sección es resumir las modificaciones relevantes que se rea
 | 1.4 | 09/11/2026 | SmartStay Team | Capítulo VI: 6.2 Static testing & Verification (ESLint, auditoría de dependencias, revisión de pull requests), 6.3 Validation Interviews (diseño) y 6.4 Auditoría de Experiencias de Usuario (estructura). |
 | 1.5 | 09/11/2026 | SmartStay Team | Capítulo VII: 7.4 Continuous Monitoring, con resultados de GitHub Actions, disponibilidad y mediciones de Lighthouse. |
 | 1.6 | 09/11/2026 | SmartStay Team | Capítulo VIII: 8.1 Experiment Planning, 8.2 Experiment Design, 8.3.1 To-Be User Stories y 8.3.2 To-Be Product Backlog. |
-| 1.7 | 09/11/2026 | SmartStay Team | Actualización de Student Outcome (AV2), Project Report Collaboration Insights y 5.2.7 con los reportes de commits por rama. |
+| 1.7 | 09/11/2026 | SmartStay Team | Actualización de Student Outcome (AV2), Project Report Collaboration Insights y 5.2.8 con los reportes de commits por rama. |
 | 1.8 | 09/11/2026 | SmartStay Team | Corrección de 6.1 (resultados de pruebas y fragmentos Gherkin) y de 7.1 a 7.3 para que coincidan con los repositorios, workflows y plataformas de despliegue reales. |
+| 1.9 | 09/11/2026 | SmartStay Team | Inspección heurística del portal del huésped en 6.3.3, vistas del huésped en 5.2.3 y ajuste del experimento E-02 en el Capítulo VIII. |
+| 1.10 | 09/11/2026 | SmartStay Team | Nuevo 5.2.4 Acuerdo de Servicio - SaaS (los apartados siguientes de 5.2 pasan a 5.2.5 a 5.2.8), descripción de despliegue de la landing page en 5.1.4, Student Outcome AV2 completo y bibliografía actualizada. |
 
 ### Project Report Collaboration Insights
 
@@ -177,10 +179,11 @@ Los autores de Git se asignaron a cada integrante por su nombre de usuario o cor
     - [5.2.1. Sprint Backlogs](#521-sprint-backlogs)
     - [5.2.2. Implemented Landing Page Evidence](#522-implemented-landing-page-evidence)
     - [5.2.3. Implemented Frontend-Web Application Evidence](#523-implemented-frontend-web-application-evidence)
-    - [5.2.4. Implemented Native-Mobile Application Evidence](#524-implemented-native-mobile-application-evidence)
-    - [5.2.5. Implemented RESTful API and/or Serverless Backend Evidence](#525-implemented-restful-api-andor-serverless-backend-evidence)
-    - [5.2.6. RESTful API documentation](#526-restful-api-documentation)
-    - [5.2.7. Team Collaboration Insights](#527-team-collaboration-insights)
+    - [5.2.4. Acuerdo de Servicio - SaaS](#524-acuerdo-de-servicio---saas)
+    - [5.2.5. Implemented Native-Mobile Application Evidence](#525-implemented-native-mobile-application-evidence)
+    - [5.2.6. Implemented RESTful API and/or Serverless Backend Evidence](#526-implemented-restful-api-andor-serverless-backend-evidence)
+    - [5.2.7. RESTful API documentation](#527-restful-api-documentation)
+    - [5.2.8. Team Collaboration Insights](#528-team-collaboration-insights)
   - [5.3. Video About-the-Product](#53-video-about-the-product)
 - [Capítulo VI: Product Verification & Validation](#capítulo-vi-product-verification--validation)
   - [6.1. Testing Suites & Validation](#61-testing-suites--validation)
@@ -280,11 +283,11 @@ Los autores de Git se asignaron a cada integrante por su nombre de usuario o cor
         <b>Sulca, Piero:</b> Al estructurar y automatizar la generación del informe (numeración de capítulos y script de build), asumí la responsabilidad profesional de mantener la trazabilidad y coherencia del entregable grupal, evitando inconsistencias que afectaran la evaluación del proyecto.<br>
         <b>Galindo Manuel, Alejandro:</b> Al construir el Impact Mapping y el To-Be Scenario Mapping del Capítulo III, reconocí la responsabilidad de traducir fielmente las necesidades identificadas en los segmentos de huéspedes y hoteles en acciones concretas del Product Backlog, sin distorsionar las prioridades reales del negocio.<br><br>
         <b>AV2<br>
-        Bonifacio Jaramillo, Samuel Jesus:</b> <br> Al escribir las pruebas de la entidad de pagos del backend (commit <code>92c2137</code>) y documentarlas en el Capítulo VI, asumí la responsabilidad de reportar solo resultados verificables: cada prueba descrita en el informe corresponde a código que otros pueden reproducir.<br>
-        <b>Ponce Perales, Alberto Alejandro:</b> <!-- BORRADOR: Alberto no registra commits en AV2; confirmar con él que redactó la planificación y el diseño de experimentos antes de dejar este texto. --> Al redactar la planificación y el diseño de los experimentos del Capítulo VIII, asumí la responsabilidad de declarar como supuestos las líneas base que aún no medimos, sin presentarlas como resultados, y de fijar reglas para no exponer a un mismo usuario a dos experimentos sobre el mismo tema ni ocultar información al usuario en ninguna variante.<br>
-        <b>Verona Flores, Ítalo Sebastián:</b> Al completar los escenarios Gherkin de las pruebas BDD (commit <code>00f3c16</code>) y corregir las pruebas de integración (commit <code>8bdda14</code>), asumí la responsabilidad de que los criterios de aceptación escritos en lenguaje de negocio reflejen el comportamiento real del sistema y no una versión idealizada.<br>
+        Bonifacio Jaramillo, Samuel Jesus:</b> <br> Al escribir las pruebas de la entidad de pagos del backend (commit <code>92c2137</code>) y documentarlas en el Capítulo VI (commits <code>9d1c713</code>, <code>18b76ac</code> y <code>4883b18</code> del informe), asumí la responsabilidad de reportar solo resultados verificables: cada prueba descrita en el informe corresponde a código que otros pueden reproducir.<br>
+        <b>Ponce Perales, Alberto Alejandro:</b> Al diseñar las entrevistas de validación del Capítulo VI y la planificación y el diseño de los experimentos del Capítulo VIII, asumí la responsabilidad de no presentar como resultados lo que todavía son supuestos: las líneas base de conversión y de tiempo por tarea figuran como supuestos de partida hasta medirlas. También definí reglas para que ningún usuario participe en dos experimentos sobre el mismo tema, para que ninguna variante oculte información al usuario y para que las entrevistas se graben solo con su consentimiento expreso.<br>
+        <b>Verona Flores, Ítalo Sebastián:</b> Al completar los escenarios Gherkin de las pruebas BDD (commit <code>00f3c16</code>) y corregir las pruebas de integración (commit <code>8bdda14</code>), asumí la responsabilidad de que los criterios de aceptación escritos en lenguaje de negocio reflejen el comportamiento real del sistema y no una versión idealizada. También documenté las pruebas BDD y la integración continua en los Capítulos VI y VII (commits <code>c0ffcb2</code> y <code>a183580</code> del informe).<br>
         <b>Sulca, Piero:</b> Al construir el pipeline de integración continua del backend (commit <code>28af02f</code>) y corregir los paquetes vulnerables que detectó (commit <code>f875916</code>), asumí la responsabilidad profesional de que ningún cambio llegue a producción sin pasar controles de formato, seguridad de dependencias y pruebas, condicionando el despliegue en Render a ese resultado (commit <code>2eb6464</code>).<br>
-        <b>Galindo Manuel, Alejandro:</b> Al escribir las pruebas unitarias de reservas (commit <code>ce59ee8</code>) y completar las historias de usuario restantes del backlog en el backend y el frontend (commits <code>d0def37</code> y <code>b742122</code>), asumí la responsabilidad de que las pruebas verifiquen las reglas de negocio de las reservas y no solo el caso exitoso.
+        <b>Galindo Manuel, Alejandro:</b> Al escribir las pruebas unitarias de reservas (commit <code>ce59ee8</code>) y completar las historias de usuario restantes del backlog en el backend y el frontend (commits <code>d0def37</code> y <code>b742122</code>), asumí la responsabilidad de que las pruebas verifiquen las reglas de negocio de las reservas y no solo el caso exitoso. También aporté los diagramas de los pipelines de entrega y despliegue de los apartados 7.2 y 7.3 (commit <code>324a5d5</code> del informe).
       </td>
       <td>Como equipo concluimos que reconocer nuestras responsabilidades éticas y profesionales exige contrastar cada decisión de diseño e ingeniería con evidencia real recogida del público objetivo (entrevistas, as-is mapping, backlog), evitando que supuestos personales o presiones de tiempo distorsionen la representación de las necesidades de huéspedes y personal hotelero.<br><br>
         <b>AV2:</b> Concluimos que la responsabilidad profesional también se ejerce al documentar. Reportamos las brechas que encontramos (sin entrevistas de validación, sin analítica instalada, 25 errores de lint abiertos en el frontend y escasa revisión entre pares en GitHub) en lugar de ocultarlas, y condicionamos cada afirmación del informe a una evidencia verificable: ejecuciones de CI, mediciones de Lighthouse e historial de commits.</td>
@@ -300,7 +303,7 @@ Los autores de Git se asignaron a cada integrante por su nombre de usuario o cor
         <b>Galindo Manuel, Alejandro:</b> Definir y priorizar historias del Product Backlog me permitió emitir juicios informados sobre el impacto económico y operativo que cada funcionalidad tendría en los hoteles pequeños del segmento objetivo.<br><br>
         <b>AV2<br>
         Bonifacio Jaramillo, Samuel Jesus:</b> <br> Al probar el módulo de pagos, incluido el reembolso al cancelarse una reserva, valoré el impacto económico que un cobro o un reembolso incorrecto tendría sobre el hotel y sobre el huésped, lo que justifica probar esas reglas con más detalle que las demás.<br>
-        <b>Ponce Perales, Alberto Alejandro:</b> <!-- BORRADOR: confirmar autoría con Alberto. --> Al calcular la escala de cada experimento (nivel de significancia, potencia y efecto mínimo detectable), evalué el impacto de decidir con muestras insuficientes: un falso positivo llevaría a un hotel a adoptar un cambio que no mejora su operación. Por eso definí métricas de control que vigilan los daños colaterales de cada variante.<br>
+        <b>Ponce Perales, Alberto Alejandro:</b> Al calcular la escala de cada experimento (nivel de significancia, potencia estadística y efecto mínimo detectable) evalué el impacto de decidir con muestras insuficientes: un falso positivo llevaría a un hotel a adoptar un cambio que no mejora su operación, y un falso negativo haría que el equipo descartara una mejora útil. Por eso definí métricas de control que vigilan los daños colaterales de cada variante y limité el seguimiento a datos anónimos, en línea con la Ley N.º 29733 de Protección de Datos Personales.<br>
         <b>Verona Flores, Ítalo Sebastián:</b> Los escenarios de seguridad de las pruebas BDD, como el bloqueo temporal de la cuenta tras cinco intentos fallidos de inicio de sesión (US-02), me permitieron valorar el impacto social de proteger los datos de huéspedes y personal frente a accesos indebidos.<br>
         <b>Sulca, Piero:</b> La auditoría de dependencias que automatizamos detectó paquetes vulnerables en el backend. Corregirlos antes de producción me permitió valorar el impacto de la seguridad de la cadena de suministro sobre los datos de los hoteles y de sus huéspedes.<br>
         <b>Galindo Manuel, Alejandro:</b> Al incorporar la autenticación de dos factores y la aplicación de recepción en la aplicación móvil (commit <code>cda9496</code>), emití juicios informados sobre el equilibrio entre seguridad y facilidad de uso para el personal de recepción, que atiende con poco tiempo por huésped.
@@ -4332,28 +4335,30 @@ Se crean desde `main` para corregir problemas críticos en producción.
 ### 5.1.4. Software Deployment Configuration
 
 ### Landing Page Deployment
-La **Landing Page** fue desarrollada utilizando **HTML**, **CSS** y **JavaScript**, y se encuentra desplegada públicamente a través de **Vercel**.  
+La **Landing Page** fue desarrollada con **JavaScript**, **Vite** y **Tailwind CSS**, y se encuentra desplegada públicamente a través de **Vercel**.  
 Para su publicación, se cumplieron los siguientes pasos:
 
 1. **Preparación del entorno:**  
    Se creó un repositorio dentro de la organización en **GitHub**, destinado a alojar los archivos de la Landing Page.
 
 2. **Estructura de archivos:**  
-   Los archivos principales se encuentran en la raíz del repositorio, siguiendo las convenciones de nombres:
+   El repositorio se organiza de la siguiente manera:
     - `index.html` → página principal.
-    - `styles.css` → hoja de estilos principal.
-    - `script.js` → scripts principales.
-    - `languages.js` → archivo para gestionar los textos en distintos idiomas (español e inglés).
-    - Carpeta `assets/images/` → para las imágenes utilizadas en el sitio.
+    - `src/main.js` → punto de entrada de los scripts.
+    - `src/features/` → funcionalidades de la página (formulario de demostración, contacto, testimonios y navegación por perfil).
+    - `src/i18n/` → textos en español e inglés (`locales/es.js` y `locales/en.js`) y la lógica del cambio de idioma.
+    - `src/styles/main.css` → hoja de estilos principal.
+    - `public/` → íconos y recursos estáticos.
+    - `vercel.json` → configuración del despliegue.
 
 3. **Configuración en Vercel:**
     - Se importó el repositorio de la Landing Page directamente desde GitHub a **Vercel**.
     - Se seleccionó la rama **main** como fuente de publicación.
-    - Se configuró la carpeta raíz (`/`) como directorio base del proyecto.
+    - `vercel.json` declara el *framework* Vite, la instalación con `npm ci`, el comando `npm run build` y el directorio de salida `dist`.
+    - El mismo archivo configura la caché inmutable de los recursos versionados y las cabeceras de seguridad `X-Content-Type-Options`, `Referrer-Policy`, `X-Frame-Options` y `Permissions-Policy`.
     - Una vez completado el proceso, Vercel generó automáticamente la URL pública de la Landing Page.
 
-Además, se implementó un archivo `languages.js` que contiene los textos en español e inglés.  
-Este archivo es consumido por el script `main.js`, permitiendo el cambio de idioma dinámico en la interfaz.
+El módulo `src/i18n/` contiene los textos en español e inglés y permite el cambio de idioma dinámico en la interfaz.
 
 
 ### Backend (Web Services)
@@ -5091,7 +5096,65 @@ En esta sección se puede ver el panel del administrador se puede ver un dashboa
 
 ![Front4](assets/chapter-5/implementation/frontend-web/frontend-04.jpeg)
 
-### 5.2.4. Implemented Native-Mobile Application Evidence
+#### Vistas del huésped (AV2)
+
+El 09/11/2026 se capturaron las vistas del portal del huésped en la aplicación web desplegada, con una cuenta de prueba. Los hallazgos de usabilidad se analizan en el apartado 6.3.3.
+
+En el panel de inicio el huésped ve un saludo, sus reservas y noches, un acceso a una nueva reserva y recomendaciones de habitaciones.
+
+![Panel de inicio del huésped](assets/chapter-6/heuristic-review/guest-dashboard.jpg)
+
+En «Hoteles» se listan los hoteles con su ubicación, comodidades y precio por noche, y se pueden buscar por ciudad o nombre.
+
+![Listado de hoteles](assets/chapter-6/heuristic-review/guest-hotels.jpg)
+
+En «Habitaciones» se listan las habitaciones con su tipo, descripción, comodidades y precio, y se pueden filtrar por tipo.
+
+![Listado de habitaciones](assets/chapter-6/heuristic-review/guest-rooms.jpg)
+
+El detalle de la habitación muestra el precio, la descripción, las comodidades y la política de cancelación, y ofrece el botón para buscar fechas y reservar.
+
+![Detalle de la habitación](assets/chapter-6/heuristic-review/guest-room-detail.jpg)
+
+El formulario de reserva pide el hotel y las fechas de llegada y salida antes de buscar habitaciones disponibles.
+
+![Búsqueda de fechas para reservar](assets/chapter-6/heuristic-review/guest-booking-search.jpg)
+
+«Mis reservas» y «Clima de mi habitación» muestran un mensaje y una acción cuando el huésped aún no tiene reservas ni una estadía activa.
+
+![Mis reservas](assets/chapter-6/heuristic-review/guest-bookings-empty.jpg)
+
+![Clima de mi habitación](assets/chapter-6/heuristic-review/guest-room-climate-empty.jpg)
+
+### 5.2.4. Acuerdo de Servicio - SaaS
+
+Este acuerdo establece los derechos, obligaciones y restricciones aplicables a quienes usan la plataforma SmartStay, para que el uso del servicio sea transparente. Se publica en la sección «Terms and Conditions» de la landing page y de las aplicaciones, con un enlace en el pie de cada una. Su redacción sigue los principios del código de ética de la ingeniería de software de ACM/IEEE y del Colegio de Ingenieros del Perú.
+
+> **Estado:** versión 1.0, redactada por el equipo para este avance. Debe revisarse y publicarse en el enlace de términos y condiciones antes de la entrega final.
+
+**1. Objeto y partes.** Movildev (el «Proveedor») ofrece a hoteles y a sus huéspedes (los «Usuarios») acceso a SmartStay como servicio en línea: gestión de hoteles, habitaciones y reservas, pagos registrados, perfiles y analítica operativa. El Usuario acepta este acuerdo al crear una cuenta o al usar el servicio.
+
+**2. Cuentas y roles.** Cada cuenta es personal. El servicio distingue los roles de administrador, personal (recepción, limpieza y mantenimiento) y huésped, y cada uno accede solo a las funciones de su rol. El personal usa un segundo factor de autenticación. El Usuario debe mantener sus credenciales en reserva y avisar de cualquier acceso no autorizado.
+
+**3. Uso aceptable.** El Usuario se obliga a no suplantar a otra persona, no intentar acceder a datos de otros hoteles o huéspedes, no interferir con el funcionamiento del servicio y no usarlo con fines ilícitos. El Proveedor puede suspender una cuenta que incumpla estas reglas, y avisará al Usuario del motivo.
+
+**4. Datos personales.** El Proveedor trata los datos personales conforme a la Ley N.º 29733, de Protección de Datos Personales. Solo recoge los datos necesarios para prestar el servicio (identificación, contacto, reservas y pagos) y no los vende a terceros. El Usuario puede solicitar acceso, rectificación, cancelación u oposición sobre sus datos. Si se miden eventos de uso para mejorar el producto, se hace con identificadores anónimos y sin datos personales, y esta medición se informa en este apartado.
+
+**5. Reservas, pagos y cancelaciones.** Las reservas se crean con los datos del huésped y del hotel. Las condiciones de cancelación se muestran en el detalle de la habitación antes de reservar: el huésped puede cancelar hasta el día anterior a su llegada y, si ya pagó, el hotel le devuelve el pago. Los pagos se registran en el servicio según el método que el hotel habilite. Las reservas sin pago pueden vencer automáticamente.
+
+**6. Disponibilidad del servicio.** El Proveedor procura mantener el servicio disponible de forma continua, pero no garantiza una disponibilidad ininterrumpida. El servicio puede tardar unos segundos en responder tras un periodo de inactividad, y puede interrumpirse por mantenimiento o por fallas de los proveedores de infraestructura. Las interrupciones se detectan con la monitorización descrita en el apartado 7.4.
+
+**7. Propiedad intelectual.** SmartStay, su código, su marca y su documentación pertenecen al Proveedor. El Usuario conserva la titularidad de la información que ingresa, y otorga al Proveedor el permiso para tratarla con el único fin de prestar el servicio.
+
+**8. Responsabilidad.** El Proveedor responde por el funcionamiento del servicio conforme a este acuerdo. No responde por la información incorrecta que ingrese el Usuario, ni por daños causados por el uso del servicio contra estas reglas o por hechos fuera de su control razonable.
+
+**9. Ética y transparencia.** El equipo se compromete a no ocultar información relevante al Usuario, a no experimentar con él de manera que pueda causarle daño, y a informar de los cambios de este acuerdo antes de que entren en vigor.
+
+**10. Modificaciones y vigencia.** El Proveedor puede modificar este acuerdo y avisará a los Usuarios por el servicio o por correo. El Usuario puede cerrar su cuenta en cualquier momento, y el acuerdo termina con el cierre.
+
+**11. Ley aplicable.** Este acuerdo se rige por las leyes de la República del Perú.
+
+### 5.2.5. Implemented Native-Mobile Application Evidence
 
 Durante el Sprint 2 se ejecutaron y validaron las funcionalidades desarrolladas dentro de la aplicación móvil SmartStay. Las pruebas se realizaron utilizando Android Studio, dispositivos físicos y servicios desplegados en la nube para verificar la correcta integración entre frontend y backend.
 
@@ -5126,7 +5189,7 @@ Los flujos ejecutados fueron los siguientes:
 ![Sprint 3 App 3](assets/chapter-5/implementation/mobile/sprint-3/sprint3-app-3.png)
 ![Sprint 3 App 4](assets/chapter-5/implementation/mobile/sprint-3/sprint3-app-4.png)
 
-### 5.2.5. Implemented RESTful API and/or Serverless Backend Evidence
+### 5.2.6. Implemented RESTful API and/or Serverless Backend Evidence
 
 Durante este sprint se actualizó el bounded context de IAM/Authentication, incorporando mejoras relacionadas con la autenticación de usuarios y la gestión de roles dentro del sistema. La documentación de los servicios REST fue verificada mediante Swagger/OpenAPI, donde se evidencian los endpoints disponibles para el inicio de sesión y registro de usuarios.
 
@@ -5135,7 +5198,7 @@ Durante este sprint se actualizó el bounded context de IAM/Authentication, inco
 
 Asimismo, durante el sprint se trabajó con la lógica de roles para diferenciar el acceso de los distintos tipos de usuario del sistema, como Guest, Admin y ChainAdmin, permitiendo controlar qué secciones y acciones están disponibles para cada perfil dentro de la aplicación.
 
-### 5.2.6. RESTful API documentation
+### 5.2.7. RESTful API documentation
 
 **Profiles**: Este bounded context maneja la información de los perfiles de los usuarios dentro de la plataforma. Proporciona funcionalidades para crear perfiles, consultar su información y obtener el detalle de un perfil específico. Es esencial para almacenar y gestionar los datos personales asociados a cada usuario del sistema.
 
@@ -5177,7 +5240,7 @@ Asimismo, durante el sprint se trabajó con la lógica de roles para diferenciar
 
 ![swagercuartostipos.png](assets/chapter-5/api/swagger/swagger-cuartostipo.png)
 
-### 5.2.7. Team Collaboration Insights
+### 5.2.8. Team Collaboration Insights
 
 **Acciones de colaboración destacadas:**
 - Se utilizó **GitHub** como herramienta central de coordinación y control de versiones.
@@ -5539,7 +5602,7 @@ $ npm run lint:ci
 | `no-unused-vars` | 9 | `problem-details.js` (5), `GuestHotels.vue`, `search-availability.query.js`, `booking.entity.js`, `mfa.assembler.js` | Variables o importaciones sin uso. No afectan el comportamiento, pero aumentan el ruido del código. |
 | `no-useless-escape` | 1 | `account-rules.js` | Escape innecesario dentro de una expresión regular de validación de contraseña. |
 
-El paso de lint del workflow propuesto para el frontend está configurado con `continue-on-error`. Mientras estos 25 errores estén abiertos, el pipeline los muestra en cada ejecución sin bloquear la integración. Una vez corregidos, la opción se retira para que el lint sea obligatorio.
+Para este avance se prepararon, sin integrar todavía, las correcciones de 10 de los 25 errores: se retiraron cuatro importaciones usadas solo en comentarios de tipos, se eliminó un escape innecesario en la expresión regular de nombres, se configuró `ignoreRestSiblings` para el patrón que descarta miembros conocidos de la respuesta de error y se documentó el parámetro de la función de detalle de hotel que aún no se usa. Quedan 15 errores de `vue/no-mutating-props`, que requieren refactorizar los dos formularios. El paso de lint del workflow propuesto para el frontend está configurado con `continue-on-error`. Mientras estos 25 errores estén abiertos, el pipeline los muestra en cada ejecución sin bloquear la integración. Una vez corregidos, la opción se retira para que el lint sea obligatorio.
 
 **Resultado en el backend, el móvil y la landing page.**
 
@@ -5560,11 +5623,11 @@ La calidad y la seguridad se revisaron en tres niveles: seguridad de las depende
 | `frontend` | 288 | 18 | 1 | 0 | Sí, para todas |
 | `landing-page` | 79 | 2 | 0 | 0 | Sí, para todas |
 
-En el frontend, los paquetes afectados incluyen `axios`, `follow-redirects`, `form-data`, `@vue/server-renderer` y la familia `@intlify`. En la landing page, `vite` y `source-map-js`. Ninguna es crítica y todas tienen versión corregida, por lo que la acción pendiente es actualizar las dependencias y volver a medir.
+En el frontend, los paquetes afectados incluyen `axios`, `follow-redirects`, `form-data`, `@vue/server-renderer` y la familia `@intlify`. En la landing page, `vite` y `source-map-js`. Ninguna es crítica y todas tienen versión corregida. Se ejecutó `npm audit fix` en ambos repositorios, sin integrar todavía: el resultado fue **0 vulnerabilidades** en el frontend y en la landing page, y `npm run build` sigue compilando en los dos.
 
 En el **backend** el control ya está automatizado: el job *Dependency audit* de `ci-backend.yml` ejecuta `dotnet list package --vulnerable --include-transitive` y falla si encuentra paquetes vulnerables. El commit `f875916` (`fix(deps): patch vulnerable packages and drop unused sqlite provider`) corrigió los paquetes que ese control detectó y eliminó un proveedor de SQLite sin uso.
 
-**Higiene de secretos.** Los repositorios publican únicamente archivos `.env.example` con nombres de variables y sin valores reales, `.env` figura en el `.gitignore` de `backend`, `frontend` y `landing-page` (el de `mobile` aún no lo ignora y debe corregirse), y el `render.yaml` del backend declara los secretos con `sync: false`, de modo que Render los solicita al crear el servicio y no se versionan.
+**Higiene de secretos.** Los repositorios publican únicamente archivos `.env.example` con nombres de variables y sin valores reales, `.env` figura en el `.gitignore` de `backend`, `frontend` y `landing-page` (el de `mobile` no lo ignoraba y se corrigió en el directorio de trabajo, pendiente de integrar), y el `render.yaml` del backend declara los secretos con `sync: false`, de modo que Render los solicita al crear el servicio y no se versionan.
 
 **Calidad estructural.** No se configuró SonarQube ni SonarCloud, porque requieren una cuenta de organización. En su lugar, el equipo se apoyó en controles que no dependen de un servicio externo: tipos anulables habilitados en C#, compilación sin advertencias en CI, análisis de `flutter_lints` y las suites de pruebas automatizadas del backend descritas en 6.1. La incorporación de SonarCloud, con medición de complejidad ciclomática, duplicación y cobertura, queda como mejora recomendada y no se presenta como realizada.
 
@@ -6074,7 +6137,7 @@ Para desplegar en producción de forma segura y reversible, se emplean las sigui
 
 * **Render (backend):** el archivo `render.yaml` define el servicio como un contenedor Docker en el plan gratuito, región Oregon, apuntando a la rama `main` del repositorio, con `healthCheckPath: /health` y `autoDeployTrigger: checksPass`, de modo que Render despliega solo cuando los *checks* de CI de GitHub pasan.
 
-* **Vercel (frontend web y landing page):** `vercel.json` declara el *framework* Vite, el comando `npm run build`, el directorio de salida `dist` y una regla de reescritura que dirige todas las rutas a `index.html` para que funcione la navegación de la aplicación de una sola página. Cada *push* a `main` publica una nueva versión de producción, y el historial de despliegues permite volver a una anterior.
+* **Vercel (frontend web y landing page):** `vercel.json` declara el *framework* Vite, el comando `npm run build` y el directorio de salida `dist`. En el frontend web añade una regla de reescritura que dirige todas las rutas a `index.html` para que funcione la navegación de la aplicación de una sola página. En la landing page añade caché inmutable para los recursos versionados y las cabeceras de seguridad `X-Content-Type-Options`, `Referrer-Policy`, `X-Frame-Options` y `Permissions-Policy`. Cada *push* a `main` publica una nueva versión de producción, y el historial de despliegues permite volver a una anterior.
 
 * **Monitoreo del servicio desplegado:**
   * El *endpoint* `GET /health` de ASP.NET Core verifica la disponibilidad del API y la conectividad con MySQL (`AddMySql`).
@@ -6100,7 +6163,7 @@ Para desplegar en producción de forma segura y reversible, se emplean las sigui
 
 El despliegue a producción se divide en dos flujos automáticos y uno manual. Los dos automáticos comparten el mismo disparador: un cambio en `main`.
 
-<!-- Diagrama del equipo (assets/chapter-7/ContinuousDeployment/ProductionDeploymentPipeline.png) retirado: muestra un APK publicado en GitHub Releases y cabeceras de seguridad en Vercel, que no existen. Reemplazar por un diagrama actualizado. -->
+<!-- Diagrama del equipo (assets/chapter-7/ContinuousDeployment/ProductionDeploymentPipeline.png) retirado: muestra un APK publicado en GitHub Releases, que no existe. Reemplazar por un diagrama actualizado. -->
 
 #### 1. Backend en Render
 
@@ -6114,7 +6177,7 @@ El despliegue a producción se divide en dos flujos automáticos y uno manual. L
 
 * **Disparador:** *push* a `main`; los *pull requests* generan una vista previa.
 * **Construcción:** Vercel instala las dependencias y ejecuta `npm run build` (Vite), según `vercel.json`.
-* **Publicación:** los archivos estáticos se distribuyen desde la red de borde de Vercel, con la regla de reescritura para la aplicación de una sola página en el frontend web.
+* **Publicación:** los archivos estáticos se distribuyen desde la red de borde de Vercel, con la regla de reescritura para la aplicación de una sola página en el frontend web y las cabeceras de seguridad y de caché en la landing page.
 * **Producción:** la aplicación web queda en `https://smartstay-movildev-web.vercel.app` y la landing page, en `https://smartstay-movildev-landing.vercel.app`. El despliegue reemplaza al anterior solo cuando termina, y el historial permite volver atrás.
 
 #### 3. Aplicación Móvil (manual)
@@ -6805,6 +6868,10 @@ Beck, K., Beedle, M., van Bennekum, A., Cockburn, A., Cunningham, W., Fowler, M.
 
 CareerFoundry. (s.f.). _What are User Flows in User Experience (UX) Design?_. Recuperado de https://careerfoundry.com/en/blog/ux-design/what-are-user-flows/
 
+Cohen, J. (1988). _Statistical power analysis for the behavioral sciences_ (2nd ed.). Lawrence Erlbaum Associates.
+
+Congreso de la República del Perú. (2011). _Ley N.º 29733, Ley de Protección de Datos Personales_. Diario Oficial El Peruano.
+
 Cohn, M. (s.f.). _User Stories_. Mountain Goat Software. Recuperado de https://www.mountaingoatsoftware.com/agile/user-stories
 
 Cone, M. (s.f.). _The Markdown Guide_. Recuperado de https://www.markdownguide.org/
@@ -6827,6 +6894,10 @@ Google. (s.f.). _Google HTML/CSS Style Guide_. Recuperado de https://google.gith
 
 Google. (s.f.). _Google JavaScript Style Guide_. Recuperado de https://google.github.io/styleguide/jsguide.html
 
+Google. (s.f.). _Lighthouse overview_. Chrome for Developers. Recuperado de https://developer.chrome.com/docs/lighthouse/overview
+
+Google. (s.f.). _PageSpeed Insights_. Recuperado de https://pagespeed.web.dev/
+
 Gothelf, J., & Seiden, J. (2021). _Lean UX: Designing Great Products with Agile Teams_ (3rd ed.). O'Reilly Media. Recuperado de https://www.oreilly.com/library/view/lean-ux-2nd/9781491953594/
 
 HubSpot. (s.f.). _Full List of Meta Tags, Why They Matter for SEO & How to Write Them_. Recuperado de https://blog.hubspot.com/marketing/meta-tags
@@ -6845,6 +6916,8 @@ Mendel, J. (s.f.). _Seriously, what's your (startup's) problem?_. Medium. Recupe
 
 Miro. (2025). _Miro: The visual workspace for innovation_. https://miro.com
 
+Nielsen, J. (1994). _Severity ratings for usability problems_. Nielsen Norman Group. Recuperado de https://www.nngroup.com/articles/how-to-rate-the-severity-of-usability-problems/
+
 Nielsen Norman Group. (1994). _10 Usability Heuristics for User Interface Design_. Recuperado de https://www.nngroup.com/articles/ten-usability-heuristics/
 
 Nielsen Norman Group. (2016). _The Four Dimensions of Tone of Voice_. Recuperado de https://www.nngroup.com/articles/tone-of-voice-dimensions/
@@ -6855,15 +6928,29 @@ Preston-Werner, T. (s.f.). _Semantic Versioning 2.0.0_. Recuperado de https://se
 
 Progressa Lean. (s.f.). _5W+2H - Técnica de análisis de problemas_. Recuperado de https://www.progressalean.com/5w2h-tecnica-de-analisis-de-problemas/
 
+Render. (s.f.). _Blueprint specification (render.yaml)_. Recuperado de https://render.com/docs/blueprint-spec
+
+Reqnroll. (s.f.). _Reqnroll documentation_. Recuperado de https://docs.reqnroll.net/
+
 Refactoring.Guru. (s.f.). _Design Patterns_. Recuperado de https://refactoring.guru/es/design-patterns
 
 Flutter Team. (s.f.). _Flutter documentation_. Recuperado de https://docs.flutter.dev
+
+ESLint. (s.f.). _ESLint documentation_. Recuperado de https://eslint.org/docs/latest/
+
+GitHub. (s.f.). _GitHub Actions documentation_. Recuperado de https://docs.github.com/actions
 
 Google. (s.f.). _Dart programming language_. Recuperado de https://dart.dev
 
 Google. (s.f.). _Developing with Flutter_. Recuperado de https://flutter.dev
 
+Scalar. (s.f.). _Scalar API reference_. Recuperado de https://scalar.com/
+
+Sigstore. (s.f.). _Cosign: signing and verifying container images_. Recuperado de https://docs.sigstore.dev/cosign/overview/
+
 Ries, E. (2011). _The lean startup: How today's entrepreneurs use continuous innovation to create radically successful businesses_. Crown Business.
+
+Vercel. (s.f.). _Project configuration (vercel.json)_. Recuperado de https://vercel.com/docs/project-configuration
 
 UXPressia. (s.f.). _User vs. Buyer Persona: Differences and free template_. Recuperado de https://uxpressia.com/blog/user-persona-vs-buyer-persona-difference
 
