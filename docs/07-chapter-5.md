@@ -375,6 +375,10 @@ El proyecto implementa un flujo automatizado de **Integración Continua y Despli
 - Este proceso garantiza una actualización constante de los servicios y minimiza la intervención manual en las publicaciones.
 
 ### Vercel (Landing Page):
+Panel de Vercel del proyecto `smartstay-movildev-landing`: despliegue de producción en estado *Ready*, rama `main` y dominio `smartstay-movildev-landing.vercel.app`:
+
+![Dashboard de Vercel de la landing page](../assets/chapter-5/deployment/vercel-dashboard.png)
+
 Landing page publicada en Vercel:
 
 ![Landing page desplegada en Vercel](../assets/chapter-5/deployment/vercel-landing-live.png)
@@ -1035,7 +1039,7 @@ En conclusión, el Sprint 3 permitió cerrar el ciclo de desarrollo de SmartStay
 
 ### 5.2.2. Implemented Landing Page Evidence
 
-![Landing page desplegada en Vercel](../assets/chapter-5/deployment/vercel-landing-live.png)
+![Dashboard de Vercel de la landing page](../assets/chapter-5/deployment/vercel-dashboard.png)
 
 **La URL que nos entrega Vercel para acceder a la landing page es la siguiente:**  
 [https://smartstay-movildev-landing.vercel.app/](https://smartstay-movildev-landing.vercel.app/)
