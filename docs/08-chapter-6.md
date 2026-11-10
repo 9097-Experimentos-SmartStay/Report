@@ -58,7 +58,7 @@ Las pruebas de integración verifican que varios componentes funcionan correctam
 | `CrossContextIdentityCompatibilityTests` | IAM ↔ Profiles ↔ Accommodations | Los ids enteros de usuario y de hotel son aceptados entre contextos | 4 |
 | `IamSeederTests` | IAM | Alta del administrador de cadena con política de contraseñas; rechaza contraseñas filtradas, cortas, repetitivas, con el correo o comunes | 7 |
 | `ProfilesDependencyInjectionTests` | Profiles | Registro de servicios del contexto en el contenedor de dependencias | 1 |
-| `ProfilesMySqlConcurrencyIntegrationTests` | Profiles | Generación concurrente de códigos de empleado sobre MySQL real | 1 |
+| `ProfilesMySqlConcurrencyIntegrationTests` | Profiles | Generación concurrente de códigos de empleado sobre MySQL 8.0.36 real (contenedor Docker) | 1 |
 | **Total** | | | **35** |
 
 Las pruebas cubren tanto caminos felices como caminos de fallo: hotel inexistente, huésped sin perfil, contraseñas rechazadas por política o filtradas, e identificadores no válidos.
@@ -76,7 +76,7 @@ Las pruebas cubren tanto caminos felices como caminos de fallo: hotel inexistent
 
 ![integration-run-detail](../assets/chapter-6/integration-tests/integration-run-detail.png)
 
-**Limitaciones.** La mayoría de estas pruebas usan Entity Framework en memoria y fachadas o repositorios simulados, por lo que no reproducen las restricciones ni el comportamiento concurrente de MySQL. La única prueba pensada para MySQL real (`ProfilesMySqlConcurrencyIntegrationTests`) solo se ejecuta si hay un MySQL accesible; cuando no lo hay, termina sin verificar nada y se reporta como aprobada, por lo que su resultado en este entorno no cuenta como evidencia de concurrencia sobre MySQL.
+**Base de datos de las pruebas.** La mayoría de estas pruebas usan Entity Framework en memoria y fachadas o repositorios de prueba para aislar la lógica. La prueba de concurrencia (`ProfilesMySqlConcurrencyIntegrationTests`) se ejecuta contra un **MySQL 8.0.36 real**: diez contextos de EF generan códigos de empleado en paralelo y se verifica que los diez códigos son únicos y siguen el formato `EMP-00000`. En desarrollo local se usa un contenedor Docker de MySQL (`docker-compose.yml`) indicado con la variable `TEST_MYSQL_CONNECTION`; en el CI de GitHub Actions el job `build-and-test` levanta un contenedor de servicio `mysql:8.0.36` y define `REQUIRE_MYSQL_TESTS=true`, de modo que si la base no está disponible la prueba falla en lugar de omitirse.
 
 #### Aplicación móvil
 
