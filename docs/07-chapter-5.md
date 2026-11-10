@@ -360,28 +360,30 @@ Se crean desde `main` para corregir problemas críticos en producción.
 ### 5.1.4. Software Deployment Configuration
 
 ### Landing Page Deployment
-La **Landing Page** fue desarrollada utilizando **HTML**, **CSS** y **JavaScript**, y se encuentra desplegada públicamente a través de **Vercel**.  
+La **Landing Page** fue desarrollada con **JavaScript**, **Vite** y **Tailwind CSS**, y se encuentra desplegada públicamente a través de **Vercel**.  
 Para su publicación, se cumplieron los siguientes pasos:
 
 1. **Preparación del entorno:**  
    Se creó un repositorio dentro de la organización en **GitHub**, destinado a alojar los archivos de la Landing Page.
 
 2. **Estructura de archivos:**  
-   Los archivos principales se encuentran en la raíz del repositorio, siguiendo las convenciones de nombres:
+   El repositorio se organiza de la siguiente manera:
     - `index.html` → página principal.
-    - `styles.css` → hoja de estilos principal.
-    - `script.js` → scripts principales.
-    - `languages.js` → archivo para gestionar los textos en distintos idiomas (español e inglés).
-    - Carpeta `assets/images/` → para las imágenes utilizadas en el sitio.
+    - `src/main.js` → punto de entrada de los scripts.
+    - `src/features/` → funcionalidades de la página (formulario de demostración, contacto, testimonios y navegación por perfil).
+    - `src/i18n/` → textos en español e inglés (`locales/es.js` y `locales/en.js`) y la lógica del cambio de idioma.
+    - `src/styles/main.css` → hoja de estilos principal.
+    - `public/` → íconos y recursos estáticos.
+    - `vercel.json` → configuración del despliegue.
 
 3. **Configuración en Vercel:**
     - Se importó el repositorio de la Landing Page directamente desde GitHub a **Vercel**.
     - Se seleccionó la rama **main** como fuente de publicación.
-    - Se configuró la carpeta raíz (`/`) como directorio base del proyecto.
+    - `vercel.json` declara el *framework* Vite, la instalación con `npm ci`, el comando `npm run build` y el directorio de salida `dist`.
+    - El mismo archivo configura la caché inmutable de los recursos versionados y las cabeceras de seguridad `X-Content-Type-Options`, `Referrer-Policy`, `X-Frame-Options` y `Permissions-Policy`.
     - Una vez completado el proceso, Vercel generó automáticamente la URL pública de la Landing Page.
 
-Además, se implementó un archivo `languages.js` que contiene los textos en español e inglés.  
-Este archivo es consumido por el script `main.js`, permitiendo el cambio de idioma dinámico en la interfaz.
+El módulo `src/i18n/` contiene los textos en español e inglés y permite el cambio de idioma dinámico en la interfaz.
 
 
 ### Backend (Web Services)
@@ -1119,7 +1121,65 @@ En esta sección se puede ver el panel del administrador se puede ver un dashboa
 
 ![Front4](../assets/chapter-5/implementation/frontend-web/frontend-04.jpeg)
 
-### 5.2.4. Implemented Native-Mobile Application Evidence
+#### Vistas del huésped (AV2)
+
+El 09/11/2026 se capturaron las vistas del portal del huésped en la aplicación web desplegada, con una cuenta de prueba. Los hallazgos de usabilidad se analizan en el apartado 6.3.3.
+
+En el panel de inicio el huésped ve un saludo, sus reservas y noches, un acceso a una nueva reserva y recomendaciones de habitaciones.
+
+![Panel de inicio del huésped](../assets/chapter-6/heuristic-review/guest-dashboard.jpg)
+
+En «Hoteles» se listan los hoteles con su ubicación, comodidades y precio por noche, y se pueden buscar por ciudad o nombre.
+
+![Listado de hoteles](../assets/chapter-6/heuristic-review/guest-hotels.jpg)
+
+En «Habitaciones» se listan las habitaciones con su tipo, descripción, comodidades y precio, y se pueden filtrar por tipo.
+
+![Listado de habitaciones](../assets/chapter-6/heuristic-review/guest-rooms.jpg)
+
+El detalle de la habitación muestra el precio, la descripción, las comodidades y la política de cancelación, y ofrece el botón para buscar fechas y reservar.
+
+![Detalle de la habitación](../assets/chapter-6/heuristic-review/guest-room-detail.jpg)
+
+El formulario de reserva pide el hotel y las fechas de llegada y salida antes de buscar habitaciones disponibles.
+
+![Búsqueda de fechas para reservar](../assets/chapter-6/heuristic-review/guest-booking-search.jpg)
+
+«Mis reservas» y «Clima de mi habitación» muestran un mensaje y una acción cuando el huésped aún no tiene reservas ni una estadía activa.
+
+![Mis reservas](../assets/chapter-6/heuristic-review/guest-bookings-empty.jpg)
+
+![Clima de mi habitación](../assets/chapter-6/heuristic-review/guest-room-climate-empty.jpg)
+
+### 5.2.4. Acuerdo de Servicio - SaaS
+
+Este acuerdo establece los derechos, obligaciones y restricciones aplicables a quienes usan la plataforma SmartStay, para que el uso del servicio sea transparente. Se publica en la sección «Terms and Conditions» de la landing page y de las aplicaciones, con un enlace en el pie de cada una. Su redacción sigue los principios del código de ética de la ingeniería de software de ACM/IEEE y del Colegio de Ingenieros del Perú.
+
+> **Estado:** versión 1.0, redactada por el equipo para este avance. Debe revisarse y publicarse en el enlace de términos y condiciones antes de la entrega final.
+
+**1. Objeto y partes.** Movildev (el «Proveedor») ofrece a hoteles y a sus huéspedes (los «Usuarios») acceso a SmartStay como servicio en línea: gestión de hoteles, habitaciones y reservas, pagos registrados, perfiles y analítica operativa. El Usuario acepta este acuerdo al crear una cuenta o al usar el servicio.
+
+**2. Cuentas y roles.** Cada cuenta es personal. El servicio distingue los roles de administrador, personal (recepción, limpieza y mantenimiento) y huésped, y cada uno accede solo a las funciones de su rol. El personal usa un segundo factor de autenticación. El Usuario debe mantener sus credenciales en reserva y avisar de cualquier acceso no autorizado.
+
+**3. Uso aceptable.** El Usuario se obliga a no suplantar a otra persona, no intentar acceder a datos de otros hoteles o huéspedes, no interferir con el funcionamiento del servicio y no usarlo con fines ilícitos. El Proveedor puede suspender una cuenta que incumpla estas reglas, y avisará al Usuario del motivo.
+
+**4. Datos personales.** El Proveedor trata los datos personales conforme a la Ley N.º 29733, de Protección de Datos Personales. Solo recoge los datos necesarios para prestar el servicio (identificación, contacto, reservas y pagos) y no los vende a terceros. El Usuario puede solicitar acceso, rectificación, cancelación u oposición sobre sus datos. Si se miden eventos de uso para mejorar el producto, se hace con identificadores anónimos y sin datos personales, y esta medición se informa en este apartado.
+
+**5. Reservas, pagos y cancelaciones.** Las reservas se crean con los datos del huésped y del hotel. Las condiciones de cancelación se muestran en el detalle de la habitación antes de reservar: el huésped puede cancelar hasta el día anterior a su llegada y, si ya pagó, el hotel le devuelve el pago. Los pagos se registran en el servicio según el método que el hotel habilite. Las reservas sin pago pueden vencer automáticamente.
+
+**6. Disponibilidad del servicio.** El Proveedor procura mantener el servicio disponible de forma continua, pero no garantiza una disponibilidad ininterrumpida. El servicio puede tardar unos segundos en responder tras un periodo de inactividad, y puede interrumpirse por mantenimiento o por fallas de los proveedores de infraestructura. Las interrupciones se detectan con la monitorización descrita en el apartado 7.4.
+
+**7. Propiedad intelectual.** SmartStay, su código, su marca y su documentación pertenecen al Proveedor. El Usuario conserva la titularidad de la información que ingresa, y otorga al Proveedor el permiso para tratarla con el único fin de prestar el servicio.
+
+**8. Responsabilidad.** El Proveedor responde por el funcionamiento del servicio conforme a este acuerdo. No responde por la información incorrecta que ingrese el Usuario, ni por daños causados por el uso del servicio contra estas reglas o por hechos fuera de su control razonable.
+
+**9. Ética y transparencia.** El equipo se compromete a no ocultar información relevante al Usuario, a no experimentar con él de manera que pueda causarle daño, y a informar de los cambios de este acuerdo antes de que entren en vigor.
+
+**10. Modificaciones y vigencia.** El Proveedor puede modificar este acuerdo y avisará a los Usuarios por el servicio o por correo. El Usuario puede cerrar su cuenta en cualquier momento, y el acuerdo termina con el cierre.
+
+**11. Ley aplicable.** Este acuerdo se rige por las leyes de la República del Perú.
+
+### 5.2.5. Implemented Native-Mobile Application Evidence
 
 Durante el Sprint 2 se ejecutaron y validaron las funcionalidades desarrolladas dentro de la aplicación móvil SmartStay. Las pruebas se realizaron utilizando Android Studio, dispositivos físicos y servicios desplegados en la nube para verificar la correcta integración entre frontend y backend.
 
@@ -1154,7 +1214,7 @@ Los flujos ejecutados fueron los siguientes:
 ![Sprint 3 App 3](../assets/chapter-5/implementation/mobile/sprint-3/sprint3-app-3.png)
 ![Sprint 3 App 4](../assets/chapter-5/implementation/mobile/sprint-3/sprint3-app-4.png)
 
-### 5.2.5. Implemented RESTful API and/or Serverless Backend Evidence
+### 5.2.6. Implemented RESTful API and/or Serverless Backend Evidence
 
 Durante este sprint se actualizó el bounded context de IAM/Authentication, incorporando mejoras relacionadas con la autenticación de usuarios y la gestión de roles dentro del sistema. La documentación de los servicios REST fue verificada mediante Swagger/OpenAPI, donde se evidencian los endpoints disponibles para el inicio de sesión y registro de usuarios.
 
@@ -1163,7 +1223,7 @@ Durante este sprint se actualizó el bounded context de IAM/Authentication, inco
 
 Asimismo, durante el sprint se trabajó con la lógica de roles para diferenciar el acceso de los distintos tipos de usuario del sistema, como Guest, Admin y ChainAdmin, permitiendo controlar qué secciones y acciones están disponibles para cada perfil dentro de la aplicación.
 
-### 5.2.6. RESTful API documentation
+### 5.2.7. RESTful API documentation
 
 **Profiles**: Este bounded context maneja la información de los perfiles de los usuarios dentro de la plataforma. Proporciona funcionalidades para crear perfiles, consultar su información y obtener el detalle de un perfil específico. Es esencial para almacenar y gestionar los datos personales asociados a cada usuario del sistema.
 
@@ -1205,7 +1265,7 @@ Asimismo, durante el sprint se trabajó con la lógica de roles para diferenciar
 
 ![swagercuartostipos.png](../assets/chapter-5/api/swagger/swagger-cuartostipo.png)
 
-### 5.2.7. Team Collaboration Insights
+### 5.2.8. Team Collaboration Insights
 
 **Acciones de colaboración destacadas:**
 - Se utilizó **GitHub** como herramienta central de coordinación y control de versiones.
