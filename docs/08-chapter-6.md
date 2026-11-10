@@ -394,21 +394,32 @@ En el **backend** el control ya está automatizado: el job *Dependency audit* de
 
 ### 6.2.2. Reviews
 
-Las revisiones del equipo se realizan mediante *pull requests* sobre `develop` y `main`, siguiendo GitFlow. La tabla resume el estado real de los *pull requests* de cada repositorio al 09/11/2026, consultado con la API de GitHub:
+Las revisiones complementan el análisis automático de 6.2.1: antes de integrar un cambio, otro integrante revisa el código en un *pull request* sobre `develop` o `main`, siguiendo GitFlow. La tabla resume el estado real de los *pull requests* de cada repositorio al 10/11/2026, consultado con la API de GitHub:
 
 | Repositorio | Pull requests | Fusionados | Cerrados sin fusionar | Abiertos | Con al menos una revisión registrada |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| `backend` | 13 | 12 | 1 | 0 | 1 |
+| `backend` | 15 | 14 | 1 | 0 | 1 |
 | `frontend` | 6 | 6 | 0 | 0 | 0 |
-| `mobile` | 1 | 0 | 0 | 1 | 0 |
+| `mobile` | 1 | 1 | 0 | 0 | 0 |
 | `landing-page` | 4 | 4 | 0 | 0 | 0 |
-| `Report` | 2 | 1 | 0 | 1 | 0 |
+| `Report` | 2 | 1 | 1 | 0 | 0 |
+
+**Reglas de protección de ramas.** El repositorio `backend` tiene activo el *ruleset* «Protect main and develop», que obliga a revisar antes de integrar en `main` y `develop`:
+
+| Regla | Efecto |
+| :--- | :--- |
+| *Pull request* obligatorio | No se puede integrar con un *push* directo; todo cambio entra por un *pull request*. |
+| 1 aprobación requerida | Otro integrante debe aprobar el *pull request*; el autor no puede aprobar el suyo. |
+| *Checks* requeridos | Los trabajos `Lint`, `Dependency audit` y `Build & test` de `ci-backend.yml` deben terminar en verde. |
+| Sin *force push* ni borrado | La historia de `main` y `develop` no se puede reescribir ni eliminar. |
+
+**Ejemplo de revisión registrada.** El *pull request* #13 del backend (`ci: deploy to render only after ci checks pass on main`) fue aprobado por Alejandro Galindo antes de integrarse en `develop`, con los tres *checks* de CI en verde.
 
 **Hallazgos de la revisión.**
 
-1. Los *pull requests* se usan de forma consistente para integrar `develop` en `main` (`chore(release): merge develop into main`), pero la revisión entre pares dentro de GitHub es escasa: solo uno de los 26 *pull requests* tiene una revisión registrada. Gran parte de la revisión ocurrió en las reuniones del equipo y no quedó como evidencia en la plataforma.
-2. Los controles automáticos sí quedaron como barrera: desde el *pull request* #13 del backend, `render.yaml` usa `autoDeployTrigger: checksPass`, de modo que Render solo despliega a producción después de que los *checks* de CI pasan en `main`.
-3. **Acción correctiva acordada:** activar la regla de revisión obligatoria de al menos un integrante en las ramas `develop` y `main` de los cuatro repositorios, para que la revisión entre pares quede registrada en GitHub.
+1. Los *pull requests* se usan de forma consistente para integrar `develop` en `main` (`chore(release): merge develop into main`), pero la revisión entre pares dentro de GitHub es escasa: solo uno de los 28 *pull requests* tiene una revisión registrada. Gran parte de la revisión ocurrió en las reuniones del equipo y no quedó como evidencia en la plataforma.
+2. Solo el backend exige revisión: `frontend`, `mobile`, `landing-page` y `Report` no tienen reglas de protección, por lo que un cambio puede integrarse sin que nadie lo apruebe.
+3. **Acción correctiva acordada:** extender el *ruleset* del backend a los otros cuatro repositorios, para que toda integración en `develop` y `main` requiera la aprobación de otro integrante y quede registrada en GitHub.
 
 ---
 
