@@ -5652,10 +5652,88 @@ Las entrevistas de validación comprueban con usuarios de los segmentos objetivo
 
 ### 6.3.3. Evaluaciones según heurísticas
 
-> **Pendiente:** esta evaluación se completa a partir de las sesiones de 6.3.2. Se utilizará el formato **UX Heuristics & Principles Evaluation** del Anexo D del enunciado del trabajo final, que se estructura como sigue.
+Como todavía no hay sesiones con usuarios (6.3.2), el equipo realizó una **inspección heurística de experto** de la aplicación web desplegada, con el formato **UX Heuristics & Principles Evaluation** del Anexo D del enunciado. Esta evaluación se hizo el 09/11/2026 con una cuenta de prueba de huésped, en un navegador de escritorio (1568 × 900) y en un ancho móvil de 390 px. No sustituye a las evaluaciones con usuarios de los segmentos objetivo, que se agregarán cuando se realicen las entrevistas.
 
-| Sección del formato | Contenido |
+| | |
 | :--- | :--- |
+| **CARRERA** | Ingeniería de Software |
+| **CURSO** | Diseño de Experimentos de Ingeniería de Software |
+| **NRC** | 9097 |
+| **PROFESOR** | Julio Manuel Noriega Melendez |
+| **AUDITOR** | SmartStay Team (inspección de experto, sin participantes externos) |
+| **CLIENTE(S)** | No aplica: no hubo sesión con usuarios |
+| **SITE o APP A EVALUAR** | SmartStay Web (portal del huésped): https://smartstay-movildev-web.vercel.app |
+
+**Tareas evaluadas**
+
+1. Revisar el panel de inicio del huésped.
+2. Explorar los hoteles y buscar uno por ciudad o nombre.
+3. Explorar las habitaciones y filtrarlas por tipo.
+4. Abrir el detalle de una habitación.
+5. Iniciar la búsqueda de fechas para reservar (sin confirmar la reserva).
+6. Consultar «Mis reservas» y «Clima de mi habitación».
+
+**No incluidas en esta versión:** confirmar y pagar una reserva, cancelarla, el panel del administrador y del personal, y la aplicación móvil. No se confirmaron reservas para no crear datos en el entorno de producción.
+
+**Escala de severidad:** 1 = problema superficial; 2 = problema menor; 3 = problema mayor; 4 = problema muy grave.
+
+**Tabla resumen**
+
+| # | Problema | Severidad | Heurística / principio violado |
+| :-: | :--- | :-: | :--- |
+| 1 | Un hotel de prueba («Hostal Prueba Moyobamba», con precio S/ 0,00 y descripción «Hostal de prueba») aparece en el listado que ve el huésped | 3 | Usability: Correspondencia entre el sistema y el mundo real |
+| 2 | Las tarjetas de habitación no indican a qué hotel pertenecen | 3 | Usability: Reconocimiento en lugar de recuerdo |
+| 3 | Después de elegir una habitación, el formulario «Reserva una habitación» no muestra cuál fue elegida y vuelve a pedir el hotel | 3 | Usability: Visibilidad del estado del sistema |
+| 4 | El login web tiene contraste insuficiente entre texto y fondo, atributos `aria-*` que no coinciden con sus roles y no tiene un elemento `main` | 3 | Inclusive Design: Perceptible y operable con tecnologías de apoyo |
+| 5 | El filtro «Filtrar por tipo» muestra el campo vacío y su etiqueta queda debajo del control | 2 | Usability: Consistencia y estándares |
+| 6 | El buscador de hoteles solo tiene un *placeholder*; el icono de búsqueda queda separado y sobre el campo, sin etiqueta visible | 2 | Usability: Consistencia y estándares; Inclusive Design: Etiquetas claras |
+| 7 | Las habitaciones visibles no tienen foto y solo muestran un icono de imagen; una tarjeta de hotel muestra una captura de documento en lugar de una foto | 2 | Usability: Diseño estético y minimalista |
+| 8 | En móvil, el título «Nuestros hoteles» y su subtítulo quedan desplazados respecto del buscador y de las tarjetas | 1 | Usability: Consistencia y estándares |
+| 9 | La página de inicio de sesión no tiene `meta description` y su `robots.txt` devuelve la página principal | 2 | Information Architecture: Descubrimiento y rotulado |
+
+**Aspectos positivos observados:** las pantallas vacías («Sin viajes programados», «No tienes reservas activas», «Todavía no tienes una estadía activa») explican qué pasa y ofrecen una acción; el detalle de la habitación muestra la política de cancelación antes de reservar; la navegación superior es coherente entre pantallas y el sitio se adapta al ancho móvil sin desplazamiento horizontal.
+
+**Detalle de los problemas**
+
+**Problema 1 (severidad 3).** *Tarea 2.* El listado de hoteles incluye un registro creado para validar el alta de hoteles. El huésped ve un hotel con precio S/ 0,00 que no puede reservar con sentido. *Recomendación:* ocultar los hoteles de prueba al huésped, por ejemplo con un indicador de visibilidad en el hotel, y limpiar los datos de demostración del entorno de producción.
+
+![Listado de hoteles](assets/chapter-6/heuristic-review/guest-hotels.jpg)
+
+**Problema 2 (severidad 3).** *Tarea 3.* Cada tarjeta muestra tipo, número, descripción, comodidades y precio, pero no el hotel. Con varios hoteles, el huésped no sabe dónde está la habitación 101. *Recomendación:* incluir el nombre del hotel y la ciudad en cada tarjeta y permitir filtrar por hotel.
+
+![Listado de habitaciones](assets/chapter-6/heuristic-review/guest-rooms.jpg)
+
+**Problema 3 (severidad 3).** *Tareas 4 y 5.* Desde el detalle de la habitación 101, el botón «Buscar fechas y reservar» lleva a un formulario que pide hotel, llegada y salida, y no repite qué habitación se está reservando. La habitación elegida solo se conserva en la dirección de la página (parámetro `roomId`). *Recomendación:* mostrar un resumen de la habitación elegida (tipo, número, hotel, precio por noche) en la parte superior del formulario.
+
+![Detalle de la habitación](assets/chapter-6/heuristic-review/guest-room-detail.jpg)
+
+![Formulario de búsqueda de fechas](assets/chapter-6/heuristic-review/guest-booking-search.jpg)
+
+**Problema 4 (severidad 3).** *Acceso a la aplicación.* La medición con Lighthouse del 09/11/2026 (apartado 7.4.2) dio 88 en accesibilidad para el login: contraste insuficiente entre texto y fondo, atributos `aria-*` que no coinciden con sus roles y ausencia de un elemento de referencia `main`. *Recomendación:* ajustar los colores para alcanzar la relación de contraste 4.5:1, corregir los roles y envolver el contenido en `main`.
+
+**Problemas 5 y 6 (severidad 2).** *Tareas 2 y 3.* El filtro por tipo muestra un campo vacío y su etiqueta aparece debajo; el buscador de hoteles no tiene etiqueta visible. *Recomendación:* etiquetas sobre los controles, valor inicial «Todos los tipos» y el icono de búsqueda dentro del campo.
+
+**Problema 7 (severidad 2).** *Tareas 2 y 3.* Las habitaciones visibles no tienen foto y una de las tarjetas de hotel muestra una imagen que parece una captura de un documento. *Recomendación:* cargar fotos reales de hoteles y habitaciones y definir un formato mínimo de imagen en el alta.
+
+**Problema 8 (severidad 1).** *Tarea 2, en móvil.* El título de la lista de hoteles queda con un margen izquierdo mayor que el resto del contenido.
+
+![Hoteles en móvil](assets/chapter-6/heuristic-review/guest-hotels-mobile.jpg)
+
+**Problema 9 (severidad 2).** *Acceso a la aplicación.* Lighthouse reportó 83 en SEO para el login por falta de `meta description` y porque `/robots.txt` devuelve `index.html`, debido a la regla de reescritura de `vercel.json`. *Recomendación:* añadir la `meta description` y servir un `robots.txt` válido como archivo estático.
+
+**Pantallas evaluadas**
+
+![Panel de inicio del huésped](assets/chapter-6/heuristic-review/guest-dashboard.jpg)
+
+![Panel de inicio en móvil](assets/chapter-6/heuristic-review/guest-dashboard-mobile.jpg)
+
+![Mis reservas sin reservas](assets/chapter-6/heuristic-review/guest-bookings-empty.jpg)
+
+![Clima de mi habitación sin estadía activa](assets/chapter-6/heuristic-review/guest-room-climate-empty.jpg)
+
+> **Pendiente:** la misma evaluación con el panel de administrador y personal, la aplicación móvil y las sesiones con usuarios de 6.3.2.
+
+--- | :--- |
 | Encabezado | Carrera, curso, NRC, profesores, auditor (SmartStay Team) y clientes que participan en la sesión |
 | Site o app a evaluar | Landing Page, aplicación web y aplicación móvil de SmartStay |
 | Tareas a evaluar | Las tareas de 6.3.1; quedan fuera del alcance los flujos del Sprint 3 aún no desplegados |
@@ -6208,7 +6286,7 @@ El material bruto reúne lo que el equipo cree, ignora, propone o ha escuchado. 
 | Id | Tipo | Enunciado | Fuente |
 | :-: | :--- | :--- | :--- |
 | R-01 | Assumption | Una solicitud de demostración con menos campos obligatorios aumenta la cantidad de administradores que la completan. | El formulario actual de la landing exige ocho campos obligatorios (`firstName`, `lastName`, `hotelName`, `jobTitle`, `email`, `accommodationType`, `roomsRange`, `referralSource`) |
-| R-02 | Assumption | Un huésped completa la reserva sin ayuda de recepción si ve claramente el total y las condiciones antes de confirmar. | Lean UX Assumption 3 (el acceso digital reduce las esperas) y entrevistas a huéspedes |
+| R-02 | Assumption | Un huésped completa la reserva sin ayuda de recepción si ve claramente las noches y el total antes de confirmar. | Lean UX Assumption 3 (el acceso digital reduce las esperas) y entrevistas a huéspedes |
 | R-03 | Assumption | El personal opera más rápido si ve el estado de todas las habitaciones y puede filtrarlas. | Lean UX Assumption 2 e Hypothesis H2 (mejora de 15 % en productividad) |
 | R-04 | Assumption | Al huésped le importa más controlar el entorno de la habitación que otras funciones. | Lean UX Assumption 1 e Hypothesis H1 |
 | R-05 | Assumption | El check-in digital reduce al menos 40 % el tiempo de check-in. | Lean UX Assumption 3 e Hypothesis H3 |
@@ -6233,7 +6311,7 @@ Una pregunta lista para experimentar puede basarse en una creencia (*belief-led*
 | Id | Pregunta | Creencia que prueba | Tipo |
 | :-: | :--- | :--- | :--- |
 | Q-01 | ¿Reducir los campos obligatorios del formulario de demostración aumenta la proporción de visitantes que lo envían? | R-01, R-08 | Belief-led |
-| Q-02 | ¿Mostrar un resumen con el total y las condiciones antes de confirmar aumenta la proporción de reservas que el huésped completa? | R-02 | Belief-led |
+| Q-02 | ¿Mostrar un resumen con las noches y el total antes de confirmar aumenta la proporción de reservas que el huésped completa? | R-02 | Belief-led |
 | Q-03 | ¿Filtrar el mapa de habitaciones por estado y cambiarlo desde el propio mapa reduce el tiempo que tarda el staff en actualizar una habitación? | R-03, R-09 | Belief-led |
 | Q-04 | ¿Reducir el LCP móvil de la landing page por debajo de 2.5 s aumenta la proporción de visitantes que navegan más allá del hero? | R-10, R-14 | Belief-led |
 
@@ -6306,9 +6384,9 @@ Cada tarjeta resume el experimento antes de ejecutarlo. El **frente** contiene l
 
 | **Frente** | |
 | :--- | :--- |
-| Pregunta | Q-02: ¿mostrar un resumen con el total y las condiciones antes de confirmar aumenta la proporción de reservas que el huésped completa? |
-| Por qué | La reserva es la función central del huésped. Un huésped que duda del total o de las condiciones abandona sin pedir ayuda. |
-| Hipótesis | Si el huésped ve un resumen con fechas, noches, precio por noche, total y política de cancelación antes de confirmar, entonces la tasa de reservas completadas aumenta. |
+| Pregunta | Q-02: ¿mostrar un resumen con las noches y el total antes de confirmar aumenta la proporción de reservas que el huésped completa? |
+| Por qué | La reserva es la función central del huésped. Un huésped que duda del total abandona sin pedir ayuda. La política de cancelación ya se muestra en el detalle de la habitación (revisión del 09/11/2026), por lo que el resumen se concentra en las fechas, las noches y el total. |
+| Hipótesis | Si el huésped ve un resumen con fechas, noches, precio por noche y total antes de confirmar, entonces la tasa de reservas completadas aumenta. |
 | Qué (Simplest Useful Thing) | Un paso de resumen entre la selección de habitación y el botón de confirmar, con datos que la API ya entrega. |
 
 | **Reverso** | |
@@ -6551,7 +6629,7 @@ Las historias To-Be se derivan del diseño de 8.2: cada una habilita una variant
   <tr>
     <td>US-63</td>
     <td>Booking summary before confirmation</td>
-    <td class="user-story-desc"><strong>As a</strong> guest, <strong>I want</strong> to see the dates, nights, nightly price, total and cancellation policy before I confirm <strong>so that</strong> I book with confidence.</td>
+    <td class="user-story-desc"><strong>As a</strong> guest, <strong>I want</strong> to see the dates, nights, nightly price and total before I confirm <strong>so that</strong> I book with confidence.</td>
     <td class="acceptance-criteria">
       <strong>Scenario 1: Summary shown</strong><br>
       <strong>Given that</strong> I selected a room and dates and I am in variant B, <strong>when</strong> I continue, <strong>then</strong> I see a summary with the dates, number of nights, price per night and total.<br>
@@ -6682,7 +6760,7 @@ El backlog To-Be ordena las historias de 8.3.1 según su dependencia con los exp
       <td>6</td>
       <td>US-63</td>
       <td>Booking summary before confirmation</td>
-      <td><strong>As a</strong> guest, <strong>I want</strong> to see the dates, nights, price, total and cancellation policy before I confirm <strong>to</strong> book with confidence.</td>
+      <td><strong>As a</strong> guest, <strong>I want</strong> to see the dates, nights, price and total before I confirm <strong>to</strong> book with confidence.</td>
       <td>E-02</td>
       <td>3</td>
     </tr>

@@ -36,7 +36,7 @@ El material bruto reúne lo que el equipo cree, ignora, propone o ha escuchado. 
 | Id | Tipo | Enunciado | Fuente |
 | :-: | :--- | :--- | :--- |
 | R-01 | Assumption | Una solicitud de demostración con menos campos obligatorios aumenta la cantidad de administradores que la completan. | El formulario actual de la landing exige ocho campos obligatorios (`firstName`, `lastName`, `hotelName`, `jobTitle`, `email`, `accommodationType`, `roomsRange`, `referralSource`) |
-| R-02 | Assumption | Un huésped completa la reserva sin ayuda de recepción si ve claramente el total y las condiciones antes de confirmar. | Lean UX Assumption 3 (el acceso digital reduce las esperas) y entrevistas a huéspedes |
+| R-02 | Assumption | Un huésped completa la reserva sin ayuda de recepción si ve claramente las noches y el total antes de confirmar. | Lean UX Assumption 3 (el acceso digital reduce las esperas) y entrevistas a huéspedes |
 | R-03 | Assumption | El personal opera más rápido si ve el estado de todas las habitaciones y puede filtrarlas. | Lean UX Assumption 2 e Hypothesis H2 (mejora de 15 % en productividad) |
 | R-04 | Assumption | Al huésped le importa más controlar el entorno de la habitación que otras funciones. | Lean UX Assumption 1 e Hypothesis H1 |
 | R-05 | Assumption | El check-in digital reduce al menos 40 % el tiempo de check-in. | Lean UX Assumption 3 e Hypothesis H3 |
@@ -61,7 +61,7 @@ Una pregunta lista para experimentar puede basarse en una creencia (*belief-led*
 | Id | Pregunta | Creencia que prueba | Tipo |
 | :-: | :--- | :--- | :--- |
 | Q-01 | ¿Reducir los campos obligatorios del formulario de demostración aumenta la proporción de visitantes que lo envían? | R-01, R-08 | Belief-led |
-| Q-02 | ¿Mostrar un resumen con el total y las condiciones antes de confirmar aumenta la proporción de reservas que el huésped completa? | R-02 | Belief-led |
+| Q-02 | ¿Mostrar un resumen con las noches y el total antes de confirmar aumenta la proporción de reservas que el huésped completa? | R-02 | Belief-led |
 | Q-03 | ¿Filtrar el mapa de habitaciones por estado y cambiarlo desde el propio mapa reduce el tiempo que tarda el staff en actualizar una habitación? | R-03, R-09 | Belief-led |
 | Q-04 | ¿Reducir el LCP móvil de la landing page por debajo de 2.5 s aumenta la proporción de visitantes que navegan más allá del hero? | R-10, R-14 | Belief-led |
 
@@ -134,9 +134,9 @@ Cada tarjeta resume el experimento antes de ejecutarlo. El **frente** contiene l
 
 | **Frente** | |
 | :--- | :--- |
-| Pregunta | Q-02: ¿mostrar un resumen con el total y las condiciones antes de confirmar aumenta la proporción de reservas que el huésped completa? |
-| Por qué | La reserva es la función central del huésped. Un huésped que duda del total o de las condiciones abandona sin pedir ayuda. |
-| Hipótesis | Si el huésped ve un resumen con fechas, noches, precio por noche, total y política de cancelación antes de confirmar, entonces la tasa de reservas completadas aumenta. |
+| Pregunta | Q-02: ¿mostrar un resumen con las noches y el total antes de confirmar aumenta la proporción de reservas que el huésped completa? |
+| Por qué | La reserva es la función central del huésped. Un huésped que duda del total abandona sin pedir ayuda. La política de cancelación ya se muestra en el detalle de la habitación (revisión del 09/11/2026), por lo que el resumen se concentra en las fechas, las noches y el total. |
+| Hipótesis | Si el huésped ve un resumen con fechas, noches, precio por noche y total antes de confirmar, entonces la tasa de reservas completadas aumenta. |
 | Qué (Simplest Useful Thing) | Un paso de resumen entre la selección de habitación y el botón de confirmar, con datos que la API ya entrega. |
 
 | **Reverso** | |
@@ -379,7 +379,7 @@ Las historias To-Be se derivan del diseño de 8.2: cada una habilita una variant
   <tr>
     <td>US-63</td>
     <td>Booking summary before confirmation</td>
-    <td class="user-story-desc"><strong>As a</strong> guest, <strong>I want</strong> to see the dates, nights, nightly price, total and cancellation policy before I confirm <strong>so that</strong> I book with confidence.</td>
+    <td class="user-story-desc"><strong>As a</strong> guest, <strong>I want</strong> to see the dates, nights, nightly price and total before I confirm <strong>so that</strong> I book with confidence.</td>
     <td class="acceptance-criteria">
       <strong>Scenario 1: Summary shown</strong><br>
       <strong>Given that</strong> I selected a room and dates and I am in variant B, <strong>when</strong> I continue, <strong>then</strong> I see a summary with the dates, number of nights, price per night and total.<br>
@@ -510,7 +510,7 @@ El backlog To-Be ordena las historias de 8.3.1 según su dependencia con los exp
       <td>6</td>
       <td>US-63</td>
       <td>Booking summary before confirmation</td>
-      <td><strong>As a</strong> guest, <strong>I want</strong> to see the dates, nights, price, total and cancellation policy before I confirm <strong>to</strong> book with confidence.</td>
+      <td><strong>As a</strong> guest, <strong>I want</strong> to see the dates, nights, price and total before I confirm <strong>to</strong> book with confidence.</td>
       <td>E-02</td>
       <td>3</td>
     </tr>

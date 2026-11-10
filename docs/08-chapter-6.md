@@ -370,10 +370,88 @@ Las entrevistas de validación comprueban con usuarios de los segmentos objetivo
 
 ### 6.3.3. Evaluaciones según heurísticas
 
-> **Pendiente:** esta evaluación se completa a partir de las sesiones de 6.3.2. Se utilizará el formato **UX Heuristics & Principles Evaluation** del Anexo D del enunciado del trabajo final, que se estructura como sigue.
+Como todavía no hay sesiones con usuarios (6.3.2), el equipo realizó una **inspección heurística de experto** de la aplicación web desplegada, con el formato **UX Heuristics & Principles Evaluation** del Anexo D del enunciado. Esta evaluación se hizo el 09/11/2026 con una cuenta de prueba de huésped, en un navegador de escritorio (1568 × 900) y en un ancho móvil de 390 px. No sustituye a las evaluaciones con usuarios de los segmentos objetivo, que se agregarán cuando se realicen las entrevistas.
 
-| Sección del formato | Contenido |
+| | |
 | :--- | :--- |
+| **CARRERA** | Ingeniería de Software |
+| **CURSO** | Diseño de Experimentos de Ingeniería de Software |
+| **NRC** | 9097 |
+| **PROFESOR** | Julio Manuel Noriega Melendez |
+| **AUDITOR** | SmartStay Team (inspección de experto, sin participantes externos) |
+| **CLIENTE(S)** | No aplica: no hubo sesión con usuarios |
+| **SITE o APP A EVALUAR** | SmartStay Web (portal del huésped): https://smartstay-movildev-web.vercel.app |
+
+**Tareas evaluadas**
+
+1. Revisar el panel de inicio del huésped.
+2. Explorar los hoteles y buscar uno por ciudad o nombre.
+3. Explorar las habitaciones y filtrarlas por tipo.
+4. Abrir el detalle de una habitación.
+5. Iniciar la búsqueda de fechas para reservar (sin confirmar la reserva).
+6. Consultar «Mis reservas» y «Clima de mi habitación».
+
+**No incluidas en esta versión:** confirmar y pagar una reserva, cancelarla, el panel del administrador y del personal, y la aplicación móvil. No se confirmaron reservas para no crear datos en el entorno de producción.
+
+**Escala de severidad:** 1 = problema superficial; 2 = problema menor; 3 = problema mayor; 4 = problema muy grave.
+
+**Tabla resumen**
+
+| # | Problema | Severidad | Heurística / principio violado |
+| :-: | :--- | :-: | :--- |
+| 1 | Un hotel de prueba («Hostal Prueba Moyobamba», con precio S/ 0,00 y descripción «Hostal de prueba») aparece en el listado que ve el huésped | 3 | Usability: Correspondencia entre el sistema y el mundo real |
+| 2 | Las tarjetas de habitación no indican a qué hotel pertenecen | 3 | Usability: Reconocimiento en lugar de recuerdo |
+| 3 | Después de elegir una habitación, el formulario «Reserva una habitación» no muestra cuál fue elegida y vuelve a pedir el hotel | 3 | Usability: Visibilidad del estado del sistema |
+| 4 | El login web tiene contraste insuficiente entre texto y fondo, atributos `aria-*` que no coinciden con sus roles y no tiene un elemento `main` | 3 | Inclusive Design: Perceptible y operable con tecnologías de apoyo |
+| 5 | El filtro «Filtrar por tipo» muestra el campo vacío y su etiqueta queda debajo del control | 2 | Usability: Consistencia y estándares |
+| 6 | El buscador de hoteles solo tiene un *placeholder*; el icono de búsqueda queda separado y sobre el campo, sin etiqueta visible | 2 | Usability: Consistencia y estándares; Inclusive Design: Etiquetas claras |
+| 7 | Las habitaciones visibles no tienen foto y solo muestran un icono de imagen; una tarjeta de hotel muestra una captura de documento en lugar de una foto | 2 | Usability: Diseño estético y minimalista |
+| 8 | En móvil, el título «Nuestros hoteles» y su subtítulo quedan desplazados respecto del buscador y de las tarjetas | 1 | Usability: Consistencia y estándares |
+| 9 | La página de inicio de sesión no tiene `meta description` y su `robots.txt` devuelve la página principal | 2 | Information Architecture: Descubrimiento y rotulado |
+
+**Aspectos positivos observados:** las pantallas vacías («Sin viajes programados», «No tienes reservas activas», «Todavía no tienes una estadía activa») explican qué pasa y ofrecen una acción; el detalle de la habitación muestra la política de cancelación antes de reservar; la navegación superior es coherente entre pantallas y el sitio se adapta al ancho móvil sin desplazamiento horizontal.
+
+**Detalle de los problemas**
+
+**Problema 1 (severidad 3).** *Tarea 2.* El listado de hoteles incluye un registro creado para validar el alta de hoteles. El huésped ve un hotel con precio S/ 0,00 que no puede reservar con sentido. *Recomendación:* ocultar los hoteles de prueba al huésped, por ejemplo con un indicador de visibilidad en el hotel, y limpiar los datos de demostración del entorno de producción.
+
+![Listado de hoteles](../assets/chapter-6/heuristic-review/guest-hotels.jpg)
+
+**Problema 2 (severidad 3).** *Tarea 3.* Cada tarjeta muestra tipo, número, descripción, comodidades y precio, pero no el hotel. Con varios hoteles, el huésped no sabe dónde está la habitación 101. *Recomendación:* incluir el nombre del hotel y la ciudad en cada tarjeta y permitir filtrar por hotel.
+
+![Listado de habitaciones](../assets/chapter-6/heuristic-review/guest-rooms.jpg)
+
+**Problema 3 (severidad 3).** *Tareas 4 y 5.* Desde el detalle de la habitación 101, el botón «Buscar fechas y reservar» lleva a un formulario que pide hotel, llegada y salida, y no repite qué habitación se está reservando. La habitación elegida solo se conserva en la dirección de la página (parámetro `roomId`). *Recomendación:* mostrar un resumen de la habitación elegida (tipo, número, hotel, precio por noche) en la parte superior del formulario.
+
+![Detalle de la habitación](../assets/chapter-6/heuristic-review/guest-room-detail.jpg)
+
+![Formulario de búsqueda de fechas](../assets/chapter-6/heuristic-review/guest-booking-search.jpg)
+
+**Problema 4 (severidad 3).** *Acceso a la aplicación.* La medición con Lighthouse del 09/11/2026 (apartado 7.4.2) dio 88 en accesibilidad para el login: contraste insuficiente entre texto y fondo, atributos `aria-*` que no coinciden con sus roles y ausencia de un elemento de referencia `main`. *Recomendación:* ajustar los colores para alcanzar la relación de contraste 4.5:1, corregir los roles y envolver el contenido en `main`.
+
+**Problemas 5 y 6 (severidad 2).** *Tareas 2 y 3.* El filtro por tipo muestra un campo vacío y su etiqueta aparece debajo; el buscador de hoteles no tiene etiqueta visible. *Recomendación:* etiquetas sobre los controles, valor inicial «Todos los tipos» y el icono de búsqueda dentro del campo.
+
+**Problema 7 (severidad 2).** *Tareas 2 y 3.* Las habitaciones visibles no tienen foto y una de las tarjetas de hotel muestra una imagen que parece una captura de un documento. *Recomendación:* cargar fotos reales de hoteles y habitaciones y definir un formato mínimo de imagen en el alta.
+
+**Problema 8 (severidad 1).** *Tarea 2, en móvil.* El título de la lista de hoteles queda con un margen izquierdo mayor que el resto del contenido.
+
+![Hoteles en móvil](../assets/chapter-6/heuristic-review/guest-hotels-mobile.jpg)
+
+**Problema 9 (severidad 2).** *Acceso a la aplicación.* Lighthouse reportó 83 en SEO para el login por falta de `meta description` y porque `/robots.txt` devuelve `index.html`, debido a la regla de reescritura de `vercel.json`. *Recomendación:* añadir la `meta description` y servir un `robots.txt` válido como archivo estático.
+
+**Pantallas evaluadas**
+
+![Panel de inicio del huésped](../assets/chapter-6/heuristic-review/guest-dashboard.jpg)
+
+![Panel de inicio en móvil](../assets/chapter-6/heuristic-review/guest-dashboard-mobile.jpg)
+
+![Mis reservas sin reservas](../assets/chapter-6/heuristic-review/guest-bookings-empty.jpg)
+
+![Clima de mi habitación sin estadía activa](../assets/chapter-6/heuristic-review/guest-room-climate-empty.jpg)
+
+> **Pendiente:** la misma evaluación con el panel de administrador y personal, la aplicación móvil y las sesiones con usuarios de 6.3.2.
+
+--- | :--- |
 | Encabezado | Carrera, curso, NRC, profesores, auditor (SmartStay Team) y clientes que participan en la sesión |
 | Site o app a evaluar | Landing Page, aplicación web y aplicación móvil de SmartStay |
 | Tareas a evaluar | Las tareas de 6.3.1; quedan fuera del alcance los flujos del Sprint 3 aún no desplegados |
