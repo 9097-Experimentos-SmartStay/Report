@@ -42,7 +42,7 @@ La aplicación móvil cuenta con 16 pruebas en tres archivos, ejecutadas con `fl
 
 #### Aplicación web
 
-El frontend web (Vue 3 + Vite) no cuenta aún con una suite de pruebas unitarias automatizadas. Su verificación funcional se documenta en la sección 6.1.4.
+El frontend web (Vue 3 + Vite) no cuenta aún con una suite de pruebas unitarias automatizadas. Su comunicación con el backend se verifica en la sección 6.1.2 y su verificación funcional en la sección 6.1.4.
 
 ### 6.1.2. Core Integration Tests.
 
@@ -78,13 +78,34 @@ Las pruebas cubren tanto caminos felices como caminos de fallo: hotel inexistent
 
 **Base de datos de las pruebas.** La mayoría de estas pruebas usan Entity Framework en memoria y fachadas o repositorios de prueba para aislar la lógica. La prueba de concurrencia (`ProfilesMySqlConcurrencyIntegrationTests`) se ejecuta contra un **MySQL 8.0.36 real**: diez contextos de EF generan códigos de empleado en paralelo y se verifica que los diez códigos son únicos y siguen el formato `EMP-00000`. En desarrollo local se usa un contenedor Docker de MySQL (`docker-compose.yml`) indicado con la variable `TEST_MYSQL_CONNECTION`; en el CI de GitHub Actions el job `build-and-test` levanta un contenedor de servicio `mysql:8.0.36` y define `REQUIRE_MYSQL_TESTS=true`, de modo que si la base no está disponible la prueba falla en lugar de omitirse.
 
-#### Aplicación móvil
+#### Comunicación frontend ↔ backend
 
-`test/guest_booking_api_test.dart` prueba el cliente HTTP de reservas contra respuestas simuladas del backend: creación de reserva, error devuelto por el backend, pago con tarjeta rechazado y cancelación no aceptada. Verifica el contrato entre la aplicación móvil y la API, sin levantar el backend real.
+Las pruebas anteriores validan el backend. Para validar también la comunicación entre las aplicaciones cliente y la API, la aplicación web y la aplicación móvil cuentan con una prueba de integración que usa **su propia capa de acceso a la API contra un backend real** (API de ASP.NET Core y MySQL 8 levantados con `docker compose`), sin respuestas simuladas. Ambas recorren el mismo flujo de una cuenta de huésped:
 
-#### Aplicación web
+| # | Escenario | Tipo | Resultado esperado |
+|---|---|---|---|
+| 1 | Registro de una cuenta nueva | Camino feliz | La cuenta se crea con el correo sin verificar |
+| 2 | Registro con un correo ya registrado | Camino de fallo | El backend lo rechaza |
+| 3 | Inicio de sesión antes de verificar el correo | Camino de fallo | Rechazo con el código `auth.email_not_verified` |
+| 4 | Inicio de sesión con contraseña incorrecta | Camino de fallo | Rechazo con estado 401 |
+| 5 | Endpoint protegido sin sesión (solo web) | Camino de fallo | Rechazo con estado 401 |
+| 6 | Verificación del correo, inicio de sesión y consulta de las reservas del huésped | Camino feliz | Sesión de rol `guest` y lista de reservas vacía |
 
-El frontend web no cuenta con pruebas de integración automatizadas.
+En modo desarrollo el backend escribe en su registro el enlace de verificación del correo, de modo que la prueba lee el token de `docker logs` y no necesita un buzón real. Ambas pruebas se omiten por sí solas si la URL de la API no es local (`localhost` o `127.0.0.1`), para no crear cuentas en producción.
+
+##### Aplicación web (Vitest + jsdom)
+
+La prueba `tests/integration/auth-flow.integration.spec.js` usa `AuthenticationApi`, los comandos de dominio, el cliente HTTP compartido y `SessionAssembler` de la aplicación web. Se ejecuta con el origen `http://localhost:5173`, por lo que además comprueba que la política CORS del backend permite las llamadas desde el frontend. Se corre con `npm run test:integration`: 6 pruebas aprobadas.
+
+![Integración web ↔ backend](../assets/chapter-6/integration-tests/web-backend-integration-run.png)
+
+##### Aplicación móvil (flutter_test)
+
+La prueba `test/integration/auth_flow_integration_test.dart` usa el `ApiClient` real de la aplicación (paquete `http`) contra el backend. Solo se simula el almacén seguro de la sesión del dispositivo, que no existe en un test. Se corre con `flutter test test/integration --dart-define=API_BASE_URL=http://127.0.0.1:10000/api/v1`: 5 pruebas aprobadas.
+
+![Integración móvil ↔ backend](../assets/chapter-6/integration-tests/mobile-backend-integration-run.png)
+
+Además, `test/guest_booking_api_test.dart` verifica el contrato del cliente de reservas del móvil con respuestas simuladas del backend: creación de reserva, error devuelto por el backend, pago con tarjeta rechazado y cancelación no aceptada.
 
 ### 6.1.3. Core Behavior-Driven Development
 
