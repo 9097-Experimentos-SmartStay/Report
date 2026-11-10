@@ -159,26 +159,33 @@ El proyecto está organizado dentro de una **organización en GitHub**, donde ca
 
 - **Aplicación Móvil:**  
   - **Tecnología:** Flutter (Dart)
-  - **IDE:** Android Studio / VS Code
+  - **IDE:** Android Studio
   - **URL del repositorio:** https://github.com/9097-Experimentos-SmartStay/mobile
   - **Plataforma de despliegue:** APK (GitHub Releases) / emulador Android
 
 - **Web Services (Backend):**  
   - **Tecnología:** ASP.NET Core (C#)
+  - **IDE:** JetBrains Rider
   - **URL del repositorio:** https://github.com/9097-Experimentos-SmartStay/backend
   - **Arquitectura:** RESTful API
   - **Plataforma de despliegue:** Render
 
 - **Frontend Web:**
   - **Tecnología:** Vue.js
+  - **IDE:** Visual Studio Code
   - **URL del repositorio:** https://github.com/9097-Experimentos-SmartStay/frontend
   - **Plataforma de despliegue:** Vercel
 
 - **Landing Page**
   - **Tecnología:** HTML, CSS, JavaScript
   - **URL del repositorio:** https://github.com/9097-Experimentos-SmartStay/landing-page
-  - **IDE:** WebStorm
+  - **IDE:** Visual Studio Code
   - **Plataforma de despliegue:** Vercel
+
+- **Informe (Report):**
+  - **Tecnología:** Markdown
+  - **IDE:** Visual Studio Code
+  - **URL del repositorio:** https://github.com/9097-Experimentos-SmartStay/Report
 
 Todos los repositorios implementan el modelo **GitFlow** como flujo de trabajo de colaboración y branching, garantizando un desarrollo ordenado y trazable.
 
