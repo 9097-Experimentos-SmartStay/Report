@@ -225,7 +225,7 @@ Este enfoque permite un control de versiones ordenado y un desarrollo paralelo s
 **Main branch (Rama principal):**  
 Es la rama principal del proyecto, donde se almacena el código estable y listo para producción.  
 Solo se integran cambios que hayan sido probados y validados previamente en las ramas de desarrollo (*develop*) y funcionalidad (*feature/*).  
-Esta rama representa el estado más confiable del proyecto y se encuentra protegida con reglas de revisión obligatoria.
+Esta rama representa el estado más confiable del proyecto y solo se actualiza mediante *merges* desde `develop` (versiones) o desde ramas `hotfix/*` (correcciones urgentes).
 
 **Develop branch (Rama de desarrollo):**  
 Actúa como un espacio de integración para el trabajo en equipo.  
@@ -248,31 +248,25 @@ Las ramas de funcionalidad siguen un esquema de nombres descriptivos, como por e
 - `feature/booking-system` - Sistema de reservas
 
 **Release branches (Ramas de versión):**  
-Se crean para preparar una nueva versión de producción desde `develop`.
+Se crean para preparar una nueva versión de producción desde `develop`. Siguen el esquema `release/vMAJOR.MINOR.PATCH`, por ejemplo:
 
 - `release/v1.0.0` - Primera versión estable
 - `release/v1.1.0` - Versión con nuevas funcionalidades
 
 **Hotfix branches (Ramas de corrección urgente):**  
-Se crean desde `main` para corregir problemas críticos en producción.
+Se crean desde `main` para corregir problemas críticos en producción. Siguen el esquema `hotfix/<descripcion>`, por ejemplo:
 
 - `hotfix/login-security` - Corrección de seguridad en login
 - `hotfix/payment-error` - Corrección de error en pagos
 
-### Evidencia de aplicación de GitFlow
+### Aplicación de GitFlow en el proyecto
 
-**Repositorio Mobile App:**
+Solo `main` y `develop` son ramas permanentes. Las ramas `feature/*`, `fix/*`, `release/*` y `hotfix/*` son **transitorias**: se crean para una tarea y se eliminan al integrarse, por lo que un listado de ramas en un momento dado no refleja el flujo de trabajo. Así se aplica GitFlow en los repositorios del proyecto:
 
-- Ramas activas: `main`, `develop`, `feature/responsive-design`, `feature/multilanguage`
-- Commits con convenciones: `feat:`, `fix:`, `docs:`
-- Pull Requests con revisiones de código
-
-**Repositorio Backend:**
-
-- Ramas activas: `main`, `develop`, `feature/api-rooms`, `feature/api-bookings`
-- Versionado semántico aplicado
-- Tags: `v1.0.0`, `v1.1.0`
-
+- **Integración diaria:** el trabajo se desarrolla en una rama transitoria creada desde `develop` y se integra de vuelta mediante *Pull Request*. Por ejemplo, en el repositorio del backend el pipeline de CI, la corrección de la política de contraseñas y el despliegue condicionado a los checks entraron como los Pull Requests #11, #12 y #13.
+- **Publicación:** cuando `develop` está estable se integra en `main` con un commit de *merge* del tipo `chore(release): merge develop into main`. Ese *merge* dispara los despliegues automáticos de Render y Vercel descritos en 5.1.4.
+- **Mensajes de commit:** todos los repositorios usan Conventional Commits (`feat:`, `fix:`, `docs:`, `ci:`, `test:`, `chore:`).
+- **Versionado:** las versiones se nombran con versionado semántico (`vMAJOR.MINOR.PATCH`), tanto para las ramas `release/*` como para los tags.
 
 ### 5.1.3. Source Code Style Guide &amp; Conventions
 
