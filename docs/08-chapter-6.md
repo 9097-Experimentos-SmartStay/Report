@@ -92,165 +92,206 @@ Para verificar el comportamiento del software desde la perspectiva del negocio y
 
 #### 1. Cobertura de User Stories y Escenarios BDD
 
-Se implementaron y validaron **28 escenarios** en sintaxis Gherkin (en español), distribuidos en las **9 User Stories** centrales del Product Backlog:
+Se implementaron **29 escenarios** en sintaxis Gherkin, distribuidos en **9 User Stories** del Product Backlog. Cada escenario está etiquetado según el tipo de camino que verifica: `@happy-path` para el flujo esperado, y `@negative`, `@validation`, `@boundary` o `@security` para los caminos alternos (rechazos, validaciones, casos límite y seguridad).
 
-| User Story ID | Título de la Historia | Módulo / Contexto | Escenarios Implementados | Estado |
-| --- | --- | --- | --- | --- |
-| **US-01** | Registro de usuario con validación | IAM | 3 | Aprobado |
-| **US-02** | Inicio de sesión seguro | IAM | 3 | Aprobado |
-| **US-03** | Gestión de perfiles y roles | IAM / Profiles | 3 | Aprobado |
-| **US-04** | Recuperación de contraseña | IAM | 3 | Aprobado |
-| **US-52** | Autenticación 2FA para staff | IAM | 3 | Aprobado |
-| **US-06** | Gestión de habitaciones y estados | Accommodations | 3 | Aprobado |
-| **US-53** | Configuración de hotel y habitaciones | Accommodations | 3 | Aprobado |
-| **US-07** | Gestión centralizada de reservas | Bookings | 3 | Aprobado |
-| **US-51** | Reserva de habitación por huésped | Bookings | 4 | Aprobado |
-| **Total** | **9 Historias de Usuario** | **3 Contextos Delimitados** | **28 Escenarios** | **100% Pass** |
+| User Story | Título | Contexto | Escenarios | Camino feliz | Caminos alternos |
+| --- | --- | --- | ---: | ---: | ---: |
+| **US-01** | Registro de usuario | IAM | 3 | 1 | 2 |
+| **US-02** | Inicio de sesión seguro | IAM | 3 | 1 | 2 |
+| **US-03** | Gestión de perfiles y roles | IAM / Profiles | 3 | 2 | 1 |
+| **US-04** | Recuperación de contraseña | IAM | 3 | 2 | 1 |
+| **US-52** | Autenticación de dos factores para staff | IAM | 3 | 2 | 1 |
+| **US-06** | Gestión de habitaciones y estados | Accommodations | 3 | 2 | 1 |
+| **US-53** | Configuración de hotel y habitaciones | Accommodations | 3 | 1 | 2 |
+| **US-07** | Gestión centralizada de reservas | Bookings | 3 | 3 | 0 |
+| **US-51** | Reserva de habitación por huésped | Bookings | 5 | 1 | 4 |
+| **Total** | **9 historias** | **3 contextos** | **29** | **15** | **14** |
 
 #### 2. Especificación de Escenarios Gherkin (`.feature`)
 
-Los archivos `.feature` capturan los criterios de aceptación en lenguaje ubicuo mediante la estructura estándar `Dado-Cuando-Entonces`.
+Los archivos `.feature` capturan los criterios de aceptación en lenguaje de negocio mediante la estructura `Given-When-Then`, con el texto de los pasos en español. A continuación se muestran dos de los nueve archivos, tal como están en el repositorio.
+
+Las fechas de los escenarios de reservas se escriben de forma relativa a la fecha de ejecución (`hoy+30` equivale a treinta días después de hoy, y `hoy-3` a tres días antes), para que las pruebas no dejen de pasar cuando el calendario avanza.
 
 ##### Archivo: `US51_ReservaHabitacionPorHuesped.feature` (Contexto Bookings)
 
 ```gherkin
-Característica: US-51 Reserva de habitación por huésped
-  Como huésped
-  Quiero buscar habitaciones disponibles por fechas y reservar una
-  Para asegurar mi estadía sin necesidad de llamar al hotel
+@US-51
+@Bookings
+Feature: Reserva de habitación por huésped
 
-  Escenario: Registrar reserva para habitación disponible
-    Dado que el hotel cuenta con una habitación "101" de tipo "Simple" disponible del "2026-11-10" al "2026-11-15"
-    Y el huésped cuenta con un perfil registrado con correo "guest@smartstay.pe"
-    Cuando el huésped solicita reservar la habitación "101" para el rango del "2026-11-10" al "2026-11-15"
-    Entonces el sistema registra la reserva con estado "PendingPayment"
-    Y se genera un código de reserva único con formato "SS-"
-    Y la habitación deja de estar disponible para ese mismo rango de fechas
+  Como huésped del hotel SmartStay
+  Quiero reservar una habitación disponible para mis fechas de estadía
+  Para asegurar mi alojamiento de forma confiable
 
-  Escenario: Rechazar reserva por solapamiento de fechas
-    Dado que la habitación "101" ya tiene una reserva confirmada del "2026-11-10" al "2026-11-15"
-    Cuando otro huésped intenta reservar la habitación "101" del "2026-11-12" al "2026-11-14"
-    Entonces el sistema rechaza la solicitud indicando conflicto de disponibilidad
+  @US-51
+  @happy-path
+  Scenario: Registrar una reserva para una habitación disponible
+    Given que existe un hotel registrado y operativo
+    And existe una habitación "101" de tipo "Double" disponible con precio por noche de 150.00 soles
+    And existe un huésped registrado con correo "juan.perez@smartstay.pe" y nombre "Juan Perez"
+    When el huésped solicita registrar una reserva desde "hoy+30" hasta "hoy+34"
+    Then la reserva debe crearse exitosamente
+    And el estado inicial de la reserva debe ser "Pending"
+    And la reserva debe contener un código de reserva generado
+    And la reserva debe estar asociada a la habitación "101"
+
+  @US-51
+  @negative
+  Scenario: Rechazar una reserva que se superpone con otra reserva existente
+    Given que existe un hotel registrado y operativo
+    And existe una habitación "102" de tipo "Single" disponible con precio por noche de 100.00 soles
+    And existe una reserva activa para la habitación "102" del "hoy+39" al "hoy+44"
+    When otro huésped intenta registrar una reserva para la habitación "102" del "hoy+41" al "hoy+43"
+    Then la solicitud de reserva debe ser rechazada indicando que la habitación no está disponible
+
+  @US-51
+  @validation
+  Scenario: Rechazar una reserva cuya fecha de salida no sea posterior a la fecha de entrada
+    Given que existe un hotel registrado y operativo
+    And existe una habitación "103" de tipo "Suite" disponible con precio por noche de 250.00 soles
+    And existe un huésped registrado con correo "maria.lopez@smartstay.pe" y nombre "Maria Lopez"
+    When el huésped solicita registrar una reserva desde "hoy+39" hasta "hoy+37"
+    Then la solicitud de reserva debe ser rechazada por rango de fechas inválido
+
+  @US-51
+  @boundary
+  Scenario: Permitir una reserva que comienza el mismo día en que termina la reserva anterior
+    Given que existe un hotel registrado y operativo
+    And existe una habitación "104" de tipo "Double" disponible con precio por noche de 180.00 soles
+    And existe una reserva activa para la habitación "104" del "hoy+30" al "hoy+34"
+    When un nuevo huésped solicita registrar una reserva para la habitación "104" del "hoy+34" al "hoy+39"
+    Then la reserva debe crearse exitosamente
+    And el estado inicial de la reserva debe ser "Pending"
+
+  @US-51
+  @validation
+  @negative
+  Scenario: Rechazar una reserva cuya fecha de entrada ya pasó
+    Given que existe un hotel registrado y operativo
+    And existe una habitación "105" de tipo "Single" disponible con precio por noche de 100.00 soles
+    And existe un huésped registrado con correo "carlos.ruiz@smartstay.pe" y nombre "Carlos Ruiz"
+    When el huésped solicita registrar una reserva desde "hoy-3" hasta "hoy-1"
+    Then la solicitud de reserva debe ser rechazada porque la fecha de entrada ya pasó
 ```
 
 ##### Archivo: `US06_GestionHabitacionesYEstados.feature` (Contexto Accommodations)
 
 ```gherkin
-Característica: US-06 Gestión de habitaciones y estados
-  Como administrador
-  Quiero gestionar el estado de las habitaciones
-  Para mantener al día la operación diaria del hotel
+@US-06
+@Accommodations
+Feature: Gestión de habitaciones y estados
 
-  Escenario: Transición de estado disponible a mantenimiento
-    Dado que la habitación "201" se encuentra en estado "Available"
-    Cuando el administrador cambia el estado de la habitación a "Maintenance" indicando el motivo "Reparación de grifería"
-    Entonces el sistema actualiza el estado de la habitación a "Maintenance"
-    Y se registra el cambio en el historial de estados con fecha, usuario y motivo
+  Como personal del hotel (Staff / Housekeeping / Maintenance)
+  Quiero actualizar el estado operativo de una habitación
+  Para reflejar con precisión su disponibilidad y control en el sistema
 
-  Escenario: Rechazar transición inválida de ocupada a disponible
-    Dado que la habitación "201" se encuentra en estado "Occupied"
-    Cuando el personal intenta cambiar directamente el estado a "Available" sin pasar por limpieza
-    Entonces el sistema rechaza la transición indicando que el cambio no está permitido por política operativa
+  @US-06
+  @happy-path
+  Scenario: Cambiar el estado de una habitación de Disponible a Mantenimiento
+    Given que existe una habitación "301" en estado "Available"
+    When el personal solicita cambiar el estado de la habitación "301" a "Maintenance"
+    Then el estado de la habitación "301" debe actualizarse a "Maintenance"
+
+  @US-06
+  @happy-path
+  Scenario: Cambiar el estado de una habitación de Limpieza a Disponible
+    Given que existe una habitación "302" en estado "Cleaning"
+    When el personal solicita cambiar el estado de la habitación "302" a "Available"
+    Then el estado de la habitación "302" debe actualizarse a "Available"
+
+  @US-06
+  @negative
+  Scenario: Rechazar una transición de estado no permitida para la habitación
+    Given que existe una habitación "303" en estado "Occupied"
+    When el personal solicita cambiar el estado de la habitación "303" a "Available"
+    Then la solicitud de cambio de estado debe ser rechazada por transición no permitida
 ```
 
 #### 3. Implementación de Step Definitions en C# (.NET 9)
 
-La vinculación entre los pasos Gherkin y los servicios de dominio del backend se implementa mediante clases decoradas con el atributo `[Binding]` de Reqnroll:
+La vinculación entre los pasos Gherkin y los servicios del backend se implementa con clases decoradas con el atributo `[Binding]` de Reqnroll. Cada clase usa los servicios de aplicación reales del contexto, con repositorios y fachadas de prueba. A continuación se muestran fragmentos de `US51_ReservaHabitacionStepDefinitions.cs`.
 
 ```csharp
-[Binding]
-public class US51_ReservaHabitacionStepDefinitions
+[Given(@"existe una habitación ""(.*)"" de tipo ""(.*)"" disponible con precio por noche de (.*) soles")]
+public void GivenExisteUnaHabitacionDeTipoDisponibleConPrecioPorNocheDeSoles(string number, string type, decimal price)
 {
-    private readonly IBookingCommandService _bookingCommandService;
-    private readonly IRoomAvailabilityQueryService _availabilityService;
-    private DateRange _requestedRange;
-    private Booking _createdBooking;
-    private Exception _thrownException;
+    _roomNumber = number;
+    _roomId = int.Parse(number);
+    _roomType = type;
+    _roomPrice = price;
+}
 
-    public US51_ReservaHabitacionStepDefinitions(
-        IBookingCommandService bookingCommandService,
-        IRoomAvailabilityQueryService availabilityService)
+[When(@"el huésped solicita registrar una reserva desde ""(.*)"" hasta ""(.*)""")]
+public async Task WhenElHuespedSolicitaRegistrarUnaReservaDesdeHasta(string checkIn, string checkOut)
+{
+    try
     {
-        _bookingCommandService = bookingCommandService;
-        _availabilityService = availabilityService;
+        var service = CreateService();
+        var command = new CreateBookingCommand(
+            Requester: BookingRequester.Guest(_guestUserId, _guestEmail),
+            RoomId: _roomId,
+            GuestName: _guestName,
+            GuestEmail: _guestEmail,
+            CheckInDate: RelativeDates.Parse(checkIn),
+            CheckOutDate: RelativeDates.Parse(checkOut),
+            UserId: _guestUserId);
+
+        _createdBooking = await service.Handle(command);
     }
-
-    [Given(@"que el hotel cuenta con una habitación ""(.*)"" de tipo ""(.*)"" disponible del ""(.*)"" al ""(.*)""")]
-    public void DadoHabitacionDisponible(
-        string roomNumber,
-        string roomType,
-        string from,
-        string to)
+    catch (Exception ex)
     {
-        _requestedRange = new DateRange(
-            DateTime.Parse(from),
-            DateTime.Parse(to)
-        );
+        _caughtException = ex;
     }
+}
 
-    [When(@"el huésped solicita reservar la habitación ""(.*)"" para el rango del ""(.*)"" al ""(.*)""")]
-    public async Task CuandoHuespedSolicitaReserva(
-        string roomNumber,
-        string from,
-        string to)
+[Then(@"la solicitud de reserva debe ser rechazada porque la fecha de entrada ya pasó")]
+public void ThenLaSolicitudDeReservaDebeSerRechazadaPorqueLaFechaDeEntradaYaPaso()
+{
+    _caughtException.Should().BeOfType<DomainValidationException>()
+        .Which.Code.Should().Be(BookingErrorCodes.CheckInInPast);
+    _createdBooking.Should().BeNull();
+}
+```
+
+El helper `RelativeDates` interpreta las fechas relativas de los escenarios:
+
+```csharp
+/// <summary>
+/// Resolves the dates written in Gherkin scenarios. Besides ISO dates it understands
+/// <c>hoy+N</c> (N days after today) or <c>hoy-N</c> (N days before), so scenarios never go stale as the calendar moves.
+/// </summary>
+public static class RelativeDates
+{
+    private const string Today = "hoy";
+
+    public static DateTime Parse(string text)
     {
-        try
+        var value = text.Trim();
+        if (value.StartsWith(Today, StringComparison.OrdinalIgnoreCase) && value.Length > Today.Length
+            && value[Today.Length] is '+' or '-')
         {
-            var command = new CreateBookingCommand(
-                1,
-                roomNumber,
-                _requestedRange,
-                "guest@smartstay.pe"
-            );
-
-            _createdBooking = await _bookingCommandService.Handle(command);
+            var days = int.Parse(value[Today.Length..], System.Globalization.CultureInfo.InvariantCulture);
+            return DateTime.UtcNow.Date.AddDays(days);
         }
-        catch (Exception ex)
-        {
-            _thrownException = ex;
-        }
-    }
 
-    [Then(@"el sistema registra la reserva con estado ""(.*)""")]
-    public void EntoncesEstadoReserva(string expectedStatus)
-    {
-        _createdBooking.Should().NotBeNull();
-        _createdBooking.Status.ToString().Should().Be(expectedStatus);
-    }
-
-    [Then(@"se genera un código de reserva único con formato ""(.*)""")]
-    public void EntoncesCodigoUnicoGenerado(string prefix)
-    {
-        _createdBooking.BookingCode.Value.Should().StartWith(prefix);
+        return DateTime.Parse(value, System.Globalization.CultureInfo.InvariantCulture);
     }
 }
 ```
 
 #### 4. Resultados de Ejecución
 
-La ejecución de las pruebas mediante el CLI de .NET (`dotnet test`) consolida tanto las pruebas unitarias y de integración como la suite de BDD:
+El 9 de noviembre de 2026 se ejecutó `dotnet test` sobre la solución completa, con un contenedor de MySQL 8.0.36 para la prueba de concurrencia. Pasaron las 266 pruebas de las tres suites, sin fallos ni omisiones:
 
-```text
-Serie de pruebas para BackendAwSmartstay.API.UnitTests.dll (net9.0)
-Correctas! - Con error: 0, Superado: 10, Omitido: 0, Total: 10
-
-Serie de pruebas para BackendAwSmartstay.API.Tests.dll (net9.0)
-Correctas! - Con error: 0, Superado: 143, Omitido: 0, Total: 143
-
-Serie de pruebas para BackendAwSmartstay.API.BddTests.dll (net9.0)
-Correctas! - Con error: 0, Superado: 28, Omitido: 0, Total: 28
-
-Total Global: 181 pruebas superadas, 0 errores, 0 omitidas. Duración: 2.4 s
-```
-
-| Suite de Pruebas | Framework / Versión | Tipo de Prueba | Total | Aprobados | Fallidos |
+| Suite de pruebas | Framework | Tipo de prueba | Total | Aprobadas | Fallidas |
 | --- | --- | --- | ---: | ---: | ---: |
-| `BackendAwSmartstay.API.UnitTests` | NUnit 4.2.2 / .NET 9 | Unitarias de Dominio | 10 | 10 | 0 |
-| `BackendAwSmartstay.API.Tests` | NUnit 4.2.2 / .NET 9 | Unitarias e Integración | 143 | 143 | 0 |
-| `BackendAwSmartstay.API.BddTests` | Reqnroll 2.3.0 + NUnit 4.2.2 | Comportamiento (BDD / Gherkin) | 28 | 28 | 0 |
-| **Total Consolidado** | **.NET 9 Test Platform** | **Verificación Completa** | **181** | **181** | **0** |
+| `BackendAwSmartstay.API.UnitTests` | NUnit | Unitarias de dominio y aplicación (Bookings y Payments) | 87 | 87 | 0 |
+| `BackendAwSmartstay.API.Tests` | NUnit | Unitarias e integración (Accommodations, Bookings, IAM y Profiles) | 150 | 150 | 0 |
+| `BackendAwSmartstay.API.BddTests` | Reqnroll + NUnit | Comportamiento (BDD / Gherkin) | 29 | 29 | 0 |
+| **Total** | | | **266** | **266** | **0** |
 
-![guerkin-test](../assets/chapter-6/testing-suites/guerkin-test.png)
+![Ejecución de las tres suites de pruebas](../assets/chapter-6/testing-suites/test-suites-run.png)
 
 ### 6.1.4. Core System Tests
 
