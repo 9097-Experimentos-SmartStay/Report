@@ -8,6 +8,8 @@ La Integración Continua (CI) en la plataforma SmartStay reúne las prácticas y
 
 <!-- Diagrama del equipo (assets/chapter-7/ContinuousIntegration/ContinuousIntegration1.jpeg) retirado: muestra una app móvil Android/Kotlin y un paso de CodeReview automático que no existen. Reemplazar por un diagrama actualizado. -->
 
+![Flujo de integración continua de SmartStay](../assets/chapter-7//ContinuousIntegration/ci-overview.png)
+
 ---
 
 ### 7.1.1. Tools and Practices
