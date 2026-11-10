@@ -1218,6 +1218,86 @@ Gracias a este flujo de trabajo, el equipo pudo avanzar de forma paralela y orde
 
 El equipo logró mantener una comunicación constante durante el cierre del proyecto, priorizando las tareas críticas y asegurando que la aplicación pueda ser presentada de forma funcional. La colaboración entre los integrantes permitió completar los flujos principales de SmartStay y preparar una entrega final coherente con los objetivos del curso.
 
+#### Avance 2 (AV2)
+
+Para AV2 el equipo obtuvo los commits de los cuatro repositorios del producto con `git log` sobre **todas las ramas remotas**, excluyendo los commits de fusión, y los contrastó con los gráficos de contribuciones de GitHub, que solo consideran la rama `main`.
+
+**Commits por integrante y repositorio, en todas las ramas** (entre paréntesis, los commits desde el 19/09/2026, inicio de AV2):
+
+| Integrante | `backend` | `frontend` | `mobile` | `landing-page` | `Report` | Total |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| Bonifacio Jaramillo, Samuel Jesus | 1 (1) | 2 (0) | 0 (0) | 1 (0) | 11 (3) | 15 (4) |
+| Galindo Manuel, Alejandro Manuel | 3 (3) | 2 (2) | 2 (1) | 0 (0) | 6 (1) | 13 (7) |
+| Ponce Perales, Alberto Alejandro | 0 (0) | 0 (0) | 0 (0) | 0 (0) | 0 (0) | 0 (0) |
+| Sulca Sanchez, Piero Angel | 90 (5) | 168 (0) | 1 (0) | 13 (0) | 11 (0) | 283 (5) |
+| Verona Flores, Ítalo Sebastián | 9 (4) | 112 (0) | 0 (0) | 30 (0) | 12 (4) | 163 (8) |
+| Otros colaboradores (no figuran en la relación de integrantes) | 0 (0) | 42 (0) | 8 (0) | 5 (0) | 0 (0) | 55 (0) |
+
+Los autores de Git se asignaron a cada integrante por su nombre de usuario o correo. «Otros colaboradores» agrupa a autores que no figuran en la relación de integrantes del equipo actual (`shiloox`, `NatValverde15`, `Jareth341`, `Jaredt Montes` y `JulyP`) y cuyos commits se conservan en el historial del repositorio.
+
+**Commits de AV2 por repositorio y rama**
+
+**`backend`** — https://github.com/9097-Experimentos-SmartStay/backend
+
+| Branch | Commit Id | Commit Message | Autor | Committed on |
+| :--- | :---: | :--- | :--- | :---: |
+| `develop` | `2eb6464` | ci: deploy to render only after ci checks pass on main | Sulca Sanchez, Piero Angel | 06/10/2026 |
+| `develop` | `b646880` | fix(iam): apply the password policy to the seeded chain admin | Sulca Sanchez, Piero Angel | 06/10/2026 |
+| `develop` | `28af02f` | ci: add backend lint, dependency audit, build, test and package pipeline | Sulca Sanchez, Piero Angel | 06/10/2026 |
+| `develop` | `f875916` | fix(deps): patch vulnerable packages and drop unused sqlite provider | Sulca Sanchez, Piero Angel | 06/10/2026 |
+| `develop` | `09c2fae` | style: apply dotnet format whitespace rules | Sulca Sanchez, Piero Angel | 06/10/2026 |
+| `develop, main` | `8bdda14` | feat(integration): fix integration test | Verona Flores, Ítalo Sebastián | 06/10/2026 |
+| `develop, main` | `00f3c16` | feat(guerkin): Complete the guerkin-test | Verona Flores, Ítalo Sebastián | 05/10/2026 |
+| `develop, main` | `92c2137` | feat(test): add testing classes for payment BC | Bonifacio Jaramillo, Samuel Jesus | 05/10/2026 |
+| `develop, main` | `fad6cac` | feat: remove precaution and write correctly the summary | Verona Flores, Ítalo Sebastián | 05/10/2026 |
+| `develop, main` | `a15eadd` | Refactor(test): change the code o xunit to nunit | Verona Flores, Ítalo Sebastián | 05/10/2026 |
+| `develop, main` | `ce59ee8` | feat(bookings): add unit tests | Galindo Manuel, Alejandro Manuel | 05/10/2026 |
+| `develop, main` | `9dfd8c4` | fix: add missing files | Galindo Manuel, Alejandro Manuel | 03/10/2026 |
+| `develop, main` | `d0def37` | feat: add remaining user stories of the product backlog | Galindo Manuel, Alejandro Manuel | 03/10/2026 |
+
+**`frontend`** — https://github.com/9097-Experimentos-SmartStay/frontend
+
+| Branch | Commit Id | Commit Message | Autor | Committed on |
+| :--- | :---: | :--- | :--- | :---: |
+| `develop, main` | `1be61df` | fix: add missing files | Galindo Manuel, Alejandro Manuel | 03/10/2026 |
+| `develop, main` | `b742122` | feat: add new functions & product backlog US | Galindo Manuel, Alejandro Manuel | 03/10/2026 |
+
+**`mobile`** — https://github.com/9097-Experimentos-SmartStay/mobile
+
+| Branch | Commit Id | Commit Message | Autor | Committed on |
+| :--- | :---: | :--- | :--- | :---: |
+| `main` | `cda9496` | feat: add MFA sign-in, staff reception app and fix guest booking flow | Galindo Manuel, Alejandro Manuel | 06/10/2026 |
+
+**`Report`** — https://github.com/9097-Experimentos-SmartStay/Report
+
+| Branch | Commit Id | Commit Message | Autor | Committed on |
+| :--- | :---: | :--- | :--- | :---: |
+| `develop` | `324a5d5` | docs: add 7.2 & 7.3 assets | Galindo Manuel, Alejandro Manuel | 08/10/2026 |
+| `develop` | `a183580` | docs: enhance CI documentation with detailed practices and pipeline components | Verona Flores, Ítalo Sebastián | 06/10/2026 |
+| `develop` | `67f24cc` | docs: add integration test images to Chapter VI for enhanced validation context | Verona Flores, Ítalo Sebastián | 06/10/2026 |
+| `develop` | `4883b18` | docs: add new payment test images and update Chapter VI | Bonifacio Jaramillo, Samuel Jesus | 05/10/2026 |
+| `develop` | `c0ffcb2` | docs: add Gherkin test suite and scenarios for Behavior-Driven Development in Chapter VI | Verona Flores, Ítalo Sebastián | 05/10/2026 |
+| `develop` | `4a2f392` | docs: add pass-test image to Chapter VI for enhanced validation context | Verona Flores, Ítalo Sebastián | 05/10/2026 |
+| `develop` | `18b76ac` | docs: update Chapter VI with validation strategy details and add StaffControllerTest image | Bonifacio Jaramillo, Samuel Jesus | 04/10/2026 |
+| `develop` | `9d1c713` | docs: add Chapter VI on Product Verification & Validation and Chapter VII on DevOps Practices, including testing images | Bonifacio Jaramillo, Samuel Jesus | 04/10/2026 |
+
+**Gráficos de contribuciones de GitHub**
+
+![Contribuciones al repositorio backend](../assets/chapter-5/collaboration-insights/backend-contributors.jpg)
+
+![Contribuciones al repositorio frontend](../assets/chapter-5/collaboration-insights/frontend-contributors.jpg)
+
+![Contribuciones al repositorio mobile](../assets/chapter-5/collaboration-insights/mobile-contributors.jpg)
+
+![Contribuciones al repositorio landing-page](../assets/chapter-5/collaboration-insights/landing-page-contributors.jpg)
+
+**Interpretación.**
+
+1. **El trabajo de AV2 se concentró en el backend y en las pruebas.** De los 16 commits de código de AV2, 13 corresponden al backend: las pruebas unitarias, de integración y de comportamiento (Alejandro, Ítalo y Samuel) y el pipeline de CI con la auditoría de dependencias (Piero).
+2. **La landing page no tuvo commits en AV2**, porque quedó completa en la entrega anterior, y el frontend web tuvo 2, ambos del backlog de historias de usuario.
+3. **La participación está desigual.** Piero Sulca concentra 283 de los 529 commits de los cuatro repositorios y el informe, y Alberto Ponce no registra commits con su identidad. Esta distribución no implica que el resto del trabajo no exista, ya que parte de él ocurre fuera de Git (entrevistas, diagramas y reuniones), pero el requisito del enunciado es que todos los integrantes participen en la implementación de cada producto. Se propone repartir las tareas del próximo Sprint de modo que cada integrante tenga commits propios en al menos un repositorio de código.
+4. **Los gráficos de GitHub subestiman el trabajo en ramas.** El frontend muestra 86 commits de Piero en `main`, mientras que el historial completo registra 168, porque la mayoría se hizo en ramas de funcionalidad. Por eso la tabla anterior usa todas las ramas.
+
 ## 5.3. Video About-the-Product
 
 En el video se mostró una demo funcional de SmartStay, recorriendo sus principales funcionalidades: inicio de sesión, panel de administrador, y gestión de habitaciones y reservas, validando visualmente el cumplimiento de los criterios de aceptación definidos.

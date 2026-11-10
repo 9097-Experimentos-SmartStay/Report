@@ -2,10 +2,11 @@
 
 ## 7.1. Continuous Integration
 
-La Integración Continua (CI) en la plataforma SmartStay constituye el conjunto de prácticas, mecanismos de automatización y herramientas orientadas a validar, compilar y verificar la calidad de cada incremento de código desarrollado por el equipo. Dado que la arquitectura de la solución involucra múltiples componentes heterogéneos —Backend RESTful en ASP.NET Core, Frontend Web en Vue.js, Landing Page en HTML/CSS/JS y la Aplicación Móvil nativa en Android (Kotlin)—, el flujo de CI se diseñó para ejecutarse de forma distribuida y desatendida sobre los repositorios de GitHub bajo el flujo de trabajo GitFlow.
+La Integración Continua (CI) en la plataforma SmartStay reúne las prácticas y la automatización que validan, compilan y verifican cada incremento de código del equipo. La solución tiene cuatro componentes con tecnologías distintas: un backend RESTful en ASP.NET Core (.NET 9), una aplicación web en Vue 3 con Vite y PrimeVue, una landing page en JavaScript con Vite y Tailwind CSS, y una aplicación móvil en Flutter (Dart). Cada componente vive en su propio repositorio de GitHub y se integra bajo el flujo de trabajo GitFlow.
 
+**Estado actual.** El backend es el único repositorio con un pipeline de CI en `develop` y `main` (`ci-backend.yml`). Para el frontend web, la landing page y la aplicación móvil se definieron workflows equivalentes (`ci.yml`) en la rama `feature/av2-ci` de cada repositorio, pendientes de fusión. En este capítulo se distingue siempre entre lo que ya está en ejecución y lo que está propuesto.
 
-![ContinousIntegration1](../assets/chapter-7/ContinuousIntegration/ContinuousIntegration1.jpeg)
+<!-- Diagrama del equipo (assets/chapter-7/ContinuousIntegration/ContinuousIntegration1.jpeg) retirado: muestra una app móvil Android/Kotlin y un paso de CodeReview automático que no existen. Reemplazar por un diagrama actualizado. -->
 
 ---
 
@@ -15,258 +16,441 @@ Para garantizar que el código integrado sea funcional, seguro y conforme a los 
 
 #### 1. Herramientas de Integración Continua
 
-* **GitHub Actions:** Orquestador principal de automatización. Gestiona los flujos de trabajo (*workflows*) declarados en archivos YAML dentro de `.github/workflows/` (tales como `docker-publish.yml` y flujos de integración continua específicos por componente).
+* **GitHub Actions:** orquestador de la automatización. Los flujos se declaran en archivos YAML dentro de `.github/workflows/`. En el backend existen `ci-backend.yml` (integración), `docker-publish.yml` (imagen Docker) y `scheduler.yml` (procesos periódicos).
 
-* **Entornos de Ejecución (.NET SDK, Node.js y JDK):**
-  * Para el Backend: **.NET SDK 8.0** con la herramienta de configuración global `.config/dotnet-tools.json` para estandarizar el conjunto de herramientas de compilación y pruebas.
-  * Para el Frontend Web y Landing Page: **Node.js (LTS)** con gestor de paquetes `npm`.
-  * Para la Aplicación Móvil: **OpenJDK 17** y **Gradle** en Android Studio para la compilación de módulos Kotlin.
+* **Entornos de ejecución:**
+  * Backend: **.NET SDK 9** (`actions/setup-dotnet`), con caché de paquetes NuGet entre ejecuciones.
+  * Frontend web y landing page: **Node.js 22** con `npm ci` (workflows propuestos).
+  * Aplicación móvil: **Flutter** en el canal estable, mediante `subosito/flutter-action` (workflow propuesto).
 
-* **Herramientas de Análisis Estático y Linters:**
-  * **ESLint y Prettier:** Verificación de formato, sintaxis limpia y cumplimiento de buenas prácticas de JavaScript y Vue.js.
-  * **Roslyn Analyzers / C# Coding Conventions:** Validación del código en el backend siguiendo las convenciones de Microsoft ASP.NET Core (nombres en PascalCase, contratos explícitos e inyección de dependencias).
-  * **Android Lint / ktlint:** Comprobación de estándares de código limpio y optimización de recursos XML y Kotlin en la aplicación móvil.
+* **Herramientas de análisis estático:**
+  * Backend: `dotnet format --verify-no-changes` para el formato del código y compilación con `--warnaserror` para tratar las advertencias como errores.
+  * Frontend web: **ESLint 8** con `plugin:vue/vue3-essential` (configuración y workflow propuestos).
+  * Aplicación móvil: `flutter analyze` con el conjunto `flutter_lints` (workflow propuesto).
+
+* **Auditoría de dependencias:** `dotnet list package --vulnerable --include-transitive` en el job *Dependency audit* del backend. En el frontend y la landing page, `npm audit` se ejecutó de forma manual (apartado 6.2.1.2).
 
 #### 2. Prácticas de Ingeniería Aplicadas
 
-* **Integración Diaria y Commits Semánticos:** Los desarrolladores integran ramas de funcionalidad (`feature/`) hacia la rama base de integración (`develop`) de forma frecuente mediante *Pull Requests*. Los mensajes de confirmación respetan las convenciones estándar (`feat:`, `fix:`, `docs:`, `chore:`, `refactor:`) para facilitar la trazabilidad y la generación de registros de cambios.
+* **Integración mediante *pull requests* y commits convencionales:** el trabajo se desarrolla en ramas `feature/*`, se integra en `develop` y se libera en `main`. Los mensajes de commit siguen Conventional Commits (`feat:`, `fix:`, `docs:`, `ci:`, `style:`).
 
-* **Protección de Ramas (Branch Protection Rules):** La rama principal de producción (`main`) y la rama de integración (`develop`) se encuentran protegidas. No se permiten *direct pushes*; toda fusión exige:
-  1. Aprobación obligatoria por revisión de código entre pares (*Peer Review*).
-  2. Ejecución satisfactoria y sin errores de los flujos de GitHub Actions correspondientes.
+* **Compilación sin advertencias:** el job de compilación del backend usa `--warnaserror`, de modo que cualquier advertencia del compilador detiene el pipeline.
 
-* **Compilación Limpia (Zero-Warning Build):** El proceso de compilación automática está configurado para fallar si se detectan errores de sintaxis, dependencias circulares o advertencias de compilación no resueltas.
+* **Verificación de formato y de dependencias vulnerables como trabajos independientes:** *Lint* y *Dependency audit* corren en paralelo con *Build & test*, y el empaquetado (*Package API*) solo se ejecuta en un *push* y únicamente si los tres anteriores pasan.
 
-* **Auditoría de Dependencias Vulnerables:** Se ejecutan comandos automatizados de escaneo de librerías (`dotnet list package --vulnerable` y `npm audit`) antes de autorizar la compilación de paquetes productivos.
+* **Cancelación de ejecuciones obsoletas:** cada workflow usa `concurrency` con `cancel-in-progress`, de modo que una ejecución nueva sobre la misma rama cancela la anterior.
+
+* **Resultados como artefactos:** los reportes de pruebas (`.trx`) y de cobertura se publican como artefactos de la ejecución, con una retención de 14 días.
+
+* **Protección de ramas:** a la fecha **no está habilitada** en ninguno de los cuatro repositorios (GitHub responde «Branch not protected» para `main` y `develop`), por lo que la revisión entre pares y los *checks* obligatorios no los exige la plataforma. Se recomienda activarla (apartado 6.2.2).
 
 ---
 
 ### 7.1.2. Build & Test Suite Pipeline Components
 
-El pipeline de construcción y verificación de pruebas automatizadas está estructurado en componentes y etapas secuenciales. Cada vez que se crea un *Pull Request* o se realiza un *push* sobre `develop`, el pipeline orquesta las siguientes fases:
+El pipeline de construcción y pruebas se estructura en trabajos independientes. En el backend se ejecuta en cada *push* y *pull request* hacia `develop` y `main`.
 
-![PipelineComponents](../assets/chapter-7/BuildTest/PipelineComponents.jpeg)
+<!-- Diagrama del equipo (assets/chapter-7/BuildTest/PipelineComponents.jpeg) retirado: debe actualizarse para reflejar los trabajos reales de cada repositorio. -->
 
 #### 1. Componentes del Pipeline por Plataforma
 
-* **Backend (`backend-aw-smartstay`):**
-  * *Restauración y Compilación:* Se ejecutan `dotnet restore` sobre la solución `backend-aw-smartstay.sln` y posteriormente `dotnet build --configuration Release --no-restore`.
-  * *Ejecución de Pruebas Unitarias y de Dominio:* Mediante el ejecutable `dotnet test` se corren todas las clases del proyecto `BackendAwSmartstay.API.Tests`, aplicando el patrón **Arrange-Act-Assert (AAA)**:
-    * Pruebas de Dominio e Identidad: `GuestProfileTests.cs`, `StaffProfileTests.cs` y `StaffAssignmentTests.cs`.
-    * Pruebas de Reservas y Transacciones: `BookingTests.cs`, verificando transiciones de estado de reserva y cálculo de tarifas.
-    * Pruebas de Integración y Fachadas ACL: `BookingCommandServiceAclIntegrationTests.cs` y `AccommodationsContextFacadeTests.cs`.
-    * Pruebas de Persistencia y Concurrencia en MySQL: `ProfilesMySqlConcurrencyIntegrationTests.cs` y `BookingsPersistenceTests.cs`.
-    * Pruebas de Controladores REST: `GuestsControllerTests.cs` y `StaffControllerTests.cs`.
+* **Backend (`backend`), en ejecución:**
+  * *Lint:* `dotnet restore` y `dotnet format --verify-no-changes`.
+  * *Dependency audit:* falla si `dotnet list package --vulnerable --include-transitive` encuentra paquetes vulnerables.
+  * *Build & test:* `dotnet build --configuration Release --warnaserror` y `dotnet test` sobre la solución completa, que ejecuta las tres suites: `BackendAwSmartstay.API.UnitTests` (pruebas unitarias de Bookings y Payments), `BackendAwSmartstay.API.Tests` (pruebas de dominio, aplicación, infraestructura e interfaces de Accommodations, Bookings y Profiles) y `BackendAwSmartstay.API.BddTests` (28 escenarios Gherkin con Reqnroll). Publica los resultados y la cobertura como artefactos.
+  * *Package API:* `dotnet publish` del proyecto de la API, solo en un *push* y tras los tres trabajos anteriores.
 
-* **Landing Page y Frontend Web:**
-  * *Compilación y Bundle:* Ejecución de `npm ci` seguido de `npm run build` para generar los bundles estáticos minificados de producción en el directorio `dist/`.
-  * *Suite de Pruebas de UI:* Ejecución de `npm test` mediante Jest para validar el renderizado del home, el correcto direccionamiento de los botones CTA y la operatividad de los diccionarios de internacionalización (`languages.js`).
+* **Frontend web (`frontend`), propuesto:** `npm ci`, `npm run lint:ci` (ESLint, que hoy reporta 25 errores y por eso se configuró con `continue-on-error`) y `npm run build`. El repositorio no tiene pruebas automatizadas.
 
-* **Móvil Android:**
-  * *Compilación y Pruebas Locales:* Se ejecuta `./gradlew testDebugUnitTest` para comprobar los modelos de datos, la gestión de sesiones en `TokenManager` y la lógica de presentación de los ViewModels.
+* **Landing page (`landing-page`), propuesto:** `npm ci` y `npm run build`. El repositorio no tiene linter ni pruebas automatizadas.
 
-#### 2. Declaración del Workflow de Integración (Ejemplo de Configuración de CI)
+* **Aplicación móvil (`mobile`), propuesto:** `flutter pub get`, `flutter analyze`, `flutter test --coverage` (16 casos en tres archivos) y `flutter build apk --debug` para comprobar que la aplicación compila.
 
-A continuación, se documenta la estructura del pipeline de CI automatizado en GitHub Actions para el backend del sistema (`.github/workflows/ci-backend.yml`):
+#### 2. Declaración del Workflow de Integración
+
+A continuación, se documenta el workflow de CI del backend (`.github/workflows/ci-backend.yml`), tal como está en la rama `develop`:
 
 ```yaml
-name: SmartStay Backend CI Pipeline
+name: CI
 
 on:
-  push:
-    branches: [ develop, main ]
   pull_request:
-    branches: [ develop, main ]
+    branches: [develop, main]
+  push:
+    branches: [develop, main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  SOLUTION: backend-aw-smartstay.sln
+  API_PROJECT: BackendAwSmartstay.API/BackendAwSmartstay.API.csproj
+  DOTNET_VERSION: 9.0.x
+  DOTNET_NOLOGO: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
 
 jobs:
-  build-and-test:
-    name: Build, Static Analysis and Unit Testing
+  lint:
+    name: Lint
     runs-on: ubuntu-latest
-
+    timeout-minutes: 10
     steps:
-    - name: Checkout Source Code
-      uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-    - name: Setup .NET SDK
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: '8.0.x'
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
 
-    - name: Restore NuGet Dependencies
-      run: dotnet restore backend-aw-smartstay.sln
+      - uses: actions/cache@v6
+        with:
+          path: ~/.nuget/packages
+          key: nuget-${{ runner.os }}-${{ hashFiles('**/*.csproj') }}
+          restore-keys: nuget-${{ runner.os }}-
 
-    - name: Compile Backend Solution
-      run: dotnet build backend-aw-smartstay.sln --configuration Release --no-restore
+      - name: Restore
+        run: dotnet restore "$SOLUTION"
 
-    - name: Execute Test Suite (Domain, ACL & Persistence)
-      run: >
-        dotnet test backend-aw-smartstay.sln
-        --configuration Release
-        --no-build
-        --verbosity normal
-        --logger "trx;LogFileName=test_results.trx"
-        --collect:"XPlat Code Coverage"
+      - name: Verify code formatting
+        run: dotnet format "$SOLUTION" --verify-no-changes --no-restore
 
-    - name: Upload Test Results
-      if: always()
-      uses: actions/upload-artifact@v4
-      with:
-        name: test-results
-        path: "**/test_results.trx"
+  dependency-audit:
+    name: Dependency audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - uses: actions/cache@v6
+        with:
+          path: ~/.nuget/packages
+          key: nuget-${{ runner.os }}-${{ hashFiles('**/*.csproj') }}
+          restore-keys: nuget-${{ runner.os }}-
+
+      - name: Restore
+        run: dotnet restore "$SOLUTION"
+
+      - name: Fail on vulnerable packages
+        run: |
+          dotnet list "$SOLUTION" package --vulnerable --include-transitive | tee vulnerable-packages.txt
+          ! grep -q "has the following vulnerable packages" vulnerable-packages.txt
+
+  build-and-test:
+    name: Build & test
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - uses: actions/cache@v6
+        with:
+          path: ~/.nuget/packages
+          key: nuget-${{ runner.os }}-${{ hashFiles('**/*.csproj') }}
+          restore-keys: nuget-${{ runner.os }}-
+
+      - name: Restore
+        run: dotnet restore "$SOLUTION"
+
+      - name: Build
+        run: dotnet build "$SOLUTION" --configuration Release --no-restore --warnaserror
+
+      - name: Test
+        run: >
+          dotnet test "$SOLUTION"
+          --configuration Release
+          --no-build
+          --logger trx
+          --results-directory TestResults
+          --collect "XPlat Code Coverage"
+
+      - name: Upload test results
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: test-results
+          path: TestResults
+          retention-days: 14
+
+  package:
+    name: Package API
+    if: github.event_name == 'push'
+    needs: [lint, dependency-audit, build-and-test]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - uses: actions/cache@v6
+        with:
+          path: ~/.nuget/packages
+          key: nuget-${{ runner.os }}-${{ hashFiles('**/*.csproj') }}
+          restore-keys: nuget-${{ runner.os }}-
+
+      - name: Publish
+        run: dotnet publish "$API_PROJECT" --configuration Release --output publish
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: smartstay-api-${{ github.sha }}
+          path: publish
+          retention-days: 14
 ```
 
-El resultado de este pipeline garantiza que ningún incremento con pruebas fallidas o errores de compilación pueda ser fusionado al código base, garantizando la estabilidad operativa del sistema previo a las etapas de entrega y despliegue.
+**Resultado observado.** La ejecución #7 de este workflow sobre `develop` (07/10/2026, tras fusionar el pull request #13) pasó sus cuatro trabajos en 2 min 12 s, con 265 pruebas superadas y ninguna fallida (apartado 7.4.2).
 
 ## 7.2. Continuous Delivery
 
-La Entrega Continua (CD) en SmartStay extiende el flujo de Integración Continua para que cada incremento validado en `develop` quede empaquetado, versionado y listo para liberarse en cualquier momento. El objetivo es que el paso a producción sea una decisión de negocio y no un esfuerzo técnico. Para ello, cada componente se despliega automáticamente en un entorno de pruebas (*staging*) que replica las condiciones de producción.
+La Entrega Continua (CD) en SmartStay busca que cada incremento validado quede empaquetado y listo para liberarse. Hoy esto se cumple para el backend, cuyo artefacto es una imagen Docker; el frontend web y la landing page se construyen y publican en Vercel, y la aplicación móvil no tiene un proceso de entrega automatizado. SmartStay **no cuenta con un entorno de *staging* separado**: los *pull requests* de los repositorios web generan despliegues de vista previa (*Preview*) en Vercel, y la validación de integración se hace en la rama `develop`.
 
 ### 7.2.1. Tools and Practices.
 
-Para asegurar que cada versión generada sea reproducible, trazable y desplegable bajo demanda, se definieron las siguientes herramientas y prácticas:
+Para asegurar que cada versión generada sea reproducible y trazable, se emplean las siguientes herramientas y prácticas:
 
 #### 1. Herramientas de Entrega Continua
 
-* **GitHub Actions (Environments):** Orquesta los flujos de entrega definidos en `.github/workflows/` (como `docker-publish.yml` y `cd-staging.yml`). Usa *GitHub Environments* (`staging` y `production`) para separar configuraciones, secretos y reglas de aprobación por entorno.
+* **GitHub Actions:** el workflow `docker-publish.yml` del backend se ejecuta en cada *push* a `main`, en cada *tag* `v*.*.*`, en cada *pull request* hacia `main` y diariamente a las 03:27 UTC. Construye la imagen Docker y solo la publica cuando el evento no es un *pull request*.
 
 * **Docker y Docker Compose:**
-  * El Backend en ASP.NET Core se empaqueta con un `Dockerfile` *multi-stage*. La etapa `build` usa la imagen `mcr.microsoft.com/dotnet/sdk:8.0` y la etapa `runtime` usa `mcr.microsoft.com/dotnet/aspnet:8.0`, lo que reduce el tamaño de la imagen final.
-  * `docker-compose.yml` levanta localmente y en *staging* el backend junto a una instancia de **MySQL 8**, con lo que se asegura la paridad entre entornos.
+  * El backend se empaqueta con un `Dockerfile` de varias etapas: compila con la imagen `mcr.microsoft.com/dotnet/sdk:9.0` y se ejecuta con `mcr.microsoft.com/dotnet/aspnet:9.0`.
+  * `docker-compose.yml` levanta localmente el backend junto con una instancia de **MySQL 8.0**.
 
-* **Registro de Contenedores (GitHub Container Registry - GHCR):** Almacena las imágenes versionadas del backend (`ghcr.io/<org>/backend-aw-smartstay:<versión>`). Cada imagen se etiqueta con la versión semántica y con el *hash* corto del commit.
+* **GitHub Container Registry (GHCR):** almacena las imágenes del backend en `ghcr.io/9097-experimentos-smartstay/backend`, etiquetadas por el *action* `docker/metadata-action`.
 
-* **Gestión de Secretos (GitHub Secrets):** Centraliza las cadenas de conexión a MySQL, las claves de firma JWT, las credenciales del registro de contenedores y el *keystore* de firma de Android. Ningún dato sensible se versiona en el repositorio.
+* **Cosign (Sigstore):** el workflow firma el *digest* de la imagen publicada, para verificar su integridad y procedencia.
 
-* **Entity Framework Core Migrations:** Genera scripts SQL idempotentes (`dotnet ef migrations script --idempotent`) que se aplican de forma controlada sobre la base de datos de cada entorno.
+* **GitHub Secrets y variables de entorno:** las credenciales (por ejemplo, `CRON_API_KEY` del scheduler) se guardan como secretos de GitHub. En Render, los secretos de la API se declaran con `sync: false` en `render.yaml` y no se versionan.
 
-* **Hosting por componente:**
-  * Backend: servicio de contenedores en la nube (Azure App Service for Containers), con un *slot* de `staging`.
-  * Frontend Web (Vue.js): hosting estático con *preview deployments* por Pull Request (Netlify / Vercel).
-  * Landing Page: GitHub Pages, publicada desde el directorio `dist/`.
-  * Aplicación Android: **Firebase App Distribution** distribuye builds de prueba al equipo y a los *testers* internos.
+* **Entity Framework Core Migrations:** el backend aplica las migraciones pendientes y los datos semilla al arrancar (`MigrateAsync`, `SeedDatabaseAsync`).
 
-* **Gradle (Android Release Build):** Genera APK/AAB firmados mediante `./gradlew assembleRelease` y `./gradlew bundleRelease`, con la configuración de firma inyectada desde los secretos del pipeline.
+* **Vercel (*Preview deployments*):** el frontend web y la landing page tienen entornos `Preview` y `Production`; cada *pull request* publica una vista previa para revisarla antes de integrar.
 
 #### 2. Prácticas de Ingeniería Aplicadas
 
-* **Build Once, Deploy Many:** El artefacto (imagen Docker, bundle `dist/` o AAB) se construye una sola vez y se promueve sin recompilar entre entornos. Solo cambian las variables de configuración inyectadas en tiempo de despliegue (`ASPNETCORE_ENVIRONMENT`, `VITE_API_BASE_URL`, etc.).
+* **Build en CI:** la imagen y el paquete de la API se construyen en GitHub Actions; en un *pull request* la imagen se construye sin publicarse, para comprobar que es empaquetable.
 
-* **Versionamiento Semántico y Release Branches (GitFlow):** Cada entrega se prepara en una rama `release/x.y.z` creada desde `develop`. Al cerrarla se genera un *tag* `vX.Y.Z` en `main`, junto con un *changelog* construido automáticamente a partir de los commits semánticos.
+* **Versionamiento semántico:** el workflow reconoce *tags* `v*.*.*` para etiquetar las imágenes, aunque a la fecha los repositorios aún no tienen ningún *tag* ni *release* publicado.
 
-* **Despliegue Automático a Staging:** Todo merge a `develop` despliega automáticamente en el entorno `staging`. Ahí el equipo y el Product Owner validan las historias de usuario completadas antes de su liberación.
+* **Configuración externalizada:** la configuración por entorno se separa del código mediante variables de entorno, archivos `.env.example` y `appsettings.{Environment}.json`.
 
-* **Pruebas de Aceptación y Smoke Tests en Staging:** Tras cada despliegue se ejecutan verificaciones automáticas sobre los endpoints críticos (`/health`, autenticación, creación de reservas) y validaciones funcionales del Frontend Web, para confirmar que la versión es apta para producción.
+* **Imagen firmada:** cada imagen publicada lleva una firma de Cosign, con registro en el log de transparencia de Sigstore.
 
-* **Aprobación Manual para Producción:** El entorno `production` en GitHub Environments exige la aprobación explícita de un responsable (*required reviewers*). La liberación queda así controlada por el equipo aunque el artefacto ya esté listo.
-
-* **Configuración Externalizada:** Siguiendo los principios de *The Twelve-Factor App*, la configuración por entorno se separa del código fuente mediante variables de entorno y `appsettings.{Environment}.json`.
+* **Entrega móvil manual:** la aplicación móvil se compila con `flutter build apk`; el workflow propuesto solo comprueba que compila (`flutter build apk --debug`), y la distribución del APK sigue siendo manual.
 
 ### 7.2.2. Stages Deployment Pipeline Components.
 
-El pipeline de entrega continua de SmartStay organiza el recorrido de cada cambio en cinco etapas, alineadas con el flujo de ramas GitFlow: `feature/*` → Pull Request → `develop` → Pull Request → `main`. Cada etapa añade un nivel de verificación, de modo que solo los incrementos validados llegan a convertirse en artefactos de versión listos para producción.
+El recorrido de un cambio sigue el flujo de ramas GitFlow: `feature/*` → *pull request* → `develop` → *pull request* → `main`. Cada etapa añade un nivel de verificación.
 
-![StagesDeploymentPipeline](../assets/chapter-7/ContinuousDelivery/StagesDeploymentPipeline.png)
+<!-- Diagrama del equipo (assets/chapter-7/ContinuousDelivery/StagesDeploymentPipeline.png) retirado: describía un entorno de staging, GitHub Releases para el APK y aprobaciones obligatorias que no existen. Reemplazar por un diagrama actualizado. -->
 
 #### 1. Etapas del Pipeline
 
-* **01 – Desarrollo local:** Cada desarrollador trabaja en una rama `feature/*` con un entorno local equivalente al de los demás entornos.
-  * El backend y la base de datos MySQL se levantan con `docker compose up`.
-  * El Frontend Web y la Landing Page se ejecutan con `npm run dev`.
+* **01 – Desarrollo local:** cada desarrollador trabaja en una rama `feature/*`.
+  * El backend y MySQL se levantan con `docker compose up`.
+  * El frontend web y la landing page se ejecutan con `npm run dev`.
   * La aplicación móvil se prueba con `flutter run`.
-  * Esto reduce las diferencias entre entornos ("en mi máquina funciona") antes de abrir el Pull Request.
 
-* **02 – Integración (`develop`):** Al abrir un Pull Request hacia `develop`, o al fusionarse en ella, se ejecuta el pipeline de integración completo:
-  * Linters y análisis estático.
-  * Auditoría de dependencias vulnerables.
-  * Compilación de todos los componentes.
-  * Pruebas unitarias, de integración, BDD y de sistema.
-  * Los resultados se publican como artefactos del workflow (reportes de pruebas y cobertura), lo que da trazabilidad.
+* **02 – Integración (`develop`):** al abrir un *pull request* hacia `develop`, o al fusionarse en ella, el backend ejecuta `ci-backend.yml` completo: formato, auditoría de dependencias, compilación sin advertencias y las 265 pruebas. Los resultados se publican como artefactos.
 
-* **03 – Candidato a versión (PR a `main`):** Esta etapa es el punto de control crítico del pipeline.
-  * Al crearse el Pull Request de `develop` hacia `main`, se ejecuta nuevamente el CI completo.
-  * Se construye la imagen Docker del backend sin publicarla, para comprobar que es empaquetable.
-  * La fusión exige una aprobación manual obligatoria por parte de un responsable del equipo.
-  * Así, la decisión de liberar una versión permanece bajo control humano.
+* **03 – Candidato a versión (*pull request* a `main`):** al abrir el *pull request* de `develop` hacia `main` se ejecutan de nuevo `ci-backend.yml` y la construcción de la imagen Docker sin publicarla. La aprobación de la fusión la decide el equipo por convención; GitHub no la exige, porque las ramas no están protegidas.
 
-* **04 – Artefacto de versión (`main` / tag `v*.*.*`):** Una vez aprobado y fusionado el cambio en `main`, junto con el *tag* de versión semántica correspondiente, se generan los artefactos definitivos:
-  * **Backend:** imagen Docker publicada en **GitHub Container Registry (GHCR)** y firmada digitalmente con **Cosign**, lo que garantiza su integridad y procedencia.
-  * **Aplicación móvil:** APK adjuntado a un **GitHub Release** asociado al mismo *tag*.
+* **04 – Artefacto de versión (`main`):** al fusionarse en `main`, `docker-publish.yml` publica la imagen del backend en GHCR y la firma con Cosign. El *package* de la API de `ci-backend.yml` queda además como artefacto de la ejecución.
 
-* **05 – Listo para producción:** Al finalizar el pipeline se dispone de artefactos versionados, inmutables y verificados. Pueden desplegarse en producción en cualquier momento, sin volver a compilar, lo que cumple el principio *build once, deploy many* de la entrega continua.
-
+* **05 – Despliegue:** Render y Vercel despliegan desde `main`, como se describe en el apartado 7.3.
 
 ## 7.3. Continuous deployment
 
-El Despliegue Continuo en SmartStay automatiza el último paso del ciclo: llevar a producción, sin intervención manual, todo cambio que supere las etapas de integración y entrega. Este modelo se aplica por completo al Backend, al Frontend Web y a la Landing Page. La Aplicación Móvil sigue un esquema de despliegue progresivo, porque depende del proceso de revisión de Google Play.
+El Despliegue Continuo en SmartStay lleva a producción, sin intervención manual, los cambios integrados en `main`. Se aplica al backend (Render) y al frontend web y la landing page (Vercel). La aplicación móvil no se despliega de forma automática.
 
 ### 7.3.1. Tools and Practices.
 
-Para desplegar en producción de forma segura, frecuente y reversible, se emplean las siguientes herramientas y prácticas:
+Para desplegar en producción de forma segura y reversible, se emplean las siguientes herramientas y prácticas:
 
 #### 1. Herramientas de Despliegue Continuo
 
-* **GitHub Actions (Production Workflow):** El workflow `cd-production.yml` se dispara automáticamente con cada merge o *tag* sobre `main`. Toma la imagen ya validada en *staging* y la despliega en el entorno productivo.
+* **Render (backend):** el archivo `render.yaml` define el servicio como un contenedor Docker en el plan gratuito, región Oregon, apuntando a la rama `main` del repositorio, con `healthCheckPath: /health` y `autoDeployTrigger: checksPass`, de modo que Render despliega solo cuando los *checks* de CI de GitHub pasan.
 
-* **Azure App Service – Deployment Slots:** El backend se publica primero en un *slot* intermedio y luego se intercambia (*swap*) con el *slot* de producción. Esto permite despliegues sin tiempo de inactividad (*zero-downtime*) y una reversión inmediata.
+* **Vercel (frontend web y landing page):** `vercel.json` declara el *framework* Vite, el comando `npm run build`, el directorio de salida `dist` y una regla de reescritura que dirige todas las rutas a `index.html` para que funcione la navegación de la aplicación de una sola página. Cada *push* a `main` publica una nueva versión de producción, y el historial de despliegues permite volver a una anterior.
 
-* **Hosting Estático con Despliegue Atómico:** El Frontend Web y la Landing Page se publican de forma atómica. La nueva versión reemplaza a la anterior solo cuando la carga termina por completo, y se conserva el historial de despliegues para revertir con un clic.
+* **Monitoreo del servicio desplegado:**
+  * El *endpoint* `GET /health` de ASP.NET Core verifica la disponibilidad del API y la conectividad con MySQL (`AddMySql`).
+  * El workflow `scheduler.yml` y el workflow propuesto `uptime.yml` consultan el servicio de forma periódica (apartado 7.4).
 
-* **Google Play Console (Staged Rollout):** La Aplicación Android se publica primero en la pista de pruebas internas y luego en producción con un despliegue escalonado por porcentaje de usuarios (10% → 50% → 100%). La subida del AAB se automatiza desde GitHub Actions.
-
-* **Monitoreo y Observabilidad:**
-  * **Health Checks de ASP.NET Core** (`/health`) para verificar la disponibilidad del API y la conectividad con MySQL.
-  * **Azure Application Insights** para registrar logs, trazas, tiempos de respuesta y excepciones en producción.
-  * **Firebase Crashlytics** para reportar fallos de la aplicación móvil en tiempo real.
-
-* **Notificaciones del Pipeline:** Integración de GitHub Actions con el canal de comunicación del equipo (Discord / Slack) para avisar sobre despliegues exitosos, fallidos o revertidos.
+* **Notificaciones del pipeline:** GitHub notifica por correo y en su bandeja los workflows fallidos, según las preferencias de cada integrante (apartado 7.4.4).
 
 #### 2. Prácticas de Ingeniería Aplicadas
 
-* **Despliegue Automático tras Pipeline Verde:** Ningún cambio llega a producción sin haber superado la compilación, las pruebas unitarias y de integración, el análisis estático y la validación en *staging*. Si alguna etapa falla, el despliegue se detiene.
+* **Despliegue automático tras *checks* en verde:** desde el *pull request* #13 del backend, Render solo despliega a producción cuando los *checks* de CI pasan en `main`.
 
-* **Zero-Downtime Deployment:** El intercambio de *slots* (estrategia *blue-green*) garantiza que los huéspedes y el personal del hotel no sufran interrupciones durante la actualización.
+* **Verificación con *health check*:** Render consulta `/health` al arrancar una nueva versión; si la verificación no pasa, la versión nueva no recibe tráfico y sigue en servicio la anterior.
 
-* **Verificación Post-Despliegue (Smoke Tests en Producción):** Tras cada despliegue, el pipeline consulta los endpoints de salud y los flujos críticos. Si la verificación falla, se ejecuta automáticamente el *swap* inverso para restaurar la versión anterior.
+* **Migraciones al arrancar:** la aplicación aplica las migraciones pendientes y los datos semilla al iniciar, con la configuración de conexión y el certificado de la base de datos inyectados desde el entorno de Render.
 
-* **Estrategia de Rollback:** Toda versión productiva corresponde a un *tag* `vX.Y.Z` y a una imagen inmutable en GHCR. Revertir consiste en volver a desplegar la imagen previa, sin recompilar código.
+* **Reversión:** en Vercel se vuelve a una versión anterior desde el historial de despliegues; en Render se vuelve a desplegar una versión anterior desde su historial.
 
-* **Migraciones de Base de Datos Compatibles hacia Atrás:** Los cambios de esquema en MySQL se aplican de forma aditiva (*expand and contract*), para que la versión anterior del backend siga operando durante el despliegue y ante un eventual rollback.
+* **Hotfixes bajo GitFlow:** las correcciones urgentes siguen el flujo de ramas `hotfix/` descrito en el apartado 5.1.2.
 
-* **Feature Toggles:** Las funcionalidades incompletas o experimentales se integran desactivadas mediante banderas de configuración. Así el código se despliega continuamente sin exponer cambios no aprobados al usuario final.
+* **Lo que aún no existe:** pruebas de humo automáticas posteriores al despliegue, reversión automática, entorno de *staging* y banderas de funcionalidad. El apartado 7.4 documenta la primera aproximación de verificación continua con `uptime.yml`.
 
-* **Hotfixes bajo GitFlow:** Las correcciones urgentes se desarrollan en ramas `hotfix/` creadas desde `main`. Pasan por el mismo pipeline automatizado y se fusionan de vuelta a `develop` para mantener la consistencia del código.
-  
-  
 ### 7.3.2. Production Deployment Pipeline Components.
 
-El pipeline de despliegue continuo lleva automáticamente a producción cada versión aprobada en `main`. Se divide en tres flujos independientes, uno por plataforma de hosting. Los tres comparten el mismo disparador: un merge aprobado en `main` con todos los *checks* en verde.
+El despliegue a producción se divide en dos flujos automáticos y uno manual. Los dos automáticos comparten el mismo disparador: un cambio en `main`.
 
-![ProductionDeploymentPipeline](../assets/chapter-7/ContinuousDeployment/ProductionDeploymentPipeline.png)
+<!-- Diagrama del equipo (assets/chapter-7/ContinuousDeployment/ProductionDeploymentPipeline.png) retirado: muestra un APK publicado en GitHub Releases y cabeceras de seguridad en Vercel, que no existen. Reemplazar por un diagrama actualizado. -->
 
 #### 1. Backend en Render
 
-* **Disparador:** Merge aprobado en `main` con todos los *checks* de GitHub Actions en verde.
-* **Construcción:** Se compila una imagen Docker multietapa.
-  * La etapa de build usa el **.NET SDK 9**.
-  * La etapa final usa el runtime de **ASP.NET 9**, que es más ligero y seguro.
-  * Los secretos de configuración y el certificado de autoridad (CA) para la conexión segura a MySQL se inyectan desde el entorno de Render, sin versionarse en el repositorio.
-* **Arranque:** Al iniciar el contenedor se aplican automáticamente las migraciones de **Entity Framework Core** y los datos semilla (*seed*). Si alguna migración falla, la aplicación no arranca. Esto evita que una versión opere sobre un esquema de base de datos inconsistente.
-* **Health check:** Render consulta el endpoint `GET /health`, que verifica tanto la disponibilidad del API como la conectividad con MySQL. Si la verificación falla, el despliegue se descarta y sigue en servicio la versión anterior. Esto da un rollback implícito y sin tiempo de inactividad.
-* **Producción (API):** Superado el health check, la nueva versión del API RESTful pasa a atender el tráfico productivo.
+* **Disparador:** cambio en `main` con los *checks* de GitHub Actions en verde (`autoDeployTrigger: checksPass`).
+* **Construcción:** Render construye la imagen a partir del `Dockerfile` del repositorio. La etapa de compilación usa el **.NET SDK 9** y la etapa final, el runtime de **ASP.NET 9**.
+* **Arranque:** al iniciar el contenedor se aplican las migraciones de Entity Framework Core y los datos semilla.
+* **Health check:** Render consulta `GET /health`, que verifica el API y la conexión con MySQL.
+* **Producción (API):** superada la verificación, la nueva versión atiende el tráfico en `https://smartstay-movildev-api.onrender.com`. Al ser un servicio del plan gratuito, se suspende tras un periodo de inactividad y tarda varios segundos en reactivarse con la siguiente petición (apartado 7.4).
 
 #### 2. Frontend Web y Landing Page en Vercel
 
-* **Disparador:** Merge aprobado en `main` con *checks* en verde.
-* **Construcción:** Se instalan las dependencias de forma reproducible con `npm ci` y se genera el bundle optimizado de producción con `npm run build` (Vite).
-* **Publicación en CDN:** Los archivos estáticos se distribuyen en la red de borde de Vercel con tres configuraciones:
-  * Reescritura de rutas para el correcto funcionamiento de la SPA en Vue.js.
-  * Cabeceras de seguridad HTTP.
-  * Caché inmutable para los recursos versionados por *hash*.
-* **Producción (Web y Landing):** El despliegue es atómico. La nueva versión reemplaza a la anterior solo cuando la publicación termina por completo, y el historial de despliegues permite revertir de inmediato.
+* **Disparador:** *push* a `main`; los *pull requests* generan una vista previa.
+* **Construcción:** Vercel instala las dependencias y ejecuta `npm run build` (Vite), según `vercel.json`.
+* **Publicación:** los archivos estáticos se distribuyen desde la red de borde de Vercel, con la regla de reescritura para la aplicación de una sola página en el frontend web.
+* **Producción:** la aplicación web queda en `https://smartstay-movildev-web.vercel.app` y la landing page, en `https://smartstay-movildev-landing.vercel.app`. El despliegue reemplaza al anterior solo cuando termina, y el historial permite volver atrás.
 
-#### 3. Aplicación Móvil en GitHub Releases
+#### 3. Aplicación Móvil (manual)
 
-* **Disparador:** Merge aprobado en `main` con *checks* en verde.
-* **Construcción:** Se genera el APK de producción con `flutter build apk --release`.
-* **Publicación:** El APK, versionado según el *tag* semántico de la entrega, se adjunta automáticamente al **GitHub Release** correspondiente.
-* **Distribución (APK):** Los usuarios y *testers* descargan la última versión estable directamente desde la página de Releases del repositorio, con trazabilidad completa entre el binario y el código fuente que lo generó.
+* **Construcción:** se genera el APK con `flutter build apk` en el equipo de un integrante.
+* **Distribución:** el APK se comparte manualmente con quienes lo prueban. El repositorio `mobile` no tiene pipeline de despliegue; el workflow de CI propuesto solo verifica que la aplicación compila.
+
+---
+
+## 7.4. Continuous Monitoring
+
+El Monitoreo Continuo cierra el ciclo de DevOps de SmartStay: una vez que un cambio llega a producción, el equipo necesita saber si el servicio sigue disponible, qué tan rápido responde y si los procesos automáticos siguen ejecutándose. Como el backend corre en el plan gratuito de Render, el monitoreo tiene una condición particular: la plataforma suspende el servicio tras un periodo de inactividad y lo reactiva con la siguiente petición, lo que añade un arranque en frío de varios segundos.
+
+![Arranque en frío del backend en Render](../assets/chapter-7/monitoring/render-cold-start.jpg)
+
+*Pantalla de Render al recibir la primera petición a `https://smartstay-movildev-api.onrender.com/scalar/` con el servicio suspendido (09/11/2026, 20:02). La secuencia de arranque tarda alrededor de 26 segundos.*
+
+### 7.4.1. Tools and Practices
+
+#### 1. Herramientas de Monitoreo Continuo
+
+* **Endpoint de salud `GET /health` del backend:** expuesto con `app.MapHealthChecks("/health")` de ASP.NET Core y accesible sin autenticación. Render lo consulta tras cada despliegue y los workflows de monitoreo lo usan como señal de vida. El 09/11/2026 respondió `Healthy` con código 200 en 0.54 s.
+* **GitHub Actions:** ejecuta los trabajos programados del repositorio `backend` y deja un historial público de cada ejecución, con su duración y su resultado.
+  * `scheduler.yml`: cada hora despierta la API con `/health` (con reintentos para absorber el arranque en frío) y dispara los procesos periódicos de negocio: expirar reservas sin pago (US-07), alertar habitaciones en mantenimiento por más de 24 horas (US-06), dar seguimiento a solicitudes de demostración (US-27) y entregar los correos pendientes del *outbox*.
+  * `uptime.yml`: comprobación de disponibilidad cada 30 minutos de la API, la landing page y la aplicación web, propuesta en la rama `feature/av2-ci` del repositorio `backend` y pendiente de fusión.
+* **Render (logs y métricas del servicio):** conserva el registro de arranque, de despliegues y de errores del contenedor del backend.
+* **Vercel (historial de despliegues):** registra cada versión publicada de la landing page y de la aplicación web, y permite volver a una versión anterior.
+* **Lighthouse mediante PageSpeed Insights:** mide rendimiento, accesibilidad, buenas prácticas y SEO de las páginas públicas desde la perspectiva de un visitante móvil y de escritorio.
+* **Scalar (OpenAPI 3.0):** `https://smartstay-movildev-api.onrender.com/scalar/` publica la referencia interactiva de la API y sirve como comprobación de que el contrato desplegado coincide con el código.
+
+#### 2. Prácticas de Ingeniería Aplicadas
+
+* **Monitoreo sintético:** en lugar de esperar a que un usuario reporte una caída, un trabajo programado simula una visita cada 30 minutos y falla si cualquiera de los tres productos no responde con un código 2xx.
+* **Reintentos antes de alertar:** las comprobaciones usan `--retry` con espera entre intentos, de modo que el arranque en frío de Render no se interprete como una caída.
+* **Medición por release:** después de cada liberación a `main` se ejecuta Lighthouse sobre la landing page y la pantalla de inicio de sesión, y los resultados se comparan con los de la medición anterior. En este avance se realizó la primera medición, que sirve como línea base.
+* **Umbrales explícitos:** se propone considerar como regresión un rendimiento menor a 80, una accesibilidad menor a 90 o un SEO menor a 90 en cualquiera de las páginas medidas.
+* **Historial como evidencia:** los resultados de los workflows se conservan en GitHub Actions, de modo que cualquier integrante puede revisar si un trabajo falló y cuándo se recuperó.
+
+### 7.4.2. Monitoring Pipeline Components
+
+El pipeline de monitoreo combina señales automáticas continuas con mediciones puntuales por release:
+
+| Componente | Qué mide | Frecuencia | Origen de los datos |
+| :--- | :--- | :--- | :--- |
+| Render health check | Que el contenedor arranca y responde en `/health` | En cada despliegue | Render |
+| `scheduler.yml` | Que la API despierta y que los cuatro procesos periódicos terminan sin error | Cada hora | GitHub Actions |
+| `uptime.yml` | Disponibilidad de la API, la landing page y la aplicación web | Cada 30 minutos | GitHub Actions |
+| `ci-backend.yml` | Formato, dependencias vulnerables, compilación sin advertencias y pruebas | En cada *push* y *pull request* | GitHub Actions |
+| `docker-publish.yml` | Que la imagen del backend se construye y se publica en GHCR | En cada *push* a `main` y diariamente a las 03:27 UTC | GitHub Actions |
+| Lighthouse | Rendimiento, accesibilidad, buenas prácticas y SEO | Por release | PageSpeed Insights |
+
+**Resultados observados al 09/11/2026.**
+
+*Ejecuciones de `scheduler.yml`.* El flujo acumula 255 ejecuciones. En las últimas 100, del 18/10/2026 al 09/11/2026, las 100 terminaron con éxito y cada una tardó alrededor de 42 segundos.
+
+![Ejecuciones del workflow scheduler](../assets/chapter-7/monitoring/backend-scheduler-runs.jpg)
+
+*Ejecuciones de `docker-publish.yml`.* De las 86 ejecuciones del flujo, 82 terminaron con éxito y 4 fallaron. La última falla fue el 08/11/2026 a las 10:37 y la ejecución siguiente, el 09/11/2026, volvió a terminar con éxito.
+
+*Ejecución de `ci-backend.yml`.* La última ejecución sobre `develop`, del 07/10/2026 (tras fusionar el pull request #13), pasó sus cuatro trabajos (*Lint*, *Dependency audit*, *Build & test* y *Package API*) en 2 min 12 s. El trabajo *Build & test* ejecutó las tres suites de pruebas sin fallos:
+
+| Suite | Pruebas superadas | Fallidas |
+| :--- | :---: | :---: |
+| `BackendAwSmartstay.API.UnitTests` | 87 | 0 |
+| `BackendAwSmartstay.API.Tests` | 150 | 0 |
+| `BackendAwSmartstay.API.BddTests` | 28 | 0 |
+| **Total** | **265** | **0** |
+
+![Ejecución de CI del backend](../assets/chapter-7/ci-runs/backend-ci-run.jpg)
+
+*Disponibilidad.* El 09/11/2026 a las 20:09 se consultaron los tres productos con el mismo tipo de petición que usa `uptime.yml`:
+
+| Producto | URL | Código HTTP | Tiempo de respuesta |
+| :--- | :--- | :---: | :---: |
+| API (`/health`) | https://smartstay-movildev-api.onrender.com/health | 200 | 0.54 s |
+| Landing page | https://smartstay-movildev-landing.vercel.app | 200 | 0.45 s |
+| Aplicación web | https://smartstay-movildev-web.vercel.app | 200 | 0.80 s |
+
+*Referencia de la API.* Scalar muestra el contrato OpenAPI 3.0.4 «SmartStay Platform API» con sus grupos de operaciones.
+
+![Scalar API reference](../assets/chapter-7/monitoring/scalar-api-reference.jpg)
+
+*Lighthouse.* Se midió el 09/11/2026 con PageSpeed Insights la landing page y la pantalla de inicio de sesión de la aplicación web:
+
+| Página | Dispositivo | Rendimiento | Accesibilidad | Buenas prácticas | SEO | FCP | LCP | TBT | CLS |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Landing page | Móvil | 81 | 97 | 100 | 100 | 1.7 s | 4.7 s | 0 ms | 0 |
+| Landing page | Escritorio | 99 | 97 | 96 | 100 | 0.5 s | 1.0 s | 40 ms | 0.005 |
+| Aplicación web (`/login`) | Móvil | 80 | 88 | 100 | 83 | 1.5 s | 4.4 s | 190 ms | 0.018 |
+| Aplicación web (`/login`) | Escritorio | 98 | 88 | 100 | 83 | 0.4 s | 1.0 s | 80 ms | 0.035 |
+
+![Lighthouse de la landing page en móvil](../assets/chapter-6/lighthouse/landing-mobile.jpg)
+
+![Lighthouse de la landing page en escritorio](../assets/chapter-6/lighthouse/landing-desktop.jpg)
+
+![Lighthouse del login web en móvil](../assets/chapter-6/lighthouse/web-login-mobile.jpg)
+
+![Lighthouse del login web en escritorio](../assets/chapter-6/lighthouse/web-login-desktop.jpg)
+
+**Lectura de los resultados y acciones derivadas.**
+
+1. **Rendimiento en móvil.** En ambas páginas el LCP móvil supera los 4 s, mientras que en escritorio no pasa de 1 s. Lighthouse señala recursos que bloquean el renderizado, imágenes sin dimensiones explícitas y JavaScript y CSS sin uso. La landing page queda en 81 y el login web en 80, apenas sobre el umbral de 80 propuesto.
+2. **Accesibilidad del login web (88).** Lighthouse reporta atributos `aria-*` que no coinciden con sus roles, contraste insuficiente entre texto y fondo y ausencia de un elemento de referencia `main`. Son hallazgos concretos para el requisito de accesibilidad del proyecto y quedan registrados como correcciones pendientes.
+3. **SEO del login web (83).** La página no tiene `meta description` y `robots.txt` no es válido: la regla de reescritura de `vercel.json` devuelve `index.html` para cualquier ruta, incluido `/robots.txt`.
+4. **La landing page** cumple los umbrales en las cuatro categorías y en los dos dispositivos.
+
+### 7.4.3. Alerting Pipeline Components
+
+Las alertas del proyecto se apoyan en el estado de los workflows de GitHub Actions: un trabajo que termina en error genera el evento que dispara la notificación. Las condiciones de alerta que se definen son:
+
+| Condición | Se detecta con | Severidad | Respuesta esperada |
+| :--- | :--- | :---: | :--- |
+| La API, la landing page o la aplicación web no responde con 2xx después de los reintentos | `uptime.yml` | Alta | Revisar los logs de Render o el despliegue en Vercel y recuperar la versión anterior si fue un despliegue |
+| Falla la integración en `main` | `ci-backend.yml` | Alta | Corregir antes de fusionar; Render no despliega mientras los checks no pasen (`autoDeployTrigger: checksPass`) |
+| Falla el scheduler | `scheduler.yml` | Media | Revisar el endpoint que falló; los procesos periódicos se ejecutan en la siguiente hora |
+| Falla la publicación de la imagen Docker | `docker-publish.yml` | Media | Reejecutar el workflow; el caso de la falla del 08/11/2026 se resolvió en la ejecución siguiente |
+| Lighthouse bajo el umbral acordado | Medición por release | Baja | Registrar la regresión como tarea en el siguiente Sprint |
+
+### 7.4.4. Notification Pipeline Components
+
+El camino de una alerta es el siguiente:
+
+1. Un trabajo de GitHub Actions termina en error.
+2. GitHub registra el resultado en la pestaña *Actions* del repositorio.
+3. GitHub envía la notificación de «workflow fallido» a la persona que originó la ejecución y a quienes siguen el repositorio, por correo y por la bandeja de notificaciones web, según las preferencias de cada integrante.
+4. El integrante revisa los logs de la ejecución, corrige o reejecuta el workflow y, si es un problema de producción, coordina la respuesta en el grupo de trabajo del equipo.
+
+> **Mejora recomendada:** hoy la notificación depende de las preferencias individuales de GitHub. Para que llegue a todo el equipo al mismo tiempo se recomienda añadir a `uptime.yml` un último paso `if: failure()` que envíe un mensaje a un canal compartido mediante un *webhook* (por ejemplo, el servidor de Discord que el equipo usa para sus reuniones). Este paso no está implementado.
