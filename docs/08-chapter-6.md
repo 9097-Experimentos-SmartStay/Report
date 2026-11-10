@@ -375,7 +375,52 @@ Para este avance se prepararon, sin integrar todavía, las correcciones de 10 de
 
 #### 6.2.1.2. Code Quality & Code Security
 
-La calidad y la seguridad se revisaron en tres niveles: seguridad de las dependencias, higiene de los secretos y calidad estructural del código.
+La calidad y la seguridad del código se evaluaron con **SonarQube Community Build 26.11**, una de las herramientas que propone el enunciado junto con ESLint y Checkmarx. Se eligió SonarQube porque mide en un solo análisis complejidad, duplicación, mantenibilidad, cobertura y vulnerabilidades, y porque analiza C#, JavaScript, HTML y CSS, los lenguajes del backend, del frontend y de la landing page. ESLint solo cubre JavaScript y no mide duplicación ni cobertura, y Checkmarx requiere licencia. SonarQube se ejecutó en un contenedor Docker local el 10/11/2026 sobre la rama `develop` de cada repositorio. En el backend, el análisis incluyó la ejecución de las tres suites de pruebas con `coverlet` para medir la cobertura.
+
+SonarQube no analiza Dart, por lo que la aplicación móvil se verificó con `flutter analyze` y el conjunto de reglas `flutter_lints`: el análisis terminó sin observaciones (*No issues found*).
+
+**Calidad del código.**
+
+| Métrica | `backend` (C#) | `frontend` (Vue) | `landing-page` |
+| :--- | :---: | :---: | :---: |
+| Líneas de código | 15 654 | 13 986 | 2 795 |
+| Complejidad ciclomática | 3 493 | 2 304 | 285 |
+| Complejidad cognitiva | 1 333 | 1 044 | 208 |
+| Duplicación | 0,4 % | 1,2 % | 20,4 % |
+| Cobertura de pruebas | 30,3 % | 0 % | 0 % |
+| Mantenibilidad (observaciones / calificación) | 13 / A | 2 / A | 4 / A |
+| Confiabilidad (observaciones / calificación) | 18 / C | 27 / C | 5 / C |
+| Seguridad (observaciones / calificación) | 5 / E | 0 / A | 0 / A |
+| *Quality gate* | Aprobado | Aprobado | Aprobado |
+
+![Resumen de SonarQube del backend](../assets/chapter-6/static-analysis/sonarqube-backend.png)
+
+![Resumen de SonarQube del frontend](../assets/chapter-6/static-analysis/sonarqube-frontend.png)
+
+![Resumen de SonarQube de la landing page](../assets/chapter-6/static-analysis/sonarqube-landing.png)
+
+**Interpretación de los resultados de calidad.**
+
+- **Mantenibilidad (A en los tres repositorios).** La deuda técnica es baja. En el backend, las 13 observaciones son sugerencias de Roslyn, como declarar estáticos los métodos que no usan datos de instancia o generar las expresiones regulares en tiempo de compilación.
+- **Duplicación.** El backend (0,4 %) y el frontend (1,2 %) tienen poca duplicación. El 20,4 % de la landing page proviene de los archivos de textos `src/i18n/locales/es.js` y `en.js`, que repiten la misma estructura en dos idiomas (299 líneas cada uno), y de `stories.js`; no es lógica duplicada.
+- **Confiabilidad (C).** En el frontend, 15 de las 27 observaciones corresponden a `HotelForm.vue` y `RoomForm.vue`, que modifican directamente una *prop* recibida del componente padre. Es el mismo hallazgo que reporta ESLint con `vue/no-mutating-props` (6.2.1.1), por lo que ambas herramientas coinciden. Las demás son cuatro expresiones regulares con riesgo de *backtracking*, tres etiquetas de formulario sin asociar a su campo (accesibilidad) y dos comparaciones que siempre son falsas. En el backend, 16 de las 18 observaciones (regla S6964) señalan propiedades de tipo valor en los recursos de entrada de los controladores que deberían ser anulables o requeridas, para evitar que un campo omitido se reciba con su valor por defecto. En la landing page, cuatro corresponden a encabezados vacíos en `index.html` que el JavaScript llena al cargar la página.
+- **Cobertura.** El 30,3 % del backend proviene de sus 266 pruebas (6.1). El frontend y la landing page no tienen pruebas unitarias, por lo que su cobertura es 0 %. La prueba de integración del frontend descrita en 6.1.2 se ejecuta contra el backend real y no se mide como cobertura.
+
+**Seguridad del código.**
+
+SonarQube reportó cinco observaciones de seguridad en el backend, que el equipo revisó una por una en el código:
+
+| Regla | Archivo | Severidad | Análisis del equipo |
+| :--- | :--- | :---: | :--- |
+| S6703 y S2068: contraseña en el código | `AppDbContextFactory.cs` | Bloqueante | Es la contraseña de la base local de Docker (`smartstay_dev`), usada solo como respaldo cuando `dotnet ef` genera migraciones. Producción toma la cadena de conexión de una variable de entorno. Se debe retirar del código y exigir la variable. |
+| S4790: algoritmo de hash débil | `PwnedPasswordsChecker.cs` | Alta | Falso positivo: la API de Have I Been Pwned exige SHA-1 para su modelo de k-anonimato, y solo se envían los cinco primeros caracteres del hash. Las contraseñas se almacenan con BCrypt. |
+| S4790: algoritmo de hash débil | `CloudinarySignature.cs` | Alta | SHA-1 es el algoritmo de firma por defecto de la API de Cloudinary. Se puede migrar a SHA-256 desde la configuración de la cuenta. |
+| S6444: expresión regular sin tiempo límite | `DemoRequest.cs` | Baja | El patrón `\s+` no tiene *backtracking* catastrófico, pero conviene fijar un tiempo límite. |
+
+**Inyección SQL y XSS.** La edición Community de SonarQube no ejecuta el análisis de flujo de datos que detecta inyecciones SQL y XSS, y así lo advierte en su resumen. Por eso el equipo revisó manualmente los puntos donde podrían ocurrir:
+
+- **Inyección SQL.** El backend accede a MySQL con Entity Framework Core, que parametriza las consultas. Solo tres lugares escriben SQL a mano, y los tres son seguros: `EmployeeCodeGenerator` usa una sentencia constante sin datos del usuario, y `OutboxEmailDispatcher` y `RoomRepository` usan `SqlQuery` y `FromSqlInterpolated` con cadenas interpoladas, que EF Core convierte en parámetros.
+- **XSS.** El frontend y la landing page no usan `v-html`, `innerHTML` ni `insertAdjacentHTML`. Vue escapa por defecto todo el texto que muestra, y el código documenta que no se renderiza HTML recibido de la API.
 
 **Seguridad de las dependencias.** Se ejecutó `npm audit` el 09/11/2026 sobre los dos repositorios JavaScript:
 
@@ -388,9 +433,11 @@ En el frontend, los paquetes afectados incluyen `axios`, `follow-redirects`, `fo
 
 En el **backend** el control ya está automatizado: el job *Dependency audit* de `ci-backend.yml` ejecuta `dotnet list package --vulnerable --include-transitive` y falla si encuentra paquetes vulnerables. El commit `f875916` (`fix(deps): patch vulnerable packages and drop unused sqlite provider`) corrigió los paquetes que ese control detectó y eliminó un proveedor de SQLite sin uso.
 
+El 10/11/2026 el mismo control bloqueó el *pull request* #14 del backend: detectó seis avisos publicados después de la última integración en `MySqlConnector` 2.4.0, `System.Security.Cryptography.Pkcs` 10.0.0 y `System.Security.Cryptography.Xml` 9.0.20. El equipo fijó las versiones corregidas (2.6.1, 10.0.13 y 9.0.21) y el *pull request* pasó el control antes de integrarse.
+
 **Higiene de secretos.** Los repositorios publican únicamente archivos `.env.example` con nombres de variables y sin valores reales, `.env` figura en el `.gitignore` de `backend`, `frontend` y `landing-page` (el de `mobile` no lo ignoraba y se corrigió en el directorio de trabajo, pendiente de integrar), y el `render.yaml` del backend declara los secretos con `sync: false`, de modo que Render los solicita al crear el servicio y no se versionan.
 
-**Calidad estructural.** No se configuró SonarQube ni SonarCloud, porque requieren una cuenta de organización. En su lugar, el equipo se apoyó en controles que no dependen de un servicio externo: tipos anulables habilitados en C#, compilación sin advertencias en CI, análisis de `flutter_lints` y las suites de pruebas automatizadas del backend descritas en 6.1. La incorporación de SonarCloud, con medición de complejidad ciclomática, duplicación y cobertura, queda como mejora recomendada y no se presenta como realizada.
+**Acciones derivadas.** Retirar la contraseña de respaldo de `AppDbContextFactory`, marcar como requeridas o anulables las propiedades señaladas por S6964, corregir las mutaciones de *props* en los dos formularios del frontend y fijar un tiempo límite en las expresiones regulares. La aplicación de estas correcciones se registrará en la siguiente entrega.
 
 ### 6.2.2. Reviews
 
