@@ -324,9 +324,9 @@ Los autores de Git se asignaron a cada integrante por su nombre de usuario o cor
 
 ### 1.1.1. Descripción de la Startup
 
-La startup Movildev, con su producto SmartStay, surge con el objetivo de transformar la gestión hotelera mediante el uso de tecnologías digitales e Internet of Things (IoT). Nuestra propuesta integra en una sola solución la administración de huéspedes, control de habitaciones y servicios mediante una arquitectura de microservicios y conectividad constante.
+La startup Movildev, con su producto SmartStay, surge con el objetivo de transformar la gestión hotelera mediante el uso de tecnologías digitales e Internet of Things (IoT). Nuestra propuesta integra en una sola solución la administración de huéspedes, control de habitaciones y servicios mediante una API REST con arquitectura de monolito modular, organizada en contextos delimitados (bounded contexts) bajo principios de DDD, y conectividad constante.
 
-A diferencia de soluciones tradicionales, SmartStay se enfoca en una experiencia móvil robusta, ofreciendo una aplicación nativa en Android (Kotlin) para la gestión operativa del personal y una aplicación multiplataforma en Flutter para el autoservicio y confort del huésped. A través de estas interfaces, el hotel puede optimizar recursos y, al mismo tiempo, ofrecer experiencias personalizadas y automatizadas que elevan el estándar de hospitalidad.
+A diferencia de soluciones tradicionales, SmartStay se enfoca en una experiencia móvil robusta, ofreciendo una aplicación móvil multiplataforma desarrollada en Flutter, con experiencias diferenciadas para la gestión operativa del personal y para el autoservicio y confort del huésped. A través de estas interfaces, el hotel puede optimizar recursos y, al mismo tiempo, ofrecer experiencias personalizadas y automatizadas que elevan el estándar de hospitalidad.
 
 Entre sus principales características destacan:
 
@@ -3271,7 +3271,7 @@ https://www.figma.com/make/lML4HR5vLsAGMUq3CoqvcS/Minimalist-Photo-Portfolio?t=7
 
 ### 4.5.2. iOS Mobile Applications Prototyping
 
-El desarrollo nativo de Smart Stay se priorizó en **Android (Kotlin)** para esta entrega, por lo que aún no se cuenta con una compilación nativa para iOS. No obstante, se diseñó el flujo completo de pantallas en estilo iOS (Tab Bar, Navigation Bar, SF Symbols), siguiendo los lineamientos de la sección 4.1.3.1, para dejar validado el recorrido de huésped antes de una eventual implementación nativa:
+La aplicación de Smart Stay, desarrollada en Flutter, se compiló y validó en **Android** para esta entrega; aún no se cuenta con una compilación para iOS. No obstante, se diseñó el flujo completo de pantallas en estilo iOS (Tab Bar, Navigation Bar, SF Symbols), siguiendo los lineamientos de la sección 4.1.3.1, para dejar validado el recorrido de huésped antes de generar la compilación para iOS:
 
 1. **Welcome** — pantalla de bienvenida con branding Smart Stay.
 2. **Login / Register** — inicio de sesión con opción "Continue with Apple".
@@ -4090,23 +4090,22 @@ Asimismo, se aplicaron principios de usabilidad y diseño centrado en el usuario
 ### Software Development
 Para el desarrollo de la aplicación se utilizaron distintas herramientas y entornos de programación enfocados en el desarrollo backend y móvil.  
 
-El backend fue implementado con **ASP.NET Core (C#)** empleando el IDE **JetBrains Rider**, permitiendo gestionar la lógica de negocio y los servicios del sistema mediante APIs REST.  
+El backend fue implementado con **ASP.NET Core 9 (C#)** empleando el IDE **JetBrains Rider**. Se trata de una única API REST con arquitectura de monolito modular: un solo servicio desplegable, organizado en contextos delimitados (IAM, Perfiles, Alojamiento, Reservas, Pagos, Analítica, Auditoría, Marketing y Media) que se comunican internamente mediante fachadas ACL y eventos de dominio, y que comparten una única base de datos MySQL.  
 
-Por otro lado, el desarrollo móvil se realizó utilizando **Android Studio**, **Kotlin** y **Flutter**, tecnologías empleadas para implementar las aplicaciones dirigidas al huésped y al staff operativo. Asimismo, se utilizó **Firebase** para servicios de autenticación y notificaciones móviles.  
+Por otro lado, el desarrollo móvil se realizó utilizando **Flutter** (lenguaje **Dart**), framework multiplataforma con el que se implementó la aplicación móvil de SmartStay. No se desarrolló código nativo en Kotlin: la carpeta `android/` del proyecto es el andamiaje que genera Flutter para compilar el APK.  
 
-Adicionalmente, se empleó **MySQL** como sistema de gestión de base de datos y **Azure** para el despliegue y administración de los servicios backend.  
+Adicionalmente, se empleó **MySQL** como sistema de gestión de base de datos y **Render** para el despliegue del backend, con **Vercel** para el frontend web y la landing page.  
 
 Finalmente, el proyecto se apoyó en herramientas de control de versiones como **Git y GitHub**, mientras que la instalación y mantenimiento de las IDEs se realizó mediante **JetBrains ToolBox**.
 
 **Enlaces**  
 - **JetBrains ToolBox:** [JetBrains ToolBox](https://www.jetbrains.com/toolbox-app/)  
 - **JetBrains Rider:** [JetBrains Rider](https://www.jetbrains.com/rider/)  
-- **Android Studio:** [Android Studio](https://developer.android.com/studio)  
 - **Flutter:** [Flutter](https://flutter.dev/)  
-- **Kotlin:** [Kotlin](https://kotlinlang.org/)  
-- **Firebase:** [Firebase](https://firebase.google.com/)  
+- **Dart:** [Dart](https://dart.dev/)  
 - **MySQL:** [MySQL](https://www.mysql.com/)  
-- **Azure:** [Azure](https://azure.microsoft.com/)  
+- **Render:** [Render](https://render.com/)  
+- **Vercel:** [Vercel](https://vercel.com/)  
 - **GitHub:** [GitHub](https://github.com/)
 
 
@@ -4119,12 +4118,12 @@ Toda la documentación se redactó en formato **Markdown (.md)**, debido a su le
 - **GitHub:** [GitHub](https://github.com/)
 
 ### Software Deployment
-El despliegue de los servicios backend se realizó mediante **Microsoft Azure**, permitiendo alojar las APIs REST y garantizar la comunicación entre las aplicaciones móviles, la base de datos y los servicios IoT del sistema Smart Stay.  
-Asimismo, las aplicaciones móviles fueron ejecutadas y validadas utilizando **Android Studio Emulator** y dispositivos físicos Android para verificar el correcto funcionamiento de las funcionalidades desarrolladas.
+El backend se desplegó en **Render** como un único servicio web basado en contenedor Docker, que aloja la API REST y garantiza la comunicación entre las aplicaciones, la base de datos MySQL y los servicios del sistema Smart Stay.  
+Asimismo, la aplicación móvil fue ejecutada y validada en emuladores y dispositivos físicos Android para verificar el correcto funcionamiento de las funcionalidades desarrolladas.
 
 **Enlaces**  
-- **Azure:** [Azure](https://azure.microsoft.com/)  
-- **Android Studio:** [Android Studio](https://developer.android.com/studio)
+- **Render:** [Render](https://render.com/)  
+- **Vercel:** [Vercel](https://vercel.com/)
 
 
 
@@ -4136,27 +4135,34 @@ El proyecto está organizado dentro de una **organización en GitHub**, donde ca
 **Repositorios individuales de control de versiones:**
 
 - **Aplicación Móvil:**  
-  - **Tecnología:** Kotlin (Android Native)
+  - **Tecnología:** Flutter (Dart)
   - **IDE:** Android Studio
   - **URL del repositorio:** https://github.com/9097-Experimentos-SmartStay/mobile
-  - **Plataforma de despliegue:** Android Studio Emulator / APK Testing
+  - **Plataforma de despliegue:** Emulador Android y dispositivos físicos Android
 
 - **Web Services (Backend):**  
   - **Tecnología:** ASP.NET Core (C#)
+  - **IDE:** JetBrains Rider
   - **URL del repositorio:** https://github.com/9097-Experimentos-SmartStay/backend
   - **Arquitectura:** RESTful API
   - **Plataforma de despliegue:** Render
 
 - **Frontend Web:**
   - **Tecnología:** Vue.js
+  - **IDE:** Visual Studio Code
   - **URL del repositorio:** https://github.com/9097-Experimentos-SmartStay/frontend
   - **Plataforma de despliegue:** Vercel
 
 - **Landing Page**
   - **Tecnología:** HTML, CSS, JavaScript
   - **URL del repositorio:** https://github.com/9097-Experimentos-SmartStay/landing-page
-  - **IDE:** WebStorm
+  - **IDE:** Visual Studio Code
   - **Plataforma de despliegue:** Vercel
+
+- **Informe (Report):**
+  - **Tecnología:** Markdown
+  - **IDE:** Visual Studio Code
+  - **URL del repositorio:** https://github.com/9097-Experimentos-SmartStay/Report
 
 Todos los repositorios implementan el modelo **GitFlow** como flujo de trabajo de colaboración y branching, garantizando un desarrollo ordenado y trazable.
 
@@ -4168,33 +4174,8 @@ Este enfoque permite un control de versiones ordenado y un desarrollo paralelo s
 
 **Diagrama del flujo GitFlow implementado:**
 
-```text
-main (producción)
- |
- |---- release/v1.0.0
- |          |
-develop    |
- |         |
- |---- feature/user-authentication
- |         |
- |         (desarrollo)
- |         |
- |<-------- (merge)
- |
- |---- feature/room-management
- |         |
- |         (desarrollo)
- |         |
- |<-------- (merge)
- |
- |---- hotfix/critical-bug
- |         |
- |         (corrección)
- |         |
- |<-------- (merge a develop)
- |         |
-main <---- (merge a main)
-```
+![Diagrama del flujo GitFlow](assets/chapter-5/source-control/gitflow-diagram.png)
+
 ---
 ### Proceso de trabajo con GitFlow
 
@@ -4221,7 +4202,7 @@ main <---- (merge a main)
 **Main branch (Rama principal):**  
 Es la rama principal del proyecto, donde se almacena el código estable y listo para producción.  
 Solo se integran cambios que hayan sido probados y validados previamente en las ramas de desarrollo (*develop*) y funcionalidad (*feature/*).  
-Esta rama representa el estado más confiable del proyecto y se encuentra protegida con reglas de revisión obligatoria.
+Esta rama representa el estado más confiable del proyecto y solo se actualiza mediante *merges* desde `develop` (versiones) o desde ramas `hotfix/*` (correcciones urgentes).
 
 **Develop branch (Rama de desarrollo):**  
 Actúa como un espacio de integración para el trabajo en equipo.  
@@ -4244,31 +4225,25 @@ Las ramas de funcionalidad siguen un esquema de nombres descriptivos, como por e
 - `feature/booking-system` - Sistema de reservas
 
 **Release branches (Ramas de versión):**  
-Se crean para preparar una nueva versión de producción desde `develop`.
+Se crean para preparar una nueva versión de producción desde `develop`. Siguen el esquema `release/vMAJOR.MINOR.PATCH`, por ejemplo:
 
 - `release/v1.0.0` - Primera versión estable
 - `release/v1.1.0` - Versión con nuevas funcionalidades
 
 **Hotfix branches (Ramas de corrección urgente):**  
-Se crean desde `main` para corregir problemas críticos en producción.
+Se crean desde `main` para corregir problemas críticos en producción. Siguen el esquema `hotfix/<descripcion>`, por ejemplo:
 
 - `hotfix/login-security` - Corrección de seguridad en login
 - `hotfix/payment-error` - Corrección de error en pagos
 
-### Evidencia de aplicación de GitFlow
+### Aplicación de GitFlow en el proyecto
 
-**Repositorio Mobile App:**
+Solo `main` y `develop` son ramas permanentes. Las ramas `feature/*`, `fix/*`, `release/*` y `hotfix/*` son **transitorias**: se crean para una tarea y se eliminan al integrarse, por lo que un listado de ramas en un momento dado no refleja el flujo de trabajo. Así se aplica GitFlow en los repositorios del proyecto:
 
-- Ramas activas: `main`, `develop`, `feature/responsive-design`, `feature/multilanguage`
-- Commits con convenciones: `feat:`, `fix:`, `docs:`
-- Pull Requests con revisiones de código
-
-**Repositorio Backend:**
-
-- Ramas activas: `main`, `develop`, `feature/api-rooms`, `feature/api-bookings`
-- Versionado semántico aplicado
-- Tags: `v1.0.0`, `v1.1.0`
-
+- **Integración diaria:** el trabajo se desarrolla en una rama transitoria creada desde `develop` y se integra de vuelta mediante *Pull Request*. Por ejemplo, en el repositorio del backend el pipeline de CI, la corrección de la política de contraseñas y el despliegue condicionado a los checks entraron como los Pull Requests #11, #12 y #13.
+- **Publicación:** cuando `develop` está estable se integra en `main` con un commit de *merge* del tipo `chore(release): merge develop into main`. Ese *merge* dispara los despliegues automáticos de Render y Vercel descritos en 5.1.4.
+- **Mensajes de commit:** todos los repositorios usan Conventional Commits (`feat:`, `fix:`, `docs:`, `ci:`, `test:`, `chore:`).
+- **Versionado:** las versiones se nombran con versionado semántico (`vMAJOR.MINOR.PATCH`), tanto para las ramas `release/*` como para los tags.
 
 ### 5.1.3. Source Code Style Guide &amp; Conventions
 
@@ -4309,28 +4284,25 @@ Se crean desde `main` para corregir problemas críticos en producción.
 - Comentarios XML para documentación interna de métodos y controladores.
 - Pruebas unitarias y escenarios escritos siguiendo la convención **Gherkin (Given-When-Then)**.
 
-### Kotlin (Android Studio)
+### Flutter (Dart)
 
-- [Kotlin Coding Conventions](https://kotlinlang.org/docs/coding-conventions.html)
-- [Android Developers Guidelines](https://developer.android.com/kotlin/style-guide)
+- [Effective Dart](https://dart.dev/effective-dart)
+- [Flutter Style Guide](https://github.com/flutter/flutter/blob/main/docs/contributing/Style-guide-for-Flutter-repo.md)
 
 **Convenciones aplicadas:**
 
-- Uso de **PascalCase** para clases y actividades (`LoginActivity`, `RoomManagementActivity`).
-- Uso de **camelCase** para variables, funciones y parámetros (`guestName`, `validateLogin()`).
-- Organización modular del código por paquetes (`activities`, `services`, `models`, `adapters`).
-- Uso de nombres descriptivos y consistentes para layouts XML y recursos visuales.
-- Implementación de buenas prácticas de desarrollo Android para mejorar mantenibilidad y escalabilidad.
+- Uso de **UpperCamelCase** para clases, widgets y tipos (`LoginPage`, `RoomsPage`).
+- Uso de **lowerCamelCase** para variables, funciones y parámetros (`guestName`, `validateLogin()`).
+- Uso de **snake_case** para nombres de archivos y paquetes.
+- Organización del código por capas y funcionalidades (`core`, `domain`, `features`, `shared`).
+- Análisis estático con `flutter analyze` y las reglas de `flutter_lints`.
 
 **Componentes utilizados en la aplicación móvil:**
 
-- `Activity`: Maneja las pantallas principales de la aplicación.
-- `Fragment`: Permite reutilizar componentes visuales dentro de distintas vistas.
-- `RecyclerView`: Muestra listas dinámicas de habitaciones, reservas o servicios.
-- `Intent`: Gestiona la navegación entre pantallas.
-- `ViewModel`: Administra el estado y la lógica de presentación.
-- `Firebase`: Gestiona autenticación y notificaciones móviles.
-- `XML Layouts`: Define la estructura visual de las interfaces móviles.
+- `Widget`: Unidad básica de la interfaz; las pantallas se componen de widgets reutilizables.
+- `Navigator`: Gestiona la navegación entre pantallas.
+- `http`: Paquete para consumir la API REST del backend.
+- `flutter_secure_storage`: Almacenamiento seguro del token de sesión.
 
 ---
 
@@ -4383,8 +4355,13 @@ El proyecto implementa un flujo automatizado de **Integración Continua y Despli
 - Este proceso garantiza una actualización constante de los servicios y minimiza la intervención manual en las publicaciones.
 
 ### Vercel (Landing Page):
-![Vercel Deployment](assets/chapter-5/deployment/github-pages.jpg)
-> ⚠️ Imagen pendiente de reemplazo: la captura actual corresponde a la configuración antigua de GitHub Pages, no al dashboard de Vercel.
+Panel de Vercel del proyecto `smartstay-movildev-landing`: despliegue de producción en estado *Ready*, rama `main` y dominio `smartstay-movildev-landing.vercel.app`:
+
+![Dashboard de Vercel de la landing page](assets/chapter-5/deployment/vercel-dashboard.png)
+
+Landing page publicada en Vercel:
+
+![Landing page desplegada en Vercel](assets/chapter-5/deployment/vercel-landing-live.png)
 
 **La URL pública de la landing page es la siguiente:**  
 [https://smartstay-movildev-landing.vercel.app/](https://smartstay-movildev-landing.vercel.app/)
@@ -4395,31 +4372,28 @@ El despliegue de la solución considera los siguientes aspectos generales, los c
 
 ### Mobile Application Deployment
 
-La aplicación móvil fue desarrollada utilizando **Kotlin** en **Android Studio**, siguiendo una arquitectura orientada al desarrollo de aplicaciones Android nativas.  
+La aplicación móvil fue desarrollada con **Flutter (Dart)**, como un único código base que se compila a APK para Android.
 
 Para la ejecución y validación de la aplicación, se utilizaron las siguientes herramientas y configuraciones:
 
 1. **Preparación del entorno:**  
-   Se configuró el entorno de desarrollo mediante **Android Studio**, incluyendo el SDK de Android, emuladores y dependencias necesarias para la compilación de la aplicación.
+   Se instaló el SDK de Flutter y el SDK de Android (necesario para compilar el APK), junto con emuladores y dispositivos físicos para las pruebas.
 
 2. **Estructura del proyecto:**  
-   El proyecto móvil se organiza siguiendo buenas prácticas de Android Development:
-   - `activities/` → pantallas principales de la aplicación.
-   - `adapters/` → manejo de listas dinámicas y RecyclerViews.
-   - `models/` → clases de entidades y estructuras de datos.
-   - `services/` → conexión con APIs REST y servicios externos.
-   - `res/layout/` → archivos XML de las interfaces visuales.
-   - `assets/` → recursos gráficos e imágenes utilizadas en la aplicación.
+   El código fuente se organiza en `lib/`:
+   - `core/` → configuración y utilidades transversales.
+   - `domain/` → entidades y contratos del dominio.
+   - `features/` → módulos funcionales (`auth`, `bookings`, `client`, `hotels`, `profile`, `rooms`, `staff`).
+   - `shared/` → widgets y recursos compartidos.
 
 3. **Compilación y ejecución:**
-   - La aplicación se ejecuta mediante **Android Emulator** y dispositivos físicos Android.
-   - Android Studio genera automáticamente los archivos APK necesarios para pruebas e instalación.
+   - La aplicación se ejecuta mediante emuladores y dispositivos físicos Android.
+   - El APK se genera con `flutter build apk --release`.
    - Las versiones de prueba son administradas mediante GitHub y control de versiones GitFlow.
 
 4. **Servicios integrados:**
-   - Integración con APIs RESTful desarrolladas en ASP.NET Core.
-   - Uso de Firebase para autenticación y notificaciones móviles.
-   - Comunicación con servicios backend para reservas, habitaciones y gestión operativa.
+   - Integración con la API REST desarrollada en ASP.NET Core mediante el paquete `http`.
+   - Comunicación con el backend para reservas, habitaciones y gestión operativa.
 
 ### Backend (Web Services)
 
@@ -4435,13 +4409,13 @@ El proyecto implementa un flujo automatizado de **Integración Continua y Despli
 - Todos los repositorios están conectados directamente a **GitHub**.
 - Render ejecuta el despliegue automático al detectarse merges en la rama `main`.
 - El control de versiones se realiza utilizando Git y GitFlow.
-- Las versiones móviles son compiladas y probadas desde Android Studio antes de cada entrega.
+- Las versiones móviles se compilan con Flutter y se prueban en emulador y dispositivos físicos antes de cada entrega.
 
-### Android Studio Emulator
+### Emulador Android
 
-![Android Studio Emulator](assets/chapter-5/deployment/android-studio-emulator.jpg)
+![Emulador Android](assets/chapter-5/deployment/android-studio-emulator.jpg)
 
-**El emulador de Android Studio permite validar el funcionamiento de la aplicación móvil en distintos dispositivos y versiones de Android antes de su despliegue final.**
+**El emulador de Android permite validar el funcionamiento de la aplicación móvil en distintos dispositivos y versiones de Android antes de su despliegue final.**
 
 ---
 
@@ -4932,7 +4906,7 @@ Durante el Sprint 3 se ejecutaron pruebas funcionales, pruebas de integración, 
 
 ##### 5.2.1.3.5. Execution Evidence for Sprint Review
 
-Durante el Sprint 3 se ejecutó la versión final de la aplicación móvil SmartStay, validando los principales flujos funcionales definidos para la presentación final. Las pruebas fueron realizadas en Android Studio y dispositivos móviles, utilizando servicios backend desplegados para comprobar la integración real del sistema.
+Durante el Sprint 3 se ejecutó la versión final de la aplicación móvil SmartStay, validando los principales flujos funcionales definidos para la presentación final. Las pruebas fueron realizadas en emuladores Android y dispositivos móviles, utilizando servicios backend desplegados para comprobar la integración real del sistema.
 
 Los flujos ejecutados fueron los siguientes:
 
@@ -4996,8 +4970,6 @@ https://smartstay-movildev-api.onrender.com/scalar/
 
 Finalmente, se generó una versión final de la aplicación móvil en formato APK para su ejecución y validación. Esta versión contiene los módulos integrados y fue utilizada para la demostración final del producto.
 
-**Repositorio del APK:**  
-https://github.com/Movil-dev-Aplicaciones-Moviles/APK.git
 
 
 Con estas evidencias, se confirma que SmartStay cuenta con una landing page pública, servicios backend desplegados y una aplicación móvil lista para ser presentada como producto final del curso.
@@ -5051,9 +5023,9 @@ En conclusión, el Sprint 3 permitió cerrar el ciclo de desarrollo de SmartStay
 
 ### 5.2.2. Implemented Landing Page Evidence
 
-![Github Pages](assets/chapter-5/deployment/github-pages.jpg)
+![Dashboard de Vercel de la landing page](assets/chapter-5/deployment/vercel-dashboard.png)
 
-**La URL que nos entrega Github Pages para acceder a la landing page es la siguiente:**  
+**La URL que nos entrega Vercel para acceder a la landing page es la siguiente:**  
 [https://smartstay-movildev-landing.vercel.app/](https://smartstay-movildev-landing.vercel.app/)
 
 landing Page
@@ -5169,7 +5141,7 @@ Durante el Sprint 2 se ejecutaron y validaron las funcionalidades desarrolladas 
 ![App Android 7](assets/chapter-5/implementation/mobile/sprint-2/android-app-07.jpeg)
 ![App Android 8](assets/chapter-5/implementation/mobile/sprint-2/android-app-08.jpeg)
 
-Durante el Sprint 3 se ejecutó la versión final de la aplicación móvil SmartStay, validando los principales flujos funcionales definidos para la presentación final. Las pruebas fueron realizadas en Android Studio y dispositivos móviles, utilizando servicios backend desplegados para comprobar la integración real del sistema.
+Durante el Sprint 3 se ejecutó la versión final de la aplicación móvil SmartStay, validando los principales flujos funcionales definidos para la presentación final. Las pruebas fueron realizadas en emuladores Android y dispositivos móviles, utilizando servicios backend desplegados para comprobar la integración real del sistema.
 
 Los flujos ejecutados fueron los siguientes:
 
@@ -5351,53 +5323,108 @@ Link: https://youtu.be/34tPgoDW-wY
 
 La estrategia de validación de SmartStay cubre los tres servicios principales: **el backend, la aplicación web y la aplicación móvil.** 
 
-El backend cuenta con pruebas unitarias, de integración y de comportamiento (BDD) automatizadas; la aplicación móvil, con pruebas de Flutter; y la aplicación web, con una prueba funcional manual de Selenium sobre el inicio de sesión. La landing page no tiene pruebas automatizadas.
+El backend cuenta con pruebas unitarias, de integración y de comportamiento (BDD) automatizadas. La aplicación móvil tiene pruebas unitarias de Flutter y una prueba de integración contra el backend, y la aplicación web, una prueba de integración contra el backend con Vitest y una prueba funcional con Selenium del inicio de sesión. La landing page no tiene pruebas automatizadas.
 
 ### 6.1.1. Core Entities Unit Tests.
 
-El backend de SmartStay cuenta con dos proyectos de pruebas de entidades y reglas de negocio: `BackendAwSmartstay.API.UnitTests`, que cubre Bookings (dominio) y Payments, y `BackendAwSmartstay.API.Tests`, que organiza las pruebas de los módulos Accommodations, Bookings y Profiles. Su estructura separa las áreas de aplicación, dominio e infraestructura, y contempla pruebas de compatibilidad e interfaces en el módulo de perfiles.
+Las pruebas unitarias verifican las entidades, agregados, objetos de valor y servicios de aplicación de cada contexto delimitado de forma aislada, sin base de datos real. En el backend se organizan en dos proyectos NUnit, y en la aplicación móvil se escriben con `flutter_test`.
 
-| Módulo | Proyecto de pruebas | Áreas presentes |
-|---|---|---|
-| Accommodations | `API.Tests` | Application, con una sección ACL. |
-| Bookings | `API.UnitTests` y `API.Tests` | Domain en ambos; Application e Infrastructure en `API.Tests`. |
-| Profiles | `API.Tests` | Application, Compatibility, Domain, Infrastructure e Interfaces. |
-| Payments | `API.UnitTests` | Application, Domain e Infrastructure. |
+#### Backend (ASP.NET Core 9, NUnit)
 
-<br>
-*Test de persistencia de Payments*
+| Proyecto | Contextos y áreas cubiertas | Pruebas |
+|---|---|---:|
+| `BackendAwSmartstay.API.UnitTests` | **Bookings:** Domain (`BookingTests`). **Payments:** Application, Domain e Infrastructure (pasarelas manual y simulada de tarjeta, `CardDetails`, `Payment`). | 87 |
+| `BackendAwSmartstay.API.Tests` | **Accommodations:** Application (fachadas ACL). **Bookings:** Application, Domain e Infrastructure. **IAM:** Infrastructure. **Profiles:** Application, Compatibility, Domain (Aggregates, Entities, ValueObjects), Infrastructure/Persistence e Interfaces/REST. | 150 |
 
-![payments-bc-test](assets/chapter-6/core-entities-tests/payments-bc-test.png)
-![payments-test-suceed](assets/chapter-6/core-entities-tests/payments-test-suceed.png)
+Ambos proyectos se ejecutaron con `dotnet test` el 9 de noviembre de 2026 y todas las pruebas pasaron (0 fallidas, 0 omitidas). Esta organización permite ubicar cada prueba según el contexto y la responsabilidad del componente: las áreas de dominio corresponden a entidades y reglas de negocio; las de aplicación, a la coordinación de operaciones; y las de infraestructura, a mecanismos como la persistencia. Las secciones de compatibilidad e interfaces del contexto Profiles cubren la lectura de datos previos y los controladores REST.
 
-Esta organización permite ubicar las pruebas según el módulo y la responsabilidad del componente evaluado. Las áreas de dominio corresponden a las entidades y reglas de negocio; las de aplicación, a la coordinación de operaciones; y las de infraestructura, a mecanismos como la persistencia. Las secciones de compatibilidad, interfaces y ACL permiten organizar verificaciones relacionadas con la interacción entre componentes.
+*Estructura del proyecto de pruebas del backend y ejecución exitosa*
 
 ![testing-backend-project](assets/chapter-6/testing-suites/testing-backend-project.png)
 
 ![pass-test](assets/chapter-6/testing-suites/pass-test.png)
 
-### Validación funcional del inicio de sesión del frontend
+*Prueba de persistencia de Payments*
 
-Se ejecutó una prueba funcional automatizada con Selenium sobre el formulario de inicio de sesión de SmartStay. La ejecución se realizó en Chrome, en modo visible, utilizando el frontend local en `http://localhost:5173/login`.
+![payments-bc-test](assets/chapter-6/core-entities-tests/payments-bc-test.png)
+![payments-test-suceed](assets/chapter-6/core-entities-tests/payments-test-suceed.png)
 
-La prueba consistió en dejar vacíos el correo electrónico y la contraseña e intentar enviar el formulario. Se verificó que ambos campos permanecieran vacíos, que la aplicación conservara la ruta de inicio de sesión y que mostrara una validación comprensible.
+#### Aplicación móvil (Flutter, `flutter_test`)
 
-| Caso evaluado | Resultado esperado | Resultado observado | Estado |
-|---|---|---|---|
-| Enviar el formulario de inicio de sesión con correo y contraseña vacíos. | Impedir continuar y mostrar una validación para ambos campos obligatorios. | La aplicación permaneció en `/login` y mostró «Este campo es obligatorio.» debajo del correo y de la contraseña. | Aprobado |
+La aplicación móvil cuenta con 16 pruebas en tres archivos, ejecutadas con `flutter test` el 9 de noviembre de 2026 (16 aprobadas):
 
-El resultado confirma la validación de campos obligatorios en este escenario. No se utilizaron credenciales ni se crearon cuentas, reservas o pagos.
+| Archivo | Qué verifica | Pruebas |
+|---|---|---:|
+| `test/staff_models_test.dart` | Matriz de permisos por rol (recepción, housekeeping, huésped y roles desconocidos), lectura de `BookingResource`, expiración y cancelación de reservas, resolución de reservas por día del calendario, mapa de habitaciones por estado, pagos en efectivo sin número de operación y cálculo de fechas | 9 |
+| `test/guest_booking_api_test.dart` | Validación de tarjeta (`CardDetails.parse`), creación de reserva, error del backend al reservar, pago con tarjeta y cancelación rechazada | 6 |
+| `test/widget_test.dart` | La aplicación del huésped carga correctamente | 1 |
 
-El alcance de esta prueba se limita al envío del formulario vacío. No verifica la autenticación con credenciales, la autorización por roles ni los demás flujos del frontend.
+#### Aplicación web
 
-![testing-frontend](assets/chapter-6/testing-suites/testing-frontend.png)
+El frontend web (Vue 3 + Vite) no cuenta aún con una suite de pruebas unitarias automatizadas. Su comunicación con el backend se verifica en la sección 6.1.2 y su verificación funcional en la sección 6.1.4.
 
 ### 6.1.2. Core Integration Tests.
 
-El backend incluye pruebas de persistencia con Entity Framework en memoria y pruebas de colaboración que utilizan repositorios y fachadas simulados. Estas pruebas permiten evaluar parte de la interacción entre componentes, aunque no reproducen todas las restricciones ni el comportamiento concurrente de MySQL. Existe una prueba de concurrencia contra MySQL real (`ProfilesMySqlConcurrencyIntegrationTests`) que termina sin evaluar nada cuando no hay una base MySQL disponible, como ocurre en el pipeline de CI; por eso se cuenta como superada pero no aporta evidencia de concurrencia hasta que se ejecute con `TEST_MYSQL_CONNECTION` configurada.
+Las pruebas de integración verifican que varios componentes funcionan correctamente **juntos**: servicios de aplicación con repositorios, repositorios con Entity Framework, y contextos delimitados que se comunican por sus fachadas ACL. En el backend son 35 pruebas del proyecto `BackendAwSmartstay.API.Tests`, ejecutadas con `dotnet test` el 9 de noviembre de 2026 (35 aprobadas, 0 fallidas).
+
+| Clase de pruebas | Contexto | Qué integra | Pruebas |
+|---|---|---|---:|
+| `BookingsPersistenceTests` | Bookings | Agregado `Booking` con EF Core: persistencia, estados y reserva con y sin perfil de huésped | 3 |
+| `BookingCommandServiceAclIntegrationTests` | Bookings ↔ Profiles | Servicio de comandos con la fachada de perfiles: resuelve el huésped por usuario o correo, o crea la reserva sin perfil si no existe | 6 |
+| `ProfilesPersistenceTests` | Profiles | Perfiles de huésped y de staff con EF Core: persistencia, consultas y generador de códigos de empleado | 5 |
+| `StaffProfileCommandServiceAclIntegrationTests` | Profiles ↔ Accommodations | Asignación de staff a hoteles validando el hotel por la fachada de alojamiento; rechaza hoteles inexistentes sin persistir | 3 |
+| `AccommodationsContextFacadeTests` | Accommodations | Fachada ACL: existencia de hotel, ids inválidos y contrato sin exponer entidades internas | 5 |
+| `CrossContextIdentityCompatibilityTests` | IAM ↔ Profiles ↔ Accommodations | Los ids enteros de usuario y de hotel son aceptados entre contextos | 4 |
+| `IamSeederTests` | IAM | Alta del administrador de cadena con política de contraseñas; rechaza contraseñas filtradas, cortas, repetitivas, con el correo o comunes | 7 |
+| `ProfilesDependencyInjectionTests` | Profiles | Registro de servicios del contexto en el contenedor de dependencias | 1 |
+| `ProfilesMySqlConcurrencyIntegrationTests` | Profiles | Generación concurrente de códigos de empleado sobre MySQL 8.0.36 real (contenedor Docker) | 1 |
+| **Total** | | | **35** |
+
+Las pruebas cubren tanto caminos felices como caminos de fallo: hotel inexistente, huésped sin perfil, contraseñas rechazadas por política o filtradas, e identificadores no válidos.
+
+*Código de una de las pruebas de integración (`BookingCommandServiceAclIntegrationTests`)*
 
 ![integration1](assets/chapter-6/integration-tests/integration1.png)
 ![integration2](assets/chapter-6/integration-tests/integration2.png)
+
+*Ejecución de las pruebas de integración, resumen por clase*
+
+![integration-run-by-class](assets/chapter-6/integration-tests/integration-run-by-class.png)
+
+*Ejecución de las pruebas de integración, detalle de las 35 pruebas*
+
+![integration-run-detail](assets/chapter-6/integration-tests/integration-run-detail.png)
+
+**Base de datos de las pruebas.** La mayoría de estas pruebas usan Entity Framework en memoria y fachadas o repositorios de prueba para aislar la lógica. La prueba de concurrencia (`ProfilesMySqlConcurrencyIntegrationTests`) se ejecuta contra un **MySQL 8.0.36 real**: diez contextos de EF generan códigos de empleado en paralelo y se verifica que los diez códigos son únicos y siguen el formato `EMP-00000`. En desarrollo local se usa un contenedor Docker de MySQL (`docker-compose.yml`) indicado con la variable `TEST_MYSQL_CONNECTION`; en el CI de GitHub Actions el job `build-and-test` levanta un contenedor de servicio `mysql:8.0.36` y define `REQUIRE_MYSQL_TESTS=true`, de modo que si la base no está disponible la prueba falla en lugar de omitirse.
+
+#### Comunicación frontend ↔ backend
+
+Las pruebas anteriores validan el backend. Para validar también la comunicación entre las aplicaciones cliente y la API, la aplicación web y la aplicación móvil cuentan con una prueba de integración que usa **su propia capa de acceso a la API contra un backend real** (API de ASP.NET Core y MySQL 8 levantados con `docker compose`), sin respuestas simuladas. Ambas recorren el mismo flujo de una cuenta de huésped:
+
+| # | Escenario | Tipo | Resultado esperado |
+|---|---|---|---|
+| 1 | Registro de una cuenta nueva | Camino feliz | La cuenta se crea con el correo sin verificar |
+| 2 | Registro con un correo ya registrado | Camino de fallo | El backend lo rechaza |
+| 3 | Inicio de sesión antes de verificar el correo | Camino de fallo | Rechazo con el código `auth.email_not_verified` |
+| 4 | Inicio de sesión con contraseña incorrecta | Camino de fallo | Rechazo con estado 401 |
+| 5 | Endpoint protegido sin sesión (solo web) | Camino de fallo | Rechazo con estado 401 |
+| 6 | Verificación del correo, inicio de sesión y consulta de las reservas del huésped | Camino feliz | Sesión de rol `guest` y lista de reservas vacía |
+
+En modo desarrollo el backend escribe en su registro el enlace de verificación del correo, de modo que la prueba lee el token de `docker logs` y no necesita un buzón real. Ambas pruebas se omiten por sí solas si la URL de la API no es local (`localhost` o `127.0.0.1`), para no crear cuentas en producción.
+
+##### Aplicación web (Vitest + jsdom)
+
+La prueba `tests/integration/auth-flow.integration.spec.js` usa `AuthenticationApi`, los comandos de dominio, el cliente HTTP compartido y `SessionAssembler` de la aplicación web. Se ejecuta con el origen `http://localhost:5173`, por lo que además comprueba que la política CORS del backend permite las llamadas desde el frontend. Se corre con `npm run test:integration`: 6 pruebas aprobadas.
+
+![Integración web ↔ backend](assets/chapter-6/integration-tests/web-backend-integration-run.png)
+
+##### Aplicación móvil (flutter_test)
+
+La prueba `test/integration/auth_flow_integration_test.dart` usa el `ApiClient` real de la aplicación (paquete `http`) contra el backend. Solo se simula el almacén seguro de la sesión del dispositivo, que no existe en un test. Se corre con `flutter test test/integration --dart-define=API_BASE_URL=http://127.0.0.1:10000/api/v1`: 5 pruebas aprobadas.
+
+![Integración móvil ↔ backend](assets/chapter-6/integration-tests/mobile-backend-integration-run.png)
+
+Además, `test/guest_booking_api_test.dart` verifica el contrato del cliente de reservas del móvil con respuestas simuladas del backend: creación de reserva, error devuelto por el backend, pago con tarjeta rechazado y cancelación no aceptada.
 
 ### 6.1.3. Core Behavior-Driven Development
 
@@ -5405,24 +5432,26 @@ Para verificar el comportamiento del software desde la perspectiva del negocio y
 
 #### 1. Cobertura de User Stories y Escenarios BDD
 
-Se implementaron y validaron **28 escenarios** en sintaxis Gherkin (en español), distribuidos en las **9 User Stories** centrales del Product Backlog:
+Se implementaron **29 escenarios** en sintaxis Gherkin, distribuidos en **9 User Stories** del Product Backlog. Cada escenario está etiquetado según el tipo de camino que verifica: `@happy-path` para el flujo esperado, y `@negative`, `@validation`, `@boundary` o `@security` para los caminos alternos (rechazos, validaciones, casos límite y seguridad).
 
-| User Story ID | Título de la Historia | Módulo / Contexto | Escenarios Implementados | Estado |
-| --- | --- | --- | --- | --- |
-| **US-01** | Registro de usuario con validación | IAM | 3 | Aprobado |
-| **US-02** | Inicio de sesión seguro | IAM | 3 | Aprobado |
-| **US-03** | Gestión de perfiles y roles | IAM / Profiles | 3 | Aprobado |
-| **US-04** | Recuperación de contraseña | IAM | 3 | Aprobado |
-| **US-52** | Autenticación 2FA para staff | IAM | 3 | Aprobado |
-| **US-06** | Gestión de habitaciones y estados | Accommodations | 3 | Aprobado |
-| **US-53** | Configuración de hotel y habitaciones | Accommodations | 3 | Aprobado |
-| **US-07** | Gestión centralizada de reservas | Bookings | 3 | Aprobado |
-| **US-51** | Reserva de habitación por huésped | Bookings | 4 | Aprobado |
-| **Total** | **9 Historias de Usuario** | **3 Contextos Delimitados** | **28 Escenarios** | **100% Pass** |
+| User Story | Título | Contexto | Escenarios | Camino feliz | Caminos alternos |
+| --- | --- | --- | ---: | ---: | ---: |
+| **US-01** | Registro de usuario | IAM | 3 | 1 | 2 |
+| **US-02** | Inicio de sesión seguro | IAM | 3 | 1 | 2 |
+| **US-03** | Gestión de perfiles y roles | IAM / Profiles | 3 | 2 | 1 |
+| **US-04** | Recuperación de contraseña | IAM | 3 | 2 | 1 |
+| **US-52** | Autenticación de dos factores para staff | IAM | 3 | 2 | 1 |
+| **US-06** | Gestión de habitaciones y estados | Accommodations | 3 | 2 | 1 |
+| **US-53** | Configuración de hotel y habitaciones | Accommodations | 3 | 1 | 2 |
+| **US-07** | Gestión centralizada de reservas | Bookings | 3 | 3 | 0 |
+| **US-51** | Reserva de habitación por huésped | Bookings | 5 | 1 | 4 |
+| **Total** | **9 historias** | **3 contextos** | **29** | **15** | **14** |
 
 #### 2. Especificación de Escenarios Gherkin (`.feature`)
 
-Los archivos `.feature` capturan los criterios de aceptación en lenguaje ubicuo mediante la estructura `Given-When-Then`. Las palabras clave de Gherkin están en inglés y los textos de cada paso, en español. Los siguientes fragmentos corresponden a los archivos del repositorio `backend`.
+Los archivos `.feature` capturan los criterios de aceptación en lenguaje de negocio mediante la estructura `Given-When-Then`, con el texto de los pasos en español. A continuación se muestran dos de los nueve archivos, tal como están en el repositorio.
+
+Las fechas de los escenarios de reservas se escriben de forma relativa a la fecha de ejecución (`hoy+30` equivale a treinta días después de hoy, y `hoy-3` a tres días antes), para que las pruebas no dejen de pasar cuando el calendario avanza.
 
 ##### Archivo: `US51_ReservaHabitacionPorHuesped.feature` (Contexto Bookings)
 
@@ -5441,7 +5470,7 @@ Feature: Reserva de habitación por huésped
     Given que existe un hotel registrado y operativo
     And existe una habitación "101" de tipo "Double" disponible con precio por noche de 150.00 soles
     And existe un huésped registrado con correo "juan.perez@smartstay.pe" y nombre "Juan Perez"
-    When el huésped solicita registrar una reserva desde "2026-11-01" hasta "2026-11-05"
+    When el huésped solicita registrar una reserva desde "hoy+30" hasta "hoy+34"
     Then la reserva debe crearse exitosamente
     And el estado inicial de la reserva debe ser "Pending"
     And la reserva debe contener un código de reserva generado
@@ -5452,9 +5481,38 @@ Feature: Reserva de habitación por huésped
   Scenario: Rechazar una reserva que se superpone con otra reserva existente
     Given que existe un hotel registrado y operativo
     And existe una habitación "102" de tipo "Single" disponible con precio por noche de 100.00 soles
-    And existe una reserva activa para la habitación "102" del "2026-11-10" al "2026-11-15"
-    When otro huésped intenta registrar una reserva para la habitación "102" del "2026-11-12" al "2026-11-14"
+    And existe una reserva activa para la habitación "102" del "hoy+39" al "hoy+44"
+    When otro huésped intenta registrar una reserva para la habitación "102" del "hoy+41" al "hoy+43"
     Then la solicitud de reserva debe ser rechazada indicando que la habitación no está disponible
+
+  @US-51
+  @validation
+  Scenario: Rechazar una reserva cuya fecha de salida no sea posterior a la fecha de entrada
+    Given que existe un hotel registrado y operativo
+    And existe una habitación "103" de tipo "Suite" disponible con precio por noche de 250.00 soles
+    And existe un huésped registrado con correo "maria.lopez@smartstay.pe" y nombre "Maria Lopez"
+    When el huésped solicita registrar una reserva desde "hoy+39" hasta "hoy+37"
+    Then la solicitud de reserva debe ser rechazada por rango de fechas inválido
+
+  @US-51
+  @boundary
+  Scenario: Permitir una reserva que comienza el mismo día en que termina la reserva anterior
+    Given que existe un hotel registrado y operativo
+    And existe una habitación "104" de tipo "Double" disponible con precio por noche de 180.00 soles
+    And existe una reserva activa para la habitación "104" del "hoy+30" al "hoy+34"
+    When un nuevo huésped solicita registrar una reserva para la habitación "104" del "hoy+34" al "hoy+39"
+    Then la reserva debe crearse exitosamente
+    And el estado inicial de la reserva debe ser "Pending"
+
+  @US-51
+  @validation
+  @negative
+  Scenario: Rechazar una reserva cuya fecha de entrada ya pasó
+    Given que existe un hotel registrado y operativo
+    And existe una habitación "105" de tipo "Single" disponible con precio por noche de 100.00 soles
+    And existe un huésped registrado con correo "carlos.ruiz@smartstay.pe" y nombre "Carlos Ruiz"
+    When el huésped solicita registrar una reserva desde "hoy-3" hasta "hoy-1"
+    Then la solicitud de reserva debe ser rechazada porque la fecha de entrada ya pasó
 ```
 
 ##### Archivo: `US06_GestionHabitacionesYEstados.feature` (Contexto Accommodations)
@@ -5476,6 +5534,13 @@ Feature: Gestión de habitaciones y estados
     Then el estado de la habitación "301" debe actualizarse a "Maintenance"
 
   @US-06
+  @happy-path
+  Scenario: Cambiar el estado de una habitación de Limpieza a Disponible
+    Given que existe una habitación "302" en estado "Cleaning"
+    When el personal solicita cambiar el estado de la habitación "302" a "Available"
+    Then el estado de la habitación "302" debe actualizarse a "Available"
+
+  @US-06
   @negative
   Scenario: Rechazar una transición de estado no permitida para la habitación
     Given que existe una habitación "303" en estado "Occupied"
@@ -5485,72 +5550,85 @@ Feature: Gestión de habitaciones y estados
 
 #### 3. Implementación de Step Definitions en C# (.NET 9)
 
-La vinculación entre los pasos Gherkin y los servicios del backend se implementa mediante clases decoradas con el atributo `[Binding]` de Reqnroll. Cada User Story tiene su clase de pasos, y los escenarios se ejecutan contra el servicio de aplicación real y una base de datos en memoria. El siguiente fragmento es de `US51_ReservaHabitacionStepDefinitions.cs`:
+La vinculación entre los pasos Gherkin y los servicios del backend se implementa con clases decoradas con el atributo `[Binding]` de Reqnroll. Cada clase usa los servicios de aplicación reales del contexto, con repositorios y fachadas de prueba. A continuación se muestran fragmentos de `US51_ReservaHabitacionStepDefinitions.cs`.
 
 ```csharp
-[Binding]
-public class US51_ReservaHabitacionStepDefinitions
+[Given(@"existe una habitación ""(.*)"" de tipo ""(.*)"" disponible con precio por noche de (.*) soles")]
+public void GivenExisteUnaHabitacionDeTipoDisponibleConPrecioPorNocheDeSoles(string number, string type, decimal price)
 {
-    private readonly ScenarioContext _context;
-    private Booking? _createdBooking;
-    private Exception? _caughtException;
+    _roomNumber = number;
+    _roomId = int.Parse(number);
+    _roomType = type;
+    _roomPrice = price;
+}
 
-    [When(@"el huésped solicita registrar una reserva desde ""(.*)"" hasta ""(.*)""")]
-    public async Task WhenElHuespedSolicitaRegistrarUnaReservaDesdeHasta(string checkIn, string checkOut)
+[When(@"el huésped solicita registrar una reserva desde ""(.*)"" hasta ""(.*)""")]
+public async Task WhenElHuespedSolicitaRegistrarUnaReservaDesdeHasta(string checkIn, string checkOut)
+{
+    try
     {
-        try
-        {
-            var service = CreateService();
-            var command = new CreateBookingCommand(
-                Requester: BookingRequester.Guest(_guestUserId, _guestEmail),
-                RoomId: _roomId,
-                GuestName: _guestName,
-                GuestEmail: _guestEmail,
-                CheckInDate: DateTime.Parse(checkIn),
-                CheckOutDate: DateTime.Parse(checkOut),
-                UserId: _guestUserId);
+        var service = CreateService();
+        var command = new CreateBookingCommand(
+            Requester: BookingRequester.Guest(_guestUserId, _guestEmail),
+            RoomId: _roomId,
+            GuestName: _guestName,
+            GuestEmail: _guestEmail,
+            CheckInDate: RelativeDates.Parse(checkIn),
+            CheckOutDate: RelativeDates.Parse(checkOut),
+            UserId: _guestUserId);
 
-            _createdBooking = await service.Handle(command);
-        }
-        catch (Exception ex)
-        {
-            _caughtException = ex;
-        }
+        _createdBooking = await service.Handle(command);
     }
-
-    [Then(@"la reserva debe crearse exitosamente")]
-    public void ThenLaReservaDebeCrearseExitosamente()
+    catch (Exception ex)
     {
-        _caughtException.Should().BeNull();
-        _createdBooking.Should().NotBeNull();
+        _caughtException = ex;
     }
+}
 
-    [Then(@"el estado inicial de la reserva debe ser ""(.*)""")]
-    public void ThenElEstadoInicialDeLaReservaDebeSer(string status)
+[Then(@"la solicitud de reserva debe ser rechazada porque la fecha de entrada ya pasó")]
+public void ThenLaSolicitudDeReservaDebeSerRechazadaPorqueLaFechaDeEntradaYaPaso()
+{
+    _caughtException.Should().BeOfType<DomainValidationException>()
+        .Which.Code.Should().Be(BookingErrorCodes.CheckInInPast);
+    _createdBooking.Should().BeNull();
+}
+```
+
+El helper `RelativeDates` interpreta las fechas relativas de los escenarios:
+
+```csharp
+/// <summary>Parses ISO dates or <c>hoy+N</c> / <c>hoy-N</c> (days from today) so scenarios never go stale.</summary>
+public static class RelativeDates
+{
+    private const string Today = "hoy";
+
+    public static DateTime Parse(string text)
     {
-        _createdBooking!.Status.ToString().Should().Be(status);
+        var value = text.Trim();
+        if (value.StartsWith(Today, StringComparison.OrdinalIgnoreCase) && value.Length > Today.Length
+            && value[Today.Length] is '+' or '-')
+        {
+            var days = int.Parse(value[Today.Length..], System.Globalization.CultureInfo.InvariantCulture);
+            return DateTime.UtcNow.Date.AddDays(days);
+        }
+
+        return DateTime.Parse(value, System.Globalization.CultureInfo.InvariantCulture);
     }
 }
 ```
 
 #### 4. Resultados de Ejecución
 
-Los resultados corresponden a la ejecución de `dotnet test` dentro del job *Build & test* del workflow `ci-backend.yml` sobre la rama `develop` (ejecución #7 del 07/10/2026, tras fusionar el pull request #13), que corre las tres suites en un mismo paso:
+El 9 de noviembre de 2026 se ejecutó `dotnet test` sobre la solución completa, con un contenedor de MySQL 8.0.36 para la prueba de concurrencia. Pasaron las 266 pruebas de las tres suites, sin fallos ni omisiones:
 
-```text
-Passed!  - Failed: 0, Passed:  87, Skipped: 0, Total:  87, Duration: 397 ms - BackendAwSmartstay.API.UnitTests.dll (net9.0)
-Passed!  - Failed: 0, Passed: 150, Skipped: 0, Total: 150, Duration: 6 s    - BackendAwSmartstay.API.Tests.dll (net9.0)
-Passed!  - Failed: 0, Passed:  28, Skipped: 0, Total:  28, Duration: 12 s   - BackendAwSmartstay.API.BddTests.dll (net9.0)
-```
-
-| Suite de Pruebas | Framework / Versión | Tipo de Prueba | Total | Aprobados | Fallidos |
+| Suite de pruebas | Framework | Tipo de prueba | Total | Aprobadas | Fallidas |
 | --- | --- | --- | ---: | ---: | ---: |
-| `BackendAwSmartstay.API.UnitTests` | NUnit 4.2.2 / .NET 9 | Unitarias de Bookings y Payments | 87 | 87 | 0 |
-| `BackendAwSmartstay.API.Tests` | NUnit 4.2.2 / .NET 9 | Unitarias e integración de Accommodations, Bookings y Profiles | 150 | 150 | 0 |
-| `BackendAwSmartstay.API.BddTests` | Reqnroll 2.3.0 + NUnit 4.2.2 | Comportamiento (BDD / Gherkin) | 28 | 28 | 0 |
-| **Total consolidado** | **.NET 9 Test Platform** | **Verificación completa** | **265** | **265** | **0** |
+| `BackendAwSmartstay.API.UnitTests` | NUnit | Unitarias de dominio y aplicación (Bookings y Payments) | 87 | 87 | 0 |
+| `BackendAwSmartstay.API.Tests` | NUnit | Unitarias e integración (Accommodations, Bookings, IAM y Profiles) | 150 | 150 | 0 |
+| `BackendAwSmartstay.API.BddTests` | Reqnroll + NUnit | Comportamiento (BDD / Gherkin) | 29 | 29 | 0 |
+| **Total** | | | **266** | **266** | **0** |
 
-![guerkin-test](assets/chapter-6/testing-suites/guerkin-test.png)
+![Ejecución de las tres suites de pruebas](assets/chapter-6/testing-suites/test-suites-run.png)
 
 ### 6.1.4. Core System Tests
 
@@ -5616,7 +5694,52 @@ Para este avance se prepararon, sin integrar todavía, las correcciones de 10 de
 
 #### 6.2.1.2. Code Quality & Code Security
 
-La calidad y la seguridad se revisaron en tres niveles: seguridad de las dependencias, higiene de los secretos y calidad estructural del código.
+La calidad y la seguridad del código se evaluaron con **SonarQube Community Build 26.11**, una de las herramientas que propone el enunciado junto con ESLint y Checkmarx. Se eligió SonarQube porque mide en un solo análisis complejidad, duplicación, mantenibilidad, cobertura y vulnerabilidades, y porque analiza C#, JavaScript, HTML y CSS, los lenguajes del backend, del frontend y de la landing page. ESLint solo cubre JavaScript y no mide duplicación ni cobertura, y Checkmarx requiere licencia. SonarQube se ejecutó en un contenedor Docker local el 10/11/2026 sobre la rama `develop` de cada repositorio. En el backend, el análisis incluyó la ejecución de las tres suites de pruebas con `coverlet` para medir la cobertura.
+
+SonarQube no analiza Dart, por lo que la aplicación móvil se verificó con `flutter analyze` y el conjunto de reglas `flutter_lints`: el análisis terminó sin observaciones (*No issues found*).
+
+**Calidad del código.**
+
+| Métrica | `backend` (C#) | `frontend` (Vue) | `landing-page` |
+| :--- | :---: | :---: | :---: |
+| Líneas de código | 15 654 | 13 986 | 2 795 |
+| Complejidad ciclomática | 3 493 | 2 304 | 285 |
+| Complejidad cognitiva | 1 333 | 1 044 | 208 |
+| Duplicación | 0,4 % | 1,2 % | 20,4 % |
+| Cobertura de pruebas | 30,3 % | 0 % | 0 % |
+| Mantenibilidad (observaciones / calificación) | 13 / A | 2 / A | 4 / A |
+| Confiabilidad (observaciones / calificación) | 18 / C | 27 / C | 5 / C |
+| Seguridad (observaciones / calificación) | 5 / E | 0 / A | 0 / A |
+| *Quality gate* | Aprobado | Aprobado | Aprobado |
+
+![Resumen de SonarQube del backend](assets/chapter-6/static-analysis/sonarqube-backend.png)
+
+![Resumen de SonarQube del frontend](assets/chapter-6/static-analysis/sonarqube-frontend.png)
+
+![Resumen de SonarQube de la landing page](assets/chapter-6/static-analysis/sonarqube-landing.png)
+
+**Interpretación de los resultados de calidad.**
+
+- **Mantenibilidad (A en los tres repositorios).** La deuda técnica es baja. En el backend, las 13 observaciones son sugerencias de Roslyn, como declarar estáticos los métodos que no usan datos de instancia o generar las expresiones regulares en tiempo de compilación.
+- **Duplicación.** El backend (0,4 %) y el frontend (1,2 %) tienen poca duplicación. El 20,4 % de la landing page proviene de los archivos de textos `src/i18n/locales/es.js` y `en.js`, que repiten la misma estructura en dos idiomas (299 líneas cada uno), y de `stories.js`; no es lógica duplicada.
+- **Confiabilidad (C).** En el frontend, 15 de las 27 observaciones corresponden a `HotelForm.vue` y `RoomForm.vue`, que modifican directamente una *prop* recibida del componente padre. Es el mismo hallazgo que reporta ESLint con `vue/no-mutating-props` (6.2.1.1), por lo que ambas herramientas coinciden. Las demás son cuatro expresiones regulares con riesgo de *backtracking*, tres etiquetas de formulario sin asociar a su campo (accesibilidad) y dos comparaciones que siempre son falsas. En el backend, 16 de las 18 observaciones (regla S6964) señalan propiedades de tipo valor en los recursos de entrada de los controladores que deberían ser anulables o requeridas, para evitar que un campo omitido se reciba con su valor por defecto. En la landing page, cuatro corresponden a encabezados vacíos en `index.html` que el JavaScript llena al cargar la página.
+- **Cobertura.** El 30,3 % del backend proviene de sus 266 pruebas (6.1). El frontend y la landing page no tienen pruebas unitarias, por lo que su cobertura es 0 %. La prueba de integración del frontend descrita en 6.1.2 se ejecuta contra el backend real y no se mide como cobertura.
+
+**Seguridad del código.**
+
+SonarQube reportó cinco observaciones de seguridad en el backend, que el equipo revisó una por una en el código:
+
+| Regla | Archivo | Severidad | Análisis del equipo |
+| :--- | :--- | :---: | :--- |
+| S6703 y S2068: contraseña en el código | `AppDbContextFactory.cs` | Bloqueante | Es la contraseña de la base local de Docker (`smartstay_dev`), usada solo como respaldo cuando `dotnet ef` genera migraciones. Producción toma la cadena de conexión de una variable de entorno. Se debe retirar del código y exigir la variable. |
+| S4790: algoritmo de hash débil | `PwnedPasswordsChecker.cs` | Alta | Falso positivo: la API de Have I Been Pwned exige SHA-1 para su modelo de k-anonimato, y solo se envían los cinco primeros caracteres del hash. Las contraseñas se almacenan con BCrypt. |
+| S4790: algoritmo de hash débil | `CloudinarySignature.cs` | Alta | SHA-1 es el algoritmo de firma por defecto de la API de Cloudinary. Se puede migrar a SHA-256 desde la configuración de la cuenta. |
+| S6444: expresión regular sin tiempo límite | `DemoRequest.cs` | Baja | El patrón `\s+` no tiene *backtracking* catastrófico, pero conviene fijar un tiempo límite. |
+
+**Inyección SQL y XSS.** La edición Community de SonarQube no ejecuta el análisis de flujo de datos que detecta inyecciones SQL y XSS, y así lo advierte en su resumen. Por eso el equipo revisó manualmente los puntos donde podrían ocurrir:
+
+- **Inyección SQL.** El backend accede a MySQL con Entity Framework Core, que parametriza las consultas. Solo tres lugares escriben SQL a mano, y los tres son seguros: `EmployeeCodeGenerator` usa una sentencia constante sin datos del usuario, y `OutboxEmailDispatcher` y `RoomRepository` usan `SqlQuery` y `FromSqlInterpolated` con cadenas interpoladas, que EF Core convierte en parámetros.
+- **XSS.** El frontend y la landing page no usan `v-html`, `innerHTML` ni `insertAdjacentHTML`. Vue escapa por defecto todo el texto que muestra, y el código documenta que no se renderiza HTML recibido de la API.
 
 **Seguridad de las dependencias.** Se ejecutó `npm audit` el 09/11/2026 sobre los dos repositorios JavaScript:
 
@@ -5629,27 +5752,40 @@ En el frontend, los paquetes afectados incluyen `axios`, `follow-redirects`, `fo
 
 En el **backend** el control ya está automatizado: el job *Dependency audit* de `ci-backend.yml` ejecuta `dotnet list package --vulnerable --include-transitive` y falla si encuentra paquetes vulnerables. El commit `f875916` (`fix(deps): patch vulnerable packages and drop unused sqlite provider`) corrigió los paquetes que ese control detectó y eliminó un proveedor de SQLite sin uso.
 
+El 10/11/2026 el mismo control bloqueó el *pull request* #14 del backend: detectó seis avisos publicados después de la última integración en `MySqlConnector` 2.4.0, `System.Security.Cryptography.Pkcs` 10.0.0 y `System.Security.Cryptography.Xml` 9.0.20. El equipo fijó las versiones corregidas (2.6.1, 10.0.13 y 9.0.21) y el *pull request* pasó el control antes de integrarse.
+
 **Higiene de secretos.** Los repositorios publican únicamente archivos `.env.example` con nombres de variables y sin valores reales, `.env` figura en el `.gitignore` de `backend`, `frontend` y `landing-page` (el de `mobile` no lo ignoraba y se corrigió en el directorio de trabajo, pendiente de integrar), y el `render.yaml` del backend declara los secretos con `sync: false`, de modo que Render los solicita al crear el servicio y no se versionan.
 
-**Calidad estructural.** No se configuró SonarQube ni SonarCloud, porque requieren una cuenta de organización. En su lugar, el equipo se apoyó en controles que no dependen de un servicio externo: tipos anulables habilitados en C#, compilación sin advertencias en CI, análisis de `flutter_lints` y las suites de pruebas automatizadas del backend descritas en 6.1. La incorporación de SonarCloud, con medición de complejidad ciclomática, duplicación y cobertura, queda como mejora recomendada y no se presenta como realizada.
+**Acciones derivadas.** Retirar la contraseña de respaldo de `AppDbContextFactory`, marcar como requeridas o anulables las propiedades señaladas por S6964, corregir las mutaciones de *props* en los dos formularios del frontend y fijar un tiempo límite en las expresiones regulares. La aplicación de estas correcciones se registrará en la siguiente entrega.
 
 ### 6.2.2. Reviews
 
-Las revisiones del equipo se realizan mediante *pull requests* sobre `develop` y `main`, siguiendo GitFlow. La tabla resume el estado real de los *pull requests* de cada repositorio al 09/11/2026, consultado con la API de GitHub:
+Las revisiones complementan el análisis automático de 6.2.1: antes de integrar un cambio, otro integrante revisa el código en un *pull request* sobre `develop` o `main`, siguiendo GitFlow. La tabla resume el estado real de los *pull requests* de cada repositorio al 10/11/2026, consultado con la API de GitHub:
 
 | Repositorio | Pull requests | Fusionados | Cerrados sin fusionar | Abiertos | Con al menos una revisión registrada |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| `backend` | 13 | 12 | 1 | 0 | 1 |
+| `backend` | 15 | 14 | 1 | 0 | 1 |
 | `frontend` | 6 | 6 | 0 | 0 | 0 |
-| `mobile` | 1 | 0 | 0 | 1 | 0 |
+| `mobile` | 1 | 1 | 0 | 0 | 0 |
 | `landing-page` | 4 | 4 | 0 | 0 | 0 |
-| `Report` | 2 | 1 | 0 | 1 | 0 |
+| `Report` | 2 | 1 | 1 | 0 | 0 |
+
+**Reglas de protección de ramas.** El repositorio `backend` tiene activo el *ruleset* «Protect main and develop», que obliga a revisar antes de integrar en `main` y `develop`:
+
+| Regla | Efecto |
+| :--- | :--- |
+| *Pull request* obligatorio | No se puede integrar con un *push* directo; todo cambio entra por un *pull request*. |
+| 1 aprobación requerida | Otro integrante debe aprobar el *pull request*; el autor no puede aprobar el suyo. |
+| *Checks* requeridos | Los trabajos `Lint`, `Dependency audit` y `Build & test` de `ci-backend.yml` deben terminar en verde. |
+| Sin *force push* ni borrado | La historia de `main` y `develop` no se puede reescribir ni eliminar. |
+
+**Ejemplo de revisión registrada.** El *pull request* #13 del backend (`ci: deploy to render only after ci checks pass on main`) fue aprobado por Alejandro Galindo antes de integrarse en `develop`, con los tres *checks* de CI en verde.
 
 **Hallazgos de la revisión.**
 
-1. Los *pull requests* se usan de forma consistente para integrar `develop` en `main` (`chore(release): merge develop into main`), pero la revisión entre pares dentro de GitHub es escasa: solo uno de los 26 *pull requests* tiene una revisión registrada. Gran parte de la revisión ocurrió en las reuniones del equipo y no quedó como evidencia en la plataforma.
-2. Los controles automáticos sí quedaron como barrera: desde el *pull request* #13 del backend, `render.yaml` usa `autoDeployTrigger: checksPass`, de modo que Render solo despliega a producción después de que los *checks* de CI pasan en `main`.
-3. **Acción correctiva acordada:** activar la regla de revisión obligatoria de al menos un integrante en las ramas `develop` y `main` de los cuatro repositorios, para que la revisión entre pares quede registrada en GitHub.
+1. Los *pull requests* se usan de forma consistente para integrar `develop` en `main` (`chore(release): merge develop into main`), pero la revisión entre pares dentro de GitHub es escasa: solo uno de los 28 *pull requests* tiene una revisión registrada. Gran parte de la revisión ocurrió en las reuniones del equipo y no quedó como evidencia en la plataforma.
+2. Solo el backend exige revisión: `frontend`, `mobile`, `landing-page` y `Report` no tienen reglas de protección, por lo que un cambio puede integrarse sin que nadie lo apruebe.
+3. **Acción correctiva acordada:** extender el *ruleset* del backend a los otros cuatro repositorios, para que toda integración en `develop` y `main` requiera la aprobación de otro integrante y quede registrada en GitHub.
 
 ---
 
@@ -6891,8 +7027,6 @@ DZone. (s.f.). _Acceptance Criteria in Scrum: Explanation, Examples, and Templat
 Evans, E. (2004). _Domain-Driven Design: Tackling Complexity in the Heart of Software_. Addison-Wesley Professional. Recuperado de https://www.oreilly.com/library/view/domain-driven-design-tackling/0321125215/
 
 Fowler, M. (2006). _Ubiquitous Language_. Recuperado de https://martinfowler.com/bliki/UbiquitousLanguage.html
-
-Google. (2025). _Firebase documentation_. https://firebase.google.com/docs
 
 Google. (s.f.). _Google HTML/CSS Style Guide_. Recuperado de https://google.github.io/styleguide/htmlcssguide.html
 
