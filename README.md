@@ -358,7 +358,9 @@ Entre sus principales características destacan:
       <td>Soy Desarrollador full stack orientado a soluciones de IA. Amplia experiencia en pipelines automatizados y experimentos con LLMs. Actualmente desarrollando workflows inteligentes.</td>
     </tr>
     <tr>
-      <td></td>
+      <td align="center" valign="middle">
+       <img src="assets/chapter-1/members/FotoAlberto.png" alt="Ponce Perales Alberto Alejandro" width="300">
+      </td>
       <td>Ponce Perales, Alberto Alejandro</td>
       <td>u202320684</td>
       <td>Ingeniería de Software</td>
@@ -5859,6 +5861,8 @@ La Integración Continua (CI) en la plataforma SmartStay reúne las prácticas y
 **Estado actual.** El backend es el único repositorio con un pipeline de CI en `develop` y `main` (`ci-backend.yml`). Para el frontend web, la landing page y la aplicación móvil se definieron workflows equivalentes (`ci.yml`) en la rama `feature/av2-ci` de cada repositorio, pendientes de fusión. En este capítulo se distingue siempre entre lo que ya está en ejecución y lo que está propuesto.
 
 <!-- Diagrama del equipo (assets/chapter-7/ContinuousIntegration/ContinuousIntegration1.jpeg) retirado: muestra una app móvil Android/Kotlin y un paso de CodeReview automático que no existen. Reemplazar por un diagrama actualizado. -->
+
+![Flujo de integración continua de SmartStay](assets/chapter-7/ContinuousIntegration/ci-overview.png)
 
 ---
 

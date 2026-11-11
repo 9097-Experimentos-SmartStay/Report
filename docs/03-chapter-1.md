@@ -38,7 +38,9 @@ Entre sus principales características destacan:
       <td>Soy Desarrollador full stack orientado a soluciones de IA. Amplia experiencia en pipelines automatizados y experimentos con LLMs. Actualmente desarrollando workflows inteligentes.</td>
     </tr>
     <tr>
-      <td></td>
+      <td align="center" valign="middle">
+       <img src="../assets/chapter-1/members/FotoAlberto.png" alt="Ponce Perales Alberto Alejandro" width="300">
+      </td>
       <td>Ponce Perales, Alberto Alejandro</td>
       <td>u202320684</td>
       <td>Ingeniería de Software</td>
