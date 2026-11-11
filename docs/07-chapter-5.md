@@ -117,7 +117,7 @@ El backend fue implementado con **ASP.NET Core 9 (C#)** empleando el IDE **JetBr
 
 Por otro lado, el desarrollo móvil se realizó utilizando **Flutter** (lenguaje **Dart**), framework multiplataforma con el que se implementó la aplicación móvil de SmartStay. No se desarrolló código nativo en Kotlin: la carpeta `android/` del proyecto es el andamiaje que genera Flutter para compilar el APK.  
 
-Adicionalmente, se empleó **MySQL** como sistema de gestión de base de datos y **Render** para el despliegue del backend, con **Vercel** para el frontend web y la landing page. Inicialmente se planteó **Azure** como plataforma de despliegue, pero por falta de créditos se optó por Render.  
+Adicionalmente, se empleó **MySQL** como sistema de gestión de base de datos y **Render** para el despliegue del backend, con **Vercel** para el frontend web y la landing page.  
 
 Finalmente, el proyecto se apoyó en herramientas de control de versiones como **Git y GitHub**, mientras que la instalación y mantenimiento de las IDEs se realizó mediante **JetBrains ToolBox**.
 
@@ -141,7 +141,7 @@ Toda la documentación se redactó en formato **Markdown (.md)**, debido a su le
 - **GitHub:** [GitHub](https://github.com/)
 
 ### Software Deployment
-El backend se desplegó en **Render** como un único servicio web basado en contenedor Docker, que aloja la API REST y garantiza la comunicación entre las aplicaciones, la base de datos MySQL y los servicios del sistema Smart Stay. Azure se consideró inicialmente como plataforma de despliegue, pero no se utilizó por falta de créditos.  
+El backend se desplegó en **Render** como un único servicio web basado en contenedor Docker, que aloja la API REST y garantiza la comunicación entre las aplicaciones, la base de datos MySQL y los servicios del sistema Smart Stay.  
 Asimismo, la aplicación móvil fue ejecutada y validada en emuladores y dispositivos físicos Android para verificar el correcto funcionamiento de las funcionalidades desarrolladas.
 
 **Enlaces**  
@@ -161,7 +161,7 @@ El proyecto está organizado dentro de una **organización en GitHub**, donde ca
   - **Tecnología:** Flutter (Dart)
   - **IDE:** Android Studio
   - **URL del repositorio:** https://github.com/9097-Experimentos-SmartStay/mobile
-  - **Plataforma de despliegue:** APK (GitHub Releases) / emulador Android
+  - **Plataforma de despliegue:** Emulador Android y dispositivos físicos Android
 
 - **Web Services (Backend):**  
   - **Tecnología:** ASP.NET Core (C#)
@@ -314,7 +314,7 @@ Solo `main` y `develop` son ramas permanentes. Las ramas `feature/*`, `fix/*`, `
 
 **Convenciones aplicadas:**
 
-- Uso de **UpperCamelCase** para clases, widgets y tipos (`LoginScreen`, `RoomListPage`).
+- Uso de **UpperCamelCase** para clases, widgets y tipos (`LoginPage`, `RoomsPage`).
 - Uso de **lowerCamelCase** para variables, funciones y parámetros (`guestName`, `validateLogin()`).
 - Uso de **snake_case** para nombres de archivos y paquetes.
 - Organización del código por capas y funcionalidades (`core`, `domain`, `features`, `shared`).
@@ -494,14 +494,16 @@ Este Sprint está enfocado en establecer la presencia digital oficial del proyec
 
 ##### 5.2.1.1.3. Development Evidence for Sprint Review
 
-Durante el desarrollo del sprint, el equipo trabajó de manera distribuida en los distintos repositorios del ecosistema **SmartStay**, incluyendo el Project Report, Landing Page, Mobile Application y Backend. Para evidenciar el avance realizado, se presenta el siguiente cuadro de commits obtenidos de los repositorios oficiales del proyecto en GitHub.
+Durante el desarrollo del sprint, el equipo trabajó de manera distribuida en los distintos repositorios del ecosistema **SmartStay**, incluyendo el Project Report, Landing Page, Mobile Application, Backend y APK. Para evidenciar el avance realizado, se presenta el siguiente cuadro de commits obtenidos de los repositorios oficiales del proyecto en GitHub.
 
 | Repositorio | Commit | Autor | Fecha | Rama/Referencia | Mensaje |
 |---|---|---|---|---|---|
 | Project Report | f42fb3c |  | 2026-05-15 | main | Docs: Update README with Sprint 1 execution details |
 | Project Report | aa4d72f | atomdragon1318 | 2026-05-14 | main | docs: add Lean UX Canvas image and update related section in README |
+| Project Report | 95ab6ee |  | 2026-05-13 | main | Update README with APK repository URL |
 | Project Report | 4dcbc6c | atomdragon1318 | 2026-05-13 | main | doc: Add new asset images for application UI |
 | Project Report | bae57ee |  | 2026-05-13 | main | docs: add Development Evidence for Sprint Review, evidencia de la Suite de Pruebas para la Revisión del Sprint and Services Documentation Evidence for Sprint Review |
+| Project Report | c62b7ed | atomdragon1318 | 2026-05-13 | main | Docs: Add Android Studio emulator image to Chapter IIII |
 | Project Report | 3a74b48 | atomdragon1318 | 2026-05-13 | main | Docs: Add Lean UX Canvas image to Chapter I |
 | Project Report | b7ac279 | atomdragon1318 | 2026-05-12 | main | doc(fix): name of the image |
 | Project Report | e9d3771 | atomdragon1318 | 2026-05-12 | main | Docs: Add interview images for hotel management application, conclusions, recommendations and glossary. |
@@ -516,6 +518,8 @@ Durante el desarrollo del sprint, el equipo trabajó de manera distribuida en lo
 | Landing Page | 1253f31 | atomdragon1318 | 2026-05-04 | main | fix: hide scrollbar in carousel track for cleaner appearance |
 | Landing Page | f29f340 | atomdragon1318 | 2026-05-04 | main | feat: add image to member, delete video about the team |
 | Landing Page | 32e2e01 | atomdragon1318 | 2026-05-04 | main | chore: add initial files and landing page |
+| APK | 73fa084 |  | 2026-05-13 | main | Add SmartStay demo APK |
+| APK | 5e82d86 |  | 2026-05-13 | main | Add README for SmartStay APK demo |
 | Mobile Application | f204803 | atomdragon1318 | 2026-05-24 | main | feat: implement authentication feature with session management and API integration |
 | Mobile Application | b47b9cb | atomdragon1318 | 2026-05-24 | main | feat: implement accommodation feature with API service, repository, and UI components |
 | Mobile Application | 0d05b15 | atomdragon1318 | 2026-05-24 | main | feat: add device manager configuration and update library versions |
@@ -545,9 +549,9 @@ Durante el sprint, se realizaron pruebas sobre los distintos componentes del eco
 | Landing Page | Prueba unitaria | Jest / `npm test` | Botones CTA | Los botones principales se visualizan correctamente y redireccionan a las secciones correspondientes. | Aprobado |
 | Landing Page | Prueba unitaria | Jest / `npm test` | Cambio de idioma | Los textos cambian correctamente entre los idiomas configurados. | Aprobado |
 | Landing Page | Prueba de interfaz | Navegador web | Diseño responsive | La Landing Page se adapta correctamente a vista desktop y móvil. | Aprobado |
-| Mobile Application | Prueba unitaria | Flutter / `flutter test` | Flujo de autenticación | La lógica de autenticación procesa correctamente credenciales y sesión de usuario. | Aprobado |
-| Mobile Application | Prueba unitaria | Flutter / `flutter test` | Gestión de perfiles | El módulo de perfiles permite cargar, crear y visualizar información del usuario. | Aprobado |
-| Mobile Application | Prueba de integración | Emulador Android | Navegación de la aplicación | La aplicación permite navegar entre las pantallas principales sin errores críticos. | Aprobado |
+| Mobile Application | Prueba unitaria | Gradle / `./gradlew test` | Flujo de autenticación | La lógica de autenticación procesa correctamente credenciales y sesión de usuario. | Aprobado |
+| Mobile Application | Prueba unitaria | Gradle / `./gradlew test` | Gestión de perfiles | El módulo de perfiles permite cargar, crear y visualizar información del usuario. | Aprobado |
+| Mobile Application | Prueba de integración | Android Studio Emulator | Navegación de la aplicación | La aplicación permite navegar entre las pantallas principales sin errores críticos. | Aprobado |
 | Backend | Prueba unitaria | .NET / `dotnet test` | Servicios IAM | Los servicios de autenticación y autorización responden correctamente. | Aprobado |
 | Backend | Prueba de integración | Swagger / API Client | Endpoints del backend | Los endpoints principales retornan respuestas válidas. | Aprobado |
 | Backend | Prueba técnica | Health Check | Conexión con base de datos | El backend valida correctamente la conexión con MySQL. | Aprobado |
@@ -557,7 +561,7 @@ Durante el sprint, se realizaron pruebas sobre los distintos componentes del eco
 
 ##### 5.2.1.1.5. Execution Evidence for Sprint Review 
 
-Durante el Sprint 1, se logró ejecutar y validar la aplicación móvil en el entorno de desarrollo de Flutter, utilizando tanto el emulador como dispositivos físicos para asegurar la correcta funcionalidad de las características implementadas. Así mismo, el despliegue del backend y landing page.
+Durante el Sprint 1, se logró ejecutar y validar la aplicación móvil en el entorno de desarrollo de Android Studio, utilizando tanto el emulador como dispositivos físicos para asegurar la correcta funcionalidad de las características implementadas. Así mismo, el despliegue del backend y landing page.
 
 
 ![App Execution 1](../assets/chapter-5/sprints/sprint-1/app-execution-01.jpeg)
@@ -613,7 +617,7 @@ Durante el Sprint 1, se logró ejecutar y validar la aplicación móvil en el en
 
 En este Sprint 1, los miembros del equipo lograron completar las tareas asociadas al desarrollo inicial de la aplicación móvil SmartStay.
 
-El trabajo incluyó la configuración del entorno de desarrollo de Flutter, la implementación de las primeras interfaces móviles y la integración de componentes principales como la pantalla de inicio de sesión, navegación entre vistas y estructura base de la aplicación.
+El trabajo incluyó la configuración del entorno de desarrollo en Android Studio, la implementación de las primeras interfaces móviles y la integración de componentes principales como la pantalla de inicio de sesión, navegación entre vistas y estructura base de la aplicación.
 
 La aplicación móvil cumple el rol de plataforma principal de interacción para huéspedes y personal operativo, permitiendo centralizar funcionalidades relacionadas con reservas, gestión hotelera y servicios digitales dentro del ecosistema SmartStay.
 
@@ -650,7 +654,7 @@ A continuación, se presenta el Sprint Planning 2, en el que se incluyen las evi
 | **Sprint 2 Review Summary**         | Durante el Sprint 1 se logró publicar la Landing Page institucional del proyecto, desplegar la primera versión funcional del backend y validar la ejecución inicial de la aplicación móvil.                                             |
 | **Sprint 2 Retrospective Summary**  | Se identificó la necesidad de mejorar la distribución de tareas, aumentar la frecuencia de revisión de código y fortalecer la comunicación para acelerar la integración de funcionalidades.                                             |
 | **Sprint Goal & User Stories**      | —                                                                                                                                                                                                                                       |
-| **Sprint 2 Goal**                   | Desarrollar una aplicación móvil funcional en Flutter, incorporando módulos de autenticación y seguridad, gestión de perfiles y usuarios, administración de hoteles y habitaciones, así como procesamiento de pagos.                     |
+| **Sprint 2 Goal**                   | Desarrollar una aplicación móvil funcional en Kotlin, incorporando módulos de autenticación y seguridad, gestión de perfiles y usuarios, administración de hoteles y habitaciones, así como procesamiento de pagos.                     |
 | **Sprint 2 Velocity**               | 2                                                                                                                                                                                                                                       |
 | **Sum of Story Points**             | 2                                                                                                                                                                                                                                       |
 
@@ -742,7 +746,7 @@ Durante este sprint, el equipo realizó actividades de prueba para validar las f
 
 ##### 5.2.1.2.5. Execution Evidence for Sprint Review
 
-Durante el Sprint 2 se ejecutaron y validaron las funcionalidades desarrolladas dentro de la aplicación móvil SmartStay. Las pruebas se realizaron utilizando emuladores Android, dispositivos físicos y servicios desplegados en la nube para verificar la correcta integración entre frontend y backend.
+Durante el Sprint 2 se ejecutaron y validaron las funcionalidades desarrolladas dentro de la aplicación móvil SmartStay. Las pruebas se realizaron utilizando Android Studio, dispositivos físicos y servicios desplegados en la nube para verificar la correcta integración entre frontend y backend.
 
 ![App Android 1](../assets/chapter-5/implementation/mobile/sprint-2/android-app-01.jpeg)
 ![App Android 2](../assets/chapter-5/implementation/mobile/sprint-2/android-app-02.jpeg)
@@ -1149,7 +1153,7 @@ Este acuerdo establece los derechos, obligaciones y restricciones aplicables a q
 
 ### 5.2.5. Implemented Native-Mobile Application Evidence
 
-Durante el Sprint 2 se ejecutaron y validaron las funcionalidades desarrolladas dentro de la aplicación móvil SmartStay. Las pruebas se realizaron utilizando emuladores Android, dispositivos físicos y servicios desplegados en la nube para verificar la correcta integración entre frontend y backend.
+Durante el Sprint 2 se ejecutaron y validaron las funcionalidades desarrolladas dentro de la aplicación móvil SmartStay. Las pruebas se realizaron utilizando Android Studio, dispositivos físicos y servicios desplegados en la nube para verificar la correcta integración entre frontend y backend.
 
 ![App Android 1](../assets/chapter-5/implementation/mobile/sprint-2/android-app-01.jpeg)
 ![App Android 2](../assets/chapter-5/implementation/mobile/sprint-2/android-app-02.jpeg)

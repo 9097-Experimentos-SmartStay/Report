@@ -1002,7 +1002,7 @@ https://www.figma.com/make/lML4HR5vLsAGMUq3CoqvcS/Minimalist-Photo-Portfolio?t=7
 
 ### 4.5.2. iOS Mobile Applications Prototyping
 
-El desarrollo de Smart Stay se priorizó en **Android (Flutter)** para esta entrega, por lo que aún no se cuenta con una compilación para iOS. No obstante, se diseñó el flujo completo de pantallas en estilo iOS (Tab Bar, Navigation Bar, SF Symbols), siguiendo los lineamientos de la sección 4.1.3.1, para dejar validado el recorrido de huésped antes de una eventual implementación nativa:
+La aplicación de Smart Stay, desarrollada en Flutter, se compiló y validó en **Android** para esta entrega; aún no se cuenta con una compilación para iOS. No obstante, se diseñó el flujo completo de pantallas en estilo iOS (Tab Bar, Navigation Bar, SF Symbols), siguiendo los lineamientos de la sección 4.1.3.1, para dejar validado el recorrido de huésped antes de generar la compilación para iOS:
 
 1. **Welcome** — pantalla de bienvenida con branding Smart Stay.
 2. **Login / Register** — inicio de sesión con opción "Continue with Apple".
