@@ -6574,7 +6574,7 @@ Cada tarjeta resume el experimento antes de ejecutarlo. El **frente** contiene l
 | :--- | :--- |
 | Pregunta | Q-01: ¿reducir los campos obligatorios del formulario de demostración aumenta la proporción de visitantes que lo envían? |
 | Por qué | El formulario es el único canal de captación comercial. Ocho campos obligatorios pueden frenar una decisión que todavía es temprana. |
-| Hipótesis | Si el formulario solo exige nombre, apellido, correo y nombre del hotel, y el resto de los campos pasa a ser opcional, entonces la tasa de envío aumentará en al menos 10 puntos porcentuales frente al formulario actual (de 10 % a 20 % o más, según la línea base supuesta en 8.2.5). |
+| Hipótesis | Creemos que si el formulario de demostración solo exige nombre, apellido, correo y nombre del hotel, más administradores lo enviarán. Sabremos que es cierto si la tasa de envío del formulario corto llega al 20 % o más. |
 | Qué (Simplest Useful Thing) | Una variante del formulario que marca como opcionales `jobTitle`, `accommodationType`, `roomsRange` y `referralSource`, sin cambiar el diseño visual. |
 
 | **Reverso** | |
@@ -6589,7 +6589,7 @@ Cada tarjeta resume el experimento antes de ejecutarlo. El **frente** contiene l
 | :--- | :--- |
 | Pregunta | Q-02: ¿mostrar un resumen con las noches y el total antes de confirmar aumenta la proporción de reservas que el huésped completa? |
 | Por qué | La reserva es la función central del huésped. Un huésped que duda del total abandona sin pedir ayuda. La política de cancelación ya se muestra en el detalle de la habitación (revisión del 09/11/2026), por lo que el resumen se concentra en las fechas, las noches y el total. |
-| Hipótesis | Si el huésped ve un resumen con fechas, noches, precio por noche y total antes de confirmar, entonces la tasa de reservas completadas aumentará en al menos 15 puntos porcentuales frente al flujo actual (de 60 % a 75 % o más, según la línea base supuesta en 8.2.5). |
+| Hipótesis | Creemos que si el huésped ve un resumen con las fechas, las noches, el precio por noche y el total antes de confirmar, completará más reservas. Sabremos que es cierto si la tasa de reservas completadas llega al 75 % o más. |
 | Qué (Simplest Useful Thing) | Un paso de resumen entre la selección de habitación y el botón de confirmar, con datos que la API ya entrega. |
 
 | **Reverso** | |
@@ -6604,7 +6604,7 @@ Cada tarjeta resume el experimento antes de ejecutarlo. El **frente** contiene l
 | :--- | :--- |
 | Pregunta | Q-03: ¿filtrar el mapa de habitaciones por estado y cambiarlo desde el propio mapa reduce el tiempo que tarda el staff en actualizar una habitación? |
 | Por qué | La promesa central frente a los hoteles es la visibilidad en tiempo real y la productividad del personal (Hypothesis H2). |
-| Hipótesis | Si el staff puede filtrar por estado y cambiarlo desde el mapa, entonces el tiempo medio para localizar y actualizar una habitación disminuirá en al menos 15 segundos frente al mapa actual (sobre una desviación estándar supuesta de 30 s en 8.2.5). |
+| Hipótesis | Creemos que si el staff puede filtrar el mapa por estado y cambiarlo desde el propio mapa, actualizará las habitaciones más rápido. Sabremos que es cierto si el tiempo medio para localizar y actualizar una habitación es al menos 15 segundos menor que con el mapa actual. |
 | Qué (Simplest Useful Thing) | Un filtro por estado y un menú de cambio de estado sobre cada habitación del mapa existente. |
 
 | **Reverso** | |
