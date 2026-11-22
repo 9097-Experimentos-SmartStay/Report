@@ -1,5 +1,3 @@
-# Avance de Conclusiones, Bibliografía y Anexos
-
 ## Conclusiones
 
 Durante el desarrollo del proyecto se identificó que la operación hotelera de establecimientos medianos y boutique enfrenta una gestión fragmentada y manual: procesos de check-in/check-out con colas en recepción, habitaciones sin monitoreo ni control remoto, y personal operativo sin visibilidad en tiempo real del estado de las habitaciones. Esta situación, descrita en el Capítulo I mediante la técnica 5W+2H, se traduce en una pérdida estimada del 15% al 20% de la productividad operativa y en una experiencia del huésped desconectada de los servicios del hotel.
@@ -13,6 +11,10 @@ Adzic, G. (s.f.). _Impact Mapping_. Recuperado de https://www.impactmapping.org/
 Beck, K., Beedle, M., van Bennekum, A., Cockburn, A., Cunningham, W., Fowler, M., Grenning, J., Highsmith, J., Hunt, A., Jeffries, R., Kern, J., Marick, B., Martin, R. C., Mellor, S., Schwaber, K., Sutherland, J., & Thomas, D. (2001). _Manifesto for agile software development_. Agile Alliance. https://agilemanifesto.org/
 
 CareerFoundry. (s.f.). _What are User Flows in User Experience (UX) Design?_. Recuperado de https://careerfoundry.com/en/blog/ux-design/what-are-user-flows/
+
+Cohen, J. (1988). _Statistical power analysis for the behavioral sciences_ (2nd ed.). Lawrence Erlbaum Associates.
+
+Congreso de la República del Perú. (2011). _Ley N.º 29733, Ley de Protección de Datos Personales_. Diario Oficial El Peruano.
 
 Cohn, M. (s.f.). _User Stories_. Mountain Goat Software. Recuperado de https://www.mountaingoatsoftware.com/agile/user-stories
 
@@ -30,11 +32,13 @@ Evans, E. (2004). _Domain-Driven Design: Tackling Complexity in the Heart of Sof
 
 Fowler, M. (2006). _Ubiquitous Language_. Recuperado de https://martinfowler.com/bliki/UbiquitousLanguage.html
 
-Google. (2025). _Firebase documentation_. https://firebase.google.com/docs
-
 Google. (s.f.). _Google HTML/CSS Style Guide_. Recuperado de https://google.github.io/styleguide/htmlcssguide.html
 
 Google. (s.f.). _Google JavaScript Style Guide_. Recuperado de https://google.github.io/styleguide/jsguide.html
+
+Google. (s.f.). _Lighthouse overview_. Chrome for Developers. Recuperado de https://developer.chrome.com/docs/lighthouse/overview
+
+Google. (s.f.). _PageSpeed Insights_. Recuperado de https://pagespeed.web.dev/
 
 Gothelf, J., & Seiden, J. (2021). _Lean UX: Designing Great Products with Agile Teams_ (3rd ed.). O'Reilly Media. Recuperado de https://www.oreilly.com/library/view/lean-ux-2nd/9781491953594/
 
@@ -54,6 +58,8 @@ Mendel, J. (s.f.). _Seriously, what's your (startup's) problem?_. Medium. Recupe
 
 Miro. (2025). _Miro: The visual workspace for innovation_. https://miro.com
 
+Nielsen, J. (1994). _Severity ratings for usability problems_. Nielsen Norman Group. Recuperado de https://www.nngroup.com/articles/how-to-rate-the-severity-of-usability-problems/
+
 Nielsen Norman Group. (1994). _10 Usability Heuristics for User Interface Design_. Recuperado de https://www.nngroup.com/articles/ten-usability-heuristics/
 
 Nielsen Norman Group. (2016). _The Four Dimensions of Tone of Voice_. Recuperado de https://www.nngroup.com/articles/tone-of-voice-dimensions/
@@ -64,15 +70,29 @@ Preston-Werner, T. (s.f.). _Semantic Versioning 2.0.0_. Recuperado de https://se
 
 Progressa Lean. (s.f.). _5W+2H - Técnica de análisis de problemas_. Recuperado de https://www.progressalean.com/5w2h-tecnica-de-analisis-de-problemas/
 
+Render. (s.f.). _Blueprint specification (render.yaml)_. Recuperado de https://render.com/docs/blueprint-spec
+
+Reqnroll. (s.f.). _Reqnroll documentation_. Recuperado de https://docs.reqnroll.net/
+
 Refactoring.Guru. (s.f.). _Design Patterns_. Recuperado de https://refactoring.guru/es/design-patterns
 
 Flutter Team. (s.f.). _Flutter documentation_. Recuperado de https://docs.flutter.dev
+
+ESLint. (s.f.). _ESLint documentation_. Recuperado de https://eslint.org/docs/latest/
+
+GitHub. (s.f.). _GitHub Actions documentation_. Recuperado de https://docs.github.com/actions
 
 Google. (s.f.). _Dart programming language_. Recuperado de https://dart.dev
 
 Google. (s.f.). _Developing with Flutter_. Recuperado de https://flutter.dev
 
+Scalar. (s.f.). _Scalar API reference_. Recuperado de https://scalar.com/
+
+Sigstore. (s.f.). _Cosign: signing and verifying container images_. Recuperado de https://docs.sigstore.dev/cosign/overview/
+
 Ries, E. (2011). _The lean startup: How today's entrepreneurs use continuous innovation to create radically successful businesses_. Crown Business.
+
+Vercel. (s.f.). _Project configuration (vercel.json)_. Recuperado de https://vercel.com/docs/project-configuration
 
 UXPressia. (s.f.). _User vs. Buyer Persona: Differences and free template_. Recuperado de https://uxpressia.com/blog/user-persona-vs-buyer-persona-difference
 

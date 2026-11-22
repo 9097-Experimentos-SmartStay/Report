@@ -102,11 +102,11 @@ def in_contents(level, title):
         "Conclusiones", "Bibliografía", "Anexos",
     }:
         return True
-    match = re.match(r"^([1-5](?:\.\d+)+)\.?(?:\s|$)", title)
+    match = re.match(r"^([1-8](?:\.\d+)+)\.?(?:\s|$)", title)
     if not match:
         return False
     number = match[1]
-    return len(number.split(".")) <= 3 or number.startswith(("1.2.2.", "4.1.3."))
+    return len(number.split(".")) <= 3 or number.startswith(("1.2.2.", "4.1.3.", "6.2.1.", "6.4.1.", "6.4.2.", "8.3.3.", "8.3.4."))
 
 
 def build():

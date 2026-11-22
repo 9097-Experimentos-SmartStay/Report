@@ -113,23 +113,22 @@ Asimismo, se aplicaron principios de usabilidad y diseño centrado en el usuario
 ### Software Development
 Para el desarrollo de la aplicación se utilizaron distintas herramientas y entornos de programación enfocados en el desarrollo backend y móvil.  
 
-El backend fue implementado con **ASP.NET Core (C#)** empleando el IDE **JetBrains Rider**, permitiendo gestionar la lógica de negocio y los servicios del sistema mediante APIs REST.  
+El backend fue implementado con **ASP.NET Core 9 (C#)** empleando el IDE **JetBrains Rider**. Se trata de una única API REST con arquitectura de monolito modular: un solo servicio desplegable, organizado en contextos delimitados (IAM, Perfiles, Alojamiento, Reservas, Pagos, Analítica, Auditoría, Marketing y Media) que se comunican internamente mediante fachadas ACL y eventos de dominio, y que comparten una única base de datos MySQL.  
 
-Por otro lado, el desarrollo móvil se realizó utilizando **Android Studio**, **Kotlin** y **Flutter**, tecnologías empleadas para implementar las aplicaciones dirigidas al huésped y al staff operativo. Asimismo, se utilizó **Firebase** para servicios de autenticación y notificaciones móviles.  
+Por otro lado, el desarrollo móvil se realizó utilizando **Flutter** (lenguaje **Dart**), framework multiplataforma con el que se implementó la aplicación móvil de SmartStay. No se desarrolló código nativo en Kotlin: la carpeta `android/` del proyecto es el andamiaje que genera Flutter para compilar el APK.  
 
-Adicionalmente, se empleó **MySQL** como sistema de gestión de base de datos y **Azure** para el despliegue y administración de los servicios backend.  
+Adicionalmente, se empleó **MySQL** como sistema de gestión de base de datos y **Render** para el despliegue del backend, con **Vercel** para el frontend web y la landing page.  
 
 Finalmente, el proyecto se apoyó en herramientas de control de versiones como **Git y GitHub**, mientras que la instalación y mantenimiento de las IDEs se realizó mediante **JetBrains ToolBox**.
 
 **Enlaces**  
 - **JetBrains ToolBox:** [JetBrains ToolBox](https://www.jetbrains.com/toolbox-app/)  
 - **JetBrains Rider:** [JetBrains Rider](https://www.jetbrains.com/rider/)  
-- **Android Studio:** [Android Studio](https://developer.android.com/studio)  
 - **Flutter:** [Flutter](https://flutter.dev/)  
-- **Kotlin:** [Kotlin](https://kotlinlang.org/)  
-- **Firebase:** [Firebase](https://firebase.google.com/)  
+- **Dart:** [Dart](https://dart.dev/)  
 - **MySQL:** [MySQL](https://www.mysql.com/)  
-- **Azure:** [Azure](https://azure.microsoft.com/)  
+- **Render:** [Render](https://render.com/)  
+- **Vercel:** [Vercel](https://vercel.com/)  
 - **GitHub:** [GitHub](https://github.com/)
 
 
@@ -142,12 +141,12 @@ Toda la documentación se redactó en formato **Markdown (.md)**, debido a su le
 - **GitHub:** [GitHub](https://github.com/)
 
 ### Software Deployment
-El despliegue de los servicios backend se realizó mediante **Microsoft Azure**, permitiendo alojar las APIs REST y garantizar la comunicación entre las aplicaciones móviles, la base de datos y los servicios IoT del sistema Smart Stay.  
-Asimismo, las aplicaciones móviles fueron ejecutadas y validadas utilizando **Android Studio Emulator** y dispositivos físicos Android para verificar el correcto funcionamiento de las funcionalidades desarrolladas.
+El backend se desplegó en **Render** como un único servicio web basado en contenedor Docker, que aloja la API REST y garantiza la comunicación entre las aplicaciones, la base de datos MySQL y los servicios del sistema Smart Stay.  
+Asimismo, la aplicación móvil fue ejecutada y validada en emuladores y dispositivos físicos Android para verificar el correcto funcionamiento de las funcionalidades desarrolladas.
 
 **Enlaces**  
-- **Azure:** [Azure](https://azure.microsoft.com/)  
-- **Android Studio:** [Android Studio](https://developer.android.com/studio)
+- **Render:** [Render](https://render.com/)  
+- **Vercel:** [Vercel](https://vercel.com/)
 
 
 
@@ -159,27 +158,34 @@ El proyecto está organizado dentro de una **organización en GitHub**, donde ca
 **Repositorios individuales de control de versiones:**
 
 - **Aplicación Móvil:**  
-  - **Tecnología:** Kotlin (Android Native)
+  - **Tecnología:** Flutter (Dart)
   - **IDE:** Android Studio
   - **URL del repositorio:** https://github.com/9097-Experimentos-SmartStay/mobile
-  - **Plataforma de despliegue:** Android Studio Emulator / APK Testing
+  - **Plataforma de despliegue:** Emulador Android y dispositivos físicos Android
 
 - **Web Services (Backend):**  
   - **Tecnología:** ASP.NET Core (C#)
+  - **IDE:** JetBrains Rider
   - **URL del repositorio:** https://github.com/9097-Experimentos-SmartStay/backend
   - **Arquitectura:** RESTful API
   - **Plataforma de despliegue:** Render
 
 - **Frontend Web:**
   - **Tecnología:** Vue.js
+  - **IDE:** Visual Studio Code
   - **URL del repositorio:** https://github.com/9097-Experimentos-SmartStay/frontend
   - **Plataforma de despliegue:** Vercel
 
 - **Landing Page**
   - **Tecnología:** HTML, CSS, JavaScript
   - **URL del repositorio:** https://github.com/9097-Experimentos-SmartStay/landing-page
-  - **IDE:** WebStorm
+  - **IDE:** Visual Studio Code
   - **Plataforma de despliegue:** Vercel
+
+- **Informe (Report):**
+  - **Tecnología:** Markdown
+  - **IDE:** Visual Studio Code
+  - **URL del repositorio:** https://github.com/9097-Experimentos-SmartStay/Report
 
 Todos los repositorios implementan el modelo **GitFlow** como flujo de trabajo de colaboración y branching, garantizando un desarrollo ordenado y trazable.
 
@@ -191,33 +197,8 @@ Este enfoque permite un control de versiones ordenado y un desarrollo paralelo s
 
 **Diagrama del flujo GitFlow implementado:**
 
-```text
-main (producción)
- |
- |---- release/v1.0.0
- |          |
-develop    |
- |         |
- |---- feature/user-authentication
- |         |
- |         (desarrollo)
- |         |
- |<-------- (merge)
- |
- |---- feature/room-management
- |         |
- |         (desarrollo)
- |         |
- |<-------- (merge)
- |
- |---- hotfix/critical-bug
- |         |
- |         (corrección)
- |         |
- |<-------- (merge a develop)
- |         |
-main <---- (merge a main)
-```
+![Diagrama del flujo GitFlow](../assets/chapter-5/source-control/gitflow-diagram.png)
+
 ---
 ### Proceso de trabajo con GitFlow
 
@@ -244,7 +225,7 @@ main <---- (merge a main)
 **Main branch (Rama principal):**  
 Es la rama principal del proyecto, donde se almacena el código estable y listo para producción.  
 Solo se integran cambios que hayan sido probados y validados previamente en las ramas de desarrollo (*develop*) y funcionalidad (*feature/*).  
-Esta rama representa el estado más confiable del proyecto y se encuentra protegida con reglas de revisión obligatoria.
+Esta rama representa el estado más confiable del proyecto y solo se actualiza mediante *merges* desde `develop` (versiones) o desde ramas `hotfix/*` (correcciones urgentes).
 
 **Develop branch (Rama de desarrollo):**  
 Actúa como un espacio de integración para el trabajo en equipo.  
@@ -267,31 +248,25 @@ Las ramas de funcionalidad siguen un esquema de nombres descriptivos, como por e
 - `feature/booking-system` - Sistema de reservas
 
 **Release branches (Ramas de versión):**  
-Se crean para preparar una nueva versión de producción desde `develop`.
+Se crean para preparar una nueva versión de producción desde `develop`. Siguen el esquema `release/vMAJOR.MINOR.PATCH`, por ejemplo:
 
 - `release/v1.0.0` - Primera versión estable
 - `release/v1.1.0` - Versión con nuevas funcionalidades
 
 **Hotfix branches (Ramas de corrección urgente):**  
-Se crean desde `main` para corregir problemas críticos en producción.
+Se crean desde `main` para corregir problemas críticos en producción. Siguen el esquema `hotfix/<descripcion>`, por ejemplo:
 
 - `hotfix/login-security` - Corrección de seguridad en login
 - `hotfix/payment-error` - Corrección de error en pagos
 
-### Evidencia de aplicación de GitFlow
+### Aplicación de GitFlow en el proyecto
 
-**Repositorio Mobile App:**
+Solo `main` y `develop` son ramas permanentes. Las ramas `feature/*`, `fix/*`, `release/*` y `hotfix/*` son **transitorias**: se crean para una tarea y se eliminan al integrarse, por lo que un listado de ramas en un momento dado no refleja el flujo de trabajo. Así se aplica GitFlow en los repositorios del proyecto:
 
-- Ramas activas: `main`, `develop`, `feature/responsive-design`, `feature/multilanguage`
-- Commits con convenciones: `feat:`, `fix:`, `docs:`
-- Pull Requests con revisiones de código
-
-**Repositorio Backend:**
-
-- Ramas activas: `main`, `develop`, `feature/api-rooms`, `feature/api-bookings`
-- Versionado semántico aplicado
-- Tags: `v1.0.0`, `v1.1.0`
-
+- **Integración diaria:** el trabajo se desarrolla en una rama transitoria creada desde `develop` y se integra de vuelta mediante *Pull Request*. Por ejemplo, en el repositorio del backend el pipeline de CI, la corrección de la política de contraseñas y el despliegue condicionado a los checks entraron como los Pull Requests #11, #12 y #13.
+- **Publicación:** cuando `develop` está estable se integra en `main` con un commit de *merge* del tipo `chore(release): merge develop into main`. Ese *merge* dispara los despliegues automáticos de Render y Vercel descritos en 5.1.4.
+- **Mensajes de commit:** todos los repositorios usan Conventional Commits (`feat:`, `fix:`, `docs:`, `ci:`, `test:`, `chore:`).
+- **Versionado:** las versiones se nombran con versionado semántico (`vMAJOR.MINOR.PATCH`), tanto para las ramas `release/*` como para los tags.
 
 ### 5.1.3. Source Code Style Guide &amp; Conventions
 
@@ -332,56 +307,55 @@ Se crean desde `main` para corregir problemas críticos en producción.
 - Comentarios XML para documentación interna de métodos y controladores.
 - Pruebas unitarias y escenarios escritos siguiendo la convención **Gherkin (Given-When-Then)**.
 
-### Kotlin (Android Studio)
+### Flutter (Dart)
 
-- [Kotlin Coding Conventions](https://kotlinlang.org/docs/coding-conventions.html)
-- [Android Developers Guidelines](https://developer.android.com/kotlin/style-guide)
+- [Effective Dart](https://dart.dev/effective-dart)
+- [Flutter Style Guide](https://github.com/flutter/flutter/blob/main/docs/contributing/Style-guide-for-Flutter-repo.md)
 
 **Convenciones aplicadas:**
 
-- Uso de **PascalCase** para clases y actividades (`LoginActivity`, `RoomManagementActivity`).
-- Uso de **camelCase** para variables, funciones y parámetros (`guestName`, `validateLogin()`).
-- Organización modular del código por paquetes (`activities`, `services`, `models`, `adapters`).
-- Uso de nombres descriptivos y consistentes para layouts XML y recursos visuales.
-- Implementación de buenas prácticas de desarrollo Android para mejorar mantenibilidad y escalabilidad.
+- Uso de **UpperCamelCase** para clases, widgets y tipos (`LoginPage`, `RoomsPage`).
+- Uso de **lowerCamelCase** para variables, funciones y parámetros (`guestName`, `validateLogin()`).
+- Uso de **snake_case** para nombres de archivos y paquetes.
+- Organización del código por capas y funcionalidades (`core`, `domain`, `features`, `shared`).
+- Análisis estático con `flutter analyze` y las reglas de `flutter_lints`.
 
 **Componentes utilizados en la aplicación móvil:**
 
-- `Activity`: Maneja las pantallas principales de la aplicación.
-- `Fragment`: Permite reutilizar componentes visuales dentro de distintas vistas.
-- `RecyclerView`: Muestra listas dinámicas de habitaciones, reservas o servicios.
-- `Intent`: Gestiona la navegación entre pantallas.
-- `ViewModel`: Administra el estado y la lógica de presentación.
-- `Firebase`: Gestiona autenticación y notificaciones móviles.
-- `XML Layouts`: Define la estructura visual de las interfaces móviles.
+- `Widget`: Unidad básica de la interfaz; las pantallas se componen de widgets reutilizables.
+- `Navigator`: Gestiona la navegación entre pantallas.
+- `http`: Paquete para consumir la API REST del backend.
+- `flutter_secure_storage`: Almacenamiento seguro del token de sesión.
 
 ---
 
 ### 5.1.4. Software Deployment Configuration
 
 ### Landing Page Deployment
-La **Landing Page** fue desarrollada utilizando **HTML**, **CSS** y **JavaScript**, y se encuentra desplegada públicamente a través de **Vercel**.  
+La **Landing Page** fue desarrollada con **JavaScript**, **Vite** y **Tailwind CSS**, y se encuentra desplegada públicamente a través de **Vercel**.  
 Para su publicación, se cumplieron los siguientes pasos:
 
 1. **Preparación del entorno:**  
    Se creó un repositorio dentro de la organización en **GitHub**, destinado a alojar los archivos de la Landing Page.
 
 2. **Estructura de archivos:**  
-   Los archivos principales se encuentran en la raíz del repositorio, siguiendo las convenciones de nombres:
+   El repositorio se organiza de la siguiente manera:
     - `index.html` → página principal.
-    - `styles.css` → hoja de estilos principal.
-    - `script.js` → scripts principales.
-    - `languages.js` → archivo para gestionar los textos en distintos idiomas (español e inglés).
-    - Carpeta `assets/images/` → para las imágenes utilizadas en el sitio.
+    - `src/main.js` → punto de entrada de los scripts.
+    - `src/features/` → funcionalidades de la página (formulario de demostración, contacto, testimonios y navegación por perfil).
+    - `src/i18n/` → textos en español e inglés (`locales/es.js` y `locales/en.js`) y la lógica del cambio de idioma.
+    - `src/styles/main.css` → hoja de estilos principal.
+    - `public/` → íconos y recursos estáticos.
+    - `vercel.json` → configuración del despliegue.
 
 3. **Configuración en Vercel:**
     - Se importó el repositorio de la Landing Page directamente desde GitHub a **Vercel**.
     - Se seleccionó la rama **main** como fuente de publicación.
-    - Se configuró la carpeta raíz (`/`) como directorio base del proyecto.
+    - `vercel.json` declara el *framework* Vite, la instalación con `npm ci`, el comando `npm run build` y el directorio de salida `dist`.
+    - El mismo archivo configura la caché inmutable de los recursos versionados y las cabeceras de seguridad `X-Content-Type-Options`, `Referrer-Policy`, `X-Frame-Options` y `Permissions-Policy`.
     - Una vez completado el proceso, Vercel generó automáticamente la URL pública de la Landing Page.
 
-Además, se implementó un archivo `languages.js` que contiene los textos en español e inglés.  
-Este archivo es consumido por el script `main.js`, permitiendo el cambio de idioma dinámico en la interfaz.
+El módulo `src/i18n/` contiene los textos en español e inglés y permite el cambio de idioma dinámico en la interfaz.
 
 
 ### Backend (Web Services)
@@ -404,8 +378,13 @@ El proyecto implementa un flujo automatizado de **Integración Continua y Despli
 - Este proceso garantiza una actualización constante de los servicios y minimiza la intervención manual en las publicaciones.
 
 ### Vercel (Landing Page):
-![Vercel Deployment](../assets/chapter-5/deployment/github-pages.jpg)
-> ⚠️ Imagen pendiente de reemplazo: la captura actual corresponde a la configuración antigua de GitHub Pages, no al dashboard de Vercel.
+Panel de Vercel del proyecto `smartstay-movildev-landing`: despliegue de producción en estado *Ready*, rama `main` y dominio `smartstay-movildev-landing.vercel.app`:
+
+![Dashboard de Vercel de la landing page](../assets/chapter-5/deployment/vercel-dashboard.png)
+
+Landing page publicada en Vercel:
+
+![Landing page desplegada en Vercel](../assets/chapter-5/deployment/vercel-landing-live.png)
 
 **La URL pública de la landing page es la siguiente:**  
 [https://smartstay-movildev-landing.vercel.app/](https://smartstay-movildev-landing.vercel.app/)
@@ -416,31 +395,28 @@ El despliegue de la solución considera los siguientes aspectos generales, los c
 
 ### Mobile Application Deployment
 
-La aplicación móvil fue desarrollada utilizando **Kotlin** en **Android Studio**, siguiendo una arquitectura orientada al desarrollo de aplicaciones Android nativas.  
+La aplicación móvil fue desarrollada con **Flutter (Dart)**, como un único código base que se compila a APK para Android.
 
 Para la ejecución y validación de la aplicación, se utilizaron las siguientes herramientas y configuraciones:
 
 1. **Preparación del entorno:**  
-   Se configuró el entorno de desarrollo mediante **Android Studio**, incluyendo el SDK de Android, emuladores y dependencias necesarias para la compilación de la aplicación.
+   Se instaló el SDK de Flutter y el SDK de Android (necesario para compilar el APK), junto con emuladores y dispositivos físicos para las pruebas.
 
 2. **Estructura del proyecto:**  
-   El proyecto móvil se organiza siguiendo buenas prácticas de Android Development:
-   - `activities/` → pantallas principales de la aplicación.
-   - `adapters/` → manejo de listas dinámicas y RecyclerViews.
-   - `models/` → clases de entidades y estructuras de datos.
-   - `services/` → conexión con APIs REST y servicios externos.
-   - `res/layout/` → archivos XML de las interfaces visuales.
-   - `assets/` → recursos gráficos e imágenes utilizadas en la aplicación.
+   El código fuente se organiza en `lib/`:
+   - `core/` → configuración y utilidades transversales.
+   - `domain/` → entidades y contratos del dominio.
+   - `features/` → módulos funcionales (`auth`, `bookings`, `client`, `hotels`, `profile`, `rooms`, `staff`).
+   - `shared/` → widgets y recursos compartidos.
 
 3. **Compilación y ejecución:**
-   - La aplicación se ejecuta mediante **Android Emulator** y dispositivos físicos Android.
-   - Android Studio genera automáticamente los archivos APK necesarios para pruebas e instalación.
+   - La aplicación se ejecuta mediante emuladores y dispositivos físicos Android.
+   - El APK se genera con `flutter build apk --release`.
    - Las versiones de prueba son administradas mediante GitHub y control de versiones GitFlow.
 
 4. **Servicios integrados:**
-   - Integración con APIs RESTful desarrolladas en ASP.NET Core.
-   - Uso de Firebase para autenticación y notificaciones móviles.
-   - Comunicación con servicios backend para reservas, habitaciones y gestión operativa.
+   - Integración con la API REST desarrollada en ASP.NET Core mediante el paquete `http`.
+   - Comunicación con el backend para reservas, habitaciones y gestión operativa.
 
 ### Backend (Web Services)
 
@@ -456,13 +432,13 @@ El proyecto implementa un flujo automatizado de **Integración Continua y Despli
 - Todos los repositorios están conectados directamente a **GitHub**.
 - Render ejecuta el despliegue automático al detectarse merges en la rama `main`.
 - El control de versiones se realiza utilizando Git y GitFlow.
-- Las versiones móviles son compiladas y probadas desde Android Studio antes de cada entrega.
+- Las versiones móviles se compilan con Flutter y se prueban en emulador y dispositivos físicos antes de cada entrega.
 
-### Android Studio Emulator
+### Emulador Android
 
-![Android Studio Emulator](../assets/chapter-5/deployment/android-studio-emulator.jpg)
+![Emulador Android](../assets/chapter-5/deployment/android-studio-emulator.jpg)
 
-**El emulador de Android Studio permite validar el funcionamiento de la aplicación móvil en distintos dispositivos y versiones de Android antes de su despliegue final.**
+**El emulador de Android permite validar el funcionamiento de la aplicación móvil en distintos dispositivos y versiones de Android antes de su despliegue final.**
 
 ---
 
@@ -953,7 +929,7 @@ Durante el Sprint 3 se ejecutaron pruebas funcionales, pruebas de integración, 
 
 ##### 5.2.1.3.5. Execution Evidence for Sprint Review
 
-Durante el Sprint 3 se ejecutó la versión final de la aplicación móvil SmartStay, validando los principales flujos funcionales definidos para la presentación final. Las pruebas fueron realizadas en Android Studio y dispositivos móviles, utilizando servicios backend desplegados para comprobar la integración real del sistema.
+Durante el Sprint 3 se ejecutó la versión final de la aplicación móvil SmartStay, validando los principales flujos funcionales definidos para la presentación final. Las pruebas fueron realizadas en emuladores Android y dispositivos móviles, utilizando servicios backend desplegados para comprobar la integración real del sistema.
 
 Los flujos ejecutados fueron los siguientes:
 
@@ -1017,8 +993,6 @@ https://smartstay-movildev-api.onrender.com/scalar/
 
 Finalmente, se generó una versión final de la aplicación móvil en formato APK para su ejecución y validación. Esta versión contiene los módulos integrados y fue utilizada para la demostración final del producto.
 
-**Repositorio del APK:**  
-https://github.com/Movil-dev-Aplicaciones-Moviles/APK.git
 
 
 Con estas evidencias, se confirma que SmartStay cuenta con una landing page pública, servicios backend desplegados y una aplicación móvil lista para ser presentada como producto final del curso.
@@ -1072,9 +1046,9 @@ En conclusión, el Sprint 3 permitió cerrar el ciclo de desarrollo de SmartStay
 
 ### 5.2.2. Implemented Landing Page Evidence
 
-![Github Pages](../assets/chapter-5/deployment/github-pages.jpg)
+![Dashboard de Vercel de la landing page](../assets/chapter-5/deployment/vercel-dashboard.png)
 
-**La URL que nos entrega Github Pages para acceder a la landing page es la siguiente:**  
+**La URL que nos entrega Vercel para acceder a la landing page es la siguiente:**  
 [https://smartstay-movildev-landing.vercel.app/](https://smartstay-movildev-landing.vercel.app/)
 
 landing Page
@@ -1119,7 +1093,65 @@ En esta sección se puede ver el panel del administrador se puede ver un dashboa
 
 ![Front4](../assets/chapter-5/implementation/frontend-web/frontend-04.jpeg)
 
-### 5.2.4. Implemented Native-Mobile Application Evidence
+#### Vistas del huésped (AV2)
+
+El 09/11/2026 se capturaron las vistas del portal del huésped en la aplicación web desplegada, con una cuenta de prueba. Los hallazgos de usabilidad se analizan en el apartado 6.3.3.
+
+En el panel de inicio el huésped ve un saludo, sus reservas y noches, un acceso a una nueva reserva y recomendaciones de habitaciones.
+
+![Panel de inicio del huésped](../assets/chapter-6/heuristic-review/guest-dashboard.jpg)
+
+En «Hoteles» se listan los hoteles con su ubicación, comodidades y precio por noche, y se pueden buscar por ciudad o nombre.
+
+![Listado de hoteles](../assets/chapter-6/heuristic-review/guest-hotels.jpg)
+
+En «Habitaciones» se listan las habitaciones con su tipo, descripción, comodidades y precio, y se pueden filtrar por tipo.
+
+![Listado de habitaciones](../assets/chapter-6/heuristic-review/guest-rooms.jpg)
+
+El detalle de la habitación muestra el precio, la descripción, las comodidades y la política de cancelación, y ofrece el botón para buscar fechas y reservar.
+
+![Detalle de la habitación](../assets/chapter-6/heuristic-review/guest-room-detail.jpg)
+
+El formulario de reserva pide el hotel y las fechas de llegada y salida antes de buscar habitaciones disponibles.
+
+![Búsqueda de fechas para reservar](../assets/chapter-6/heuristic-review/guest-booking-search.jpg)
+
+«Mis reservas» y «Clima de mi habitación» muestran un mensaje y una acción cuando el huésped aún no tiene reservas ni una estadía activa.
+
+![Mis reservas](../assets/chapter-6/heuristic-review/guest-bookings-empty.jpg)
+
+![Clima de mi habitación](../assets/chapter-6/heuristic-review/guest-room-climate-empty.jpg)
+
+### 5.2.4. Acuerdo de Servicio - SaaS
+
+Este acuerdo establece los derechos, obligaciones y restricciones aplicables a quienes usan la plataforma SmartStay, para que el uso del servicio sea transparente. Se publica en la sección «Terms and Conditions» de la landing page y de las aplicaciones, con un enlace en el pie de cada una. Su redacción sigue los principios del código de ética de la ingeniería de software de ACM/IEEE y del Colegio de Ingenieros del Perú.
+
+> **Estado:** versión 1.0, redactada por el equipo para este avance. Debe revisarse y publicarse en el enlace de términos y condiciones antes de la entrega final.
+
+**1. Objeto y partes.** Movildev (el «Proveedor») ofrece a hoteles y a sus huéspedes (los «Usuarios») acceso a SmartStay como servicio en línea: gestión de hoteles, habitaciones y reservas, pagos registrados, perfiles y analítica operativa. El Usuario acepta este acuerdo al crear una cuenta o al usar el servicio.
+
+**2. Cuentas y roles.** Cada cuenta es personal. El servicio distingue los roles de administrador, personal (recepción, limpieza y mantenimiento) y huésped, y cada uno accede solo a las funciones de su rol. El personal usa un segundo factor de autenticación. El Usuario debe mantener sus credenciales en reserva y avisar de cualquier acceso no autorizado.
+
+**3. Uso aceptable.** El Usuario se obliga a no suplantar a otra persona, no intentar acceder a datos de otros hoteles o huéspedes, no interferir con el funcionamiento del servicio y no usarlo con fines ilícitos. El Proveedor puede suspender una cuenta que incumpla estas reglas, y avisará al Usuario del motivo.
+
+**4. Datos personales.** El Proveedor trata los datos personales conforme a la Ley N.º 29733, de Protección de Datos Personales. Solo recoge los datos necesarios para prestar el servicio (identificación, contacto, reservas y pagos) y no los vende a terceros. El Usuario puede solicitar acceso, rectificación, cancelación u oposición sobre sus datos. Si se miden eventos de uso para mejorar el producto, se hace con identificadores anónimos y sin datos personales, y esta medición se informa en este apartado.
+
+**5. Reservas, pagos y cancelaciones.** Las reservas se crean con los datos del huésped y del hotel. Las condiciones de cancelación se muestran en el detalle de la habitación antes de reservar: el huésped puede cancelar hasta el día anterior a su llegada y, si ya pagó, el hotel le devuelve el pago. Los pagos se registran en el servicio según el método que el hotel habilite. Las reservas sin pago pueden vencer automáticamente.
+
+**6. Disponibilidad del servicio.** El Proveedor procura mantener el servicio disponible de forma continua, pero no garantiza una disponibilidad ininterrumpida. El servicio puede tardar unos segundos en responder tras un periodo de inactividad, y puede interrumpirse por mantenimiento o por fallas de los proveedores de infraestructura. Las interrupciones se detectan con la monitorización descrita en el apartado 7.4.
+
+**7. Propiedad intelectual.** SmartStay, su código, su marca y su documentación pertenecen al Proveedor. El Usuario conserva la titularidad de la información que ingresa, y otorga al Proveedor el permiso para tratarla con el único fin de prestar el servicio.
+
+**8. Responsabilidad.** El Proveedor responde por el funcionamiento del servicio conforme a este acuerdo. No responde por la información incorrecta que ingrese el Usuario, ni por daños causados por el uso del servicio contra estas reglas o por hechos fuera de su control razonable.
+
+**9. Ética y transparencia.** El equipo se compromete a no ocultar información relevante al Usuario, a no experimentar con él de manera que pueda causarle daño, y a informar de los cambios de este acuerdo antes de que entren en vigor.
+
+**10. Modificaciones y vigencia.** El Proveedor puede modificar este acuerdo y avisará a los Usuarios por el servicio o por correo. El Usuario puede cerrar su cuenta en cualquier momento, y el acuerdo termina con el cierre.
+
+**11. Ley aplicable.** Este acuerdo se rige por las leyes de la República del Perú.
+
+### 5.2.5. Implemented Native-Mobile Application Evidence
 
 Durante el Sprint 2 se ejecutaron y validaron las funcionalidades desarrolladas dentro de la aplicación móvil SmartStay. Las pruebas se realizaron utilizando Android Studio, dispositivos físicos y servicios desplegados en la nube para verificar la correcta integración entre frontend y backend.
 
@@ -1132,7 +1164,7 @@ Durante el Sprint 2 se ejecutaron y validaron las funcionalidades desarrolladas 
 ![App Android 7](../assets/chapter-5/implementation/mobile/sprint-2/android-app-07.jpeg)
 ![App Android 8](../assets/chapter-5/implementation/mobile/sprint-2/android-app-08.jpeg)
 
-Durante el Sprint 3 se ejecutó la versión final de la aplicación móvil SmartStay, validando los principales flujos funcionales definidos para la presentación final. Las pruebas fueron realizadas en Android Studio y dispositivos móviles, utilizando servicios backend desplegados para comprobar la integración real del sistema.
+Durante el Sprint 3 se ejecutó la versión final de la aplicación móvil SmartStay, validando los principales flujos funcionales definidos para la presentación final. Las pruebas fueron realizadas en emuladores Android y dispositivos móviles, utilizando servicios backend desplegados para comprobar la integración real del sistema.
 
 Los flujos ejecutados fueron los siguientes:
 
@@ -1154,7 +1186,7 @@ Los flujos ejecutados fueron los siguientes:
 ![Sprint 3 App 3](../assets/chapter-5/implementation/mobile/sprint-3/sprint3-app-3.png)
 ![Sprint 3 App 4](../assets/chapter-5/implementation/mobile/sprint-3/sprint3-app-4.png)
 
-### 5.2.5. Implemented RESTful API and/or Serverless Backend Evidence
+### 5.2.6. Implemented RESTful API and/or Serverless Backend Evidence
 
 Durante este sprint se actualizó el bounded context de IAM/Authentication, incorporando mejoras relacionadas con la autenticación de usuarios y la gestión de roles dentro del sistema. La documentación de los servicios REST fue verificada mediante Swagger/OpenAPI, donde se evidencian los endpoints disponibles para el inicio de sesión y registro de usuarios.
 
@@ -1163,7 +1195,7 @@ Durante este sprint se actualizó el bounded context de IAM/Authentication, inco
 
 Asimismo, durante el sprint se trabajó con la lógica de roles para diferenciar el acceso de los distintos tipos de usuario del sistema, como Guest, Admin y ChainAdmin, permitiendo controlar qué secciones y acciones están disponibles para cada perfil dentro de la aplicación.
 
-### 5.2.6. RESTful API documentation
+### 5.2.7. RESTful API documentation
 
 **Profiles**: Este bounded context maneja la información de los perfiles de los usuarios dentro de la plataforma. Proporciona funcionalidades para crear perfiles, consultar su información y obtener el detalle de un perfil específico. Es esencial para almacenar y gestionar los datos personales asociados a cada usuario del sistema.
 
@@ -1205,7 +1237,7 @@ Asimismo, durante el sprint se trabajó con la lógica de roles para diferenciar
 
 ![swagercuartostipos.png](../assets/chapter-5/api/swagger/swagger-cuartostipo.png)
 
-### 5.2.7. Team Collaboration Insights
+### 5.2.8. Team Collaboration Insights
 
 **Acciones de colaboración destacadas:**
 - Se utilizó **GitHub** como herramienta central de coordinación y control de versiones.
@@ -1217,6 +1249,86 @@ Asimismo, durante el sprint se trabajó con la lógica de roles para diferenciar
 Gracias a este flujo de trabajo, el equipo pudo avanzar de forma paralela y ordenada, evitando conflictos en el código y asegurando un resultado consistente.
 
 El equipo logró mantener una comunicación constante durante el cierre del proyecto, priorizando las tareas críticas y asegurando que la aplicación pueda ser presentada de forma funcional. La colaboración entre los integrantes permitió completar los flujos principales de SmartStay y preparar una entrega final coherente con los objetivos del curso.
+
+#### Avance 2 (AV2)
+
+Para AV2 el equipo obtuvo los commits de los cuatro repositorios del producto con `git log` sobre **todas las ramas remotas**, excluyendo los commits de fusión, y los contrastó con los gráficos de contribuciones de GitHub, que solo consideran la rama `main`.
+
+**Commits por integrante y repositorio, en todas las ramas** (entre paréntesis, los commits desde el 19/09/2026, inicio de AV2):
+
+| Integrante | `backend` | `frontend` | `mobile` | `landing-page` | `Report` | Total |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| Bonifacio Jaramillo, Samuel Jesus | 1 (1) | 2 (0) | 0 (0) | 1 (0) | 11 (3) | 15 (4) |
+| Galindo Manuel, Alejandro Manuel | 3 (3) | 2 (2) | 2 (1) | 0 (0) | 6 (1) | 13 (7) |
+| Ponce Perales, Alberto Alejandro | 0 (0) | 0 (0) | 0 (0) | 0 (0) | 0 (0) | 0 (0) |
+| Sulca Sanchez, Piero Angel | 90 (5) | 168 (0) | 1 (0) | 13 (0) | 11 (0) | 283 (5) |
+| Verona Flores, Ítalo Sebastián | 9 (4) | 112 (0) | 0 (0) | 30 (0) | 12 (4) | 163 (8) |
+| Otros colaboradores (no figuran en la relación de integrantes) | 0 (0) | 42 (0) | 8 (0) | 5 (0) | 0 (0) | 55 (0) |
+
+Los autores de Git se asignaron a cada integrante por su nombre de usuario o correo. «Otros colaboradores» agrupa a autores que no figuran en la relación de integrantes del equipo actual (`shiloox`, `NatValverde15`, `Jareth341`, `Jaredt Montes` y `JulyP`) y cuyos commits se conservan en el historial del repositorio.
+
+**Commits de AV2 por repositorio y rama**
+
+**`backend`** — https://github.com/9097-Experimentos-SmartStay/backend
+
+| Branch | Commit Id | Commit Message | Autor | Committed on |
+| :--- | :---: | :--- | :--- | :---: |
+| `develop` | `2eb6464` | ci: deploy to render only after ci checks pass on main | Sulca Sanchez, Piero Angel | 06/10/2026 |
+| `develop` | `b646880` | fix(iam): apply the password policy to the seeded chain admin | Sulca Sanchez, Piero Angel | 06/10/2026 |
+| `develop` | `28af02f` | ci: add backend lint, dependency audit, build, test and package pipeline | Sulca Sanchez, Piero Angel | 06/10/2026 |
+| `develop` | `f875916` | fix(deps): patch vulnerable packages and drop unused sqlite provider | Sulca Sanchez, Piero Angel | 06/10/2026 |
+| `develop` | `09c2fae` | style: apply dotnet format whitespace rules | Sulca Sanchez, Piero Angel | 06/10/2026 |
+| `develop, main` | `8bdda14` | feat(integration): fix integration test | Verona Flores, Ítalo Sebastián | 06/10/2026 |
+| `develop, main` | `00f3c16` | feat(guerkin): Complete the guerkin-test | Verona Flores, Ítalo Sebastián | 05/10/2026 |
+| `develop, main` | `92c2137` | feat(test): add testing classes for payment BC | Bonifacio Jaramillo, Samuel Jesus | 05/10/2026 |
+| `develop, main` | `fad6cac` | feat: remove precaution and write correctly the summary | Verona Flores, Ítalo Sebastián | 05/10/2026 |
+| `develop, main` | `a15eadd` | Refactor(test): change the code o xunit to nunit | Verona Flores, Ítalo Sebastián | 05/10/2026 |
+| `develop, main` | `ce59ee8` | feat(bookings): add unit tests | Galindo Manuel, Alejandro Manuel | 05/10/2026 |
+| `develop, main` | `9dfd8c4` | fix: add missing files | Galindo Manuel, Alejandro Manuel | 03/10/2026 |
+| `develop, main` | `d0def37` | feat: add remaining user stories of the product backlog | Galindo Manuel, Alejandro Manuel | 03/10/2026 |
+
+**`frontend`** — https://github.com/9097-Experimentos-SmartStay/frontend
+
+| Branch | Commit Id | Commit Message | Autor | Committed on |
+| :--- | :---: | :--- | :--- | :---: |
+| `develop, main` | `1be61df` | fix: add missing files | Galindo Manuel, Alejandro Manuel | 03/10/2026 |
+| `develop, main` | `b742122` | feat: add new functions & product backlog US | Galindo Manuel, Alejandro Manuel | 03/10/2026 |
+
+**`mobile`** — https://github.com/9097-Experimentos-SmartStay/mobile
+
+| Branch | Commit Id | Commit Message | Autor | Committed on |
+| :--- | :---: | :--- | :--- | :---: |
+| `main` | `cda9496` | feat: add MFA sign-in, staff reception app and fix guest booking flow | Galindo Manuel, Alejandro Manuel | 06/10/2026 |
+
+**`Report`** — https://github.com/9097-Experimentos-SmartStay/Report
+
+| Branch | Commit Id | Commit Message | Autor | Committed on |
+| :--- | :---: | :--- | :--- | :---: |
+| `develop` | `324a5d5` | docs: add 7.2 & 7.3 assets | Galindo Manuel, Alejandro Manuel | 08/10/2026 |
+| `develop` | `a183580` | docs: enhance CI documentation with detailed practices and pipeline components | Verona Flores, Ítalo Sebastián | 06/10/2026 |
+| `develop` | `67f24cc` | docs: add integration test images to Chapter VI for enhanced validation context | Verona Flores, Ítalo Sebastián | 06/10/2026 |
+| `develop` | `4883b18` | docs: add new payment test images and update Chapter VI | Bonifacio Jaramillo, Samuel Jesus | 05/10/2026 |
+| `develop` | `c0ffcb2` | docs: add Gherkin test suite and scenarios for Behavior-Driven Development in Chapter VI | Verona Flores, Ítalo Sebastián | 05/10/2026 |
+| `develop` | `4a2f392` | docs: add pass-test image to Chapter VI for enhanced validation context | Verona Flores, Ítalo Sebastián | 05/10/2026 |
+| `develop` | `18b76ac` | docs: update Chapter VI with validation strategy details and add StaffControllerTest image | Bonifacio Jaramillo, Samuel Jesus | 04/10/2026 |
+| `develop` | `9d1c713` | docs: add Chapter VI on Product Verification & Validation and Chapter VII on DevOps Practices, including testing images | Bonifacio Jaramillo, Samuel Jesus | 04/10/2026 |
+
+**Gráficos de contribuciones de GitHub**
+
+![Contribuciones al repositorio backend](../assets/chapter-5/collaboration-insights/backend-contributors.jpg)
+
+![Contribuciones al repositorio frontend](../assets/chapter-5/collaboration-insights/frontend-contributors.jpg)
+
+![Contribuciones al repositorio mobile](../assets/chapter-5/collaboration-insights/mobile-contributors.jpg)
+
+![Contribuciones al repositorio landing-page](../assets/chapter-5/collaboration-insights/landing-page-contributors.jpg)
+
+**Interpretación.**
+
+1. **El trabajo de AV2 se concentró en el backend y en las pruebas.** De los 16 commits de código de AV2, 13 corresponden al backend: las pruebas unitarias, de integración y de comportamiento (Alejandro, Ítalo y Samuel) y el pipeline de CI con la auditoría de dependencias (Piero).
+2. **La landing page no tuvo commits en AV2**, porque quedó completa en la entrega anterior, y el frontend web tuvo 2, ambos del backlog de historias de usuario.
+3. **La participación está desigual.** Piero Sulca concentra 283 de los 529 commits de los cuatro repositorios y el informe, y Alberto Ponce no registra commits con su identidad. Esta distribución no implica que el resto del trabajo no exista, ya que parte de él ocurre fuera de Git (entrevistas, diagramas y reuniones), pero el requisito del enunciado es que todos los integrantes participen en la implementación de cada producto. Se propone repartir las tareas del próximo Sprint de modo que cada integrante tenga commits propios en al menos un repositorio de código.
+4. **Los gráficos de GitHub subestiman el trabajo en ramas.** El frontend muestra 86 commits de Piero en `main`, mientras que el historial completo registra 168, porque la mayoría se hizo en ramas de funcionalidad. Por eso la tabla anterior usa todas las ramas.
 
 ## 5.3. Video About-the-Product
 

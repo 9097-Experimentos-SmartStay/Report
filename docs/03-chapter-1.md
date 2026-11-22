@@ -4,9 +4,9 @@
 
 ### 1.1.1. Descripción de la Startup
 
-La startup Movildev, con su producto SmartStay, surge con el objetivo de transformar la gestión hotelera mediante el uso de tecnologías digitales e Internet of Things (IoT). Nuestra propuesta integra en una sola solución la administración de huéspedes, control de habitaciones y servicios mediante una arquitectura de microservicios y conectividad constante.
+La startup Movildev, con su producto SmartStay, surge con el objetivo de transformar la gestión hotelera mediante el uso de tecnologías digitales e Internet of Things (IoT). Nuestra propuesta integra en una sola solución la administración de huéspedes, control de habitaciones y servicios mediante una API REST con arquitectura de monolito modular, organizada en contextos delimitados (bounded contexts) bajo principios de DDD, y conectividad constante.
 
-A diferencia de soluciones tradicionales, SmartStay se enfoca en una experiencia móvil robusta, ofreciendo una aplicación nativa en Android (Kotlin) para la gestión operativa del personal y una aplicación multiplataforma en Flutter para el autoservicio y confort del huésped. A través de estas interfaces, el hotel puede optimizar recursos y, al mismo tiempo, ofrecer experiencias personalizadas y automatizadas que elevan el estándar de hospitalidad.
+A diferencia de soluciones tradicionales, SmartStay se enfoca en una experiencia móvil robusta, ofreciendo una aplicación móvil multiplataforma desarrollada en Flutter, con experiencias diferenciadas para la gestión operativa del personal y para el autoservicio y confort del huésped. A través de estas interfaces, el hotel puede optimizar recursos y, al mismo tiempo, ofrecer experiencias personalizadas y automatizadas que elevan el estándar de hospitalidad.
 
 Entre sus principales características destacan:
 
@@ -38,7 +38,9 @@ Entre sus principales características destacan:
       <td>Soy Desarrollador full stack orientado a soluciones de IA. Amplia experiencia en pipelines automatizados y experimentos con LLMs. Actualmente desarrollando workflows inteligentes.</td>
     </tr>
     <tr>
-      <td></td>
+      <td align="center" valign="middle">
+       <img src="../assets/chapter-1/members/FotoAlberto.png" alt="Ponce Perales Alberto Alejandro" width="300">
+      </td>
       <td>Ponce Perales, Alberto Alejandro</td>
       <td>u202320684</td>
       <td>Ingeniería de Software</td>
